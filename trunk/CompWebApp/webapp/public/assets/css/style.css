@@ -2187,3 +2187,177 @@ only screen and (max-width: 767.98px) {
 }
 
 /*----- service policy  -----*/
+
+/*------ contact form area start -------*/
+.contact-message form input,
+.contact-message form textarea {
+    width: 100%;
+    border: none;
+    padding: 10px 10px;
+    border-bottom: 3px solid transparent;
+    background-color: #f7f7f7;
+    margin-bottom: 30px;
+}
+
+.contact-message form textarea {
+    height: 150px;
+}
+
+.title {
+  font-weight: 600;
+  line-height: 1.1;
+}
+/*------ contact form area start -------*/
+/*------ contact info area start -------*/
+.contact-information {
+    height: 100%;
+    padding-left: 30px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.98px),
+only screen and (max-width: 767.98px) {
+    .contact-information {
+        margin-bottom: 65px;
+        padding-left: 0;
+    }
+}
+
+.contact-information p {
+    padding-bottom: 30px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.98px),
+only screen and (max-width: 767.98px) {
+    .contact-information p {
+        padding-bottom: 10px;
+    }
+}
+
+.contact-information ul li {
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 479.98px) {
+    .contact-information ul li {
+        -webkit-box-align: baseline;
+        -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    }
+}
+
+.contact-information ul {
+  margin: 0;
+  padding: 0;
+}
+
+.contact-information ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.contact-information ul li i {
+    font-size: 25px;
+    padding-right: 10px;
+}
+
+.contact-title {
+    padding-bottom: 35px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.98px),
+only screen and (max-width: 767.98px) {
+    .contact-title {
+        margin-top: -13px;
+        padding-bottom: 20px;
+    }
+}
+
+/*------ contact info area end -------*/
+
+.btn-all {
+  font-size: 18px;
+  padding: 14px 24px 15px 24px;
+  color: #fff;
+  line-height: 1;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: 0.5s;
+  background-color: #37517e; 
+}
+
+.btn-all:hover {
+  color: #fff;
+}
+
+.contact-us {
+  height: 100vh;
+}
+
+.contact-us .container{
+  padding-top: 70px;
+}
+
+.contact-us .container .contact-message .h1:before,
+.contact-us .container .contact-information .h1:before {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 5px;
+  background: #2dd65c;
+  bottom: -9px;
+  top: 45px;
+}
+
+.contact-interact .btn-contact {
+  font-size: 18px;
+  padding: 14px 24px 15px 24px;
+  color: #37517e;
+  line-height: 1;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: 0.5s;
+  border: 2px solid #37517e;
+}
+
+.contact-interact .btn-contact:hover {
+  color: #fff;
+  background-color: #37517e;
+}
+
+.contact-interact .mg-10{
+  margin-left: 10px;
+}
+
+.about-wrapper-area {
+  height: 100vh;
+}
+
+.about-wrapper-area .container{
+    padding-top: 72px;
+}
+
+.about-wrapper-area .container .about-inner .h1:before {
+  position: absolute;
+  content: "";
+  width: 10%;
+  height: 5px;
+  background: #2dd65c;
+  bottom: -9px;
+  top: 45px;
+}
+
+.about-wrapper-area .container .about-inner p {
+  padding-top: 15px;
+}

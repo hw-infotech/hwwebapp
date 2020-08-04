@@ -15,7 +15,7 @@ class Footer extends Component {
                 Industrial Area, Mohali<br/><br/>
                 <strong>Phone:</strong> (0172) 4039142<br/> 
                 <strong>Mobile:</strong> +91 9877344996<br/>
-                <strong>Email:</strong> contact@hindwaves.com<br/>
+                <strong>Email:</strong> info@hindwaves.com<br/>
               </p>
             </div>
   
@@ -46,8 +46,8 @@ class Footer extends Component {
               <p><strong>To get all latest updates and news Subscribe our newsletter now!</strong></p>
               <div className="newsletter mt-3">
                 <form action="">
-                  <input type="email" class="news-field" autocomplete="off" placeholder="Enter your email here" name="EMAIL"/>
-                  <button class="btn btn-subscribe">Subscribe</button>
+                  <input type="email" className="news-field" placeholder="Enter your email here" name="EMAIL"/>
+                  <button className="btn btn-subscribe">Subscribe</button>
                 </form>
               </div>
             </div>

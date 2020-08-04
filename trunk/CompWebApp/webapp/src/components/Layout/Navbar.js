@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
   render() {
@@ -8,11 +9,11 @@ class NavBar extends Component {
   
         {/* <h1 className="logo mr-auto"><a href="javscript;">Hindwaves <span style={{fontSize:'15px'}}>Infotech</span></a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
-        <a href="index.html" className="logo mr-auto"><img src="assets/img/logo.png" alt="" className="img-fluid"/></a>
+        <a href="/" className="logo mr-auto"><img src="assets/img/logo.png" alt="" className="img-fluid"/></a>
   
         <nav className="nav-menu d-none d-lg-block">
           <ul>
-            <li><a href="">Home</a></li>
+            <li><Link to="/">Home</Link></li>
             <li className="drop-down"><a href="">Services</a>
               <ul>
                 <li><a href="javscript;">Drop Down 1</a></li>
@@ -30,8 +31,8 @@ class NavBar extends Component {
                 <li><a href="javscript;">Drop Down 4</a></li>
               </ul>
             </li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/contact-us">Contact Us</Link></li>
   
           </ul>
         </nav>

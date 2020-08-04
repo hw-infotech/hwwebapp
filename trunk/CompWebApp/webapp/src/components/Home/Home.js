@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Footer from '../Layout/Footer';
+import NavBar from '../Layout/Navbar';
 
 class HomeContent extends Component {
   render() {
     return (
 <div>
+    <NavBar />
     <section id="hero" className="d-flex align-items-center">
       <div className="container">
         <div className="row">
@@ -166,6 +169,7 @@ class HomeContent extends Component {
   
         </div>
       </section>
+     <Footer /> 
 </div>
     )
   }
