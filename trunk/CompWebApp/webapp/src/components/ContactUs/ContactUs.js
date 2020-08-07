@@ -7,13 +7,16 @@ class ContactUsContent extends Component {
       return (
     <div>
         <NavBar />
-        <section id="contact-us" className="contact-us">
-        <div className="contact-area section-padding" >
+        <section id="contact-us" className="contact-us section-padding fix">
             <div className="container" data-aos="fade-up">
-                <div className="row">
+                <div className="section-title">
+                    <h2>Have a question?</h2>
+                    <p>Drop us a message and we’ll get back to you.</p>
+                </div>
+                <div className="row contactus-shadow">
                     <div className="col-lg-6 order-2 order-lg-1">
                         <div className="contact-message">
-                            <h2 className="h1 title contact-title">Tell Us Your Project</h2>
+                            <h2 className="h1 title contact-title"></h2>
                             <form id="contact-form" method="post" className="contact-form">
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6 col-sm-6">
@@ -43,7 +46,7 @@ class ContactUsContent extends Component {
                             </form>
                         </div>
                     </div>
-                    <div className="col-lg-6 order-1 order-lg-2">
+                    <div className="col-lg-6 order-1 order-lg-2 gradient-brand">
                         <div className="contact-information">
                             <h2 className="h1 title contact-title">Contact Us</h2>
                             <p>Having Business queries? Feel free to get in touch with us with no hesitation and we will get back to you as soon as possible.</p>
@@ -61,7 +64,6 @@ class ContactUsContent extends Component {
                     </div>
                 </div>
             </div>
-        </div>
         </section>
         <Footer />
     </div>
