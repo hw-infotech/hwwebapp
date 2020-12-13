@@ -5,13 +5,35 @@ class NavBar extends Component {
   render() {
     return (
       <header id="header" className="fixed-top header-scrolled">
-      <div className="container d-flex align-items-center">
+      <div className="container">
   
         {/* <h1 className="logo mr-auto"><a href="javscript;">Hindwaves <span style={{fontSize:'15px'}}>Infotech</span></a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
-        <a href="/" className="logo mr-auto"><img src="assets/img/logo.png" alt="" className="img-fluid"/></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"><img src="assets/img/hind-logo.png" width="200px"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse " id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                <Link to="/">Home </Link>
+                </li>
+                <li class="nav-item">
+                <Link to="#">Services</Link>
+                </li>
+                <li class="nav-item">
+                <Link to="/about-us">About Us</Link>
+                </li>
+                <li class="nav-item">
+                <Link to="/contact-us">Contact Us</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
   
-        <nav className="nav-menu d-none d-lg-block">
+        {/* <nav className="nav-menu d-none d-lg-block">
           <ul>
             <li><Link to="/">Home</Link></li>
             <li className="drop-down"><a href="">Services</a>
@@ -37,7 +59,7 @@ class NavBar extends Component {
           </ul>
         </nav>
   
-        <a href="#about" className="get-started-btn scrollto">Get Quote</a>
+        <a href="#about" className="get-started-btn scrollto">Get Quote</a> */}
   
       </div>
     </header>

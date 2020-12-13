@@ -1,12 +1,75 @@
 import React, { Component } from 'react';
 import NavBar from '../Layout/Navbar';
 import Footer from '../Layout/Footer';
+import './AboutUs.css';
 
 class AboutUsContent extends Component {
   render() { 
       return (
           <div>
             <NavBar />
+
+            <section className="aboutBanner">   
+                 <div className="container">
+                 <div className="caption aos-init aos-animate">
+                    <h1>A Global Leader in <br/>Digital Transformation</h1>
+                    <a href="/contact-us" className="btn btn-flip" data-text="Let’s talk"><span>Let’s talk</span></a>
+                </div>
+                </div> 
+            </section>
+            <section className="about-image-banner">
+                    <div className="image-wrap">
+                        <img src="assets/img/about-banner.jpg" alt="line white"/>
+                    </div>
+                    <div className="container">
+                        <div className="lets">
+                            <div className="left">
+                            <h2>Let’s work together…</h2>
+                            <p>We ain’t your standard dev shop. Our user-centric approach puts your customer experience at the center of
+                            our design.</p>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <section className="team-wrap">
+            <div className="team-members">
+            <div className="right">
+                   <div className="content">
+                        <p>We have industry and <br/>technology <span>experts</span> to help <br/>you build the right solution to <br/>fulfill
+                          your business needs.</p>
+                          <div class="line">
+                            <img src="assets/img/yellow-line.svg" alt=""/>
+                            </div>
+                          <div class="designation">
+                            <h4>Ravinder - Gurpreet</h4>
+                            <p>CTO</p>
+                            </div>
+                    </div>     
+               </div>
+            <div className="left aos-init aos-animate" data-aos="fade-up">
+                <ul className="circle-container fourth">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    </ul>
+               </div>
+               <ul className="circle-container first">
+                <li id="vk" className=""><img src="assets/img/user-dummy.jpg" alt="line white" style={{width : '100%'}}/></li>
+                </ul>
+               
+                </div>
+            </section>
+
             <section className="about-wrapper-area section-padding">
                 <div className="container">
                     <div className="row align-items-center">
