@@ -8,8 +8,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Roboto', sans-serif!important;
   color: #444444;
 }
 
@@ -23,7 +25,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Jost", sans-serif;
+  font-family: 'Roboto', sans-serif!important;
 }
 
 /*--------------------------------------------------------------
@@ -112,8 +114,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-scrolled, #header.header-inner-pages {
-  background: linear-gradient(-45deg, #37517e,#48e672);
-  /* background: linear-gradient(-45deg, #1c48de, #00e3f6); */
+
+  background: white;
+  border-bottom: 1px solid #77c58117;
+}
+#header.header-scrolled .bg-light {
+  background-color: #ffffff!important;
 }
 
 #header .logo {
@@ -394,13 +400,17 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   margin: 0 0 20px 0;
-  font-size: 50px;
+  font-size: 84px;
   font-weight: 800;
-  line-height: 56px;
+  line-height: 95px;
+  color: black;
 }
 
 #hero h2 {
   font-size: 16px;
+  line-height: 28px;
+  font-weight: 300;
+  color: black;
 }
 
 #hero .btn-get-started {
@@ -2393,4 +2403,27 @@ only screen and (max-width: 767.98px) {
 
 .about-wrapper-area .container .about-inner p {
   padding-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* header Css */
+.navbar .navbar-nav .nav-item{
+
+padding: 0 20px;
+}
+.navbar .navbar-nav .nav-item a{
+  
+color: #323232;
+  
+font-weight: 500;
 }
