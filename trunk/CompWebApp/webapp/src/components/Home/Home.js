@@ -9,6 +9,8 @@ import Footer_new from '../Layout/Footer_new';
 
 class HomeContent extends Component {
   render() {
+
+
     return (
 <div>
     <NavBar />
@@ -91,8 +93,177 @@ class HomeContent extends Component {
             </div>
         </div>
     </section>
+
+    <section className="stories">
+         <OwlCarousel
+            className="owl-theme"
+            loop
+            items={1}
+            margin={10}
+            nav
+         >
+            
+            <div className="item">
+                <div className="successStories yellow">
+                    <div className="row">
+                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">THE HEALTHY MUMMY</div>
+                                <div className="bigTitle">We re-engineered,
+                                    re-architected World’s
+                                    #1 Mum’s app scale to
+                                    2.0 Million users
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">caseStudies</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg">
+                            <img src="assets/img/iphone_x.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="item">
+            <div className="successStories purple">
+                    <div className="row">
+                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Neoxcel</div>
+                                <div className="bigTitle">We present our unique, flexible and powerful suite of software to run your entire business on cloud.
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">caseStudies</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg">
+                            <img src="assets/img/neoxcel.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="item">
+            <div className="successStories lightblue">
+                    <div className="row">
+                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Telemedician</div>
+                                <div className="bigTitle">Virtual Care. Chat with your health team.
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">caseStudies</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg">
+                            <img src="assets/img/telemedicianstories.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="item">
+                <div className="successStories darkblue">
+                    <div className="row">
+                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Join Vet</div>
+                                <div className="bigTitle">We makes it easy for businesses and marketing teams to manage your social account in a single place.
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">caseStudies</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg">
+                            <img src="assets/img/joinvet.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="item">
+                <div className="successStories royelblue">
+                    <div className="row">
+                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Join Vet</div>
+                                <div className="bigTitle">We makes it easy for businesses and marketing teams to manage your social account in a single place.
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">caseStudies</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg">
+                            <img src="assets/img/join-vet-mobile.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="item">
+                <div className="successStories skyblue">
+                    <div className="row">
+                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Mhamz</div>
+                                <div className="bigTitle">Task Project Design has been updated in project ECommerce by Admin
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">caseStudies</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg">
+                            <img src="assets/img/mhamz.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="item">
+                <div className="successStories darkyellow">
+                    <div className="row">
+                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Skycomm</div>
+                                <div className="bigTitle">Task Project Design has been updated in project ECommerce by Admin
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">caseStudies</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg">
+                            <img src="assets/img/skycomm.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </OwlCarousel>
+    </section>
   
-    <section className="portfolioSection p-0">
+    {/* <section className="portfolioSection p-0">
         <div className="row">
             <div className="col-12 col-md-6 col-lg-8 col-xl-8 p-0">
                 <div className="portfolio-item-wrap">
@@ -179,7 +350,7 @@ class HomeContent extends Component {
                 </div>
             </div>
         </div>
-    </section>
+    </section> */}
 
         <section className="capebilities">
             <div className="container">
@@ -195,7 +366,7 @@ class HomeContent extends Component {
        
         <section className="accordian-section">
             <div className="container">
-                <div className="row">
+                <div className="row" style={{'flexDirection':'row-reverse'}}>
                     <div className="col-12 col-md-6 col-lg-6">
                         <div className="accordianPanel">
                         <div className="accordianLeft">
@@ -275,62 +446,62 @@ class HomeContent extends Component {
                     <ul>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/vue-js-logo.png" />
+                            <img src="assets/img/brandLogo/vue-js-logo.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/angular-logo.png" />
+                            <img src="assets/img/brandLogo/angular-icon.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/flutter-logo.png" />
+                            <img src="assets/img/brandLogo/flutter-logo.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/node-logo.png" />
+                            <img src="assets/img/brandLogo/nodejs-icon.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/php-logo.png" />
+                            <img src="assets/img/brandLogo/php-1.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/react-logo.png" />
+                            <img src="assets/img/brandLogo/react.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/bootstrap-logo.png" />
+                            <img src="assets/img/brandLogo/bootstrap-4.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/sass-logo.png" />
+                            <img src="assets/img/brandLogo/sass-1.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/swift-logo.png" />
+                            <img src="assets/img/brandLogo/swift-15.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/my-squal-logo.png" />
+                            <img src="assets/img/brandLogo/mysql.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/swift-logo.png" />
+                            <img src="assets/img/brandLogo/firebase.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/my-squal-logo.png" />
+                            <img src="assets/img/brandLogo/xamarin.svg" />
                             </div>
                         </li>
                     </ul>
@@ -666,12 +837,12 @@ class HomeContent extends Component {
                         <div className="coporateOffice__address">
                         <strong>Phone:</strong> (0172) 4039142
                         </div>
-                        <div className="coporateOffice__address">
+                        {/* <div className="coporateOffice__address">
                         <strong> Mobile:</strong> +91 9877344996
                         </div>
                         <div className="coporateOffice__address">
                         <strong> Email:</strong> 
-                        </div>
+                        </div> */}
 
                 </div>
             </div>

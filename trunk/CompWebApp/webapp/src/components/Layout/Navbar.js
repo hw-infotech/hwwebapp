@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class NavBar extends Component {
   render() {
     return (
-      <header id="header" className="fixed-top header-scrolled">
+      <header id="header" className="fixed-top header-scrolled" >
       <div className="container">
   
         {/* <h1 className="logo mr-auto"><a href="javscript;">Hindwaves <span style={{fontSize:'15px'}}>Infotech</span></a></h1> */}
@@ -21,7 +21,7 @@ class NavBar extends Component {
                 <Link to="/">Home </Link>
                 </li>
                 <li class="nav-item">
-                <Link to="#">Services</Link>
+                <Link to="/services_main">Services</Link>
                 </li>
                 <li class="nav-item">
                 <Link to="/about-us">About Us</Link>

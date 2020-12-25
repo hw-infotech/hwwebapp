@@ -2,6 +2,16 @@
     width: 100%;
     margin-top: 94px;
 }
+.aboutBanner .shapes {
+    width: 770px;
+    height: 800px;
+    position: absolute;
+    background: #f9f9f9;
+    border-radius: 150px;
+    transform: rotate(13deg);
+    top: -276px;
+    z-index: -1;
+}
 .aboutBanner .caption {
     min-height: 440px;
     text-align: center;
@@ -286,7 +296,6 @@
     -ms-flex-pack: justify;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    margin: 0 0 13.5rem;
     position: relative;
 }
 .team-wrap .team-members .right {
@@ -334,4 +343,157 @@
 }
 .team-wrap .team-members .right .content .line {
     margin: 0 0 3rem;
+}
+
+
+
+.gallery{
+
+}
+.gallery .gallery_heading {
+    width: 100%;
+    float: left;
+    position: relative;
+    font-size: 54px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.gallery .galleryBox {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.gallery .galleryBox .row_one,.gallery .galleryBox .row_two,.gallery .galleryBox .row_three {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.gallery .galleryBox .galleryImages:hover img {
+    transform: scale3d(1.2)!important;
+}
+.gallery .galleryBox .row_one .col-1 {
+    max-width: 40%;
+    flex: 0 1 40%;
+    padding: 0;
+}
+.gallery .galleryBox .row_one .col-2 {
+    max-width: 60%;
+    flex: 0 1 60%;
+    padding: 0;
+}
+.gallery .galleryBox .row_one .col-2 .headings {
+    font-size: 25px;
+    line-height: 1.84;
+    margin: 0 20px 1.25rem;
+    font-weight: 300;
+}
+.gallery .galleryBox .row_two .col-1 {
+    max-width: 30%;
+    flex: 0 1 30%;
+    padding: 0;
+}
+.gallery .galleryBox .row_two .col-2 {
+    max-width: 35%;
+    flex: 0 1 35%;
+    padding: 0;
+}
+.gallery .galleryBox .row_two .col-3 {
+    max-width: 35%;
+    flex: 0 1 35%;
+    padding: 0;
+}
+.gallery .galleryBox .row_three .col-1 {
+    max-width: 65%;
+    flex: 0 1 65%;
+    padding: 0;
+}
+.gallery .galleryBox .galleryImages {
+    margin: 1.125rem 1.125rem;
+    overflow: hidden;
+    border-radius: 0.625rem;
+}
+.gallery .galleryBox .galleryImages.medium {
+    width: calc(100% - 1.125rem*2);
+    position: relative;
+}
+.gallery .galleryBox .galleryImages:hover img {
+    transform:scale(1.2);
+    
+    filter: grayscale(100);
+}
+.gallery .galleryBox .row_one .col-1 img ,.gallery .galleryBox .row_one .col-2 img,
+.gallery .galleryBox .row_two .col-1 img,
+.gallery .galleryBox .row_two .col-2 img,
+.gallery .galleryBox .row_two .col-3 img,
+.gallery .galleryBox .row_three .col-1 img{
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    max-width: none;
+    transform: scale3d(1)!important;
+    transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+}
+.gallery .galleryBox .galleryImages.medium::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+.gallery .galleryBox .galleryImages.small {
+    width: calc(100% - 1.125rem*2);
+    position: relative;
+}
+.gallery .galleryBox .galleryImages.small::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+.gallery .galleryBox .galleryImages.large {
+    width: calc(100% - 1.125rem*2);
+    position: relative;
+}
+.gallery .galleryBox .galleryImages.large::before {
+    content: "";
+    display: block;
+    padding-bottom: 60%;
+}
+.gallery .galleryBox .row_one .col-2 .galleryImages.small::before {
+    padding-bottom: 40.38%;
+}
+
+.site-footer .project-in-mind {
+    padding: 2.1rem 0;
+    background-color: #f7f7f7;
+}
+.site-footer .project-in-mind  p.light {
+    font-size: 3rem;
+    letter-spacing: -0.12rem;
+    font-weight: 300;
+}
+.site-footer .project-in-mind .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: none;
+}
+.site-footer .project-in-mind p {
+    margin: 0 3rem 0 0;
+    font-size: 3.8rem;
+    line-height: 1.125;
+    font-weight: bold;
+    letter-spacing: -0.2rem;
+}
+.site-footer .project-in-mind p strong {
+    font-weight: 700;
+    color: #000;
 }

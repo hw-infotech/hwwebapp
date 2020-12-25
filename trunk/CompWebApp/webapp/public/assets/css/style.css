@@ -9,10 +9,8 @@
 # General
 --------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body {
-  font-family: 'Roboto', sans-serif!important;
-  color: #444444;
+  color: #000000;
 }
 
 a {
@@ -25,7 +23,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif!important;
+  font-family: 'Rajdhani', sans-serif!important;
 }
 
 /*--------------------------------------------------------------
@@ -115,11 +113,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled, #header.header-inner-pages {
 
-  background: white;
-  border-bottom: 1px solid #77c58117;
+  background:transparent;
+  border-bottom: 1px solid transparent;
 }
 #header.header-scrolled .bg-light {
-  background-color: #ffffff!important;
+  background-color: transparent!important;
 }
 
 #header .logo {
@@ -2425,5 +2423,11 @@ padding: 0 20px;
   
 color: #323232;
   
-font-weight: 500;
+font-weight: 700;
+}
+.navbar .navbar-nav .nav-item a:hover {
+  color: #7e57a4;
+}
+.navbar .navbar-nav .nav-item.active a {
+  color: #7e57a4;
 }
