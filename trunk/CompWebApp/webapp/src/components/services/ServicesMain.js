@@ -8,6 +8,26 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 class ServicesMain extends Component {
+
+    state= {
+        responsive:{
+            0: {
+                items: 1,
+            },
+            575: {
+                items: 2,
+            },
+            767: {
+                items: 2,
+            },
+            1000: {
+                items: 3,
+            },
+            1440: {
+                items: 4,
+            },
+        },
+    }
     render() { 
         return (
             <>
@@ -75,7 +95,9 @@ class ServicesMain extends Component {
                                     loop
                                     items={4}
                                     margin={10}
-                                    nav
+                                    nav={true}
+                                    responsive={this.state.responsive}
+                                    
                                 >
                                    <div className="item">
                                     <div className="item_Services">

@@ -8,7 +8,29 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Footer_new from '../Layout/Footer_new';
 
 class HomeContent extends Component {
+    state= {
+        responsive:{
+            0: {
+                items: 1,
+            },
+            575: {
+                items: 1,
+            },
+            767: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            },
+            1440: {
+                items: 1,
+            },
+        },
+    }
   render() {
+
+
+
 
 
     return (
@@ -721,6 +743,7 @@ class HomeContent extends Component {
                                     items={1}
                                     margin={10}
                                     nav
+                                    responsive={this.state.responsive}
                                 >
                                     
                                     <div className="item">

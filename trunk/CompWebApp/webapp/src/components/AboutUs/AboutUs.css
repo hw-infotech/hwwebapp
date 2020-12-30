@@ -497,3 +497,102 @@
     font-weight: 700;
     color: #000;
 }
+
+
+
+
+@media (min-width:320px) and (max-width:480px){
+    .aboutBanner h1 {
+        font-size: 42px;
+    } 
+    .about-image-banner .lets .left {
+        width: 100%;
+    }
+    .about-image-banner .lets {
+        padding: 2.5rem 1rem;
+        margin-top: -2rem;
+    }
+    .about-image-banner .lets .left h2 {
+        font-size: 2.6rem;
+    }
+    .about-image-banner .lets .left p {
+        font-size: 16px;
+    }
+    .aboutBanner .shapes {
+        width: 75%;
+        height: 672px;
+        top: -276px;
+        z-index: -1;
+    }
+    .aboutBanner .caption {
+        min-height: auto;
+    }
+    .about-image-banner .image-wrap {
+        border-top-right-radius: 1rem;
+        width: calc(100% - 1rem);
+        position: relative;
+    }
+    .about-image-banner .image-wrap::before {
+        content: "";
+        display: block;
+        padding-bottom: 98.25%;
+    }
+    .team-wrap .team-members .right {
+        width: 100%;
+        position: relative;
+        padding-left: 20px;
+    }
+    .team-wrap .team-members {
+        display: block;
+
+    }
+    .team-wrap .team-members .right .content p {
+        font-size: calc(30px - 20%);
+    }
+    .circle-container.fourth {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        padding: 0;
+        border-radius: 50%;
+        list-style: none;
+        transform: rotate(0deg);
+    }
+    .gallery .gallery_heading {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .gallery .galleryBox .row_one, .gallery .galleryBox .row_two, .gallery .galleryBox .row_three {
+        display: block;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .gallery .galleryBox .row_one .col-1 {
+        max-width: 100%;
+    }
+    .gallery .galleryBox .row_one .col-2 {
+        max-width: 100%;
+    }
+    .gallery .galleryBox .row_one .col-2 .headings {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .gallery .galleryBox .row_two .col-1 {
+        max-width: 100%;
+    }
+    .gallery .galleryBox .row_two .col-2 {
+        max-width: 50%;
+        float: left;
+    }
+    .gallery .galleryBox .row_two .col-3 {
+        max-width: 50%;
+        float: left;
+    }
+    .gallery .galleryBox .row_three .col-1 {
+        max-width: 100%;
+    }
+}

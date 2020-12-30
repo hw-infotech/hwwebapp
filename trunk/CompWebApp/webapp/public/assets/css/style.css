@@ -2431,3 +2431,11 @@ font-weight: 700;
 .navbar .navbar-nav .nav-item.active a {
   color: #7e57a4;
 }
+
+
+
+@media (min-width:320px) and (max-width:480px){
+  .navbar {
+    padding: 0px;
+}
+}

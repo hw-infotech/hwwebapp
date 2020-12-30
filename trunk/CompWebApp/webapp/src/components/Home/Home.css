@@ -1170,3 +1170,87 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     -webkit-transition: all 0.3s ease-in;
    
 }
+
+@media (min-width:320px) and (max-width:480px){
+    #hero {
+        height: auto!important;
+        text-align: center;
+    }
+    .testimonialBox .headings {
+        font-size: 30px;
+    }
+    .testimonialBox .testi_Slider .carousel .carousel-indicators {
+        width: 100%;
+        display: inline-flex;
+        top: 113%;
+    }
+    .testimonialBox .testi_Slider .carousel {
+        padding-left: 10px;
+    }
+    .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg {
+        text-align: left;
+    }
+    .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
+        width: 142px;
+        border-radius: 50%;
+        border: 4px solid #b1b1b12e;
+    }
+    .dddl-inner .right-inner {
+        width: 100%;
+    }
+    .dddl-inner .left-inner {
+        width: 100%;
+        padding: 0 20px 5rem;
+    }
+    .dddl-inner {
+        display: block;
+    }
+    .dddl-inner .left-inner h3 {
+        font-size: 30px;
+    }
+
+
+
+    .newsletter .newsletterContent .newsLetterForm .form-control {
+      
+        height: 60px;
+        padding: 0 40px;
+        font-size: 18px;
+        margin: 0;
+    }
+    .newsletter .newsletterContent .newsLetterForm{
+        height: 60px;
+    }
+    .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
+        width: 50px;
+        height: 50px;
+        right: 5px;
+        border-radius: 50%;
+        top: 4px;
+        font-size: 27px;
+        line-height: 57px;
+    }
+    .newsletter .newsletterContent .newsLetterSubTitle {
+        font-size: 18px;
+    }
+    .address .addressConetnt .chd-icon {
+        max-width: 150px;
+    }
+    .address .addressConetnt .india {
+        font-size: 92px;
+        font-weight: 900;
+        color: #f1f1f1;
+        position: absolute;
+        right: auto;
+        top: auto;
+        bottom: 0;
+        left: 0;
+    }
+    .address .addressConetnt {
+        min-height: 470px;
+    }
+    .address .addressConetnt .companyAddress .coporateOfficeHeading {
+        font-size: 30px;
+        font-weight: 600;
+    }
+}

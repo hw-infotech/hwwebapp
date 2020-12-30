@@ -212,3 +212,56 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
 .contact-hero__item:last-child img {
     width: 100%;
 }
+
+
+@media (min-width:320px) and (max-width:480px){
+    .formpanel {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+    }
+    .material-input {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .contact-hero h1 {
+        font-size: 42px;
+        line-height: 48px;
+
+    }
+    .contact-form ul li {
+        margin: 4px;
+    }
+    .contact-form ul li label span {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .material-input input, .material-input textarea {
+        padding: 5px 0;
+        font-size: 16px;
+    }
+    input[type=email], input[type=text], textarea {
+        display: block;
+        width: 100%;
+    }
+    .contact-form input[type=submit] {
+        margin-top: 0px;
+    }
+    input[type=submit] {
+        height: 44px;
+    }
+    input[type=submit] {
+        padding: 5px 34px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: .36px;
+        border-radius: 30px;
+    }
+    .contact-hero--contact {
+        font-size: 14px;
+        text-align: left;
+        margin-top: 10px;
+    }
+}
