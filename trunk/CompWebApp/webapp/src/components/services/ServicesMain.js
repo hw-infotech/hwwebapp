@@ -8,7 +8,6 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 class ServicesMain extends Component {
-
     state= {
         responsive:{
             0: {
@@ -109,7 +108,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                                <a href="#">Explore</a>
+                                                <a href="/AppDevelopment">Explore</a>
                                             </div>
                                         </div>
                                     </div> 
@@ -138,7 +137,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                                <a href="#">Explore</a>
+                                                <a href="/ux_ui_design">Explore</a>
                                             </div>
                                         </div>
                                     </div>
@@ -152,7 +151,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                                <a href="#">Explore</a>
+                                                <a href="/seo_testing">Explore</a>
                                             </div>
                                         </div>
                                     </div>
@@ -166,7 +165,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                                <a href="#">Explore</a>
+                                                <a href="/GraphicsDesign">Explore</a>
                                             </div>
                                         </div>
                                     </div>

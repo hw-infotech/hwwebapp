@@ -30,9 +30,6 @@ class HomeContent extends Component {
   render() {
 
 
-
-
-
     return (
 <div>
     <NavBar />

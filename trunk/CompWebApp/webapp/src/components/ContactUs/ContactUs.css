@@ -1,20 +1,20 @@
-
 section.contact__panel.contact-hero {
     margin-top: 70px;
 }
 
 .contact-hero__item {
-   
     flex: 5;
 }
+
 .contact-hero h1 {
     font-size: 76px;
     letter-spacing: 1.7px;
     line-height: 78px;
     font-weight: 800;
 }
+
 .contact-form .input-group p {
-    font-family: Muli,sans-serif;
+    font-family: Muli, sans-serif;
     font-size: 18px;
     letter-spacing: -.18px;
     line-height: 20px;
@@ -24,20 +24,23 @@ section.contact__panel.contact-hero {
     text-transform: uppercase;
     font-weight: 800;
 }
+
 .contact-form .input-group p {
-    font-family: Muli,sans-serif;
+    font-family: Muli, sans-serif;
     font-size: 18px;
     letter-spacing: -.18px;
     line-height: 20px;
     width: 100%;
-    float:left;
+    float: left;
 }
+
 .contact-form ul {
     padding: 0;
     margin: 0 -10px;
     list-style: none;
     max-width: 500px;
 }
+
 .contact-form ul li {
     margin: 10px;
     background-color: #fff;
@@ -48,12 +51,14 @@ section.contact__panel.contact-hero {
     overflow: auto;
     float: left;
 }
+
 .contact-form ul li label {
     float: left;
     width: 100%;
     margin: 0;
     position: relative;
 }
+
 label {
     display: block;
     margin-top: 20px;
@@ -61,35 +66,41 @@ label {
     letter-spacing: -.18px;
     line-height: 35px;
 }
+
 .contact-form ul li label input {
     position: absolute;
     top: -20px;
 }
+
 [type=checkbox], [type=radio] {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
 }
+
 .contact-form ul li label span {
     text-align: center;
     padding: 5px 20px;
     display: block;
-    font-family: Muli,sans-serif;
+    font-family: Muli, sans-serif;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: -.18px;
     line-height: 35px;
     cursor: pointer;
 }
+
 .contact-form ul li input:checked+span {
     background-color: #77c581;
     color: white;
 }
+
 .material-input {
     position: relative;
     margin-top: 15px;
 }
+
 input[type=email], input[type=text], textarea {
     display: block;
     width: 93%;
@@ -105,10 +116,11 @@ input[type=email], input[type=text], textarea {
     box-shadow: none;
     border: none;
     border-bottom: 1px solid #000;
-    font-family: Muli,sans-serif;
+    font-family: Muli, sans-serif;
     font-size: .85em;
     outline: 0;
 }
+
 .material-input input, .material-input textarea {
     padding: 15px 0;
     -webkit-transition: all .28s ease;
@@ -118,6 +130,7 @@ input[type=email], input[type=text], textarea {
     border-color: #aab8b8;
     font-size: 20px;
 }
+
 .material-input label {
     position: absolute;
     margin: 0;
@@ -134,12 +147,15 @@ input[type=email], input[type=text], textarea {
     -moz-transition: all .28s ease;
     transition: all .28s ease;
 }
+
 .clear {
     clear: both;
 }
+
 .contact-form input[type=submit] {
     margin-top: 30px;
 }
+
 input[type=submit] {
     padding: 10px 15px;
     -webkit-box-shadow: none;
@@ -149,6 +165,7 @@ input[type=submit] {
     width: 180px;
     height: 60px;
 }
+
 input[type=submit] {
     padding: 15px 34px;
     display: inline-block;
@@ -162,16 +179,19 @@ input[type=submit] {
     background-color: #fff;
     transition: all .3s ease-in-out;
 }
+
 input[type=submit]:hover {
     background-color: #ea7424;
     color: #fff;
 }
+
 input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[type=text]:hover, textarea:focus, textarea:hover {
     outline: 0;
     border: none!important;
     border-bottom: 1px solid #aab8b8!important;
-    box-shadow:none !important;
+    box-shadow: none !important;
 }
+
 .contact-hero__item:last-child {
     -webkit-box-flex: 4;
     -webkit-flex: 4;
@@ -180,20 +200,24 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     flex: 4;
     text-align: right;
 }
+
 .material-input input.input-is-active~label, .material-input input:focus~label, .material-input textarea.input-is-active~label, .material-input textarea:focus~label {
     font-size: 13px;
     top: -15px;
     left: 0;
 }
+
 .contact-hero--contact {
     text-align: right;
     font-size: 18px;
     line-height: 43px;
 }
-.contact-hero--contact a{
+
+.contact-hero--contact a {
     color: #000;
     font-weight: 700;
 }
+
 .formpanel {
     display: -webkit-box;
     display: -webkit-flex;
@@ -209,12 +233,16 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     -ms-flex-align: center;
     align-items: center;
 }
+
 .contact-hero__item:last-child img {
     width: 100%;
 }
 
-
-@media (min-width:320px) and (max-width:480px){
+@media (min-width:320px) and (max-width:480px) {
+    section.contact__panel.contact-hero {
+    margin-top: 0px;
+    padding-top: 90px;
+}
     .formpanel {
         display: flex;
         flex-wrap: wrap;
@@ -226,16 +254,23 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         width: 100%;
     }
     .contact-hero h1 {
-        font-size: 42px;
-        line-height: 48px;
-
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .contact-form .input-group p {
+        font-family: Muli, sans-serif;
+        font-size: 15px;
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-weight: 400;
     }
     .contact-form ul li {
         margin: 4px;
     }
     .contact-form ul li label span {
         padding: 5px 10px;
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 20px;
     }
     .material-input input, .material-input textarea {
         padding: 5px 0;
@@ -245,7 +280,7 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         display: block;
         width: 100%;
     }
-    .contact-form input[type=submit] {
+ 9   .contact-form input[type=submit] {
         margin-top: 0px;
     }
     input[type=submit] {
@@ -263,5 +298,33 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         font-size: 14px;
         text-align: left;
         margin-top: 10px;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1366px) {
+    .contact-hero h1 {
+        font-size: 60px;
+        letter-spacing: 1.7px;
+        line-height: 60px;
+        font-weight: 800;
+    }
+    .contact-form ul li label span {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+    .material-input input, .material-input textarea {
+        padding: 8px 0;
+    }
+    .material-input {
+        position: relative;
+        margin-top: 0px;
+    }
+    .contact-form input[type=submit] {
+        margin-top: 12px;
+    }
+    .contact-form .input-group p {
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
 }

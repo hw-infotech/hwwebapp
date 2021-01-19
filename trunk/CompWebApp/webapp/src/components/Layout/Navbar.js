@@ -2,13 +2,30 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 class NavBar extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      isTop: false,
+      
+    }
+    this._handleScroll = this._handleScroll.bind(this);
+  }
+
+  componentDidMount(){
+    window.onscroll = () => this._handleScroll();
+  }  
+
+  _handleScroll() {
+    if (document.documentElement.scrollTop > 100) {
+      this.setState({ isTop: true });
+    } else {
+      this.setState({ isTop: false });
+    }
+  }
   render() {
     return (
-      <header id="header" className="fixed-top header-scrolled" >
+      <header id="header" className={this.state.isTop ? 'fixed-top header-scrolled scroll' : 'fixed-top header-scrolled'} onScroll={this._handleScroll}>
       <div className="container">
-  
-        {/* <h1 className="logo mr-auto"><a href="javscript;">Hindwaves <span style={{fontSize:'15px'}}>Infotech</span></a></h1> */}
-        {/* Uncomment below if you prefer to use an image logo */}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/"><img src="assets/img/hind-logo.png" width="200px"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
