@@ -114,14 +114,9 @@
 }
 
 .team-wrap .team-members .left {
-    width: 47%;
+    width: 50%;
     position: relative;
-}
-
-.team-wrap .team-members .left::before {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
+    padding-right: 30px;
 }
 
 .circle-container.fourth {
@@ -353,6 +348,10 @@
     line-height: 1.38;
     font-weight: 700;
     letter-spacing: -0.1rem;
+}
+
+.team-wrap .team-members .left img {
+    width: 100%;
 }
 
 .team-wrap .team-members .right .content p span {
@@ -668,37 +667,38 @@
     .aboutBanner .shapes {
         width: 667px;
     }
-        .about-image-banner .image-wrap::before {
-            padding-bottom: 46.25%;
-        }
-        .about-image-banner .lets .left h2 {
-            font-size: 2.6rem;
-        }
-        .about-image-banner .lets .left p {
-            line-height: 1.2;
-        }
-        .team-wrap .team-members .right .content p {
-            font-size: calc(42px - 20%);
-        }
-        .team-wrap .team-members .right {
-            width: 47%;
-            padding-left: 40px;
-        }
+    .about-image-banner .image-wrap::before {
+        padding-bottom: 46.25%;
     }
-    @media (min-width:1200px) and (max-width:1366px) {
-        .aboutBanner h1 {
-            font-size: 60px;
-        }
-        .about-image-banner .image-wrap::before {
-            padding-bottom: 46.25%;
-        }
-        .about-image-banner .lets .left h2 {
-            font-size: 2.6rem;
-        }
-        .about-image-banner .lets .left p {
-            line-height: 1.2;
-        }
-        .team-wrap .team-members .right .content p {
-            font-size: calc(42px - 20%);
-        }
+    .about-image-banner .lets .left h2 {
+        font-size: 2.6rem;
     }
+    .about-image-banner .lets .left p {
+        line-height: 1.2;
+    }
+    .team-wrap .team-members .right .content p {
+        font-size: calc(42px - 20%);
+    }
+    .team-wrap .team-members .right {
+        width: 47%;
+        padding-left: 40px;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1366px) {
+    .aboutBanner h1 {
+        font-size: 60px;
+    }
+    .about-image-banner .image-wrap::before {
+        padding-bottom: 46.25%;
+    }
+    .about-image-banner .lets .left h2 {
+        font-size: 2.6rem;
+    }
+    .about-image-banner .lets .left p {
+        line-height: 1.2;
+    }
+    .team-wrap .team-members .right .content p {
+        font-size: calc(42px - 20%);
+    }
+}

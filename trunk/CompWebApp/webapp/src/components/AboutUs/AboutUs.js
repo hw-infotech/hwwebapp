@@ -43,32 +43,12 @@ class AboutUsContent extends Component {
                           <div class="line">
                             <img src="assets/img/yellow-line.svg" alt=""/>
                             </div>
-                          {/* <div class="designation">
-                            <h4>Ravinder - Gurpreet</h4>
-                            <p>CTO</p>
-                            </div> */}
+                         
                     </div>     
                </div>
-            <div className="left aos-init aos-animate" data-aos="fade-up">
-                <ul className="circle-container fourth">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    </ul>
-               </div>
-               <ul className="circle-container first">
-                <li id="vk" className=""><img src="assets/img/user-dummy.jpg" alt="line white" style={{width : '100%'}}/></li>
-                </ul>
-               
+                <div className="left aos-init aos-animate" data-aos="fade-up">
+                          <img src="assets/img/hw-team.png" alt="" />
+                </div>
                 </div>
             </section>
 
