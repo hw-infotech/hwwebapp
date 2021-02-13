@@ -1480,7 +1480,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding-top: 30px;
     }
     .Service_contentPanel h1 {
-        font-size: 54px;
+        font-size: 48px;
         font-weight: bold;
     }
     .servicesImageHalfBox {
@@ -1491,7 +1491,13 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         font-weight: 400;
     }
     .ProcessContent h3 {
-        font-size: 54px;
+        font-size: 42px;
+    }
+    .our-experts .container .left h2 {
+        font-size: 2rem;
+    }
+    .technologyStack .stacks .stackTitle h2 {
+        font-size: 36px;
     }
     .processContentPanel .processTitle {
         font-size: 30px;
@@ -1503,7 +1509,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         margin-bottom: 30px;
     }
     .formContent .bigText {
-        font-size: 72px;
+        font-size: 48px;
         line-height: 1.2;
     }
     .formContent .smallText {

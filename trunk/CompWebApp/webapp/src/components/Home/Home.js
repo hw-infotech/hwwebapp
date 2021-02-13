@@ -65,15 +65,15 @@ class HomeContent extends Component {
     <section className="servicesArea">
         <div className="container">
             <div className="row">
-                <div className="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-5">
                     <div className="serviceBox">
                         <p className="subTitle">Services</p>
                         <div className="divider"></div>
                         <h2 className="title"> We consult, develop and deliver premier software solutions.    </h2>
                     </div>
                 </div>
-                <div className="col-12 col-sm-12 col-md-1 col-lg-1"></div>
-                <div className="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-1"></div>
+                <div className="col-12 col-sm-12 col-md-12 col-lg-6">
                     <div className="row">
                          <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                             <div className="serviceBox">
