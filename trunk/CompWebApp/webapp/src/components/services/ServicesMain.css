@@ -1638,7 +1638,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
     }
 }
 
-@media (min-width:1200px) and (max-width:1366px) {
+@media (min-width:1200px) and (max-width:1440px) {
     .mainBanner_Services .bannerContent {
         min-height: 680px;
     }

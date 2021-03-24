@@ -16,7 +16,7 @@ class NavBar extends Component {
   }  
 
   _handleScroll() {
-    if (document.documentElement.scrollTop > 100) {
+    if (document.documentElement.scrollTop > 30) {
       this.setState({ isTop: true });
     } else {
       this.setState({ isTop: false });

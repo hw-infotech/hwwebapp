@@ -6,6 +6,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Footer_new from '../Layout/Footer_new';
+import { Link } from "react-router-dom";
 
 class HomeContent extends Component {
     state= {
@@ -37,11 +38,11 @@ class HomeContent extends Component {
         <ul class="clb-social-holder font-titles icons"> 
             <li class="clb-social-holder-follow">Follow Us</li>
             <li class="clb-social-holder-dash">–</li>
-            <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li>
-            <li><a target="_blank" href=" #" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
-            <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
+            {/* <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li> */}
+                    <li><a target="_blank" href="https://in.linkedin.com/company/hindwavesinfotech" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
+            {/* <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
             <li><a target="_blank" href="#" class="instagram"><i className="bx bxl-instagram"></i> </a></li>
-            <li><a target="_blank" href="#" class="skype"><i className="bx bxl-skype"></i></a></li>
+            <li><a target="_blank" href="#" class="skype"><i className="bx bxl-skype"></i></a></li> */}
         </ul>
     </div>
     <section id="hero" className="d-flex align-items-center">
@@ -121,7 +122,28 @@ class HomeContent extends Component {
             margin={10}
             nav
          >
-            
+                    <div className="item">
+                        <div className="successStories royelblue">
+                            <div className="row">
+
+                                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div className="storiesContent">
+                                        <div className="title">Hawalebanon</div>
+                                        <div className="bigTitle">We makes it easy for businesses and marketing teams to manage your social account in a single place.
+                                </div>
+                                        <div className="actionBtn">
+                                            <a href="#" className="caseStudies">caseStudies</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div className="storiesImg">
+                                        <img src="assets/img/hawalebanon.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             <div className="item">
                 <div className="successStories yellow">
                     <div className="row">
@@ -185,7 +207,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div className="storiesImg">
-                            <img src="assets/img/telemedicianstories.png"/>
+                                        <img src="assets/img/telemedicine.png"/>
                             </div>
                         </div>
                     </div>
@@ -207,34 +229,13 @@ class HomeContent extends Component {
                         </div>
                         <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div className="storiesImg">
-                            <img src="assets/img/joinvet.png"/>
+                            <img src="assets/img/joinVet.png"/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="item">
-                <div className="successStories royelblue">
-                    <div className="row">
-                    
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesContent">
-                                <div className="title">Join Vet</div>
-                                <div className="bigTitle">We makes it easy for businesses and marketing teams to manage your social account in a single place.
-                                </div>
-                                <div className="actionBtn">
-                                    <a href="#" className="caseStudies">caseStudies</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesImg">
-                            <img src="assets/img/join-vet-mobile.png"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div className="item">
                 <div className="successStories skyblue">
                     <div className="row">
@@ -273,7 +274,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div className="storiesImg">
-                            <img src="assets/img/skycomm.png"/>
+                            <img src="assets/img/theSkyComm.png"/>
                             </div>
                         </div>
                     </div>
@@ -375,7 +376,7 @@ class HomeContent extends Component {
             <div className="container">
             <div className="capebilities_heading">
 
-                        <p className="subtitle">   Capabilities	        </p>
+                        <p className="subtitle">Capabilities </p>
                         <h2 className="title">
                         1000s of projects delivered successfully.<br/>
                         Over 100 Satisfied Clients.    </h2>
@@ -398,9 +399,9 @@ class HomeContent extends Component {
                     <div className="col-12 col-md-1 col-lg-1"></div>
                     <div className="col-12 col-md-5 col-lg-5">
                         <div className="collapseBox">
-                            <div className="playBtn">
+                            {/* <div className="playBtn">
                                 <button className="round-btn"><i class='bx bx-right-arrow'></i> </button>
-                            </div>
+                            </div> */}
                             <div class="collapseHeading">
                                 <h3 class="title">  Play Video We work in the fields of UI/UX design and art direction.    </h3>
                             </div>
@@ -571,8 +572,8 @@ class HomeContent extends Component {
                         </h4>
                     </div>
                     <div className="col-md-4 cta-btn-home">
-                        <a className="btn-register-header animation-on-hover clickcustomform">Schedule A Call
-                        </a>
+                            <Link to="/contact-us" className="btn-register-header animation-on-hover clickcustomform" >Contact Us</Link>
+                       
                     </div>
                     <h4>
                     </h4>
@@ -600,12 +601,13 @@ class HomeContent extends Component {
                                 <div className="carousel-item active">
                                     <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-9.jpg" />
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                  
                                                 </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                         Rob Sharma
@@ -625,12 +627,13 @@ class HomeContent extends Component {
                                 <div className="carousel-item">
                                 <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-10.jpg" />
-                                                </div>
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                    <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                                    </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                     Rob Sharma
@@ -650,12 +653,13 @@ class HomeContent extends Component {
                                 <div className="carousel-item">
                                 <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-2.jpg" />
-                                                </div>
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                    <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                                    </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                     Rob Sharma
@@ -674,12 +678,13 @@ class HomeContent extends Component {
                                 </div><div className="carousel-item">
                                 <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-10.jpg" />
-                                                </div>
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                    <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                                    </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                     Rob Sharma
@@ -699,12 +704,13 @@ class HomeContent extends Component {
                                 <div className="carousel-item">
                                 <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-2.jpg" />
-                                                </div>
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                    <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                                    </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                     Rob Sharma
@@ -851,11 +857,13 @@ class HomeContent extends Component {
                 <div className="companyAddress">
                         <div className="coporateOfficeHeading">Corporate Office</div>
                         <div className="coporateOffice__address">
-                            SCF 116-A, Phase-3 <br/>
-                            Industrial Area, Mohali
+                            E-237AA, <br/>
+                            2nd Floor,Continental Tower<br />
+                            Industrial Area, Sector 74, <br />
+                            SAS Nagar, Mohali, Punjab
                         </div>
                         <div className="coporateOffice__address">
-                        <strong>Phone:</strong> (0172) 4039142
+                                <strong>Phone:</strong> (0172) 5020206
                         </div>
                         {/* <div className="coporateOffice__address">
                         <strong> Mobile:</strong> +91 9877344996

@@ -128,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled .bg-light {
   background-color: transparent!important;
+  padding: 0;
 }
 
 #header .logo {
@@ -2449,6 +2450,16 @@ input:focus {
   }
   #hero h1 {
     font-size: 64px;
-    p0 line-height: 64px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:1367px) and (max-width:1440px) {
+  .navbar {
+    padding: 0px;
+  }
+  #hero h1 {
+    font-size: 64px;
+    line-height: 64px;
   }
 }
