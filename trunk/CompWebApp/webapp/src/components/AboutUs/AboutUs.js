@@ -61,7 +61,7 @@ class AboutUsContent extends Component {
                         <div className="row_one">
                             <div className="col-1">
                                 <div className="galleryImages medium">
-                                    <img src="assets/img/gallery-img-1.jpg"/>
+                                      <img src="assets/img/about-us-image1.png"/>
                                 </div>
                             </div>
                             <div className="col-2">
@@ -72,31 +72,31 @@ class AboutUsContent extends Component {
                             and when, because the <strong>experience matters.</strong>
                             </div>
                             <div className="galleryImages small">
-                                    <img src="assets/img/gallery-img-2.jpg"/>
+                                      <img src="assets/img/confrence_room.jpg"/>
                             </div>
                             </div>
                         </div>
                         <div className="row_two">
                         <div className="col-1">
                                 <div className="galleryImages small">
-                                    <img src="assets/img/gallery-img-1.jpg"/>
+                                      <img src="assets/img/reception.png"/>
                                 </div>
                             </div>
                             <div className="col-2">
                                 <div className="galleryImages medium">
-                                    <img src="assets/img/gallery-img-1.jpg"/>
+                                      <img src="assets/img/team-about.png" />
                                 </div>
                             </div>
                             <div className="col-3">
                                 <div className="galleryImages medium">
-                                    <img src="assets/img/gallery-img-2.jpg"/>
+                                    <img src="assets/img/stiker.png"/>
                                 </div>
                             </div>
                         </div>
                         <div className="row_three">
                         <div className="col-1">
                                 <div className="galleryImages large">
-                                    <img src="assets/img/gallery-img-3.jpg"/>
+                                    <img src="assets/img/dev_room.jpg"/>
                                 </div>
                             </div>
                         </div>
