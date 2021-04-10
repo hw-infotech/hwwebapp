@@ -28,6 +28,11 @@ class HomeContent extends Component {
             },
         },
     }
+
+    componentDidMount =() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }// this changes the scrolling behavior to "smooth"
+   
   render() {
 
 
@@ -201,7 +206,7 @@ class HomeContent extends Component {
                                 <div className="bigTitle">Virtual Care. Chat with your health team.
                                 </div>
                                 <div className="actionBtn">
-                                    <a href="#" className="caseStudies">caseStudies</a>
+                                    <Link to="../telemedician_case" className="caseStudies">caseStudies</Link>
                                 </div>
                             </div>
                         </div>

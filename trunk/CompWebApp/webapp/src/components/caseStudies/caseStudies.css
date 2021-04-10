@@ -1,0 +1,69 @@
+.caseStudies_Banner {
+    position: relative;
+    z-index: 0;
+    padding: 78px;
+    overflow: unset;
+    display: flex;
+    padding-bottom: 0;
+    margin-bottom: 80px;
+}
+
+.caseStudies_Banner .caseStudies_HalfBox {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+    right: 0;
+}
+
+.caseStudies_HalfBox.caseStudies_HalfBox:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #7c55a3e0;
+    content: "";
+    top: 0;
+}
+
+.caseStudies_Banner .contentBox {
+    width: 100%;
+    float: left;
+    position: relative;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 70px;
+    flex-direction: column;
+}
+
+.caseStudies_Banner .contentBox .storiesImg {
+    text-align: center!important;
+    justify-content: center!important;
+    align-items: center!important;
+    display: block;
+}
+
+.caseStudies_Banner .contentBox .storiesImg img {
+    max-width: 700px;
+    position: relative;
+    bottom: -152px;
+    right: 0;
+}
+
+.bannerContent {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.bannerContent h1 {
+    font-size: 75px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.caseStudies_AboutContent {}
+
+.caseStudies_AboutContent .caseStudies_About {}
+
+.caseStudies_AboutContent .caseStudies_About .title {}

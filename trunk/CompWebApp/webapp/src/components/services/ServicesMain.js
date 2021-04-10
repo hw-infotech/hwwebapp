@@ -27,6 +27,9 @@ class ServicesMain extends Component {
             },
         },
     }
+    componentDidMount = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }// this changes the scrolling behavior to "smooth"
     render() { 
         return (
             <>

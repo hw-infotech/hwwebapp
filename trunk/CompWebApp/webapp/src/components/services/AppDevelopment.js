@@ -8,6 +8,9 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 
 class AppDev extends Component {
+    componentDidMount = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }// this changes the scrolling behavior to "smooth"
     render() { 
         return (
             <>

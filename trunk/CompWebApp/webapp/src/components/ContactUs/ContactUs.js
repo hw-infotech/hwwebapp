@@ -5,6 +5,9 @@ import Footer_new from '../Layout/Footer_new';
 import '../ContactUs/ContactUs.css';
 
 class ContactUsContent extends Component {
+    componentDidMount = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }// this changes the scrolling behavior to "smooth"
   render() { 
       return (
     <div>
