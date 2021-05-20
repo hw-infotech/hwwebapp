@@ -37,8 +37,17 @@ class NavBar extends Component {
                 <li class="nav-item active">
                 <Link to="/">Home </Link>
                 </li>
-                <li class="nav-item">
-                <Link to="/services_main">Services</Link>
+                <li class="nav-item dropdown">
+                <Link to="/services_main" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</Link>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <Link class="dropdown-item" to="/AppDevelopment">App Development</Link>
+                  <Link class="dropdown-item" to="/WebDevelopment">Web Development</Link>
+                  <Link class="dropdown-item" to="/ux_ui_design">UI  UX Design</Link>
+                  <Link class="dropdown-item" to="/seo_testing">Seo</Link>
+                  <Link class="dropdown-item" to="/GraphicsDesign">Graphics Design</Link>
+                  
+                </div>
                 </li>
                 <li class="nav-item">
                 <Link to="/about-us">About Us</Link>

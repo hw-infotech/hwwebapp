@@ -62,8 +62,20 @@
     font-weight: 800;
 }
 
-.caseStudies_AboutContent {}
+.caseStudies_AboutContent {
+    width: 100%;
+    position: relative;
+}
 
-.caseStudies_AboutContent .caseStudies_About {}
+.caseStudies_AboutContent .caseStudies_About {
+    padding-bottom: 40px;
+}
 
-.caseStudies_AboutContent .caseStudies_About .title {}
+.caseStudies_AboutContent .caseStudies_About .title {
+    font-size: 30px;
+    margin-bottom: 14px;
+}
+
+.caseStudies_AboutContent .caseStudies_About .caseStudies_details {
+    font-size: 20px;
+}

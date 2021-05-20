@@ -41,10 +41,58 @@ class Telemedician extends Component {
                         <div className="caseStudies_About">
                             <div className="title">About</div>
                             <div className="caseStudies_details">
-                                Telemedician is a real healthcare application that serves the users with its highly impressive features and functionalities. There are several app products in which the Zillow splits, that includes:
+                                Telemedician is a real healthcare application that serves the users with its highly impressive features and functionalities. There are several app products in which the Zillow splits, that includes
                             </div>
-
                         </div>
+                        <div className="caseStudies_About">
+                            <div className="row">
+                                <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <div className="storiesImg">
+                                    <img src="assets/img/telemedicine.png" />
+                                </div>
+                                </div>
+                                <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                    <div className="caseStudies_details">
+                                       <b> Doctor and Dental–</b> This app is specially designed for tenants, from where the user can find out a dream-like apartment (Zillow-like app development) . Some parameters can help the user choose their apartment, including GEO-location services and various filters such as price range, size, amenities, even the schools that are located nearby
+                                    </div>
+                                    <div className="caseStudies_details">
+                                    <b>Dental Manager–</b> This application can also help the landlords. Here landlords can easily make a list of their property- as much as they can. One more opportunity given by the app is that landlords can verify their applicant honestly and perform a check of his credit score and criminal records.
+                                    </div>
+                                    <div className="caseStudies_details">
+                                    <b>Estimate– </b>this is a type of online service that can offer an approximation of any of the house, which is based on the publicly available info, such as comparing prices of houses based nearby in the neighborhood.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="caseStudies_About">
+                            <div className="title">Types of Real-Estate Apps:</div>
+                            <div className="caseStudies_details">
+                            You have to understand the type of app before you are hiring any real estate app development companies.
+                            </div>
+                            <div className="caseStudies_details">
+                            There are about two types of apps that depend on how they function when talking about real estate’s mobile app development. The first is the agency based app, and the other one is a third party app. Now, let’s see how this app functions.
+                            </div>
+                        </div>
+
+
+                        <div className="caseStudies_About">
+                        <div className="row">
+                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                             <div className="title">The Agency App</div>
+                                <div className="caseStudies_details">
+                                 Just like its name, the agency app belongs to a specific real estate agency. The agency app lists all the houses under their listing. With the help of agency apps, they can keep track of their business improvements, see how many clients are connected with their agency, and know about their demands. So, this is an improved tool for improvement and business management.
+                                </div>
+                            </div>
+                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div className="storiesImg">
+                                <img src="assets/img/telemedicine.png" />
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                     </div>
                 </section>
                 <section className="technologyStack">
