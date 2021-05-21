@@ -280,7 +280,7 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         display: block;
         width: 100%;
     }
- 9   .contact-form input[type=submit] {
+   .contact-form input[type=submit] {
         margin-top: 0px;
     }
     input[type=submit] {

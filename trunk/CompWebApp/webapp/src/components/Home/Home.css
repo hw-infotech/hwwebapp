@@ -105,11 +105,20 @@
 }
 
 .w-o-btn {
-    height: 40px;
-    line-height: 40px;
-    color: black;
-    font-weight: 700;
-    font-size: 20px;
+    height: 48px;
+    line-height: 48px;
+    color: #ef6922;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid #ef661e;
+    padding: 0 30px;
+    border-radius: 30px;
+    transition: all ease-in-out .5s;
+}
+.w-o-btn:hover {
+    color: #fff;
+    background: #ef661e;
+    text-decoration: none;
 }
 
 .servicesArea {
@@ -520,7 +529,7 @@
 }
 
 .dark-love-home {
-    background-color: #7239a7;
+    background-color: #0657ab;
     background-size: cover;
     padding-bottom: 70px;
 }
@@ -551,8 +560,8 @@
 .list-addon-home li {
     width: calc(25% - 30px);
     border-radius: 2.5px;
-    border: solid .5px #632b98!important;
-    background-color: #632b98;
+    border: solid .5px #1d3989!important;
+    background-color: #1d3989;
     padding-right: 15px;
     border-bottom: 5px solid #ffffff47!important;
     box-shadow: 0px 0px 47px 0px #49008e33;
@@ -626,8 +635,8 @@
     color: #fff!important;
     vertical-align: super;
     border-radius: 1.5px;
-    border: solid 1px #ea7424;
-    background-color: #e96d24;
+    border: solid 1px #35ac47;
+    background-color:  #35ac47;
     padding: 9px 20px 9px 47px;
     position: relative;
 }
@@ -815,7 +824,7 @@
     width: 100%;
     float: left;
     position: relative;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 300;
 }
 
@@ -1118,6 +1127,7 @@
 .address {
     position: relative;
     padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .address .dotImage {
@@ -1190,9 +1200,9 @@ section.stories {
 }
 
 .successStories {
-    margin: 0px 100px;
+    margin: 0px 0px;
     padding: 45px 80px;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 .storiesContent {
@@ -1245,7 +1255,8 @@ section.stories {
 
 .successStories.royelblue {
     color: #fff!important;
-    background-image: linear-gradient(139deg, #00006b, #881ae6);
+    /* background-image: linear-gradient(139deg, #00006b, #881ae6); */
+    background-color: #282254;
 }
 
 .successStories.royelblue .actionBtn .caseStudies {
@@ -1271,9 +1282,12 @@ section.stories {
 }
 
 .storiesImg img {
-    max-width: 100%;
     margin-left: auto;
     filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
+    width: auto!important;
+    max-width: 151%;
+    position: absolute;
+    right: -419px;
 }
 
 .actionBtn .caseStudies {

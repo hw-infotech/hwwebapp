@@ -654,12 +654,12 @@ section.ServiceMainBanners.webDevlopBox {
 }
 
 .Service_contentPanel h1 {
-    font-size: 72px;
+    font-size: 48px;
     font-weight: bold;
 }
 
 .Service_contentPanel p {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .technologyStack {
@@ -759,7 +759,7 @@ section.process {
 }
 
 .ProcessContent p {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .processSlider {
@@ -799,7 +799,7 @@ section.process {
 }
 
 .processContentPanel p {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -889,14 +889,14 @@ section.process {
 }
 
 section.formBox {
-    background: #815aa6;
+    background: #ececec52;
     padding: 100px 0;
 }
 
 section.formBox .form {
     padding: 50px;
     background: #ffff;
-    box-shadow: 0px 0px 66px 0px #4d286f;
+    box-shadow: 0px 0px 66px 0px #afaeae;
 }
 
 section.formBox .form .title {
@@ -950,10 +950,10 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
 }
 
 .formContent .bigText {
-    font-size: 82px;
+    font-size: 60px;
     font-weight: bold;
-    color: #fff;
-    line-height: 1;
+    color: #081222;
+    line-height: 1.2;
     margin-bottom: 30px;
 }
 
@@ -961,8 +961,8 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
     width: 100%;
     float: left;
     position: relative;
-    font-size: 30px;
-    color: #fff;
+    font-size: 24px;
+    color: #081222;
 }
 
 @media (min-width:320px) and (max-width:480px) {
@@ -1069,11 +1069,11 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding-top: 300px;
     }
     .Service_contentPanel h1 {
-        font-size: 42px;
+        font-size: 36px;
         font-weight: bold;
     }
     .Service_contentPanel p {
-        font-size: 18px;
+        font-size: 16px;
     }
     .servicesImageHalfBox {
         width: 100%;
@@ -1126,7 +1126,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         font-size: 42px;
     }
     .ProcessContent p {
-        font-size: 18px;
+        font-size: 14px;
     }
     .processSlider .webIcon {
         width: 100%;
@@ -1281,11 +1281,11 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding-top: 300px;
     }
     .Service_contentPanel h1 {
-        font-size: 42px;
+        font-size: 40px;
         font-weight: bold;
     }
     .Service_contentPanel p {
-        font-size: 18px;
+        font-size: 16px;
     }
     .servicesImageHalfBox {
         width: 100%;
@@ -1338,7 +1338,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         font-size: 42px;
     }
     .ProcessContent p {
-        font-size: 18px;
+        font-size: 14px;
     }
     .processSlider .webIcon {
         width: 100%;
@@ -1480,7 +1480,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding-top: 30px;
     }
     .Service_contentPanel h1 {
-        font-size: 48px;
+        font-size: 45px;
         font-weight: bold;
     }
     .servicesImageHalfBox {
@@ -1503,13 +1503,13 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         font-size: 30px;
     }
     .ProcessContent p {
-        font-size: 20px;
+        font-size: 14px;
     }
     .formBox {
         margin-bottom: 30px;
     }
     .formContent .bigText {
-        font-size: 48px;
+        font-size: 32px;
         line-height: 1.2;
     }
     .formContent .smallText {
@@ -1617,13 +1617,13 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         font-size: 30px;
     }
     .ProcessContent p {
-        font-size: 20px;
+        font-size: 14px;
     }
     .formBox {
         margin-bottom: 30px;
     }
     .formContent .bigText {
-        font-size: 72px;
+        font-size: 48px;
         line-height: 1.2;
     }
     .formContent .smallText {
@@ -1722,13 +1722,13 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         font-size: 30px;
     }
     .ProcessContent p {
-        font-size: 20px;
+        font-size: 14px;
     }
     .formBox {
         margin-bottom: 30px;
     }
     .formContent .bigText {
-        font-size: 72px;
+        font-size: 52px;
         line-height: 1.2;
     }
     .formContent .smallText {

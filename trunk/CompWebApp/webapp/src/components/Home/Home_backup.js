@@ -39,12 +39,13 @@ class HomeContent extends Component {
     return (
 <div>
 
-        <div className="underConstruction">
-            <div className="ConstructionContent">
-                <h1>Website Under Maintenance</h1>
-                <img ClassName="underCont" src="assets/img/website_under-construct.png" alt=""/>
-            </div>
-        </div>
+    <div className="underConstruction">
+    <div className="ConstructionContent">
+    <img src="assets/img/nestormind.png" width="250px"/>
+        <h1>Website Under Maintenance</h1>
+        <img className="underCont" src="assets/img/website_under-construct.png" alt=""/>
+    </div>
+    </div>
     <NavBar />
     <div class="clb-social">
         <ul class="clb-social-holder font-titles icons"> 

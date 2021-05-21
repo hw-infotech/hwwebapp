@@ -5,6 +5,7 @@ class Footer_new extends Component {
     render() {
       return (
               <section className="footerBox__Panel">
+                 <img src="assets/img/nestormind.png" width="250px"/>
               <div className="container">
                 <div className="footerContent">
             <div className="row">
@@ -101,8 +102,19 @@ class Footer_new extends Component {
          </div>
          <div class="bottomFooter">
             <div class="leftSec">
-            &copy; 2020 All Rights Reserved with <strong style={{textTransform: 'uppercase', fontSize:'14px'}}><span>Hindwaves Infotech (Pvt) Ltd.</span></strong>
+            &copy; 2021 All Rights Reserved with <strong style={{textTransform: 'uppercase', fontSize:'14px'}}><span>Nestormind (Pvt) Ltd.</span></strong>
             </div>
+            <div class="clb-social">
+        <ul class="clb-social-holder font-titles icons"> 
+            <li class="clb-social-holder-follow">Follow Us</li>
+            <li class="clb-social-holder-dash">–</li>
+            {/* <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li> */}
+                    <li><a target="_blank" href="https://in.linkedin.com/company/hindwavesinfotech" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
+            {/* <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
+            <li><a target="_blank" href="#" class="instagram"><i className="bx bxl-instagram"></i> </a></li>
+            <li><a target="_blank" href="#" class="skype"><i className="bx bxl-skype"></i></a></li> */}
+        </ul>
+    </div>
          </div>
          </div>
                 </section>
