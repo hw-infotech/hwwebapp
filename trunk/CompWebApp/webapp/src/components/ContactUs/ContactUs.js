@@ -90,7 +90,7 @@ class ContactUsContent extends Component {
                                     <img src="assets/img/contact-us1.png" alt="line white"/>
                             </div>
                 </div>
-                <p class="contact-hero--contact">Reach us out <a href="tel:+919877344996">+91 9877344996</a> OR <a href="mailto:hello@brucira.com">info@hindwaves.com</a></p>
+                <p class="contact-hero--contact">Reach us out <a href="tel:+919877344996"></a>  <a href="mailto:hello@brucira.com">info@hindwaves.com</a></p>
             </div>
             
         </section>
