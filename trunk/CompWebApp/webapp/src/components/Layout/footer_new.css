@@ -154,3 +154,23 @@
     justify-content: space-between;
     color: #fff;
 }
+
+
+.clb-social, .clb-scroll-top {
+    position: relative!important;
+    transition: none!important;
+    transform: rotate(
+1deg
+);
+}
+.clb-social-holder {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    list-style: none;
+}
+.clb-social-holder.icons li i {
+    transform: rotate(2deg);
+color:#fff;
+}
+

@@ -1203,6 +1203,7 @@ section.stories {
     margin: 0px 0px;
     padding: 45px 80px;
     border-radius: 0px;
+    overflow: hidden;
 }
 
 .storiesContent {
@@ -1217,11 +1218,13 @@ section.stories {
 }
 
 .storiesContent .title {
-    font-size: 30px;
+    font-size: 36px;
+    color: #fff;
 }
 
 .storiesContent .bigTitle {
     font-size: 44px;
+    color:#fff;
 }
 
 .actionBtn {
@@ -1265,7 +1268,7 @@ section.stories {
 }
 
 .successStories.skyblue {
-    background: #43bcf0;
+    background: #0c8a69;
 }
 
 .successStories.darkyellow {
@@ -1285,18 +1288,22 @@ section.stories {
     margin-left: auto;
     filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
     width: auto!important;
-    max-width: 151%;
+    max-width: 1100px;
     position: absolute;
     right: -419px;
+}
+.storiesImg.left img {
+    left: -320px!important;
+    right: auto;
 }
 
 .actionBtn .caseStudies {
     height: 50px;
     line-height: 50px;
     background: transparent;
-    border: 1px solid #303030;
+    border: 1px solid #fff;
     padding: 0 30px;
-    color: #303030;
+    color: #fff;
     font-size: 23px;
     font-weight: 500;
 }
@@ -1322,7 +1329,7 @@ section.stories .owl-theme .owl-dots .owl-dot span {
 
 section.stories .owl-theme .owl-dots .owl-dot.active span {
     display: block!important;
-    background: #815aa6;
+    background: #0c4c9d;
     width: 30px;
     transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
@@ -1430,6 +1437,18 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     li.clb-social-holder-dash {
         display: none;
     }
+    .storiesImg img {
+        margin-left: auto;
+        filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
+        width: auto!important;
+        max-width: 101%;
+        position: relative;
+        right: 0px;
+    }
+    .storiesImg.left img {
+        left: 0px!important;
+        right: auto;
+    }
 }
 
 @media (min-width:481px) and (max-width:767px) {
@@ -1510,6 +1529,18 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
         font-size: 30px;
         font-weight: 600;
     }
+    .storiesImg img {
+        margin-left: auto;
+        filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
+        width: auto!important;
+        max-width: 101%;
+        position: relative;
+        right: 0px;
+    }
+    .storiesImg.left img {
+        left: 0px!important;
+        right: auto;
+    }
 }
 
 @media (min-width:768px) and (max-width:991px) {
@@ -1588,6 +1619,14 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
         width: 160px!important;
     }
+    .storiesImg img {
+        margin-left: auto;
+        filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
+        width: auto!important;
+        max-width: 760px;
+        position: absolute;
+        right: -363px;
+    }
 }
 
 @media (min-width: 992px) and (max-width:1199px) {
@@ -1657,6 +1696,14 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
         right: -1rem;
         left: 0;
     }
+    .storiesImg img {
+        margin-left: auto;
+        filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
+        width: auto!important;
+        max-width: 844px;
+        position: absolute;
+        right: -363px;
+    }
 }
 
 @media (min-width:1200px) and (max-width:1366px) {
@@ -1722,14 +1769,30 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
         right: -1rem;
         left: 0;
     }
+    .storiesImg img {
+        margin-left: auto;
+        filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
+        width: auto!important;
+        max-width: 925px;
+        position: absolute;
+        right: -363px;
+    }
 }
 
 @media (min-width:1367px) and (max-width:1440px) {
     .storiesContent {
-        min-height: 376px;
+        min-height:538px;
     }
     .storiesContent .bigTitle {
         font-size: 36px;
+    }
+    .storiesImg img {
+        margin-left: auto;
+        filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
+        width: auto!important;
+        max-width: 925px;
+        position: absolute;
+        right: -363px;
     }
 }
 
@@ -1762,4 +1825,11 @@ img.underCont {
     font-weight: 900;
     color: #fc9d08;
     margin: 30px;
+}
+
+.successStories {
+    margin: 0px 0px;
+    padding: 45px 80px;
+    border-radius: 0px;
+    overflow: hidden;
 }

@@ -43,11 +43,14 @@
     border: 0;
     border-radius: 3.2rem;
     text-decoration: none;
-    background-color: #845ca6;
+    background-color: #045aae;
     font-weight: 600;
     text-transform: inherit;
 }
-
+.btn:hover {
+    color: #FFFFFF;
+    background-color: #04519c;
+}
 .about-image-banner {
     padding-top: 0;
 }

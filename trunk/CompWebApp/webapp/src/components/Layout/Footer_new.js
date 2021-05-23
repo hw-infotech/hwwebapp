@@ -108,7 +108,7 @@ class Footer_new extends Component {
         <ul class="clb-social-holder font-titles icons"> 
             <li class="clb-social-holder-follow">Follow Us</li>
             <li class="clb-social-holder-dash">–</li>
-            {/* <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li> */}
+           <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li> 
                     <li><a target="_blank" href="https://in.linkedin.com/company/hindwavesinfotech" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
             {/* <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
             <li><a target="_blank" href="#" class="instagram"><i className="bx bxl-instagram"></i> </a></li>

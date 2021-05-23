@@ -42,6 +42,7 @@ class HomeContent extends Component {
     
     <NavBar />
     
+    
     <section id="hero" className="d-flex align-items-center">
       <div className="container">
         <div className="row">
@@ -141,79 +142,34 @@ class HomeContent extends Component {
                             </div>
                         </div>
                     </div>
-            <div className="item">
-                <div className="successStories yellow">
-                    <div className="row">
-                    
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesContent">
-                                <div className="title">THE HEALTHY MUMMY</div>
-                                <div className="bigTitle">We re-engineered,
-                                    re-architected World’s
-                                    #1 Mum’s app scale to
-                                    2.0 Million users
-                                </div>
-                                <div className="actionBtn">
-                                    <a href="#" className="caseStudies">Case Studies</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesImg">
-                            <img src="assets/img/iphone_x.png"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="item">
-            <div className="successStories purple">
-                    <div className="row">
-                    
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesContent">
-                                <div className="title">Neoxcel</div>
-                                <div className="bigTitle">We present our unique, flexible and powerful suite of software to run your entire business on cloud.
-                                </div>
-                                <div className="actionBtn">
-                                    <a href="#" className="caseStudies">Case Studies</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesImg">
-                            <img src="assets/img/neoxcel.png"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="item">
-            <div className="successStories lightblue">
-                    <div className="row">
-                    
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesContent">
-                                <div className="title">Telemedician</div>
-                                <div className="bigTitle">Virtual Care. Chat with your health team.
-                                </div>
-                                <div className="actionBtn">
-                                    <Link to="../telemedician_case" className="caseStudies">Case Studies</Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesImg">
+
+                    <div className="item">
+                    <div className="successStories lightblue">
+                            <div className="row">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg left">
                                         <img src="assets/img/telemedicine.png"/>
                             </div>
                         </div>
+                                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div className="storiesContent">
+                                        <div className="title">Telemedician</div>
+                                        <div className="bigTitle">Virtual Care. Chat with your health team.
+                                        </div>
+                                        <div className="actionBtn">
+                                            <Link to="../telemedician_case" className="caseStudies">Case Studies</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div className="item">
+
+                    <div className="item">
                 <div className="successStories darkblue">
                     <div className="row">
-                    
+                        
                         <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div className="storiesContent">
                                 <div className="title">Join Vet</div>
@@ -225,13 +181,39 @@ class HomeContent extends Component {
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesImg">
+                            <div className="storiesImg ">
                             <img src="assets/img/joinVet.png"/>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
+        
+            <div className="item">
+            <div className="successStories purple">
+                    <div className="row">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg left">
+                            <img src="assets/img/neoxcel.png"/>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Neoxcel</div>
+                                <div className="bigTitle">We present our unique, flexible and powerful suite of software to run your entire business on cloud.
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">Case Studies</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
+            
             
             <div className="item">
                 <div className="successStories skyblue">
@@ -239,7 +221,7 @@ class HomeContent extends Component {
                     
                         <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div className="storiesContent">
-                                <div className="title">Mhamz</div>
+                                <div className="title">Founder Link</div>
                                 <div className="bigTitle">Task Project Design has been updated in project ECommerce by Admin
                                 </div>
                                 <div className="actionBtn">
@@ -249,7 +231,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div className="storiesImg">
-                            <img src="assets/img/mhamz.png"/>
+                            <img src="assets/img/founder-link.png"/>
                             </div>
                         </div>
                     </div>
@@ -258,7 +240,11 @@ class HomeContent extends Component {
             <div className="item">
                 <div className="successStories darkyellow">
                     <div className="row">
-                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg left">
+                            <img src="assets/img/theSkyComm.png"/>
+                            </div>
+                        </div>
                         <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div className="storiesContent">
                                 <div className="title">Skycomm</div>
@@ -269,11 +255,7 @@ class HomeContent extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div className="storiesImg">
-                            <img src="assets/img/theSkyComm.png"/>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
