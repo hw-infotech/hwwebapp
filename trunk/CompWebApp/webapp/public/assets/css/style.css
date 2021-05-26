@@ -2468,7 +2468,7 @@ input:focus {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff!important;
   text-decoration: none;
-  background-color: #8b61a9!important;
+  background-color: #ef661e!important;
 }
  .dropdown-menu {
   position: absolute;

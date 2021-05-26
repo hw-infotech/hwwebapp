@@ -18,9 +18,7 @@ class UIUX extends Component {
                 <NavBar />
 
                 <section className="ServiceMainBanners webDevlopBox">
-                    <div className="servicesImageHalfBox">
-                    <img src="assets/img/ui_ux_bg.jpg" alt=""/>
-                    </div>
+                    
                     <div className="container">
                         <div className="Service_contentPanel">
                             <small>UI UX Design</small>
@@ -28,6 +26,9 @@ class UIUX extends Component {
                             Where experience meets
                             innovation</h1>
                             <p>We understand that projects come in all shapes and sizes. As trusted partners, our team of experts are here as an extension of your working team to ensure that your projects are met on time and budget.</p>
+                        </div>
+                        <div className="servicesImageHalfBox">
+                            <img src="assets/img/ui-ux-banner.png" alt=""/>
                         </div>
                     </div>
                 </section>

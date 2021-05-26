@@ -16,9 +16,7 @@ class seoTest extends Component {
             <>
                 <NavBar />
                 <section className="ServiceMainBanners webDevlopBox">
-                    <div className="servicesImageHalfBox">
-                    <img src="assets/img/appdev_bgimg.jpg" alt=""/>
-                    </div>
+                    
                     <div className="container">
                         <div className="Service_contentPanel">
                          <small>SEO Testing</small>
@@ -27,6 +25,9 @@ class seoTest extends Component {
                             innovation</h1>
                             <p>We understand that projects come in all shapes and sizes. As trusted partners, our team of experts are here as an extension of your working team to ensure that your projects are met on time and budget.</p>
                         </div>
+                        <div className="servicesImageHalfBox">
+                             <img src="assets/img/seo-mainBanner.png" alt=""/>
+                    </div>
                     </div>
                 </section>
                 

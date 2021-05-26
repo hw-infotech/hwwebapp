@@ -603,20 +603,26 @@ section.banner-bottom-sec {
     box-shadow: 0px 0px 30px 0px #0071c157;
 }
 
+.technologyStack {
+    position: relative;
+    padding: 60px 0!important;
+}
 /* innnerservices_css */
 
 section.ServiceMainBanners.webDevlopBox {
     position: relative;
-    padding-top: 0px;
+    padding-top: 100px;
     min-height: 660px;
+    padding-bottom: 0px;
 }
 
 .servicesImageHalfBox {
-    width: 40%;
+    width: 50%;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     right: 0;
     height: 100%;
+    float: left;
 }
 
 .servicesImageHalfBox:before {
@@ -627,24 +633,26 @@ section.ServiceMainBanners.webDevlopBox {
     background: white;
     z-index: 1;
     bottom: 0;
+    display: none;
 }
 
 .servicesImageHalfBox img {
-    position: absolute;
+    position: relative;
     top: 0;
     height: 100%;
-    transform: translateX(-7%);
+    width: 100%;
 }
 
 .Service_contentPanel {
-    width: 100%;
+    width: 50%;
     max-width: 60%;
     height: 100%;
     display: flex;
-    min-height: 736px;
+    min-height: 600px;
     justify-content: center;
     flex-direction: column;
     padding-right: 50px;
+    float: left;
 }
 
 .Service_contentPanel small {
