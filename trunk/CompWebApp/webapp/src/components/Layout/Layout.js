@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route } from "react-router-dom";
+import { BrowserRouter, Route,Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import HomeContent from '../Home/Home';
 import AboutUsContent from '../AboutUs/AboutUs';
@@ -11,12 +11,14 @@ import UIUX from '../services/ux_ui_design.js';
 import seoTest from '../services/seo_testing.js';
 import graphicsD from '../services/GraphicsDesign.js';
 import Telemedician from '../caseStudies/Telemedician_case.js';
+import NotFound from '../Not-Found/NotFound.js';
 
 const hist = createBrowserHistory();
 export class Layout extends Component { 
     render() {
         return (
-            <Router history={hist}>
+            <BrowserRouter>
+                <Switch>
                 <Route exact path = "/" component = {HomeContent} />
                 <Route exact path = "/home" component = {HomeContent} />
                 <Route exact path = "/about-us" component = {AboutUsContent} />
@@ -28,7 +30,10 @@ export class Layout extends Component {
                 <Route exact path = "/seo_testing" component = {seoTest} />
                 <Route exact path = "/GraphicsDesign" component = {graphicsD} />
                 <Route exact path="/Telemedician_case" component={Telemedician} />
-            </Router>
+
+                <Route component = {NotFound} />
+            </Switch>
+        </BrowserRouter>
         )
     }
 }

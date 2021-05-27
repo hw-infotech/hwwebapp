@@ -1288,7 +1288,7 @@ section.stories {
     margin-left: auto;
     filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
     width: auto!important;
-    max-width: 1100px;
+    max-width: 1000px;
     position: absolute;
     right: -419px;
 }
@@ -1337,6 +1337,14 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 }
 
 @media (min-width:320px) and (max-width:480px) {
+    .underConstruction {
+        padding: 100px 20px!important;
+    }
+    .underConstruction .ConstructionContent h1 {
+        font-size: 35px!important;
+        margin: 18px 0!important;
+    }
+
     #hero {
         height: auto!important;
         text-align: center;
@@ -1452,6 +1460,14 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 }
 
 @media (min-width:481px) and (max-width:767px) {
+    .underConstruction {
+        padding: 100px 20px!important;
+    }
+    .underConstruction .ConstructionContent h1 {
+        font-size: 48px!important;
+        margin: 18px 0!important;
+    }
+
     #hero {
         height: auto!important;
         text-align: center;

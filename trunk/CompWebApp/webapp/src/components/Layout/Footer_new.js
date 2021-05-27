@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {  Component } from 'react';
+import { Link } from "react-router-dom";
 import './footer_new.css';
 
 class Footer_new extends Component {
@@ -54,7 +55,7 @@ class Footer_new extends Component {
                            <div className="content">
                               <ul>
                                  <li>
-                                    <a href="#">Virtual Reality</a>
+                                    <Link to="">Virtual Reality</Link>
                                  </li>
                                  <li>
                                     <a href="#">Augmented Reality</a>
