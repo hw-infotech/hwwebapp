@@ -12,6 +12,7 @@ import seoTest from '../services/seo_testing.js';
 import graphicsD from '../services/GraphicsDesign.js';
 import Telemedician from '../caseStudies/Telemedician_case.js';
 import NotFound from '../Not-Found/NotFound.js';
+import Career from '../Career/career.js';
 
 const hist = createBrowserHistory();
 export class Layout extends Component { 
@@ -30,6 +31,7 @@ export class Layout extends Component {
                 <Route exact path = "/seo_testing" component = {seoTest} />
                 <Route exact path = "/GraphicsDesign" component = {graphicsD} />
                 <Route exact path="/Telemedician_case" component={Telemedician} />
+                <Route exact path="/career" component={Career} />
 
                 <Route component = {NotFound} />
             </Switch>

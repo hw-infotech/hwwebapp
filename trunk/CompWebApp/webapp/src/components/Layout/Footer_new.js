@@ -82,7 +82,7 @@ class Footer_new extends Component {
                                     <a href="#">About us</a>
                                  </li>
                                  <li>
-                                    <a href="#">Career  </a>
+                                    <Link to="/career">Career  </Link>
                                  </li>
                                  <li>
                                     <a href="#">Partners    </a>
