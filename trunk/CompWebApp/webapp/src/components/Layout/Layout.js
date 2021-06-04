@@ -13,6 +13,7 @@ import graphicsD from '../services/GraphicsDesign.js';
 import Telemedician from '../caseStudies/Telemedician_case.js';
 import NotFound from '../Not-Found/NotFound.js';
 import Career from '../Career/career.js';
+import UploadCv from '../Career/uploadCv.js';
 
 const hist = createBrowserHistory();
 export class Layout extends Component { 
@@ -32,6 +33,7 @@ export class Layout extends Component {
                 <Route exact path = "/GraphicsDesign" component = {graphicsD} />
                 <Route exact path="/Telemedician_case" component={Telemedician} />
                 <Route exact path="/career" component={Career} />
+                <Route exact path="/uploadCv" component={UploadCv} />
 
                 <Route component = {NotFound} />
             </Switch>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import NavBar from '../Layout/Navbar';
 import Footer from '../Layout/Footer';
 import './career.css';
@@ -25,7 +26,7 @@ class Career extends Component {
                                 <p>Join a team of passionate digital technology experts who create progress every day, and take care of each other at every step of the professional journey.</p>
 
                                 <div class="appi-cta">
-                                    <a href="https://careers.appinventiv.com/" target="_blank">
+                                    <Link to="/uploadCv" target="_blank">
                                         <span class="text">View current openings
                                             <span class="arrow"><i><span>→</span></i>
                                         <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -35,7 +36,7 @@ class Career extends Component {
                                                 </svg>
                                         </span>
                                         </span>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

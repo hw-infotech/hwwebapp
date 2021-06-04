@@ -244,3 +244,81 @@
 .newsletter_right .appi-cta a, .newsletter_right .appi-cta button {
     padding: 17.5px 39px;
 }
+
+.uploadCvPanel {
+    width: 100%;
+    padding: 100px 0;
+    margin-top: 30px;
+}
+.uploadCvPanel .uploadBox {
+    width: 100%;
+    background: #ffffff;
+    padding: 80px;
+    box-shadow: 0px 0px 15px 0px #d6d6dd9c;
+    border-radius: 50px;
+}
+.uploadCvPanel .uploadBox .titleBox {
+    width: 100%;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: #0657aa;
+}
+.uploadCvPanel .uploadBox form {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+.uploadCvPanel .uploadBox form .input-form {
+    position: relative;
+}
+.uploadCvPanel .uploadBox form .input-form .upload.Cv {
+    z-index: 0;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 80px;
+    background: #f1751a;
+    width: 80px;
+    line-height: 75px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.uploadCvPanel .uploadBox form .input-form .upload.Cv img.outbox {
+    width: 46px;
+}
+.uploadCvPanel .uploadBox form .input-form input.form-control {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: 80px;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+.uploadCvPanel .uploadBox form .input-form.mh-100 {
+    min-height: 90px;
+    margin: 30px;
+}
+.uploadCvPanel .up-gra {
+    display: flex;
+    width: 100%;
+    background: #ffffff;
+    padding: 80px;
+    box-shadow: 0px 0px 15px 0px #d6d6dd9c;
+    border-radius: 50px;
+}
+
+.uploadCvPanel .uploadBox .fileName {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+}
