@@ -14,6 +14,8 @@ import Telemedician from '../caseStudies/Telemedician_case.js';
 import NotFound from '../Not-Found/NotFound.js';
 import Career from '../Career/career.js';
 import UploadCv from '../Career/uploadCv.js';
+import PrivacyPolicy from '../privacy-terms/privacyPolicy.js';
+import TermsCondition from '../privacy-terms/terms_Condition.js';
 
 const hist = createBrowserHistory();
 export class Layout extends Component { 
@@ -34,6 +36,8 @@ export class Layout extends Component {
                 <Route exact path="/Telemedician_case" component={Telemedician} />
                 <Route exact path="/career" component={Career} />
                 <Route exact path="/uploadCv" component={UploadCv} />
+                <Route exact path="/privacyPolicy" component={PrivacyPolicy} />
+                <Route exact path="/terms_Condition" component={TermsCondition} />
 
                 <Route component = {NotFound} />
             </Switch>

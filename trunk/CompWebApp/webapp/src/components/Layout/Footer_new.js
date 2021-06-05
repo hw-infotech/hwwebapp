@@ -85,13 +85,10 @@ class Footer_new extends Component {
                                     <Link to="/career">Career  </Link>
                                  </li>
                                  <li>
-                                    <a href="#">Partners    </a>
+                                 <Link to="/terms_Condition">Terms of service</Link>
                                  </li>
                                  <li>
-                                    <a href="#">Terms of service</a>
-                                 </li>
-                                 <li>
-                                    <a href="#">Privacy policy</a>
+                                    <Link to="/privacyPolicy">Privacy policy</Link>
                                  </li>
                               </ul>
                            </div>
