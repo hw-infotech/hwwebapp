@@ -5,6 +5,7 @@ import Footer_new from '../Layout/Footer_new';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { Link } from "react-router-dom";
 
 
 class WebDev extends Component {
@@ -91,7 +92,7 @@ class WebDev extends Component {
                     <h2 className="light">Have an awesome <br/><strong>Web Application idea </strong> and not sure <br/>how to get started?</h2>
                     </div>
                     <div className="right">
-                    <a href="#" className="btn-light btn-icon">TALK TO OUR EXPERTS </a>
+                     <Link to="/contact-us" className="btn-light btn-icon">TALK TO OUR EXPERTS </Link>
                     </div>
                     </div>
                 </section>

@@ -254,7 +254,7 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         width: 100%;
     }
     .contact-hero h1 {
-        font-size: 30px;
+        font-size: 28px;
         line-height: 30px;
     }
     .contact-form .input-group p {

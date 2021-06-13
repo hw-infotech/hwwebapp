@@ -570,7 +570,10 @@
 
 @media (min-width:320px) and (max-width:480px) {
     .aboutBanner h1 {
-        font-size: 42px;
+        font-size: 28px;
+    }
+    .btn{
+        font-size: 14px;
     }
     .about-image-banner .lets .left {
         width: 100%;
@@ -580,7 +583,14 @@
         margin-top: -2rem;
     }
     .about-image-banner .lets .left h2 {
-        font-size: 2.6rem;
+        font-size: 28px;
+    }
+    .team-wrap {
+        padding-top: 0px;
+    }
+    .team-wrap .team-members .left {
+        width: 100%;
+        padding-right: 0px;
     }
     .about-image-banner .lets .left p {
         font-size: 16px;
@@ -614,6 +624,11 @@
     }
     .team-wrap .team-members .right .content p {
         font-size: calc(30px - 20%);
+        font-weight: 400;
+    }
+    .site-footer .project-in-mind p.light {
+        font-size: 28px;
+        margin-right: 0;
     }
     .circle-container.fourth {
         top: 0;

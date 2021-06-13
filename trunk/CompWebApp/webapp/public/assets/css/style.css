@@ -2502,6 +2502,7 @@ input:focus {
   .navbar {
     padding: 0px;
   }
+  
 }
 
 @media (min-width:1200px) and (max-width:1366px) {

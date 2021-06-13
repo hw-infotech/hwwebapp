@@ -938,7 +938,7 @@ section.formBox .form .input-filed .getintouch {
     width: 100%;
     margin-top: 26px;
     border-radius: 0;
-    background: #815aa6;
+    background: #bb490d;
     border: 0;
     color: #fff;
 }
@@ -974,6 +974,12 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
 }
 
 @media (min-width:320px) and (max-width:480px) {
+
+    a.btn-light.btn-icon {
+        font-size: 16px;
+    }
+
+
     .bannerContentText h1 {
         font-size: 42px;
     }
@@ -1077,8 +1083,9 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding-top: 300px;
     }
     .Service_contentPanel h1 {
-        font-size: 36px;
+        font-size: 28px;
         font-weight: bold;
+        margin: 20px 0;
     }
     .Service_contentPanel p {
         font-size: 16px;
@@ -1089,6 +1096,11 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         position: absolute;
         right: 0;
         height: 269px;
+        text-align: center;
+    }
+    .servicesImageHalfBox img {
+        height: 250px;
+        width: auto;
     }
     .servicesImageHalfBox:before {
         height: 30px;
@@ -1099,7 +1111,13 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding: 0px 0;
     }
     .technologyStack .stacks .stackTitle h2 {
-        font-size: 30px;
+        font-size: 24px;
+    }
+    .technologyStack .stacks ul li .stackBox .stackTitle {
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 10px;
     }
     .technologyStack .stacks ul {
         text-align: center;
@@ -1120,7 +1138,8 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         width: 100%;
     }
     .our-experts .container .left h2 {
-        font-size: 2rem;
+        font-size: 28px;
+
     }
     .our-experts .container .right {
         width: auto;
@@ -1131,7 +1150,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding: 2rem 0 2rem;
     }
     .ProcessContent h3 {
-        font-size: 42px;
+        font-size: 28px;
     }
     .ProcessContent p {
         font-size: 14px;
@@ -1159,30 +1178,27 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         margin-top: 30px;
     }
     section.formBox .form .title {
-        font-size: 30px;
+        font-size: 28px;
     }
     .formContent .bigText {
-        font-size: 36px;
-        margin-bottom: 30px;
-        margin-top: 30px;
+        font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 0px;
     }
     .formContent .smallText {
         font-size: 18px;
-        color: #fff;
     }
     section.formBox .row {
         flex-direction: column-reverse;
     }
     section.formBox {
-        background: #815aa6;
+        background: #ffffff;
         padding: 0px 0 30px;
     }
     .services .servicesItem .owl-theme .owl-dots {
         width: 148px;
     }
-    .servicesImageHalfBox img {
-        height: 130%;
-    }
+    
 }
 
 @media (min-width:481px) and (max-width:767px) {
@@ -1301,6 +1317,11 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         position: absolute;
         right: 0;
         height: 269px;
+        text-align: center;
+    }
+    .servicesImageHalfBox img {
+        height: 250px;
+        width: auto;
     }
     .servicesImageHalfBox:before {
         height: 30px;
@@ -1392,9 +1413,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
     .services .servicesItem .owl-theme .owl-dots {
         width: 148px;
     }
-    .servicesImageHalfBox img {
-        height: 130%;
-    }
+   
 }
 
 @media (min-width:768px) and (max-width:991px) {
