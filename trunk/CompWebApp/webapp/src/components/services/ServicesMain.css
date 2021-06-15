@@ -830,7 +830,7 @@ section.process {
 
 .processSlider .owl-theme .owl-dots .owl-dot.active span {
     display: block!important;
-    background: #815aa6;
+    background: #0557ab;
     width: 30px;
     transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
@@ -925,26 +925,26 @@ section.formBox .form .input-form .label {
 
 section.formBox .form .input-filed .formControl {
     width: 100%;
-    border: 1px solid #c5c5c5;
+    border: 1px solid #c5c5c5!important;
     min-height: 48px;
     position: relative;
 }
 
 section.formBox .form .input-filed .formControl:hover {
-    border: 1px solid #815aa6!important;
+    border: 1px solid #0557ab!important;
 }
 
 section.formBox .form .input-filed .getintouch {
     width: 100%;
     margin-top: 26px;
     border-radius: 0;
-    background: #bb490d;
+    background: #0657aa;
     border: 0;
     color: #fff;
 }
 
 section.formBox .form .input-filed .getintouch:hover {
-    background-color: #ea7424;
+    background-color: #01468b;
 }
 
 section.formBox .form .input-filed .getintouch:hover .formBox {

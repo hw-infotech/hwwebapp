@@ -2473,7 +2473,7 @@ input:focus {
  .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: auto;
+  /* left: auto; */
   z-index: 1000;
   display: none;
   float: left;

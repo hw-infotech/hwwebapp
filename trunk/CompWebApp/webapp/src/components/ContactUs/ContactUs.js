@@ -18,7 +18,7 @@ class ContactUsContent extends Component {
                     <div className="contact-hero__item">
                         <h1>Let’s create progress together</h1>
                         <div className="contact-form" id="mc_embed_signup">
-                            <form action="/thank-you/" method="post" name="contact-form">
+                            <form action="/thank-you/" method="post" name="contact-form" className="form">
                                 <input type="hidden" name="form-name" value="contact-form"/>
                                     <div className="input-group">
                                         <p>Services</p>
@@ -61,25 +61,31 @@ class ContactUsContent extends Component {
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className="input-group">
-                                        <div className="material-input">
-                                            <input className="required" id="mce-FNAME" type="text" name="full-name"  required="required"/>
-                                                <label className="control-label" for="mce-FNAME">Name</label>
+                                    <div className="input-form">
+                                        <div className="label">Name</div>
+                                        <div className="input-filed">
+                                            <input type="text" className="formControl" />
                                         </div>
-                                        <div className="material-input">
-                                            <input className="required email" id="mce-EMAIL" type="email" name="email"  required="required"/>
-                                                <label for="mce-EMAIL">Email</label>
+                                    </div>
+                                    <div className="input-form">
+                                        <div className="label">Email</div>
+                                        <div className="input-filed">
+                                            <input type="Email" className="formControl" />
                                         </div>
+                                    </div>
+                                    <div className="input-form">
+                                        <div className="label">Company Name</div>
+                                        <div className="input-filed">
+                                            <input type="text" className="formControl" />
                                         </div>
-                                        <div className="input-group material-input">
-                                            <input id="mce-CNAME" type="text" name="company-name" />
-                                            <label for="mce-CNAME">Company Name (optional)</label>
+                                    </div>
+                                    <div className="input-form">
+                                        <div className="label">Project Description</div>
+                                        <div className="input-filed">
+                                            <textarea type="text" rows="3" className="formControl" />
                                         </div>
-                                        <div className="input-group material-input">
-                                            <textarea className="required" id="mce-DESC" type="text" name="description"  required="required">
-                                            </textarea>
-                                                <label for="mce-DESC">Project Description</label>
-                                        </div>
+                                    </div>
+
                                         <div className="clear">
                                             <input className="button" id="mc-embedded-subscribe" type="submit" value="Submit"/>
                                         </div>

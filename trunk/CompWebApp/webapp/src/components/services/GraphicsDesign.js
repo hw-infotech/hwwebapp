@@ -42,41 +42,33 @@ class graphicsD extends Component {
                                 <li>
                                     <div className="stackBox">
                                         <div className="icon">
-                                        <img src="assets/img/brandLogo/angular-icon.svg" />
+                                        <img src="assets/img/photoshop-cc.svg" />
                                         </div>
-                                        <div className="stackTitle">Angular</div>
+                                        <div className="stackTitle"> Photoshop</div>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="stackBox">
                                         <div className="icon">
-                                        <img src="assets/img/brandLogo/nodejs-icon.svg" />
+                                        <img src="assets/img/adobe-illustrator-cc.svg" />
                                         </div>
-                                        <div className="stackTitle">Node.js</div>
+                                        <div className="stackTitle"> illustrator</div>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="stackBox">
                                         <div className="icon">
-                                        <img src="assets/img/brandLogo/react.svg" />
+                                        <img src="assets/img/lightroom-cc.svg" />
                                         </div>
-                                        <div className="stackTitle">React.js</div>
+                                        <div className="stackTitle">Lightroom</div>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="stackBox">
                                         <div className="icon">
-                                        <img src="assets/img/brandLogo/firebase.svg" />
+                                        <img src="assets/img/premiere-cc.svg" />
                                         </div>
-                                        <div className="stackTitle">Firebase</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="stackBox">
-                                        <div className="icon">
-                                        <img src="assets/img/brandLogo/vue-js-logo.svg" />
-                                        </div>
-                                        <div className="stackTitle">Vue.js</div>
+                                        <div className="stackTitle">Premiere</div>
                                     </div>
                                 </li>
                             </ul>
@@ -110,7 +102,7 @@ class graphicsD extends Component {
                                 <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
                                     <div className="processSlider">
                                         <div className="webIcon">
-                                        <img src="assets/img/graphic-design_graphics.png" />
+                                        <img src="assets/img/graphics-slider.svg" />
                                         </div>
                                         <OwlCarousel
                                                 className="owl-theme"
