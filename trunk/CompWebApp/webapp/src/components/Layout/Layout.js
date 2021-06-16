@@ -17,6 +17,7 @@ import UploadCv from '../Career/uploadCv.js';
 import PrivacyPolicy from '../privacy-terms/privacyPolicy.js';
 import TermsCondition from '../privacy-terms/terms_Condition.js';
 import BlogList from '../Blog/blogList.js';
+import Blogpost from '../Blog/blogpost.js';
 
 const hist = createBrowserHistory();
 export class Layout extends Component { 
@@ -40,6 +41,7 @@ export class Layout extends Component {
                 <Route exact path="/privacyPolicy" component={PrivacyPolicy} />
                 <Route exact path="/terms_Condition" component={TermsCondition} />
                 <Route exact path="/blogList" component={BlogList} />
+                <Route exact path="/blogpost" component={Blogpost} />
 
                 <Route component = {NotFound} />
             </Switch>

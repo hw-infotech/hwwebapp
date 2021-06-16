@@ -32,7 +32,7 @@ return (
                      <p> Digitalization, Digitization and Digital Transformation are the trending terms nowadays. But are these words similar or do they 
                          have any difference. What is the importance of these terms and how they are used?...
                      </p>
-                     <a class="link" href="#">[continue...]</a>
+                     <Link class="link" to="/blogpost">[continue...]</Link>
                   </div>
                   <div class="comments">
                      <ul>
@@ -58,7 +58,7 @@ return (
                      <p>Improving your Shopify SEO The retail industry has seen an enormous shift in recent years as more people address the web for 
                          his or her shopping needs. Between convenience (who doesn’t like shopping in their pajamas?) and necessity (a global pandemic...
                      </p>
-                     <a class="link" href="#">[continue...]</a>
+                     <Link class="link" to="/blogpost">[continue...]</Link>
                   </div>
                   <div class="comments">
                      <ul>

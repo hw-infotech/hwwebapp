@@ -254,3 +254,91 @@ ul.pagination li a {
     font-size: 15px;
     border-radius: 2px;
 }
+
+.subscriptionPlan {
+    width: 100%;
+    position: relative;
+    padding: 25px 30px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    border-top: 1px solid #d5d5d554;
+    border-bottom: 1px solid #d5d5d554;
+    box-shadow: 0 0 50px 0 #d5d5d5ad;
+    max-width: 627px;
+    margin: 0 auto!important;
+    left: auto;
+    right: auto;
+    display: flex;
+    margin-bottom: 50px!important;
+}
+.subscriptionPlan .subBox {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.subscriptionPlan .subBox .labelIcon {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.subscriptionPlan .subBox .labelIcon img {
+    width: 190px;
+}
+.subscriptionPlan .subBox .headings {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 10px 0;
+}
+.subscriptionPlan .subBox .headings h4 {
+    width: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: #0360b2;
+    margin-bottom: 20px;
+    font-family: 'Montserrat',sans-serif;
+}
+.subscriptionPlan .subBox .headings p {
+    font-size: 14px;
+}
+.newsletterPlan {
+    width: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+}
+.tnp-subscription-minimal {
+    width: 100%;
+    box-sizing: border-box;
+}
+.tnp-subscription-minimal form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.newsletterPlan .tnp-subscription-minimal input.tnp-email {
+    width: 100%;
+    max-width: 740px;
+    height: 60px;
+    text-align: center;
+    box-shadow: 0 0 50px 0 #d5d5d569;
+    font-size: 13px;
+    margin: 0 auto;
+    background: #fff;
+    margin-bottom: 30px;
+    border: 1px solid #d5d5d55e;
+}
+.newsletterPlan .tnp-subscription-minimal input.tnp-submit {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 50px;
+    font-size: 13px;
+    background: #44b345;
+    border-radius: 5px;
+    color: white;
+    border: 0;
+}
