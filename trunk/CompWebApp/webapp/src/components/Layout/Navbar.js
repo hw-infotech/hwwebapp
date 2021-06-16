@@ -53,7 +53,7 @@ class NavBar extends Component {
                 <Link to="/about-us">About Us</Link>
                 </li>
                 <li class="nav-item">
-                <Link to="/NotFound">Blog</Link>
+                <Link to="/blogList">Blog</Link>
                 </li>
                 <li class="nav-item">
                 <Link to="/contact-us">Contact Us</Link>
