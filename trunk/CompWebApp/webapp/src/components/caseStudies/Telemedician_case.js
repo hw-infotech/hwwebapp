@@ -47,8 +47,8 @@ class Telemedician extends Component {
                         <div className="caseStudies_About">
                             <div className="row">
                                 <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                <div className="storiesImg">
-                                    <img src="assets/img/telemedicine.png" />
+                                <div className="CaseStoriesImg">
+                                    <img className="w-100" src="assets/img/telemedicine.png" />
                                 </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -85,7 +85,7 @@ class Telemedician extends Component {
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                            <div className="storiesImg">
+                            <div className="CaseStoriesImg">
                                 <img src="assets/img/telemedicine.png" />
                             </div>
                             </div>
