@@ -1417,6 +1417,14 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
 }
 
 @media (min-width:768px) and (max-width:991px) {
+
+    section.ServiceMainBanners.webDevlopBox {
+        position: relative;
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 0px;
+    }
+
     .mainBanner_Services .bannerContent {
         min-height: 680px;
     }
@@ -1502,35 +1510,50 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
     .banner-bottom-sec {
         padding: 30px 0;
     }
-    .footerBox__Panel {
-        padding-bottom: 0px;
-        padding-top: 30px;
-    }
+   
     .Service_contentPanel h1 {
-        font-size: 45px;
-        font-weight: bold;
+        font-size: 30px;
+        font-weight: 500;
+        margin: 10px 0;
+        line-height: 34px;
     }
     .servicesImageHalfBox {
-        height: 97%;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
     .processContentPanel p {
         font-size: 18px;
         font-weight: 400;
     }
     .ProcessContent h3 {
-        font-size: 42px;
+        font-size: 30px;
     }
     .our-experts .container .left h2 {
         font-size: 2rem;
     }
     .technologyStack .stacks .stackTitle h2 {
-        font-size: 36px;
+        font-size: 24px;
+    }
+    .technologyStack .stacks ul li .stackBox .icon {
+        width: 7rem;
+    }
+    .technologyStack .stacks ul li {
+        padding: 10px;
+    }
+    .technologyStack .stacks ul li .stackBox .stackTitle {
+        font-size: 16px;
     }
     .processContentPanel .processTitle {
-        font-size: 30px;
+        font-size: 24px;
     }
-    .ProcessContent p {
+    .processContentPanel p {
         font-size: 14px;
+        font-weight: 400;
+    }
+    .processContentPanel .number {
+        font-size: 30px;
     }
     .formBox {
         margin-bottom: 30px;
@@ -1543,23 +1566,34 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         font-size: 24px;
     }
     .formBox .form .title {
-        font-size: 30px!important;
-        margin-bottom: 0px;
-    }
+    font-size: 24px!important;
+    margin-bottom: 0px;
+}
     .formBox .form {
         padding: 30px!important;
+        box-shadow: 0px 0px 66px 0px #afaeae1f!important;
     }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
+    section.ServiceMainBanners.webDevlopBox {
+        position: relative;
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 0px;
+    }
+
     .mainBanner_Services .bannerContent {
         min-height: 680px;
+    }
+    .bannerService {
+        padding: 0px 10px;
     }
     section.mainBanner_Services {
         padding: 80px 0;
     }
     .bannerContentText h1 {
-        font-size: 64px;
+        font-size: 48px;
     }
     .bannerService .box-wrap:nth-child(2n+2) {
         margin-top: 1rem;
@@ -1568,7 +1602,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding-left: 0px;
     }
     .bannerService .box-wrap .box {
-        width: 10rem;
+        width: 9rem;
     }
     .bannerService .box-wrap .box img {
         width: 110px;
@@ -1585,8 +1619,13 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         width: 100%;
         position: relative;
         height: 525px;
-        max-width: 425px;
-        right: 45px;
+        max-width: 420px;
+        right: 20px;
+    }
+    .contentPanel .whatWeDo_img img {
+        width: 100%;
+        position: absolute;
+        transform: translate(46px, 0%);
     }
     .contentPanel .whatWeDo h2 {
         font-size: 60px;
@@ -1596,72 +1635,100 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         margin-bottom: 15px;
     }
     .how_It_Work_Content .heading {
-        font-size: 50px;
-        font-size: 48px;
-    }
-    .how_It_Work_Content .heading:before {
-        background: #63af6d;
-        top: 77%;
-        left: 123px;
-    }
-    .howItWork .process {
-        padding: 60px 0;
-    }
-    .howItWork .process ul li .contentOfProcess .SubTileContent {
-        font-size: 18px;
-    }
-    .howItWork .process ul li .contentOfProcess .title strong {
-        font-size: 36px;
-    }
-    .howItWork .process ul li .contentOfProcess .icon {
-        top: 0px;
+        font-size: 42px;
     }
     .howItWork .process ul li .contentOfProcess {
-        min-height: 215px;
+        display: block;
+        min-height: 300px;
+    }
+    .howItWork .process ul li .contentOfProcess .SubTileContent {
+        font-size: 15px;
+        position: relative;
+        top: -32px;
+    }
+    .howItWork .process ul li .contentOfProcess .title strong {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .howItWork .process ul li .contentOfProcess .title {
+        font-size: 24px;
+        position: relative;
+        top: -54px;
+        left: 23px;
+    }
+    .howItWork .process ul li .contentOfProcess .icon {
+        width: 60px!important;
+        height: 60px;
+        min-width: 60px;
+        top: 0px;
+    }
+    .howItWork .process ul li+li:before {
+        left: 28px;
     }
     .banner-bottom-sec {
         padding: 30px 0;
     }
-    .footerBox__Panel {
-        padding-bottom: 0px;
-        padding-top: 30px;
-    }
+   
     .Service_contentPanel h1 {
-        font-size: 54px;
-        font-weight: bold;
+        font-size: 36px;
+        margin: 10px 0;
+        line-height: 50px;
     }
     .servicesImageHalfBox {
-        height: 97%;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
     .processContentPanel p {
         font-size: 18px;
         font-weight: 400;
     }
     .ProcessContent h3 {
-        font-size: 54px;
-    }
-    .processContentPanel .processTitle {
         font-size: 30px;
     }
-    .ProcessContent p {
+    .our-experts .container .left h2 {
+        font-size: 2rem;
+    }
+    .technologyStack .stacks .stackTitle h2 {
+        font-size: 24px;
+    }
+    .technologyStack .stacks ul li .stackBox .icon {
+        width: 7rem;
+    }
+    .technologyStack .stacks ul li {
+        padding: 10px;
+    }
+    .technologyStack .stacks ul li .stackBox .stackTitle {
+        font-size: 16px;
+    }
+    .processContentPanel .processTitle {
+        font-size: 24px;
+    }
+    .processContentPanel p {
         font-size: 14px;
+        font-weight: 400;
+    }
+    .processContentPanel .number {
+        font-size: 30px;
     }
     .formBox {
         margin-bottom: 30px;
     }
     .formContent .bigText {
-        font-size: 48px;
+        font-size: 32px;
         line-height: 1.2;
     }
     .formContent .smallText {
         font-size: 24px;
     }
     .formBox .form .title {
-        font-size: 30px!important;
-        margin-bottom: 0px;
-    }
+    font-size: 24px!important;
+    margin-bottom: 0px;
+}
     .formBox .form {
         padding: 30px!important;
+        box-shadow: 0px 0px 66px 0px #afaeae1f!important;
     }
 }
 
@@ -1729,43 +1796,68 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
     }
     .footerBox__Panel {
         padding-bottom: 0px;
-        padding-top: 30px;
+        padding-top: 50px;
     }
+    
     .Service_contentPanel h1 {
-        font-size: 54px;
-        font-weight: bold;
+        font-size: 36px;
+        margin: 10px 0;
+        line-height: 50px;
     }
     .servicesImageHalfBox {
-        height: 97%;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
     .processContentPanel p {
         font-size: 18px;
         font-weight: 400;
     }
     .ProcessContent h3 {
-        font-size: 54px;
-    }
-    .processContentPanel .processTitle {
         font-size: 30px;
     }
-    .ProcessContent p {
+    .our-experts .container .left h2 {
+        font-size: 2rem;
+    }
+    .technologyStack .stacks .stackTitle h2 {
+        font-size: 24px;
+    }
+    .technologyStack .stacks ul li .stackBox .icon {
+        width: 7rem;
+    }
+    .technologyStack .stacks ul li {
+        padding: 10px;
+    }
+    .technologyStack .stacks ul li .stackBox .stackTitle {
+        font-size: 16px;
+    }
+    .processContentPanel .processTitle {
+        font-size: 24px;
+    }
+    .processContentPanel p {
         font-size: 14px;
+        font-weight: 400;
+    }
+    .processContentPanel .number {
+        font-size: 30px;
     }
     .formBox {
         margin-bottom: 30px;
     }
     .formContent .bigText {
-        font-size: 52px;
+        font-size: 32px;
         line-height: 1.2;
     }
     .formContent .smallText {
         font-size: 24px;
     }
     .formBox .form .title {
-        font-size: 30px!important;
-        margin-bottom: 0px;
-    }
+    font-size: 24px!important;
+    margin-bottom: 0px;
+}
     .formBox .form {
         padding: 30px!important;
+        box-shadow: 0px 0px 66px 0px #afaeae1f!important;
     }
 }

@@ -206,3 +206,99 @@ color:#fff;
         letter-spacing: 0px;
     }
 }
+
+
+
+@media (min-width:320px) and (max-width:575px) {
+    .footerBox__Panel {
+        padding-bottom: 0px;
+        padding-top: 50px;
+    }
+    .footerContent .companyLinsk h4 {
+        font-size: 18px;
+    }
+    .footerContent .companyLinsk .content p {
+        font-size: 14px;
+    }
+    .footerContent .companyLinsk .content ul li a {
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+}
+
+
+@media (min-width:576px) and (max-width:680px) {
+    .footerBox__Panel {
+        padding-bottom: 0px;
+        padding-top: 50px;
+    }
+    .footerContent .companyLinsk h4 {
+        font-size: 18px;
+    }
+    .footerContent .companyLinsk .content p {
+        font-size: 14px;
+    }
+    .footerContent .companyLinsk .content ul li a {
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width:681px) and (max-width:767px) {
+    .footerBox__Panel {
+        padding-bottom: 0px;
+        padding-top: 50px;
+    }
+    .footerContent .companyLinsk h4 {
+        font-size: 18px;
+    }
+    .footerContent .companyLinsk .content p {
+        font-size: 14px;
+    }
+    .footerContent .companyLinsk .content ul li a {
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+}
+
+
+
+@media (min-width:768px) and (max-width:991px) {
+    .footerBox__Panel {
+        padding-bottom: 0px;
+        padding-top: 50px;
+    }
+    .footerContent .companyLinsk h4 {
+        font-size: 18px;
+    }
+    .footerContent .companyLinsk .content p {
+        font-size: 14px;
+    }
+    .footerContent .companyLinsk .content ul li a {
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+}
+
+
+@media (min-width:992px) and (max-width:1199px) {
+    .footerBox__Panel {
+        padding-bottom: 0px;
+        padding-top: 50px;
+    }
+    .footerContent .companyLinsk h4 {
+        font-size: 18px;
+    }
+    .footerContent .companyLinsk .content p {
+        font-size: 14px;
+    }
+    .footerContent .companyLinsk .content ul li a {
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+}
