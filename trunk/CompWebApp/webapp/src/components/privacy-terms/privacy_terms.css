@@ -81,3 +81,39 @@
     position: relative;
     margin-bottom: 10px;
 }
+
+
+@media(min-width:320px) and (max-width:480px){
+    .conditionsBanner .about-content .heading {
+        font-size: 30px;
+    }
+    .mantras .mantra-top .mantra-title {
+        font-size: 24px;
+    }
+}
+
+@media(min-width:481px) and (max-width:767px){
+    .conditionsBanner .about-content .heading {
+        font-size: 36px;
+    }
+    .mantras .mantra-top .mantra-title {
+        font-size: 24px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px){
+    .conditionsBanner .about-content .heading {
+        font-size: 42px;
+    }
+    .mantras .mantra-top .mantra-title {
+        font-size: 28px;
+    }
+}
+@media(min-width:992px) and (max-width:1440px){
+    .conditionsBanner .about-content .heading {
+        font-size: 46px;
+    }
+    .mantras .mantra-top .mantra-title {
+        font-size: 30px;
+    }
+}

@@ -3,11 +3,12 @@
     padding: 60px 0;
     background: #103d7d;
     margin-top: 85px;
+    position: relative;
 }
 .careerPanle  .careerImg {
     position: absolute;
     right: 0;
-    bottom: 58px;
+    bottom: 0px;
     width: 600px;
 }
 .careerPanle .careerBanner_Content {
@@ -19,7 +20,7 @@
     position: relative;
 }
 .careerPanle .careerBanner_Content .careerContent h1 {
-    font-size: 80px;
+    font-size:64px;
     font-weight: 700;
     color: #fff;
     margin-bottom: 40px;
@@ -334,12 +335,12 @@
     .careerPanle .careerImg {
         position: absolute;
         right: 0;
-        bottom: -19px;
+        bottom: 0px;
         max-width: 320px;
         width: 100%;
     }
     .careerPanle .careerBanner_Content .careerContent p {
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 40px;
         color: #fff;
     }
@@ -467,7 +468,7 @@
     .careerPanle .careerImg {
         position: absolute;
         right: 0;
-        bottom: -19px;
+        bottom:0px;
         max-width: 370px;
         width: 100%;
     }
@@ -601,7 +602,7 @@
     .careerPanle .careerImg {
         position: absolute;
         right: 0;
-        bottom: -77px;
+        bottom: 0px;
         max-width: 370px;
         width: 100%;
     }
@@ -733,7 +734,7 @@
     .careerPanle .careerImg {
         position: absolute;
         right: 0;
-        bottom: -77px;
+        bottom:0px;
         max-width: 370px;
         width: 100%;
     }
@@ -812,14 +813,14 @@
 
 @media (min-width:992px) and (max-width:1199px){
     .careerPanle .careerBanner_Content .careerContent h1 {
-        font-size: 60px;
+        font-size: 48px;
         line-height: 70px;
     }
     
     .careerPanle .careerImg {
         position: absolute;
         right: 0;
-        bottom: -77px;
+        bottom: 0px;
         max-width: 520px;
         width: 100%;
     }
@@ -857,7 +858,7 @@
     .careerPanle .careerImg {
         position: absolute;
         right: 0;
-        bottom: -162px;
+        bottom: 0px;
         max-width: 520px;
         width: 100%;
     }

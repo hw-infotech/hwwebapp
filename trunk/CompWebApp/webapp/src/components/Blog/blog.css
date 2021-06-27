@@ -342,3 +342,315 @@ ul.pagination li a {
     color: white;
     border: 0;
 }
+
+
+@media (min-width:320px) and (max-width:480px){
+    .whiteWrap {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+    }
+    .whiteWrap .leftPanel .post {
+        border-left: solid 0px #e1dfe0;
+    }
+    .whiteWrap .leftPanel {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .title {
+       
+        height: auto;
+        min-height: auto;
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .whiteWrap .leftPanel .post .title h1 {
+        color: #000000;
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0;
+        font-weight: 300;
+    }
+    .whiteWrap .leftPanel .post .date {
+        background: none repeat scroll 0 0 #0360b2;
+        border-radius: 5px;
+        float: left;
+        height: 30px;
+        width: 105px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    align-items: center;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        margin: 28px 0 0 0px;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content {
+        display: block;
+        margin: 25px 0 0 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content p {
+        font-size: 13px;
+    }
+    .searchForm{
+        display: none;
+    }
+    .whiteWrap .leftPanel .post .post_content h2 {
+        font-size: 20px;
+    }
+    .whiteWrap .leftPanel .post .post_content h4 {
+        font-size: 20px;
+    }
+    .whiteWrap .leftPanel .post .post_content h3 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:481px) and (max-width:575px){
+    .whiteWrap {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+    }
+    .whiteWrap .leftPanel .post {
+        border-left: solid 0px #e1dfe0;
+    }
+    .whiteWrap .leftPanel {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .title {
+       
+        height: auto;
+        min-height: auto;
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .whiteWrap .leftPanel .post .title h1 {
+        color: #000000;
+        font-size: 22px;
+        line-height: 28px;
+        margin: 0;
+        font-weight: 300;
+    }
+    .whiteWrap .leftPanel .post .date {
+        background: none repeat scroll 0 0 #0360b2;
+        border-radius: 5px;
+        float: left;
+        height: 30px;
+        width: 105px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    align-items: center;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        margin: 28px 0 0 0px;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content {
+        display: block;
+        margin: 25px 0 0 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content p {
+        font-size: 14px;
+    }
+    .searchForm{
+        display: none;
+    }
+    .whiteWrap .leftPanel .post .post_content h2 {
+        font-size: 20px;
+    }
+    .whiteWrap .leftPanel .post .post_content h4 {
+        font-size: 20px;
+    }
+    .whiteWrap .leftPanel .post .post_content h3 {
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width:576px) and (max-width:767px){
+    .whiteWrap {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+    }
+    .whiteWrap .leftPanel .post {
+        border-left: solid 0px #e1dfe0;
+    }
+    .whiteWrap .leftPanel {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .title {
+       
+        height: auto;
+        min-height: auto;
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .whiteWrap .leftPanel .post .title h1 {
+        color: #000000;
+        font-size: 25px;
+    line-height: 30px;
+        margin: 0;
+        font-weight: 300;
+    }
+    .whiteWrap .leftPanel .post .date {
+        background: none repeat scroll 0 0 #0360b2;
+        border-radius: 5px;
+        float: left;
+        height: 30px;
+        width: 105px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    align-items: center;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        margin: 28px 0 0 0px;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content {
+        display: block;
+        margin: 25px 0 0 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content p {
+        font-size: 16px;
+    }
+    .searchForm{
+        display: none;
+    }
+    .whiteWrap .leftPanel .post .post_content h2 {
+        font-size: 24px;
+    }
+    .whiteWrap .leftPanel .post .post_content h4 {
+        font-size: 23px;
+    }
+    .whiteWrap .leftPanel .post .post_content h3 {
+        font-size: 22px;
+    }
+}
+
+
+@media (min-width:768px) and (max-width:991px){
+    .whiteWrap {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+    }
+    .whiteWrap .leftPanel .post {
+        border-left: solid 0px #e1dfe0;
+    }
+    .whiteWrap .leftPanel {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .title {
+       
+        height: auto;
+        min-height: auto;
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .whiteWrap .leftPanel .post .title h1 {
+        color: #000000;
+        font-size: 28px;
+    line-height: 36px;
+        margin: 0;
+        font-weight: 300;
+    }
+    .whiteWrap .leftPanel .post .date {
+        background: none repeat scroll 0 0 #0360b2;
+        border-radius: 5px;
+        float: left;
+        height: 30px;
+        width: 105px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    align-items: center;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        margin: 28px 0 0 0px;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content {
+        display: block;
+        margin: 25px 0 0 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content p {
+        font-size: 16px;
+    }
+    .searchForm{
+        display: none;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px){
+    .whiteWrap .leftPanel .post .title h1 {
+        font-size: 30px;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        width: 545px;
+    }
+}

@@ -678,40 +678,110 @@
     }
 }
 
-@media (min-width:768px) and (max-width:1199px) {
+
+@media (min-width:481px) and (max-width:767px) {
     .aboutBanner h1 {
-        font-size: 60px;
+        font-size: 32px;
     }
     .aboutBanner .shapes {
-        width: 667px;
+        width: 100%;
+        max-width: 535px;
+        height: 371px;
+        top: 100px;
+        left: -37px;
     }
     .about-image-banner .image-wrap::before {
         padding-bottom: 46.25%;
     }
     .about-image-banner .lets .left h2 {
-        font-size: 2.6rem;
+        font-size: 36px;
+    }
+    
+    .about-image-banner .lets .left p {
+        line-height: 1.2;
+        font-size: 16px;
+    }
+    .team-wrap .team-members {
+        display: inline-block;
+    }
+    .team-wrap .team-members .right .content p {
+        font-size: calc(33px - 20%);
+    }
+    .team-wrap .team-members .right {
+        width: 100%;
+        padding-left: 30px;
+    }
+    .team-wrap .team-members .left {
+        width: 100%;
+        padding-left: 30px;
+    }
+    .gallery .gallery_heading{
+        font-size: 36px;
+    }
+    .gallery .galleryBox .row_one .col-2 .headings {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .gallery .galleryBox .row_one .col-2 .headings strong {
+        font-weight: 700;
+    }
+    .site-footer .project-in-mind p.light {
+        font-size: 24px;
+        margin-right: 0;
+    }
+    
+}
+
+@media (min-width:768px) and (max-width:1199px) {
+    .aboutBanner h1 {
+        font-size: 42px;
+    }
+    .aboutBanner .shapes {
+        width: 100%;
+        max-width: 667px;
+    }
+    .about-image-banner .image-wrap::before {
+        padding-bottom: 46.25%;
+    }
+    .about-image-banner .lets .left h2 {
+        font-size: 36px;
     }
     .about-image-banner .lets .left p {
         line-height: 1.2;
     }
     .team-wrap .team-members .right .content p {
-        font-size: calc(42px - 20%);
+        font-size: calc(33px - 20%);
     }
     .team-wrap .team-members .right {
         width: 47%;
         padding-left: 40px;
     }
+    .gallery .gallery_heading{
+        font-size: 36px;
+    }
+    .gallery .galleryBox .row_one .col-2 .headings {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .gallery .galleryBox .row_one .col-2 .headings strong {
+        font-weight: 700;
+    }
+    .site-footer .project-in-mind p.light {
+        font-size: 30px;
+        letter-spacing: -0.12rem;
+        font-weight: 300;
+    }
 }
 
 @media (min-width:1200px) and (max-width:1366px) {
     .aboutBanner h1 {
-        font-size: 60px;
+        font-size: 48px;
     }
     .about-image-banner .image-wrap::before {
         padding-bottom: 46.25%;
     }
     .about-image-banner .lets .left h2 {
-        font-size: 2.6rem;
+        font-size: 42px;
     }
     .about-image-banner .lets .left p {
         line-height: 1.2;
