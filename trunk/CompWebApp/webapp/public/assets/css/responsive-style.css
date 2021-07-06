@@ -40,6 +40,7 @@
     }
     .storiesContent .bigTitle {
         font-size: 24px!important;
+        margin-top: 18px;
     }
     .storiesContent {
         min-height: 320px!important;
@@ -130,6 +131,7 @@
     }
     .storiesContent .bigTitle {
         font-size: 24px!important;
+        margin-top: 18px;
     }
     .storiesContent {
         min-height: 320px!important;

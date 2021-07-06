@@ -60,6 +60,8 @@ section.mainBanner_Services {
 .bannerContentText h1 {
     font-size: 84px;
     font-weight: bold;
+    color: #323232!important;
+
 }
 
 .bannerContentText h1 strong {
@@ -577,6 +579,9 @@ section.banner-bottom-sec {
     font-size: 20px;
     font-weight: 500;
 }
+.howItWork .process ul li .contentOfProcess .SubTileContent p {
+    font-size: 16px;
+}
 
 .howItWork .process ul li .contentOfProcess .icon.Planing {
     background: #845ca6;
@@ -994,10 +999,28 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding-left: 0px;
     }
     .bannerService .box-wrap .box {
-        width: 8rem;
+        width: 120px;
     }
     .bannerService .box-wrap .box img {
-        width: 90px;
+        width: 75px;
+    }
+    .bannerService .box-wrap h4 {
+        font-size: 18px;
+    }
+    .bannerService .box-wrap .box::after {
+        width: 3.5rem;
+        height: 3.5rem;
+        top: 1rem;
+        right: 2rem;
+    }
+    section.mainBanner_Services {
+        padding: 99px 0 60px!important;
+    }
+    .services .servicesItem .item h4 {
+        font-size: 22px;
+    }
+    .services .servicesItem .item p {
+        font-size: 13px;
     }
     .bannerService {
         padding: 0 10px;
@@ -1017,10 +1040,10 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         width: calc(100% - 0px);
     }
     .contentPanel .whatWeDo h2 {
-        font-size: 42px;
+        font-size: 30px;
     }
     .contentPanel .whatWeDo p {
-        font-size: 18px;
+        font-size: 16px;
     }
     .contentPanel .whatWeDo_img {
         border-top-right-radius: 0px;
@@ -1033,8 +1056,21 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         position: relative;
         transform: translate(0px, 0%);
     }
+    .contentPanel .whatWeDo .actionBtn {
+        flex-direction: column;
+        align-items: inherit;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .contentPanel .whatWeDo .actionBtn .btn-outline{
+        margin-bottom: 10px;
+    }
     .how_It_Work_Content .heading {
-        font-size: 42px;
+        font-size: 30px;
+    }
+    .howItWork .process ul li .contentOfProcess .SubTileContent p {
+        font-size: 14px;
+        font-weight: 300;
     }
     .howItWork .process ul li .contentOfProcess {
         display: block;
@@ -1046,13 +1082,13 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         top: -32px;
     }
     .howItWork .process ul li .contentOfProcess .title strong {
-        font-size: 30px;
+        font-size: 20px;
         font-weight: bold;
     }
     .howItWork .process ul li .contentOfProcess .title {
-        font-size: 24px;
+        font-size: 18px;
         position: relative;
-        top: -54px;
+        top: -50px;
         left: 23px;
     }
     .howItWork .process ul li .contentOfProcess .icon {
@@ -1202,6 +1238,22 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
 }
 
 @media (min-width:481px) and (max-width:767px) {
+    .services .servicesItem .item h4 {
+        font-size: 20px;
+    }
+    .item_Services {
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .services .servicesItem .item p {
+        font-weight: 400;
+        min-height: 160px;
+        font-size: 14px;
+    }
+
+
+
+
     .bannerContentText h1 {
         font-size: 54px;
     }
@@ -1432,10 +1484,21 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         padding: 0px 10px;
     }
     section.mainBanner_Services {
-        padding: 80px 0;
+        padding: 80px 0 0;
     }
     .bannerContentText h1 {
-        font-size: 48px;
+        font-size: 48px!important;
+    }
+    .contentPanel .whatWeDo .actionBtn .btn-outline{
+        padding: 0 15px;
+    }
+    .contentPanel .whatWeDo .actionBtn .btn-fill{
+        padding: 0 15px;
+    }
+    .bannerContentText p {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
     }
     .bannerService .box-wrap:nth-child(2n+2) {
         margin-top: 1rem;
@@ -1470,10 +1533,10 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         transform: translate(46px, 0%);
     }
     .contentPanel .whatWeDo h2 {
-        font-size: 60px;
+        font-size:42px;
     }
     .contentPanel .whatWeDo p {
-        font-size: 21px;
+        font-size: 16px;
         margin-bottom: 15px;
     }
     .how_It_Work_Content .heading {
@@ -1481,7 +1544,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
     }
     .howItWork .process ul li .contentOfProcess {
         display: block;
-        min-height: 300px;
+        min-height: auto;
     }
     .howItWork .process ul li .contentOfProcess .SubTileContent {
         font-size: 15px;
@@ -1503,6 +1566,9 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
         height: 60px;
         min-width: 60px;
         top: 0px;
+    }
+    .howItWork .process {
+        padding: 30px 0 0;
     }
     .howItWork .process ul li+li:before {
         left: 28px;
@@ -1639,7 +1705,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
     }
     .howItWork .process ul li .contentOfProcess {
         display: block;
-        min-height: 300px;
+        min-height: auto;
     }
     .howItWork .process ul li .contentOfProcess .SubTileContent {
         font-size: 15px;

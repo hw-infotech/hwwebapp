@@ -871,9 +871,8 @@ class HomeContent extends Component {
                 <div className="companyAddress">
                         <div className="coporateOfficeHeading">Corporate Office</div>
                         <div className="coporateOffice__address">
-                            E-237AA, <br/>
-                            2nd Floor,Continental Tower<br />
-                            Industrial Area, Sector 74, <br />
+                            E-237AA, Continental Tower<br />
+                            Industrial Area 8B, Sector 74, <br />
                             SAS Nagar, Mohali, Punjab
                         </div>
                         <div className="coporateOffice__address">

@@ -9,17 +9,7 @@ class Footer_new extends Component {
                  <img src="assets/img/nestormind.png" width="250px"/>
               <div className="container">
                 <div className="footerContent">
-                <div class="clb-social">
-        <ul class="clb-social-holder font-titles icons"> 
-            <li class="clb-social-holder-follow">Follow Us</li>
-            <li class="clb-social-holder-dash">–</li>
-           <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li> 
-                    <li><a target="_blank" href="https://in.linkedin.com/company/hindwavesinfotech" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
-            {/* <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
-            <li><a target="_blank" href="#" class="instagram"><i className="bx bxl-instagram"></i> </a></li>
-            <li><a target="_blank" href="#" class="skype"><i className="bx bxl-skype"></i></a></li> */}
-        </ul>
-    </div>
+           
             <div className="row">
                <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                   <div className="companyLinsk">
@@ -27,6 +17,15 @@ class Footer_new extends Component {
                      <div className="content">
                         <p>We help new and established businesses to create their unique identity through our website design and development services. We are dedicated to offering brilliant and appealing software solution experiences that connect brands to their potential customers.
                         </p>
+                     </div>
+                     <div class="clb-social">
+                        <ul class="clb-social-holder font-titles icons"> 
+                           <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li> 
+                                    <li><a target="_blank" href="https://in.linkedin.com/company/hindwavesinfotech" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
+                              {/* <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
+                              <li><a target="_blank" href="#" class="instagram"><i className="bx bxl-instagram"></i> </a></li>
+                              <li><a target="_blank" href="#" class="skype"><i className="bx bxl-skype"></i></a></li> */}
+                        </ul>
                      </div>
                   </div>
                </div>
@@ -38,22 +37,19 @@ class Footer_new extends Component {
                            <div className="content">
                               <ul>
                                  <li>
-                                    <a href="#">Web Design</a>
+                                 <Link  to="/AppDevelopment">App Development</Link>
                                  </li>
                                  <li>
-                                    <a href="#">Web Development</a>
+                                 <Link  to="/WebDevelopment">Web Development</Link>
                                  </li>
                                  <li>
-                                    <a href="#">Data Visualizations</a>
+                                 <Link to="/ux_ui_design">UI  UX Design</Link>
                                  </li>
                                  <li>
-                                    <a href="#">Product Development</a>
+                                    <Link  to="/seo_testing">Seo</Link>
                                  </li>
                                  <li>
-                                    <a href="#">Product Design</a>
-                                 </li>
-                                 <li>
-                                    <a href="#">Graphics Design</a>
+                                 <Link  to="/GraphicsDesign">Graphics Design</Link>
                                  </li>
                               </ul>
                            </div>
@@ -90,7 +86,7 @@ class Footer_new extends Component {
                            <div className="content">
                               <ul>
                                  <li>
-                                    <a href="#">About us</a>
+                                    <Link to="/about-us">About us</Link>
                                  </li>
                                  <li>
                                     <Link to="/career">Career  </Link>
@@ -111,7 +107,7 @@ class Footer_new extends Component {
          </div>
          <div class="bottomFooter">
             <div class="leftSec">
-            &copy; 2021 All Rights Reserved with <strong style={{textTransform: 'uppercase', fontSize:'14px'}}><span>Nestormind (Pvt) Ltd.</span></strong>
+            &copy; 2021 All Rights Reserved
             </div>
        
          </div>

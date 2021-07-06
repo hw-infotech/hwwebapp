@@ -74,37 +74,49 @@ class HomeContent extends Component {
                 <div className="col-12 col-sm-12 col-md-12 col-lg-1"></div>
                 <div className="col-12 col-sm-12 col-md-12 col-lg-6">
                     <div className="row">
-                         <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                         <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                         <Link to="/services_main"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> Development </p>
                                 <div className="divider"></div>
                                 <h4 className="title"> Website & Mobile App Development    </h4>
                                 <p>We empower you to scale business via competent and client-focused web and mobile applications.</p>
+                               <img className="arrowIcon" src="https://img.icons8.com/ios-glyphs/30/000000/long-arrow-right.png"/>
                             </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                        <Link to="/services_main"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> DESIGN </p>
                                 <div className="divider"></div>
                                 <h4 className="title"> UX/UI Design and Development    </h4>
                                 <p>Usability over Complexity. Simple & Organized elements put together for interactive user experiences.</p>
+                                <img className="arrowIcon" src="https://img.icons8.com/ios-glyphs/30/000000/long-arrow-right.png"/>
                             </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                            <Link to="/services_main"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> JAVASCRIPT DEVELOPMENT </p>
                                 <div className="divider"></div>
                                 <h4 className="title">React, Vue, Svelte, Angular, and More  </h4>
                                 <p>Expertise in latest technologies like React, Vue.js, Laravel, Node.js, SASS, iOS, Android, Hydbrid Apps. .</p>
+                                <img className="arrowIcon" src="https://img.icons8.com/ios-glyphs/30/000000/long-arrow-right.png"/>
                             </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                        <Link to="/services_main"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> PRODUCT </p>
                                 <div className="divider"></div>
                                 <h4 className="title"> 24x7 Support & Maintenance  </h4>
                                 <p>Contact us anytime over Skype, Email, or Phone. Our support & maintenance team is available 24×7..</p>
+                                <img className="arrowIcon" src="https://img.icons8.com/ios-glyphs/30/000000/long-arrow-right.png"/>
                             </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -130,7 +142,7 @@ class HomeContent extends Component {
                                         <div className="bigTitle">We makes it easy for businesses and marketing teams to manage your social account in a single place.
                                 </div>
                                         <div className="actionBtn">
-                                            <a href="#" className="caseStudies">Case Studies</a>
+                                            <a href="#" className="caseStudies">Case Study</a>
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +169,7 @@ class HomeContent extends Component {
                                         <div className="bigTitle">Virtual Care. Chat with your health team.
                                         </div>
                                         <div className="actionBtn">
-                                            <Link to="../telemedician_case" className="caseStudies">Case Studies</Link>
+                                            <Link to="../telemedician_case" className="caseStudies">Case study</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -176,7 +188,7 @@ class HomeContent extends Component {
                                 <div className="bigTitle">We makes it easy for businesses and marketing teams to manage your social account in a single place.
                                 </div>
                                 <div className="actionBtn">
-                                    <a href="#" className="caseStudies">Case Studies</a>
+                                    <a href="#" className="caseStudies">Case Study</a>
                                 </div>
                             </div>
                         </div>
@@ -204,7 +216,7 @@ class HomeContent extends Component {
                                 <div className="bigTitle">We present our unique, flexible and powerful suite of software to run your entire business on cloud.
                                 </div>
                                 <div className="actionBtn">
-                                    <a href="#" className="caseStudies">Case Studies</a>
+                                    <a href="#" className="caseStudies">Case Study</a>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +237,7 @@ class HomeContent extends Component {
                                 <div className="bigTitle">Task Project Design has been updated in project ECommerce by Admin
                                 </div>
                                 <div className="actionBtn">
-                                    <a href="#" className="caseStudies">Case Studies</a>
+                                    <a href="#" className="caseStudies">Case Study</a>
                                 </div>
                             </div>
                         </div>
@@ -251,7 +263,7 @@ class HomeContent extends Component {
                                 <div className="bigTitle">Task Project Design has been updated in project ECommerce by Admin
                                 </div>
                                 <div className="actionBtn">
-                                    <a href="#" className="caseStudies">Case Studies</a>
+                                    <a href="#" className="caseStudies">Case Study</a>
                                 </div>
                             </div>
                         </div>
@@ -837,9 +849,8 @@ class HomeContent extends Component {
                 <div className="companyAddress">
                         <div className="coporateOfficeHeading">Corporate Office</div>
                         <div className="coporateOffice__address">
-                            E-237AA, <br/>
-                            2nd Floor,Continental Tower<br />
-                            Industrial Area, Sector 74, <br />
+                            E-237AA, Continental Tower<br />
+                            Industrial Area 8B, Sector 74, <br />
                             SAS Nagar, Mohali, Punjab
                         </div>
                         <div className="coporateOffice__address">

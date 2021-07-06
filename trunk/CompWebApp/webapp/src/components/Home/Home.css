@@ -124,7 +124,21 @@
 .servicesArea {
     background: rgba(136, 136, 136, 0.05);
 }
-
+.serviceRedirect{
+    padding: 15px;
+    border-radius: 10px;
+    transition: all ease .5s;
+}
+.serviceRedirect:hover {
+    background: #fff;
+    box-shadow: 0px 0px 45px 0px #d5d5d580;
+    transition: all ease .5s;
+    padding: 15px;
+    border-radius: 10px;
+}
+.serviceRedirect .arrowIcon {
+    float: right;
+}
 .servicesArea .serviceBox {
     width: 100%;
     float: left;
@@ -1098,6 +1112,7 @@
 
 .newsletter .newsletterContent .newsLetterForm .form-control:hover {
     border-bottom: 0px!important;
+    border: 0px!important;
 }
 
 .newsletter .newsletterContent .newsLetterForm .form-control::placeholder {
@@ -1118,6 +1133,9 @@
     box-shadow: 0px 0px 39px 0px #ffb62547;
     line-height: 80px;
     transition: all .2s ease;
+}
+.newsletter .newsletterContent .newsLetterForm .newsletterBtn:focus {
+    outline: none;
 }
 
 .newsletter .newsletterContent .newsLetterForm .newsletterBtn:hover {
@@ -1265,6 +1283,7 @@ section.stories {
 .successStories.royelblue .actionBtn .caseStudies {
     color: #fff;
     border-color: #fff;
+    border-radius: 5px;
 }
 
 .successStories.skyblue {
@@ -1306,6 +1325,7 @@ section.stories {
     color: #fff;
     font-size: 23px;
     font-weight: 500;
+    border-radius: 5px;
 }
 
 section.stories .owl-theme .owl-nav {
@@ -1371,6 +1391,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .dddl-inner .right-inner {
         width: 100%;
     }
+    .dddl-inner .left-inner p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0;
+    }
+    .dddl-inner .right-inner ul li .text h4 {
+        font-size: 20px;
+    }
+    .dddl-inner .right-inner ul li .text p {
+        font-size: 16px;
+    }
     .dddl-inner .left-inner {
         width: 100%;
         padding: 0 20px 5rem;
@@ -1380,6 +1411,10 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     }
     .dddl-inner .left-inner h3 {
         font-size: 30px;
+    }
+    .actionBtn .caseStudies {
+        border-radius: 5px;
+        font-size: 16px;
     }
     .newsletter .newsletterContent .newsLetterForm .form-control {
         height: 60px;
@@ -1414,6 +1449,9 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
         top: auto;
         bottom: 0;
         left: 0;
+    }
+    .address .addressConetnt .companyAddress .coporateOffice__address {
+        font-size: 16px;
     }
     .address .addressConetnt {
         min-height: 470px;
@@ -1783,7 +1821,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
         margin-left: auto;
         filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
         width: auto!important;
-        max-width: 844px;
+        max-width: 730px;
         position: absolute;
         right: -363px;
     }

@@ -42,8 +42,8 @@ class AboutUsContent extends Component {
             <div className="team-members">
             <div className="right">
                    <div className="content">
-                        <p>We have industry and <br/>technology <span>experts</span> to help <br/>you build the right solution to <br/>fulfill
-                          your business needs.</p>
+                        <h3>About Us.</h3>
+                          <p>In 2010, we embarked on a journey to create a unique and powerful statement of value to clients summed in three simple phrases – Business Impact Created, Predictability in Execution, and Unique Client Experiences. Since then, all aspects of Nestormind and its ecosystem have been shaped to deliver this value repetitively and consistently in every client setting. We offer full-scale software solutions for mobile and desktop that has already contributed to the success of many enterprises across the world and different industries. Our software development consists of three parts-Front-end, middleware, and Backend. We work on creating beautiful and attractive designs, implementing features and data resources to make apps more functional, and also helps to enhance security while dealing with the back-end phase. We have a pool of both experienced and creative minds, who have produced various applications with outstanding user experiences and value-adding to the customers. We offer Ux/UI design, Web and Mobile development, Quality Assurance, Service Integration, Maintenance, AI/ML Solutions, IOT Solutions, Blockchain, IT Consulting and other services to ensure a strong online presence for enterprises, boost sales, improve visibility and grow customer base.</p>
                           <div class="line">
                             <img src="assets/img/yellow-line.svg" alt=""/>
                             </div>
