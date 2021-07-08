@@ -16,7 +16,7 @@ class Footer extends Component {
                 Industrial Area, Mohali<br/><br/>
                 <strong>Phone:</strong> (0172) 4039142<br/> 
                 <strong>Mobile:</strong> +91 9877344996<br/>
-                <strong>Email:</strong> info@hindwaves.com<br/>
+                <strong>Email:</strong> info@nestormind.com<br/>
               </p>
             </div>
   
@@ -59,7 +59,7 @@ class Footer extends Component {
   
       <div className="container footer-bottom clearfix">
         <div className="copyright">
-          &copy; 2020 All Rights Reserved with <strong style={{textTransform: 'uppercase', fontSize:'14px'}}><span>Hindwaves Infotech (Pvt) Ltd.</span></strong>
+          &copy; 2020 All Rights Reserved with <strong style={{textTransform: 'uppercase', fontSize:'14px'}}><span>Nestormind Infotech (Pvt) Ltd.</span></strong>
         </div>
         <div className="credits">
           <div className="social-links">

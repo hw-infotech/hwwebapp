@@ -52,7 +52,7 @@ class HomeContent extends Component {
             <li class="clb-social-holder-follow">Follow Us</li>
             <li class="clb-social-holder-dash">–</li>
             {/* <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li> */}
-                    <li><a target="_blank" href="https://in.linkedin.com/company/hindwavesinfotech" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
+                    <li><a target="_blank" href="https://in.linkedin.com/company/nestormindinfotech" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
             {/* <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
             <li><a target="_blank" href="#" class="instagram"><i className="bx bxl-instagram"></i> </a></li>
             <li><a target="_blank" href="#" class="skype"><i className="bx bxl-skype"></i></a></li> */}
@@ -631,7 +631,7 @@ class HomeContent extends Component {
                                                     <div className="clientFeedback">
                                                     <img src="assets/img/quote-gray-index.svg" />
                                                     <br/>
-                                                        I just loved three things about Hindwaves – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
+                                                        I just loved three things about Nestormind – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
                                                     </div>
                                                 </div>
                                             </div>
@@ -657,7 +657,7 @@ class HomeContent extends Component {
                                                     </div>
                                                     <div className="clientFeedback">
                                                     <img src="assets/img/quote-gray-index.svg" /><br/>
-                                                        I just loved three things about Hindwaves – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
+                                                        I just loved three things about Nestormind – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
                                                     </div>
                                                 </div>
                                             </div>
@@ -683,7 +683,7 @@ class HomeContent extends Component {
                                                     </div>
                                                     <div className="clientFeedback">
                                                     <img src="assets/img/quote-gray-index.svg" /><br/>
-                                                        I just loved three things about Hindwaves – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
+                                                        I just loved three things about Nestormind – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
                                                     </div>
                                                 </div>
                                             </div>
@@ -708,7 +708,7 @@ class HomeContent extends Component {
                                                     </div>
                                                     <div className="clientFeedback">
                                                     <img src="assets/img/quote-gray-index.svg" /><br/>
-                                                        I just loved three things about Hindwaves – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
+                                                        I just loved three things about Nestormind – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
                                                     </div>
                                                 </div>
                                             </div>
@@ -734,7 +734,7 @@ class HomeContent extends Component {
                                                     </div>
                                                     <div className="clientFeedback">
                                                     <img src="assets/img/quote-gray-index.svg" /><br/>
-                                                        I just loved three things about Hindwaves – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
+                                                        I just loved three things about Nestormind – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
                                                     </div>
                                                 </div>
                                             </div>

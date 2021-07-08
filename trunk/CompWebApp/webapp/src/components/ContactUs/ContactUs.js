@@ -96,7 +96,7 @@ class ContactUsContent extends Component {
                                     <img src="assets/img/contact-us1.png" alt="line white"/>
                             </div>
                 </div>
-                <p class="contact-hero--contact">Reach us out <a href="tel:+919877344996"></a>  <a href="mailto:hello@brucira.com">info@hindwaves.com</a></p>
+                <p class="contact-hero--contact">Reach us out at <a href="mailto:hello@brucira.com">info@nestormind.com</a></p>
             </div>
             
         </section>
@@ -144,13 +144,13 @@ class ContactUsContent extends Component {
                             <h2 className="h1 title contact-title">Contact Us</h2>
                             <p>Having Business queries? Feel free to get in touch with us with no hesitation and we will get back to you as soon as possible.</p>
                             <ul>
-                                <li><i className="bx bx-mail-send"></i> info@hindwaves.com</li>
+                                <li><i className="bx bx-mail-send"></i> info@nestormind.com</li>
                                 <li><i className="bx bxs-phone"></i> (0172) 4039142</li>
                             </ul>
                             <div className="row" style={{marginTop: "15px", marginLeft: "10px"}}>
                                 <div className="contact-interact">
                                     <a href="tel:+91 9877 344996" className="btn btn-contact" title="Call Now!">Call Us</a>
-                                    <a href="mailto:info@hindwaves.com" className="btn btn-contact mg-10" title="Drop an email">Drop an email</a>
+                                    <a href="mailto:info@nestormind.com" className="btn btn-contact mg-10" title="Drop an email">Drop an email</a>
                                 </div>
                             </div>
                         </div>
