@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <g id="Group_19865" data-name="Group 19865" transform="translate(-373 -1607)">
+    <path id="captain-america" d="M71.609,76.134a1.231,1.231,0,0,1-.57-.14L60,70.19l-11.039,5.8A1.224,1.224,0,0,1,47.184,74.7L49.292,62.41,40.362,53.7a1.224,1.224,0,0,1,.678-2.088l12.342-1.793L58.9,38.638a1.224,1.224,0,0,1,2.2,0l5.52,11.184,12.342,1.793a1.224,1.224,0,0,1,.679,2.088L70.708,62.41,72.816,74.7a1.225,1.225,0,0,1-1.206,1.431ZM43.848,53.683l7.615,7.423a1.224,1.224,0,0,1,.352,1.084l-1.8,10.482,9.413-4.949a1.225,1.225,0,0,1,1.139,0l9.413,4.949-1.8-10.482a1.227,1.227,0,0,1,.352-1.084l7.615-7.423L65.629,52.153a1.224,1.224,0,0,1-.923-.67L60,41.947l-4.706,9.536a1.224,1.224,0,0,1-.922.67Z" transform="translate(372 1607)" fill="#222" stroke="#222" stroke-width="2"/>
+    <g id="Ellipse_4164" data-name="Ellipse 4164" transform="translate(390 1625)" fill="none" stroke="#222" stroke-width="6">
+      <circle cx="42" cy="42" r="42" stroke="none"/>
+      <circle cx="42" cy="42" r="39" fill="none"/>
+    </g>
+    <g id="Ellipse_4165" data-name="Ellipse 4165" transform="translate(373 1607)" fill="none" stroke="#222" stroke-width="6">
+      <circle cx="60" cy="60" r="60" stroke="none"/>
+      <circle cx="60" cy="60" r="57" fill="none"/>
+    </g>
+  </g>
+</svg>

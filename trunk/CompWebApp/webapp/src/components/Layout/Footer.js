@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Footer extends Component {
   render() {
@@ -33,7 +34,7 @@ class Footer extends Component {
             <div className="col-lg-3 col-md-6 footer-links">
               <h3>Services</h3>
               <ul>
-                <li> <a href="#">Web Design</a></li>
+                <li> <Link  to="">Web Design</Link></li>
                 <li> <a href="#">Web Development</a></li>
                 <li> <a href="#">Product Management</a></li>
                 <li> <a href="#">Marketing</a></li>

@@ -6,30 +6,50 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Footer_new from '../Layout/Footer_new';
+import { Link } from "react-router-dom";
 
 class HomeContent extends Component {
+    state= {
+        responsive:{
+            0: {
+                items: 1,
+            },
+            575: {
+                items: 1,
+            },
+            767: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            },
+            1440: {
+                items: 1,
+            },
+        },
+    }
+
+    componentDidMount =() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }// this changes the scrolling behavior to "smooth"
+   
   render() {
+
+
     return (
 <div>
+
+    
     <NavBar />
-    <div class="clb-social">
-        <ul class="clb-social-holder font-titles icons"> 
-            <li class="clb-social-holder-follow">Follow Us</li>
-            <li class="clb-social-holder-dash">–</li>
-            <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li>
-            <li><a target="_blank" href=" #" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
-            <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
-            <li><a target="_blank" href="#" class="instagram"><i className="bx bxl-instagram"></i> </a></li>
-            <li><a target="_blank" href="#" class="skype"><i className="bx bxl-skype"></i></a></li>
-        </ul>
-    </div>
+    
+    
     <section id="hero" className="d-flex align-items-center">
       <div className="container">
         <div className="row">
           <div className="col-lg-5 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
             <h1>We provide the Best Solutions for your Business</h1>
             <h2>We help new and established businesses to create their unique identity through our website design and development services. We are dedicated to offering brilliant and appealing software solution experiences that connect brands to their potential customers.</h2>
-            <div className="d-lg-flex">
+            <div className="d-lg-flex mt-5">
               <a href="#about" className="w-o-btn scrollto">About Us</a>
             </div>
           </div>
@@ -44,55 +64,217 @@ class HomeContent extends Component {
     <section className="servicesArea">
         <div className="container">
             <div className="row">
-                <div className="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-5">
                     <div className="serviceBox">
                         <p className="subTitle">Services</p>
                         <div className="divider"></div>
                         <h2 className="title"> We consult, develop and deliver premier software solutions.    </h2>
                     </div>
                 </div>
-                <div className="col-12 col-sm-12 col-md-1 col-lg-1"></div>
-                <div className="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-1"></div>
+                <div className="col-12 col-sm-12 col-md-12 col-lg-6">
                     <div className="row">
-                         <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                         <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                         <Link to="/services_main"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> Development </p>
                                 <div className="divider"></div>
                                 <h4 className="title"> Website & Mobile App Development    </h4>
                                 <p>We empower you to scale business via competent and client-focused web and mobile applications.</p>
+                               <img className="arrowIcon" src="https://img.icons8.com/ios-glyphs/30/000000/long-arrow-right.png"/>
                             </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                        <Link to="/services_main"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> DESIGN </p>
                                 <div className="divider"></div>
                                 <h4 className="title"> UX/UI Design and Development    </h4>
                                 <p>Usability over Complexity. Simple & Organized elements put together for interactive user experiences.</p>
+                                <img className="arrowIcon" src="https://img.icons8.com/ios-glyphs/30/000000/long-arrow-right.png"/>
                             </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                            <Link to="/services_main"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> JAVASCRIPT DEVELOPMENT </p>
                                 <div className="divider"></div>
                                 <h4 className="title">React, Vue, Svelte, Angular, and More  </h4>
                                 <p>Expertise in latest technologies like React, Vue.js, Laravel, Node.js, SASS, iOS, Android, Hydbrid Apps. .</p>
+                                <img className="arrowIcon" src="https://img.icons8.com/ios-glyphs/30/000000/long-arrow-right.png"/>
                             </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                        <Link to="/services_main"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> PRODUCT </p>
                                 <div className="divider"></div>
                                 <h4 className="title"> 24x7 Support & Maintenance  </h4>
                                 <p>Contact us anytime over Skype, Email, or Phone. Our support & maintenance team is available 24×7..</p>
+                                <img className="arrowIcon" src="https://img.icons8.com/ios-glyphs/30/000000/long-arrow-right.png"/>
                             </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section className="stories">
+         <OwlCarousel
+            className="owl-theme"
+            loop
+            items={1}
+            margin={10}
+            nav
+         >
+                    <div className="item">
+                        <div className="successStories royelblue">
+                            <div className="row">
+
+                                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div className="storiesContent">
+                                        <div className="title">Hawalebanon</div>
+                                        <div className="bigTitle">We makes it easy for businesses and marketing teams to manage your social account in a single place.
+                                </div>
+                                        <div className="actionBtn">
+                                            <a href="#" className="caseStudies">Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div className="storiesImg">
+                                        <img src="assets/img/hawalebanon.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="item">
+                    <div className="successStories lightblue">
+                            <div className="row">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg left">
+                                        <img src="assets/img/telemedicine.png"/>
+                            </div>
+                        </div>
+                                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div className="storiesContent">
+                                        <div className="title">Telemedician</div>
+                                        <div className="bigTitle">Virtual Care. Chat with your health team.
+                                        </div>
+                                        <div className="actionBtn">
+                                            <Link to="../telemedician_case" className="caseStudies">Case study</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="item">
+                <div className="successStories darkblue">
+                    <div className="row">
+                        
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Join Vet</div>
+                                <div className="bigTitle">We makes it easy for businesses and marketing teams to manage your social account in a single place.
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg ">
+                            <img src="assets/img/joinVet.png"/>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        
+            <div className="item">
+            <div className="successStories purple">
+                    <div className="row">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg left">
+                            <img src="assets/img/neoxcel.png"/>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Neoxcel</div>
+                                <div className="bigTitle">We present our unique, flexible and powerful suite of software to run your entire business on cloud.
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
+            
+            
+            <div className="item">
+                <div className="successStories skyblue">
+                    <div className="row">
+                    
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Founder Link</div>
+                                <div className="bigTitle">Task Project Design has been updated in project ECommerce by Admin
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg">
+                            <img src="assets/img/founder-link.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="item">
+                <div className="successStories darkyellow">
+                    <div className="row">
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesImg left">
+                            <img src="assets/img/theSkyComm.png"/>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="storiesContent">
+                                <div className="title">Skycomm</div>
+                                <div className="bigTitle">Task Project Design has been updated in project ECommerce by Admin
+                                </div>
+                                <div className="actionBtn">
+                                    <a href="#" className="caseStudies">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </OwlCarousel>
+    </section>
   
-    <section className="portfolioSection p-0">
+    {/* <section className="portfolioSection p-0">
         <div className="row">
             <div className="col-12 col-md-6 col-lg-8 col-xl-8 p-0">
                 <div className="portfolio-item-wrap">
@@ -179,13 +361,13 @@ class HomeContent extends Component {
                 </div>
             </div>
         </div>
-    </section>
+    </section> */}
 
         <section className="capebilities">
             <div className="container">
             <div className="capebilities_heading">
 
-                        <p className="subtitle">   Capabilities	        </p>
+                        <p className="subtitle">Capabilities </p>
                         <h2 className="title">
                         1000s of projects delivered successfully.<br/>
                         Over 100 Satisfied Clients.    </h2>
@@ -195,7 +377,7 @@ class HomeContent extends Component {
        
         <section className="accordian-section">
             <div className="container">
-                <div className="row">
+                <div className="row" style={{'flexDirection':'row-reverse'}}>
                     <div className="col-12 col-md-6 col-lg-6">
                         <div className="accordianPanel">
                         <div className="accordianLeft">
@@ -208,9 +390,9 @@ class HomeContent extends Component {
                     <div className="col-12 col-md-1 col-lg-1"></div>
                     <div className="col-12 col-md-5 col-lg-5">
                         <div className="collapseBox">
-                            <div className="playBtn">
+                            {/* <div className="playBtn">
                                 <button className="round-btn"><i class='bx bx-right-arrow'></i> </button>
-                            </div>
+                            </div> */}
                             <div class="collapseHeading">
                                 <h3 class="title">  Play Video We work in the fields of UI/UX design and art direction.    </h3>
                             </div>
@@ -275,62 +457,62 @@ class HomeContent extends Component {
                     <ul>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/vue-js-logo.png" />
+                            <img src="assets/img/brandLogo/vue-js-logo.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/angular-logo.png" />
+                            <img src="assets/img/brandLogo/angular-icon.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/flutter-logo.png" />
+                            <img src="assets/img/brandLogo/flutter-logo.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/node-logo.png" />
+                            <img src="assets/img/brandLogo/nodejs-icon.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/php-logo.png" />
+                            <img src="assets/img/brandLogo/php-1.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/react-logo.png" />
+                            <img src="assets/img/brandLogo/react.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/bootstrap-logo.png" />
+                            <img src="assets/img/brandLogo/bootstrap-4.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/sass-logo.png" />
+                            <img src="assets/img/brandLogo/sass-1.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/swift-logo.png" />
+                            <img src="assets/img/brandLogo/swift-15.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/my-squal-logo.png" />
+                            <img src="assets/img/brandLogo/mysql.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/swift-logo.png" />
+                            <img src="assets/img/brandLogo/firebase.svg" />
                             </div>
                         </li>
                         <li>
                             <div className="brandIcon">
-                            <img src="assets/img/brandLogo/my-squal-logo.png" />
+                            <img src="assets/img/brandLogo/xamarin.svg" />
                             </div>
                         </li>
                     </ul>
@@ -381,8 +563,8 @@ class HomeContent extends Component {
                         </h4>
                     </div>
                     <div className="col-md-4 cta-btn-home">
-                        <a className="btn-register-header animation-on-hover clickcustomform">Schedule A Call
-                        </a>
+                            <Link to="/contact-us" className="btn-register-header animation-on-hover clickcustomform" >Contact Us</Link>
+                       
                     </div>
                     <h4>
                     </h4>
@@ -410,12 +592,13 @@ class HomeContent extends Component {
                                 <div className="carousel-item active">
                                     <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-9.jpg" />
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                  
                                                 </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                         Rob Sharma
@@ -424,7 +607,8 @@ class HomeContent extends Component {
                                                         CO FOUNDER OF ATTRI PRODUCT
                                                     </div>
                                                     <div className="clientFeedback">
-                                                    <img src="assets/img/quote-gray-index.svg" /><br/>
+                                                    <img src="assets/img/quote-gray-index.svg" />
+                                                    <br/>
                                                         I just loved three things about Hindwaves – culture, quality, and desire. Their confidence in quality and their understanding for the client's passion are great.
                                                     </div>
                                                 </div>
@@ -435,12 +619,13 @@ class HomeContent extends Component {
                                 <div className="carousel-item">
                                 <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-10.jpg" />
-                                                </div>
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                    <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                                    </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                     Rob Sharma
@@ -460,12 +645,13 @@ class HomeContent extends Component {
                                 <div className="carousel-item">
                                 <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-2.jpg" />
-                                                </div>
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                    <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                                    </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                     Rob Sharma
@@ -484,12 +670,13 @@ class HomeContent extends Component {
                                 </div><div className="carousel-item">
                                 <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-10.jpg" />
-                                                </div>
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                    <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                                    </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                     Rob Sharma
@@ -509,12 +696,13 @@ class HomeContent extends Component {
                                 <div className="carousel-item">
                                 <div className="userContent">
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div className="clientImg">
-                                                    <img src="assets/img/user-2.jpg" />
-                                                </div>
+                                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                                    <div className="clientFeedbackVideo">
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                                    </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                                                 <div className="clentDetails">
                                                     <div className="clientName">
                                                     Rob Sharma
@@ -550,6 +738,7 @@ class HomeContent extends Component {
                                     items={1}
                                     margin={10}
                                     nav
+                                    responsive={this.state.responsive}
                                 >
                                     
                                     <div className="item">
@@ -660,18 +849,19 @@ class HomeContent extends Component {
                 <div className="companyAddress">
                         <div className="coporateOfficeHeading">Corporate Office</div>
                         <div className="coporateOffice__address">
-                            SCF 116-A, Phase-3 <br/>
-                            Industrial Area, Mohali
+                            E-237AA, Continental Tower<br />
+                            Industrial Area 8B, Sector 74, <br />
+                            SAS Nagar, Mohali, Punjab
                         </div>
                         <div className="coporateOffice__address">
-                        <strong>Phone:</strong> (0172) 4039142
+                                <strong>Phone:</strong> (0172) 5020206
                         </div>
-                        <div className="coporateOffice__address">
+                        {/* <div className="coporateOffice__address">
                         <strong> Mobile:</strong> +91 9877344996
                         </div>
                         <div className="coporateOffice__address">
                         <strong> Email:</strong> 
-                        </div>
+                        </div> */}
 
                 </div>
             </div>

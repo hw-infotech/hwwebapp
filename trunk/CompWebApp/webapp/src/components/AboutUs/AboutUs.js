@@ -2,14 +2,20 @@ import React, { Component } from 'react';
 import NavBar from '../Layout/Navbar';
 import Footer from '../Layout/Footer';
 import './AboutUs.css';
+import Footer_new from '../Layout/Footer_new';
+import { Link } from "react-router-dom";
 
 class AboutUsContent extends Component {
+    componentDidMount = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }// this changes the scrolling behavior to "smooth"
   render() { 
       return (
           <div>
             <NavBar />
 
-            <section className="aboutBanner">   
+            <section className="aboutBanner">  
+                <div className="shapes"></div> 
                  <div className="container">
                  <div className="caption aos-init aos-animate">
                     <h1>A Global Leader in <br/>Digital Transformation</h1>
@@ -36,109 +42,91 @@ class AboutUsContent extends Component {
             <div className="team-members">
             <div className="right">
                    <div className="content">
-                        <p>We have industry and <br/>technology <span>experts</span> to help <br/>you build the right solution to <br/>fulfill
-                          your business needs.</p>
+                        <h3>About Us.</h3>
+                          <p>In 2010, we embarked on a journey to create a unique and powerful statement of value to clients summed in three simple phrases – Business Impact Created, Predictability in Execution, and Unique Client Experiences. Since then, all aspects of Nestormind and its ecosystem have been shaped to deliver this value repetitively and consistently in every client setting. We offer full-scale software solutions for mobile and desktop that has already contributed to the success of many enterprises across the world and different industries. Our software development consists of three parts-Front-end, middleware, and Backend. We work on creating beautiful and attractive designs, implementing features and data resources to make apps more functional, and also helps to enhance security while dealing with the back-end phase. We have a pool of both experienced and creative minds, who have produced various applications with outstanding user experiences and value-adding to the customers. We offer Ux/UI design, Web and Mobile development, Quality Assurance, Service Integration, Maintenance, AI/ML Solutions, IOT Solutions, Blockchain, IT Consulting and other services to ensure a strong online presence for enterprises, boost sales, improve visibility and grow customer base.</p>
                           <div class="line">
                             <img src="assets/img/yellow-line.svg" alt=""/>
                             </div>
-                          <div class="designation">
-                            <h4>Ravinder - Gurpreet</h4>
-                            <p>CTO</p>
-                            </div>
+                         
                     </div>     
                </div>
-            <div className="left aos-init aos-animate" data-aos="fade-up">
-                <ul className="circle-container fourth">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    </ul>
-               </div>
-               <ul className="circle-container first">
-                <li id="vk" className=""><img src="assets/img/user-dummy.jpg" alt="line white" style={{width : '100%'}}/></li>
-                </ul>
-               
+                <div className="left aos-init aos-animate" data-aos="fade-up">
+                          <img src="assets/img/hw-team.png" alt="" />
+                </div>
                 </div>
             </section>
 
-            <section className="about-wrapper-area section-padding">
+
+
+            <section className="gallery">
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-12 order-2 order-lg-1">
-                            <div className="about-inner">
-                                <h2 className="h1 title">About Us</h2>
-                                <p>With the many providers of software solutions out there, sometimes it becomes a hassle to choose the one you can rely on for solutions that will make your life better. All you need as a business or organization is professional and prompt service. If you’ve never found a reliable partner, do not worry because we are your dream software solutions company. Hindwaves Infotech is an certified company and we believe we are the best partner you can work with for amazing solutions.</p>
-                                <p>With the many providers of software solutions out there, sometimes it becomes a hassle to choose the one you can rely on for solutions that will make your life better. All you need as a business or organization is professional and prompt service. If you’ve never found a reliable partner, do not worry because we are your dream software solutions company. Hindwaves Infotech is an certified company and we believe we are the best partner you can work with for amazing solutions.</p>
-                                <p>With the many providers of software solutions out there, sometimes it becomes a hassle to choose the one you can rely on for solutions that will make your life better. All you need as a business or organization is professional and prompt service. If you’ve never found a reliable partner, do not worry because we are your dream software solutions company. Hindwaves Infotech is an certified company and we believe we are the best partner you can work with for amazing solutions.</p>
+                <div className="gallery_heading">We live and <b>breathe</b> tech.</div>
+                    <div className="galleryBox">
+                        <div className="row_one">
+                            <div className="col-1">
+                                <div className="galleryImages medium">
+                                      <img src="assets/img/about-us-image1.png"/>
+                                </div>
+                            </div>
+                            <div className="col-2">
+                            <div className="headings">
+                            We <strong>challenge</strong> our clients to think differently <br/>
+                            by asking the right questions, how can we <strong>leverage</strong> <br/>
+                            tech differently? Where are consumers talking <br/>
+                            and when, because the <strong>experience matters.</strong>
+                            </div>
+                            <div className="galleryImages small">
+                                      <img src="assets/img/confrence_room.jpg"/>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="row_two">
+                        <div className="col-1">
+                                <div className="galleryImages small">
+                                      <img src="assets/img/reception.png"/>
+                                </div>
+                            </div>
+                            <div className="col-2">
+                                <div className="galleryImages medium">
+                                      <img src="assets/img/team-about.png" />
+                                </div>
+                            </div>
+                            <div className="col-3">
+                                <div className="galleryImages medium">
+                                    <img src="assets/img/stiker.png"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row_three">
+                        <div className="col-1">
+                                <div className="galleryImages large">
+                                    <img src="assets/img/dev_room.jpg"/>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </section>
-            <section className="team-wrapper section-padding">
-                <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-xl-6 order-2 order-xl-1">
-                            <div className="row team-member-inner mtn-40">
-                                <div className="col-xl-auto col-sm-3 flex-grow-1">
-                                    <div className="team-member mt-40 active">
-                                        <div className="team-member-info">
-                                            <h5 className="team-member-name">Roberto Sonax</h5>
-                                            <h6 className="team-member-desig">Chief Executive</h6>
-                                        </div>
-                                        <img src="assets/img/team/team-1.png" alt="team member"/>
-                                    </div>
-                                </div>
-                                <div className="col-xl-auto col-sm-3 flex-grow-1">
-                                    <div className="team-member mt-40">
-                                        <div className="team-member-info">
-                                            <h5 className="team-member-name">Roberto Sonax</h5>
-                                            <h6 className="team-member-desig">Chief Executive</h6>
-                                        </div>
-                                        <img src="assets/img/team/team-2.png" alt="team member"/>
-                                    </div>
-                                </div>
-                                <div className="col-xl-auto col-sm-3 flex-grow-1">
-                                    <div className="team-member mt-40">
-                                        <div className="team-member-info">
-                                            <h5 className="team-member-name">Roberto Sonax</h5>
-                                            <h6 className="team-member-desig">Chief Executive</h6>
-                                        </div>
-                                        <img src="assets/img/team/team-3.png" alt="team member"/>
-                                    </div>
-                                </div>
-                                <div className="col-xl-auto col-sm-3 flex-grow-1">
-                                    <div className="team-member mt-40">
-                                        <div className="team-member-info">
-                                            <h5 className="team-member-name">Roberto Sonax</h5>
-                                            <h6 className="team-member-desig">Chief Executive</h6>
-                                        </div>
-                                        <img src="assets/img/team/team-4.png" alt="team member"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-5 offset-xl-1 order-1 order-xl-2">
-                            <div className="team-content team-content--style_2 about-inner">
-                                <h2 className="h1 title">We have <span>Creative</span> Team<br/> <span>Discover</span> our exerts</h2>
-                                <h3 className="subtitle">Create some exclusive way to solve our customer problems</h3>
-                                <p>labore et dolore magnam aliquam quaerat voluptatem. Ut enim <br/> ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam</p>
-                                    <a href="#" className="btn btn-all">Let's Start</a>
-                            </div>
-                        </div>
+
+
+            <section className="site-footer">
+                <div class="project-in-mind">
+                    <div class="container">
+                    <p class="light">Let’s co-create your <strong>success story</strong></p> <Link to="/contact-us" class="btn btn-flip" data-text="let’s talk"><span>let’s talk</span></Link>
                     </div>
                 </div>
             </section>
-            <section className="policy-area pb-125">
+
+            
+         
+            <Footer_new/>
+
+
+
+
+
+            {/* <section className="policy-area pb-125">
                 <div className="container">
                     <div className="row mtn-30"> 
                         <div className="col-lg-3 col-md-6">
@@ -179,8 +167,8 @@ class AboutUsContent extends Component {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="testimonial-wrapper testimonial-wrapper--style_2 section-padding pt-0 fix">
+            </section> */}
+            {/* <section className="testimonial-wrapper testimonial-wrapper--style_2 section-padding pt-0 fix">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-xl-5 col-lg-5 order-2 order-lg-1 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
@@ -240,7 +228,7 @@ class AboutUsContent extends Component {
                     </div>
                 </div>
             </section>
-           <Footer /> 
+           <Footer />  */}
           </div>
       )
   }

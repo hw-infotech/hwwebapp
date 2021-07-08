@@ -1,0 +1,656 @@
+.blogContant {
+    width: 100%;
+    float: left;
+    position: relative;
+    margin-top: 100px;
+}
+.whiteWrap {
+    width: 100%;
+    display: table;
+    vertical-align: top;
+}
+.whiteWrap .leftPanel {
+    display: table-cell;
+    vertical-align: top;
+    width: 800px;
+}
+.whiteWrap .leftPanel .post {
+    border-left: solid 1px #e1dfe0;
+    border-bottom: solid 1px #e1dfe0;
+    display: block;
+    overflow: hidden;
+    padding: 20px 0 0;
+    position: relative;
+    width: 100%;
+}
+.whiteWrap .leftPanel .post .date {
+    background: none repeat scroll 0 0 #0360b2;
+    border-radius: 5px;
+    float: left;
+    height: 70px;
+    width: 62px;
+    margin: 0 20px;
+    padding: 8px 0 0 0;
+    text-align: center;
+}
+.whiteWrap .leftPanel .post .date h4 {
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+}
+.whiteWrap .leftPanel .post .date h2 {
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+}
+.whiteWrap .leftPanel .post .date h4 {
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+}
+.whiteWrap .leftPanel .post .title {
+    margin: 0 0 0 0;
+    padding: 0 15px 0 0;
+    vertical-align: top;
+    height: 70px;
+    min-height: 70px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.whiteWrap .leftPanel .post .title h1 {
+    color: #000000;
+    font-size: 36px;
+    line-height: 42px;
+    margin: 0;
+    font-weight: 300;
+}
+.whiteWrap .leftPanel .post .title h1 a {
+    text-decoration: none;
+    color: #000000;
+}
+.whiteWrap .leftPanel .post .post_image {
+    display: block;
+    margin: 25px 0 0 100px;
+    text-align: center;
+    overflow: hidden;
+    padding: 0;
+    width: 594px;
+}
+.whiteWrap .leftPanel .post .post_image img {
+    width: 100%;
+}
+.whiteWrap .leftPanel .post .post_content {
+    display: block;
+    margin: 25px 0 0 100px;
+    padding: 0;
+    width: 594px;
+}
+.whiteWrap .leftPanel .post .comments {
+    margin: 15px 0;
+}
+.whiteWrap .leftPanel .post .comments ul {
+    float: left;
+    display: inline-block;
+    margin-left: 100px;
+}
+.whiteWrap .leftPanel .post .comments ul li {
+    display: inline-block;
+    margin-left: 10px;
+    color: #c80734;
+    font-size: 15px;
+}
+.whiteWrap .leftPanel .post .comments ul li i {
+    float: left;
+    margin-right: 5px;
+}
+.whiteWrap .leftPanel .post .comments ul li a {
+    color: #c80734;
+}
+
+.whiteWrap .rightPanel {
+    width: auto;
+    /* border: solid 1px #e1dfe0; */
+    border-top: none;
+    border-bottom: none;
+    display: inline-flex;
+    vertical-align: top;
+    box-shadow: 0px 0px 56px 0px #d5d5d566;
+    position: sticky!important;
+    top: 100px!important;
+    right: 0;
+}
+.searchForm {
+    background: #0360b2;
+    border-bottom: 1px solid #0360b2;
+    width: 100%;
+    padding: 20px;
+    margin: 0 0 10px 0;
+    box-sizing: border-box;
+}
+
+.searchForm .wrap {
+    background: #FFF;
+    border: 1px solid #cfcccc;
+    height: 36px;
+    padding: 0 10px;
+}
+.comment-reply-link svg, .comment-list .says, #comments .comments-title, .searchForm .wrap label {
+    display: none;
+}
+.searchForm input[type="text"], .searchForm input[type="search"] {
+    border: none;
+    background: none;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    color: #464545;
+    font-size: 17px;
+    float: left;
+    width: 200px;
+}
+.searchForm input:focus {
+    border: 1px solid #48e67200 !important;
+    box-shadow: 0px 0px 15px 0px rgb(255 255 255 / 20%) !important;
+    outline: 0;
+}
+.searchForm input[type="submit"] {
+    background: url(/public/assets/img/magnifier.png) no-repeat;
+    width: 21px;
+    height: 21px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin: 6px 0 0 0;
+}
+.listing-right {
+    display: block;
+    padding: 10px 16px;
+}
+.listing-right h3 {
+    display: block;
+    font-size: 21px;
+    background: #ecebeb;
+    border-left: solid 4px #045aae;
+    text-decoration: none;
+    color: #000000;
+    padding: 4px 10px 3px 15px;
+    margin: 0px;
+}
+
+.listing-right ul {
+    margin: 0;
+    padding: 0;
+}
+.listing-right ul li {
+    background: url(/public/assets/img/bg-gradi.png) no-repeat bottom left;
+    padding: 10px 0;
+    list-style: none;
+}
+.listing-right ul li a {
+    margin: 0 0;
+    padding: 0px;
+    display: block;
+    color: #045aae;
+    font-size: 15px;
+    text-align: left;
+}
+.listing-right ul li span.datepost {
+    color: #000000;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0 0 0;
+}
+ul.categories {
+    margin: 0;
+    padding: 0;
+}
+ul.categories li {
+    background:url(/public/assets/img/bg-gradi.png) no-repeat bottom left;
+    margin: 0;
+    padding: 6px 0px;
+    display: block;
+}
+ul.categories li a {
+    margin: 0;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 0;
+    color: #494a4a;
+}
+
+ul.pagination {
+    margin: 20px 0;
+    padding: 0;
+    text-align: center;
+    display: block;
+}
+
+ul.pagination li {
+    text-align: center;
+    display: inline-block;
+    *display: inline;
+}
+ul.pagination li a:hover, ul.pagination li a.selected, ul.pagination li a.activeLink {
+    background: #0c5fb0;
+    color: #fff;
+}
+ul.pagination li a {
+    text-decoration: none;
+    height: 26px;
+    display: block;
+    line-height: 24px;
+    padding: 0 10px;
+    color: #282828;
+    font-size: 15px;
+    border-radius: 2px;
+}
+
+.subscriptionPlan {
+    width: 100%;
+    position: relative;
+    padding: 25px 30px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    border-top: 1px solid #d5d5d554;
+    border-bottom: 1px solid #d5d5d554;
+    box-shadow: 0 0 50px 0 #d5d5d5ad;
+    max-width: 627px;
+    margin: 0 auto!important;
+    left: auto;
+    right: auto;
+    display: flex;
+    margin-bottom: 50px!important;
+}
+.subscriptionPlan .subBox {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.subscriptionPlan .subBox .labelIcon {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.subscriptionPlan .subBox .labelIcon img {
+    width: 190px;
+}
+.subscriptionPlan .subBox .headings {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 10px 0;
+}
+.subscriptionPlan .subBox .headings h4 {
+    width: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: #0360b2;
+    margin-bottom: 20px;
+    font-family: 'Montserrat',sans-serif;
+}
+.subscriptionPlan .subBox .headings p {
+    font-size: 14px;
+}
+.newsletterPlan {
+    width: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+}
+.tnp-subscription-minimal {
+    width: 100%;
+    box-sizing: border-box;
+}
+.tnp-subscription-minimal form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.newsletterPlan .tnp-subscription-minimal input.tnp-email {
+    width: 100%;
+    max-width: 740px;
+    height: 60px;
+    text-align: center;
+    box-shadow: 0 0 50px 0 #d5d5d569;
+    font-size: 13px;
+    margin: 0 auto;
+    background: #fff;
+    margin-bottom: 30px;
+    border: 1px solid #d5d5d55e;
+}
+.newsletterPlan .tnp-subscription-minimal input.tnp-submit {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 50px;
+    font-size: 13px;
+    background: #44b345;
+    border-radius: 5px;
+    color: white;
+    border: 0;
+}
+
+
+@media (min-width:320px) and (max-width:480px){
+    .whiteWrap {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+    }
+    .whiteWrap .leftPanel .post {
+        border-left: solid 0px #e1dfe0;
+    }
+    .whiteWrap .leftPanel {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .title {
+       
+        height: auto;
+        min-height: auto;
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .whiteWrap .leftPanel .post .title h1 {
+        color: #000000;
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0;
+        font-weight: 300;
+    }
+    .whiteWrap .leftPanel .post .date {
+        background: none repeat scroll 0 0 #0360b2;
+        border-radius: 5px;
+        float: left;
+        height: 30px;
+        width: 105px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    align-items: center;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        margin: 28px 0 0 0px;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content {
+        display: block;
+        margin: 25px 0 0 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content p {
+        font-size: 13px;
+    }
+    .searchForm{
+        display: none;
+    }
+    .whiteWrap .leftPanel .post .post_content h2 {
+        font-size: 20px;
+    }
+    .whiteWrap .leftPanel .post .post_content h4 {
+        font-size: 20px;
+    }
+    .whiteWrap .leftPanel .post .post_content h3 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:481px) and (max-width:575px){
+    .whiteWrap {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+    }
+    .whiteWrap .leftPanel .post {
+        border-left: solid 0px #e1dfe0;
+    }
+    .whiteWrap .leftPanel {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .title {
+       
+        height: auto;
+        min-height: auto;
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .whiteWrap .leftPanel .post .title h1 {
+        color: #000000;
+        font-size: 22px;
+        line-height: 28px;
+        margin: 0;
+        font-weight: 300;
+    }
+    .whiteWrap .leftPanel .post .date {
+        background: none repeat scroll 0 0 #0360b2;
+        border-radius: 5px;
+        float: left;
+        height: 30px;
+        width: 105px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    align-items: center;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        margin: 28px 0 0 0px;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content {
+        display: block;
+        margin: 25px 0 0 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content p {
+        font-size: 14px;
+    }
+    .searchForm{
+        display: none;
+    }
+    .whiteWrap .leftPanel .post .post_content h2 {
+        font-size: 20px;
+    }
+    .whiteWrap .leftPanel .post .post_content h4 {
+        font-size: 20px;
+    }
+    .whiteWrap .leftPanel .post .post_content h3 {
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width:576px) and (max-width:767px){
+    .whiteWrap {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+    }
+    .whiteWrap .leftPanel .post {
+        border-left: solid 0px #e1dfe0;
+    }
+    .whiteWrap .leftPanel {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .title {
+       
+        height: auto;
+        min-height: auto;
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .whiteWrap .leftPanel .post .title h1 {
+        color: #000000;
+        font-size: 25px;
+    line-height: 30px;
+        margin: 0;
+        font-weight: 300;
+    }
+    .whiteWrap .leftPanel .post .date {
+        background: none repeat scroll 0 0 #0360b2;
+        border-radius: 5px;
+        float: left;
+        height: 30px;
+        width: 105px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    align-items: center;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        margin: 28px 0 0 0px;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content {
+        display: block;
+        margin: 25px 0 0 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content p {
+        font-size: 16px;
+    }
+    .searchForm{
+        display: none;
+    }
+    .whiteWrap .leftPanel .post .post_content h2 {
+        font-size: 24px;
+    }
+    .whiteWrap .leftPanel .post .post_content h4 {
+        font-size: 23px;
+    }
+    .whiteWrap .leftPanel .post .post_content h3 {
+        font-size: 22px;
+    }
+}
+
+
+@media (min-width:768px) and (max-width:991px){
+    .whiteWrap {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+    }
+    .whiteWrap .leftPanel .post {
+        border-left: solid 0px #e1dfe0;
+    }
+    .whiteWrap .leftPanel {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .title {
+       
+        height: auto;
+        min-height: auto;
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .whiteWrap .leftPanel .post .title h1 {
+        color: #000000;
+        font-size: 28px;
+    line-height: 36px;
+        margin: 0;
+        font-weight: 300;
+    }
+    .whiteWrap .leftPanel .post .date {
+        background: none repeat scroll 0 0 #0360b2;
+        border-radius: 5px;
+        float: left;
+        height: 30px;
+        width: 105px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+    align-items: center;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        margin: 28px 0 0 0px;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content {
+        display: block;
+        margin: 25px 0 0 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .whiteWrap .leftPanel .post .post_content p {
+        font-size: 16px;
+    }
+    .searchForm{
+        display: none;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px){
+    .whiteWrap .leftPanel .post .title h1 {
+        font-size: 30px;
+    }
+    .whiteWrap .leftPanel .post .post_image {
+        display: block;
+        width: 545px;
+    }
+}
