@@ -37,19 +37,19 @@ class Footer_new extends Component {
                            <div className="content">
                               <ul>
                                  <li>
-                                 <Link  to="/AppDevelopment">App Development</Link>
+                                 <Link  to="/app-development">App Development</Link>
                                  </li>
                                  <li>
-                                 <Link  to="/WebDevelopment">Web Development</Link>
+                                 <Link  to="/web-development">Web Development</Link>
                                  </li>
                                  <li>
-                                 <Link to="/ux_ui_design">UI  UX Design</Link>
+                                 <Link to="/ui-ux-design">UI  UX Design</Link>
                                  </li>
                                  <li>
-                                    <Link  to="/seo_testing">Seo</Link>
+                                    <Link  to="/seo">Seo</Link>
                                  </li>
                                  <li>
-                                 <Link  to="/GraphicsDesign">Graphics Design</Link>
+                                 <Link  to="/graphic-design">Graphics Design</Link>
                                  </li>
                               </ul>
                            </div>
@@ -92,10 +92,10 @@ class Footer_new extends Component {
                                     <Link to="/career">Career  </Link>
                                  </li>
                                  <li>
-                                 <Link to="/terms_Condition">Terms of service</Link>
+                                 <Link to="/terms-and-condition">Terms of service</Link>
                                  </li>
                                  <li>
-                                    <Link to="/privacyPolicy">Privacy policy</Link>
+                                    <Link to="/privacy-policy">Privacy policy</Link>
                                  </li>
                               </ul>
                            </div>

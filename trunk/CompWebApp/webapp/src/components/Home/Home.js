@@ -75,7 +75,7 @@ class HomeContent extends Component {
                 <div className="col-12 col-sm-12 col-md-12 col-lg-6">
                     <div className="row">
                          <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
-                         <Link to="/services_main"  >
+                         <Link to="/services"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> Development </p>
                                 <div className="divider"></div>
@@ -86,7 +86,7 @@ class HomeContent extends Component {
                             </Link>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
-                        <Link to="/services_main"  >
+                        <Link to="/services"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> DESIGN </p>
                                 <div className="divider"></div>
@@ -97,7 +97,7 @@ class HomeContent extends Component {
                             </Link>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
-                            <Link to="/services_main"  >
+                            <Link to="/services"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> JAVASCRIPT DEVELOPMENT </p>
                                 <div className="divider"></div>
@@ -108,7 +108,7 @@ class HomeContent extends Component {
                             </Link>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
-                        <Link to="/services_main"  >
+                        <Link to="/services"  >
                             <div className="serviceBox">
                                 <p className="subTitle"> PRODUCT </p>
                                 <div className="divider"></div>
@@ -169,7 +169,7 @@ class HomeContent extends Component {
                                         <div className="bigTitle">Virtual Care. Chat with your health team.
                                         </div>
                                         <div className="actionBtn">
-                                            <Link to="../telemedician_case" className="caseStudies">Case study</Link>
+                                            <Link to="../telemedician" className="caseStudies">Case study</Link>
                                         </div>
                                     </div>
                                 </div>

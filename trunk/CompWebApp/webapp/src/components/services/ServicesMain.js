@@ -111,7 +111,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                                <a href="/AppDevelopment">Explore</a>
+                                                <a href="/app-development">Explore</a>
                                             </div>
                                         </div>
                                     </div> 
@@ -125,7 +125,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                            <Link to="/WebDevelopment">Explore</Link>
+                                            <Link to="/web-development">Explore</Link>
                                                 
                                             </div>
                                         </div>
@@ -140,7 +140,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                                <a href="/ux_ui_design">Explore</a>
+                                                <a href="/ui-ux-design">Explore</a>
                                             </div>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                                <a href="/seo_testing">Explore</a>
+                                                <a href="/seo">Explore</a>
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@ class ServicesMain extends Component {
                                                 creating exceptional user interactions, helping app
                                                 users perform any operation with ease. </p>
                                             <div className="actBtn">
-                                                <a href="/GraphicsDesign">Explore</a>
+                                                <a href="/graphic-design">Explore</a>
                                             </div>
                                         </div>
                                     </div>

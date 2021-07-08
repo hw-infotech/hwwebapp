@@ -25,27 +25,26 @@ export class Layout extends Component {
         return (
             <BrowserRouter>
                 <Switch>
-                <Route exact path = "/" component = {HomeContent} />
-                <Route exact path = "/home" component = {HomeContent} />
-                <Route exact path = "/about-us" component = {AboutUsContent} />
-                <Route exact path = "/services_main" component = {ServicesMain} />
-                <Route exact path = "/contact-us" component = {ContactUsContent} />
-                <Route exact path = "/WebDevelopment" component = {WebDev} />
-                <Route exact path = "/AppDevelopment" component = {AppDev} />
-                <Route exact path = "/ux_ui_design" component = {UIUX} />
-                <Route exact path = "/seo_testing" component = {seoTest} />
-                <Route exact path = "/GraphicsDesign" component = {graphicsD} />
-                <Route exact path="/Telemedician_case" component={Telemedician} />
-                <Route exact path="/career" component={Career} />
-                <Route exact path="/uploadCv" component={UploadCv} />
-                <Route exact path="/privacyPolicy" component={PrivacyPolicy} />
-                <Route exact path="/terms_Condition" component={TermsCondition} />
-                <Route exact path="/blogList" component={BlogList} />
-                <Route exact path="/blogpost" component={Blogpost} />
-
-                <Route component = {NotFound} />
-            </Switch>
-        </BrowserRouter>
+                    <Route exact path = "/" component = {HomeContent} />
+                    <Route exact path = "/home" component = {HomeContent} />
+                    <Route exact path = "/about-us" component = {AboutUsContent} />
+                    <Route exact path = "/services" component = {ServicesMain} />
+                    <Route exact path = "/contact-us" component = {ContactUsContent} />
+                    <Route exact path = "/web-development" component = {WebDev} />
+                    <Route exact path = "/app-development" component = {AppDev} />
+                    <Route exact path = "/ui-ux-design" component = {UIUX} />
+                    <Route exact path = "/seo" component = {seoTest} />
+                    <Route exact path = "/graphic-design" component = {graphicsD} />
+                    <Route exact path="/telemedician" component={Telemedician} />
+                    <Route exact path="/career" component={Career} />
+                    <Route exact path="/upload" component={UploadCv} />
+                    <Route exact path="/privacy-Policy" component={PrivacyPolicy} />
+                    <Route exact path="/terms-and-condition" component={TermsCondition} />
+                    <Route exact path="/blogs" component={BlogList} />
+                    <Route exact path="/blog-post" component={Blogpost} />
+                    <Route component = {NotFound} />
+                </Switch>
+            </BrowserRouter>
         )
     }
 }
