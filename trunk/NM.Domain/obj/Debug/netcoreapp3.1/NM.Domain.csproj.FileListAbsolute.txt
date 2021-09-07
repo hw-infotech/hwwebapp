@@ -1,9 +1,0 @@
-D:\Project\HW\trunk\NM.Domain\bin\Debug\netcoreapp3.1\NM.Domain.deps.json
-D:\Project\HW\trunk\NM.Domain\bin\Debug\netcoreapp3.1\NM.Domain.dll
-D:\Project\HW\trunk\NM.Domain\bin\Debug\netcoreapp3.1\NM.Domain.pdb
-D:\Project\HW\trunk\NM.Domain\obj\Debug\netcoreapp3.1\NM.Domain.AssemblyInfoInputs.cache
-D:\Project\HW\trunk\NM.Domain\obj\Debug\netcoreapp3.1\NM.Domain.AssemblyInfo.cs
-D:\Project\HW\trunk\NM.Domain\obj\Debug\netcoreapp3.1\NM.Domain.csproj.CoreCompileInputs.cache
-D:\Project\HW\trunk\NM.Domain\obj\Debug\netcoreapp3.1\NM.Domain.dll
-D:\Project\HW\trunk\NM.Domain\obj\Debug\netcoreapp3.1\NM.Domain.pdb
-D:\Project\HW\trunk\NM.Domain\obj\Debug\netcoreapp3.1\NM.Domain.csprojAssemblyReference.cache

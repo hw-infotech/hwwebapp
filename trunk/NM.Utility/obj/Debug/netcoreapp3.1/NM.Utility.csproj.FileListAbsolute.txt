@@ -1,9 +1,0 @@
-D:\Project\HW\trunk\NM.Utility\bin\Debug\netcoreapp3.1\NM.Utility.deps.json
-D:\Project\HW\trunk\NM.Utility\bin\Debug\netcoreapp3.1\NM.Utility.dll
-D:\Project\HW\trunk\NM.Utility\bin\Debug\netcoreapp3.1\NM.Utility.pdb
-D:\Project\HW\trunk\NM.Utility\obj\Debug\netcoreapp3.1\NM.Utility.AssemblyInfoInputs.cache
-D:\Project\HW\trunk\NM.Utility\obj\Debug\netcoreapp3.1\NM.Utility.AssemblyInfo.cs
-D:\Project\HW\trunk\NM.Utility\obj\Debug\netcoreapp3.1\NM.Utility.csproj.CoreCompileInputs.cache
-D:\Project\HW\trunk\NM.Utility\obj\Debug\netcoreapp3.1\NM.Utility.dll
-D:\Project\HW\trunk\NM.Utility\obj\Debug\netcoreapp3.1\NM.Utility.pdb
-D:\Project\HW\trunk\NM.Utility\obj\Debug\netcoreapp3.1\NM.Utility.csprojAssemblyReference.cache
