@@ -2,5 +2,35 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/trunk/CompWebApp/obj
+/trunk/NM.API/obj
+/trunk/NM.Business/obj
+/trunk/NM.DataAccess/obj
+/trunk/NM.Domain/obj
+/trunk/NM.Scheduler/obj
+/trunk/NM.Utility/obj
+/trunk/.vs
+/trunk/NM.API/app_logs
+/trunk/NM.API/Uploads
+/trunk/NM.API/bin/Debug
+/trunk/NM.Business/bin/Debug
+/trunk/NM.DataAccess/bin/Debug
+/trunk/NM.Domain/bin/Debug
+/trunk/NM.Scheduler/bin/Debug
+/trunk/NM.Utility/bin/Debug
+/trunk/NM.API/bin/Release
+/trunk/NM.Business/bin/Release
+/trunk/NM.DataAccess/bin/Release
+/trunk/NM.Domain/bin/Release
+/trunk/NM.Utility/bin/Release
+/.vs/TheSkyComm/v16
 /.vs
+/Docs
+/trunk/NM.Scheduler/bin/Release
+/trunk/NM.Scheduler/Properties/PublishProfiles
+/trunk/NM.Scheduler/NM.Scheduler.csproj.user
+/trunk/NM.API/.config
+/trunk/NM.Utility/bin/Debug/netcoreapp3.1
+/trunk/NM.Domain/bin/Debug/netcoreapp3.1
+/trunk/NM.DataAccess/bin/Debug/netcoreapp3.1
+/trunk/NM.Business/bin/Debug/netcoreapp3.1
+/trunk/NM.API/bin/Debug/netcoreapp3.1
