@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NM.Scheduler", "NM.Schedule
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NM.Utility", "NM.Utility\NM.Utility.csproj", "{A8C18B0B-03F8-42B1-B3FB-A8BEA366A109}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NM.API", "NM.API\NM.API.csproj", "{78F5FDD0-A94E-49D7-BAEF-DBA4897B3263}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A8C18B0B-03F8-42B1-B3FB-A8BEA366A109}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8C18B0B-03F8-42B1-B3FB-A8BEA366A109}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8C18B0B-03F8-42B1-B3FB-A8BEA366A109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F5FDD0-A94E-49D7-BAEF-DBA4897B3263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F5FDD0-A94E-49D7-BAEF-DBA4897B3263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F5FDD0-A94E-49D7-BAEF-DBA4897B3263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F5FDD0-A94E-49D7-BAEF-DBA4897B3263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
