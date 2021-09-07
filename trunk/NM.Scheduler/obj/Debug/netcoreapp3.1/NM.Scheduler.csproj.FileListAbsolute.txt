@@ -1,0 +1,12 @@
+D:\Project\HW\trunk\NM.Scheduler\bin\Debug\netcoreapp3.1\NM.Scheduler.exe
+D:\Project\HW\trunk\NM.Scheduler\bin\Debug\netcoreapp3.1\NM.Scheduler.deps.json
+D:\Project\HW\trunk\NM.Scheduler\bin\Debug\netcoreapp3.1\NM.Scheduler.runtimeconfig.json
+D:\Project\HW\trunk\NM.Scheduler\bin\Debug\netcoreapp3.1\NM.Scheduler.runtimeconfig.dev.json
+D:\Project\HW\trunk\NM.Scheduler\bin\Debug\netcoreapp3.1\NM.Scheduler.dll
+D:\Project\HW\trunk\NM.Scheduler\bin\Debug\netcoreapp3.1\NM.Scheduler.pdb
+D:\Project\HW\trunk\NM.Scheduler\obj\Debug\netcoreapp3.1\NM.Scheduler.AssemblyInfoInputs.cache
+D:\Project\HW\trunk\NM.Scheduler\obj\Debug\netcoreapp3.1\NM.Scheduler.AssemblyInfo.cs
+D:\Project\HW\trunk\NM.Scheduler\obj\Debug\netcoreapp3.1\NM.Scheduler.csproj.CoreCompileInputs.cache
+D:\Project\HW\trunk\NM.Scheduler\obj\Debug\netcoreapp3.1\NM.Scheduler.dll
+D:\Project\HW\trunk\NM.Scheduler\obj\Debug\netcoreapp3.1\NM.Scheduler.pdb
+D:\Project\HW\trunk\NM.Scheduler\obj\Debug\netcoreapp3.1\NM.Scheduler.genruntimeconfig.cache

@@ -1,0 +1,8 @@
+D:\Project\HW\trunk\NM.Business\bin\Debug\netcoreapp3.1\NM.Business.deps.json
+D:\Project\HW\trunk\NM.Business\bin\Debug\netcoreapp3.1\NM.Business.dll
+D:\Project\HW\trunk\NM.Business\bin\Debug\netcoreapp3.1\NM.Business.pdb
+D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.AssemblyInfoInputs.cache
+D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.AssemblyInfo.cs
+D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.csproj.CoreCompileInputs.cache
+D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.dll
+D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.pdb

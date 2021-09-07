@@ -1,0 +1,9 @@
+D:\Project\HW\trunk\NM.DataAccess\bin\Debug\netcoreapp3.1\NM.DataAccess.deps.json
+D:\Project\HW\trunk\NM.DataAccess\bin\Debug\netcoreapp3.1\NM.DataAccess.dll
+D:\Project\HW\trunk\NM.DataAccess\bin\Debug\netcoreapp3.1\NM.DataAccess.pdb
+D:\Project\HW\trunk\NM.DataAccess\obj\Debug\netcoreapp3.1\NM.DataAccess.csprojAssemblyReference.cache
+D:\Project\HW\trunk\NM.DataAccess\obj\Debug\netcoreapp3.1\NM.DataAccess.AssemblyInfoInputs.cache
+D:\Project\HW\trunk\NM.DataAccess\obj\Debug\netcoreapp3.1\NM.DataAccess.AssemblyInfo.cs
+D:\Project\HW\trunk\NM.DataAccess\obj\Debug\netcoreapp3.1\NM.DataAccess.csproj.CoreCompileInputs.cache
+D:\Project\HW\trunk\NM.DataAccess\obj\Debug\netcoreapp3.1\NM.DataAccess.dll
+D:\Project\HW\trunk\NM.DataAccess\obj\Debug\netcoreapp3.1\NM.DataAccess.pdb
