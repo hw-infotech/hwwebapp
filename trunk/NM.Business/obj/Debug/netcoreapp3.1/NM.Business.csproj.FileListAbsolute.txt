@@ -6,3 +6,4 @@ D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.AssemblyInfo
 D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.csproj.CoreCompileInputs.cache
 D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.dll
 D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.pdb
+D:\Project\HW\trunk\NM.Business\obj\Debug\netcoreapp3.1\NM.Business.csprojAssemblyReference.cache
