@@ -37,7 +37,7 @@ export class Layout extends Component {
                     <Route exact path = "/graphic-design" component = {graphicsD} />
                     <Route exact path="/telemedician" component={Telemedician} />
                     <Route exact path="/career" component={Career} />
-                    <Route exact path="/upload" component={UploadCv} />
+                    <Route exact path="/UploadCv" component={UploadCv} />
                     <Route exact path="/privacy-Policy" component={PrivacyPolicy} />
                     <Route exact path="/terms-and-condition" component={TermsCondition} />
                     <Route exact path="/blogs" component={BlogList} />
