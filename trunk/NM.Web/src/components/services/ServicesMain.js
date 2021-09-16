@@ -190,8 +190,7 @@ class ServicesMain extends Component {
                                             aligning your business needs and goals with your users’ need for a friendly, intuitive,
                                             delightful experience. We’re your partner in digitally driven success.</p>
                                             <div className="actionBtn">
-                                                <a href="#" className="btn-outline"> Explore Our Process</a>
-                                                <a href="#" className="btn-fill"> Request a free consultation</a>
+                                                <Link to="/contact-us" className="btn-fill"> Request a free consultation</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -277,9 +276,9 @@ class ServicesMain extends Component {
 
                     
                     <section className="site-footer">
-                        <div className="project-in-mind">
-                            <div className="container">
-                            <p className="light">Let’s co-create your <strong>success story</strong></p> <a href="#" className="btn btn-flip" data-text="let’s talk"><span>let’s talk</span></a>
+                        <div class="project-in-mind">
+                            <div class="container">
+                            <p class="light">Let’s co-create your <strong>success story</strong></p> <Link to="/contact-us"> class="btn btn-flip" data-text="let’s talk"><span>let’s talk</span></Link>
                             </div>
                         </div>
                     </section>

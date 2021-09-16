@@ -47,15 +47,15 @@ class HomeContent extends Component {
     </div>
     </div>
     <NavBar />
-    <div className="clb-social">
-        <ul className="clb-social-holder font-titles icons"> 
-            <li className="clb-social-holder-follow">Follow Us</li>
-            <li className="clb-social-holder-dash">–</li>
-            {/* <li><a target="_blank" href="#" className="facebook"><i className="bx bxl-facebook"></i> </a></li> */}
-                    <li><a target="_blank" href="https://in.linkedin.com/company/nestormindinfotech" className="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
-            {/* <li><a target="_blank" href="#" className="twitter"><i className="bx bxl-twitter"></i> </a></li>
-            <li><a target="_blank" href="#" className="instagram"><i className="bx bxl-instagram"></i> </a></li>
-            <li><a target="_blank" href="#" className="skype"><i className="bx bxl-skype"></i></a></li> */}
+    <div class="clb-social">
+        <ul class="clb-social-holder font-titles icons"> 
+            <li class="clb-social-holder-follow">Follow Us</li>
+            <li class="clb-social-holder-dash">–</li>
+            {/* <li><a target="_blank" href="#" class="facebook"><i className="bx bxl-facebook"></i> </a></li> */}
+                    <li><a target="_blank" href="https://in.linkedin.com/company/nestormindinfotech" class="linkedin"><i className="bx bxl-linkedin"> </i></a></li>
+            {/* <li><a target="_blank" href="#" class="twitter"><i className="bx bxl-twitter"></i> </a></li>
+            <li><a target="_blank" href="#" class="instagram"><i className="bx bxl-instagram"></i> </a></li>
+            <li><a target="_blank" href="#" class="skype"><i className="bx bxl-skype"></i></a></li> */}
         </ul>
     </div>
     <section id="hero" className="d-flex align-items-center">
@@ -304,14 +304,14 @@ class HomeContent extends Component {
                         <div className="portfolio-item-image">
                             <img src="assets/img/telemedician.png"/>
                         </div>
-                        <a href="#" target="_blank" data-cursor-className="cursor-link" className="portfolio-item-details text-left">
-                        <h3 className="portfolio-item-headline title ">Telemedicien</h3>
-                                <div className="category-holder">
-                                    <span className="category ">Branding</span>
-                                    <span className="category ">Mobile App</span>
+                        <a href="#" target="_blank" data-cursor-class="cursor-link" class="portfolio-item-details text-left">
+                        <h3 class="portfolio-item-headline title ">Telemedicien</h3>
+                                <div class="category-holder">
+                                    <span class="category ">Branding</span>
+                                    <span class="category ">Mobile App</span>
                                 </div>
-                                <div className="show-project">
-                                    <div className="show-project-link">
+                                <div class="show-project">
+                                    <div class="show-project-link">
                                         Show project                   
                                     </div>    
                                 </div>
@@ -325,14 +325,14 @@ class HomeContent extends Component {
                         <div className="portfolio-item-image">
                             <img src="assets/img/party.png"/>
                         </div>
-                        <a href="#" target="_blank" data-cursor-className="cursor-link" className="portfolio-item-details text-left">
-                        <h3 className="portfolio-item-headline title ">Event Party</h3>
-                                <div className="category-holder">
-                                    <span className="category ">Branding</span>
-                                    <span className="category ">Mobile App</span>
+                        <a href="#" target="_blank" data-cursor-class="cursor-link" class="portfolio-item-details text-left">
+                        <h3 class="portfolio-item-headline title ">Event Party</h3>
+                                <div class="category-holder">
+                                    <span class="category ">Branding</span>
+                                    <span class="category ">Mobile App</span>
                                 </div>
-                                <div className="show-project">
-                                    <div className="show-project-link">
+                                <div class="show-project">
+                                    <div class="show-project-link">
                                         Show project                   
                                     </div>    
                                 </div>
@@ -346,14 +346,14 @@ class HomeContent extends Component {
                         <div className="portfolio-item-image">
                             <img src="assets/img/vr.png"/>
                         </div>
-                        <a href="#" target="_blank" data-cursor-className="cursor-link" className="portfolio-item-details text-left">
-                        <h3 className="portfolio-item-headline title ">VR Technology</h3>
-                                <div className="category-holder">
-                                    <span className="category ">Branding</span>
-                                    <span className="category ">Mobile App</span>
+                        <a href="#" target="_blank" data-cursor-class="cursor-link" class="portfolio-item-details text-left">
+                        <h3 class="portfolio-item-headline title ">VR Technology</h3>
+                                <div class="category-holder">
+                                    <span class="category ">Branding</span>
+                                    <span class="category ">Mobile App</span>
                                 </div>
-                                <div className="show-project">
-                                    <div className="show-project-link">
+                                <div class="show-project">
+                                    <div class="show-project-link">
                                         Show project                   
                                     </div>    
                                 </div>
@@ -367,14 +367,14 @@ class HomeContent extends Component {
                         <div className="portfolio-item-image">
                             <img src="assets/img/join-vet.png"/>
                         </div>
-                        <a href="#" target="_blank" data-cursor-className="cursor-link" className="portfolio-item-details text-left">
-                        <h3 className="portfolio-item-headline title ">Join Vet</h3>
-                                <div className="category-holder">
-                                    <span className="category ">Branding</span>
-                                    <span className="category ">Mobile App</span>
+                        <a href="#" target="_blank" data-cursor-class="cursor-link" class="portfolio-item-details text-left">
+                        <h3 class="portfolio-item-headline title ">Join Vet</h3>
+                                <div class="category-holder">
+                                    <span class="category ">Branding</span>
+                                    <span class="category ">Mobile App</span>
                                 </div>
-                                <div className="show-project">
-                                    <div className="show-project-link">
+                                <div class="show-project">
+                                    <div class="show-project-link">
                                         Show project                   
                                     </div>    
                                 </div>
@@ -413,52 +413,52 @@ class HomeContent extends Component {
                     <div className="col-12 col-md-5 col-lg-5">
                         <div className="collapseBox">
                             {/* <div className="playBtn">
-                                <button className="round-btn"><i className='bx bx-right-arrow'></i> </button>
+                                <button className="round-btn"><i class='bx bx-right-arrow'></i> </button>
                             </div> */}
-                            <div className="collapseHeading">
-                                <h3 className="title">  Play Video We work in the fields of UI/UX design and art direction.    </h3>
+                            <div class="collapseHeading">
+                                <h3 class="title">  Play Video We work in the fields of UI/UX design and art direction.    </h3>
                             </div>
 
                             <div id="accordion" className="accordion">
-                                <div className="card">
-                                    <div className="card-header" id="headingOne">
-                                    <h5 className="mb-0">
-                                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         Website & Mobile App Design
                                         </button>
                                     </h5>
                                     </div>
 
-                                    <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div className="card-body">
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
                                     We offer a full range of website and mobile app development services from scratch. From Responsive Websites to Fast & Easy-to-Use Mobile Applications, we design and develop quality and cost-effective applications.
                                     </div>
                                     </div>
                                 </div>
-                                <div className="card">
-                                    <div className="card-header" id="headingTwo">
-                                    <h5 className="mb-0">
-                                        <button className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         Motion Graphics & Animation
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                    <div className="card-body">
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
                                     Whether you are a small scale industry or a large enterprise looking to attract the audience visually, GPCODERS is a standalone destination for all. A close eye to the smallest detail is provided for immersive video experiences.
                                     </div>
                                     </div>
                                 </div>
-                                <div className="card">
-                                    <div className="card-header" id="headingThree">
-                                    <h5 className="mb-0">
-                                        <button className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         User Experience
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                    <div className="card-body">
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
                                     Build a solid reputation in the digital world with Customized User-Experiences, tailored to your target audience’s needs. Our proven professionals offer you pixel-perfect, user-friendly, and reliable designs to stand out from the competition.
                                     </div>
                                     </div>
@@ -616,7 +616,7 @@ class HomeContent extends Component {
                                         <div className="row">
                                             <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                                                 <div className="clientFeedbackVideo">
-                                                    //    <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                   
                                                 </div>
                                             </div>
@@ -643,7 +643,7 @@ class HomeContent extends Component {
                                         <div className="row">
                                             <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                                                     <div className="clientFeedbackVideo">
-                                                    //    <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                                                     </div>
                                             </div>
@@ -669,7 +669,7 @@ class HomeContent extends Component {
                                         <div className="row">
                                             <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                                                     <div className="clientFeedbackVideo">
-                                                     //   <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                                                     </div>
                                             </div>
@@ -694,7 +694,7 @@ class HomeContent extends Component {
                                         <div className="row">
                                             <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                                                     <div className="clientFeedbackVideo">
-                                                   //     <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                                                     </div>
                                             </div>
@@ -720,7 +720,7 @@ class HomeContent extends Component {
                                         <div className="row">
                                             <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                                                     <div className="clientFeedbackVideo">
-                                                      //  <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                                        <iframe width="1180" height="664" src="https://www.youtube.com/embed/HSgjpQBkR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                                                     </div>
                                             </div>
@@ -855,7 +855,7 @@ class HomeContent extends Component {
                 <div className="newsLetterSubTitle">To get all latest updates and news Subscribe our newsletter now!</div>
                 <div className="newsLetterForm">
                     <input type="text" className="form-control" placeholder="Enter Email"/>
-                    <button className="newsletterBtn"><i className='bx bxl-telegram'></i></button>
+                    <button className="newsletterBtn"><i class='bx bxl-telegram'></i></button>
                 </div>
             </div>
         </div>

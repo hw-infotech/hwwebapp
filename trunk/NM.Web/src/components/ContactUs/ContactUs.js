@@ -18,7 +18,7 @@ class ContactUsContent extends Component {
                     <div className="contact-hero__item">
                         <h1>Let’s create progress together</h1>
                         <div className="contact-form" id="mc_embed_signup">
-                            <form  method="post" name="contact-form" className="form">
+                            <form action="/thank-you/" method="post" name="contact-form" className="form">
                                 <input type="hidden" name="form-name" value="contact-form"/>
                                     <div className="input-group">
                                         <p>Services</p>
@@ -96,7 +96,7 @@ class ContactUsContent extends Component {
                                     <img src="assets/img/contact-us1.png" alt="line white"/>
                             </div>
                 </div>
-                <p className="contact-hero--contact">Reach us out at <a href="mailto:hello@brucira.com">info@nestormind.com</a></p>
+                <p class="contact-hero--contact">Reach us out at <a href="mailto:hello@brucira.com">info@nestormind.com</a></p>
             </div>
             
         </section>
