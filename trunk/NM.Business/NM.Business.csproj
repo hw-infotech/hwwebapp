@@ -18,5 +18,6 @@
     <ProjectReference Include="..\NM.Domain\NM.Domain.csproj" />
     <ProjectReference Include="..\NM.Utility\NM.Utility.csproj" />
   </ItemGroup>
+  
 
 </Project>
