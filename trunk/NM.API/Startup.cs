@@ -42,9 +42,11 @@ namespace NM.API
             services.AddTransient<IClientBusiness, ClientBusiness>();
             services.AddTransient<INewsLetterBusiness, NewsLetterBusiness>();
 
+            //add changes
+            services.Configure<AppSettingsModel>(options => Configuration.GetSection("Jwt").Bind(options));
             services.AddTokenAuthentication(Configuration);
             services.AddOptions();
-            services.AddMvcCore().AddAuthorization();
+            //services.AddMvcCore().AddAuthorization();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }

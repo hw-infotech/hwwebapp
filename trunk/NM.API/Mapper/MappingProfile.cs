@@ -52,6 +52,7 @@ namespace NM.API.Mapper
             CreateMap<Project, ProjectModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore()); 
             CreateMap<Technology, TechnologyModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<Client, ClientModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
+            CreateMap<NewsLetter, NewsLetterModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             #endregion
 
             #region Result Model

@@ -1,0 +1,15 @@
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.DataAccess.dll
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.Domain.dll
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.Utility.dll
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.Domain.pdb
+D:\Project\NestorMind\trunk\NM.Infrastructure\obj\Debug\netcoreapp3.1\NM.Infrastructure.csprojAssemblyReference.cache
+D:\Project\NestorMind\trunk\NM.Infrastructure\obj\Debug\netcoreapp3.1\NM.Infrastructure.AssemblyInfoInputs.cache
+D:\Project\NestorMind\trunk\NM.Infrastructure\obj\Debug\netcoreapp3.1\NM.Infrastructure.AssemblyInfo.cs
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.Infrastructure.deps.json
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.Infrastructure.dll
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.Infrastructure.pdb
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.DataAccess.pdb
+D:\Project\NestorMind\trunk\NM.Infrastructure\bin\Debug\netcoreapp3.1\NM.Utility.pdb
+D:\Project\NestorMind\trunk\NM.Infrastructure\obj\Debug\netcoreapp3.1\NM.Infrastructure.csproj.CopyComplete
+D:\Project\NestorMind\trunk\NM.Infrastructure\obj\Debug\netcoreapp3.1\NM.Infrastructure.dll
+D:\Project\NestorMind\trunk\NM.Infrastructure\obj\Debug\netcoreapp3.1\NM.Infrastructure.pdb
