@@ -44,7 +44,7 @@ class AboutUsContent extends Component {
                    <div className="content">
                         <h3>About Us</h3>
                           <p>In 2010, we embarked on a journey to create a unique and powerful statement of value to clients summed in three simple phrases – Business Impact Created, Predictability in Execution, and Unique Client Experiences. Since then, all aspects of Nestormind and its ecosystem have been shaped to deliver this value repetitively and consistently in every client setting. We offer full-scale software solutions for mobile and desktop that has already contributed to the success of many enterprises across the world and different industries. Our software development consists of three parts-Front-end, middleware, and Backend. We work on creating beautiful and attractive designs, implementing features and data resources to make apps more functional, and also helps to enhance security while dealing with the back-end phase. We have a pool of both experienced and creative minds, who have produced various applications with outstanding user experiences and value-adding to the customers. We offer Ux/UI design, Web and Mobile development, Quality Assurance, Service Integration, Maintenance, AI/ML Solutions, IOT Solutions, Blockchain, IT Consulting and other services to ensure a strong online presence for enterprises, boost sales, improve visibility and grow customer base.</p>
-                          <div className="line">
+                          <div class="line">
                             <img src="assets/img/yellow-line.svg" alt=""/>
                             </div>
                          
@@ -111,9 +111,9 @@ class AboutUsContent extends Component {
 
 
             <section className="site-footer">
-                <div className="project-in-mind">
-                    <div className="container">
-                    <p className="light">Let’s co-create your <strong>success story</strong></p> <Link to="/contact-us" className="btn btn-flip" data-text="let’s talk"><span>let’s talk</span></Link>
+                <div class="project-in-mind">
+                    <div class="container">
+                    <p class="light">Let’s co-create your <strong>success story</strong></p> <Link to="/contact-us" class="btn btn-flip" data-text="let’s talk"><span>let’s talk</span></Link>
                     </div>
                 </div>
             </section>

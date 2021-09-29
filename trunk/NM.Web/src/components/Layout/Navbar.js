@@ -26,36 +26,36 @@ class NavBar extends Component {
     return (
       <header id="header" className={this.state.isTop ? 'fixed-top header-scrolled scroll' : 'fixed-top header-scrolled'} onScroll={this._handleScroll}>
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="/"><img src="assets/img/nestormind.png" width="250px"/></a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"><img src="assets/img/nestormind.png" width="250px"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div className="collapse navbar-collapse " id="navbarNav">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item active">
+            <div class="collapse navbar-collapse " id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
                 <Link to="/">Home </Link>
                 </li>
-                <li className="nav-item dropdown">
-                <Link to="/services_main" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</Link>
+                <li class="nav-item dropdown">
+                <a href="/services_main" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
 
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link className="dropdown-item" to="/app-development">App Development</Link>
-                  <Link className="dropdown-item" to="/web-development">Web Development</Link>
-                  <Link className="dropdown-item" to="/ui-ux-design">UI  UX Design</Link>
-                  <Link className="dropdown-item" to="/seo">Seo</Link>
-                  <Link className="dropdown-item" to="/graphic-design">Graphics Design</Link>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <Link class="dropdown-item" to="/app-development">App Development</Link>
+                  <Link class="dropdown-item" to="/web-development">Web Development</Link>
+                  <Link class="dropdown-item" to="/ui-ux-design">UI  UX Design</Link>
+                  <Link class="dropdown-item" to="/seo">Seo</Link>
+                  <Link class="dropdown-item" to="/graphic-design">Graphics Design</Link>
                   
                 </div>
                 </li>
-                <li className="nav-item">
+                <li class="nav-item">
                 <Link to="/about-us">About Us</Link>
                 </li>
-                <li className="nav-item">
+                <li class="nav-item">
                 <Link to="/blogs">Blog</Link>
                 </li>
-                <li className="nav-item">
+                <li class="nav-item">
                 <Link to="/contact-us">Contact Us</Link>
                 </li>
               </ul>

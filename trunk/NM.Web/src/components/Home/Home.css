@@ -124,6 +124,10 @@
 .servicesArea {
     background: rgba(136, 136, 136, 0.05);
 }
+.serviceRedirect:hover .arrowIcon {
+    float: right;
+    filter: brightness(0) invert(1);
+}
 .serviceRedirect{
     padding: 15px;
     border-radius: 10px;
@@ -135,6 +139,31 @@
     transition: all ease .5s;
     padding: 15px;
     border-radius: 10px;
+}
+.serviceRedirect:First-child:hover {
+    background: #035db1;
+    transition: all ease .5s;
+}
+.serviceRedirect:nth-child(2):hover {
+    background: #f5a210;
+    transition: all ease .5s;
+}
+
+.serviceRedirect:nth-child(3):hover {
+    background: #f62b2c;
+    transition: all ease .5s;
+}
+.serviceRedirect:last-child:hover {
+    background: #30ab48;
+    transition: all ease .5s;
+}
+.serviceRedirect:hover a {
+    color: #ffffff;
+    transition: all ease .5s;
+}
+.servicesArea .serviceRedirect:hover .serviceBox .title {
+    margin-top: 20px;
+    color: #fff;
 }
 .serviceRedirect .arrowIcon {
     float: right;
@@ -427,7 +456,7 @@
 }
 
 .accordian-section .collapseBox .accordion .card .card-header h5 .btn:before {
-    content: '\f068';
+    content: '\f067';
     /* You should use \ and not /*/
     font-family: "Font Awesome 5 Free";
     /* This is the correct font-family*/
@@ -437,7 +466,7 @@
 }
 
 .accordian-section .collapseBox .accordion .card .card-header h5 .btn.collapsed:before {
-    content: "\f067";
+    content: "\f068";
     padding-right: 5px;
     position: absolute;
     left: 0;
