@@ -7,5 +7,6 @@ namespace NM.Utility
         public const string TokenExpire = "Your token has expire";
         public const string Login = "Login successfully.";
         public const string LoginFail = "Invalid username/password.";
+        public const string EmailExist = "Email is all ready exist";
     }
 }

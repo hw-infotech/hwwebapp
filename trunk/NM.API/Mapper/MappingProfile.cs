@@ -35,6 +35,8 @@ namespace NM.API.Mapper
             CreateMap<ResultModel<List<ClientModel>>, ResultVM<List<ClientVM>>>().ReverseMap();
             CreateMap<ResultModel<NewsLetterModel>, ResultVM<NewsLetterVM>>().ReverseMap();
             CreateMap<ResultModel<List<NewsLetterModel>>, ResultVM<List<NewsLetterVM>>>().ReverseMap();
+            CreateMap<ResultModel<TestimonialsModel>, ResultVM<TestimonialsVM>>().ReverseMap();
+            CreateMap<ResultModel<List<TestimonialsModel>>, ResultVM<List<TestimonialsVM>>>().ReverseMap();
             #endregion
 
             #region View to Model ReverseMap
@@ -44,6 +46,7 @@ namespace NM.API.Mapper
             CreateMap<TechnologyModel, TechnologyVM>().ReverseMap();
             CreateMap<ClientModel, ClientVM>().ReverseMap();
             CreateMap<NewsLetterModel, NewsLetterVM>().ReverseMap();
+            CreateMap<TestimonialsModel, TestimonialsVM>().ReverseMap();
             #endregion
 
             #region Model to Entity ReverseMap
@@ -53,6 +56,7 @@ namespace NM.API.Mapper
             CreateMap<Technology, TechnologyModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<Client, ClientModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<NewsLetter, NewsLetterModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
+            CreateMap<Testimonials, TestimonialsModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             #endregion
 
             #region Result Model

@@ -21,7 +21,9 @@ namespace NM.DataAccess.SqlContext
         public DbSet<Role> Role { get; set; }//master entity
         public DbSet<AppUser> AppUsers { get; set; } 
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Contact> Contacts { get; set; }   
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Testimonials> Testimonials { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -38,6 +40,7 @@ namespace NM.DataAccess.SqlContext
             builder.ApplyConfiguration(new ServicesConfiguration());
             builder.ApplyConfiguration(new TechnologyConfiguration());
             builder.ApplyConfiguration(new RoleConfiguration());
+            builder.ApplyConfiguration(new TestimonialsConfiguration());
 
         }
 

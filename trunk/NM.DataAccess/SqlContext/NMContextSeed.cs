@@ -112,7 +112,13 @@ namespace NM.DataAccess.SqlContext
                         await context.Contacts.AddRangeAsync(GetContact());
 
                         await context.SaveChangesAsync();
-                    } 
+                    }
+                    if (!context.Testimonials.Any())
+                    {
+                        await context.Testimonials.AddRangeAsync(GetTestimonials());
+
+                        await context.SaveChangesAsync();
+                    }
 
                 }
                 catch (Exception ex)
@@ -247,6 +253,13 @@ namespace NM.DataAccess.SqlContext
             {
                 new Contact("Will Smith","smith@mailinator.com","save the content of will smith"),
                 new Contact("Robert Downey","Robert@mailinator.com","save the content of will smith")
+            };
+        }
+        private IEnumerable<Testimonials> GetTestimonials()
+        {
+            return new List<Testimonials>()
+            {
+                new Testimonials("Johan","It is good company","PMS","www.image.com","Manager")
             };
         }
     }

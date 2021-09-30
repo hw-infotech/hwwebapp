@@ -20,6 +20,7 @@ namespace NM.DataAccess.Interface
         IRepository<Technology> TechnologyRepository { get; }
         IRepository<Client> ClientRepository { get; }
         IRepository<NewsLetter> NewsLetterRepository { get; }
+        IRepository<Testimonials> TestimonialsRepository { get; }
         void Save();
         void Dispose();
 

@@ -14,7 +14,7 @@ using NM.Utility;
 
 namespace NM.API.Controllers
 {
-    [Route("api/Technology")]
+    [Route("api/TechnologyController")]
     [ApiController]
     public class TechnologyController : ControllerBase
     {

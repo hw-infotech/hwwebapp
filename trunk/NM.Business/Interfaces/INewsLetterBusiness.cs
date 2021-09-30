@@ -7,6 +7,8 @@ namespace NM.Business.Interfaces
 {
     public interface INewsLetterBusiness
     {
+        ResultModel<bool> SubscribeNewsLetter(NewsLetterModel newsLetterModel);
+        ResultModel<bool> UnSubscribeByBsonId(string bsonId);
         ResultModel<List<NewsLetterModel>> GetAllNewsLetter();
     }
 }

@@ -33,7 +33,6 @@ namespace NM.API.Controllers
             blogBusiness = _blogBusiness;
         }
         #endregion
-
         [HttpPost]
         [Route("create")]
         public ActionResult<ResultVM<bool>> Create(BlogVM blogVM)
@@ -54,7 +53,6 @@ namespace NM.API.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, new { Result = resultVM });
             }
         }
-
 
         [HttpPost]
         [Route("update")]

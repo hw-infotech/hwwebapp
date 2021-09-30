@@ -8,12 +8,12 @@ namespace NM.API.Application.Models
 {
     public class NewsLetterVM
     {
+        public string BsonId { get; set; }
         [Required(ErrorMessage = "Email Id is required")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Email is not valid")]
         [EmailAddress]
         public string Email { get; set; }
-        public string BsonId { get; set; }
-        //public Boolean IsDeleted { get; set; }
+        public bool IsSubscribe { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }
         public int UpdatedBy { get; set; }

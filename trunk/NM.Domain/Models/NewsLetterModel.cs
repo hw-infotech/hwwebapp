@@ -7,5 +7,6 @@ namespace NM.Domain.Models
     public class NewsLetterModel: EntityModel
     {
         public string Email { get; set; }
+        public bool IsSubscribe { get; set; }
     }
 }
