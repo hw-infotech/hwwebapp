@@ -1019,7 +1019,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 0.5rem 0;
 }
 
 .dddl-inner .right-inner ul li .image {
@@ -1077,7 +1077,7 @@
 }
 
 .newsletter {
-    background: white;
+    background: #000000;
     position: relative;
     padding: 90px 0 30px;
 }
@@ -1096,6 +1096,7 @@
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 15px;
+    color: #fff;
 }
 
 .newsletter .newsletterContent .newsLetterSubTitle {
@@ -1105,6 +1106,7 @@
     text-align: center;
     font-size: 24px;
     margin-bottom: 30px;
+    color: #fff;
 }
 
 .newsletter .newsletterContent .newsLetterForm {
@@ -1175,6 +1177,7 @@
     position: relative;
     padding-top: 0px;
     padding-bottom: 0px;
+    background: #000;
 }
 
 .address .dotImage {
@@ -1186,7 +1189,7 @@
     width: 100%;
     float: left;
     position: relative;
-    min-height: 590px;
+    min-height:400px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #bdbdbd33;
@@ -1195,7 +1198,7 @@
 .address .addressConetnt .india {
     font-size: 245px;
     font-weight: 900;
-    color: #f1f1f1;
+    color: #101010;
     position: absolute;
     right: 0;
     top: 0;
@@ -1205,6 +1208,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    max-width: 230px;
 }
 
 .address .addressConetnt .companyAddress {
@@ -1212,6 +1216,7 @@
     float: left;
     position: relative;
     max-width: 700px;
+    color: #fff;
 }
 
 .address .addressConetnt .companyAddress .coporateOfficeHeading {

@@ -42,7 +42,7 @@ export class Layout extends Component {
                     <Route exact path="/terms-and-condition" component={TermsCondition} />
                     <Route exact path="/blogs" component={BlogList} />
                     <Route exact path="/blog-post" component={Blogpost} />
-                    <Route component = {NotFound} />
+                    <Route exact path="/NotFound" component = {NotFound} />
                 </Switch>
             </BrowserRouter>
         )

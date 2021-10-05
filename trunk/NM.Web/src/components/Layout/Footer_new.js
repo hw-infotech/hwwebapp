@@ -62,19 +62,19 @@ class Footer_new extends Component {
                            <div className="content">
                               <ul>
                                  <li>
-                                    <Link to="">Virtual Reality</Link>
+                                 <Link to="/NotFound">Virtual Reality</Link>
                                  </li>
                                  <li>
-                                    <a href="#">Augmented Reality</a>
+                                 <Link to="/NotFound">Augmented Reality</Link>
                                  </li>
                                  <li>
-                                    <a href="#">AI</a>
+                                 <Link to="/NotFound">AI</Link>
                                  </li>
                                  <li>
-                                    <a href="#">Internet of things</a>
+                                 <Link to="/NotFound">Internet of things</Link>
                                  </li>
                                  <li>
-                                    <a href="#">Blockchain</a>
+                                 <Link to="/NotFound">Blockchain</Link>
                                  </li>
                               </ul>
                            </div>
@@ -92,10 +92,10 @@ class Footer_new extends Component {
                                     <Link to="/career">Career  </Link>
                                  </li>
                                  <li>
-                                 <Link to="/terms-and-condition">Terms of service</Link>
+                                 <Link to="/contact-us">Contact Us</Link>
                                  </li>
                                  <li>
-                                    <Link to="/privacy-policy">Privacy policy</Link>
+                                    <Link to="/NotFound">Our Products</Link>
                                  </li>
                               </ul>
                            </div>

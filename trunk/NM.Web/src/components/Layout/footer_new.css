@@ -1,6 +1,6 @@
 .footerBox__Panel{
     padding-bottom: 0px;
-    background: #0657aa;
+    background: #000000;
     position: relative;
 }
 .footerBox__Panel img {
@@ -33,6 +33,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
+    
 }
 
 .footerContent .companyLinsk h4:before, .footerContent .companyLinsk h5:before {
@@ -188,7 +189,7 @@ color:#fff;
     color: #fff;
     height: 40px;
     width: 40px;
-    background: #146eca;
+    background: #1e1e1e;
     display: block;
     text-align: center;
     line-height: 40px;
