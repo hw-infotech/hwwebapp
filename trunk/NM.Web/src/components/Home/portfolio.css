@@ -183,3 +183,286 @@
   filter: grayscale(1);
   opacity: 0.4;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .portfolioBoxPanel .bigTitle {
+    font-size: 76px;
+    top: -16px;
+  }
+  .portfolioBoxPanel .HeadingTitle .mainTitle {
+    font-size: 24px;
+    top: 0px;
+  }
+  .SwipeSlider {
+    display: flex;
+    flex-direction: column;
+}
+  .SwipeSlider .swiperLeft {
+    width: 100%;
+    display: block;
+}
+.SwipeSlider .swiperRight {
+  width: 100%;
+}
+.contant h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.contant p {
+  font-size: 13px;
+}
+.contant {
+  padding: 15px;
+}
+.owl-theme .owl-nav {
+  display: none;
+}
+.owl-theme .owl-dots {
+  display: none;
+}
+.portfolioBoxPanel {
+  overflow: hidden;
+}
+.stackLogo .brandlogoBox img {
+  height: 50px !important;
+}
+.SwipeSlider .swiperLeft h5 {
+  font-size: 15px;
+}
+.SwipeSlider .swiperLeft h4 {
+  font-size: 30px;
+}
+.SwipeSlider .swiperLeft h6 {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.portfolioBoxPanel .circleBluer {
+  height: 60px;
+  width: 60px;
+}
+}
+
+@media (min-width: 481px) and (max-width: 575px) {
+  .portfolioBoxPanel .bigTitle {
+    font-size: 110px;
+    top: -16px;
+  }
+  .portfolioBoxPanel .HeadingTitle .mainTitle {
+    font-size: 24px;
+    top: 0px;
+  }
+  .SwipeSlider {
+    display: flex;
+    flex-direction: column;
+}
+  .SwipeSlider .swiperLeft {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+    padding-right: 0;
+}
+.SwipeSlider .swiperRight {
+  width: 100%;
+}
+.contant h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.contant p {
+  font-size: 13px;
+}
+.contant {
+  padding: 15px;
+}
+.owl-theme .owl-nav {
+  display: none;
+}
+.owl-theme .owl-dots {
+  display: none;
+}
+.portfolioBoxPanel {
+  overflow: hidden;
+}
+.stackLogo .brandlogoBox img {
+  height: 50px !important;
+}
+.SwipeSlider .swiperLeft h5 {
+  font-size: 20px;
+}
+.SwipeSlider .swiperLeft h4 {
+  font-size: 30px;
+}
+.portfolioBoxPanel .circleBluer {
+  height: 60px;
+  width: 60px;
+}
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .portfolioBoxPanel .bigTitle {
+    font-size: 110px;
+    top: -16px;
+  }
+  .portfolioBoxPanel .HeadingTitle .mainTitle {
+    font-size: 24px;
+    top: 0px;
+  }
+  .SwipeSlider {
+    display: flex;
+    flex-direction: column;
+}
+  .SwipeSlider .swiperLeft {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+    padding-right: 0;
+}
+.SwipeSlider .swiperRight {
+  width: 100%;
+}
+.contant h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.contant p {
+  font-size: 13px;
+}
+.contant {
+  padding: 15px;
+}
+.owl-theme .owl-nav {
+  display: none;
+}
+.owl-theme .owl-dots {
+  display: none;
+}
+.portfolioBoxPanel {
+  overflow: hidden;
+}
+.stackLogo .brandlogoBox img {
+  height: 50px !important;
+}
+.SwipeSlider .swiperLeft h5 {
+  font-size: 24px;
+}
+.SwipeSlider .swiperLeft h4 {
+  font-size: 36px;
+}
+.portfolioBoxPanel .circleBluer {
+  height: 60px;
+  width: 60px;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .portfolioBoxPanel .bigTitle {
+    font-size: 156px;
+    top: -16px;
+  }
+  .portfolioBoxPanel .HeadingTitle .mainTitle {
+    font-size: 24px;
+    top: 0px;
+  }
+  .SwipeSlider {
+    display: flex;
+    flex-direction: column;
+}
+  .SwipeSlider .swiperLeft {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+    padding-right: 0;
+}
+.SwipeSlider .swiperRight {
+  width: 100%;
+}
+.contant h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.contant p {
+  font-size: 16px;
+}
+.contant {
+  padding: 30px;
+}
+.owl-theme .owl-nav {
+  display: none;
+}
+.owl-theme .owl-dots {
+  display: none;
+}
+.portfolioBoxPanel {
+  overflow: hidden;
+}
+.stackLogo .brandlogoBox img {
+  height: 50px !important;
+}
+.SwipeSlider .swiperLeft h5 {
+  font-size: 30px;
+}
+.SwipeSlider .swiperLeft h4 {
+  font-size: 42px;
+}
+.portfolioBoxPanel .circleBluer {
+  height: 60px;
+  width: 60px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .portfolioBoxPanel .bigTitle {
+    font-size: 156px;
+    top: -16px;
+  }
+  .portfolioBoxPanel .HeadingTitle .mainTitle {
+    font-size: 24px;
+    top: 0px;
+  }
+  .SwipeSlider {
+    display: flex;
+    flex-direction: column;
+}
+  .SwipeSlider .swiperLeft {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+    padding-right: 0;
+}
+.SwipeSlider .swiperRight {
+  width: 100%;
+}
+.contant h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.contant p {
+  font-size: 16px;
+}
+.contant {
+  padding: 30px;
+}
+.owl-theme .owl-nav {
+  display: none;
+}
+.owl-theme .owl-dots {
+  display: none;
+}
+.portfolioBoxPanel {
+  overflow: hidden;
+}
+.stackLogo .brandlogoBox img {
+  height: 50px !important;
+}
+.SwipeSlider .swiperLeft h5 {
+  font-size: 30px;
+}
+.SwipeSlider .swiperLeft h4 {
+  font-size: 42px;
+}
+.portfolioBoxPanel .circleBluer {
+  height: 60px;
+  width: 60px;
+}
+}

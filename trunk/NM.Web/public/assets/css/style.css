@@ -537,9 +537,9 @@ p{
     line-height: 36px;
   }
   #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+    font-size: 13px;
+    line-height: 22px;
+    margin-bottom: 20px;
   }
   #hero .hero-img img {
     width: 70%;
@@ -2528,8 +2528,8 @@ input:focus {
     padding: 0px;
   }
   #hero h1 {
-    font-size: 64px;
-    line-height: 64px;
+    font-size: 60px;
+    line-height: 70px;
   }
 }
 

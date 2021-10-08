@@ -42,10 +42,7 @@ class HomeContent extends Component {
         <section id="hero" className="d-flex align-items-center">
           <div className="container">
             <div className="row">
-              <div
-                className="col-lg-8 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-               
-              >
+              <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
                 <h1>We Provide The Best Solutions for Your Business</h1>
                 <h2>
                   We help new and established businesses to create their unique
@@ -97,7 +94,6 @@ class HomeContent extends Component {
                         <p className="subTitle"> Development </p>
                         <div className="divider"></div>
                         <h4 className="title">
-                          {" "}
                           Website & Mobile App Development{" "}
                         </h4>
                         <p>
@@ -172,7 +168,7 @@ class HomeContent extends Component {
             </div>
           </div>
         </section>
-        <Portfolio/>
+        <Portfolio />
 
         {/* <section className="stories">
           <OwlCarousel className="owl-theme" loop items={1} margin={10} nav>
@@ -428,7 +424,7 @@ class HomeContent extends Component {
               <h2 className="title">
                 1000s of projects delivered successfully.
                 <br />
-                Over 100 Satisfied Clients.{" "}
+                Over 100 Satisfied Clients.
               </h2>
             </div>
           </div>
@@ -462,7 +458,6 @@ class HomeContent extends Component {
                             </div> */}
                   <div class="collapseHeading">
                     <h3 class="title">
-                      {" "}
                       Play Video We work in the fields of UI/UX design and art
                       direction.{" "}
                     </h3>
@@ -563,8 +558,6 @@ class HomeContent extends Component {
             </div>
           </div>
         </section>
-
-       
 
         <section className="dark-love-home">
           <div className="container">
@@ -682,16 +675,10 @@ class HomeContent extends Component {
                       <div className="userContent">
                         <div className="row">
                           <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
-                            <div className="clientFeedbackVideo">
-                              <iframe
-                                width="1180"
-                                height="664"
-                                src="https://www.youtube.com/embed/HSgjpQBkR0c"
-                                title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                              ></iframe>
+                            <div className="clientProfilePic">
+                              <div className="userPic">
+                                <img src="assets/img/clientProfilePic.jpg" />
+                              </div>
                             </div>
                           </div>
                           <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">

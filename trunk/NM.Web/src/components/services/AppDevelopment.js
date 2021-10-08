@@ -6,6 +6,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from "react-router-dom";
+import Portfolio from '../Home/portfolio';
 
 
 class AppDev extends Component {
@@ -172,7 +173,7 @@ class AppDev extends Component {
                     </div>
                 </section>
                 
-
+                <Portfolio/>
 
                 <section className="formBox">
                     <div className="container">

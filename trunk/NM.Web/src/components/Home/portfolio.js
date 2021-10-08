@@ -11,15 +11,23 @@ class Portfolio extends Component {
       margin: 10,
       nav: true,
       autoPlay: true,
+      fluidSpeed:true,
+      autoplaySpeed: 5000,
       autoplayTimeout: 5000,
       responsive: {
         0: {
           items: 1,
         },
+        480: {
+          items: 2,
+        },
         600: {
           items: 2,
         },
         1000: {
+          items: 3,
+        },
+        1200: {
           items: 2,
         },
       },
@@ -35,10 +43,13 @@ class Portfolio extends Component {
       autoplaySpeed: 1000,
       responsive: {
         0: {
-          items: 1,
+          items: 3,
+        },
+        480: {
+          items: 4,
         },
         600: {
-          items: 2,
+          items: 5,
         },
         1000: {
           items: 8,
