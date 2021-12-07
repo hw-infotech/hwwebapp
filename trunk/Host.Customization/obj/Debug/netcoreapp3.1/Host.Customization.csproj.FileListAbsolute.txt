@@ -1,0 +1,8 @@
+D:\Project\NestorMind\trunk\Host.Customization\bin\Debug\netcoreapp3.1\Host.Customization.deps.json
+D:\Project\NestorMind\trunk\Host.Customization\bin\Debug\netcoreapp3.1\Host.Customization.dll
+D:\Project\NestorMind\trunk\Host.Customization\bin\Debug\netcoreapp3.1\Host.Customization.pdb
+D:\Project\NestorMind\trunk\Host.Customization\obj\Debug\netcoreapp3.1\Host.Customization.csprojAssemblyReference.cache
+D:\Project\NestorMind\trunk\Host.Customization\obj\Debug\netcoreapp3.1\Host.Customization.AssemblyInfoInputs.cache
+D:\Project\NestorMind\trunk\Host.Customization\obj\Debug\netcoreapp3.1\Host.Customization.AssemblyInfo.cs
+D:\Project\NestorMind\trunk\Host.Customization\obj\Debug\netcoreapp3.1\Host.Customization.dll
+D:\Project\NestorMind\trunk\Host.Customization\obj\Debug\netcoreapp3.1\Host.Customization.pdb
