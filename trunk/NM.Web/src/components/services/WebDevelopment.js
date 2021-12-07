@@ -6,7 +6,6 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from "react-router-dom";
-import Portfolio from '../Home/portfolio';
 
 
 class WebDev extends Component {
@@ -15,225 +14,385 @@ class WebDev extends Component {
     }// this changes the scrolling behavior to "smooth"
     render() { 
         return (
-            <>
+          <>
+            <NavBar />
 
-                <NavBar />
+            <section className="ServiceMainBanners webDevlopBox">
+              <div className="container">
+                <div className="Service_contentPanel">
+                  <small>Web Development</small>
+                  <h1>
+                    Web Development <br />
+                    Where experience meets innovation
+                  </h1>
+                  <p>
+                    We understand that projects come in all shapes and sizes. As
+                    trusted partners, our team of experts are here as an
+                    extension of your working team to ensure that your projects
+                    are met on time and budget.
+                  </p>
+                </div>
+                <div className="servicesImageHalfBox">
+                  <img src="assets/img/web-development.png" alt="" />
+                </div>
+              </div>
+            </section>
 
-                <section className="ServiceMainBanners webDevlopBox">
-                    
-                    <div className="container">
-                        <div className="Service_contentPanel">
-                            <small>Web Development</small>
-                            <h1>Web Development <br/>
-                            Where experience meets
-                            innovation</h1>
-                            <p>We understand that projects come in all shapes and sizes. As trusted partners, our team of experts are here as an extension of your working team to ensure that your projects are met on time and budget.</p>
+            <section className="technologyStack">
+              <div className="container">
+                <div className="stacks">
+                  <div className="stackTitle">
+                    <h2>
+                      Technology <strong>Stack</strong> We Used.
+                    </h2>
+                  </div>
+                  <ul>
+                    <li>
+                      <div className="stackBox">
+                        <div className="icon">
+                          <img src="assets/img/brandLogo/angular-icon.svg" />
                         </div>
-                        <div className="servicesImageHalfBox">
-                            <img src="assets/img/web-development.png" alt=""/>
+                        <div className="stackTitle">Angular</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="stackBox">
+                        <div className="icon">
+                          <img src="assets/img/brandLogo/nodejs-icon.svg" />
                         </div>
+                        <div className="stackTitle">Node.js</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="stackBox">
+                        <div className="icon">
+                          <img src="assets/img/brandLogo/react.svg" />
+                        </div>
+                        <div className="stackTitle">React.js</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="stackBox">
+                        <div className="icon">
+                          <img src="assets/img/brandLogo/firebase.svg" />
+                        </div>
+                        <div className="stackTitle">Firebase</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="stackBox">
+                        <div className="icon">
+                          <img src="assets/img/brandLogo/vue-js-logo.svg" />
+                        </div>
+                        <div className="stackTitle">Vue.js</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section className="our-experts">
+              <div className="container">
+                <div className="left">
+                  <h2 className="light">
+                    Have an awesome <br />
+                    <strong>Web Application idea </strong> and not sure <br />
+                    how to get started?
+                  </h2>
+                </div>
+                <div className="right">
+                  <Link to="/contact-us" className="btn-light btn-icon">
+                    TALK TO OUR EXPERTS{" "}
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+            <section className="process">
+              <div className="container">
+                <div className="processBox">
+                  <div className="row">
+                    <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
+                      <div className="ProcessContent">
+                        <h3>
+                          Our
+                          <br /> Web Development
+                          <br /> process
+                        </h3>
+                        <p>
+                          We have delivered result-driven iOS application
+                          development solutions across industry verticals that
+                          have helped our clients to achieve their desired
+                          digital goals. Be it prototyping, application
+                          architecture or UI/UX experience; we deliver
+                          perfection at every stage.
+                        </p>
+                      </div>
                     </div>
-                </section>
-                
-                <section className="technologyStack">
-                    <div className="container">
-                        <div className="stacks">
-                            <div className="stackTitle">
-                                <h2>Technology <strong>Stack</strong> We Used.</h2>
+                    <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
+                      <div className="processSlider">
+                        <div className="webIcon">
+                          <img src="assets/img/web-development_services.svg" />
+                        </div>
+                        <OwlCarousel
+                          className="owl-theme"
+                          loop
+                          autoplay={true}
+                          items={1}
+                          margin={10}
+                          nav
+                        >
+                          <div className="item">
+                            <div className="processContentPanel">
+                              <div className="number">01</div>
+                              <div className="processTitle">
+                                Research and Consulting{" "}
+                              </div>
+                              <p>
+                                We start with what we call Phase Zero, a data
+                                collection and marketing research phase in which
+                                we study your app idea, your company, and your
+                                end users.
+                              </p>
                             </div>
-                            <ul>
-                                <li>
-                                    <div className="stackBox">
-                                        <div className="icon">
-                                        <img src="assets/img/brandLogo/angular-icon.svg" />
-                                        </div>
-                                        <div className="stackTitle">Angular</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="stackBox">
-                                        <div className="icon">
-                                        <img src="assets/img/brandLogo/nodejs-icon.svg" />
-                                        </div>
-                                        <div className="stackTitle">Node.js</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="stackBox">
-                                        <div className="icon">
-                                        <img src="assets/img/brandLogo/react.svg" />
-                                        </div>
-                                        <div className="stackTitle">React.js</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="stackBox">
-                                        <div className="icon">
-                                        <img src="assets/img/brandLogo/firebase.svg" />
-                                        </div>
-                                        <div className="stackTitle">Firebase</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="stackBox">
-                                        <div className="icon">
-                                        <img src="assets/img/brandLogo/vue-js-logo.svg" />
-                                        </div>
-                                        <div className="stackTitle">Vue.js</div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="our-experts">
-                    <div className="container">
-                    <div className="left">
-                    <h2 className="light">Have an awesome <br/><strong>Web Application idea </strong> and not sure <br/>how to get started?</h2>
-                    </div>
-                    <div className="right">
-                     <Link to="/contact-us" className="btn-light btn-icon">TALK TO OUR EXPERTS </Link>
-                    </div>
-                    </div>
-                </section>
-
-                <section className="process">
-                    <div className="container">
-                        <div className="processBox">
-                            <div className="row">
-                                <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
-                                    <div className="ProcessContent">
-                                        <h3>Our<br/> Web Development<br/> process</h3>
-                                        <p>We have delivered result-driven iOS application development solutions across industry
-                                            verticals that have helped our clients to achieve their desired digital goals. Be it prototyping,
-                                            application architecture or UI/UX experience; we deliver perfection at every stage.</p>
-                                    </div>
-                                </div>
-                                <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
-                                    <div className="processSlider">
-                                        <div className="webIcon">
-                                        <img src="assets/img/web-development_services.svg" />
-                                        </div>
-                                        <OwlCarousel
-                                                className="owl-theme"
-                                                loop
-                                                autoplay={true}
-                                                items={1}
-                                                margin={10}
-                                                nav
-                                            >
-                                            <div className="item">
-                                                <div className="processContentPanel">
-                                                    <div className="number">01</div>
-                                                    <div className="processTitle">Research and Consulting </div>
-                                                    <p>We start with what we call Phase Zero, a data collection and marketing research phase in which we study your app idea, your company, and your end users.</p>
-                                                </div>
-                                            </div>
-                                            <div className="item">
-                                                <div className="processContentPanel">
-                                                    <div className="number">02</div>
-                                                    <div className="processTitle">Wireframe and Prototype  </div>
-                                                    <p>We start with what we call Phase Zero, a data collection and marketing research phase in which we study your app idea, your company, and your end users.</p>
-                                                </div>
-                                            </div>
-                                            <div className="item">
-                                                <div className="processContentPanel">
-                                                    <div className="number">03</div>
-                                                    <div className="processTitle">Architecture and Database  </div>
-                                                    <p>We start with what we call Phase Zero, a data collection and marketing research phase in which we study your app idea, your company, and your end users.</p>
-                                                </div>
-                                            </div>
-                                            <div className="item">
-                                                <div className="processContentPanel">
-                                                    <div className="number">04</div>
-                                                    <div className="processTitle">Web Development </div>
-                                                    <p>We start with what we call Phase Zero, a data collection and marketing research phase in which we study your app idea, your company, and your end users.</p>
-                                                </div>
-                                            </div>
-                                            <div className="item">
-                                                <div className="processContentPanel">
-                                                    <div className="number">05</div>
-                                                    <div className="processTitle">Testing and QA</div>
-                                                    <p>We start with what we call Phase Zero, a data collection and marketing research phase in which we study your app idea, your company, and your end users.</p>
-                                                </div>
-                                            </div>
-                                            <div className="item">
-                                                <div className="processContentPanel">
-                                                    <div className="number">06</div>
-                                                    <div className="processTitle">Deployment to Live Server  </div>
-                                                    <p>We start with what we call Phase Zero, a data collection and marketing research phase in which we study your app idea, your company, and your end users.</p>
-                                                </div>
-                                            </div>
-                                        </OwlCarousel>
-                                    </div>
-                                </div>
+                          </div>
+                          <div className="item">
+                            <div className="processContentPanel">
+                              <div className="number">02</div>
+                              <div className="processTitle">
+                                Wireframe and Prototype{" "}
+                              </div>
+                              <p>
+                                We start with what we call Phase Zero, a data
+                                collection and marketing research phase in which
+                                we study your app idea, your company, and your
+                                end users.
+                              </p>
                             </div>
-                        </div>
-                    </div>
-                </section>
-                
-
-            <Portfolio/>
-                <section className="formBox">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12 col-md-5">
-                                <div className="form">
-                                    <div className="title">Need Help with Development?</div>
-                                    <div className="input-form">
-                                        <div className="label">Name</div>
-                                        <div className="input-filed">
-                                            <input type="text" className="formControl" />
-                                        </div>
-                                    </div>
-                                    <div className="input-form">
-                                        <div className="label">Phone</div>
-                                        <div className="input-filed">
-                                            <input type="text" className="formControl" />
-                                        </div>
-                                    </div>
-                                    <div className="input-form">
-                                        <div className="label">Email</div>
-                                        <div className="input-filed">
-                                            <input type="email" className="formControl" />
-                                        </div>
-                                    </div>
-                                    <div className="input-form">
-                                        <div className="label">Message</div>
-                                        <div className="input-filed">
-                                            <textarea type="text" rows="3" className="formControl" />
-                                        </div>
-                                    </div>
-                                    <div className="input-form">
-                                       
-                                        <div className="input-filed">
-                                            <input type="submit" className="getintouch" value="Get In Touch" />
-                                        </div>
-                                    </div>
-                                </div>
+                          </div>
+                          <div className="item">
+                            <div className="processContentPanel">
+                              <div className="number">03</div>
+                              <div className="processTitle">
+                                Architecture and Database{" "}
+                              </div>
+                              <p>
+                                We start with what we call Phase Zero, a data
+                                collection and marketing research phase in which
+                                we study your app idea, your company, and your
+                                end users.
+                              </p>
                             </div>
-                            <div className="col-12 col-md-1"> </div>
-                            <div className="col-12 col-md-6">
-                                <div className="formContent">
-                                    <div className="bigText">
-                                            Have an awesome<br/>
-                                            Web Application idea and not sure<br/>
-                                            how to get started?
-                                    </div>
-                                    <div className="smallText">
-                                    Partner with us for affordable development supported by advanced frameworks, processes, automation, and expertise.
-                                    </div>
-                                </div>
+                          </div>
+                          <div className="item">
+                            <div className="processContentPanel">
+                              <div className="number">04</div>
+                              <div className="processTitle">
+                                Web Development{" "}
+                              </div>
+                              <p>
+                                We start with what we call Phase Zero, a data
+                                collection and marketing research phase in which
+                                we study your app idea, your company, and your
+                                end users.
+                              </p>
                             </div>
-                        </div>
+                          </div>
+                          <div className="item">
+                            <div className="processContentPanel">
+                              <div className="number">05</div>
+                              <div className="processTitle">Testing and QA</div>
+                              <p>
+                                We start with what we call Phase Zero, a data
+                                collection and marketing research phase in which
+                                we study your app idea, your company, and your
+                                end users.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="item">
+                            <div className="processContentPanel">
+                              <div className="number">06</div>
+                              <div className="processTitle">
+                                Deployment to Live Server{" "}
+                              </div>
+                              <p>
+                                We start with what we call Phase Zero, a data
+                                collection and marketing research phase in which
+                                we study your app idea, your company, and your
+                                end users.
+                              </p>
+                            </div>
+                          </div>
+                        </OwlCarousel>
+                      </div>
                     </div>
-                </section>
+                  </div>
+                </div>
+              </div>
+            </section>
 
-                 <Footer_new/>
+            <section className="webDevelopmentPortfolio">
+              <div className="container">
+                <div className="headingTitle">Our Product Design Success</div>
+                <div className="portfolioBox_panel jv mb-5">
+                  <div className="portfolioContent">
+                    <div className="portfolioContent_logo">
+                      <img src="/assets/img/logo-l.png" />
+                    </div>
+                    <div className="portfolioContent_title">
+                      We take care of your pets
+                    </div>
+                    <div className="portfolioContent_subContent">
+                      We makes it easy for businesses and marketing teams to
+                      manage your social account in a single place.
+                    </div>
+                  </div>
+                  <div className="portfolioBanner">
+                    <img src="/assets/img/joinVet_portfolio.png" />
+                  </div>
+                </div>
+                <div className="portfolioBox_panel hopitel mb-5">
+                  <div className="portfolioContent">
+                    <div className="portfolioContent_logo">
+                      <img src="/assets/img/logo-l.png" />
+                    </div>
+                    <div className="portfolioContent_title">
+                      We take care of your pets
+                    </div>
+                    <div className="portfolioContent_subContent">
+                      We makes it easy for businesses and marketing teams to
+                      manage your social account in a single place.
+                    </div>
+                  </div>
+                  <div className="portfolioBanner">
+                    <img src="/assets/img/hopitel_portfolio.png" />
+                  </div>
+                </div>
+                <div className="portfolioBox_panel funderlinks mb-5">
+                  <div className="portfolioContent">
+                    <div className="portfolioContent_logo">
+                      <img src="/assets/img/logo-l.png" />
+                    </div>
+                    <div className="portfolioContent_title">
+                      We take care of your pets
+                    </div>
+                    <div className="portfolioContent_subContent">
+                      We makes it easy for businesses and marketing teams to
+                      manage your social account in a single place.
+                    </div>
+                  </div>
+                  <div className="portfolioBanner">
+                    <img src="assets/img/funderlinks_portfolio.png" />
+                  </div>
+                </div>
+                <div className="portfolioBox_panel tripTogo mb-5">
+                  <div className="portfolioContent">
+                    <div className="portfolioContent_logo">
+                      <img src="/assets/img/logo-l.png" />
+                    </div>
+                    <div className="portfolioContent_title">
+                      We take care of your pets
+                    </div>
+                    <div className="portfolioContent_subContent">
+                      We makes it easy for businesses and marketing teams to
+                      manage your social account in a single place.
+                    </div>
+                  </div>
+                  <div className="portfolioBanner">
+                    <img src="assets/img/tripTogo_portfolio.png" />
+                  </div>
+                </div>
+                <div className="portfolioBox_panel chililay mb-5">
+                  <div className="portfolioContent">
+                    <div className="portfolioContent_logo">
+                      <img src="/assets/img/logo-l.png" />
+                    </div>
+                    <div className="portfolioContent_title">
+                      We take care of your pets
+                    </div>
+                    <div className="portfolioContent_subContent">
+                      We makes it easy for businesses and marketing teams to
+                      manage your social account in a single place.
+                    </div>
+                  </div>
+                  <div className="portfolioBanner">
+                    <img src="assets/img/chililay_portfolio.png" />
+                  </div>
+                </div>
+              </div>
+            </section>
 
-            </>
-        )
+            <section className="formBox">
+              <div className="container">
+                <div className="row">
+                  <div className="col-12 col-md-5">
+                    <div className="form">
+                      <div className="title">Need Help with Development?</div>
+                      <div className="input-form">
+                        <div className="label">Name</div>
+                        <div className="input-filed">
+                          <input type="text" className="formControl" />
+                        </div>
+                      </div>
+                      <div className="input-form">
+                        <div className="label">Phone</div>
+                        <div className="input-filed">
+                          <input type="text" className="formControl" />
+                        </div>
+                      </div>
+                      <div className="input-form">
+                        <div className="label">Email</div>
+                        <div className="input-filed">
+                          <input type="email" className="formControl" />
+                        </div>
+                      </div>
+                      <div className="input-form">
+                        <div className="label">Message</div>
+                        <div className="input-filed">
+                          <textarea
+                            type="text"
+                            rows="3"
+                            className="formControl"
+                          />
+                        </div>
+                      </div>
+                      <div className="input-form">
+                        <div className="input-filed">
+                          <input
+                            type="submit"
+                            className="getintouch"
+                            value="Get In Touch"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-1"> </div>
+                  <div className="col-12 col-md-6">
+                    <div className="formContent">
+                      <div className="bigText">
+                        Have an awesome
+                        <br />
+                        Web Application idea and not sure
+                        <br />
+                        how to get started?
+                      </div>
+                      <div className="smallText">
+                        Partner with us for affordable development supported by
+                        advanced frameworks, processes, automation, and
+                        expertise.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <Footer_new />
+          </>
+        );
     }
 };
 export default WebDev;

@@ -278,7 +278,7 @@ class ServicesMain extends Component {
                     <section className="site-footer">
                         <div class="project-in-mind">
                             <div class="container">
-                            <p class="light">Let’s co-create your <strong>success story</strong></p> <Link to="/contact-us"> class="btn btn-flip" data-text="let’s talk"><span>let’s talk</span></Link>
+                            <p class="light">Let’s co-create your <strong>success story</strong></p> <Link to="/contact-us" class="btn btn-flip" data-text="let’s talk"><span>let’s talk</span></Link>
                             </div>
                         </div>
                     </section>

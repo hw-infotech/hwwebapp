@@ -96,7 +96,7 @@ class Portfolio extends Component {
       {
         id: "1",
         image: "assets/img/portfolio/funderslink.png",
-        title: "Founder Link",
+        title: "Funders Link",
         content:
           " Task Project Design has been updated in project ECommerce by Admin",
       },

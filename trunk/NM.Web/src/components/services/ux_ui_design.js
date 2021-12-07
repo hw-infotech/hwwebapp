@@ -26,7 +26,8 @@ class UIUX extends Component {
                             <h1>UI UX Design   <br/>
                             Where experience meets
                             innovation</h1>
-                            <p>We understand that projects come in all shapes and sizes. As trusted partners, our team of experts are here as an extension of your working team to ensure that your projects are met on time and budget.</p>
+                            <p>At Nestormind, we thrive to provide aesthetically rich and well functional B2B applications. We are a UX design company, and we believe that everything that affects the end-user is part of the design process. We research and go deep to find the solutions to meet our client's specific needs, and we ensure that by creating user interfaces that are expandable, intuitive, and clean.
+</p>
                         </div>
                         <div className="servicesImageHalfBox">
                             <img src="assets/img/ui-ux-banner.png" alt=""/>
