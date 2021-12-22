@@ -1,11 +1,11 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import { Layout } from './components/Layout/Layout';
+import Layout from './components/Layout/Layout';
 
 class App extends Component {
   render() {
     return (
-      <Layout></Layout>
+      <Layout />
     )
   }
 }

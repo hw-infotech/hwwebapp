@@ -1,67 +1,67 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-class NavBar extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      isTop: false,
-      
-    }
-    this._handleScroll = this._handleScroll.bind(this);
+const NavBar = () => {
+
+  const [state, setState] = useState({ isTop: false })
+  const history = useHistory()
+
+  const onClickGoTo = (link) => {
+    history.push(link)
   }
 
-  componentDidMount(){
-    window.onscroll = () => this._handleScroll();
-  }  
+  useEffect(() => {
+    window.onscroll = () => _handleScroll();
+  }, [])
 
-  _handleScroll() {
+  const _handleScroll = () => {
     if (document.documentElement.scrollTop > 10) {
-      this.setState({ isTop: true });
+      setState({ isTop: true });
     } else {
-      this.setState({ isTop: false });
+      setState({ isTop: false });
     }
   }
-  render() {
-    return (
-      <header id="header" className={this.state.isTop ? 'fixed-top header-scrolled scroll' : 'fixed-top header-scrolled'} onScroll={this._handleScroll}>
-      <div className="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/"><img src="assets/img/logo.png" width="250px"/></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse " id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                <Link to="/">Home </Link>
-                </li>
-                <li class="nav-item dropdown">
-                <a href="/services_main" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link class="dropdown-item" to="/app-development">App Development</Link>
-                  <Link class="dropdown-item" to="/web-development">Web Development</Link>
-                  <Link class="dropdown-item" to="/ui-ux-design">UI  UX Design</Link>
-                  <Link class="dropdown-item" to="/seo">Seo</Link>
-                  <Link class="dropdown-item" to="/graphic-design">Graphics Design</Link>
-                  
+  return (
+    <header id="header" className={state.isTop ? 'fixed-top header-scrolled scroll' : 'fixed-top header-scrolled'} onScroll={_handleScroll}>
+      <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a className="navbar-brand" href="/"><img src="assets/img/logo.png" width="250px" /></a>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse " id="navbarNav">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <Link to="/">Home </Link>
+              </li>
+              <li className="nav-item dropdown">
+                <a href="/services" onClick={() => { onClickGoTo('/services') }} id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
+
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <Link className="dropdown-item" to="/app-development">App Development</Link>
+                  <Link className="dropdown-item" to="/web-development">Web Development</Link>
+                  <Link className="dropdown-item" to="/ui-ux-design">UI  UX Design</Link>
+                  <Link className="dropdown-item" to="/seo">Seo</Link>
+                  <Link className="dropdown-item" to="/graphic-design">Graphics Design</Link>
+
                 </div>
-                </li>
-                <li class="nav-item">
+              </li>
+              <li className="nav-item">
                 <Link to="/about-us">About Us</Link>
-                </li>
-                <li class="nav-item">
+              </li>
+              <li className="nav-item">
                 <Link to="/blogs">Blog</Link>
-                </li>
-                <li class="nav-item">
+              </li>
+              <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-  
+              </li>
+            </ul>
+          </div>
+        </nav>
+
         {/* <nav className="nav-menu d-none d-lg-block">
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -89,10 +89,10 @@ class NavBar extends Component {
         </nav>
   
         <a href="#about" className="get-started-btn scrollto">Get Quote</a> */}
-  
+
       </div>
     </header>
-    )
-  }
+  )
 }
-export default NavBar;
+
+export default NavBar
