@@ -6,9 +6,9 @@ import Footer_new from '../Layout/Footer_new';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import Dashboard from '../dashboard';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Dashboard from '../../layout/dashboard';
 
 const ServicesMain = () => {
     const [responsive, setResponsive] = useState(

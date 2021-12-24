@@ -4,8 +4,8 @@ import NavBar from '../Layout/Navbar';
 import Footer from '../Layout/Footer';
 import './privacy_terms.css';
 import Footer_new from '../Layout/Footer_new';
-import Dashboard from '../dashboard';
 import { useEffect } from 'react';
+import Dashboard from '../../layout/dashboard';
 
 const PrivacyPolicy = () => {
    

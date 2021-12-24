@@ -6,6 +6,10 @@ const NavBar = () => {
   const history = useHistory()
   const [state, setState] = useState({ isTop: false })
 
+  const onClickGoTo = (link) => {
+    history.push(link)
+  }
+
   useEffect(() => {
     window.onscroll = () => _handleScroll();
   }, [])
@@ -33,7 +37,7 @@ const NavBar = () => {
                 <Link to="/">Home </Link>
               </li>
               <li className="nav-item dropdown">
-                <a href="/services" onClick={() => { CommonFunctionality('/services') }} id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
+                <a href="/services" onClick={() => { onClickGoTo('/services') }} id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
 
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <Link className="dropdown-item" to="/app-development">App Development</Link>
@@ -48,7 +52,7 @@ const NavBar = () => {
                 <Link to="/about-us">About Us</Link>
               </li>
               <li className="nav-item">
-                <Link to="/blogs">Blog</Link>
+                <Link to="/NotFound">Blog</Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>

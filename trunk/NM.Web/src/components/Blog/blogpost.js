@@ -4,7 +4,6 @@ import Footer from '../Layout/Footer';
 import './blog.css';
 import Footer_new from '../Layout/Footer_new';
 import { Link } from "react-router-dom";
-import Dashboard from '../dashboard';
 import { useEffect } from 'react';
 import newsletter from './newsletter.png'
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,6 +11,7 @@ import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
 import { subscribeNewsletter } from '../../Redux/Action/Actionfunction';
+import Dashboard from '../../layout/dashboard';
 
 const Blogpost = () => {
    const dispatch = useDispatch()

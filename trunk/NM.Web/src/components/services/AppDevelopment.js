@@ -7,13 +7,13 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from "react-router-dom";
 import Portfolio from '../Home/portfolio';
-import Dashboard from '../dashboard';
 import { useEffect } from 'react';
 import { ErrorMessage, Field, Formik } from 'formik';
 import * as Yup from "yup";
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { AppuserRegister } from '../../Redux/Action/Actionfunction';
+import Dashboard from '../../layout/dashboard';
 
 const AppDev = () => {
     const dispatch = useDispatch()

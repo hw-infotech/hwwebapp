@@ -3,8 +3,8 @@ import NavBar from '../Layout/Navbar';
 import '../services/ServicesMain.css';
 import './caseStudies.css';
 import Footer_new from '../Layout/Footer_new';
-import Dashboard from '../dashboard';
 import { useEffect } from 'react';
+import Dashboard from '../../layout/dashboard';
 
 const Telemedician = () => {
     

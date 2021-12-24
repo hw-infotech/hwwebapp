@@ -6,13 +6,13 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from "react-router-dom";
-import Dashboard from '../dashboard';
 import { useEffect } from 'react';
 import * as Yup from "yup";
 import { ErrorMessage, Field, Formik } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { SEOuserRegister } from '../../Redux/Action/Actionfunction';
+import Dashboard from '../../layout/dashboard';
 
 const SeoTest = () => {
     const dispatch = useDispatch()

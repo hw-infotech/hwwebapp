@@ -8,12 +8,12 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import Footer_new from "../Layout/Footer_new";
 import { Link } from "react-router-dom";
 import Portfolio from "../Home/portfolio";
-import Dashboard from "../dashboard";
 import { useState } from "react";
 import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from "react-redux";
 import { tryRedux } from "../../Redux/Action/Actionfunction";
+import Dashboard from "../../layout/dashboard";
 
 const HomeContent = () => {
   const [newsletter, setNewsLetter] = useState()

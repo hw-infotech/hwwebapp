@@ -4,7 +4,6 @@ import NavBar from '../Layout/Navbar';
 import Footer_new from '../Layout/Footer_new';
 import '../ContactUs/ContactUs.css';
 import { ErrorMessage, Field, Formik, getIn } from 'formik';
-import Dashboard from '../dashboard';
 import { useEffect } from 'react';
 import { notify } from 'node-notifier';
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,6 +11,7 @@ import { useState } from 'react';
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { contactUSRegister } from '../../Redux/Action/Actionfunction';
+import Dashboard from '../../layout/dashboard';
 
 const ContactUsContent = () => {
     const dispatch = useDispatch()
