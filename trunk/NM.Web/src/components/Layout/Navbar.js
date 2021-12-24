@@ -1,15 +1,10 @@
 import React, { Component, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import CommonFunctionality from '../../Shared/CommonFunctionality';
 
 const NavBar = () => {
-
-  const [state, setState] = useState({ isTop: false })
   const history = useHistory()
-
-  const onClickGoTo = (link) => {
-    history.push(link)
-  }
+  const [state, setState] = useState({ isTop: false })
 
   useEffect(() => {
     window.onscroll = () => _handleScroll();
@@ -38,7 +33,7 @@ const NavBar = () => {
                 <Link to="/">Home </Link>
               </li>
               <li className="nav-item dropdown">
-                <a href="/services" onClick={() => { onClickGoTo('/services') }} id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
+                <a href="/services" onClick={() => { CommonFunctionality('/services') }} id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
 
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <Link className="dropdown-item" to="/app-development">App Development</Link>

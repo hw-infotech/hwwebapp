@@ -48,6 +48,14 @@ section.mainBanner_Services {
     align-items: center;
 }
 
+.bannerContentText h1 {
+    font-weight: 700 !important;
+}
+
+.bannerContentText h1 strong {
+    font-weight: 800 !important;
+}
+
 .bannerContentText {
     min-height: 100%;
     align-items: flex-start;

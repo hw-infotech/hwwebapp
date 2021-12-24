@@ -83,7 +83,7 @@ const HomeContent = () => {
               customers.
             </h2>
             <div className="d-lg-flex mt-5">
-              <a href="#about" className="w-o-btn scrollto">
+              <a href="/about" className="w-o-btn scrollto">
                 About Us
               </a>
             </div>
