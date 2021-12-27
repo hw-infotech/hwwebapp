@@ -52,7 +52,7 @@ const NavBar = () => {
                 <Link to="/about-us">About Us</Link>
               </li>
               <li className="nav-item">
-                <Link to="/NotFound">Blog</Link>
+                <Link to="/under-mantainence">Blog</Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>

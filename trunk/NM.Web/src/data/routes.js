@@ -7,6 +7,7 @@ import Career from "../components/Career/career"
 import UploadCv from "../components/Career/uploadCv"
 import Telemedician from "../components/caseStudies/Telemedician_case"
 import ContactUsContent from "../components/ContactUs/ContactUs"
+import Gallery from "../components/Gallery"
 import HomeContent from "../components/Home/Home"
 import NotFound from "../components/Not-Found/NotFound"
 import PrivacyPolicy from "../components/privacy-terms/privacyPolicy"
@@ -38,6 +39,7 @@ const routes = [
     route("/terms-and-condition", TermsCondition),
     route("/blogs", BlogList),
     route("/blog-post", Blogpost),
-    route("/NotFound", NotFound)
+    route("/under-mantainence", NotFound),
+    route("/nestormind-gallery", Gallery)
 ]
 export default routes

@@ -61,19 +61,19 @@ const Footer_new = () => {
                            <div className="content">
                               <ul>
                                  <li>
-                                    <Link to="/NotFound">Virtual Reality</Link>
+                                    <Link to="/under-mantainence">Virtual Reality</Link>
                                  </li>
                                  <li>
-                                    <Link to="/NotFound">Augmented Reality</Link>
+                                    <Link to="/under-mantainence">Augmented Reality</Link>
                                  </li>
                                  <li>
-                                    <Link to="/NotFound">AI</Link>
+                                    <Link to="/under-mantainence">AI</Link>
                                  </li>
                                  <li>
-                                    <Link to="/NotFound">Internet of things</Link>
+                                    <Link to="/under-mantainence">Internet of things</Link>
                                  </li>
                                  <li>
-                                    <Link to="/NotFound">Blockchain</Link>
+                                    <Link to="/under-mantainence">Blockchain</Link>
                                  </li>
                               </ul>
                            </div>
@@ -94,7 +94,7 @@ const Footer_new = () => {
                                     <Link to="/contact-us">Contact Us</Link>
                                  </li>
                                  <li>
-                                    <Link to="/NotFound">Our Products</Link>
+                                    <Link to="/under-mantainence">Our Products</Link>
                                  </li>
                               </ul>
                            </div>

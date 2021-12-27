@@ -2584,3 +2584,11 @@ input#invalid {
 textarea#invalid {
   border: 1px #e77676 solid !important;
 }
+
+/* Gallery page design */
+
+.galleryMain {
+  margin-top: 90px;
+  margin-bottom: 60px;
+}
+
