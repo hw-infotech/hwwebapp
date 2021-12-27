@@ -34,7 +34,7 @@ const Gallery = () => {
                         </div>
                         <Stories
                             style={{ background: "red", }}
-                            loop={false}
+                            loop={true}
                             stories={stories12}
                             // defaultInterval={8000}
                             width={600}
