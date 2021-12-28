@@ -100,10 +100,10 @@ const ServicesMain = () => {
                         <div className="item">
                             <div className="item_Services">
                                 <span className="number top-circle"><img src="assets/img/mobile-app.svg" alt="" /></span>
-                                <h4>Mobile App <br /><strong>Development</strong></h4>
+                                <h4>App <br /><strong>Development</strong></h4>
                                 <img className="line" src="assets/img/grey-line.svg" alt="" />
                                 <p>
-                                    Our profound knowledge of frameworks and mobile technology drives stunning mobile app development results. We craft mobile apps with a great user interface that can deliver 100% user satisfaction with an exceptional understanding of the brand performance.
+                                    We offer agile app development services and our approach is to provide tailored enterprise-grade mobile applications for both Andriod and iOS platforms.
                                 </p>
                                 <div className="actBtn">
                                     <a href="/app-development">Explore</a>
@@ -116,7 +116,7 @@ const ServicesMain = () => {
                                 <h4>Web <br /><strong>Development</strong></h4>
                                 <img className="line" src="assets/img/grey-line.svg" alt="" />
                                 <p>
-                                    Expertise with strong R & D drives in-depth focus on the website concept. Our award -winning developer team delivers 100% custom web development service with user-friendly navigation that makes us different.
+                                    We offer futuristic customized web application development solutions that help the business to reach new height.
                                 </p>
                                 <div className="actBtn">
                                     <Link to="/web-development">Explore</Link>
@@ -129,7 +129,7 @@ const ServicesMain = () => {
                                 <h4>UI & UX <br /><strong>Design</strong></h4>
                                 <img className="line" src="assets/img/grey-line.svg" alt="" />
                                 <p>
-                                    Users grab a great online experience from our world-class UI & UX design. Focused on crafting interfaces that make every digital interaction a delightful user experience, our dedicated team brings design and technical aspects forth to prepare outstanding digital products.
+                                    We thrive to provides aesthetically rich and well functional B2B applications. We are a UX design company and we believe that everything that affects the end-user is part of the design process.
                                 </p>
                                 <div className="actBtn">
                                     <a href="/ui-ux-design">Explore</a>
@@ -139,12 +139,11 @@ const ServicesMain = () => {
                         <div className="item">
                             <div className="item_Services">
                                 <span className="number top-circle"><img src="assets/img/seo.svg" alt="" /></span>
-                                <h4>SEO <br /><strong>Testing</strong></h4>
+                                <h4>Search Engine <br /><strong>Optimization</strong></h4>
                                 <img className="line" src="assets/img/grey-line.svg" alt="" />
-                                <p>Our range of product design services covers
-                                    everything from crafting intuitive user journeys to
-                                    creating exceptional user interactions, helping app
-                                    users perform any operation with ease. </p>
+                                <p>
+                                    We have customized SEO techniques planned according to the latest algorithmic updates of searching engine. Our SEO technicians will ensure definite result within deadline.
+                                </p>
                                 <div className="actBtn">
                                     <a href="/seo">Explore</a>
                                 </div>
@@ -155,10 +154,9 @@ const ServicesMain = () => {
                                 <span className="number top-circle"><img src="assets/img/graphic-design.svg" alt="" /></span>
                                 <h4>Graphics<br /> <strong>Design</strong></h4>
                                 <img className="line" src="assets/img/grey-line.svg" alt="" />
-                                <p>Our range of product design services covers
-                                    everything from crafting intuitive user journeys to
-                                    creating exceptional user interactions, helping app
-                                    users perform any operation with ease. </p>
+                                <p>
+                                    We have expertise in graphic designing and help the brands to boost the impact on their audience that to outshine their competitors through the power of visual communication.
+                                </p>
                                 <div className="actBtn">
                                     <a href="/graphic-design">Explore</a>
                                 </div>
@@ -229,7 +227,7 @@ const ServicesMain = () => {
                         <li>
                             <div className="contentOfProcess">
                                 <div className="icon Design"><img src="assets/img/design-process.svg" alt="" /></div>
-                                <div className="title"><strong>Web Page Design</strong> <br />& Finalization</div>
+                                <div className="title"><strong> User Friendly </strong> <br />Design</div>
                                 <div className="SubTileContent">
                                     <p>
                                         Our designers are capable to create unique logos, fliers, banners, business cards that can serve the purpose to promote the website on different platforms. We can ensure that these designed logos and other materials can draw attention and inspire

@@ -74,13 +74,9 @@ const HomeContent = () => {
       <div className="container">
         <div className="row">
           <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
-            <h1>We Provide The Best Solutions for Your Business</h1>
+            <h1>Excellent Tech Solution To Meet Your Business Needs </h1>
             <h2>
-              We help new and established businesses to create their unique
-              identity through our website design and development services.
-              We are dedicated to offering brilliant and appealing software
-              solution experiences that connect brands to their potential
-              customers.
+            We are a leading software development company. Our services include custom app development, web development, SEO, UI/UX design, and graphic design. Our services are meant for both domestic and international market. With our vast experience and a team that is comprised of skilled professionals, we deliver top-rated service to propel your business another level.
             </h2>
             <div className="d-lg-flex mt-5">
               <a href="/about-us" className="w-o-btn scrollto">

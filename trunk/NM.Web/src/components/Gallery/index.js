@@ -33,7 +33,6 @@ const Gallery = () => {
                             <h2>Event Stories</h2>
                         </div>
                         <Stories
-                            style={{ background: "red", }}
                             loop={true}
                             stories={stories12}
                             // defaultInterval={8000}
