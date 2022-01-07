@@ -178,6 +178,10 @@
   width: 100%;
   float: left;
   position: relative;
+  color:#000;
+}
+.serviceRedirect:hover .serviceBox {
+  color: #fff;
 }
 
 .servicesArea .serviceBox .subTitle {
