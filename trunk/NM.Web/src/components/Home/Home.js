@@ -43,16 +43,18 @@ class HomeContent extends Component {
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
-                <h1>We Provide The Best Solutions for Your Business</h1>
+                <h1>Excellent Tech Solution For To Meet Your Business Needs</h1>
                 <h2>
-                  We help new and established businesses to create their unique
-                  identity through our website design and development services.
-                  We are dedicated to offering brilliant and appealing software
-                  solution experiences that connect brands to their potential
-                  customers.
+                  We are a leading software development company. Our services
+                  include custom app development, web development, SEO, UI/UX
+                  design, and graphic design. Our services are meant for both
+                  domestic and international market. With our vast experience
+                  and a team that is comprised of skilled professionals, we
+                  deliver top-rated service to propel your business another
+                  level.
                 </h2>
                 <div className="d-lg-flex mt-5">
-                  <a href="#about" className="w-o-btn scrollto">
+                  <a href="about" className="w-o-btn scrollto">
                     About Us
                   </a>
                 </div>
@@ -80,15 +82,15 @@ class HomeContent extends Component {
                   <p className="subTitle">Services</p>
                   <div className="divider"></div>
                   <h2 className="title">
-                    {" "}
-                    We consult, develop and deliver premier software solutions.{" "}
+                    We Develop Business-Centric, Safest and Customized Software
+                    Solutions
                   </h2>
                 </div>
               </div>
               <div className="col-12 col-sm-12 col-md-12 col-lg-1"></div>
               <div className="col-12 col-sm-12 col-md-12 col-lg-6">
-                <div className="row">
-                  <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                <div className="servicesBoxDiv">
+                  <div className="serviceRedirect">
                     <Link to="/services">
                       <div className="serviceBox">
                         <p className="subTitle"> Development </p>
@@ -107,7 +109,7 @@ class HomeContent extends Component {
                       </div>
                     </Link>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                  <div className=" serviceRedirect">
                     <Link to="/services">
                       <div className="serviceBox">
                         <p className="subTitle"> DESIGN </p>
@@ -117,8 +119,10 @@ class HomeContent extends Component {
                           UX/UI Design and Development{" "}
                         </h4>
                         <p>
-                          Usability over Complexity. Simple & Organized elements
-                          put together for interactive user experiences.
+                          We thrive to provides aesthetically rich and well
+                          functional B2B applications. We are a UX design
+                          company and we believe that everything that affects
+                          the end-user is part of the design process.
                         </p>
                         <img
                           className="arrowIcon"
@@ -127,7 +131,7 @@ class HomeContent extends Component {
                       </div>
                     </Link>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                  <div className="serviceRedirect">
                     <Link to="/services">
                       <div className="serviceBox">
                         <p className="subTitle"> JAVASCRIPT DEVELOPMENT </p>
@@ -146,7 +150,7 @@ class HomeContent extends Component {
                       </div>
                     </Link>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-sm-12 col-12 serviceRedirect">
+                  <div className=" serviceRedirect">
                     <Link to="/services">
                       <div className="serviceBox">
                         <p className="subTitle"> PRODUCT </p>
@@ -173,11 +177,11 @@ class HomeContent extends Component {
         <section>
           <div className="">
             <div className="container">
-                  <div className="common-heading ptag">
-                    <h2>Industries We Serve</h2>
-                    <p>Successfully delivered digital products</p>
-                  </div>
-              
+              <div className="common-heading ptag">
+                <h2>Industries We Serve</h2>
+                <p>Successfully delivered digital products</p>
+              </div>
+
               <div className="row mt30">
                 <div
                   className="col-lg-3 col-sm-6 col-6 wow fadeIn"

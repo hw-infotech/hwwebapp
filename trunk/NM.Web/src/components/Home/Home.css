@@ -1,4 +1,5 @@
 @media (min-width: 1500px) {
+
   .container,
   .container-lg,
   .container-md,
@@ -9,28 +10,34 @@
 }
 
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
 @keyframes logoFadeUp {
   0% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+
   50% {
     -webkit-transform: translateY(-webkit-calc(-100% - 25px));
     transform: translateY(calc(-100% - 25px));
     opacity: 1;
   }
+
   51% {
     -webkit-transform: translateY(-webkit-calc(-100% - 25px));
     transform: translateY(calc(-100% - 25px));
     opacity: 0;
   }
+
   52% {
     -webkit-transform: translateY(-webkit-calc(100% + 25px));
     transform: translateY(calc(100% + 25px));
   }
+
   86% {
     opacity: 1;
   }
+
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -124,11 +131,13 @@
   position: relative;
   transition: all ease 0.5s;
 }
+
 .w-o-btn:hover:before {
   opacity: 1;
   right: -35px;
   transition: all ease 0.5s;
 }
+
 .w-o-btn:before {
   position: absolute;
   height: 100px;
@@ -140,24 +149,32 @@
   opacity: 0;
   transition: all ease 0.5s;
 }
+
 .w-o-btn:hover {
   color: #fff;
   background: #ef661e;
   text-decoration: none;
 }
-
+.servicesBoxDiv {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
 .servicesArea {
   background: rgba(136, 136, 136, 0.05);
 }
+
 .serviceRedirect:hover .arrowIcon {
   float: right;
   filter: brightness(0) invert(1);
 }
+
 .serviceRedirect {
   padding: 15px;
   border-radius: 10px;
   transition: all ease 0.5s;
 }
+
 .serviceRedirect:hover {
   background: #fff;
   box-shadow: 0px 0px 45px 0px #d5d5d580;
@@ -165,10 +182,12 @@
   padding: 15px;
   border-radius: 10px;
 }
+
 .serviceRedirect:first-child:hover {
   background: #035db1;
   transition: all ease 0.5s;
 }
+
 .serviceRedirect:nth-child(2):hover {
   background: #f5a210;
   transition: all ease 0.5s;
@@ -178,25 +197,36 @@
   background: #f62b2c;
   transition: all ease 0.5s;
 }
+
 .serviceRedirect:last-child:hover {
   background: #30ab48;
   transition: all ease 0.5s;
 }
+
 .serviceRedirect:hover a {
   color: #ffffff;
   transition: all ease 0.5s;
 }
+
 .servicesArea .serviceRedirect:hover .serviceBox .title {
   margin-top: 20px;
   color: #fff;
 }
+
 .serviceRedirect .arrowIcon {
-  float: right;
+  
+    width: 30px;
+    margin-top: auto;
+    margin-left: auto;
 }
+
 .servicesArea .serviceBox {
   width: 100%;
-  float: left;
-  position: relative;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
 }
 
 .servicesArea .serviceBox .subTitle {
@@ -257,21 +287,15 @@
   width: 100%;
   height: 50%;
   bottom: 0;
-  background: -webkit-linear-gradient(
-    top,
-    rgba(23, 22, 26, 0),
-    rgba(23, 22, 26, 0.4)
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(23, 22, 26, 0),
-    rgba(23, 22, 26, 0.4)
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(23, 22, 26, 0),
-    rgba(23, 22, 26, 0.4)
-  );
+  background: -webkit-linear-gradient(top,
+      rgba(23, 22, 26, 0),
+      rgba(23, 22, 26, 0.4));
+  background: -o-linear-gradient(top,
+      rgba(23, 22, 26, 0),
+      rgba(23, 22, 26, 0.4));
+  background: linear-gradient(180deg,
+      rgba(23, 22, 26, 0),
+      rgba(23, 22, 26, 0.4));
   z-index: 1;
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -294,22 +318,14 @@
   max-height: 500px;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-image
-  img {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-image img {
   vertical-align: middle;
   display: block;
   width: 100%;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
-.portfolioSection
-  .portfolio-item-wrap:hover
-  .portfolio-item
-  .portfolio-item-image
-  img {
+.portfolioSection .portfolio-item-wrap:hover .portfolio-item .portfolio-item-image img {
   -webkit-transform: scale3d(1.1, 1.1, 1);
   transform: scale3d(1.1, 1.1, 1);
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
@@ -336,19 +352,11 @@
   color: #fff;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .portfolio-item-headline {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .portfolio-item-headline {
   font-size: 22px;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .category-holder {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .category-holder {
   display: block;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -358,31 +366,18 @@
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .category-holder
-  .category {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .category-holder .category {
   font-size: 0.94rem;
 }
 
-.portfolioSection
-  .portfolio-item-wrap:hover
-  .portfolio-item
-  .portfolio-item-details
-  .category-holder {
+.portfolioSection .portfolio-item-wrap:hover .portfolio-item .portfolio-item-details .category-holder {
   -webkit-transform: translateY(-20px);
   -ms-transform: translateY(-20px);
   transform: translateY(-20px);
   opacity: 0;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .show-project {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .show-project {
   position: absolute;
   opacity: 0;
   -webkit-transform: translateY(30);
@@ -395,41 +390,23 @@
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
-.portfolioSection
-  .portfolio-item-wrap:hover
-  .portfolio-item
-  .portfolio-item-details
-  .show-project {
+.portfolioSection .portfolio-item-wrap:hover .portfolio-item .portfolio-item-details .show-project {
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
 }
 
-.portfolioSection
-  .portfolio-item-wrap:hover
-  .portfolio-item
-  .portfolio-item-details
-  .show-project {
+.portfolioSection .portfolio-item-wrap:hover .portfolio-item .portfolio-item-details .show-project {
   opacity: 1;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .show-project
-  .show-project-link {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .show-project .show-project-link {
   position: relative;
   font-weight: 600;
   display: inline-block;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .show-project
-  .show-project-link:after {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .show-project .show-project-link:after {
   content: "";
   position: absolute;
   width: 40px;
@@ -466,7 +443,7 @@
   position: relative;
 }
 
-.accordian-section > .row {
+.accordian-section>.row {
   flex-direction: row-reverse;
 }
 
@@ -511,8 +488,7 @@
   font-size: 40px;
 }
 
-.accordian-section .collapseBox .accordion {
-}
+.accordian-section .collapseBox .accordion {}
 
 .accordian-section .collapseBox .accordion .card {
   border: 0;
@@ -550,13 +526,7 @@
   left: 0;
 }
 
-.accordian-section
-  .collapseBox
-  .accordion
-  .card
-  .card-header
-  h5
-  .btn.collapsed:before {
+.accordian-section .collapseBox .accordion .card .card-header h5 .btn.collapsed:before {
   content: "\f068";
   padding-right: 5px;
   position: absolute;
@@ -656,6 +626,7 @@
     height: 30px;
     opacity: 1;
   }
+
   100% {
     width: 150px;
     height: 150px;
@@ -813,10 +784,12 @@
     -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
   }
+
   70% {
     -moz-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
   }
+
   100% {
     -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
@@ -901,6 +874,7 @@
   float: left;
   position: relative;
 }
+
 .clientProfilePic {
   width: 100%;
   text-align: center;
@@ -910,6 +884,7 @@
   justify-content: center;
   height: 200px;
 }
+
 .clientProfilePic .userPic {
   width: 150px;
   height: 150px;
@@ -918,6 +893,7 @@
   position: relative;
   z-index: 2;
 }
+
 .clientProfilePic .userPic:after {
   position: absolute;
   width: 170px;
@@ -936,12 +912,8 @@
   position: relative;
   z-index: 1;
 }
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clientFeedbackVideo {
+
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientFeedbackVideo {
   width: 100%;
   height: 100%;
   padding-bottom: 56.1%;
@@ -949,13 +921,7 @@
   float: left;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clientFeedbackVideo
-  iframe {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientFeedbackVideo iframe {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -964,47 +930,25 @@
   border: 10px solid #f1f1f1;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clientImg {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg {
   width: 100%;
   float: left;
   text-align: center;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clientImg
-  img {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
   width: 222px;
   border-radius: 50%;
   border: 10px solid #b1b1b12e;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clentDetails {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails {
   width: 100%;
   float: left;
   position: relative;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clentDetails
-  .clientName {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
   width: 100%;
   float: left;
   position: relative;
@@ -1012,13 +956,7 @@
   font-weight: 600;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clentDetails
-  .clientPlace {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientPlace {
   width: 100%;
   float: left;
   position: relative;
@@ -1028,13 +966,7 @@
   color: #898e96;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clentDetails
-  .clientFeedback {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
   width: 100%;
   float: left;
   position: relative;
@@ -1336,6 +1268,7 @@
   line-height: 80px;
   transition: all 0.2s ease;
 }
+
 .newsletter .newsletterContent .newsLetterForm .newsletterBtn:focus {
   outline: none;
 }
@@ -1516,6 +1449,7 @@ section.stories {
   position: absolute;
   right: -419px;
 }
+
 .storiesImg.left img {
   left: -320px !important;
   right: auto;
@@ -1565,6 +1499,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .underConstruction {
     padding: 100px 20px !important;
   }
+
   .underConstruction .ConstructionContent h1 {
     font-size: 35px !important;
     margin: 18px 0 !important;
@@ -1574,76 +1509,82 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     height: auto !important;
     text-align: center;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
   }
+
   .testimonialBox .testi_Slider {
     padding: 0px 0px;
   }
+
   .testimonialBox .testi_Slider .carousel .carousel-indicators {
     width: 100%;
     display: inline-flex;
     top: 113%;
   }
+
   .testimonialBox .testi_Slider .carousel {
     padding-left: 0px;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clientImg {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg {
     text-align: left;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clientImg
-    img {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
     width: 142px;
     border-radius: 50%;
     border: 4px solid #b1b1b12e;
   }
+
   .dddl-inner .right-inner {
     width: 100%;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
     margin: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 20px;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
   }
+
   .dddl-inner .left-inner {
     width: 100%;
     padding: 0 20px 5rem;
   }
+
   .dddl-inner {
     display: block;
   }
+
   .dddl-inner .left-inner h3 {
     font-size: 30px;
   }
+
   .actionBtn .caseStudies {
     border-radius: 5px;
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 60px;
     padding: 0 40px;
     font-size: 18px;
     margin: 0;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 60px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 50px;
     height: 50px;
@@ -1653,12 +1594,15 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 27px;
     line-height: 57px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 150px;
   }
+
   .address .addressConetnt .india {
     font-size: 92px;
     font-weight: 900;
@@ -1669,16 +1613,20 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     bottom: 0;
     left: 0;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 16px;
   }
+
   .address .addressConetnt {
     min-height: 470px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 30px;
     font-weight: 600;
   }
+
   .clb-social {
     right: 15px;
     transform-origin: bottom;
@@ -1693,15 +1641,19 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     left: 0px;
     display: none;
   }
+
   .clb-social-holder {
     display: inline-block;
   }
+
   li.clb-social-holder-follow {
     display: none;
   }
+
   li.clb-social-holder-dash {
     display: none;
   }
+
   .storiesImg img {
     margin-left: auto;
     filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
@@ -1710,6 +1662,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     position: relative;
     right: 0px;
   }
+
   .storiesImg.left img {
     left: 0px !important;
     right: auto;
@@ -1721,19 +1674,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 42px;
     line-height: 54px;
   }
+
   #hero h2 {
     font-size: 14px;
     line-height: 24px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -1741,9 +1698,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .underConstruction {
     padding: 100px 20px !important;
   }
+
   .underConstruction .ConstructionContent h1 {
     font-size: 48px !important;
     margin: 18px 0 !important;
@@ -1753,46 +1712,44 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     height: auto !important;
     text-align: center;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
   }
+
   .testimonialBox .testi_Slider .carousel .carousel-indicators {
     width: 100%;
     display: inline-flex;
     top: 113%;
   }
+
   .testimonialBox .testi_Slider .carousel {
     padding-left: 10px;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clientImg {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg {
     text-align: left;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clientImg
-    img {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
     width: 142px;
     border-radius: 50%;
     border: 4px solid #b1b1b12e;
   }
+
   .dddl-inner .right-inner {
     width: 100%;
   }
+
   .dddl-inner .left-inner {
     width: 100%;
     padding: 0 20px 5rem;
   }
+
   .dddl-inner {
     display: block;
   }
+
   .dddl-inner .left-inner h3 {
     font-size: 30px;
   }
@@ -1801,19 +1758,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
     margin: 0;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
@@ -1822,9 +1783,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 1rem 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -1837,9 +1800,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 18px;
     margin: 0;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 60px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 50px;
     height: 50px;
@@ -1849,12 +1814,15 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 27px;
     line-height: 57px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 150px;
   }
+
   .address .addressConetnt .india {
     font-size: 92px;
     font-weight: 900;
@@ -1865,13 +1833,16 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     bottom: 0;
     left: 0;
   }
+
   .address .addressConetnt {
     min-height: 470px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 30px;
     font-weight: 600;
   }
+
   .storiesImg img {
     margin-left: auto;
     filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
@@ -1880,6 +1851,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     position: relative;
     right: 0px;
   }
+
   .storiesImg.left img {
     left: 0px !important;
     right: auto;
@@ -1891,19 +1863,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 56px;
     line-height: 70px;
   }
+
   #hero h2 {
     font-size: 14px;
     line-height: 24px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -1911,65 +1887,67 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -1978,6 +1956,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
@@ -1988,31 +1967,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 1rem 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2022,14 +2009,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2039,18 +2029,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2070,19 +2065,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 60px;
     line-height: 70px;
   }
+
   #hero h2 {
     font-size: 16px;
     line-height: 28px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -2090,65 +2089,67 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -2157,40 +2158,50 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .left-inner h3 {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
     margin: 0;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 1rem 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2200,14 +2211,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2217,18 +2231,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2248,19 +2267,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 60px;
     line-height: 70px;
   }
+
   #hero h2 {
     font-size: 14px;
     line-height: 24px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -2268,65 +2291,67 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -2335,6 +2360,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
@@ -2345,31 +2371,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 5px 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2379,14 +2413,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2396,18 +2433,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2427,19 +2469,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 54px;
     line-height: 60px;
   }
+
   #hero h2 {
     font-size: 16px;
     line-height: 30px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -2447,65 +2493,67 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -2514,6 +2562,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
@@ -2524,31 +2573,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 5px 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2558,14 +2615,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2575,18 +2635,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2606,19 +2671,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 66px;
     line-height: 72px;
   }
+
   #hero h2 {
     font-size: 16px;
     line-height: 24px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -2626,65 +2695,67 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -2693,6 +2764,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
@@ -2703,31 +2775,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 10px 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2737,14 +2817,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2754,18 +2837,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2790,17 +2878,20 @@ img.underCont {
   right: 0;
   margin: auto;
 }
+
 .underConstruction {
   width: 100%;
   height: 100vh;
   text-align: center;
   padding: 109px;
 }
+
 .underConstruction .ConstructionContent {
   width: 100%;
   float: left;
   position: relative;
 }
+
 .underConstruction .ConstructionContent h1 {
   font-size: 72px;
   font-weight: 900;
@@ -2830,12 +2921,15 @@ img.underCont {
   border: 1px solid #00000008;
   overflow: hidden;
 }
+
 .industry-workfor img {
   width: 55px;
 }
+
 .industry-workfor h6 {
   margin: 0 0 0 15px;
 }
+
 .hoshd:hover {
   box-shadow: 0 15px 39px -11px #46638e45;
   transform: translate(0, -5px);
@@ -2843,6 +2937,7 @@ img.underCont {
   background: #ffa3194f;
   position: relative;
 }
+
 .hoshd:before {
   position: absolute;
   height: 100px;
@@ -2855,6 +2950,7 @@ img.underCont {
   transition: all ease 0.5s;
   top: 100px;
 }
+
 .hoshd:hover:before {
   opacity: 1;
   right: -35px;
@@ -2862,6 +2958,7 @@ img.underCont {
   top: 18px;
   z-index: -1;
 }
+
 .common-heading h2 {
   font-size: 54px;
   font-weight: 700;
