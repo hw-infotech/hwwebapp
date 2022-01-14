@@ -1,336 +1,369 @@
-.footerBox__Panel{
-    padding-bottom: 0px;
-    background: #000000;
-    position: relative;
+.footerBox__Panel {
+  padding-bottom: 0px;
+  background: #000000;
+  position: relative;
 }
 .footerBox__Panel img {
     width: 36%;
     position: absolute;
     right: 43px;
     bottom: 23px;
+    -webkit-filter: none;
     filter: none;
     opacity: .1;
 }
+.footerBox__Panel .footerPanelogo {
+  width: 36%;
+  position: absolute;
+  right: 43px;
+  bottom: 23px;
+  filter: none;
+  opacity: 0.1;
+}
 .footerContent {
-	width: 100%;
-	float: left;
-	position: relative;
+  width: 100%;
+  float: left;
+  position: relative;
 }
 
 .footerContent .companyLinsk {
-	width: 100%;
-	float: left;
-	position: relative;
+  width: 100%;
+  float: left;
+  position: relative;
 }
 
 .footerContent .companyLinsk h4 {
-	width: 100%;
-    float: left;
-    position: relative;
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
-    
+  width: 100%;
+  float: left;
+  position: relative;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
-.footerContent .companyLinsk h4:before, .footerContent .companyLinsk h5:before {
-    position: absolute;
-    content: "";
-    width: 50px;
-    height: 3px;
-    background: #ffffff;
-    top: -10px;
+.footerContent .companyLinsk h4:before,
+.footerContent .companyLinsk h5:before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #ffffff;
+  top: -10px;
 }
 .footerContent .companyLinsk h5 {
-	width: 100%;
-	float: left;
-	position: relative;
-	font-size: 20px;
-	font-weight: 700;
-	margin-bottom: 15px;
+  width: 100%;
+  float: left;
+  position: relative;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .footerContent .companyLinsk .content {
-	width: 100%;
-	float: left;
-	position: relative;
-	margin-bottom: 10px;
+  width: 100%;
+  float: left;
+  position: relative;
+  margin-bottom: 10px;
 }
 
 .footerContent .companyLinsk .content p {
-	width: 100%;
-    float: left;
-    position: relative;
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: 300;
-    color: #fff;
+  width: 100%;
+  float: left;
+  position: relative;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+  color: #fff;
 }
 
 .footerContent .companyLinsk .content ul {
-	width: 100%;
-	float: left;
-    position: relative;
-    padding-left: 0;
+  width: 100%;
+  float: left;
+  position: relative;
+  padding-left: 0;
 }
 
 .footerContent .companyLinsk .content ul li {
-	width: 100%;
-	float: left;
-    position: relative;
-    list-style: none;
+  width: 100%;
+  float: left;
+  position: relative;
+  list-style: none;
 }
 
 .footerContent .companyLinsk .content ul li a {
-    width: 100%;
-    float: left;
-    position: relative;
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
-    color: #ffffff;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-weight: 300!important;
+  width: 100%;
+  float: left;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #ffffff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 300 !important;
 }
 
-.footerContent .companyLinsk .content ul li a:hover, .footerContent .innerLinks ul li a:hover {
-    color: #ffffff;
+.footerContent .companyLinsk .content ul li a:hover,
+.footerContent .innerLinks ul li a:hover {
+  color: #ffffff;
 }
 
 .Htb {
-	padding: 50px 0px;
-	background-position: left!important;
-	background-repeat: no-repeat!important;
-	background-size: contain!important;
+  padding: 50px 0px;
+  background-position: left !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
 }
 
 .footerContent .innerLinks {
-	width: 100%;
-	float: left;
-	position: relative;
+  width: 100%;
+  float: left;
+  position: relative;
 }
 
 .footerContent .innerLinks ul {
-	width: 100%;
-	float: left;
-	position: relative;
-    display: inline-block;
-    padding-left: 0;
+  width: 100%;
+  float: left;
+  position: relative;
+  display: inline-block;
+  padding-left: 0;
 }
 
 .footerContent .innerLinks ul li {
-	position: relative;
-	display: inline-block;
-	padding: 5px;
-	font-size: 15px;
-    padding-right: 20px;
-    list-style: none;
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  font-size: 15px;
+  padding-right: 20px;
+  list-style: none;
 }
 
 .footerContent .innerLinks ul li a {
-	color: #242424;
+  color: #242424;
 }
 
-.footerContent .innerLinks ul li+li:before {
-	position: absolute;
-	content: "";
-	width: 1px;
-	height: 14px;
-	background: #353535;
-	left: -9px;
-	top: 9px;
+.footerContent .innerLinks ul li + li:before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 14px;
+  background: #353535;
+  left: -9px;
+  top: 9px;
 }
 .bottomFooter {
-    width: 100%;
-    float: left;
-    position: relative;
-    padding: 30px 0;
-    border-top: 1px solid #d5d5d552;
-    display: flex;
-    justify-content: space-between;
-    color: #fff;
+  width: 100%;
+  float: left;
+  position: relative;
+  padding: 30px 0;
+  border-top: 1px solid #d5d5d552;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
 }
 
-
-.clb-social, .clb-scroll-top {
-    position: relative!important;
-    transition: none!important;
-    transform: rotate( 
-0deg
-);
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
+.clb-social,
+.clb-scroll-top {
+  position: relative !important;
+  transition: none !important;
+  transform: rotate(0deg);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 .clb-social-holder {
-    white-space: nowrap;
-    display: inline-flex;
-    align-items: center;
-    list-style: none;
-    top: -33px;
-    position: relative;
-    padding-left: 0;
-    padding-top: 50px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  top: -33px;
+  position: relative;
+  padding-left: 0;
+  padding-top: 50px;
 }
-.clb-social-holder.icons li{
-    color: #fff;
-    font-weight: 600;
+.clb-social-holder.icons li {
+  color: #fff;
+  font-weight: 600;
 }
 .clb-social-holder.icons li i {
-    transform: rotate(2deg);
-color:#fff;
+  transform: rotate(2deg);
+  color: #fff;
 }
 .clb-social-holder.icons li a i {
-    color: #fff;
-    height: 40px;
-    width: 40px;
-    background: #1e1e1e;
-    display: block;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  background: #1e1e1e;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
 }
-.clb-social-holder.icons li a:hover .bxl-linkedin{
-    background-color:  #0e76a8;
+.clb-social-holder.icons li a:hover .bxl-linkedin {
+  background-color: #0e76a8;
 }
-.clb-social-holder.icons li a:hover .bxl-facebook{
-    background-color:  #4267B2;
+.clb-social-holder.icons li a:hover .bxl-facebook {
+  background-color: #4267b2;
 }
-.clb-social-holder.icons li a:hover .bxl-twitter{
-    background-color:  #1DA1F2;
+.clb-social-holder.icons li a:hover .bxl-twitter {
+  background-color: #1da1f2;
 }
-.clb-social-holder.icons li a:hover .bxl-instagram{
-    background-color:  #E1306C;
+.clb-social-holder.icons li a:hover .bxl-instagram {
+  background-color: #e1306c;
 }
-.clb-social-holder.icons li a:hover .bxl-skype{
-    background-color:  #00aff0;
-}
-
-@media (min-width:320px) and (max-width:480px){
-    .bottomFooter .leftSec {
-        font-size: 14px;
-    }
-    .footerContent .companyLinsk {
-        margin-bottom: 30px;
-    }
-    .footerContent .companyLinsk .content p {
-        font-size: 14px;
-        line-height: 23px;
-    }
-    .footerContent .companyLinsk .content ul li a {
-        height: 34px;
-        line-height: 34px;
-        font-size: 14px;
-    }
-    .footerContent .companyLinsk h4 {
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 10px;
-        text-transform: capitalize;
-        letter-spacing: 0px;
-    }
-    .footerBox__Panel img {
-        bottom: 68px;
-    }
+.clb-social-holder.icons li a:hover .bxl-skype {
+  background-color: #00aff0;
 }
 
-
-
-@media (min-width:320px) and (max-width:575px) {
-    .footerBox__Panel {
-        padding-bottom: 0px;
-        padding-top: 50px;
-    }
-    .footerContent .companyLinsk h4 {
-        font-size: 18px;
-    }
-    .footerContent .companyLinsk .content p {
-        font-size: 14px;
-    }
-    .footerContent .companyLinsk .content ul li a {
-        height: 36px;
-        line-height: 36px;
-        font-size: 14px;
-    }
+.achievement {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  float: left;
+}
+.achievement .title {
+  color: #fff;
+  width: 100%;
+  float: left;
+  font-size: 24px;
+  margin-bottom: 18px;
+  margin-top: 23px;
+}
+.achievement ul {
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 0;
+  column-gap: 20px;
+  align-items: center;
+}
+.achievement ul li {
+  position: relative;
+}
+.achievement ul li img {
+  position: relative;
+  width: 100px;
+  margin: 10px 0;
 }
 
-
-@media (min-width:576px) and (max-width:680px) {
-    .footerBox__Panel {
-        padding-bottom: 0px;
-        padding-top: 50px;
-    }
-    .footerContent .companyLinsk h4 {
-        font-size: 18px;
-    }
-    .footerContent .companyLinsk .content p {
-        font-size: 14px;
-    }
-    .footerContent .companyLinsk .content ul li a {
-        height: 36px;
-        line-height: 36px;
-        font-size: 14px;
-    }
+@media (min-width: 320px) and (max-width: 480px) {
+  .bottomFooter .leftSec {
+    font-size: 14px;
+  }
+  .footerContent .companyLinsk {
+    margin-bottom: 30px;
+  }
+  .footerContent .companyLinsk .content p {
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .footerContent .companyLinsk .content ul li a {
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+  }
+  .footerContent .companyLinsk h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    letter-spacing: 0px;
+  }
+  .footerBox__Panel img {
+    bottom: 68px;
+  }
 }
 
-@media (min-width:681px) and (max-width:767px) {
-    .footerBox__Panel {
-        padding-bottom: 0px;
-        padding-top: 50px;
-    }
-    .footerContent .companyLinsk h4 {
-        font-size: 18px;
-    }
-    .footerContent .companyLinsk .content p {
-        font-size: 14px;
-    }
-    .footerContent .companyLinsk .content ul li a {
-        height: 36px;
-        line-height: 36px;
-        font-size: 14px;
-    }
+@media (min-width: 320px) and (max-width: 575px) {
+  .footerBox__Panel {
+    padding-bottom: 0px;
+    padding-top: 50px;
+  }
+  .footerContent .companyLinsk h4 {
+    font-size: 18px;
+  }
+  .footerContent .companyLinsk .content p {
+    font-size: 14px;
+  }
+  .footerContent .companyLinsk .content ul li a {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+  }
 }
 
-
-
-@media (min-width:768px) and (max-width:991px) {
-    .footerBox__Panel {
-        padding-bottom: 0px;
-        padding-top: 50px;
-    }
-    .footerContent .companyLinsk h4 {
-        font-size: 18px;
-    }
-    .footerContent .companyLinsk .content p {
-        font-size: 14px;
-    }
-    .footerContent .companyLinsk .content ul li a {
-        height: 36px;
-        line-height: 36px;
-        font-size: 14px;
-    }
+@media (min-width: 576px) and (max-width: 680px) {
+  .footerBox__Panel {
+    padding-bottom: 0px;
+    padding-top: 50px;
+  }
+  .footerContent .companyLinsk h4 {
+    font-size: 18px;
+  }
+  .footerContent .companyLinsk .content p {
+    font-size: 14px;
+  }
+  .footerContent .companyLinsk .content ul li a {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+  }
 }
 
+@media (min-width: 681px) and (max-width: 767px) {
+  .footerBox__Panel {
+    padding-bottom: 0px;
+    padding-top: 50px;
+  }
+  .footerContent .companyLinsk h4 {
+    font-size: 18px;
+  }
+  .footerContent .companyLinsk .content p {
+    font-size: 14px;
+  }
+  .footerContent .companyLinsk .content ul li a {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+  }
+}
 
-@media (min-width:992px) and (max-width:1199px) {
-    .footerBox__Panel {
-        padding-bottom: 0px;
-        padding-top: 50px;
-    }
-    .footerContent .companyLinsk h4 {
-        font-size: 18px;
-    }
-    .footerContent .companyLinsk .content p {
-        font-size: 14px;
-    }
-    .footerContent .companyLinsk .content ul li a {
-        height: 36px;
-        line-height: 36px;
-        font-size: 14px;
-    }
+@media (min-width: 768px) and (max-width: 991px) {
+  .footerBox__Panel {
+    padding-bottom: 0px;
+    padding-top: 50px;
+  }
+  .footerContent .companyLinsk h4 {
+    font-size: 18px;
+  }
+  .footerContent .companyLinsk .content p {
+    font-size: 14px;
+  }
+  .footerContent .companyLinsk .content ul li a {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .footerBox__Panel {
+    padding-bottom: 0px;
+    padding-top: 50px;
+  }
+  .footerContent .companyLinsk h4 {
+    font-size: 18px;
+  }
+  .footerContent .companyLinsk .content p {
+    font-size: 14px;
+  }
+  .footerContent .companyLinsk .content ul li a {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+  }
 }
