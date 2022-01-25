@@ -250,10 +250,10 @@
 }
 
 .servicesArea .serviceBox h2 {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 600;
   color: #000;
-  line-height: 57px;
+  line-height: 48px;
 }
 
 .servicesArea .serviceBox .title {
@@ -964,7 +964,7 @@
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 30px;
-  color: #898e96;
+  color: #88c65c;
 }
 
 .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
@@ -1023,7 +1023,7 @@
   background-color: #88c65c;
   right: -1.2rem;
   top: -5px;
-  left: -10px;
+  left: -3px;
 }
 
 .top-circle::after {

@@ -1,18 +1,18 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import CommonFunctionality from '../../Shared/CommonFunctionality';
+import CommonFunctionality from "../../Shared/CommonFunctionality";
 
 const NavBar = () => {
-  const history = useHistory()
-  const [state, setState] = useState({ isTop: false })
+  const history = useHistory();
+  const [state, setState] = useState({ isTop: false });
 
   const onClickGoTo = (link) => {
-    history.push(link)
-  }
+    history.push(link);
+  };
 
   useEffect(() => {
     window.onscroll = () => _handleScroll();
-  }, [])
+  }, []);
 
   const _handleScroll = () => {
     if (document.documentElement.scrollTop > 10) {
@@ -20,32 +20,124 @@ const NavBar = () => {
     } else {
       setState({ isTop: false });
     }
-  }
+  };
 
   return (
-    <header id="header" className={state.isTop ? 'fixed-top header-scrolled scroll' : 'fixed-top header-scrolled'} onScroll={_handleScroll}>
+    <header
+      id="header"
+      className={
+        state.isTop
+          ? "fixed-top header-scrolled scroll"
+          : "fixed-top header-scrolled"
+      }
+      onScroll={_handleScroll}
+    >
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="/"><img src="assets/img/logo.png" width="250px" /></a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <a className="navbar-brand" href="/">
+            <img src="assets/img/logo.png" width="250px" />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className="collapse navbar-collapse " id="navbarNav">
+          <div
+            className="collapse navbar-collapse menuLinksBar "
+            id="navbarNav"
+          >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
                 <Link to="/">Home </Link>
               </li>
-              <li className="nav-item dropdown">
-                <a href="/services" onClick={() => { onClickGoTo('/services') }} id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
+              <li className="nav-item dropdown position-static">
+                <a
+                  href="/services"
+                  onClick={() => {
+                    onClickGoTo("/services");
+                  }}
+                  id="navbarDropdown"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Services <span className="dropIcon"></span>
+                </a>
 
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link className="dropdown-item" to="/app-development">App Development</Link>
-                  <Link className="dropdown-item" to="/web-development">Web Development</Link>
-                  <Link className="dropdown-item" to="/ui-ux-design">UI  UX Design</Link>
-                  <Link className="dropdown-item" to="/seo">Seo</Link>
-                  <Link className="dropdown-item" to="/graphic-design">Graphics Design</Link>
+                  <div className="dropdownmenus">
+                    <Link className="dropdown-item" to="/app-development">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/appNavIcon.png" />
+                        App Development
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/web-development">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/webNavIcon.png" /> Web Development
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/ui-ux-design">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/uiUxNavIcon.png" /> UI UX Design
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/seo">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/seoNavIcon.png" />
+                        Seo
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/graphic-design">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/graphicsNavIcon.png" />
+                        Graphics Design
+                      </div>
+                    </Link>
+                  </div>
 
+                  <div className="integratedLinks">
+                    <div className="webformsBottom">
+                      <p>Following Us</p>
+                      <div className="socialintegratedLinks">
+                        <Link className="webformsIntegration" to="">
+                          <img
+                            src="assets/img/facebookNavIcon.png"
+                            alt="Facebook"
+                            title="Facebook"
+                            loading="lazy"
+                          />
+                          Facebook
+                        </Link>
+                        <Link className="webformsIntegration" to="">
+                          <img
+                            src="assets/img/instagramNavIcon.png"
+                            alt="Google Workspace"
+                            title="Google Workspace"
+                            loading="lazy"
+                          />
+                          Instagram
+                        </Link>
+                        <Link className="webformsIntegration" to="">
+                          <img
+                            src="assets/img/linkedinNavIcon.png"
+                            alt="LinkedIn"
+                            title="LinkedIn"
+                            loading="lazy"
+                          />
+                          LinkedIn
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
               <li className="nav-item">
@@ -88,10 +180,9 @@ const NavBar = () => {
         </nav>
   
         <a href="#about" className="get-started-btn scrollto">Get Quote</a> */}
-
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

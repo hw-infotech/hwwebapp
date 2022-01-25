@@ -14,11 +14,9 @@ const Footer_new = () => {
                 <h4>About Us</h4>
                 <div className="content">
                   <p>
-                    We help new and established businesses to create their
-                    unique identity through our website design and development
-                    services. We are dedicated to offering brilliant and
-                    appealing software solution experiences that connect brands
-                    to their potential customers.
+                    We aren’t a mere software development service provider but
+                    an industry leader in providing a top-notch digital solution
+                    to businesses across the globe.
                   </p>
                 </div>
                 <div className="clb-social">

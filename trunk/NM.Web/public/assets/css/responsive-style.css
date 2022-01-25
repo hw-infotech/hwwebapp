@@ -1,206 +1,421 @@
-@media (min-width:320px) and (max-width:480px) {
-    #header.header-scrolled, #header.header-inner-pages {
-        background: white!important;
-        border-bottom: 1px solid transparent;
-    }
-    .navbar .navbar-nav .nav-item a {
-        color: #323232;
-        font-weight: 700;
-        width: 100%;
-        min-height: 50px!important;
-        line-height: 50px;
-        float: left;
-    }
-    .navbar .navbar-nav .nav-item .dropdown-item {
-        padding: 0rem 1rem!important;
-    }
-    #header.header-scrolled .bg-light .navbar-brand img {
-        width: 150px;
-    }
-    .navbar .navbar-nav .nav-item {
-        padding: 10px 0px;
-        width: 100%;
-        float: left;
-    }
-    .servicesArea .serviceBox h2 {
-        font-size: 24px!important;
-        line-height: 30px!important;
-    }
-    .servicesArea .serviceBox h4 {
-        font-size: 20px!important;
-        line-height: 20px!important;
-    }
-    .successStories {
-        margin: 0px 10px!important;
-        padding: 50px 30px!important;
-        border-radius: 10px;
-    }
-    .storiesContent .title {
-        font-size: 18px!important;
-    }
-    .storiesContent .bigTitle {
-        font-size: 24px!important;
-        margin-top: 18px;
-    }
-    .storiesContent {
-        min-height: 320px!important;
-    }
-    .storiesImg {
-        min-height: 320px;
-    }
-    .successStories>.row {
-        flex-direction: column-reverse;
-    }
-    section.stories {
-        padding: 0px 0px 60px 0;
-        background: #f9f9f9;
-    }
-    .capebilities .capebilities_heading .title {
-        font-size: 30px!important;
-    }
-    .accordian-section .accordianLeft .hidden-space {
-        background-color: rgba(136, 136, 136, 0.05);
-        height: auto!important;
-    }
-    .accordian-section .accordianLeft .imagesBox {
-        flex-grow: 2;
-        min-height: 200px!important;
-        background-position: center!important;
-        background-size: cover!important;
-        height: 100%!important;
-    }
-    .accordianPanel {
-        position: relative;
-        left: 0%;
-        min-width: 100%!important;
-    }
-    .accordian-section .collapseBox .collapseHeading h3 {
-        font-size: 24px!important;
-    }
-    .brandArea ul li {
-        width: 24.66%!important;
-        margin-bottom: 0px!important;
-    }
-    .brandArea ul li .brandIcon img {
-        height: 30px!important;
-    }
-    .list-addon-home li {
-        width: calc(100% - 30px)!important;
-    }
-    .cta-texter-home h4 {
-        font-size: 16px!important;
-    }
-    .cta-btn-home {
-        text-align: left!important;
-        margin-top: 20px;
-    }
-    .animation-on-hover.btn-register-header {
-        font-size: 13px!important;
-        padding: 13px 20px 13px 47px;
-    }
-    .list-addon li {
-        padding: 15px!important;
-        padding-left: 115px!important;
-      }
-      
+@media (min-width: 320px) and (max-width: 480px) {
+  #header.header-scrolled,
+  #header.header-inner-pages {
+    background: white !important;
+    border-bottom: 1px solid transparent;
+  }
+  .navbar .navbar-nav .nav-item a {
+    color: #ffffff !important;
+    font-weight: 700;
+    width: 100% !important;
+    min-height: 50px !important;
+    line-height: 50px;
+    float: left;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-menu .dropdownmenus {
+    background: #1c1c1c !important;
+    width: 100% !important;
+    border-radius: 0px;
+    box-shadow: 0 10px 25px rgb(0 66 118 / 0%);
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
+    width: 100%;
+    float: left;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox img {
+    display: none;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox {
+    width: 100%;
+    position: relative;
+    padding: 0px 0px 0px 0px !important;
+    font-weight: 500;
+    border-radius: 0px !important;
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    transition: all ease 0.8s;
+    box-shadow: inset 0px 0px 18px 0px #0160fd00 !important;
+  }
+
+  .menuLinksBar {
+    position: fixed;
+    height: calc(100% - 72px);
+    background: #000;
+    top: 72px;
+    width: 100%;
+    transform: translate3d(-100%, 0px, 0px) !important;
+    max-width: 250px;
+    left: 0;
+    transition: all ease 0.2s;
+  }
+  .menuLinksBar.show {
+    height: calc(100% - 72px);
+    background: #000;
+    width: 100%;
+    top: 72px;
+    transform: translate3d(0%, 0px, 0px) !important;
+    max-width: 250px;
+    left: 0;
+    transition: all ease 0.2s;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item {
+    padding: 0rem 1rem !important;
+  }
+  #header.header-scrolled .bg-light .navbar-brand img {
+    width: 150px;
+  }
+  .navbar .navbar-nav .nav-item {
+    padding: 10px 0px;
+    width: 100%;
+    float: left;
+  }
+  .servicesArea .serviceBox h2 {
+    font-size: 24px !important;
+    line-height: 30px !important;
+  }
+  .servicesArea .serviceBox h4 {
+    font-size: 20px !important;
+    line-height: 20px !important;
+  }
+  .successStories {
+    margin: 0px 10px !important;
+    padding: 50px 30px !important;
+    border-radius: 10px;
+  }
+  .storiesContent .title {
+    font-size: 18px !important;
+  }
+  .storiesContent .bigTitle {
+    font-size: 24px !important;
+    margin-top: 18px;
+  }
+  .storiesContent {
+    min-height: 320px !important;
+  }
+  .storiesImg {
+    min-height: 320px;
+  }
+  .successStories > .row {
+    flex-direction: column-reverse;
+  }
+  section.stories {
+    padding: 0px 0px 60px 0;
+    background: #f9f9f9;
+  }
+  .capebilities .capebilities_heading .title {
+    font-size: 30px !important;
+  }
+  .accordian-section .accordianLeft .hidden-space {
+    background-color: rgba(136, 136, 136, 0.05);
+    height: auto !important;
+  }
+  .accordian-section .accordianLeft .imagesBox {
+    flex-grow: 2;
+    min-height: 200px !important;
+    background-position: center !important;
+    background-size: cover !important;
+    height: 100% !important;
+  }
+  .accordianPanel {
+    position: relative;
+    left: 0%;
+    min-width: 100% !important;
+  }
+  .accordian-section .collapseBox .collapseHeading h3 {
+    font-size: 24px !important;
+  }
+  .brandArea ul li {
+    width: 24.66% !important;
+    margin-bottom: 0px !important;
+  }
+  .brandArea ul li .brandIcon img {
+    height: 30px !important;
+  }
+  .list-addon-home li {
+    width: calc(100% - 30px) !important;
+  }
+  .cta-texter-home h4 {
+    font-size: 16px !important;
+  }
+  .cta-btn-home {
+    text-align: left !important;
+    margin-top: 20px;
+  }
+  .animation-on-hover.btn-register-header {
+    font-size: 13px !important;
+    padding: 13px 20px 13px 47px;
+  }
+  .list-addon li {
+    padding: 15px !important;
+    padding-left: 115px !important;
+  }
 }
 
-@media (min-width:481px) and (max-width:767px) {
-    #header.header-scrolled, #header.header-inner-pages {
-        background: white!important;
-        border-bottom: 1px solid transparent;
-    }
-    .navbar .navbar-nav .nav-item a {
-        color: #323232;
-        font-weight: 700;
-        width: 100%;
-        min-height: 40px!important;
-        line-height: 40px;
-        float: left;
-    }
-    #header.header-scrolled .bg-light .navbar-brand img {
-        width: 150px;
-    }
-    .navbar .navbar-nav .nav-item {
-        padding: 10px 0px;
-        width: 100%;
-        float: left;
-    }
-    .servicesArea .serviceBox h2 {
-        font-size: 30px!important;
-        line-height: 30px!important;
-    }
-    .servicesArea .serviceBox h4 {
-        font-size: 20px!important;
-        line-height: 20px!important;
-    }
-    .successStories {
-        margin: 0px 10px!important;
-        padding: 50px 30px!important;
-        border-radius: 10px;
-    }
-    .storiesContent .title {
-        font-size: 18px!important;
-    }
-    .storiesContent .bigTitle {
-        font-size: 24px!important;
-        margin-top: 18px;
-    }
-    .storiesContent {
-        min-height: 320px!important;
-    }
-    .storiesImg {
-        min-height: 320px;
-    }
-    .successStories>.row {
-        flex-direction: column-reverse;
-    }
-    section.stories {
-        padding: 0px 0px 60px 0;
-        background: #f9f9f9;
-    }
-    .capebilities .capebilities_heading .title {
-        font-size: 30px!important;
-    }
-    .accordian-section .accordianLeft .hidden-space {
-        background-color: rgba(136, 136, 136, 0.05);
-        height: auto!important;
-    }
-    .accordian-section .accordianLeft .imagesBox {
-        flex-grow: 2;
-        min-height: 200px!important;
-        background-position: center!important;
-        background-size: cover!important;
-        height: 100%!important;
-    }
-    .accordianPanel {
-        position: relative;
-        left: 0%;
-        min-width: 100%!important;
-    }
-    .accordian-section .collapseBox .collapseHeading h3 {
-        font-size: 24px!important;
-    }
-    .brandArea ul li {
-        width: 24.66%!important;
-        margin-bottom: 0px!important;
-    }
-    .brandArea ul li .brandIcon img {
-        height: 30px!important;
-    }
-    .list-addon-home li {
-        width: calc(100% - 30px)!important;
-    }
-    .cta-texter-home h4 {
-        font-size: 22px!important;
-    }
+@media (min-width: 481px) and (max-width: 767px) {
+  #header.header-scrolled,
+  #header.header-inner-pages {
+    background: white !important;
+    border-bottom: 1px solid transparent;
+  }
+  .navbar .navbar-nav .nav-item a {
+    color: #ffffff !important;
+    font-weight: 700;
+    width: 100% !important;
+    min-height: 50px !important;
+    line-height: 50px;
+    float: left;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-menu .dropdownmenus {
+    background: #1c1c1c !important;
+    width: 100% !important;
+    border-radius: 0px;
+    box-shadow: 0 10px 25px rgb(0 66 118 / 0%);
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
+    width: 100%;
+    float: left;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox img {
+    display: none;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox {
+    width: 100%;
+    position: relative;
+    padding: 0px 0px 0px 0px !important;
+    font-weight: 500;
+    border-radius: 0px !important;
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    transition: all ease 0.8s;
+    box-shadow: inset 0px 0px 18px 0px #0160fd00 !important;
+  }
+
+  .menuLinksBar {
+    position: fixed;
+    height: calc(100% - 72px);
+    background: #000;
+    top: 72px;
+    width: 100%;
+    transform: translate3d(-100%, 0px, 0px) !important;
+    max-width: 250px;
+    left: 0;
+    transition: all ease 0.2s;
+  }
+  .menuLinksBar.show {
+    height: calc(100% - 72px);
+    background: #000;
+    width: 100%;
+    top: 72px;
+    transform: translate3d(0%, 0px, 0px) !important;
+    max-width: 250px;
+    left: 0;
+    transition: all ease 0.2s;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item {
+    padding: 0rem 1rem !important;
+  }
+  #header.header-scrolled .bg-light .navbar-brand img {
+    width: 150px;
+  }
+  .navbar .navbar-nav .nav-item {
+    padding: 10px 0px;
+    width: 100%;
+    float: left;
+  }
+  .servicesArea .serviceBox h2 {
+    font-size: 30px !important;
+    line-height: 30px !important;
+  }
+  .servicesArea .serviceBox h4 {
+    font-size: 20px !important;
+    line-height: 20px !important;
+  }
+  .successStories {
+    margin: 0px 10px !important;
+    padding: 50px 30px !important;
+    border-radius: 10px;
+  }
+  .storiesContent .title {
+    font-size: 18px !important;
+  }
+  .storiesContent .bigTitle {
+    font-size: 24px !important;
+    margin-top: 18px;
+  }
+  .storiesContent {
+    min-height: 320px !important;
+  }
+  .storiesImg {
+    min-height: 320px;
+  }
+  .successStories > .row {
+    flex-direction: column-reverse;
+  }
+  section.stories {
+    padding: 0px 0px 60px 0;
+    background: #f9f9f9;
+  }
+  .capebilities .capebilities_heading .title {
+    font-size: 30px !important;
+  }
+  .accordian-section .accordianLeft .hidden-space {
+    background-color: rgba(136, 136, 136, 0.05);
+    height: auto !important;
+  }
+  .accordian-section .accordianLeft .imagesBox {
+    flex-grow: 2;
+    min-height: 200px !important;
+    background-position: center !important;
+    background-size: cover !important;
+    height: 100% !important;
+  }
+  .accordianPanel {
+    position: relative;
+    left: 0%;
+    min-width: 100% !important;
+  }
+  .accordian-section .collapseBox .collapseHeading h3 {
+    font-size: 24px !important;
+  }
+  .brandArea ul li {
+    width: 24.66% !important;
+    margin-bottom: 0px !important;
+  }
+  .brandArea ul li .brandIcon img {
+    height: 30px !important;
+  }
+  .list-addon-home li {
+    width: calc(100% - 30px) !important;
+  }
+  .cta-texter-home h4 {
+    font-size: 22px !important;
+  }
 }
 
-@media (min-width:768px) and (max-width:991px) {
-    .list-addon-home li {
-        width: calc(50% - 30px)!important;
-    }
-    .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
-        width: 160px!important;
-    }
+@media (min-width: 768px) and (max-width: 991px) {
+  #header.header-scrolled,
+  #header.header-inner-pages {
+    background: white !important;
+    border-bottom: 1px solid transparent;
+  }
+  .navbar .navbar-nav .nav-item a {
+    color: #ffffff !important;
+    font-weight: 700;
+    width: 100% !important;
+    min-height: 50px !important;
+    line-height: 50px;
+    float: left;
+  }
+
+  .navbar .navbar-nav .nav-item .dropdown-menu .dropdownmenus {
+    background: #1c1c1c !important;
+    width: 100% !important;
+    border-radius: 0px !important;
+    box-shadow: 0 10px 25px rgb(0 66 118 / 0%) !important;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
+    width: 100%;
+    float: left;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox img {
+    display: none;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox {
+    width: 100%;
+    position: relative;
+    padding: 0px 0px 0px 0px !important;
+    font-weight: 500;
+    border-radius: 0px !important;
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    transition: all ease 0.8s;
+    box-shadow: inset 0px 0px 18px 0px #0160fd00 !important;
+  }
+
+  .menuLinksBar {
+    position: fixed;
+    height: calc(100% - 72px);
+    background: #000000;
+    top: 72px;
+    width: 100%;
+    transform: translate3d(-100%, 0px, 0px) !important;
+    max-width: 250px;
+    left: 0;
+    transition: all ease 0.2s;
+  }
+  .menuLinksBar.show {
+    height: calc(100% - 72px);
+    background: #000000;
+    width: 100%;
+    top: 72px;
+    transform: translate3d(0%, 0px, 0px) !important;
+    max-width: 250px;
+    left: 0;
+    transition: all ease 0.2s;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-item {
+    padding: 0rem 1rem !important;
+  }
+  #header.header-scrolled .bg-light .navbar-brand img {
+    width: 150px;
+  }
+  .navbar .navbar-nav .nav-item {
+    padding: 10px 0px;
+    width: 100%;
+    float: left;
+  }
+
+  .list-addon-home li {
+    width: calc(50% - 30px) !important;
+  }
+  .testimonialBox
+    .testi_Slider
+    .carousel
+    .carousel-inner
+    .userContent
+    .clientImg
+    img {
+    width: 160px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar .navbar-nav .nav-item .dropdown-menu .dropdownmenus {
+    width: 75%!important;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
+    width: 25%!important;
+}
 }

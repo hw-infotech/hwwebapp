@@ -105,11 +105,12 @@
   text-overflow: ellipsis;
   overflow: hidden;
   font-weight: 300 !important;
+  text-decoration: none;
 }
 
 .footerContent .companyLinsk .content ul li a:hover,
 .footerContent .innerLinks ul li a:hover {
-  color: #ffffff;
+  color: #ffb625;
 }
 
 .Htb {

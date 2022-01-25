@@ -169,9 +169,9 @@ const AppDev = () => {
         <div className="container">
           <div className="left">
             <h2 className="light">
-              Have an awesome <br />
-              <strong>App Application idea </strong> and not sure <br />
-              how to get started?
+              Do your need a <br />
+              <strong>robust and well-functioned</strong> <br />
+              mobile app for your business?
             </h2>
           </div>
           <div className="right">
@@ -188,17 +188,12 @@ const AppDev = () => {
             <div className="row">
               <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
                 <div className="ProcessContent">
-                  <h3>
-                    Our <br />
-                    Software development <br />
-                    Process
-                  </h3>
+                  <h3>Our mobile app development process</h3>
                   <p>
-                    We offer customized, industry-specific software development
-                    services that will match the business needs and within its
-                    budget. Our development service is completely based on the
-                    latest technical platforms and programming languages and
-                    frameworks.
+                    We create intuitive, seamless and secure mobile applications
+                    that provide best user experience. Our team of app
+                    developers craft apps for both iOS and Android platforms to
+                    meet the end-user requirement.
                   </p>
                 </div>
               </div>
@@ -218,26 +213,23 @@ const AppDev = () => {
                     <div className="item">
                       <div className="processContentPanel">
                         <div className="number">01</div>
-                        <div className="processTitle">
-                          Research and Consulting{" "}
-                        </div>
+                        <div className="processTitle">Robust Mobile Apps </div>
                         <p>
-                          We start with what we call Phase Zero, a data
-                          collection and marketing research phase in which we
-                          study your app idea, your company, and your end users.
+                          We employ a specific strategy to develop the mobile
+                          app. Our team works along with UX and UI design team
+                          to create an excellent interface.
                         </p>
                       </div>
                     </div>
                     <div className="item">
                       <div className="processContentPanel">
                         <div className="number">02</div>
-                        <div className="processTitle">
-                          Wireframe and Prototype{" "}
-                        </div>
+                        <div className="processTitle">Mobile App Strategy</div>
                         <p>
-                          We start with what we call Phase Zero, a data
-                          collection and marketing research phase in which we
-                          study your app idea, your company, and your end users.
+                          Mobile apps that we craft only display a single
+                          portion of our vast app development strategy. We
+                          transform your vision into reality by imposing the
+                          latest frameworks and techniques.
                         </p>
                       </div>
                     </div>
@@ -245,47 +237,55 @@ const AppDev = () => {
                       <div className="processContentPanel">
                         <div className="number">03</div>
                         <div className="processTitle">
-                          Architecture and Database{" "}
+                          User Experience Design 
                         </div>
                         <p>
-                          We start with what we call Phase Zero, a data
-                          collection and marketing research phase in which we
-                          study your app idea, your company, and your end users.
+                          Creativity is all about solving ongoing issues in new
+                          ways. Our designers, programmers, and prototype
+                          engineers have always a way to simplify the problem
+                          enlightening newer ways for the mobile app development
+                          solutions.  
                         </p>
                       </div>
                     </div>
                     <div className="item">
                       <div className="processContentPanel">
                         <div className="number">04</div>
-                        <div className="processTitle">Web Development </div>
+                        <div className="processTitle">
+                          Mobile App Development
+                        </div>
                         <p>
-                          We start with what we call Phase Zero, a data
-                          collection and marketing research phase in which we
-                          study your app idea, your company, and your end users.
+                          Our mobile app development strategy is dedicated to
+                          tapping the new horizon of the tech world. Our
+                          development team is aware of the latest challenges and
+                          solves them using their experience and workmanship.
                         </p>
                       </div>
                     </div>
                     <div className="item">
                       <div className="processContentPanel">
                         <div className="number">05</div>
-                        <div className="processTitle">Testing and QA</div>
+                        <div className="processTitle">Mobile App Testing</div>
                         <p>
-                          We start with what we call Phase Zero, a data
-                          collection and marketing research phase in which we
-                          study your app idea, your company, and your end users.
+                          The team of quality analysts ensures that the
+                          application is tested against various test modules and
+                          is in the state of a product, not experiment when
+                          delivered to you. We believe in test-driven
+                          development and assure that the entire app is free
+                          from any type of threat.
                         </p>
                       </div>
                     </div>
                     <div className="item">
                       <div className="processContentPanel">
                         <div className="number">06</div>
-                        <div className="processTitle">
-                          Deployment to Live Server{" "}
-                        </div>
+                        <div className="processTitle">Mobile App Launching</div>
                         <p>
-                          We start with what we call Phase Zero, a data
-                          collection and marketing research phase in which we
-                          study your app idea, your company, and your end users.
+                          Mobile app launching is the final stage of the app
+                          development process. We launch your app on both
+                          PlayStore for Android users and App Store for iOS
+                          users. Plus, provide installation guide and process to
+                          the users.  
                         </p>
                       </div>
                     </div>
@@ -293,15 +293,14 @@ const AppDev = () => {
                       <div className="processContentPanel">
                         <div className="number">07</div>
                         <div className="processTitle">
-                          Custom Software Development
+                          Round The Clock Support
                         </div>
                         <p>
-                          Being the professional custom software development
-                          company and industry leader, Nestormind offers custom
-                          software development for the fast-changing B2C and B2B
-                          needs. Our team of developers knows how to develop
-                          future-rich websites that can handle the upcoming
-                          business needs.
+                          We are available 24*7 for supporting you and making
+                          your operation free from any type of glitch. Our team
+                          of developers and customer relation officers are aware
+                          of the potential issues and provide the required
+                          service accordingly.
                         </p>
                       </div>
                     </div>
@@ -426,15 +425,13 @@ const AppDev = () => {
             <div className="col-12 col-md-6">
               <div className="formContent">
                 <div className="bigText">
-                  Have an awesome
-                  <br />
-                  App Application idea and not sure
-                  <br />
-                  how to get started?
+                  Share your mobile app development requirement with us!
                 </div>
                 <div className="smallText">
-                  Partner with us for affordable development supported by
-                  advanced frameworks, processes, automation, and expertise.
+                  To avail the high-end mobile apps for your current and
+                  futuristic business requirement, partner with us. We have a
+                  highly skilled team of mobile app developers who can deliver
+                  hybrid mobile apps according to the business needs.
                 </div>
               </div>
             </div>

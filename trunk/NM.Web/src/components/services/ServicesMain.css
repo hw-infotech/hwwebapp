@@ -73,8 +73,8 @@ section.mainBanner_Services {
 
 .bannerContentText h1 strong {
   font-weight: 700;
-  /* color: #8d62aa; */
-  color: #fa1d1d;
+   color: #7cc243; 
+  font-size:66px;
 }
 
 .bannerContentText p {
@@ -177,6 +177,9 @@ section.mainBanner_Services {
 .bannerContentText h1 {
   font-size: 54px !important;
 }
+.bannerContentText h1 strong{
+  font-size: 42px !important;
+}
 
 .bannerService .box-wrap .line {
   transform: translate(0, 0) scale(0.8);
@@ -209,7 +212,7 @@ section.mainBanner_Services {
 
 .services .servicesItem .heading strong {
   font-weight: 800;
-  color: #7c55a3;
+  color: #000000;
 }
 
 .services .servicesItem .item {
@@ -238,12 +241,116 @@ section.mainBanner_Services {
   border-radius: 15px;
 }
 
+.item_Services.appDevelopment {
+    background: #cfe9ba;
+}
+.item_Services.webDevelopment {
+    background: #ffa0a0;
+}
+.item_Services.uiUxDevelopment {
+    background: #ffdf98;
+}
+.item_Services.seoDevelopment {
+    background: #cfff9b;
+}
+.item_Services.graphicsDevelopment {
+    background: #d3b8ff;
+}
+.item_Services.digitalDevelopment {
+    background: #9ee0ff;
+}
+.item_Services.appDevelopment  h4, .item_Services.appDevelopment  p{
+  color: #60aa1f;
+}
+.item_Services.appDevelopment .actBtn a {
+    border: 2px solid #60aa1f!important;
+    color: #60aa1f !important;
+}
+.item_Services.appDevelopment .actBtn a:hover {
+    border: 2px solid #60aa1f!important;
+    background-color: #60aa1f !important;
+    color:#fff!important;
+}
+
+
+.item_Services.webDevelopment h4, .item_Services.webDevelopment p {
+    color: #ad3a3a;
+}
+
+.item_Services.webDevelopment .actBtn a {
+    border: 2px solid #ad3a3a!important;
+    color: #ad3a3a !important;
+}
+.item_Services.webDevelopment .actBtn a:hover {
+    border: 2px solid #ad3a3a!important;
+    background-color: #ad3a3a !important;
+    color:#fff!important;
+}
+
+
+
+.item_Services.uiUxDevelopment h4, .item_Services.uiUxDevelopment p {
+    color: #e19b00;
+}
+
+.item_Services.uiUxDevelopment .actBtn a {
+    border: 2px solid #e19b00!important;
+    color: #e19b00 !important;
+}
+.item_Services.uiUxDevelopment .actBtn a:hover {
+    border: 2px solid #e19b00!important;
+    background-color: #e19b00 !important;
+    color:#fff!important;
+}
+
+
+.item_Services.seoDevelopment h4, .item_Services.seoDevelopment p {
+    color: #84cb2f;
+}
+.item_Services.seoDevelopment .actBtn a {
+    border: 2px solid #84cb2f!important;
+    color: #84cb2f !important;
+}
+.item_Services.seoDevelopment .actBtn a:hover {
+    border: 2px solid #84cb2f!important;
+    background-color: #84cb2f !important;
+    color:#fff!important;
+}
+
+
+.item_Services.graphicsDevelopment h4, .item_Services.graphicsDevelopment p {
+    color: #9576d1;
+}
+
+.item_Services.graphicsDevelopment .actBtn a {
+    border: 2px solid #9576d1!important;
+    color: #9576d1 !important;
+}
+.item_Services.graphicsDevelopment .actBtn a:hover {
+    border: 2px solid #9576d1!important;
+    background-color: #9576d1 !important;
+    color:#fff!important;
+}
+.item_Services.digitalDevelopment h4, .item_Services.digitalDevelopment p {
+    color: #49a3ce;
+}
+.item_Services.digitalDevelopment .actBtn a {
+    border: 2px solid #49a3ce!important;
+    color: #49a3ce !important;
+}
+.item_Services.digitalDevelopment .actBtn a:hover {
+    border: 2px solid #49a3ce!important;
+    background-color: #49a3ce !important;
+    color:#fff!important;
+}
+
+
 .services .servicesItem .item .number.top-circle::after {
   content: "";
   width: 5.5rem;
   height: 5.5rem;
   display: block;
-  background-color: #ebebeb;
+  background-color: #00000026;
   border-radius: 50%;
   top: 0rem;
   right: unset;
@@ -252,6 +359,7 @@ section.mainBanner_Services {
   -o-transition: all 0.3s ease-in;
   -webkit-transition: all 0.3s ease-in;
   z-index: -1;
+  display: none;
 }
 
 .services .servicesItem .item .number.top-circle::before {
@@ -269,12 +377,14 @@ section.mainBanner_Services {
   -webkit-transition: all 0.3s ease-in;
   z-index: 3;
   left: 55px;
+  display:none;
 }
 
 .services .servicesItem .item .number img {
-  width: 66px;
+  width: 100%;
   z-index: 10;
   position: relative;
+  height: 200px;
 }
 
 .services .servicesItem .item h4 {
@@ -284,12 +394,14 @@ section.mainBanner_Services {
 }
 
 .services .servicesItem .item .line {
-  height: 3px;
-  text-align: left;
-  align-items: flex-start;
-  display: flex;
-  width: 74px;
-  margin-bottom: 10px;
+     height: 3px;
+    text-align: left;
+    align-items: flex-start;
+    display: flex;
+    width: 74px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+    opacity: .3;
 }
 
 .services .servicesItem .item p {
@@ -304,18 +416,19 @@ section.mainBanner_Services {
 }
 
 .services .servicesItem .item .actBtn a {
-  height: 40px;
-  line-height: 37px;
-  text-align: center;
-  padding: 0 30px;
-  border: 2px solid #7c55a3;
-  display: inline-flex;
-  border-radius: 30px;
-  color: #7c55a3;
-  font-weight: 700;
-  transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  -webkit-transition: all 0.3s ease-in;
+    height: 40px;
+    line-height: 37px;
+    text-align: center;
+    padding: 0 30px;
+    border: 2px solid #000000;
+    display: inline-flex;
+    border-radius: 30px;
+    color: #000000;
+    font-weight: 700;
+    transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    text-decoration: none;
 }
 
 .services .servicesItem .item .actBtn a:hover {
@@ -364,7 +477,7 @@ section.mainBanner_Services {
 
 .services .servicesItem .owl-theme .owl-dots .owl-dot.active span {
   display: block !important;
-  background: #815aa6;
+  background: #f18732;
   width: 30px;
   transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
@@ -381,7 +494,7 @@ section.banner-bottom-sec:before {
   width: calc(100% - 140px);
   height: 100%;
   content: "";
-  background: #f18732;
+  background: #194d7d;
   position: absolute;
   top: 0;
   border-top-right-radius: 30px;
@@ -593,6 +706,8 @@ section.banner-bottom-sec {
   border-radius: 20px;
   font-size: 20px;
   font-weight: 500;
+  min-height: 262px;
+    margin-bottom: 18px;
 }
 
 .howItWork .process ul li .contentOfProcess .SubTileContent p {
@@ -928,7 +1043,7 @@ section.formBox {
 section.formBox .form {
   padding: 50px;
   background: #ffff;
-  box-shadow: 0px 0px 66px 0px #afaeae;
+  box-shadow: 0px 0px 66px 0px #afaeae6e;
 }
 
 section.formBox .form .title {
@@ -1077,7 +1192,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
   }
 
   .bannerContentText h1 {
-    font-size: 42px;
+    font-size: 36px!important;
   }
   .bannerContentText p {
     font-size: 18px;
@@ -1862,7 +1977,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
   }
 
   .bannerContentText h1 {
-    font-size: 48px !important;
+    font-size: 42px !important;
   }
 
   .contentPanel .whatWeDo .actionBtn .btn-outline {
@@ -2075,7 +2190,7 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
   }
 
   .bannerContentText h1 {
-    font-size: 48px;
+    font-size: 42px!important;
   }
 
   .bannerService .box-wrap:nth-child(2n + 2) {
