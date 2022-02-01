@@ -99,7 +99,7 @@ const Career = () => {
               <h2 className="heading2">Open positions</h2>
               <ul className="position_list">
                 <li>
-                  <a href="" target="_blank">
+                  <Link to="/uploadCv" target="_blank">
                     <span className="heading5">UI/UX Designer</span>
                     <span className="location">
                       Mohali, Punjab
@@ -123,10 +123,10 @@ const Career = () => {
                         </svg>
                       </figure>
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="" target="_blank">
+                  <Link to="/uploadCv"  target="_blank">
                     <span className="heading5">Product Manager</span>
                     <span className="location">
                       Mohali, Punjab
@@ -150,10 +150,10 @@ const Career = () => {
                         </svg>
                       </figure>
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="" target="_blank">
+                  <Link to="/uploadCv" target="_blank">
                     <span className="heading5">Marketing Manager</span>
                     <span className="location">
                       Mohali, Punjab
@@ -177,10 +177,10 @@ const Career = () => {
                         </svg>
                       </figure>
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="" target="_blank">
+                  <Link to="/uploadCv" target="_blank">
                     <span className="heading5">Project Co-ordinator</span>
                     <span className="location">
                       Mohali, Punjab
@@ -204,10 +204,10 @@ const Career = () => {
                         </svg>
                       </figure>
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="" target="_blank">
+                  <Link to="/uploadCv" target="_blank">
                     <span className="heading5">Senior iOS Developer</span>
                     <span className="location">
                       Mohali, Punjab
@@ -231,10 +231,10 @@ const Career = () => {
                         </svg>
                       </figure>
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="" target="_blank">
+                  <Link to="/uploadCv" target="_blank">
                     <span className="heading5">Sales Manager</span>
                     <span className="location">
                       Mohali, Punjab
@@ -258,7 +258,7 @@ const Career = () => {
                         </svg>
                       </figure>
                     </span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

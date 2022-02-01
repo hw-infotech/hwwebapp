@@ -108,7 +108,14 @@ const NavBar = () => {
                     <div className="webformsBottom">
                       <p>Following Us</p>
                       <div className="socialintegratedLinks">
-                        <Link className="webformsIntegration" to="">
+                        <Link
+                          className="webformsIntegration"
+                          to=""
+                          onClick={() => {
+                            window.location.href =
+                              "https://www.facebook.com/nestormindpvtltd";
+                          }}
+                        >
                           <img
                             src="assets/img/facebookNavIcon.png"
                             alt="Facebook"
@@ -117,7 +124,15 @@ const NavBar = () => {
                           />
                           Facebook
                         </Link>
-                        <Link className="webformsIntegration" to="">
+
+                        <Link
+                          className="webformsIntegration"
+                          to=""
+                          onClick={() => {
+                            window.location.href =
+                              "https://www.instagram.com/nestormindpvtltd/";
+                          }}
+                        >
                           <img
                             src="assets/img/instagramNavIcon.png"
                             alt="Google Workspace"
@@ -126,7 +141,14 @@ const NavBar = () => {
                           />
                           Instagram
                         </Link>
-                        <Link className="webformsIntegration" to="">
+                        <Link
+                          className="webformsIntegration"
+                          to=""
+                          onClick={() => {
+                            window.location.href =
+                              "https://www.linkedin.com/company/nestormind/";
+                          }}
+                        >
                           <img
                             src="assets/img/linkedinNavIcon.png"
                             alt="LinkedIn"
@@ -134,6 +156,38 @@ const NavBar = () => {
                             loading="lazy"
                           />
                           LinkedIn
+                        </Link>
+                        <Link
+                          className="webformsIntegration"
+                          to=""
+                          onClick={() => {
+                            window.location.href =
+                              "https://twitter.com/NestormindL";
+                          }}
+                        >
+                          <img
+                            src="assets/img/twitterNestormind.svg"
+                            alt="LinkedIn"
+                            title="LinkedIn"
+                            loading="lazy"
+                          />
+                          Twitter
+                        </Link>
+                        <Link
+                          className="webformsIntegration"
+                          to=""
+                          onClick={() => {
+                            window.location.href =
+                              "https://join.skype.com/invite/hTYrZnJuUsHE";
+                          }}
+                        >
+                          <img
+                            src="assets/img/skypeNestormind.svg"
+                            alt="LinkedIn"
+                            title="Skype"
+                            loading="lazy"
+                          />
+                          Skype
                         </Link>
                       </div>
                     </div>
@@ -143,8 +197,12 @@ const NavBar = () => {
               <li className="nav-item">
                 <Link to="/about-us">About Us</Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link to="/under-mantainence">Blog</Link>
+              </li> */}
+
+              <li className="nav-item">
+                <Link to="/career">Career</Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>

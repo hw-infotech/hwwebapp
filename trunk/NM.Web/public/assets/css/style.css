@@ -2508,7 +2508,7 @@ input:focus {
 /* header Css */
 
 .navbar .navbar-nav .nav-item {
-  padding: 0 20px;
+  padding: 24px 20px;
 }
 
 .navbar .navbar-nav .nav-item.dropdown:before {
@@ -2560,9 +2560,8 @@ input:focus {
   display: flex;
   padding: 10px;
 }
-.webformsBottom P{
+.webformsBottom P {
   font-weight: 700;
-  
 }
 .navbar
   .navbar-nav
@@ -2592,11 +2591,16 @@ input:focus {
   float: left;
   padding: 20px;
 }
-.navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks .webformsIntegration img {
-    width: 33px;
-    margin-right: 10px;
+.navbar
+  .navbar-nav
+  .nav-item
+  .dropdown-menu
+  .integratedLinks
+  .webformsIntegration
+  img {
+  width: 33px;
+  margin-right: 10px;
 }
-
 
 .navbar
   .navbar-nav
@@ -2656,9 +2660,9 @@ input:focus {
 }
 .dropdown-item.active,
 .dropdown-item:active {
-  color: #fff !important;
+  color: rgb(0, 0, 0) !important;
   text-decoration: none;
-  background-color: #ef661e !important;
+  background-color: #ffffff !important;
 }
 
 .navbar .navbar-nav .nav-item a:hover {

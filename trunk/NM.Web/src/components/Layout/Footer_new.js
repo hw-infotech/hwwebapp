@@ -22,31 +22,47 @@ const Footer_new = () => {
                 <div className="clb-social">
                   <ul className="clb-social-holder font-titles icons">
                     <li>
-                      <a target="_blank" href="#" className="facebook">
+                      <a
+                        target="_blank"
+                        href="https://www.facebook.com/nestormindpvtltd"
+                        className="facebook"
+                      >
                         <i className="bx bxl-facebook"></i>{" "}
                       </a>
                     </li>
                     <li>
                       <a
                         target="_blank"
-                        href="https://in.linkedin.com/company/hindwavesinfotech"
+                        href="https://www.linkedin.com/company/nestormind/"
                         className="linkedin"
                       >
                         <i className="bx bxl-linkedin"> </i>
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="#" className="twitter">
+                      <a
+                        target="_blank"
+                        href="https://twitter.com/NestormindL"
+                        className="twitter"
+                      >
                         <i className="bx bxl-twitter"></i>{" "}
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="#" className="instagram">
+                      <a
+                        target="_blank"
+                        href="https://www.instagram.com/nestormindpvtltd/"
+                        className="instagram"
+                      >
                         <i className="bx bxl-instagram"></i>{" "}
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="#" className="skype">
+                      <a
+                        target="_blank"
+                        href="https://join.skype.com/invite/hTYrZnJuUsHE"
+                        className="skype"
+                      >
                         <i className="bx bxl-skype"></i>
                       </a>
                     </li>
@@ -88,21 +104,22 @@ const Footer_new = () => {
                     <div className="content">
                       <ul>
                         <li>
-                          <Link to="/under-mantainence">Virtual Reality</Link>
+                          {/* <Link to="/under-mantainence">Virtual Reality</Link> */}
+                          <Link >Virtual Reality</Link>
                         </li>
                         <li>
-                          <Link to="/under-mantainence">Augmented Reality</Link>
+                          <Link>Augmented Reality</Link>
                         </li>
                         <li>
-                          <Link to="/under-mantainence">AI</Link>
+                          <Link >AI</Link>
                         </li>
                         <li>
-                          <Link to="/under-mantainence">
+                          <Link >
                             Internet of things
                           </Link>
                         </li>
                         <li>
-                          <Link to="/under-mantainence">Blockchain</Link>
+                          <Link >Blockchain</Link>
                         </li>
                       </ul>
                     </div>
@@ -123,7 +140,7 @@ const Footer_new = () => {
                           <Link to="/contact-us">Contact Us</Link>
                         </li>
                         <li>
-                          <Link to="/under-mantainence">Our Products</Link>
+                          {/* <Link to="/under-mantainence">Our Products</Link> */}
                         </li>
                       </ul>
                     </div>
