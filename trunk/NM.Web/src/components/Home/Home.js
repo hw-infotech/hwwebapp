@@ -549,37 +549,37 @@ const HomeContent = () => {
                     data-slide-to="0"
                     className="active"
                   >
-                    <img src="assets/img/clientProfilePic.jpg" />
+                    <img src="assets/img/placeholder-face-big.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="1"
                   >
-                    <img src="assets/img/user-10.jpg" />
+                    <img src="assets/img/placeholder-face-big.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="2"
                   >
-                    <img src="assets/img/user-2.jpg" />
+                    <img src="assets/img/placeholder-face-big.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="3"
                   >
-                    <img src="assets/img/user-10.jpg" />
+                    <img src="assets/img/placeholder-face-big.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="4"
                   >
-                    <img src="assets/img/user-2.jpg" />
+                    <img src="assets/img/placeholder-face-big.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="5"
                   >
-                    <img src="assets/img/user-2.jpg" />
+                    <img src="assets/img/placeholder-face-big.png" />
                   </li>
                 </ol>
                 <div className="carousel-inner">
@@ -589,7 +589,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/clientProfilePic.jpg" />
+                              <img src="assets/img/placeholder-face-big.png" />
                             </div>
                           </div>
                         </div>
@@ -628,7 +628,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/clientProfilePic.jpg" />
+                              <img src="assets/img/placeholder-face-big.png" />
                             </div>
                           </div>
                         </div>
@@ -666,7 +666,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/clientProfilePic.jpg" />
+                              <img src="assets/img/placeholder-face-big.png" />
                             </div>
                           </div>
                         </div>
@@ -707,7 +707,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/clientProfilePic.jpg" />
+                              <img src="assets/img/placeholder-face-big.png" />
                             </div>
                           </div>
                         </div>
@@ -737,7 +737,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/clientProfilePic.jpg" />
+                              <img src="assets/img/placeholder-face-big.png" />
                             </div>
                           </div>
                         </div>
@@ -770,7 +770,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/clientProfilePic.jpg" />
+                              <img src="assets/img/placeholder-face-big.png" />
                             </div>
                           </div>
                           {/* <div className="clientFeedbackVideo">
