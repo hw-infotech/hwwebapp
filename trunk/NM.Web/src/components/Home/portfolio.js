@@ -5,7 +5,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const Portfolio = () => {
-  const robin = {
+  const portStories = {
     loop: true,
     margin: 10,
     nav: true,
@@ -24,7 +24,7 @@ const Portfolio = () => {
         items: 2,
       },
       1000: {
-        items: 3,
+        items: 2,
       },
       1200: {
         items: 2,
@@ -135,73 +135,76 @@ const Portfolio = () => {
     },
   ];
 
-  return <div>
-    <div className="portfolioBoxPanel">
-      <div className="circleBluer"></div>
-      <div className="container">
-        <div className="bigTitle"> Portfolio </div>
-        <div className="HeadingTitle">
-          <div className="mainTitle"> Success Stories </div>
-        </div>
-      </div>
-
-      <div className="container">
-        <div className="SwipeSlider">
-          <div className="swiperLeft">
-            <h4>Change the World with Innovation </h4>
-            <h5>
-              <span className="typewriter">
-                Your Requirement + Our Expertise = Digital Transformation
-              </span>
-            </h5>
-            <h6>
-              From scratch to fully functional mobile app we craft great user experiences.
-            </h6>
+  return (
+    <div>
+      <div className="portfolioBoxPanel">
+        <div className="circleBluer"></div>
+        <div className="container">
+          <div className="bigTitle"> Portfolio </div>
+          <div className="HeadingTitle">
+            <div className="mainTitle"> Success Stories </div>
           </div>
-          <div className="swiperRight">
-            <OwlCarousel
-              {...robin}
-              className="owl-theme"
-              autoplay={true}
-              items={2}
-              margin={20}
-              nav
-            >
-              {slider?.map((data, index) => (
-                <div className="item" key={index}>
-                  <div className="projectBox">
-                    <img src={data.image} />
-                    <div className="contant">
-                      <h3>{data.title}</h3>
-                      <p>{data.content}</p>
+        </div>
+
+        <div className="container">
+          <div className="SwipeSlider">
+            <div className="swiperLeft">
+              <h4>Change the World with Innovation </h4>
+              <h5>
+                <span className="typewriter">
+                  Your Requirement + Our Expertise = Digital Transformation
+                </span>
+              </h5>
+              <h6>
+                From scratch to fully functional mobile app we craft great user
+                experiences.
+              </h6>
+            </div>
+            <div className="swiperRight">
+              <OwlCarousel
+                {...portStories}
+                className="owl-theme"
+                autoplay={true}
+                items={2}
+                margin={20}
+                nav
+              >
+                {slider?.map((data, index) => (
+                  <div className="item" key={index}>
+                    <div className="projectBox">
+                      <img src={data.image} />
+                      <div className="contant">
+                        <h3>{data.title}</h3>
+                        <p>{data.content}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </OwlCarousel>
+                ))}
+              </OwlCarousel>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="stackLogo">
-        <OwlCarousel
-          {...brandLogo}
-          className="owl-theme"
-          autoplay={true}
-          items={2}
-          margin={20}
-          nav
-        >
-          {logo?.map((data, index) => (
-            <div className="item" key={index}>
-              <div className="brandlogoBox">
-                <img src={data.image} />
+        <div className="stackLogo">
+          <OwlCarousel
+            {...brandLogo}
+            className="owl-theme"
+            autoplay={true}
+            items={2}
+            margin={20}
+            nav
+          >
+            {logo?.map((data, index) => (
+              <div className="item" key={index}>
+                <div className="brandlogoBox">
+                  <img src={data.image} />
+                </div>
               </div>
-            </div>
-          ))}
-        </OwlCarousel>
+            ))}
+          </OwlCarousel>
+        </div>
       </div>
     </div>
-  </div>
+  );
 }
 
 // class Portfolio extends Component {

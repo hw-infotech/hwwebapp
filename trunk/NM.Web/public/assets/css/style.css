@@ -2700,6 +2700,16 @@ input:focus {
     font-size: 60px;
     line-height: 70px;
   }
+
+.navbar
+  .navbar-nav
+  .nav-item
+  .dropdown-menu
+  .integratedLinks
+  .webformsIntegration {
+  width: 137px;
+}
+
 }
 
 @media (min-width: 1367px) and (max-width: 1440px) {
@@ -2711,6 +2721,15 @@ input:focus {
     font-size: 64px;
     line-height: 64px;
   }
+  .navbar
+  .navbar-nav
+  .nav-item
+  .dropdown-menu
+  .integratedLinks
+  .webformsIntegration {
+  width: 137px;
+}
+
 }
 
 input#invalid {

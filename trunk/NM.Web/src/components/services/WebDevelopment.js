@@ -14,8 +14,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { WebuserRegister } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
+import WebPortfolio from '../Home/webPortfolio';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const WebDev = () => {
+const WebDev = (props) => {
+    const {newsLetter, setNewsLetter} = props;
     const dispatch = useDispatch()
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
     // this changes the scrolling behavior to "smooth"
@@ -63,7 +66,7 @@ const WebDev = () => {
     }
 
     return (
-      <Dashboard>
+      <div>
         <section className="ServiceMainBanners webDevlopBox">
           <ToastContainer
             position="top-right"
@@ -293,7 +296,7 @@ const WebDev = () => {
           </div>
         </section>
 
-        <Portfolio />
+        <WebPortfolio/>
 
         <section className="formBox">
           <div className="container">
@@ -427,7 +430,7 @@ const WebDev = () => {
             </div>
           </div>
         </section>
-      </Dashboard>
+      </div>
     );
 }
-export default WebDev
+export default withNewsletterAddress(WebDev);

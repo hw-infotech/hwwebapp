@@ -13,8 +13,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { SEOuserRegister } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
+import { within } from '@testing-library/react';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const SeoTest = () => {
+const SeoTest = (props) => {
+    const {newsLetter,setNewsLetter} = props;
     const dispatch = useDispatch()
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
@@ -61,7 +64,7 @@ const SeoTest = () => {
     }
 
     return (
-      <Dashboard>
+      <div>
         <section className="ServiceMainBanners webDevlopBox">
           <ToastContainer
             position="top-right"
@@ -404,11 +407,11 @@ const SeoTest = () => {
             </div>
           </div>
         </section>
-      </Dashboard>
+      </div>
     );
 }
 
-export default SeoTest
+export default withNewsletterAddress(SeoTest);
 // class seoTest extends Component {
 //     componentDidMount = () => {
 //         window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -14,8 +14,11 @@ import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { AppuserRegister } from "../../Redux/Action/Actionfunction";
 import Dashboard from "../../layout/dashboard";
+import AppPortfolio from "../Home/appPortfolio";
+import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 
-const AppDev = () => {
+const AppDev = (props) => {
+  const {newsLetter, setNewsletter} = props;
   const dispatch = useDispatch();
   const selector = useSelector((state) => state.apidata.Web_User_register);
   console.log(selector);
@@ -71,7 +74,7 @@ const AppDev = () => {
     toast.success("Successfully Submitted", { theme: "colored" }); //,
 
   return (
-    <Dashboard>
+    <div>
       <section className="ServiceMainBanners webDevlopBox">
         <ToastContainer
           position="top-right"
@@ -312,7 +315,7 @@ const AppDev = () => {
         </div>
       </section>
 
-      <Portfolio />
+      <AppPortfolio />
 
       <section className="formBox">
         <div className="container">
@@ -438,11 +441,11 @@ const AppDev = () => {
           </div>
         </div>
       </section>
-    </Dashboard>
+    </div>
   );
 };
 
-export default AppDev;
+export default withNewsletterAddress(AppDev);
 // class AppDev extends Component {
 //     componentDidMount = () => {
 //         window.scrollTo({ top: 0, behavior: 'smooth' });

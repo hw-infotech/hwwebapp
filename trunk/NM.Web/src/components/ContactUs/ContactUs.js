@@ -12,11 +12,13 @@ import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { contactUSRegister } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const ContactUsContent = () => {
+const ContactUsContent = (props) => {
+    const {newsLetter, setNewsLetter} = props
     const dispatch = useDispatch()
     const [services, setServices] = useState([])
-
+    
     const notify = () => toast.success("Successfully Submitted")
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
@@ -66,7 +68,7 @@ const ContactUsContent = () => {
     }
 
 
-    return <Dashboard>
+    return <div>
         <ToastContainer
             position="top-right"
             autoClose={4000}
@@ -255,9 +257,9 @@ const ContactUsContent = () => {
                 </div>
             </div>
         </section> */}
-    </Dashboard>
+    </div>
 }
-export default ContactUsContent
+export default withNewsletterAddress(ContactUsContent);
 
 // class ContactUsContent extends Component {
 //     componentDidMount = () => {

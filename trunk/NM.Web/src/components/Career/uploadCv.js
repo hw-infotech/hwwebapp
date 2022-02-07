@@ -6,13 +6,15 @@ import './career.css';
 import Footer_new from '../Layout/Footer_new';
 import { useEffect } from 'react';
 import Dashboard from '../../layout/dashboard';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const UploadCv = () => {
+const UploadCv = (props) => {
+  const { newsletter, setNewsLetter } = props;
     
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
     // this changes the scrolling behavior to "smooth"
 
-    return <Dashboard>
+    return <div>
         <div className="uploadCvPanel">
             <div className="container">
 
@@ -39,9 +41,9 @@ const UploadCv = () => {
                 </div>
             </div>
         </div>
-    </Dashboard>
+    </div>
 }
-export default UploadCv
+export default withNewsletterAddress(UploadCv);
 
 // class UploadCv extends Component {
 //     componentDidMount = () => {

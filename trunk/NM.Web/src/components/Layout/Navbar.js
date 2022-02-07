@@ -106,7 +106,7 @@ const NavBar = () => {
 
                   <div className="integratedLinks">
                     <div className="webformsBottom">
-                      <p>Following Us</p>
+                      <p>Follow Us</p>
                       <div className="socialintegratedLinks">
                         <Link
                           className="webformsIntegration"
@@ -162,7 +162,7 @@ const NavBar = () => {
                           to=""
                           onClick={() => {
                             window.location.href =
-                              "https://twitter.com/NestormindL";
+                              "https://twitter.com/nestormindpvtld";
                           }}
                         >
                           <img
@@ -172,6 +172,22 @@ const NavBar = () => {
                             loading="lazy"
                           />
                           Twitter
+                        </Link>
+                        <Link
+                          className="webformsIntegration"
+                          to=""
+                          onClick={() => {
+                            window.location.href =
+                              "https://dribbble.com/Nestormindpvtltd";
+                          }}
+                        >
+                          <img
+                            src="assets/img/dribbbleNestormind.svg"
+                            alt="LinkedIn"
+                            title="Dribbble"
+                            loading="lazy"
+                          />
+                          Dribbble
                         </Link>
                         <Link
                           className="webformsIntegration"

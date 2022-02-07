@@ -9,8 +9,10 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Dashboard from '../../layout/dashboard';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const ServicesMain = () => {
+const ServicesMain = (props) => {
+    const {newsLetter, setNewsLetter} = props;
     const [responsive, setResponsive] = useState(
         {
             0: {
@@ -35,7 +37,7 @@ const ServicesMain = () => {
     // this changes the scrolling behavior to "smooth"
 
     return (
-      <Dashboard>
+      <div>
         <section className="mainBanner_Services">
           <div className="container">
             <div className="bannerContent">
@@ -441,7 +443,7 @@ const ServicesMain = () => {
             </div>
           </div>
         </section>
-      </Dashboard>
+      </div>
     );
 }
-export default ServicesMain
+export default withNewsletterAddress(ServicesMain);

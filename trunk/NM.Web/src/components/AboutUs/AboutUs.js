@@ -6,13 +6,15 @@ import Footer_new from '../Layout/Footer_new';
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import Dashboard from '../../layout/dashboard';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const AboutUsContent = () => {
+const AboutUsContent = (props) => {
+  const { newsletter, setNewsLetter } = props;
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
     // this changes the scrolling behavior to "smooth"
 
-    return <Dashboard>
+    return <div>
         <section className="aboutBanner">
             <div className="shapes"></div>
             <div className="container">
@@ -231,9 +233,9 @@ const AboutUsContent = () => {
                 </div>
             </section>
            <Footer />  */}
-    </Dashboard>
+    </div>
 }
-export default AboutUsContent
+export default withNewsletterAddress(AboutUsContent);
 
 // class AboutUsContent extends Component {
 //     componentDidMount = () => {

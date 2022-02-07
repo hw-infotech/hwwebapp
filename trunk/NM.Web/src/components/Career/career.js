@@ -6,14 +6,16 @@ import './career.css';
 import Footer_new from '../Layout/Footer_new';
 import { useEffect } from 'react';
 import Dashboard from '../../layout/dashboard';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const Career = () => {
+const Career = (props) => {
+  const { newsletter, setNewsLetter } = props;
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
     // this changes the scrolling behavior to "smooth"
 
     return (
-      <Dashboard>
+      <div>
         <div className="careerPanle">
           <img className="careerImg" src="assets/img/career-post.svg" />
           <div className="container">
@@ -304,10 +306,10 @@ const Career = () => {
             </div>
           </div>
         </div>
-      </Dashboard>
+      </div>
     );
 }
-export default Career
+export default withNewsletterAddress(Career);
 
 // class Career extends Component {
 //     componentDidMount = () => {

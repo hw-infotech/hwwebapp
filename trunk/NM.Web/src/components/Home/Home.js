@@ -14,9 +14,12 @@ import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { tryRedux } from "../../Redux/Action/Actionfunction";
 import Dashboard from "../../layout/dashboard";
+import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 
-const HomeContent = () => {
-  const [newsletter, setNewsLetter] = useState();
+const HomeContent = (props) => {
+  const { newsletter, setNewsLetter } = props;
+  console.log(newsletter);
+  // const [newsletter, setNewsLetter] = useState();
   const dispatch = useDispatch();
   const [state, setState] = useState({
     responsive: {
@@ -44,21 +47,8 @@ const HomeContent = () => {
   }, []);
   // this changes the scrolling behavior to "smooth"
 
-  const handleNewsLetterChange = (e) => {
-    const { name, value } = e.target;
-    setNewsLetter(value);
-  };
-  console.log("NewsLetter ", newsletter);
-
-  const sendNewsLetter = () => {
-    notify();
-    document.getElementById("newsemail").value = "";
-  };
-  // {icon: "🚀"}
-  const notify = () => toast.success("Thanks for subscription"); //, { theme: "colored" }
-
   return (
-    <Dashboard>
+    <div>
       <ToastContainer
         position="top-right"
         autoClose={4000}
@@ -212,7 +202,7 @@ const HomeContent = () => {
 
             <div className="row mt30">
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="0.1s"
               >
                 <div className="industry-workfor hoshd">
@@ -221,7 +211,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="0.3s"
               >
                 <div className="industry-workfor hoshd">
@@ -230,7 +220,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="0.5s"
               >
                 <div className="industry-workfor hoshd">
@@ -239,7 +229,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="0.7s"
               >
                 <div className="industry-workfor hoshd">
@@ -248,7 +238,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="0.9s"
               >
                 <div className="industry-workfor hoshd">
@@ -258,7 +248,7 @@ const HomeContent = () => {
               </div>
 
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="1.1s"
               >
                 <div className="industry-workfor hoshd">
@@ -267,7 +257,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="1.3s"
               >
                 <div className="industry-workfor hoshd">
@@ -276,7 +266,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="1.5s"
               >
                 <div className="industry-workfor hoshd">
@@ -285,7 +275,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6 wow fadeIn"
                 data-wow-delay="1.7s"
               >
                 <div className="industry-workfor hoshd">
@@ -294,7 +284,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="1.9s"
               >
                 <div className="industry-workfor hoshd">
@@ -303,7 +293,7 @@ const HomeContent = () => {
                 </div>
               </div>
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="2.1s"
               >
                 <div className="industry-workfor hoshd">
@@ -313,7 +303,7 @@ const HomeContent = () => {
               </div>
 
               <div
-                className="col-lg-3 col-sm-6 col-6 wow fadeIn"
+                className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="2.3s"
               >
                 <div className="industry-workfor hoshd">
@@ -549,37 +539,37 @@ const HomeContent = () => {
                     data-slide-to="0"
                     className="active"
                   >
-                    <img src="assets/img/placeholder-face-big.png" />
+                    <img src="assets/img/pw.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="1"
                   >
-                    <img src="assets/img/placeholder-face-big.png" />
+                    <img src="assets/img/fa.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="2"
                   >
-                    <img src="assets/img/placeholder-face-big.png" />
+                    <img src="assets/img/ap.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="3"
                   >
-                    <img src="assets/img/placeholder-face-big.png" />
+                    <img src="assets/img/nh.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="4"
                   >
-                    <img src="assets/img/placeholder-face-big.png" />
+                    <img src="assets/img/VP.png" />
                   </li>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="5"
                   >
-                    <img src="assets/img/placeholder-face-big.png" />
+                    <img src="assets/img/gs.png" />
                   </li>
                 </ol>
                 <div className="carousel-inner">
@@ -589,7 +579,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/placeholder-face-big.png" />
+                              <img src="assets/img/pw.png" />
                             </div>
                           </div>
                         </div>
@@ -628,7 +618,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/placeholder-face-big.png" />
+                              <img src="assets/img/fa.png" />
                             </div>
                           </div>
                         </div>
@@ -666,7 +656,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/placeholder-face-big.png" />
+                              <img src="assets/img/ap.png" />
                             </div>
                           </div>
                         </div>
@@ -707,7 +697,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/placeholder-face-big.png" />
+                              <img src="assets/img/nh.png" />
                             </div>
                           </div>
                         </div>
@@ -737,7 +727,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/placeholder-face-big.png" />
+                              <img src="assets/img/VP.png" />
                             </div>
                           </div>
                         </div>
@@ -770,7 +760,7 @@ const HomeContent = () => {
                         <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div className="clientProfilePic">
                             <div className="userPic">
-                              <img src="assets/img/placeholder-face-big.png" />
+                              <img src="assets/img/gs.png" />
                             </div>
                           </div>
                           {/* <div className="clientFeedbackVideo">
@@ -932,64 +922,6 @@ const HomeContent = () => {
         </div>
       </section>
 
-      <section className="newsletter">
-        <div className="container">
-          <div className="newsletterContent">
-            <div className="newsletterHeading">Newsletter</div>
-            <div className="newsLetterSubTitle">
-              To get all latest updates and news Subscribe our newsletter now!
-            </div>
-            <div className="newsLetterForm">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter Email"
-                id="newsemail"
-                onChange={handleNewsLetterChange}
-              />
-              <button className="newsletterBtn" onClick={sendNewsLetter}>
-                <i className="bx bxl-telegram"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="address">
-        <img
-          className="dotImage"
-          src="assets/img/testimonial-left-bg-index.svg"
-        />
-        <div className="container">
-          <div className="addressConetnt">
-            <div className="india">INDIA</div>
-            <img
-              className="chd-icon"
-              src="assets/img/chandigarh-icon1.png"
-              alt="line white"
-            />
-            <div className="companyAddress">
-              <div className="coporateOfficeHeading">Corporate Office</div>
-              <div className="coporateOffice__address">
-                E-237AA, Continental Tower
-                <br />
-                Industrial Area 8B, Sector 74, <br />
-                SAS Nagar, Mohali, Punjab
-              </div>
-              <div className="coporateOffice__address">
-                <strong>Phone:</strong> (0172) 5020206
-              </div>
-              {/* <div className="coporateOffice__address">
-                        <strong> Mobile:</strong> +91 9877344996
-                        </div>
-                        <div className="coporateOffice__address">
-                        <strong> Email:</strong> 
-                        </div> */}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/*    <Footer_new />*/}
       {/* <section className="policy-area-02 section-padding--ptb_90 fix section-bg">
         <div className="container" data-aos="fade-up">
@@ -1137,10 +1069,10 @@ const HomeContent = () => {
         </div>
       </section> */}
       {/* <Footer />  */}
-    </Dashboard>
+    </div>
   );
 };
-export default HomeContent;
+export default withNewsletterAddress(HomeContent);
 
 // class HomeContent extends Component {
 //   state = {

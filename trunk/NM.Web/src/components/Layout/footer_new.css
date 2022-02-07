@@ -216,6 +216,9 @@
 .clb-social-holder.icons li a:hover .bxl-instagram {
   background-color: #e1306c;
 }
+.clb-social-holder.icons li a:hover .bxl-dribbble {
+  background-color: #c73868;
+}
 .clb-social-holder.icons li a:hover .bxl-skype {
   background-color: #00aff0;
 }

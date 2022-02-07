@@ -14,8 +14,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { graphicDesignuserRegister } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
+import GraphicsPortfolio from '../Home/graphicsPortfolio';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const GraphicsD = () => {
+const GraphicsD = (props) => {
+    const {newsLetter, setNewsLetter} = props;
     const dispatch = useDispatch()
     const selector = useSelector(state => state)
     const [response, setResponse] = useState()
@@ -71,7 +74,7 @@ const GraphicsD = () => {
     const notify = () => toast.success('Register Successfully');//, { theme: "colored" }
 
     return (
-      <Dashboard>
+      <div>
         <section className="ServiceMainBanners webDevlopBox">
           <ToastContainer
             position="top-right"
@@ -281,7 +284,7 @@ const GraphicsD = () => {
           </div>
         </section>
 
-        <Portfolio />
+        <GraphicsPortfolio/>
 
         <section className="formBox">
           <div className="container">
@@ -411,11 +414,11 @@ const GraphicsD = () => {
             </div>
           </div>
         </section>
-      </Dashboard>
+      </div>
     );
 }
 
-export default GraphicsD
+export default withNewsletterAddress(GraphicsD);
 // class graphicsD extends Component {
 //     componentDidMount = () => {
 //         window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -42,7 +42,7 @@ const Footer_new = () => {
                     <li>
                       <a
                         target="_blank"
-                        href="https://twitter.com/NestormindL"
+                        href="https://twitter.com/nestormindpvtld"
                         className="twitter"
                       >
                         <i className="bx bxl-twitter"></i>{" "}
@@ -55,6 +55,15 @@ const Footer_new = () => {
                         className="instagram"
                       >
                         <i className="bx bxl-instagram"></i>{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        href="https://dribbble.com/Nestormindpvtltd"
+                        className="instagram"
+                      >
+                        <i className="bx bxl-dribbble"></i>{" "}
                       </a>
                     </li>
                     <li>
@@ -105,21 +114,19 @@ const Footer_new = () => {
                       <ul>
                         <li>
                           {/* <Link to="/under-mantainence">Virtual Reality</Link> */}
-                          <Link >Virtual Reality</Link>
+                          <Link>Virtual Reality</Link>
                         </li>
                         <li>
                           <Link>Augmented Reality</Link>
                         </li>
                         <li>
-                          <Link >AI</Link>
+                          <Link>AI</Link>
                         </li>
                         <li>
-                          <Link >
-                            Internet of things
-                          </Link>
+                          <Link>Internet of things</Link>
                         </li>
                         <li>
-                          <Link >Blockchain</Link>
+                          <Link>Blockchain</Link>
                         </li>
                       </ul>
                     </div>

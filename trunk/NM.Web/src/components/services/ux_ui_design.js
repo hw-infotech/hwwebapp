@@ -14,8 +14,11 @@ import { ErrorMessage, Field, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { UIUXuserRegister } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
+import UiUxPortfolio from '../Home/uiuxPortfolio';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-const UIUX = () => {
+const UIUX = (props) => {
+    const {newsLetter, setNewsLetter} = props;
     const dispatch = useDispatch()
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
@@ -63,7 +66,7 @@ const UIUX = () => {
     }
 
     return (
-      <Dashboard>
+      <div>
         <section className="ServiceMainBanners webDevlopBox">
           <ToastContainer
             position="top-right"
@@ -284,7 +287,7 @@ const UIUX = () => {
           </div>
         </section>
 
-        <Portfolio />
+        <UiUxPortfolio />
         <section className="formBox">
           <div className="container">
             <div className="row">
@@ -417,11 +420,11 @@ const UIUX = () => {
             </div>
           </div>
         </section>
-      </Dashboard>
+      </div>
     );
 }
 
-export default UIUX
+export default withNewsletterAddress(UIUX);
 
 // class UIUX extends Component {
 //     componentDidMount = () => {
