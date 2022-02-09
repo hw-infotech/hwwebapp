@@ -18,12 +18,15 @@ import AppPortfolio from "../Home/appPortfolio";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 
 const AppDev = (props) => {
-  const {newsLetter, setNewsletter} = props;
+  const { newsletter, setNewsLetter, navbar, setNavbar } = props;
+  console.log(navbar);
+
   const dispatch = useDispatch();
   const selector = useSelector((state) => state.apidata.Web_User_register);
   console.log(selector);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setNavbar("appDevelopment")
   }, []);
   // this changes the scrolling behavior to "smooth"
 
@@ -75,6 +78,7 @@ const AppDev = (props) => {
 
   return (
     <div>
+      <AppPortfolio />
       <section className="ServiceMainBanners webDevlopBox">
         <ToastContainer
           position="top-right"
@@ -88,6 +92,9 @@ const AppDev = (props) => {
           pauseOnHover
         />
         <div className="container">
+          <div className="servicesImageHalfBox">
+            <img src="assets/img/app-development.png" alt="" />
+          </div>
           <div className="Service_contentPanel">
             <small>App Development</small>
             <h1>
@@ -107,9 +114,6 @@ const AppDev = (props) => {
               Share your business goal with our app development service experts
               and they will make dream comes true!
             </p>
-          </div>
-          <div className="servicesImageHalfBox">
-            <img src="assets/img/app-development.png" alt="" />
           </div>
         </div>
       </section>
@@ -314,8 +318,6 @@ const AppDev = (props) => {
           </div>
         </div>
       </section>
-
-      <AppPortfolio />
 
       <section className="formBox">
         <div className="container">

@@ -67,6 +67,7 @@ const WebDev = (props) => {
 
     return (
       <div>
+        <WebPortfolio />
         <section className="ServiceMainBanners webDevlopBox">
           <ToastContainer
             position="top-right"
@@ -80,6 +81,9 @@ const WebDev = (props) => {
             pauseOnHover
           />
           <div className="container">
+            <div className="servicesImageHalfBox">
+              <img src="assets/img/web-development.png" alt="" />
+            </div>
             <div className="Service_contentPanel">
               <small>Web Development</small>
               <h1>
@@ -92,9 +96,6 @@ const WebDev = (props) => {
                 web development service with user-friendly navigation that makes
                 us different.
               </p>
-            </div>
-            <div className="servicesImageHalfBox">
-              <img src="assets/img/web-development.png" alt="" />
             </div>
           </div>
         </section>
@@ -295,8 +296,6 @@ const WebDev = (props) => {
             </div>
           </div>
         </section>
-
-        <WebPortfolio/>
 
         <section className="formBox">
           <div className="container">

@@ -2,7 +2,8 @@ import React, { Component, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import CommonFunctionality from "../../Shared/CommonFunctionality";
 
-const NavBar = () => {
+const NavBar = ({ NavbarStyle }) => {
+  console.log("NavbarStyle ", NavbarStyle);
   const history = useHistory();
   const [state, setState] = useState({ isTop: false });
 
@@ -21,6 +22,16 @@ const NavBar = () => {
       setState({ isTop: false });
     }
   };
+  const ClassName =
+    NavbarStyle == "appDevelopment"
+      ? "appDevelopment"
+      : NavbarStyle == "appDevelopment"
+      ? "webDevelopment"
+        ? "webDevelopment"
+        : ""
+      : "";
+
+      console.log("ClassName",ClassName);
 
   return (
     <header
@@ -108,13 +119,10 @@ const NavBar = () => {
                     <div className="webformsBottom">
                       <p>Follow Us</p>
                       <div className="socialintegratedLinks">
-                        <Link
+                        <a
                           className="webformsIntegration"
-                          to=""
-                          onClick={() => {
-                            window.location.href =
-                              "https://www.facebook.com/nestormindpvtltd";
-                          }}
+                          href="https://www.facebook.com/nestormindpvtltd"
+                          target="_blank"
                         >
                           <img
                             src="assets/img/facebookNavIcon.png"
@@ -123,15 +131,12 @@ const NavBar = () => {
                             loading="lazy"
                           />
                           Facebook
-                        </Link>
+                        </a>
 
-                        <Link
+                        <a
                           className="webformsIntegration"
-                          to=""
-                          onClick={() => {
-                            window.location.href =
-                              "https://www.instagram.com/nestormindpvtltd/";
-                          }}
+                          href="https://www.instagram.com/nestormindpvtltd/"
+                          target="_blank"
                         >
                           <img
                             src="assets/img/instagramNavIcon.png"
@@ -140,14 +145,11 @@ const NavBar = () => {
                             loading="lazy"
                           />
                           Instagram
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                           className="webformsIntegration"
-                          to=""
-                          onClick={() => {
-                            window.location.href =
-                              "https://www.linkedin.com/company/nestormind/";
-                          }}
+                          href="https://www.linkedin.com/company/nestormind/"
+                          target="_blank"
                         >
                           <img
                             src="assets/img/linkedinNavIcon.png"
@@ -156,14 +158,11 @@ const NavBar = () => {
                             loading="lazy"
                           />
                           LinkedIn
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                           className="webformsIntegration"
-                          to=""
-                          onClick={() => {
-                            window.location.href =
-                              "https://twitter.com/nestormindpvtld";
-                          }}
+                          href="https://twitter.com/nestormindpvtld"
+                          target="_blank"
                         >
                           <img
                             src="assets/img/twitterNestormind.svg"
@@ -172,14 +171,11 @@ const NavBar = () => {
                             loading="lazy"
                           />
                           Twitter
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                           className="webformsIntegration"
-                          to=""
-                          onClick={() => {
-                            window.location.href =
-                              "https://dribbble.com/Nestormindpvtltd";
-                          }}
+                          href="https://dribbble.com/nestormindpvtltd"
+                          target="_blank"
                         >
                           <img
                             src="assets/img/dribbbleNestormind.svg"
@@ -188,14 +184,11 @@ const NavBar = () => {
                             loading="lazy"
                           />
                           Dribbble
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                           className="webformsIntegration"
-                          to=""
-                          onClick={() => {
-                            window.location.href =
-                              "https://join.skype.com/invite/hTYrZnJuUsHE";
-                          }}
+                          href="https://join.skype.com/invite/hTYrZnJuUsHE"
+                          target="_blank"
                         >
                           <img
                             src="assets/img/skypeNestormind.svg"
@@ -204,7 +197,7 @@ const NavBar = () => {
                             loading="lazy"
                           />
                           Skype
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </div>

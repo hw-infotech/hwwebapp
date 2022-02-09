@@ -89,509 +89,540 @@ export const IMAGES: IMuiFbPhotoGridImage[] = [
     }
 ]
 
-export const stories12 =
-    [
-        {
-            _id: "0",
-            event_title: "Birthday Post",
-            createAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
-            updatedAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
-            audio: "/assets/music/Hair-Trigger-WST011601.mp3",
-            posts: [
-                {
-                    url: '/assets/img/team/untitled-15.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-14.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-16.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-17.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-83.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-84.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-85.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-86.jpg',
-                    type: "image",
-                    duration: "8000",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                    seeMore: false,
-                    // seeMore: <SeeMore />,
-                    // header: {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 5h ago',
-                    //     profileImage: 'https://picsum.photos/1000/1000'
-                    // }
-                },
-                {
-                    url: 'https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN',
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image",
-                    // header:
-                    // {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://picsum.photos/1080/1920'
-                    // }
-                },
-                {
-                    url: 'https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg',
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
-                    // header:
-                    // {
-                    //     heading: 'mohitk05/react-insta-stories',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
-                    // }
-                },
-                {
-                    url: 'https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4',
-                    type: 'video',
-                    duration: 1000, audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                },
-                {
-                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-                    type: 'video',
-                    // seeMore: <SeeMore />
-                },
-                {
-                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-                    type: 'video'
-                },
-            ]
-        },
-        {
-            _id: "1",
-            event_title: "Christmas Post",
-            createAt: "Tue Dec 25 2021 18:20:54 GMT+0530 (India Standard Time)",
-            updatedAt: "Tue Dec 25 2021 18:20:54 GMT+0530 (India Standard Time)",
-            audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-            posts: [
-                {
-                    url: '/assets/img/team/untitled-14.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-15.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-16.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-17.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-83.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-84.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-85.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-86.jpg',
-                    type: "image",
-                    duration: "8000",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                    seeMore: false,
-                    // seeMore: <SeeMore />,
-                    // header: {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 5h ago',
-                    //     profileImage: 'https://picsum.photos/1000/1000'
-                    // }
-                },
-                {
-                    url: 'https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN',
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image",
-                    // header:
-                    // {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://picsum.photos/1080/1920'
-                    // }
-                },
-                {
-                    url: 'https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg',
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
-                    // header:
-                    // {
-                    //     heading: 'mohitk05/react-insta-stories',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
-                    // }
-                },
-                {
-                    url: 'https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4',
-                    type: 'video',
-                    duration: 1000, audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                },
-                {
-                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-                    type: 'video',
-                    // seeMore: <SeeMore />
-                },
-                {
-                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-                    type: 'video'
-                },
-            ]
-        },
-        {
-            _id: "2",
-            event_title: "New Year Post",
-            createAt: "Fri Jan 01 2021 18:20:54 GMT+0530 (India Standard Time)",
-            updatedAt: "Fri Jan 01 2021 18:20:54 GMT+0530 (India Standard Time)",
-            audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
-            posts: [
-                {
-                    url: '/assets/img/team/untitled-16.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-15.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-14.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-17.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-83.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-84.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-85.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-86.jpg',
-                    type: "image",
-                    duration: "8000",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                    seeMore: false,
-                    // seeMore: <SeeMore />,
-                    // header: {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 5h ago',
-                    //     profileImage: 'https://picsum.photos/1000/1000'
-                    // }
-                },
-                {
-                    url: 'https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN',
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image",
-                    // header:
-                    // {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://picsum.photos/1080/1920'
-                    // }
-                },
-                {
-                    url: 'https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg',
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
-                    // header:
-                    // {
-                    //     heading: 'mohitk05/react-insta-stories',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
-                    // }
-                },
-                {
-                    url: 'https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4',
-                    type: 'video',
-                    duration: 1000, audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                },
-                {
-                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-                    type: 'video',
-                    // seeMore: <SeeMore />
-                },
-                {
-                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-                    type: 'video'
-                },
-            ]
-        },
-        {
-            _id: "3",
-            event_title: "Birthday Post",
-            createAt: "Tue Dec 03 2021 18:20:54 GMT+0530 (India Standard Time)",
-            updatedAt: "Tue Dec 03 2021 18:20:54 GMT+0530 (India Standard Time)",
-            audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-            posts: [
-                {
-                    url: '/assets/img/team/untitled-17.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-15.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-14.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-16.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-83.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-84.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-85.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-86.jpg',
-                    type: "image",
-                    duration: "8000",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                    seeMore: false,
-                    // seeMore: <SeeMore />,
-                    // header: {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 5h ago',
-                    //     profileImage: 'https://picsum.photos/1000/1000'
-                    // }
-                },
-                {
-                    url: 'https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN',
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image",
-                    // header:
-                    // {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://picsum.photos/1080/1920'
-                    // }
-                },
-                {
-                    url: 'https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg',
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
-                    // header:
-                    // {
-                    //     heading: 'mohitk05/react-insta-stories',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
-                    // }
-                },
-                {
-                    url: 'https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4',
-                    type: 'video',
-                    duration: 1000, audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                },
-                {
-                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-                    type: 'video',
-                    // seeMore: <SeeMore />
-                },
-                {
-                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-                    type: 'video'
-                },
-            ]
-        },
-        {
-            _id: "4",
-            event_title: "Celibration Post",
-            createAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
-            updatedAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
-            audio:  "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-            posts: [
-                {
-                    url: '/assets/img/team/untitled-83.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-15.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Hair-Trigger-WST011601.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-14.jpg',
-                    duration: "8000",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image"
-                },
-                {
-                    url: '/assets/img/team/untitled-16.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-17.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-84.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-85.jpg',
-                    duration: "8000",
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3"
-                },
-                {
-                    url: '/assets/img/team/untitled-86.jpg',
-                    type: "image",
-                    duration: "8000",
-                    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                    seeMore: false,
-                    // seeMore: <SeeMore />,
-                    // header: {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 5h ago',
-                    //     profileImage: 'https://picsum.photos/1000/1000'
-                    // }
-                },
-                {
-                    url: 'https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN',
-                    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
-                    type: "image",
-                    // header:
-                    // {
-                    //     heading: 'Mohit Karekar',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://picsum.photos/1080/1920'
-                    // }
-                },
-                {
-                    url: 'https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg',
-                    type: "image",
-                    audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
-                    // header:
-                    // {
-                    //     heading: 'mohitk05/react-insta-stories',
-                    //     subheading: 'Posted 32m ago',
-                    //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
-                    // }
-                },
-                {
-                    url: 'https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4',
-                    type: 'video',
-                    duration: 1000, audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
-                },
-                // {
-                //     url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-                //     type: 'video',
-                //     // seeMore: <SeeMore />
-                // },
-                // {
-                //     url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-                //     type: 'video'
-                // },
-            ]
-        }
-    ]
+export const stories12 = [
+  {
+    _id: "0",
+    event_title: "Birthday Post",
+    event_dics:
+      " it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown ...",
+    createAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
+    updatedAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
+    audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+    posts: [
+      {
+        url: "/assets/img/team/untitled-15.jpg",
+        duration: "8000",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-14.jpg",
+        duration: "8000",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-16.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-17.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-83.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-84.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-85.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-86.jpg",
+        type: "image",
+        duration: "8000",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+        seeMore: false,
+        // seeMore: <SeeMore />,
+        // header: {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 5h ago',
+        //     profileImage: 'https://picsum.photos/1000/1000'
+        // }
+      },
+      {
+        url:
+          "https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+        // header:
+        // {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://picsum.photos/1080/1920'
+        // }
+      },
+      {
+        url:
+          "https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+        // header:
+        // {
+        //     heading: 'mohitk05/react-insta-stories',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
+        // }
+      },
+      {
+        url: "https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4",
+        type: "video",
+        duration: 1000,
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url:
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        type: "video",
+        // seeMore: <SeeMore />
+      },
+      {
+        url:
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        type: "video",
+      },
+    ],
+  },
+  {
+    _id: "1",
+    event_title: "Christmas Post",
+    event_dics:
+      " it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown ...",
+    createAt: "Tue Dec 25 2021 18:20:54 GMT+0530 (India Standard Time)",
+    updatedAt: "Tue Dec 25 2021 18:20:54 GMT+0530 (India Standard Time)",
+    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+    posts: [
+      {
+        url: "/assets/img/team/untitled-14.jpg",
+        duration: "8000",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-15.jpg",
+        duration: "8000",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-16.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-17.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-83.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-84.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-85.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-86.jpg",
+        type: "image",
+        duration: "8000",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+        seeMore: false,
+        // seeMore: <SeeMore />,
+        // header: {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 5h ago',
+        //     profileImage: 'https://picsum.photos/1000/1000'
+        // }
+      },
+      {
+        url:
+          "https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+        // header:
+        // {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://picsum.photos/1080/1920'
+        // }
+      },
+      {
+        url:
+          "https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+        // header:
+        // {
+        //     heading: 'mohitk05/react-insta-stories',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
+        // }
+      },
+      {
+        url: "https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4",
+        type: "video",
+        duration: 1000,
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url:
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        type: "video",
+        // seeMore: <SeeMore />
+      },
+      {
+        url:
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        type: "video",
+      },
+    ],
+  },
+  {
+    _id: "2",
+    event_title: "New Year Post",
+    event_dics:
+      " it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown ...",
+    createAt: "Fri Jan 01 2021 18:20:54 GMT+0530 (India Standard Time)",
+    updatedAt: "Fri Jan 01 2021 18:20:54 GMT+0530 (India Standard Time)",
+    audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+    posts: [
+      {
+        url: "/assets/img/team/untitled-16.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-15.jpg",
+        duration: "8000",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-14.jpg",
+        duration: "8000",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-17.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-83.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-84.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-85.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-86.jpg",
+        type: "image",
+        duration: "8000",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+        seeMore: false,
+        // seeMore: <SeeMore />,
+        // header: {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 5h ago',
+        //     profileImage: 'https://picsum.photos/1000/1000'
+        // }
+      },
+      {
+        url:
+          "https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+        // header:
+        // {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://picsum.photos/1080/1920'
+        // }
+      },
+      {
+        url:
+          "https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+        // header:
+        // {
+        //     heading: 'mohitk05/react-insta-stories',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
+        // }
+      },
+      {
+        url: "https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4",
+        type: "video",
+        duration: 1000,
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url:
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        type: "video",
+        // seeMore: <SeeMore />
+      },
+      {
+        url:
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        type: "video",
+      },
+    ],
+  },
+  {
+    _id: "3",
+    event_title: "Birthday Post",
+    event_dics:
+      " it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown ...",
+    createAt: "Tue Dec 03 2021 18:20:54 GMT+0530 (India Standard Time)",
+    updatedAt: "Tue Dec 03 2021 18:20:54 GMT+0530 (India Standard Time)",
+    audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+    posts: [
+      {
+        url: "/assets/img/team/untitled-17.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-15.jpg",
+        duration: "8000",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-14.jpg",
+        duration: "8000",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-16.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-83.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-84.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-85.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-86.jpg",
+        type: "image",
+        duration: "8000",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+        seeMore: false,
+        // seeMore: <SeeMore />,
+        // header: {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 5h ago',
+        //     profileImage: 'https://picsum.photos/1000/1000'
+        // }
+      },
+      {
+        url:
+          "https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+        // header:
+        // {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://picsum.photos/1080/1920'
+        // }
+      },
+      {
+        url:
+          "https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+        // header:
+        // {
+        //     heading: 'mohitk05/react-insta-stories',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
+        // }
+      },
+      {
+        url: "https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4",
+        type: "video",
+        duration: 1000,
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url:
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        type: "video",
+        // seeMore: <SeeMore />
+      },
+      {
+        url:
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        type: "video",
+      },
+    ],
+  },
+  {
+    _id: "4",
+    event_title: "Celibration Post",
+    event_dics: " it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown ...",
+    createAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
+    updatedAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
+    audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+    posts: [
+      {
+        url: "/assets/img/team/untitled-83.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-15.jpg",
+        duration: "8000",
+        audio: "/assets/music/Hair-Trigger-WST011601.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-14.jpg",
+        duration: "8000",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+      },
+      {
+        url: "/assets/img/team/untitled-16.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-17.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-84.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-85.jpg",
+        duration: "8000",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+      },
+      {
+        url: "/assets/img/team/untitled-86.jpg",
+        type: "image",
+        duration: "8000",
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+        seeMore: false,
+        // seeMore: <SeeMore />,
+        // header: {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 5h ago',
+        //     profileImage: 'https://picsum.photos/1000/1000'
+        // }
+      },
+      {
+        url:
+          "https://fsa.zobj.net/crop.php?r=dyJ08vhfPsUL3UkJ2aFaLo1LK5lhjA_5o6qEmWe7CW6P4bdk5Se2tYqxc8M3tcgYCwKp0IAyf0cmw9yCmOviFYb5JteeZgYClrug_bvSGgQxKGEUjH9H3s7PS9fQa3rpK3DN3nx-qA-mf6XN",
+        audio: "/assets/music/Our-Cause-Is-Just_FULL_HEV011301.mp3",
+        type: "image",
+        // header:
+        // {
+        //     heading: 'Mohit Karekar',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://picsum.photos/1080/1920'
+        // }
+      },
+      {
+        url:
+          "https://media.idownloadblog.com/wp-content/uploads/2016/04/iPhone-wallpaper-abstract-portrait-stars-macinmac.jpg",
+        type: "image",
+        audio: "/assets/music/Ultimate-Victory-WST010901.mp3",
+        // header:
+        // {
+        //     heading: 'mohitk05/react-insta-stories',
+        //     subheading: 'Posted 32m ago',
+        //     profileImage: 'https://avatars0.githubusercontent.com/u/24852829?s=400&v=4'
+        // }
+      },
+      {
+        url: "https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4",
+        type: "video",
+        duration: 1000,
+        audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
+      },
+      // {
+      //     url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+      //     type: 'video',
+      //     // seeMore: <SeeMore />
+      // },
+      // {
+      //     url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      //     type: 'video'
+      // },
+    ],
+  },
+];
 
 export const storiess = [
     {

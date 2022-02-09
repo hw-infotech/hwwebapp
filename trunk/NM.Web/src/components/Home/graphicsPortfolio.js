@@ -25,10 +25,10 @@ const GraphicsPortfolio = () => {
         items: 1,
       },
       1000: {
-        items: 2,
+        items: 1,
       },
       1200: {
-        items: 2,
+        items: 1,
       },
     },
   };
@@ -38,7 +38,22 @@ const GraphicsPortfolio = () => {
       <div className="container">
         <div className="webPortFolioBox">
           <div className="row">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-auto">
+            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 mb-lg-5 mb-sm-3">
+              <div className="showcaseHeadline heading">
+                <label>Showcase</label>
+                <h2 className="showcaseheader title">
+                  Leading Graphics Design Company
+                  <br /> To Build Next-Gen Apps SEE WHAT WE DO
+                </h2>
+                <p className="showcaseSubheader subtitle">
+                  Nestormind is a top-notch UI UX Design company. We are aware
+                  of the importance of user interface design and we use the 3+
+                  years of experience to provide our client with a solid well
+                  thought user interface design.
+                </p>
+              </div>
+            </div>
+            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 m-auto">
               <OwlCarousel
                 {...portStories}
                 className="owl-theme"
@@ -122,21 +137,6 @@ const GraphicsPortfolio = () => {
                   </div>
                 </div>
               </OwlCarousel>
-            </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-lg-5 mb-sm-3">
-              <div className="showcaseHeadline heading">
-                <label>Showcase</label>
-                <h2 className="showcaseheader title">
-                  Leading Graphics Design Company
-                  <br /> To Build Next-Gen Apps SEE WHAT WE DO
-                </h2>
-                <p className="showcaseSubheader subtitle">
-                  Nestormind is a top-notch UI UX Design company. We are aware
-                  of the importance of user interface design and we use the 3+
-                  years of experience to provide our client with a solid well
-                  thought user interface design.
-                </p>
-              </div>
             </div>
           </div>
         </div>

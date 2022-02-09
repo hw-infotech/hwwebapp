@@ -5,6 +5,7 @@ import Dashboard from "../../layout/dashboard";
 const withNewsletterAddress = (Component) => {
   const WrrappedComponent = () => {
     const [newsletter, setNewsLetter] = useState();
+    const [navbar,setNavbar]=useState("home")
     const handleNewsLetterChange = (e) => {
       const { name, value } = e.target;
       setNewsLetter(value);
@@ -16,8 +17,8 @@ const withNewsletterAddress = (Component) => {
       document.getElementById("newsemail").value = "";
     };
     return (
-      <Dashboard>
-        <Component newsletter={newsletter} setNewsLetter={setNewsLetter} />
+      <Dashboard NavbarStyle={navbar}>
+        <Component newsletter={newsletter} setNewsLetter={setNewsLetter} navbar={navbar} setNavbar={setNavbar} />
         <section className="newsletter">
           <div className="container">
             <div className="newsletterContent">

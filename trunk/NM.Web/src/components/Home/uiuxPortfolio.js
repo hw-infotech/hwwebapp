@@ -38,7 +38,7 @@ const UiUxPortfolio = () => {
       <div className="container">
         <div className="webPortFolioBox">
           <div className="row">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-lg-5 mb-sm-3">
+            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 mb-lg-5 mb-sm-3">
               <div className="showcaseHeadline heading">
                 <label>Showcase</label>
                 <h2 className="showcaseheader title">
@@ -53,7 +53,7 @@ const UiUxPortfolio = () => {
                 </p>
               </div>
             </div>
-            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 m-auto">
+            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 m-auto">
               <OwlCarousel
                 {...portStories}
                 className="owl-theme"

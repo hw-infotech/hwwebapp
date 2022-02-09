@@ -39,7 +39,7 @@ const AppPortfolio = () => {
       <div className="container">
         <div className="webPortFolioBox">
           <div className="row">
-            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
               <div className="showcaseHeadline heading">
                 <label>Showcase</label>
                 <h2 className="showcaseheader title">
@@ -51,7 +51,7 @@ const AppPortfolio = () => {
                 </p>
               </div>
             </div>
-            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
               <OwlCarousel
                 {...portStories}
                 className="owl-theme"

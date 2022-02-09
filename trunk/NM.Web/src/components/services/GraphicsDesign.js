@@ -75,6 +75,7 @@ const GraphicsD = (props) => {
 
     return (
       <div>
+        <GraphicsPortfolio />
         <section className="ServiceMainBanners webDevlopBox">
           <ToastContainer
             position="top-right"
@@ -88,6 +89,9 @@ const GraphicsD = (props) => {
             pauseOnHover
           />
           <div className="container">
+            <div className="servicesImageHalfBox">
+              <img src="assets/img/graphics-design.png" alt="" />
+            </div>
             <div className="Service_contentPanel">
               <small>Graphics Design</small>
               <h1>
@@ -100,9 +104,6 @@ const GraphicsD = (props) => {
                 that are the keys to any graphic design to explain the terms of
                 business in a special way to the world.
               </p>
-            </div>
-            <div className="servicesImageHalfBox">
-              <img src="assets/img/graphics-design.png" alt="" />
             </div>
           </div>
         </section>
@@ -283,8 +284,6 @@ const GraphicsD = (props) => {
             </div>
           </div>
         </section>
-
-        <GraphicsPortfolio/>
 
         <section className="formBox">
           <div className="container">

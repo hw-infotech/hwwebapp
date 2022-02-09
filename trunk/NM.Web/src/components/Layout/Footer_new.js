@@ -33,6 +33,15 @@ const Footer_new = () => {
                     <li>
                       <a
                         target="_blank"
+                        href="https://www.instagram.com/nestormindpvtltd/"
+                        className="instagram"
+                      >
+                        <i className="bx bxl-instagram"></i>{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
                         href="https://www.linkedin.com/company/nestormind/"
                         className="linkedin"
                       >
@@ -48,19 +57,11 @@ const Footer_new = () => {
                         <i className="bx bxl-twitter"></i>{" "}
                       </a>
                     </li>
+
                     <li>
                       <a
                         target="_blank"
-                        href="https://www.instagram.com/nestormindpvtltd/"
-                        className="instagram"
-                      >
-                        <i className="bx bxl-instagram"></i>{" "}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        href="https://dribbble.com/Nestormindpvtltd"
+                        href="https://dribbble.com/nestormindpvtltd"
                         className="instagram"
                       >
                         <i className="bx bxl-dribbble"></i>{" "}

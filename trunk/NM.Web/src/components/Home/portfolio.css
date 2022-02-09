@@ -190,7 +190,7 @@
 
 .webPortfolioPanel {
   background-color: #000;
-  padding: 135px 0;
+  padding: 200px 0 100px;
   position: relative;
   color: #fff;
 }
@@ -258,8 +258,10 @@
   line-height: 60px;
 }
 .showcaseHeadline .showcaseSubheader.subtitle {
-  font-weight: 400;
+    font-weight: 400;
+    font-size: 18px;
 }
+
 
 .portfolioWebLeftContent {
   display: flex;
@@ -322,12 +324,11 @@
 }
 .webPortFolioBox .owl-next:hover,
 .webPortFolioBox .owl-prev:hover {
-    background: #fbfbfbd1 !important;
+  background: #fbfbfbd1 !important;
 }
 .webPortFolioBox .owl-nav {
-    text-align: left!important;
+  text-align: left !important;
 }
-
 
 @media (min-width: 320px) and (max-width: 480px) {
   .portfolioBoxPanel .bigTitle {
@@ -389,21 +390,31 @@
   /* */
   .webPortfolioPanel {
     background-color: #000;
-    padding: 30px 20px;
+    padding: 70px 20px 30px;
     margin-bottom: 30px;
+    margin-top: 72px;
   }
-
   .showcaseHeadline .showcaseheader.title {
     font-size: 28px;
     line-height: 44px;
   }
   .portfolioWebLeftContent {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .webPortfolioPanel.appPort .bigtitle {
     font-size: 60px;
     bottom: -15px;
+  }
+  .webPortfolioPanel .bigtitle {
+    font-size: 84px;
+    bottom: -21px;
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
   }
 }
 
@@ -462,25 +473,34 @@
     width: 60px;
   }
 
-  
   /* */
-  .webPortfolioPanel {
+   .webPortfolioPanel {
     background-color: #000;
-    padding: 30px 20px;
+    padding: 70px 20px 30px;
     margin-bottom: 30px;
+    margin-top: 72px;
   }
-
   .showcaseHeadline .showcaseheader.title {
     font-size: 28px;
     line-height: 44px;
   }
   .portfolioWebLeftContent {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .webPortfolioPanel.appPort .bigtitle {
     font-size: 60px;
     bottom: -15px;
+  }
+  .webPortfolioPanel .bigtitle {
+    font-size: 84px;
+    bottom: -21px;
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
   }
 }
 
@@ -538,12 +558,12 @@
     height: 60px;
     width: 60px;
   }
-  
-  /* */
+ /* */
   .webPortfolioPanel {
     background-color: #000;
-    padding: 30px 20px;
+    padding: 70px 20px 30px;
     margin-bottom: 30px;
+    margin-top: 72px;
   }
 
   .showcaseHeadline .showcaseheader.title {
@@ -552,11 +572,21 @@
   }
   .portfolioWebLeftContent {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .webPortfolioPanel.appPort .bigtitle {
     font-size: 60px;
     bottom: -15px;
+  }
+  .webPortfolioPanel .bigtitle {
+    font-size: 84px;
+    bottom: -21px;
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
   }
 }
 
@@ -614,11 +644,12 @@
     height: 60px;
     width: 60px;
   }
-    /* */
+   /* */
   .webPortfolioPanel {
     background-color: #000;
-    padding: 30px 20px;
+    padding: 70px 20px 30px;
     margin-bottom: 30px;
+    margin-top: 72px;
   }
 
   .showcaseHeadline .showcaseheader.title {
@@ -632,6 +663,16 @@
   .webPortfolioPanel.appPort .bigtitle {
     font-size: 60px;
     bottom: -15px;
+  }
+  .webPortfolioPanel .bigtitle {
+    font-size: 84px;
+    bottom: -21px;
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
   }
 }
 
@@ -688,5 +729,40 @@
   .portfolioBoxPanel .circleBluer {
     height: 60px;
     width: 60px;
+  }
+
+   /* */
+  .webPortfolioPanel {
+    background-color: #000;
+    padding: 70px 20px 30px;
+    margin-bottom: 30px;
+    margin-top: 72px;
+  }
+
+  .showcaseHeadline .showcaseheader.title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .showcaseHeadline .showcaseSubheader.subtitle {
+    font-weight: 400;
+    font-size: 18px;
+}
+  .portfolioWebLeftContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .webPortfolioPanel.appPort .bigtitle {
+    font-size: 60px;
+    bottom: -15px;
+  }
+  .webPortfolioPanel .bigtitle {
+    font-size: 84px;
+    bottom: -21px;
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
   }
 }

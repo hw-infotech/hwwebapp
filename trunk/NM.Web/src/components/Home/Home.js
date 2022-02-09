@@ -17,9 +17,10 @@ import Dashboard from "../../layout/dashboard";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 
 const HomeContent = (props) => {
-  const { newsletter, setNewsLetter } = props;
-  console.log(newsletter);
+  const { newsletter, setNewsLetter, navbar, setNavbar } = props;
+  // console.log(setNavbar);
   // const [newsletter, setNewsLetter] = useState();
+  console.log(navbar);
   const dispatch = useDispatch();
   const [state, setState] = useState({
     responsive: {
@@ -44,6 +45,7 @@ const HomeContent = (props) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     dispatch(tryRedux());
+    // setNavbar("Preet Singh")
   }, []);
   // this changes the scrolling behavior to "smooth"
 
@@ -64,7 +66,9 @@ const HomeContent = (props) => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
-              <h1>Excellent Tech Solution To Meet Your Business Needs </h1>
+              <h1>
+                <span>Excellent Tech Solution </span>To Meet Your Business Needs{" "}
+              </h1>
               <h2>
                 We are a leading software development company. Our services
                 include custom app development, web development, SEO, UI/UX

@@ -67,6 +67,7 @@ const UIUX = (props) => {
 
     return (
       <div>
+        <UiUxPortfolio />
         <section className="ServiceMainBanners webDevlopBox">
           <ToastContainer
             position="top-right"
@@ -81,6 +82,9 @@ const UIUX = (props) => {
           />
 
           <div className="container">
+            <div className="servicesImageHalfBox">
+              <img src="assets/img/ui-ux-banner.png" alt="" />
+            </div>
             <div className="Service_contentPanel">
               <small>UI UX Design</small>
               <h1>UI UX Design Add feather to your imagination</h1>
@@ -91,9 +95,6 @@ const UIUX = (props) => {
                 team brings design and technical aspects forth to prepare
                 outstanding digital products.
               </p>
-            </div>
-            <div className="servicesImageHalfBox">
-              <img src="assets/img/ui-ux-banner.png" alt="" />
             </div>
           </div>
         </section>
@@ -287,7 +288,6 @@ const UIUX = (props) => {
           </div>
         </section>
 
-        <UiUxPortfolio />
         <section className="formBox">
           <div className="container">
             <div className="row">
