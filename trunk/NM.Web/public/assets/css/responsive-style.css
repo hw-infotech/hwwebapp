@@ -76,7 +76,7 @@
     width: 150px;
   }
   .navbar .navbar-nav .nav-item {
-    padding: 10px 10px!important;
+    padding: 10px 10px !important;
     width: 100%;
     float: left;
   }
@@ -240,7 +240,7 @@
     width: 150px;
   }
   .navbar .navbar-nav .nav-item {
-    padding: 10px 10px!important;
+    padding: 10px 10px !important;
     width: 100%;
     float: left;
   }
@@ -364,6 +364,8 @@
     box-shadow: inset 0px 0px 18px 0px #0160fd00 !important;
   }
 
+
+ 
   .menuLinksBar {
     position: fixed;
     height: calc(100% - 72px);
@@ -392,7 +394,7 @@
     width: 150px;
   }
   .navbar .navbar-nav .nav-item {
-    padding: 10px 10px!important;
+    padding: 10px 10px !important;
     width: 100%;
     float: left;
   }
@@ -413,9 +415,23 @@
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .navbar .navbar-nav .nav-item .dropdown-menu .dropdownmenus {
-    width: 100%!important;
+    width: 100% !important;
   }
   .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
-    width: 100%!important;
+    width: 100% !important;
+  }
+   .fixed-top.header-scrolled .navbar .navbar-brand:before {
+    width: 126%;
+    height: 211%;
+    left: -34px;
+    top: -46px;
+  }
 }
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .fixed-top.header-scrolled .navbar .navbar-brand:before {
+    width: 126%;
+    height: 211%;
+    left: -34px;
+    top: -46px;
+  }
 }

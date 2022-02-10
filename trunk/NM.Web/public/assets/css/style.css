@@ -2604,6 +2604,8 @@ input:focus {
   img {
   width: 33px;
   margin-right: 10px;
+  height: 33px;
+  border-radius: 50%;
 }
 
 .navbar
@@ -2640,7 +2642,7 @@ input:focus {
   padding: 10px 10px 10px 76px;
   font-weight: 500;
   border-radius: 15px;
-  height: 100px;
+  height: 138px;
   display: flex;
   align-items: center;
   transition: all ease 0.8s;
@@ -2652,7 +2654,7 @@ input:focus {
   margin-right: 10px;
   position: absolute;
   left: 20px;
-  top: 28px;
+  top: 46px;
 }
 .navbar .navbar-nav .nav-item .dropdown-item:hover .servicesLinksBox {
   box-shadow: 0 10px 25px rgb(0 66 118 / 8%);

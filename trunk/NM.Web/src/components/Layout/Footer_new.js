@@ -70,10 +70,28 @@ const Footer_new = () => {
                     <li>
                       <a
                         target="_blank"
+                        href="https://www.behance.net/nestormindpvtltd"
+                        className="instagram"
+                      >
+                        <i className="bx bxl-behance"></i>{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
                         href="https://join.skype.com/invite/hTYrZnJuUsHE"
                         className="skype"
                       >
                         <i className="bx bxl-skype"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
+                        className="upwork"
+                      >
+                        <i className="bx bxl-upwork"></i>
                       </a>
                     </li>
                   </ul>

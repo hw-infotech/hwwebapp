@@ -1037,7 +1037,7 @@ section.process {
 }
 
 section.formBox {
-  background: #ececec52;
+  background: #ececec52!important;
   padding: 100px 0;
 }
 

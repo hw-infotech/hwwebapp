@@ -187,6 +187,19 @@ const NavBar = ({ NavbarStyle }) => {
                         </a>
                         <a
                           className="webformsIntegration"
+                          href="https://www.behance.net/nestormindpvtltd"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/behanceNestormind.svg"
+                            alt="LinkedIn"
+                            title="Dribbble"
+                            loading="lazy"
+                          />
+                          Behance
+                        </a>
+                        <a
+                          className="webformsIntegration"
                           href="https://join.skype.com/invite/hTYrZnJuUsHE"
                           target="_blank"
                         >
@@ -197,6 +210,19 @@ const NavBar = ({ NavbarStyle }) => {
                             loading="lazy"
                           />
                           Skype
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/upworkNestormind.svg"
+                            alt="LinkedIn"
+                            title="Skype"
+                            loading="lazy"
+                          />
+                          upwork
                         </a>
                       </div>
                     </div>

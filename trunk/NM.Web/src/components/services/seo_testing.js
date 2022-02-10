@@ -15,6 +15,7 @@ import { SEOuserRegister } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
 import { within } from '@testing-library/react';
 import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
+import SeoPortfolio from '../Home/seoPortfolio';
 
 const SeoTest = (props) => {
     const {newsLetter,setNewsLetter} = props;
@@ -65,6 +66,7 @@ const SeoTest = (props) => {
 
     return (
       <div>
+      <SeoPortfolio/>
         <section className="ServiceMainBanners webDevlopBox">
           <ToastContainer
             position="top-right"
@@ -79,6 +81,9 @@ const SeoTest = (props) => {
           />
 
           <div className="container">
+            <div className="servicesImageHalfBox">
+              <img src="assets/img/seo-mainBanner.png" alt="" />
+            </div>
             <div className="Service_contentPanel">
               <small>SEO Testing</small>
 
@@ -92,9 +97,6 @@ const SeoTest = (props) => {
                 Engine Result Pages. We have partnership with Google and have a
                 solid track record on providing SEO services.
               </p>
-            </div>
-            <div className="servicesImageHalfBox">
-              <img src="assets/img/seo-mainBanner.png" alt="" />
             </div>
           </div>
         </section>
@@ -268,7 +270,6 @@ const SeoTest = (props) => {
                           </p>
                         </div>
                       </div>
-                      
                     </OwlCarousel>
                   </div>
                 </div>

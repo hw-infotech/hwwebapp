@@ -178,6 +178,8 @@ a{
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  height: auto;
+  right: auto;
 }
 .clb-social-holder {
   white-space: nowrap;
@@ -188,10 +190,14 @@ a{
   position: relative;
   padding-left: 0;
   padding-top: 50px;
+  flex-wrap: wrap;
+    gap: 10px;
 }
 .clb-social-holder.icons li {
   color: #fff;
   font-weight: 600;
+  margin: 0px;
+  padding: 0px;
 }
 .clb-social-holder.icons li i {
   transform: rotate(2deg);
@@ -222,8 +228,14 @@ a{
 .clb-social-holder.icons li a:hover .bxl-dribbble {
   background-color: #c73868;
 }
+.clb-social-holder.icons li a:hover .bxl-behance {
+  background-color: #2d2aff;
+}
 .clb-social-holder.icons li a:hover .bxl-skype {
   background-color: #00aff0;
+}
+.clb-social-holder.icons li a:hover .bxl-upwork {
+  background-color: #22c502;
 }
 
 .achievement {
@@ -354,6 +366,9 @@ a{
     height: 36px;
     line-height: 36px;
     font-size: 14px;
+  }
+  .clb-social-holder {
+    margin: 10px;
   }
 }
 

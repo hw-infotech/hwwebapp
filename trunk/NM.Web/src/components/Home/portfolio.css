@@ -203,17 +203,20 @@
 .webPortfolioPanel.graphicPort {
   background-color: #0f8d47;
 }
+.webPortfolioPanel.seoPort {
+    background-color: #435466;
+}
 .webPortfolioPanel.graphicPort .bigtitle {
   transform: rotate(90deg);
   top: -58px;
   right: 109px;
   left: auto;
-  font-size: 215px;
+  font-size: 155px;
 }
 .webPortfolioPanel.appPort .bigtitle {
   font-size: 240px;
   position: absolute;
-  bottom: -69px;
+  bottom: -48px;
   right: 0px;
   left: auto;
   color: #ffffff1a;
@@ -226,9 +229,9 @@
   right: auto;
 }
 .webPortfolioPanel .bigtitle {
-  font-size: 240px;
+  font-size: 155px;
   position: absolute;
-  bottom: -91px;
+  bottom: -48px;
   left: 0px;
   color: #ffffff1a;
   font-weight: 700;
@@ -406,9 +409,10 @@
     font-size: 60px;
     bottom: -15px;
   }
-  .webPortfolioPanel .bigtitle {
-    font-size: 84px;
+    .webPortfolioPanel .bigtitle {
+    font-size: 113px!important;
     bottom: -21px;
+
   }
   .webPortfolioPanel.uiUxPort .bigtitle {
     transform: rotate(360deg);
@@ -493,8 +497,9 @@
     bottom: -15px;
   }
   .webPortfolioPanel .bigtitle {
-    font-size: 84px;
+    font-size: 113px!important;
     bottom: -21px;
+
   }
   .webPortfolioPanel.uiUxPort .bigtitle {
     transform: rotate(360deg);
@@ -578,9 +583,10 @@
     font-size: 60px;
     bottom: -15px;
   }
-  .webPortfolioPanel .bigtitle {
-    font-size: 84px;
+   .webPortfolioPanel .bigtitle {
+    font-size: 113px!important;
     bottom: -21px;
+
   }
   .webPortfolioPanel.uiUxPort .bigtitle {
     transform: rotate(360deg);
@@ -664,9 +670,10 @@
     font-size: 60px;
     bottom: -15px;
   }
-  .webPortfolioPanel .bigtitle {
-    font-size: 84px;
+    .webPortfolioPanel .bigtitle {
+    font-size: 113px!important;
     bottom: -21px;
+
   }
   .webPortfolioPanel.uiUxPort .bigtitle {
     transform: rotate(360deg);
@@ -734,9 +741,9 @@
    /* */
   .webPortfolioPanel {
     background-color: #000;
-    padding: 70px 20px 30px;
+    padding: 130px 20px 30px;
     margin-bottom: 30px;
-    margin-top: 72px;
+    margin-top: 0px;
   }
 
   .showcaseHeadline .showcaseheader.title {
@@ -756,8 +763,9 @@
     bottom: -15px;
   }
   .webPortfolioPanel .bigtitle {
-    font-size: 84px;
+    font-size: 113px!important;
     bottom: -21px;
+
   }
   .webPortfolioPanel.uiUxPort .bigtitle {
     transform: rotate(360deg);
