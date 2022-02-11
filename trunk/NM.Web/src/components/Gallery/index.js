@@ -177,7 +177,10 @@ const Gallery = () => {
       <div className="galleryPanel">
         <div className="container" id="">
           <div className="galleryMain">
-            <div className="p-2">
+            <div className="galleryContainer">
+              <div className="ps-0">
+                <h2>Event Stories</h2>
+              </div>
               <div>
                 <Row>
                   {stories12?.map((story, index) => {
@@ -366,12 +369,9 @@ const Gallery = () => {
                             </Col> */}
                 </Row>
               </div>
-              <div className="p-2">
-                <h2>Event Stories</h2>
-              </div>
             </div>
             <div className="p-2">
-              <div className="p-2">
+              <div className="pt-5">
                 <h2>Nestormind Gallery</h2>
               </div>
               <div className="galleryClick">

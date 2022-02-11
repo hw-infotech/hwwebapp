@@ -95,7 +95,7 @@ const Portfolio = () => {
     {
       id: "1",
       image: "assets/img/portfolio/funderslink.png",
-      title: "Founder Link",
+      title: "Funders Link",
       content:
         " Task Project Design has been updated in project ECommerce by Admin",
     },
@@ -116,7 +116,7 @@ const Portfolio = () => {
     {
       id: "4",
       image: "assets/img/portfolio/joinvet_BG.png",
-      title: "joinvet",
+      title: "JoinVet",
       content:
         " We makes it easy for businesses and marketing teams to manage your social account in a single place.",
     },

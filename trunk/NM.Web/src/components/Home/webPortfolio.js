@@ -12,8 +12,8 @@ const WebPortfolio = () => {
     nav: true,
     autoPlay: true,
     fluidSpeed: true,
-    autoplaySpeed: 100000,
-    autoplayTimeout: 100000,
+    autoplaySpeed: 10000,
+    autoplayTimeout: 10000,
     responsive: {
       0: {
         items: 1,
@@ -93,6 +93,78 @@ const WebPortfolio = () => {
                     >
                       <div className="tiltImagePanel">
                         <img src="../assets/img/vc.png" />
+                      </div>
+                    </Tilt>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="portfolioWebLeftContent">
+                    <Tilt
+                      className="parallax-effect-glare-scale tiltBox"
+                      perspective={1000}
+                      glareEnable={true}
+                      glareMaxOpacity={0.45}
+                      scale={1.01}
+                      gyroscope={true}
+                      tiltMaxAngleX={3}
+                      tiltMaxAngleY={3}
+                    >
+                      <div className="tiltImagePanel">
+                        <img src="../assets/img/chililay.png" />
+                      </div>
+                    </Tilt>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="portfolioWebLeftContent">
+                    <Tilt
+                      className="parallax-effect-glare-scale tiltBox"
+                      perspective={1000}
+                      glareEnable={true}
+                      glareMaxOpacity={0.45}
+                      scale={1.01}
+                      gyroscope={true}
+                      tiltMaxAngleX={3}
+                      tiltMaxAngleY={3}
+                    >
+                      <div className="tiltImagePanel">
+                        <img src="../assets/img/skycommPort.png" />
+                      </div>
+                    </Tilt>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="portfolioWebLeftContent">
+                    <Tilt
+                      className="parallax-effect-glare-scale tiltBox"
+                      perspective={1000}
+                      glareEnable={true}
+                      glareMaxOpacity={0.45}
+                      scale={1.01}
+                      gyroscope={true}
+                      tiltMaxAngleX={3}
+                      tiltMaxAngleY={3}
+                    >
+                      <div className="tiltImagePanel">
+                        <img src="../assets/img/visaGuide.png" />
+                      </div>
+                    </Tilt>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="portfolioWebLeftContent">
+                    <Tilt
+                      className="parallax-effect-glare-scale tiltBox"
+                      perspective={1000}
+                      glareEnable={true}
+                      glareMaxOpacity={0.45}
+                      scale={1.01}
+                      gyroscope={true}
+                      tiltMaxAngleX={3}
+                      tiltMaxAngleY={3}
+                    >
+                      <div className="tiltImagePanel">
+                        <img src="../assets/img/funderLinks.png" />
                       </div>
                     </Tilt>
                   </div>

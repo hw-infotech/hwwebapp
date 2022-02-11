@@ -14,6 +14,32 @@ body {
   color: #000000;
   font-family: "Poppins", sans-serif !important;
 }
+.btn.btn-flip {
+    padding: 15px 34px;
+    display: inline-block;
+    border: 2.5px solid #ea7424;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: .36px;
+    border-radius: 116px;
+    color: #eb7823;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+}
+.btn.btn-flip:hover {
+    padding: 15px 34px;
+    display: inline-block;
+    border: 2.5px solid #ea7424;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: .36px;
+    border-radius: 116px;
+    color: #ffffff;
+    background-color: #eb7823;
+    transition: all .3s ease-in-out;
+}
 
 /* * {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGBAMAAAAS4vJ7AAAAD1BMVEXxMjLwMTHaJCTjLy/wMjLFf//1AAAABHRSTlOT8QfxLZtlegAAABtJREFUCNdjUBBkYmBxcWAwcXFmEHFxBLFBYgAhXALLgSm/cQAAAABJRU5ErkJggg==) 3 3, auto !important;

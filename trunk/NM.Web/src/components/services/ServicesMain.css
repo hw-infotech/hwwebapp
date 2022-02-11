@@ -37,6 +37,7 @@
 
 section.mainBanner_Services {
   padding: 110px 0;
+  background-color: #000;
 }
 
 .mainBanner_Services .bannerContent {
@@ -68,12 +69,12 @@ section.mainBanner_Services {
 .bannerContentText h1 {
   font-size: 84px;
   font-weight: bold;
-  color: #323232 !important;
+  color: #4c4c4c !important;
 }
 
 .bannerContentText h1 strong {
   font-weight: 700;
-   color: #7cc243; 
+   color: #ffffff; 
   font-size:66px;
 }
 
@@ -81,6 +82,7 @@ section.mainBanner_Services {
   font-size: 24px;
   line-height: 42px;
   font-weight: 200;
+  color: #959595;
 }
 
 .bannerService .box-wrap:nth-child(2n + 2) {
@@ -104,10 +106,10 @@ section.mainBanner_Services {
 
 .bannerService .box-wrap .box {
   border-radius: 0.625rem;
-  background-color: #ffffff;
+  background-color: #202020;
   width: 12rem;
   position: relative;
-  box-shadow: 0px 0px 66px 0px #d5d5d594;
+  box-shadow: 0px 0px 66px 0px #5e5e5e36;
 }
 
 .bannerService .box-wrap .box::before {
@@ -172,13 +174,14 @@ section.mainBanner_Services {
   line-height: 1.2;
   transform: translate(0px, 3.75px);
   font-weight: 400;
+  color: #6a6a6a;
 }
 
 .bannerContentText h1 {
   font-size: 54px !important;
 }
 .bannerContentText h1 strong{
-  font-size: 42px !important;
+  font-size: 58px !important;
 }
 
 .bannerService .box-wrap .line {
@@ -1223,6 +1226,9 @@ section.formBox .form .input-filed .getintouch:hover .formBox {
   section.mainBanner_Services {
     padding: 99px 0 60px !important;
   }
+  .bannerContentText h1 strong {
+    font-size: 36px !important;
+}
   .services .servicesItem .item h4 {
     font-size: 22px;
   }

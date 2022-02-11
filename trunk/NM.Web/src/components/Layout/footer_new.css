@@ -203,7 +203,7 @@ a{
   transform: rotate(2deg);
   color: #fff;
 }
-.clb-social-holder.icons li a i {
+.clb-social-holder.icons li a i,.clb-social-holder.icons li a svg {
   color: #fff;
   height: 40px;
   width: 40px;
@@ -212,6 +212,10 @@ a{
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
+}
+.clb-social-holder.icons li a svg.bxl-upwork {
+    padding: 0 10px;
+    fill: #ffffff!important;
 }
 .clb-social-holder.icons li a:hover .bxl-linkedin {
   background-color: #0e76a8;
