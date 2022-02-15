@@ -100,7 +100,7 @@ export const stories12 = [
     audio: "/assets/music/Hair-Trigger-WST011601.mp3",
     posts: [
       {
-        url: "/assets/img/team/untitled-15.jpg",
+        url: "/assets/img/team/untitled-16.jpg",
         duration: "8000",
         audio: "/assets/music/Hair-Trigger-WST011601.mp3",
         type: "image",
@@ -421,7 +421,7 @@ export const stories12 = [
     audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",
     posts: [
       {
-        url: "/assets/img/team/untitled-17.jpg",
+        url: "/assets/img/team/untitled-16.jpg",
         duration: "8000",
         type: "image",
         audio: "/assets/music/Written-in-the-Genes_ALT_SHK010201.mp3",

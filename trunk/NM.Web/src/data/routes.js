@@ -40,6 +40,6 @@ const routes = [
     route("/blogs", BlogList),
     route("/blog-post", Blogpost),
     route("/under-mantainence", NotFound),
-    route("/nestormind-gallery", Gallery)
+    route("/gallery", Gallery)
 ]
 export default routes

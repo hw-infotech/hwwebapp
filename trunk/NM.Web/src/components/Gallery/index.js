@@ -85,19 +85,21 @@ const Gallery = () => {
   return (
     <Dashboard>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="justify-content-center">
           <div
             id="storyDiv"
             onLoad={() => {
               let maindiv = document.querySelectorAll("#storyDiv")[0]
                 .children[0];
+              console.log("maindiv", maindiv);
               let innerdiv = maindiv.getElementsByTagName("img");
               innerdiv[0].parentElement.parentElement.className = "imgStyle";
               maindiv.firstChild.className = "storyProgressBar";
+               maindiv.className = "storyProgressContainer";
             }}
           >
-            {console.log(indexPost)}
             <Stories
+              className="storiesSlider"
               currentIndex={currentIndex}
               loop={true}
               stories={indexPost.posts}

@@ -275,6 +275,31 @@
   .eventDiscriptions {
     font-size: 14px;
   }
+
+  /* stories */
+  .storyProgressBar {
+    top: -15px;
+    left: 0;
+    width: 98% !important;
+  }
+  .imgStyle {
+    width: 98% !important;
+    height: 300px !important;
+  }
+
+  .storyProgressContainer {
+    height: 300px !important;
+    width: 100% !important;
+  }
+  .modal.show .modal-dialog {
+    transform: none;
+    min-width: 95%;
+    padding: 0;
+    max-width: 100% !important;
+  }
+  .storySlider .slick-slide {
+    display: none !important;
+  }
 }
 @media (min-width: 481px) and (max-width: 575px) {
   .galleryCardPanel,
@@ -325,6 +350,30 @@
   }
   .eventDiscriptions {
     font-size: 14px;
+  }
+  /* stories */
+  .storyProgressBar {
+    top: -15px;
+    left: 0;
+    width: 98% !important;
+  }
+  .imgStyle {
+    width: 98% !important;
+    height: 300px !important;
+  }
+
+  .storyProgressContainer {
+    height: 300px !important;
+    width: 100% !important;
+  }
+  .modal.show .modal-dialog {
+    transform: none;
+    min-width: 95%;
+    padding: 0;
+    max-width: 100% !important;
+  }
+  .storySlider .slick-slide {
+    display: none !important;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
