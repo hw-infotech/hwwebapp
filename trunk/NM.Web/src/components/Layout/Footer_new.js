@@ -175,6 +175,9 @@ const Footer_new = () => {
                           <Link to="/contact-us">Contact Us</Link>
                         </li>
                         <li>
+                          <Link to="/blogs">Blog</Link>
+                        </li>
+                        <li>
                           <Link to="/gallery">Gallery</Link>
                         </li>
                         <li>
