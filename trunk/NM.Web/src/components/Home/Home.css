@@ -785,7 +785,7 @@
   line-height: 1.41;
   letter-spacing: normal;
   margin: 0px;
-  text-align: left;
+  text-align: center;
   color: #131d2b;
 }
 
@@ -1451,6 +1451,73 @@
   font-weight: 600;
 }
 
+/* awards */
+.awards_accolades_parts {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.awa_rds {
+  width: 33%;
+}
+
+.awards_accolades_parts .awa_rds .img {
+  min-height: 239px;
+  background-repeat: no-repeat;
+  background-size: 20rem;
+  width: 100%;
+  background-position: top 39px center;
+  padding: 20px;
+  max-width: 238px;
+  margin: auto;
+}
+.awards_accolades_parts .awa_rds .img img {
+  width: 100%;
+}
+
+.hm_awcnt {
+  width: 90%;
+  margin: 10px auto 0;
+  text-align: center;
+}
+.hm_awcnt h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  line-height: normal;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.hm_awcnt p {
+  font-size: 16px;
+  line-height: 25px;
+  color: #fff;
+  font-weight: 400;
+}
+.awards_accolades_parts .awa_rds.awa_rds_one .img {
+  background-position: top -18rem center;
+}
+.awards_accolades_parts .awa_rds.awa_rds_two .img {
+  background-position: top -39rem center;
+}
+.awards_accolades_parts .awa_rds.awa_rds_three .img {
+  background-position: top -59rem center;
+}
+.awards_accolades_parts .awa_rds.awa_rds_four .img {
+  background-position: top 81% center;
+}
+.awards_accolades_parts .awa_rds.awa_rds_five .img {
+  background-position: bottom 3rem center;
+}
+.hm_awcnt h3 img {
+    height: 19px;
+    margin-left: 10px;
+}
+
+
 @media (min-width: 1366px) and (max-width: 1440px) {
   .portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-image {
     max-height: 422px;
@@ -1784,6 +1851,16 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .storiesImg.left img {
     left: 0px !important;
     right: auto;
+  }
+
+  .awa_rds {
+    width: 100%;
+  }
+  .awards_accolades_parts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column !important;
   }
 }
 

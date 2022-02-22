@@ -463,7 +463,82 @@ const HomeContent = (props) => {
 
       <section className="dark-love-home">
         <div className="container">
-          <ul className="list-addon list-addon-home">
+          <div className="row row-flexible-center ">
+            <div className="col-md-8 col-sm-12 cta-texter-home offset-md-2 mb-5">
+              <h4>TOP-NOTCH WEB & MOBILE APP DEVELOPMENT COMPANY IN GLOBE</h4>
+            </div>
+
+            <h4></h4>
+          </div>
+        </div>
+        <div className="container">
+          <div class="awards_accolades_parts">
+            <div class="awa_rds awa_rds_one">
+              <a
+                href="https://clutch.co/profile/nestormind#summary"
+                target="_blank"
+                aria-label="Awards"
+                rel="noopener noreferrer"
+              >
+                <div class="img">
+                  <img src="../../assets/img/cluch.png" />
+                </div>
+              </a>
+              <div class="hm_awcnt">
+                <h3>
+                  5.0
+                  <img src="../../assets/img/stars.svg" />
+                </h3>
+                <p>
+                  Certified app development company, acknowledged by Clutch.
+                </p>
+              </div>
+            </div>
+            <div class="awa_rds awa_rds_two">
+              <a
+                href="https://www.goodfirms.co/company/nestormind-pvt-ltd"
+                target="_blank"
+                aria-label="Awards"
+                rel="noopener noreferrer"
+              >
+                <div class="img">
+                  <img src="../../assets/img/goodfirms.png" />
+                </div>
+              </a>
+              <div class="hm_awcnt">
+                <h3>
+                  5.0
+                  <img src="../../assets/img/stars.svg" />
+                </h3>
+                <p>
+                  Certified by GoodFirms as one of the best app development
+                  company
+                </p>
+              </div>
+            </div>
+
+            <div class="awa_rds awa_rds_five">
+              <a
+                href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
+                target="_blank"
+                aria-label="Awards"
+                rel="noopener noreferrer"
+              >
+                <div class="img">
+                  <img src="../../assets/img/upwork.svg" />
+                </div>
+              </a>
+              <div class="hm_awcnt">
+                <h3>100% Job Success</h3>
+                <p>
+                  Recognized as the “top- rated plus” company and earned high
+                  rate job success on Upwork.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* <ul className="list-addon list-addon-home">
             <li>
               <img
                 className="lazy_a"
@@ -500,26 +575,7 @@ const HomeContent = (props) => {
               <h4>5/5</h4>
               <p>Upwork</p>
             </li>
-          </ul>
-        </div>
-        <div className="container">
-          <div className="row row-flexible-center ">
-            <div className="col-md-8 cta-texter-home">
-              <h4>
-                Setup A Free Consultation To Know How To Take Your Ideas From
-                Concept To Reality
-              </h4>
-            </div>
-            <div className="col-md-4 cta-btn-home">
-              <Link
-                to="/contact-us"
-                className="btn-register-header animation-on-hover clickcustomform"
-              >
-                Contact Us
-              </Link>
-            </div>
-            <h4></h4>
-          </div>
+          </ul> */}
         </div>
       </section>
 
