@@ -95,9 +95,9 @@ const Portfolio = () => {
     {
       id: "1",
       image: "assets/img/portfolio/funderslink.png",
-      title: "Funders Link",
+      title: "FundersLink",
       content:
-        " Task Project Design has been updated in project ECommerce by Admin",
+        " FundersLink is a secure, automated platform that streamlines the merchant cash advance process and enables ISOs and lenders to manage their businesses from one centralized, convenient place",
     },
     {
       id: "2",
