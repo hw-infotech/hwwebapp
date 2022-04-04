@@ -1,23 +1,78 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Dashboard from "../../layout/dashboard";
+import { useDispatch } from 'react-redux'
+import { subscribeNewsletter } from '../../Redux/Action/Actionfunction'
 
 const withNewsletterAddress = (Component) => {
   const WrrappedComponent = () => {
     const [newsletter, setNewsLetter] = useState();
-    const [navbar,setNavbar]=useState("home")
+    const [navbar, setNavbar] = useState("home")
+    const dispatch = useDispatch()
+
     const handleNewsLetterChange = (e) => {
       const { name, value } = e.target;
       setNewsLetter(value);
     };
-    const notify = () => toast.success("Thanks for subscription"); //, { theme: "colored" }
+    const notify = () => toast.success('Thanks for subscription', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    }); //, { theme: "colored" }
+
+    const emailValidation = () => {
+      const regex =
+        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      return !(!newsletter || regex.test(newsletter) === false);
+    }
+    const notifyWarning = () => toast.error('Enter valid email ', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+    const alreadyExist = () => toast.error('Email already exsist ', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
     const sendNewsLetter = () => {
-      notify();
-      document.getElementById("newsemail").value = "";
+      console.log(emailValidation(), "emailValidation");
+      if (newsletter == "" || !emailValidation()) {
+        // notifyWarning()
+      } else {
+        dispatch(subscribeNewsletter(newsletter, notify, alreadyExist))
+        // notify();
+      }
+      // document.getElementById("newsemail").value = "";
     };
+
     return (
       <Dashboard NavbarStyle={navbar}>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          // closeOnClick
+          rtl
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <Component newsletter={newsletter} setNewsLetter={setNewsLetter} navbar={navbar} setNavbar={setNavbar} />
         <section className="newsletter">
           <div className="container">

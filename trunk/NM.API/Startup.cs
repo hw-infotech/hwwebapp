@@ -31,6 +31,7 @@ namespace NM.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddNewtonsoftJson();
+
             services.AddDbContext<NMContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:NestormindDB"]));
             var config = new MapperConfiguration(mc => { mc.AddProfile(new Mapper.MappingProfile<object>(Configuration)); });
             IMapper mapper = config.CreateMapper();

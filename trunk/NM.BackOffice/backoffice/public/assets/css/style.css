@@ -1,0 +1,27 @@
+nav.side-navigation-panel {
+    position: absolute;
+    width: 20%;
+}
+
+.footerContainer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.contentPanel {
+    position: absolute;
+    left: 20%;
+    background: #91aec7;
+    width: 80%;
+    right: 0;
+    padding: 10px;
+    top: 0px;
+}
+
+.topbarPanel {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: antiquewhite;
+}
