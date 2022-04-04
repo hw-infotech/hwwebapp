@@ -18,6 +18,8 @@ namespace NM.API.Controllers
 {
     [Route("Api/BlogController")]
     [ApiController]
+    [Authorize]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class BlogController : Controller
     {
         #region Private Properties
@@ -33,7 +35,6 @@ namespace NM.API.Controllers
         #endregion
         [HttpPost]
         [Route("create")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public ActionResult<ResultVM<bool>> Create(BlogVM blogVM)
         {
             ResultVM<bool> resultVM = new ResultVM<bool>();
@@ -55,7 +56,6 @@ namespace NM.API.Controllers
 
         [HttpPost]
         [Route("update")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public ActionResult<ResultVM<bool>> Update(BlogVM blogVM)
         {
             ResultVM<bool> resultVM = new ResultVM<bool>();
@@ -78,7 +78,6 @@ namespace NM.API.Controllers
 
         [HttpDelete]
         [Route("Delete")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public ActionResult<ResultVM<bool>> Delete(string bsonId)
         {
             ResultVM<bool> resultVM = new ResultVM<bool>();
@@ -125,7 +124,7 @@ namespace NM.API.Controllers
             try
             {
                 var result = blogBusiness.GetAllBlogs();
-                mapper.Map(result, resultVM);                
+                mapper.Map(result, resultVM);
                 return resultVM;
             }
             catch (Exception ex)

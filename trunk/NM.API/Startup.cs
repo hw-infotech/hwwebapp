@@ -30,7 +30,6 @@ namespace NM.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
             services.AddControllers().AddNewtonsoftJson();
             services.AddDbContext<NMContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:NestormindDB"]));
             var config = new MapperConfiguration(mc => { mc.AddProfile(new Mapper.MappingProfile<object>(Configuration)); });
@@ -66,12 +65,6 @@ namespace NM.API
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseCors(x => x
-               .AllowAnyMethod()
-               .AllowAnyHeader()
-               .SetIsOriginAllowed(origin => true) // allow any origin
-               .AllowCredentials()); // allow credentials
-
 
             app.UseEndpoints(endpoints =>
             {
