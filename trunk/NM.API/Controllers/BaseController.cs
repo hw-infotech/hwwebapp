@@ -30,7 +30,7 @@ namespace NM.API.Controllers
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(_config["Jwt:Issuer"], _config["Jwt:Audience"],
               null,
-              expires: DateTime.Now.AddSeconds(100),
+              expires: DateTime.Now.AddDays(2),
               signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
