@@ -9,8 +9,8 @@ import Dashboard from '../../layout/dashboard';
 import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
 const UploadCv = (props) => {
-  const { newsletter, setNewsLetter } = props;
-    
+    const { newsletter, setNewsLetter } = props;
+
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
     // this changes the scrolling behavior to "smooth"
 
@@ -29,7 +29,18 @@ const UploadCv = (props) => {
                         <form>
                             <div className="input-form mh-100">
                                 <div className="upload Cv"><img className="outbox" src="assets/img/outbox.svg" /></div>
-                                <input type="file" className="form-control" />
+                                <input type="file" className="form-control" onChange={async e => {
+                                    try {
+                                        if (e.target.files[0]) {
+                                            const payload = new FormData();
+                                            payload.append("file", e.target.files[0]);
+                                            console.log(payload, "payload", e.target.files[0]);
+                                        }
+                                    } catch (e) {
+                                        console.log(e);
+                                    }
+                                }}
+                                />
                                 <div className="fileName">Your_resume_Name.pdf</div>
                             </div>
                             <div className="input-form">

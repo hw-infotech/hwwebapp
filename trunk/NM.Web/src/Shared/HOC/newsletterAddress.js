@@ -3,10 +3,11 @@ import { ToastContainer, toast } from "react-toastify";
 import Dashboard from "../../layout/dashboard";
 import { useDispatch } from 'react-redux'
 import { subscribeNewsletter } from '../../Redux/Action/Actionfunction'
+import swal from "sweetalert";
 
 const withNewsletterAddress = (Component) => {
   const WrrappedComponent = () => {
-    const [newsletter, setNewsLetter] = useState();
+    const [newsletter, setNewsLetter] = useState("");
     const [navbar, setNavbar] = useState("home")
     const dispatch = useDispatch()
 
@@ -50,14 +51,19 @@ const withNewsletterAddress = (Component) => {
     });
 
     const sendNewsLetter = () => {
-      console.log(emailValidation(), "emailValidation");
+      // console.log(emailValidation(), "emailValidation", newsletter);
       if (newsletter == "" || !emailValidation()) {
         // notifyWarning()
+        swal({
+          text: "Enter valid Email",
+          title: 'Warning',
+          icon: "warning"
+        })
       } else {
         dispatch(subscribeNewsletter(newsletter, notify, alreadyExist))
+        document.getElementById("newsemail").value = "";
         // notify();
       }
-      // document.getElementById("newsemail").value = "";
     };
 
     return (
@@ -73,7 +79,13 @@ const withNewsletterAddress = (Component) => {
           draggable
           pauseOnHover
         />
-        <Component newsletter={newsletter} setNewsLetter={setNewsLetter} navbar={navbar} setNavbar={setNavbar} />
+        <Component
+          newsletter={newsletter}
+          setNewsLetter={setNewsLetter}
+          navbar={navbar}
+          setNavbar={setNavbar}
+        />
+
         <section className="newsletter">
           <div className="container">
             <div className="newsletterContent">

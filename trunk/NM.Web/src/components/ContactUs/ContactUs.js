@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
-import Footer from '../Layout/Footer';
-import NavBar from '../Layout/Navbar';
-import Footer_new from '../Layout/Footer_new';
+import React from 'react';
 import '../ContactUs/ContactUs.css';
-import { ErrorMessage, Field, Formik, getIn } from 'formik';
+import { Field, Formik, getIn } from 'formik';
 import { useEffect } from 'react';
-import { notify } from 'node-notifier';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useState } from 'react';
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
-import { contactUSRegister } from '../../Redux/Action/Actionfunction';
+import { contactUSRegister, getAllSubscriberData } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
 import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
@@ -21,7 +17,10 @@ const ContactUsContent = (props) => {
 
     const notify = () => toast.success("Successfully Submitted")
 
-    useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // dispatch(getAllSubscriberData())
+    }, [])
     // this changes the scrolling behavior to "smooth"
 
     const initialValues = { services: [], name: "", email: "", companyName: "", projectDescription: "" }
@@ -46,7 +45,7 @@ const ContactUsContent = (props) => {
 
     const handleFormSubmit = (values, { resetForm }) => {
         values.services = services
-        console.log("contactUSRegister(values) ", values);
+        // console.log("contactUSRegister(values) ", values);
         dispatch(contactUSRegister(values))
         resetForm()
     }
@@ -60,13 +59,13 @@ const ContactUsContent = (props) => {
         }
     }
 
-
     return <div>
         <section className="contact__panel contact-hero">
             <div className="container">
                 <div className="formpanel">
                     <div className="contact-hero__item">
                         <h1>Let’s create progress together</h1>
+                        {/*<h1>{process.env.REACT_APP_API_URL} 123</h1>*/}
                         <div className="contact-form" id="mc_embed_signup">
                             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleFormSubmit} >
                                 {({ handleSubmit, handleChange, errors, values, touched }) => (

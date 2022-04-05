@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// require('dotenv').config()
 
 ReactDOM.render(<Provider store={Store}>
     <App /></Provider>, document.getElementById('root'));
