@@ -15,10 +15,11 @@ namespace NM.DataAccess.EntityConfiguration
             tableConfiguration.HasKey(c => c.Id);
             tableConfiguration.Property(c => c.Id).ValueGeneratedOnAdd();
             // Other columns: -----------------------------------------------------
-
+            tableConfiguration.Property(c => c.Services).HasMaxLength(2000);
             tableConfiguration.Property(c => c.Name).HasMaxLength(500);
             tableConfiguration.Property(c => c.Email).HasMaxLength(100);
-            tableConfiguration.Property(c => c.Description).HasMaxLength(1000);
+            tableConfiguration.Property(c => c.CompanyName).HasMaxLength(100);
+            tableConfiguration.Property(c => c.ProjectDescription).HasMaxLength(1000);
             tableConfiguration.Property(c => c.CreatedBy).HasMaxLength(100);
             tableConfiguration.Property(c => c.CreatedOn).HasMaxLength(100);
         }

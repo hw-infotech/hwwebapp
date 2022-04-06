@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace NM.API.Application.Models
 {
-    public class TechnologyVM
+    public class ResumeVM
     {
         public string BsonId { get; set; }
-        [Required(ErrorMessage = "Name is required")]
-        [MaxLength(100, ErrorMessage = "Name can't be more than 50 characters"),
-          MinLength(3, ErrorMessage = "Name can't be less than 3 characters")]
-        public string Name { get; set; }
-        public string ImageURL { get; set; }
-        public int ClientId { get; set; }
+        public string DocumentName { get;  set; }
+        public string DocumentExtension { get;  set; }
+        public string DocumentPath { get;  set; }
+        public long DocumentSize { get;  set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }
         public int UpdatedBy { get; set; }

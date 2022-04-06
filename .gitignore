@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-runk/NM.API/obj
+trunk/NM.API/obj
 trunk/NM.Business/obj
 trunk/NM.DataAccess/obj
 trunk/NM.Domain/obj
@@ -45,7 +45,4 @@ trunk/CompWebApp/webapp/node_modules
 trunk/Host.Customization/bin
 trunk/Host.Customization/bin
 trunk/Host.Customization/obj
-trunk/NM.Scheduler/ob
-/trunk/NM.API/obj/Debug/netcoreapp3.1
-/trunk/NM.API/obj
-/trunk/NM.Infrastructure/obj
+trunk/NM.Scheduler/obj

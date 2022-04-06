@@ -21,6 +21,8 @@ namespace NM.DataAccess.Interface
         IRepository<Client> ClientRepository { get; }
         IRepository<NewsLetter> NewsLetterRepository { get; }
         IRepository<Testimonials> TestimonialsRepository { get; }
+        IRepository<Contact> ContactRepository { get; }
+        IRepository<Resume> ResumeRepository { get; }
         void Save();
         void Dispose();
 

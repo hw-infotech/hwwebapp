@@ -32,7 +32,7 @@ const UploadCv = (props) => {
                                 <input type="file" className="form-control" onChange={async e => {
                                     try {
                                         if (e.target.files[0]) {
-                                            const payload = new FormData();
+                                            let payload = new FormData();
                                             payload.append("file", e.target.files[0]);
                                             console.log(payload, "payload", e.target.files[0]);
                                         }
