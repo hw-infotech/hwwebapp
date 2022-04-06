@@ -6,14 +6,18 @@ namespace NM.DataAccess.AggregatesModel
 {
     public class Contact: Entity
     {
+        public string Services { get; private set; }
         public string Name { get; private set; }
-        public string Email { get; set; }
-        public string Description { get; private set; }
-        public Contact(string name, string email, string description)
+        public string Email { get; private set; }
+        public string CompanyName { get; private set; }
+        public string ProjectDescription { get; private set; }
+        public Contact(string services,string name, string email, string companyName,string projectDescription)
         {
+            this.Services = services;
             this.Name = name;
             this.Email = email;
-            this.Description = description;
+            this.CompanyName = companyName;
+            this.ProjectDescription = projectDescription;
         }
     }
 }

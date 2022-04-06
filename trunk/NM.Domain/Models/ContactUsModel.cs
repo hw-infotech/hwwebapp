@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NM.Domain.Models
 {
-    public class ContactModel: EntityModel
+   public class ContactUsModel : EntityModel
     {
         public string Services { get; set; }
         public string Name { get; set; }

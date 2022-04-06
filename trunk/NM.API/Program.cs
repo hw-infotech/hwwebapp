@@ -9,6 +9,7 @@ using Serilog.Events;
 using System;
 using Host.Customization;
 using NM.DataAccess.SqlContext;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 using Microsoft.ApplicationInsights.Extensibility;
 
 namespace NM.API
@@ -24,7 +25,7 @@ namespace NM.API
                 Log.Information("Starting up");
                 var host = CreateHostBuilder(args).Build().MigrateDbContext<NMContext>((context, services) =>
                 {
-                    var env = services.GetService<Microsoft.AspNetCore.Hosting.IHostingEnvironment>();
+                    var env = services.GetService<IHostingEnvironment>();
                     var logger = services.GetService<ILogger<NMContextSeed>>();
                    new NMContextSeed().SeedAsync(context, env, logger).Wait();
 
