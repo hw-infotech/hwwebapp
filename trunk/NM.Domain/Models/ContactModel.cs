@@ -6,8 +6,10 @@ namespace NM.Domain.Models
 {
     public class ContactModel: EntityModel
     {
-        public string Name { get; private set; }
+        public string Services { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
-        public string Description { get; private set; }
+        public string CompanyName { get; set; }
+        public string ProjectDescription { get; set; }
     }
 }

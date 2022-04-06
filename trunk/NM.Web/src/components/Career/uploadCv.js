@@ -4,47 +4,96 @@ import NavBar from '../Layout/Navbar';
 import Footer from '../Layout/Footer';
 import './career.css';
 import Footer_new from '../Layout/Footer_new';
+import { useEffect } from 'react';
+import Dashboard from '../../layout/dashboard';
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
-class UploadCv extends Component {
-    componentDidMount = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }// this changes the scrolling behavior to "smooth"
-    render() {
-        return (
-            <>
+const UploadCv = (props) => {
+    const { newsletter, setNewsLetter } = props;
 
-                <NavBar />
+    useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
+    // this changes the scrolling behavior to "smooth"
 
-                <div className="uploadCvPanel">
-                    <div className="container">
+    return <div>
+        <div className="uploadCvPanel">
+            <div className="container">
 
-                        <div className="up-gra">
-                            <div className="upload-Graphics">
-                                <img className="uploadGra" src="assets/img/upload-file.png" />
-                            </div>
-                            <div className="uploadBox">
-                                <div className="titleBox">
-                                    Upload Your Resume
-                                </div>
-                                <form>
-                                    <div className="input-form mh-100">
-                                        <div className="upload Cv"><img className="outbox" src="assets/img/outbox.svg" /></div>
-                                        <input type="file" className="form-control" />
-                                        <div className="fileName">Your_resume_Name.pdf</div>
-                                    </div>
-                                    <div className="input-form">
-                                        <input type="submit" className="SubmitCv" value="Send" />
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
+                <div className="up-gra">
+                    <div className="upload-Graphics">
+                        <img className="uploadGra" src="assets/img/upload-file.png" />
                     </div>
-                </div>
+                    <div className="uploadBox">
+                        <div className="titleBox">
+                            Upload Your Resume
+                        </div>
+                        <form>
+                            <div className="input-form mh-100">
+                                <div className="upload Cv"><img className="outbox" src="assets/img/outbox.svg" /></div>
+                                <input type="file" className="form-control" onChange={async e => {
+                                    try {
+                                        if (e.target.files[0]) {
+                                            let payload = new FormData();
+                                            payload.append("file", e.target.files[0]);
+                                            console.log(payload, "payload", e.target.files[0]);
+                                        }
+                                    } catch (e) {
+                                        console.log(e);
+                                    }
+                                }}
+                                />
+                                <div className="fileName">Your_resume_Name.pdf</div>
+                            </div>
+                            <div className="input-form">
+                                <input type="submit" className="SubmitCv" value="Send" />
+                            </div>
+                        </form>
+                    </div>
 
-                <Footer_new />
-            </>
-        )
-    }
+                </div>
+            </div>
+        </div>
+    </div>
 }
-export default UploadCv;
+export default withNewsletterAddress(UploadCv);
+
+// class UploadCv extends Component {
+//     componentDidMount = () => {
+//         window.scrollTo({ top: 0, behavior: 'smooth' });
+//     }// this changes the scrolling behavior to "smooth"
+//     render() {
+//         return (
+//             <>
+//                 <NavBar />
+//                 <div className="uploadCvPanel">
+//                     <div className="container">
+
+//                         <div className="up-gra">
+//                             <div className="upload-Graphics">
+//                                 <img className="uploadGra" src="assets/img/upload-file.png" />
+//                             </div>
+//                             <div className="uploadBox">
+//                                 <div className="titleBox">
+//                                     Upload Your Resume
+//                                 </div>
+//                                 <form>
+//                                     <div className="input-form mh-100">
+//                                         <div className="upload Cv"><img className="outbox" src="assets/img/outbox.svg" /></div>
+//                                         <input type="file" className="form-control" />
+//                                         <div className="fileName">Your_resume_Name.pdf</div>
+//                                     </div>
+//                                     <div className="input-form">
+//                                         <input type="submit" className="SubmitCv" value="Send" />
+//                                     </div>
+//                                 </form>
+//                             </div>
+
+//                         </div>
+//                     </div>
+//                 </div>
+
+//                 <Footer_new />
+//             </>
+//         )
+//     }
+// }
+// export default UploadCv;

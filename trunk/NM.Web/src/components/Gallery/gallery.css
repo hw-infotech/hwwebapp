@@ -1,0 +1,508 @@
+/* @import '../../Shared/color.js'; */
+
+.galleryClick {
+  padding: 30px;
+  background: #1e1e1ea6;
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+}
+.galleryClick .css-bhp9pd-MuiPaper-root-MuiCard-root {
+  background-color: transparent;
+}
+.galleryPanel {
+  background: #141414;
+  /* background: color; */
+  padding: 150px 0;
+  position: relative;
+}
+.galleryPanel:before {
+  background-image: url(/assets/img/bg-chat-tile.png);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  filter: invert(1);
+}
+.cardBox,
+.cardBox1 {
+  border: 1px solid rgb(0 0 0 / 5%);
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0px 18px 52px 6px #0000000d;
+  min-width: 450px;
+  max-width: 450px;
+  background: linear-gradient(145deg, #141414, #303030);
+}
+.galleryCardPanel .cardBox .imageCard img,
+.galleryCardPanel1 .cardBox1 .imageCard img {
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.galleryCardPanel {
+  flex-direction: row-reverse;
+}
+
+.galleryCardPanel,
+.galleryCardPanel1 {
+  position: relative;
+  background: #1e1e1ea6;
+  padding: 50px;
+  z-index: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 29px;
+  z-index: 21;
+  backdrop-filter: blur(4px);
+}
+.event_div .event_content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.event_div .event_icon {
+  width: 20%;
+  margin: auto;
+  color: #4bad0d;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+.event_div .event_content .event_date {
+  font-size: 13px;
+  margin-top: 0%;
+  color: #8f8f8f;
+  line-height: 24px;
+}
+
+.galleryCardPanel1#galleryCardPanel0:before {
+  position: absolute;
+  content: "";
+  width: 410px;
+  height: calc(100% + 60px);
+  background: #76c044 !important;
+  top: -30px;
+  z-index: -1;
+  left: -7px;
+  transition: all ease 0.5s;
+}
+
+.galleryCardPanel1#galleryCardPanel0:after {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: #76bf44;
+  filter: blur(67px);
+  z-index: -2;
+  right: 27px;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+}
+
+.galleryCardPanel#galleryCardPanel1:before {
+  position: absolute;
+  content: "";
+  width: 410px;
+  height: calc(100% + 60px);
+  background: #1b76bc !important;
+  top: -30px;
+  z-index: -1;
+  right: -7px;
+  left: auto;
+  transition: all ease 0.5s;
+}
+.galleryCardPanel#galleryCardPanel1:after {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: #1b76bc;
+  filter: blur(67px);
+  z-index: -2;
+  left: 27px;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+}
+.galleryCardPanel1#galleryCardPanel2:before {
+  position: absolute;
+  content: "";
+  width: 410px;
+  height: calc(100% + 60px);
+  background: #aa1e22 !important;
+  top: -30px;
+  z-index: -1;
+  transition: all ease 0.5s;
+  left: -7px;
+}
+.galleryCardPanel1#galleryCardPanel2:after {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: #aa1e22;
+  filter: blur(67px);
+  z-index: -2;
+  right: 27px;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+}
+.galleryCardPanel#galleryCardPanel3:before {
+  position: absolute;
+  content: "";
+  width: 410px;
+  height: calc(100% + 60px);
+  background: #fc6705 !important;
+  top: -30px;
+  z-index: -1;
+  right: -7px;
+  transition: all ease 0.5s;
+  left: auto;
+}
+.galleryCardPanel#galleryCardPanel3:after {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: #fc6705;
+  filter: blur(67px);
+  z-index: -2;
+  left: 27px;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+}
+.galleryCardPanel1#galleryCardPanel4:before {
+  position: absolute;
+  content: "";
+  width: 410px;
+  height: calc(100% + 60px);
+  background: #002d68 !important;
+  top: -30px;
+  z-index: -1;
+  z-index: -1;
+  left: -7px;
+}
+.galleryCardPanel1#galleryCardPanel4:after {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: #003c8a81;
+  filter: blur(67px);
+  z-index: -2;
+  right: 27px;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+}
+.eventDetailBox {
+  position: relative;
+  padding: 50px;
+  color: #adadad;
+}
+.eventDetailBox .title {
+  font-size: 50px;
+}
+.eventDiscriptions {
+  font-size: 18px;
+}
+.galleryMain h2 {
+  position: relative;
+  top: -50px;
+  color: #fff;
+  font-weight: 600;
+  padding: 0;
+}
+.galleryContainer {
+  margin-bottom: 50px;
+}
+
+/* Responsive media  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .galleryCardPanel,
+  .galleryCardPanel1 {
+    flex-direction: column;
+  }
+  .galleryPanel {
+    padding: 90px 0;
+  }
+
+  .galleryCardPanel,
+  .galleryCardPanel1 {
+    position: relative;
+    background: #1e1e1ea6;
+    padding: 26px;
+  }
+  .cardBox,
+  .cardBox1 {
+    min-width: 260px;
+    max-width: 269px;
+    padding: 10px;
+  }
+  .eventDetailBox {
+    position: relative;
+
+    padding: 30px 0;
+
+    color: #adadad;
+  }
+
+  .galleryCardPanel1#galleryCardPanel0:before,
+  .galleryCardPanel#galleryCardPanel1:before,
+  .galleryCardPanel1#galleryCardPanel2:before,
+  .galleryCardPanel1#galleryCardPanel3:before,
+  .galleryCardPanel1#galleryCardPanel4:before,
+  .galleryCardPanel#galleryCardPanel3:before {
+    width: 100%;
+    height: 130px;
+    left: 0;
+  }
+  .galleryCardPanel .cardBox .imageCard img,
+  .galleryCardPanel1 .cardBox1 .imageCard img {
+    height: 240px;
+  }
+  .event_div .event_content .event_title {
+    font-size: 16px;
+  }
+  .eventDetailBox .title {
+    font-size: 30px;
+  }
+  .eventDiscriptions {
+    font-size: 14px;
+  }
+
+  /* stories */
+  .storyProgressBar {
+    top: -15px;
+    left: 0;
+    width: 98% !important;
+  }
+  .imgStyle {
+    width: 98% !important;
+    height: 300px !important;
+  }
+
+  .storyProgressContainer {
+    height: 300px !important;
+    width: 100% !important;
+  }
+  .modal.show .modal-dialog {
+    transform: none;
+    min-width: 95%;
+    padding: 0;
+    max-width: 100% !important;
+  }
+  .storySlider .slick-slide {
+    display: none !important;
+  }
+}
+@media (min-width: 481px) and (max-width: 575px) {
+  .galleryCardPanel,
+  .galleryCardPanel1 {
+    flex-direction: column;
+  }
+  .galleryPanel {
+    padding: 90px 0;
+  }
+
+  .galleryCardPanel,
+  .galleryCardPanel1 {
+    position: relative;
+    background: #1e1e1ea6;
+    padding: 26px;
+  }
+  .cardBox,
+  .cardBox1 {
+    min-width: 400px;
+    max-width: 269px;
+    padding: 10px;
+  }
+  .eventDetailBox {
+    position: relative;
+    padding: 30px;
+    color: #adadad;
+  }
+
+  .galleryCardPanel1#galleryCardPanel0:before,
+  .galleryCardPanel#galleryCardPanel1:before,
+  .galleryCardPanel1#galleryCardPanel2:before,
+  .galleryCardPanel1#galleryCardPanel3:before,
+  .galleryCardPanel1#galleryCardPanel4:before,
+  .galleryCardPanel#galleryCardPanel3:before {
+    width: 100%;
+    height: 150px;
+    left: 0;
+  }
+  .galleryCardPanel .cardBox .imageCard img,
+  .galleryCardPanel1 .cardBox1 .imageCard img {
+    height: 240px;
+  }
+  .event_div .event_content .event_title {
+    font-size: 16px;
+  }
+  .eventDetailBox .title {
+    font-size: 30px;
+  }
+  .eventDiscriptions {
+    font-size: 14px;
+  }
+  /* stories */
+  .storyProgressBar {
+    top: -15px;
+    left: 0;
+    width: 98% !important;
+  }
+  .imgStyle {
+    width: 98% !important;
+    height: 300px !important;
+  }
+
+  .storyProgressContainer {
+    height: 300px !important;
+    width: 100% !important;
+  }
+  .modal.show .modal-dialog {
+    transform: none;
+    min-width: 95%;
+    padding: 0;
+    max-width: 100% !important;
+  }
+  .storySlider .slick-slide {
+    display: none !important;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .galleryPanel {
+    padding: 90px 0;
+  }
+
+  .galleryCardPanel,
+  .galleryCardPanel1 {
+    position: relative;
+    background: #1e1e1ea6;
+    padding: 26px;
+  }
+  .cardBox,
+  .cardBox1 {
+    padding: 10px;
+    min-width: 228px;
+    max-width: 269px;
+  }
+  .eventDetailBox {
+    position: relative;
+    padding: 30px;
+    color: #adadad;
+  }
+
+  .galleryCardPanel1#galleryCardPanel0:before,
+  .galleryCardPanel#galleryCardPanel1:before,
+  .galleryCardPanel1#galleryCardPanel2:before,
+  .galleryCardPanel1#galleryCardPanel3:before,
+  .galleryCardPanel1#galleryCardPanel4:before,
+  .galleryCardPanel#galleryCardPanel3:before {
+    width: 150px;
+  }
+  .galleryCardPanel .cardBox .imageCard img,
+  .galleryCardPanel1 .cardBox1 .imageCard img {
+    height: 200px;
+  }
+  .event_div .event_content .event_title {
+    font-size: 16px;
+  }
+  .eventDetailBox .title {
+    font-size: 30px;
+  }
+  .eventDiscriptions {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .galleryPanel {
+    padding: 90px 0;
+  }
+
+  .cardBox,
+  .cardBox1 {
+    padding: 20px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .galleryCardPanel1#galleryCardPanel0:before,
+  .galleryCardPanel#galleryCardPanel1:before,
+  .galleryCardPanel1#galleryCardPanel2:before,
+  .galleryCardPanel1#galleryCardPanel3:before,
+  .galleryCardPanel1#galleryCardPanel4:before,
+  .galleryCardPanel#galleryCardPanel3:before {
+    width: 250px;
+  }
+  .galleryCardPanel .cardBox .imageCard img,
+  .galleryCardPanel1 .cardBox1 .imageCard img {
+    height: 250px;
+  }
+  .eventDetailBox .title {
+    font-size: 30px;
+  }
+  .eventDiscriptions {
+    font-size: 14px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .galleryPanel {
+    padding: 90px 0;
+  }
+
+  .cardBox,
+  .cardBox1 {
+    padding: 20px;
+    min-width: 450px;
+    max-width: 450px;
+  }
+
+  .galleryCardPanel1#galleryCardPanel0:before,
+  .galleryCardPanel#galleryCardPanel1:before,
+  .galleryCardPanel1#galleryCardPanel2:before,
+  .galleryCardPanel1#galleryCardPanel3:before,
+  .galleryCardPanel1#galleryCardPanel4:before,
+  .galleryCardPanel#galleryCardPanel3:before {
+    width: 250px;
+  }
+  .galleryCardPanel .cardBox .imageCard img,
+  .galleryCardPanel1 .cardBox1 .imageCard img {
+    height: 300px;
+  }
+  .eventDetailBox .title {
+    font-size: 30px;
+  }
+  .eventDiscriptions {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1366px) {
+  .galleryPanel {
+    padding: 90px 0;
+  }
+
+  .cardBox,
+  .cardBox1 {
+    padding: 20px;
+    min-width: 450px;
+    max-width: 450px;
+  }
+
+  .galleryCardPanel1#galleryCardPanel0:before,
+  .galleryCardPanel#galleryCardPanel1:before {
+    width: 250px;
+  }
+  .galleryCardPanel .cardBox .imageCard img,
+  .galleryCardPanel1 .cardBox1 .imageCard img {
+    height: 300px;
+  }
+}
+@media (min-width: 1367px) and (max-width: 1440px) {
+}

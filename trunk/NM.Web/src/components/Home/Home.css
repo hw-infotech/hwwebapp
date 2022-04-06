@@ -9,28 +9,34 @@
 }
 
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
 @keyframes logoFadeUp {
   0% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+
   50% {
     -webkit-transform: translateY(-webkit-calc(-100% - 25px));
     transform: translateY(calc(-100% - 25px));
     opacity: 1;
   }
+
   51% {
     -webkit-transform: translateY(-webkit-calc(-100% - 25px));
     transform: translateY(calc(-100% - 25px));
     opacity: 0;
   }
+
   52% {
     -webkit-transform: translateY(-webkit-calc(100% + 25px));
     transform: translateY(calc(100% + 25px));
   }
+
   86% {
     opacity: 1;
   }
+
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -120,25 +126,54 @@
   border-radius: 30px;
   transition: all ease-in-out 0.5s;
   display: inline-block;
+  overflow: hidden;
+  position: relative;
+  transition: all ease 0.5s;
 }
+
+.w-o-btn:hover:before {
+  opacity: 1;
+  right: -35px;
+  transition: all ease 0.5s;
+}
+
+.w-o-btn:before {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: #ffffff1f;
+  content: "";
+  border-radius: 50%;
+  right: -72px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
 .w-o-btn:hover {
   color: #fff;
   background: #ef661e;
   text-decoration: none;
 }
-
+.servicesBoxDiv {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+}
 .servicesArea {
   background: rgba(136, 136, 136, 0.05);
 }
+
 .serviceRedirect:hover .arrowIcon {
   float: right;
   filter: brightness(0) invert(1);
 }
+
 .serviceRedirect {
   padding: 15px;
   border-radius: 10px;
   transition: all ease 0.5s;
 }
+
 .serviceRedirect:hover {
   background: #fff;
   box-shadow: 0px 0px 45px 0px #d5d5d580;
@@ -146,10 +181,12 @@
   padding: 15px;
   border-radius: 10px;
 }
+
 .serviceRedirect:first-child:hover {
   background: #035db1;
   transition: all ease 0.5s;
 }
+
 .serviceRedirect:nth-child(2):hover {
   background: #f5a210;
   transition: all ease 0.5s;
@@ -159,25 +196,36 @@
   background: #f62b2c;
   transition: all ease 0.5s;
 }
+
 .serviceRedirect:last-child:hover {
   background: #30ab48;
   transition: all ease 0.5s;
 }
+
 .serviceRedirect:hover a {
   color: #ffffff;
   transition: all ease 0.5s;
 }
+
 .servicesArea .serviceRedirect:hover .serviceBox .title {
   margin-top: 20px;
   color: #fff;
 }
+
 .serviceRedirect .arrowIcon {
-  float: right;
+  width: 30px;
+  margin-top: auto;
+  margin-left: auto;
 }
+
 .servicesArea .serviceBox {
   width: 100%;
   float: left;
   position: relative;
+  color: #000;
+}
+.serviceRedirect:hover .serviceBox {
+  color: #fff;
 }
 
 .servicesArea .serviceBox .subTitle {
@@ -200,10 +248,10 @@
 }
 
 .servicesArea .serviceBox h2 {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 600;
   color: #000;
-  line-height: 57px;
+  line-height: 48px;
 }
 
 .servicesArea .serviceBox .title {
@@ -496,6 +544,7 @@
 }
 
 .accordian-section .collapseBox .accordion .card {
+  border-bottom: 1px solid #efefef !important;
   border: 0;
 }
 
@@ -519,10 +568,12 @@
   text-align: left;
   padding: 10px 10px 10px 40px;
   background: transparent;
+  box-shadow: none;
+  text-decoration: none;
 }
 
 .accordian-section .collapseBox .accordion .card .card-header h5 .btn:before {
-  content: "\f067";
+  content: "\f068";
   /* You should use \ and not /*/
   font-family: "Font Awesome 5 Free";
   /* This is the correct font-family*/
@@ -538,7 +589,7 @@
   .card-header
   h5
   .btn.collapsed:before {
-  content: "\f068";
+  content: "\f067";
   padding-right: 5px;
   position: absolute;
   left: 0;
@@ -637,6 +688,7 @@
     height: 30px;
     opacity: 1;
   }
+
   100% {
     width: 150px;
     height: 150px;
@@ -645,7 +697,7 @@
 }
 
 .dark-love-home {
-  background-color: #0657ab;
+  background-color: #000000;
   background-size: cover;
   padding-bottom: 70px;
 }
@@ -676,8 +728,8 @@
 .list-addon-home li {
   width: calc(25% - 30px);
   border-radius: 2.5px;
-  border: solid 0.5px #1d3989 !important;
-  background-color: #1d3989;
+  border: solid 0.5px #141414 !important;
+  background-color: #141414;
   padding-right: 15px;
   border-bottom: 5px solid #ffffff47 !important;
   box-shadow: 0px 0px 47px 0px #49008e33;
@@ -733,7 +785,7 @@
   line-height: 1.41;
   letter-spacing: normal;
   margin: 0px;
-  text-align: left;
+  text-align: center;
   color: #131d2b;
 }
 
@@ -794,10 +846,12 @@
     -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
   }
+
   70% {
     -moz-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
   }
+
   100% {
     -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
@@ -839,7 +893,7 @@
   float: left;
   position: relative;
   padding-left: 130px;
-  min-height: 400px;
+  min-height: 480px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -882,15 +936,17 @@
   float: left;
   position: relative;
 }
+
 .clientProfilePic {
   width: 100%;
-    text-align: center;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
+  text-align: center;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
 }
+
 .clientProfilePic .userPic {
   width: 150px;
   height: 150px;
@@ -899,6 +955,7 @@
   position: relative;
   z-index: 2;
 }
+
 .clientProfilePic .userPic:after {
   position: absolute;
   width: 170px;
@@ -917,6 +974,7 @@
   position: relative;
   z-index: 1;
 }
+
 .testimonialBox
   .testi_Slider
   .carousel
@@ -1006,7 +1064,7 @@
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 30px;
-  color: #898e96;
+  color: #88c65c;
 }
 
 .testimonialBox
@@ -1071,7 +1129,7 @@
   background-color: #88c65c;
   right: -1.2rem;
   top: -5px;
-  left: -10px;
+  left: -3px;
 }
 
 .top-circle::after {
@@ -1317,6 +1375,7 @@
   line-height: 80px;
   transition: all 0.2s ease;
 }
+
 .newsletter .newsletterContent .newsLetterForm .newsletterBtn:focus {
   outline: none;
 }
@@ -1391,6 +1450,73 @@
 .address .addressConetnt .companyAddress .coporateOffice__address strong {
   font-weight: 600;
 }
+
+/* awards */
+.awards_accolades_parts {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.awa_rds {
+  width: 33%;
+}
+
+.awards_accolades_parts .awa_rds .img {
+  min-height: 239px;
+  background-repeat: no-repeat;
+  background-size: 20rem;
+  width: 100%;
+  background-position: top 39px center;
+  padding: 20px;
+  max-width: 238px;
+  margin: auto;
+}
+.awards_accolades_parts .awa_rds .img img {
+  width: 100%;
+}
+
+.hm_awcnt {
+  width: 90%;
+  margin: 10px auto 0;
+  text-align: center;
+}
+.hm_awcnt h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  line-height: normal;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.hm_awcnt p {
+  font-size: 16px;
+  line-height: 25px;
+  color: #fff;
+  font-weight: 400;
+}
+.awards_accolades_parts .awa_rds.awa_rds_one .img {
+  background-position: top -18rem center;
+}
+.awards_accolades_parts .awa_rds.awa_rds_two .img {
+  background-position: top -39rem center;
+}
+.awards_accolades_parts .awa_rds.awa_rds_three .img {
+  background-position: top -59rem center;
+}
+.awards_accolades_parts .awa_rds.awa_rds_four .img {
+  background-position: top 81% center;
+}
+.awards_accolades_parts .awa_rds.awa_rds_five .img {
+  background-position: bottom 3rem center;
+}
+.hm_awcnt h3 img {
+    height: 19px;
+    margin-left: 10px;
+}
+
 
 @media (min-width: 1366px) and (max-width: 1440px) {
   .portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-image {
@@ -1497,6 +1623,7 @@ section.stories {
   position: absolute;
   right: -419px;
 }
+
 .storiesImg.left img {
   left: -320px !important;
   right: auto;
@@ -1546,6 +1673,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .underConstruction {
     padding: 100px 20px !important;
   }
+
   .underConstruction .ConstructionContent h1 {
     font-size: 35px !important;
     margin: 18px 0 !important;
@@ -1555,20 +1683,25 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     height: auto !important;
     text-align: center;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
   }
+
   .testimonialBox .testi_Slider {
     padding: 0px 0px;
-}
+  }
+
   .testimonialBox .testi_Slider .carousel .carousel-indicators {
     width: 100%;
     display: inline-flex;
     top: 113%;
   }
+
   .testimonialBox .testi_Slider .carousel {
     padding-left: 0px;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -1577,6 +1710,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .clientImg {
     text-align: left;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -1588,43 +1722,54 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     border-radius: 50%;
     border: 4px solid #b1b1b12e;
   }
+
   .dddl-inner .right-inner {
     width: 100%;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
     margin: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 20px;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
   }
+
   .dddl-inner .left-inner {
     width: 100%;
     padding: 0 20px 5rem;
   }
+
   .dddl-inner {
     display: block;
   }
+
   .dddl-inner .left-inner h3 {
     font-size: 30px;
   }
+
   .actionBtn .caseStudies {
     border-radius: 5px;
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 60px;
     padding: 0 40px;
     font-size: 18px;
     margin: 0;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 60px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 50px;
     height: 50px;
@@ -1634,32 +1779,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 27px;
     line-height: 57px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 150px;
   }
+
   .address .addressConetnt .india {
     font-size: 92px;
     font-weight: 900;
-    color:#1e1e1e;
+    color: #1e1e1e;
     position: absolute;
     right: auto;
     top: auto;
     bottom: 0;
     left: 0;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 16px;
   }
+
   .address .addressConetnt {
     min-height: 470px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 30px;
     font-weight: 600;
   }
+
   .clb-social {
     right: 15px;
     transform-origin: bottom;
@@ -1674,15 +1826,19 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     left: 0px;
     display: none;
   }
+
   .clb-social-holder {
     display: inline-block;
   }
+
   li.clb-social-holder-follow {
     display: none;
   }
+
   li.clb-social-holder-dash {
     display: none;
   }
+
   .storiesImg img {
     margin-left: auto;
     filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
@@ -1691,9 +1847,20 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     position: relative;
     right: 0px;
   }
+
   .storiesImg.left img {
     left: 0px !important;
     right: auto;
+  }
+
+  .awa_rds {
+    width: 100%;
+  }
+  .awards_accolades_parts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column !important;
   }
 }
 
@@ -1702,19 +1869,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 42px;
     line-height: 54px;
   }
+
   #hero h2 {
     font-size: 14px;
     line-height: 24px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -1722,9 +1893,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .underConstruction {
     padding: 100px 20px !important;
   }
+
   .underConstruction .ConstructionContent h1 {
     font-size: 48px !important;
     margin: 18px 0 !important;
@@ -1734,17 +1907,21 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     height: auto !important;
     text-align: center;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
   }
+
   .testimonialBox .testi_Slider .carousel .carousel-indicators {
     width: 100%;
     display: inline-flex;
     top: 113%;
   }
+
   .testimonialBox .testi_Slider .carousel {
     padding-left: 10px;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -1753,6 +1930,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .clientImg {
     text-align: left;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -1764,16 +1942,20 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     border-radius: 50%;
     border: 4px solid #b1b1b12e;
   }
+
   .dddl-inner .right-inner {
     width: 100%;
   }
+
   .dddl-inner .left-inner {
     width: 100%;
     padding: 0 20px 5rem;
   }
+
   .dddl-inner {
     display: block;
   }
+
   .dddl-inner .left-inner h3 {
     font-size: 30px;
   }
@@ -1782,19 +1964,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
     margin: 0;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
@@ -1803,9 +1989,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 1rem 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -1818,9 +2006,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 18px;
     margin: 0;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 60px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 50px;
     height: 50px;
@@ -1830,12 +2020,15 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 27px;
     line-height: 57px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 150px;
   }
+
   .address .addressConetnt .india {
     font-size: 92px;
     font-weight: 900;
@@ -1846,13 +2039,16 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     bottom: 0;
     left: 0;
   }
+
   .address .addressConetnt {
     min-height: 470px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 30px;
     font-weight: 600;
   }
+
   .storiesImg img {
     margin-left: auto;
     filter: drop-shadow(32px 63px 16px rgba(0, 0, 0, 0.08));
@@ -1861,6 +2057,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     position: relative;
     right: 0px;
   }
+
   .storiesImg.left img {
     left: 0px !important;
     right: auto;
@@ -1872,19 +2069,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 56px;
     line-height: 70px;
   }
+
   #hero h2 {
     font-size: 14px;
     line-height: 24px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -1892,49 +2093,62 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -1944,6 +2158,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .clientName {
     font-size: 21px;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -1959,6 +2174,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
@@ -1969,31 +2185,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 1rem 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2003,14 +2227,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2020,18 +2247,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2051,19 +2283,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 60px;
     line-height: 70px;
   }
+
   #hero h2 {
     font-size: 16px;
     line-height: 28px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -2071,49 +2307,62 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -2123,6 +2372,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .clientName {
     font-size: 21px;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -2138,40 +2388,50 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .left-inner h3 {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
     margin: 0;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 1rem 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2181,14 +2441,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2198,18 +2461,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2229,19 +2497,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 60px;
     line-height: 70px;
   }
+
   #hero h2 {
     font-size: 14px;
     line-height: 24px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -2249,49 +2521,62 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -2301,6 +2586,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .clientName {
     font-size: 21px;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -2316,6 +2602,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
@@ -2326,31 +2613,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
     padding: 5px 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2360,14 +2655,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2377,18 +2675,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2408,19 +2711,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 54px;
     line-height: 60px;
   }
+
   #hero h2 {
     font-size: 16px;
     line-height: 30px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -2428,49 +2735,62 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -2480,6 +2800,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .clientName {
     font-size: 21px;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -2495,6 +2816,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
@@ -2505,31 +2827,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
-    padding:5px 0;
+    padding: 5px 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2539,14 +2869,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2556,18 +2889,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2587,19 +2925,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 66px;
     line-height: 72px;
   }
+
   #hero h2 {
     font-size: 16px;
     line-height: 24px;
   }
+
   .servicesArea .serviceBox h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .servicesArea .serviceBox h4 {
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
+
   .servicesArea .serviceBox p {
     margin: 10px 0;
   }
@@ -2607,49 +2949,65 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .servicesArea .serviceBox .subTitle {
     font-weight: 700;
   }
+
   .storiesContent .title {
     font-size: 26px;
     color: #fff;
     margin-bottom: 15px;
   }
+
   .storiesContent .bigTitle {
     font-size: 26px;
   }
+
   .storiesContent {
     min-height: 520px;
   }
+
   .capebilities .capebilities_heading .title {
     font-size: 30px;
   }
+
   .accordian-section .collapseBox .collapseHeading h3 {
     font-size: 21px;
     line-height: 30px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-header h5 .btn {
     font-size: 18px;
   }
+
   .accordian-section .collapseBox .accordion .card .card-body {
     font-weight: 400;
     font-size: 14px;
   }
+
   .list-addon-home li h4 {
     font-size: 21px;
   }
+
   .brandArea ul li .brandIcon img {
     height: 54px;
   }
+
   .list-addon-home li p {
     font-size: 15px;
     font-weight: 700;
   }
+
   .cta-texter-home h4 {
     font-size: 18px;
     font-weight: 500 !important;
   }
+
+  .dark-love-home .cta-texter-home h4 {
+    font-size: 30px;
+}
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -2659,6 +3017,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     .clientName {
     font-size: 21px;
   }
+
   .testimonialBox
     .testi_Slider
     .carousel
@@ -2674,6 +3033,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 30px;
     letter-spacing: 0;
   }
+
   .dddl-inner .left-inner p {
     font-size: 16px;
     line-height: 24px;
@@ -2684,31 +3044,39 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 500;
     font-size: 14px;
   }
+
   .list-addon-home {
     margin-bottom: 30px;
   }
+
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
   }
+
   .dddl-inner .right-inner ul li .text h4 {
     font-size: 24px;
     margin-bottom: 0;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 20px;
   }
+
   .dddl-inner .left-inner {
     width: 64.285%;
     padding: 0 4rem 0rem;
   }
+
   .dddl-inner .right-inner ul li .text p {
     font-size: 16px;
     margin: 0 0 0rem;
   }
+
   .dddl-inner .right-inner ul li {
-    padding:10px 0;
+    padding: 10px 0;
   }
+
   .dddl-inner .left-inner .number::after {
     background-color: #88c65c;
     right: -1rem;
@@ -2718,14 +3086,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
   }
+
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .form-control {
     height: 70px;
     padding: 0 40px;
     font-size: 20px;
   }
+
   .newsletter .newsletterContent .newsLetterForm .newsletterBtn {
     width: 54px;
     height: 54px;
@@ -2735,18 +3106,23 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-size: 33px;
     line-height: 56px;
   }
+
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
   }
+
   .address .addressConetnt .india {
     font-size: 115px;
   }
+
   .address .addressConetnt .companyAddress .coporateOfficeHeading {
     font-size: 36px;
   }
+
   .address .addressConetnt .companyAddress .coporateOffice__address {
     font-size: 18px;
   }
+
   .address .addressConetnt .chd-icon {
     max-width: 200px;
   }
@@ -2771,17 +3147,20 @@ img.underCont {
   right: 0;
   margin: auto;
 }
+
 .underConstruction {
   width: 100%;
   height: 100vh;
   text-align: center;
   padding: 109px;
 }
+
 .underConstruction .ConstructionContent {
   width: 100%;
   float: left;
   position: relative;
 }
+
 .underConstruction .ConstructionContent h1 {
   font-size: 72px;
   font-weight: 900;
@@ -2794,4 +3173,62 @@ img.underCont {
   padding: 45px 80px;
   border-radius: 0px;
   overflow: hidden;
+}
+
+.industry-workfor {
+  background: transparent;
+}
+
+.industry-workfor {
+  background: #ffffff0d;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  border: 1px solid #00000008;
+  overflow: hidden;
+}
+
+.industry-workfor img {
+  width: 55px;
+}
+
+.industry-workfor h6 {
+  margin: 0 0 0 15px;
+}
+
+.hoshd:hover {
+  box-shadow: 0 15px 39px -11px #46638e45;
+  transform: translate(0, -5px);
+  transition: 0.5s ease-in-out;
+  background: #ffa3194f;
+  position: relative;
+}
+
+.hoshd:before {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: #f7d6a5;
+  content: "";
+  border-radius: 50%;
+  right: -72px;
+  opacity: 0;
+  transition: all ease 0.5s;
+  top: 100px;
+}
+
+.hoshd:hover:before {
+  opacity: 1;
+  right: -35px;
+  transition: all ease 0.5s;
+  top: 18px;
+  z-index: -1;
+}
+
+.common-heading h2 {
+  font-size: 54px;
+  font-weight: 700;
 }

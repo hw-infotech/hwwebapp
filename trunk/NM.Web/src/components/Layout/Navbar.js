@@ -1,67 +1,251 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React, { Component, useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import CommonFunctionality from "../../Shared/CommonFunctionality";
 
-class NavBar extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      isTop: false,
-      
-    }
-    this._handleScroll = this._handleScroll.bind(this);
-  }
+const NavBar = ({ NavbarStyle }) => {
+  console.log("NavbarStyle ", NavbarStyle);
+  const history = useHistory();
+  const [state, setState] = useState({ isTop: false });
 
-  componentDidMount(){
-    window.onscroll = () => this._handleScroll();
-  }  
+  const onClickGoTo = (link) => {
+    history.push(link);
+  };
 
-  _handleScroll() {
+  useEffect(() => {
+    window.onscroll = () => _handleScroll();
+  }, []);
+
+  const _handleScroll = () => {
     if (document.documentElement.scrollTop > 10) {
-      this.setState({ isTop: true });
+      setState({ isTop: true });
     } else {
-      this.setState({ isTop: false });
+      setState({ isTop: false });
     }
-  }
-  render() {
-    return (
-      <header id="header" className={this.state.isTop ? 'fixed-top header-scrolled scroll' : 'fixed-top header-scrolled'} onScroll={this._handleScroll}>
-      <div className="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/"><img src="assets/img/logo.png" width="250px"/></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse " id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                <Link to="/">Home </Link>
-                </li>
-                <li class="nav-item dropdown">
-                <a href="/services_main" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Services</a>
+  };
+  const ClassName =
+    NavbarStyle == "appDevelopment"
+      ? "appDevelopment"
+      : NavbarStyle == "appDevelopment"
+      ? "webDevelopment"
+        ? "webDevelopment"
+        : ""
+      : "";
 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link class="dropdown-item" to="/app-development">App Development</Link>
-                  <Link class="dropdown-item" to="/web-development">Web Development</Link>
-                  <Link class="dropdown-item" to="/ui-ux-design">UI  UX Design</Link>
-                  <Link class="dropdown-item" to="/seo">Seo</Link>
-                  <Link class="dropdown-item" to="/graphic-design">Graphics Design</Link>
-                  
+      console.log("ClassName",ClassName);
+
+  return (
+    <header
+      id="header"
+      className={
+        state.isTop
+          ? "fixed-top header-scrolled scroll"
+          : "fixed-top header-scrolled"
+      }
+      onScroll={_handleScroll}
+    >
+      <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a className="navbar-brand" href="/">
+            <img src="assets/img/logo.png" width="250px" />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            className="collapse navbar-collapse menuLinksBar "
+            id="navbarNav"
+          >
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <Link to="/">Home </Link>
+              </li>
+              <li className="nav-item dropdown position-static">
+                <a
+                  href="/services"
+                  onClick={() => {
+                    onClickGoTo("/services");
+                  }}
+                  id="navbarDropdown"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Services <span className="dropIcon"></span>
+                </a>
+
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div className="dropdownmenus">
+                    <Link className="dropdown-item" to="/app-development">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/appNavIcon.png" />
+                        App Development
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/web-development">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/webNavIcon.png" /> Web Development
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/ui-ux-design">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/uiUxNavIcon.png" /> UI UX Design
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/seo">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/seoNavIcon.png" />
+                        Seo
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/graphic-design">
+                      <div className="servicesLinksBox">
+                        <img src="assets/img/graphicsNavIcon.png" />
+                        Graphics Design
+                      </div>
+                    </Link>
+                  </div>
+
+                  <div className="integratedLinks">
+                    <div className="webformsBottom">
+                      <p>Follow Us</p>
+                      <div className="socialintegratedLinks">
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.facebook.com/nestormindpvtltd"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/facebookNavIcon.png"
+                            alt="Facebook"
+                            title="Facebook"
+                            loading="lazy"
+                          />
+                          Facebook
+                        </a>
+
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.instagram.com/nestormindpvtltd/"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/instagramNavIcon.png"
+                            alt="Google Workspace"
+                            title="Google Workspace"
+                            loading="lazy"
+                          />
+                          Instagram
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.linkedin.com/company/nestormind/"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/linkedinNavIcon.png"
+                            alt="LinkedIn"
+                            title="LinkedIn"
+                            loading="lazy"
+                          />
+                          LinkedIn
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://twitter.com/nestormindpvtld"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/twitterNestormind.svg"
+                            alt="LinkedIn"
+                            title="LinkedIn"
+                            loading="lazy"
+                          />
+                          Twitter
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://dribbble.com/nestormindpvtltd"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/dribbbleNestormind.svg"
+                            alt="LinkedIn"
+                            title="Dribbble"
+                            loading="lazy"
+                          />
+                          Dribbble
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.behance.net/nestormindpvtltd"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/behanceNestormind.svg"
+                            alt="LinkedIn"
+                            title="Dribbble"
+                            loading="lazy"
+                          />
+                          Behance
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://join.skype.com/invite/hTYrZnJuUsHE"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/skypeNestormind.svg"
+                            alt="LinkedIn"
+                            title="Skype"
+                            loading="lazy"
+                          />
+                          Skype
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/upworkNestormind.svg"
+                            alt="LinkedIn"
+                            title="Skype"
+                            loading="lazy"
+                          />
+                          upwork
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                </li>
-                <li class="nav-item">
+              </li>
+              <li className="nav-item">
                 <Link to="/about-us">About Us</Link>
-                </li>
-                <li class="nav-item">
-                <Link to="/blogs">Blog</Link>
-                </li>
-                <li class="nav-item">
+              </li>
+              {/* <li className="nav-item">
+                <Link to="/under-mantainence">Blog</Link>
+              </li> */}
+
+              <li className="nav-item">
+                <Link to="/career">Career</Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-  
+              </li>
+            </ul>
+          </div>
+        </nav>
+
         {/* <nav className="nav-menu d-none d-lg-block">
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -89,10 +273,9 @@ class NavBar extends Component {
         </nav>
   
         <a href="#about" className="get-started-btn scrollto">Get Quote</a> */}
-  
       </div>
     </header>
-    )
-  }
-}
+  );
+};
+
 export default NavBar;

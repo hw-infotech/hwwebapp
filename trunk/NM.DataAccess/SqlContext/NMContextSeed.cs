@@ -119,6 +119,12 @@ namespace NM.DataAccess.SqlContext
 
                         await context.SaveChangesAsync();
                     }
+                    if (!context.Resume.Any())
+                    {
+                        await context.Resume.AddRangeAsync(GetResume());
+
+                        await context.SaveChangesAsync();
+                    }
 
                 }
                 catch (Exception ex)
@@ -251,8 +257,8 @@ namespace NM.DataAccess.SqlContext
         {
             return new List<Contact>()
             {
-                new Contact("Will Smith","smith@mailinator.com","save the content of will smith"),
-                new Contact("Robert Downey","Robert@mailinator.com","save the content of will smith")
+                new Contact("Web,Mobile","Will Smith","smith@mailinator.com","Nestormind","save the content of will smith"),
+                new Contact("Web,Mobile","Robert Downey","Robert@mailinator.com","Hindwaves","save the content of will smith")
             };
         }
         private IEnumerable<Testimonials> GetTestimonials()
@@ -262,5 +268,13 @@ namespace NM.DataAccess.SqlContext
                 new Testimonials("Johan","It is good company","PMS","www.image.com","Manager")
             };
         }
+
+        private IEnumerable<Resume> GetResume()
+        {
+            return new List<Resume>()
+          {
+                new Resume("Document",".pdf","/Document/fileUpload",200)
+          };
+      }
     }
 }

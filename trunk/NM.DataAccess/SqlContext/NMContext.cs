@@ -23,6 +23,7 @@ namespace NM.DataAccess.SqlContext
         public DbSet<Client> Clients { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Testimonials> Testimonials { get; set; }
+        public DbSet<Resume> Resume { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -41,7 +42,8 @@ namespace NM.DataAccess.SqlContext
             builder.ApplyConfiguration(new TechnologyConfiguration());
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new TestimonialsConfiguration());
-
+            builder.ApplyConfiguration(new ResumeConfiguration());
+            
         }
 
         private IDbContextTransaction _currentTransaction;

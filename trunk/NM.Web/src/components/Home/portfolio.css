@@ -184,6 +184,155 @@
   opacity: 0.4;
 }
 
+/*  */
+
+/* Web Stories Css */
+
+.webPortfolioPanel {
+  background-color: #000;
+  padding: 200px 0 100px;
+  position: relative;
+  color: #fff;
+}
+.webPortfolioPanel.appPort {
+  background-color: #c72137;
+}
+.webPortfolioPanel.uiUxPort {
+  background-color: #243f86;
+}
+.webPortfolioPanel.graphicPort {
+  background-color: #0f8d47;
+}
+.webPortfolioPanel.seoPort {
+    background-color: #435466;
+}
+.webPortfolioPanel.graphicPort .bigtitle {
+  transform: rotate(90deg);
+  top: -58px;
+  right: 109px;
+  left: auto;
+  font-size: 155px;
+}
+.webPortfolioPanel.appPort .bigtitle {
+  font-size: 240px;
+  position: absolute;
+  bottom: -48px;
+  right: 0px;
+  left: auto;
+  color: #ffffff1a;
+  font-weight: 700;
+}
+.webPortfolioPanel.uiUxPort .bigtitle {
+  transform: rotate(270deg);
+  top: 0;
+  left: 214px;
+  right: auto;
+}
+.webPortfolioPanel .bigtitle {
+  font-size: 155px;
+  position: absolute;
+  bottom: -48px;
+  left: 0px;
+  color: #ffffff1a;
+  font-weight: 700;
+}
+.webPortfolioPanel::before {
+  background-image: url(/assets/img/oh_bg-min.png);
+  padding: 60px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  left: 0;
+  top: 0;
+  background-size: cover;
+}
+.showcaseHeadline {
+  font-size: 13px;
+  font-weight: 700;
+}
+.showcaseHeadline label {
+  font-weight: 400;
+}
+
+.showcaseHeadline .showcaseheader.title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 60px;
+}
+.showcaseHeadline .showcaseSubheader.subtitle {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
+.portfolioWebLeftContent {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  justify-content: center;
+}
+.portfolioWebLeftContent .tiltBox {
+  width: 100%;
+}
+.portfolioWebLeftContent .tiltImagePanel {
+  width: 100%;
+}
+.portfolioWebLeftContent .tiltImagePanel img {
+  width: 100%;
+}
+.mobileStoriesBox .deviceHolder {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.mobileStoriesBox .deviceHolder .deviceFrame {
+  position: relative;
+  z-index: 1;
+}
+.mobileStoriesBox .deviceHolder .deviceFrame img {
+  width: 100%;
+}
+.mobileStoriesBox .deviceHolder .deviceScreen {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  max-width: auto;
+  width: auto;
+  z-index: -1;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.mobileStoriesBox.phone .deviceScreen {
+  margin-left: 5.9%;
+  margin-top: 5%;
+  width: -webkit-calc(100% - 11.8%);
+  width: calc(100% - 11.8%);
+}
+.mobileStoriesBox .deviceHolder .deviceScreen img {
+  width: 100%;
+}
+.webPortFolioBox .owl-next,
+.webPortFolioBox .owl-prev {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background: #fbfbfb79 !important;
+  border-radius: 50% !important;
+  color: black !important;
+  font-size: 32px !important;
+  line-height: 40px !important;
+  transition: all ease 0.5s;
+}
+.webPortFolioBox .owl-next:hover,
+.webPortFolioBox .owl-prev:hover {
+  background: #fbfbfbd1 !important;
+}
+.webPortFolioBox .owl-nav {
+  text-align: left !important;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   .portfolioBoxPanel .bigTitle {
     font-size: 76px;
@@ -196,50 +345,81 @@
   .SwipeSlider {
     display: flex;
     flex-direction: column;
-}
+  }
   .SwipeSlider .swiperLeft {
     width: 100%;
     display: block;
-}
-.SwipeSlider .swiperRight {
-  width: 100%;
-}
-.contant h3 {
-  font-size: 16px;
-  font-weight: 500;
-}
-.contant p {
-  font-size: 13px;
-}
-.contant {
-  padding: 15px;
-}
-.owl-theme .owl-nav {
-  display: none;
-}
-.owl-theme .owl-dots {
-  display: none;
-}
-.portfolioBoxPanel {
-  overflow: hidden;
-}
-.stackLogo .brandlogoBox img {
-  height: 50px !important;
-}
-.SwipeSlider .swiperLeft h5 {
-  font-size: 15px;
-}
-.SwipeSlider .swiperLeft h4 {
-  font-size: 30px;
-}
-.SwipeSlider .swiperLeft h6 {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-.portfolioBoxPanel .circleBluer {
-  height: 60px;
-  width: 60px;
-}
+  }
+  .SwipeSlider .swiperRight {
+    width: 100%;
+  }
+  .contant h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .contant p {
+    font-size: 13px;
+  }
+  .contant {
+    padding: 15px;
+  }
+  .owl-theme .owl-nav {
+    display: none;
+  }
+  .owl-theme .owl-dots {
+    display: none;
+  }
+  .portfolioBoxPanel {
+    overflow: hidden;
+  }
+  .stackLogo .brandlogoBox img {
+    height: 50px !important;
+  }
+  .SwipeSlider .swiperLeft h5 {
+    font-size: 15px;
+  }
+  .SwipeSlider .swiperLeft h4 {
+    font-size: 30px;
+  }
+  .SwipeSlider .swiperLeft h6 {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .portfolioBoxPanel .circleBluer {
+    height: 60px;
+    width: 60px;
+  }
+
+  /* */
+  .webPortfolioPanel {
+    background-color: #000;
+    padding: 70px 20px 30px;
+    margin-bottom: 30px;
+    margin-top: 72px;
+  }
+  .showcaseHeadline .showcaseheader.title {
+    font-size: 28px;
+    line-height: 44px;
+  }
+  .portfolioWebLeftContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .webPortfolioPanel.appPort .bigtitle {
+    font-size: 60px;
+    bottom: -15px;
+  }
+    .webPortfolioPanel .bigtitle {
+    font-size: 113px!important;
+    bottom: -21px;
+
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 575px) {
@@ -254,48 +434,79 @@
   .SwipeSlider {
     display: flex;
     flex-direction: column;
-}
+  }
   .SwipeSlider .swiperLeft {
     width: 100%;
     display: block;
     margin-bottom: 30px;
     padding-right: 0;
-}
-.SwipeSlider .swiperRight {
-  width: 100%;
-}
-.contant h3 {
-  font-size: 16px;
-  font-weight: 500;
-}
-.contant p {
-  font-size: 13px;
-}
-.contant {
-  padding: 15px;
-}
-.owl-theme .owl-nav {
-  display: none;
-}
-.owl-theme .owl-dots {
-  display: none;
-}
-.portfolioBoxPanel {
-  overflow: hidden;
-}
-.stackLogo .brandlogoBox img {
-  height: 50px !important;
-}
-.SwipeSlider .swiperLeft h5 {
-  font-size: 20px;
-}
-.SwipeSlider .swiperLeft h4 {
-  font-size: 30px;
-}
-.portfolioBoxPanel .circleBluer {
-  height: 60px;
-  width: 60px;
-}
+  }
+  .SwipeSlider .swiperRight {
+    width: 100%;
+  }
+  .contant h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .contant p {
+    font-size: 13px;
+  }
+  .contant {
+    padding: 15px;
+  }
+  .owl-theme .owl-nav {
+    display: none;
+  }
+  .owl-theme .owl-dots {
+    display: none;
+  }
+  .portfolioBoxPanel {
+    overflow: hidden;
+  }
+  .stackLogo .brandlogoBox img {
+    height: 50px !important;
+  }
+  .SwipeSlider .swiperLeft h5 {
+    font-size: 20px;
+  }
+  .SwipeSlider .swiperLeft h4 {
+    font-size: 30px;
+  }
+  .portfolioBoxPanel .circleBluer {
+    height: 60px;
+    width: 60px;
+  }
+
+  /* */
+   .webPortfolioPanel {
+    background-color: #000;
+    padding: 70px 20px 30px;
+    margin-bottom: 30px;
+    margin-top: 72px;
+  }
+  .showcaseHeadline .showcaseheader.title {
+    font-size: 28px;
+    line-height: 44px;
+  }
+  .portfolioWebLeftContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .webPortfolioPanel.appPort .bigtitle {
+    font-size: 60px;
+    bottom: -15px;
+  }
+  .webPortfolioPanel .bigtitle {
+    font-size: 113px!important;
+    bottom: -21px;
+
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -310,50 +521,80 @@
   .SwipeSlider {
     display: flex;
     flex-direction: column;
-}
+  }
   .SwipeSlider .swiperLeft {
     width: 100%;
     display: block;
     margin-bottom: 30px;
     padding-right: 0;
-}
-.SwipeSlider .swiperRight {
-  width: 100%;
-}
-.contant h3 {
-  font-size: 16px;
-  font-weight: 500;
-}
-.contant p {
-  font-size: 13px;
-}
-.contant {
-  padding: 15px;
-}
-.owl-theme .owl-nav {
-  display: none;
-}
-.owl-theme .owl-dots {
-  display: none;
-}
-.portfolioBoxPanel {
-  overflow: hidden;
-}
-.stackLogo .brandlogoBox img {
-  height: 50px !important;
-}
-.SwipeSlider .swiperLeft h5 {
-  font-size: 24px;
-}
-.SwipeSlider .swiperLeft h4 {
-  font-size: 36px;
-}
-.portfolioBoxPanel .circleBluer {
-  height: 60px;
-  width: 60px;
-}
-}
+  }
+  .SwipeSlider .swiperRight {
+    width: 100%;
+  }
+  .contant h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .contant p {
+    font-size: 13px;
+  }
+  .contant {
+    padding: 15px;
+  }
+  .owl-theme .owl-nav {
+    display: none;
+  }
+  .owl-theme .owl-dots {
+    display: none;
+  }
+  .portfolioBoxPanel {
+    overflow: hidden;
+  }
+  .stackLogo .brandlogoBox img {
+    height: 50px !important;
+  }
+  .SwipeSlider .swiperLeft h5 {
+    font-size: 24px;
+  }
+  .SwipeSlider .swiperLeft h4 {
+    font-size: 36px;
+  }
+  .portfolioBoxPanel .circleBluer {
+    height: 60px;
+    width: 60px;
+  }
+ /* */
+  .webPortfolioPanel {
+    background-color: #000;
+    padding: 70px 20px 30px;
+    margin-bottom: 30px;
+    margin-top: 72px;
+  }
 
+  .showcaseHeadline .showcaseheader.title {
+    font-size: 28px;
+    line-height: 44px;
+  }
+  .portfolioWebLeftContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .webPortfolioPanel.appPort .bigtitle {
+    font-size: 60px;
+    bottom: -15px;
+  }
+   .webPortfolioPanel .bigtitle {
+    font-size: 113px!important;
+    bottom: -21px;
+
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 991px) {
   .portfolioBoxPanel .bigTitle {
@@ -367,48 +608,79 @@
   .SwipeSlider {
     display: flex;
     flex-direction: column;
-}
+  }
   .SwipeSlider .swiperLeft {
     width: 100%;
     display: block;
     margin-bottom: 30px;
     padding-right: 0;
-}
-.SwipeSlider .swiperRight {
-  width: 100%;
-}
-.contant h3 {
-  font-size: 30px;
-  font-weight: 500;
-}
-.contant p {
-  font-size: 16px;
-}
-.contant {
-  padding: 30px;
-}
-.owl-theme .owl-nav {
-  display: none;
-}
-.owl-theme .owl-dots {
-  display: none;
-}
-.portfolioBoxPanel {
-  overflow: hidden;
-}
-.stackLogo .brandlogoBox img {
-  height: 50px !important;
-}
-.SwipeSlider .swiperLeft h5 {
-  font-size: 30px;
-}
-.SwipeSlider .swiperLeft h4 {
-  font-size: 42px;
-}
-.portfolioBoxPanel .circleBluer {
-  height: 60px;
-  width: 60px;
-}
+  }
+  .SwipeSlider .swiperRight {
+    width: 100%;
+  }
+  .contant h3 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .contant p {
+    font-size: 16px;
+  }
+  .contant {
+    padding: 30px;
+  }
+  .owl-theme .owl-nav {
+    display: none;
+  }
+  .owl-theme .owl-dots {
+    display: none;
+  }
+  .portfolioBoxPanel {
+    overflow: hidden;
+  }
+  .stackLogo .brandlogoBox img {
+    height: 50px !important;
+  }
+  .SwipeSlider .swiperLeft h5 {
+    font-size: 30px;
+  }
+  .SwipeSlider .swiperLeft h4 {
+    font-size: 42px;
+  }
+  .portfolioBoxPanel .circleBluer {
+    height: 60px;
+    width: 60px;
+  }
+   /* */
+  .webPortfolioPanel {
+    background-color: #000;
+    padding: 70px 20px 30px;
+    margin-bottom: 30px;
+    margin-top: 72px;
+  }
+
+  .showcaseHeadline .showcaseheader.title {
+    font-size: 28px;
+    line-height: 44px;
+  }
+  .portfolioWebLeftContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .webPortfolioPanel.appPort .bigtitle {
+    font-size: 60px;
+    bottom: -15px;
+  }
+    .webPortfolioPanel .bigtitle {
+    font-size: 113px!important;
+    bottom: -21px;
+
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -423,46 +695,82 @@
   .SwipeSlider {
     display: flex;
     flex-direction: column;
-}
+  }
   .SwipeSlider .swiperLeft {
     width: 100%;
     display: block;
     margin-bottom: 30px;
     padding-right: 0;
+  }
+  .SwipeSlider .swiperRight {
+    width: 100%;
+  }
+  .contant h3 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .contant p {
+    font-size: 16px;
+  }
+  .contant {
+    padding: 30px;
+  }
+  .owl-theme .owl-nav {
+    display: none;
+  }
+  .owl-theme .owl-dots {
+    display: none;
+  }
+  .portfolioBoxPanel {
+    overflow: hidden;
+  }
+  .stackLogo .brandlogoBox img {
+    height: 50px !important;
+  }
+  .SwipeSlider .swiperLeft h5 {
+    font-size: 30px;
+  }
+  .SwipeSlider .swiperLeft h4 {
+    font-size: 42px;
+  }
+  .portfolioBoxPanel .circleBluer {
+    height: 60px;
+    width: 60px;
+  }
+
+   /* */
+  .webPortfolioPanel {
+    background-color: #000;
+    padding: 130px 20px 30px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+  }
+
+  .showcaseHeadline .showcaseheader.title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .showcaseHeadline .showcaseSubheader.subtitle {
+    font-weight: 400;
+    font-size: 18px;
 }
-.SwipeSlider .swiperRight {
-  width: 100%;
-}
-.contant h3 {
-  font-size: 30px;
-  font-weight: 500;
-}
-.contant p {
-  font-size: 16px;
-}
-.contant {
-  padding: 30px;
-}
-.owl-theme .owl-nav {
-  display: none;
-}
-.owl-theme .owl-dots {
-  display: none;
-}
-.portfolioBoxPanel {
-  overflow: hidden;
-}
-.stackLogo .brandlogoBox img {
-  height: 50px !important;
-}
-.SwipeSlider .swiperLeft h5 {
-  font-size: 30px;
-}
-.SwipeSlider .swiperLeft h4 {
-  font-size: 42px;
-}
-.portfolioBoxPanel .circleBluer {
-  height: 60px;
-  width: 60px;
-}
+  .portfolioWebLeftContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .webPortfolioPanel.appPort .bigtitle {
+    font-size: 60px;
+    bottom: -15px;
+  }
+  .webPortfolioPanel .bigtitle {
+    font-size: 113px!important;
+    bottom: -21px;
+
+  }
+  .webPortfolioPanel.uiUxPort .bigtitle {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0px;
+    right: auto;
+  }
 }

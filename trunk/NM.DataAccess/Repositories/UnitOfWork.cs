@@ -65,6 +65,15 @@ namespace NM.DataAccess.Repositories
         {
             get { return new BaseRepository<Testimonials>(GetContext()); }
         }
+        public IRepository<Contact> ContactRepository
+        {
+            get { return new BaseRepository<Contact>(GetContext()); }
+        }
+        public IRepository<Resume> ResumeRepository
+        {
+            get { return new BaseRepository<Resume>(GetContext()); }
+        }
+
 
     }
 }

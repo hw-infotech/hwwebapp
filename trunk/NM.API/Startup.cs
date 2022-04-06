@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Http;
 using NM.DataAccess.Interface;
 using NM.DataAccess.Repositories;
 using NM.Utility;
+using Microsoft.OpenApi.Models;
 
 namespace NM.API
 {
@@ -42,6 +43,7 @@ namespace NM.API
             services.AddTransient<IClientBusiness, ClientBusiness>();
             services.AddTransient<INewsLetterBusiness, NewsLetterBusiness>();
             services.AddTransient<ITestimonialsBusiness, TestimonialsBusiness>();
+            services.AddTransient<IContactBusiness, ContactBusiness>();
 
             //add changes
             services.Configure<AppSettingsModel>(options => Configuration.GetSection("Jwt").Bind(options));
@@ -50,6 +52,18 @@ namespace NM.API
             //services.AddMvcCore().AddAuthorization();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NM.API", Version = "v1" });
+                c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+                {
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Scheme = "bearer"
+                });
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +75,10 @@ namespace NM.API
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors(builder =>
+            builder.AllowAnyOrigin()
+           .AllowAnyHeader()
+           .AllowAnyMethod());
             app.UseRouting();
 
             app.UseAuthorization();
@@ -70,6 +87,13 @@ namespace NM.API
             {
                 endpoints.MapControllers();
             });
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "NM.API");
+            });
         }
     }
+
 }
