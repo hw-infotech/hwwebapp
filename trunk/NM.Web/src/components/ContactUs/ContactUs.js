@@ -15,7 +15,7 @@ const ContactUsContent = (props) => {
     const dispatch = useDispatch()
     const [services, setServices] = useState([])
 
-    const notify = () => toast.success("Successfully Submitted")
+
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });

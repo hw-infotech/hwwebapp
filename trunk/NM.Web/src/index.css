@@ -15,3 +15,14 @@ body::-webkit-scrollbar-thumb {
 .Toastify__close-button--light {
   display: none !important ;
 }
+.css{
+  background-color: red;
+}
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  color: white !important;
+  border-radius: 8px !important;
+  background: green!important;
+  border: 1px solid rgb(190, 50, 50) !important;
+  box-shadow: 0px 1px 5px rgba(248, 175, 175, 0.1) !important;
+  text-align: center;
+}
