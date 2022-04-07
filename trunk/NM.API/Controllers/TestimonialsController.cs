@@ -14,7 +14,7 @@ using NM.Utility;
 
 namespace NM.API.Controllers
 {
-    [Route("api/TestimonialsController")]
+    [Route("api/[controller]")]
     [ApiController]
     public class TestimonialsController : ControllerBase
     {

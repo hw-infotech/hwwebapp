@@ -120,14 +120,11 @@ namespace NM.Business
                 unitOfWork.ContactRepository.Update(contact);
                 result = ResultModel<bool>.GetResponseModal(true, (int)Enums.StatusCode.OK, true);
                 return result;
-            }
 
-            contactModal.UpdatedBy = 1;
-            contactModal.UpdatedOn = DateTime.UtcNow;
-            contactModal.CreatedBy = contact.CreatedBy;
-            contactModal.CreatedOn = contact.CreatedOn;
-            mapper.Map(contactModal, contact);
-            unitOfWork.ContactRepository.Update(contact);
+            }
+            contact = new Contact(contactModal.Services, contactModal.Name, contactModal.Email, contactModal.CompanyName, contactModal.ProjectDescription);
+            contact.CreatedBy = 1;
+            unitOfWork.ContactRepository.Insert(contact);
             result = ResultModel<bool>.GetResponseModal(true, (int)Enums.StatusCode.OK, true);
             return result;
 
@@ -135,3 +132,5 @@ namespace NM.Business
 
     }
 }
+
+
