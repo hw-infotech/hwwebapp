@@ -17,9 +17,9 @@ using System.IO;
 
 namespace NM.API.Controllers
 {
-    [Route("Api/ResumeController")]
+    [Route("api/ResumeController")]
     [ApiController]
-    [Authorize]
+  //  [Authorize]
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ResumeController : Controller
     {

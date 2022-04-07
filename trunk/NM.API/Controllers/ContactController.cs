@@ -40,7 +40,6 @@ namespace NM.API.Controllers
                 ContactModel contactModel = new ContactModel();
                 mapper.Map(contactVM, contactModel);
                 contactModel.Services = String.Join(',', contactVM.Services);
-                //contactModel.Services = contactVM.Services.ToString();
                 var result = contactBusiness.CreateContact(contactModel);
                 mapper.Map(result, resultVM);
                 return resultVM;

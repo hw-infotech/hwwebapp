@@ -10,10 +10,11 @@ namespace NM.API.Application.Models
 
     {
         public string BsonId { get; set; }
+        public List<string> Services { get;  set; }
+
         [Required(ErrorMessage = "Name is required")]
         [MaxLength(100, ErrorMessage = "Name can't be more than 50 characters"),
-          MinLength(3, ErrorMessage = "Name can't be less than 3 characters")]
-        public List<string> Services { get;  set; }
+        MinLength(3, ErrorMessage = "Name can't be less than 3 characters")]
         public string Name { get;  set; }
         public string Email { get;  set; }
         public string CompanyName { get;  set; }
