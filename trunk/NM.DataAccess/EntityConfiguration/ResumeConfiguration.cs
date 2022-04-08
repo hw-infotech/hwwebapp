@@ -18,7 +18,6 @@ namespace NM.DataAccess.EntityConfiguration
 
             tableConfiguration.Property(c => c.DocumentName).HasMaxLength(500);
             tableConfiguration.Property(c => c.DocumentExtension).HasMaxLength(500);
-            tableConfiguration.Property(c => c.DocumentPath);
             tableConfiguration.Property(c => c.DocumentSize).HasMaxLength(500);
             tableConfiguration.Property(c => c.CreatedBy).HasMaxLength(100);
             tableConfiguration.Property(c => c.CreatedOn).HasMaxLength(100);
