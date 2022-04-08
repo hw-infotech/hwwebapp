@@ -29,7 +29,11 @@ namespace NM.API.Controllers
             contactBusiness = _contactBusiness;
         }
         #endregion
-
+        /// <summary>
+        /// contact create first we chech email exist or not when email exist in database then update the contact
+        /// </summary>
+        /// <param name="contactVM"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("create")]
         public ActionResult<ResultVM<bool>> Create(ContactVM contactVM)

@@ -6,12 +6,16 @@ namespace NM.Utility
 {
     public class AppSettingsModel
     {
-        public string MailHost { get; set; }
-        public int MailPortNumber { get; set; }
-        public bool MailEnableSSL { get; set; }
-        public string MailPassword { get; set; }
-        public string MailUserName { get; set; }
-        public string MailFromName { get; set; }
+        public static  string MailHost { get; set; }
+        public static int MailPortNumber { get; set; }
+        public static bool MailEnableSSL { get; set; }
+        public static string MailPassword { get; set; }
+        public static string MailUserName { get; set; }
+        public static string MailFromName { get; set; }
+        public static string ResumeRequest { get; set; }
+
+        //For Email Template
+        public static string ResumeTemplate { get; set; }
         public string EncryptionKey { get; set; }
         public string DefaultConnection { get; set; }
         #region JWT Properties
@@ -22,3 +26,4 @@ namespace NM.Utility
         #endregion
     }
 }
+

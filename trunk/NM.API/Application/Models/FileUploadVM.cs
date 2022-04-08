@@ -9,8 +9,6 @@ namespace NM.API.Application.Models
 {
     public class FileUploadVM
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
         public ICollection<IFormFile> Files { get; set; }
     }
 }

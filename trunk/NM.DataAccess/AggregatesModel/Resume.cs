@@ -8,13 +8,11 @@ namespace NM.DataAccess.AggregatesModel
     {
         public string DocumentName { get; private set; }
         public string DocumentExtension { get; private set; }
-        public string DocumentPath { get; private set; }
         public long DocumentSize { get; private set; }
-        public Resume(string documentName, string documentExtension, string documentPath, long documentSize)
+        public Resume(string documentName, string documentExtension, long documentSize)
         {
             this.DocumentName = documentName;
             this.DocumentExtension = documentExtension;
-            this.DocumentPath = documentPath;
             this.DocumentSize = documentSize;
         }
     }

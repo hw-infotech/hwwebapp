@@ -11,7 +11,6 @@ namespace NM.API.Application.Models
         public string BsonId { get; set; }
         public string DocumentName { get;  set; }
         public string DocumentExtension { get;  set; }
-        public string DocumentPath { get;  set; }
         public long DocumentSize { get;  set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedOn { get; set; }
