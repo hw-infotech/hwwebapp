@@ -38,15 +38,9 @@ const UploadCv = (props) => {
                                     try {
                                         let payload = new FormData();
                                         payload.append("files", e.target.files[0]);
-                                        //console.log(payload, "payload", e.target.files[0]);
-                                        setstate(e.target.files[0])
-                                        setP(payload)
-                                        //  const response=await apidata.post('Resume/create',payload)
-                                        console.log(state);
-                                        // await dispatch(createResume(payload))
-                                        // console.log(response);                                        
-
-                                    } catch (e) {
+                                       setstate(e.target.files[0])
+                                       setP(payload)
+                                        } catch (e) {
                                         console.log(e);
                                     }
                                 }}
