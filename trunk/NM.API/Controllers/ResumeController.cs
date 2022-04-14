@@ -42,7 +42,7 @@ namespace NM.API.Controllers
             try
             {
                 var formFile = fileUploadVM.Files.FirstOrDefault();
-                //Check if file size exceeds 500kb
+             //   Check if file size exceeds 500kb
                 if (formFile.Length > (0.5 * 1024 * 1024))
                     return StatusCode(StatusCodes.Status400BadRequest, new { Codes = new string[] { "FileSizeExceeded" } });
                 var result = resumeBusiness.UploadResume(formFile);

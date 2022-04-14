@@ -55,9 +55,9 @@ const Blogpost = () => {
             <div className="leftPanel">
               <div className="post">
                 <div className="date">
-                  <h4>Jul</h4>
+                  <h4>Feb</h4>
                   <h2>21</h2>
-                  <h4>2020</h4>
+                  <h4>2022</h4>
                 </div>
                 <div className="title">
                   <h1>
@@ -82,7 +82,7 @@ const Blogpost = () => {
 
                 <div className="post_image">
                   <a href="#">
-                    <img src="assets/img/blogBanners/reducecost.png" />
+                    <img src="assets/img/blogBanners/automationreducemanagement.png" />
                   </a>
                 </div>
                 <div className="post_content">
@@ -130,7 +130,7 @@ const Blogpost = () => {
                   </h3>
                   <div className="post_image m-0 mb-2">
                     <a href="#">
-                      <img src="assets/img/blogBanners/businessproducer.png" />
+                      <img src="assets/img/blogBanners/businessprocedure.png" />
                     </a>
                   </div>
                   <p>Business procedures have traditionally been difficult to optimize successfully since many of them were difficult to monitor and analyze on a timely basis. Because they lacked the human resources and data management capabilities that their bigger counterparts had, small enterprises found this business process management component (BPM) particularly difficult. Businesses of all sizes in the twenty-first century have acquired considerably better transparency into and control over their processes, thanks to digitization in general and digital transformation in particular.
@@ -141,7 +141,7 @@ const Blogpost = () => {
                   </h3>
                   <div className="post_image m-0 mb-2">
                     <a href="#">
-                      <img src="assets/img/blogBanners/bussiness.png" />
+                      <img src="assets/img/blogBanners/basicofbusinessprocess.png" />
                     </a>
                   </div>
 

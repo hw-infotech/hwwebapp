@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Link } from "react-router-dom";
 import NavBar from '../Layout/Navbar';
 import Footer from '../Layout/Footer';
@@ -7,11 +7,14 @@ import Footer_new from '../Layout/Footer_new';
 import { useEffect } from 'react';
 import Dashboard from '../../layout/dashboard';
 import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
+import axios from 'axios';
+import api from '../../services/api';
 
 const UploadCv = (props) => {
     const { newsletter, setNewsLetter } = props;
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
+    const [state, setstate] = useState();
     // this changes the scrolling behavior to "smooth"
 
     return <div>
@@ -26,25 +29,29 @@ const UploadCv = (props) => {
                         <div className="titleBox">
                             Upload Your Resume
                         </div>
-                        <form>
+                        <form name='myform' id='myform'>
                             <div className="input-form mh-100">
                                 <div className="upload Cv"><img className="outbox" src="assets/img/outbox.svg" /></div>
-                                <input type="file" className="form-control" onChange={async e => {
-                                    try {
-                                        if (e.target.files[0]) {
-                                            let payload = new FormData();
-                                            payload.append("file", e.target.files[0]);
-                                            console.log(payload, "payload", e.target.files[0]);
-                                        }
-                                    } catch (e) {
-                                        console.log(e);
-                                    }
+                                <input type="file" accept='.pdf,.docx' className="form-control" onChange={e => {
+                                    setstate(e.target.files[0])
                                 }}
+
                                 />
-                                <div className="fileName">Your_resume_Name.pdf</div>
+                                <div className="fileName">{state?.name}</div>
                             </div>
                             <div className="input-form">
-                                <input type="submit" className="SubmitCv" value="Send" />
+                                <input type="button" className="submitCv" value="Send" onClick={e => {
+                                    const formData = new FormData();
+                                    formData.append("files", state);
+                                    api.post(`api/Resume/create`, formData)
+                                        .then((res) => {
+                                            console.log("response", res.data);
+                                        })
+                                        .catch(err => {
+                                            console.log(err);
+                                        })
+
+                                }} />
                             </div>
                         </form>
                     </div>

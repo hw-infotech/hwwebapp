@@ -55,9 +55,9 @@ const Blogpost = () => {
              <div className="leftPanel">
                <div className="post">
                  <div className="date">
-                   <h4>Jul</h4>
-                   <h2>21</h2>
-                   <h4>2020</h4>
+                 <h4>April</h4>
+                 <h2>6</h2>
+                 <h4>2022</h4>
                  </div>
                  <div className="title">
                    <h1>

@@ -97,17 +97,13 @@ export const contactUSRegister = (user, setServices) => dispatch => {
         .then(res => {
             dispatch({ type: CONTACT_US_REGISTER_USER, payload: res.data })
             //const notify = () => toast.success(`${res.data.data}`);//, { theme: "colored" }
-            console.log("this the toast fy method", res.data)
-
-
             // notify()
             if (res.data.success) {
                 toast.success('Submitted Sucessfull', {
                     position: "bottom-center",
                     autoClose: 5000,
                     progress: undefined,
-                    hideProgressBar: false.valueOf,
-                    
+
                 });
                 //swal({
                 // text: "Your message has been successfully delivered",
@@ -116,7 +112,14 @@ export const contactUSRegister = (user, setServices) => dispatch => {
                 // })
             }
             else {
-               
+
+                toast.error('Something Went wrong', {
+                    position: "bottom-center",
+                    autoClose: 5000,
+                    //icon:  <img src="assets/img/blogBanners/error.png"/>
+                    //className:'toastify__toast-theme--colored.Toastify__toast--error',
+                    //toastClassName: "Toastify__toast"
+                });
                 // swal({
                 // text: res.data.message,
                 //icon: "error",
@@ -133,13 +136,7 @@ export const contactUSRegister = (user, setServices) => dispatch => {
             })
         })
         .catch(err => {
-            toast.error('Something Went wrong', {
-                position: "bottom-center",
-                autoClose: 5000,
-                //icon:  <img src="assets/img/blogBanners/error.png"/>
-                //className:'toastify__toast-theme--colored.Toastify__toast--error',
-                //toastClassName: "Toastify__toast"
-            });
+
             console.log("this the toast fy method", err)
 
 

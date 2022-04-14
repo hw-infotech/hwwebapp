@@ -16,7 +16,7 @@ section.contact__panel.contact-hero {
 .contact-form .input-group p {
     font-family: Muli, sans-serif;
     font-size: 18px;
-    letter-spacing: -.18px;
+    letter-spacing: -0.18px;
     line-height: 20px;
     width: 100%;
     float: left;
@@ -28,7 +28,7 @@ section.contact__panel.contact-hero {
 .contact-form .input-group p {
     font-family: Muli, sans-serif;
     font-size: 18px;
-    letter-spacing: -.18px;
+    letter-spacing: -0.18px;
     line-height: 20px;
     width: 100%;
     float: left;
@@ -63,7 +63,7 @@ label {
     display: block;
     margin-top: 20px;
     font-size: 18px;
-    letter-spacing: -.18px;
+    letter-spacing: -0.18px;
     line-height: 35px;
 }
 
@@ -72,7 +72,8 @@ label {
     top: -20px;
 }
 
-[type=checkbox], [type=radio] {
+[type="checkbox"],
+[type="radio"] {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -86,12 +87,12 @@ label {
     font-family: Muli, sans-serif;
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: -.18px;
+    letter-spacing: -0.18px;
     line-height: 24px;
     cursor: pointer;
 }
 
-.contact-form ul li input:checked+span {
+.contact-form ul li input:checked + span {
     background-color: #77c581;
     color: white;
 }
@@ -101,7 +102,9 @@ label {
     margin-top: 15px;
 }
 
-input[type=email], input[type=text], textarea {
+input[type="email"],
+input[type="text"],
+textarea {
     display: block;
     width: 93%;
     max-width: 100%;
@@ -115,16 +118,17 @@ input[type=email], input[type=text], textarea {
     -moz-box-shadow: none;
     box-shadow: none;
     border: 1px solid #e5e5e5;
-    font-size: .85em;
+    font-size: 0.85em;
     outline: 0;
 }
 
-.material-input input, .material-input textarea {
+.material-input input,
+.material-input textarea {
     padding: 0px 0 10px;
-    -webkit-transition: all .28s ease;
-    -o-transition: all .28s ease;
-    -moz-transition: all .28s ease;
-    transition: all .28s ease;
+    -webkit-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    transition: all 0.28s ease;
     border-color: #aab8b8;
     font-size: 20px;
 }
@@ -135,26 +139,26 @@ input[type=email], input[type=text], textarea {
     top: 20%;
     left: 0;
     pointer-events: none;
-    padding-left: .125rem;
+    padding-left: 0.125rem;
     z-index: 1;
     color: #b3b3b3;
     font-size: 1rem;
     font-weight: 400;
-    -webkit-transition: all .28s ease;
-    -o-transition: all .28s ease;
-    -moz-transition: all .28s ease;
-    transition: all .28s ease;
+    -webkit-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    transition: all 0.28s ease;
 }
 
 .clear {
     clear: both;
 }
 
-.contact-form input[type=submit] {
+.contact-form input[type="button"] {
     margin-top: 30px;
 }
 
-input[type=submit] {
+input[type="button"] {
     padding: 10px 15px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -164,29 +168,34 @@ input[type=submit] {
     height: 60px;
 }
 
-input[type=submit] {
+input[type="button"] {
     padding: 15px 34px;
     display: inline-block;
     border: 2.5px solid #ea7424;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
-    letter-spacing: .36px;
+    letter-spacing: 0.36px;
     border-radius: 116px;
     color: #eb7823;
     background-color: #fff;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
-input[type=submit]:hover {
+input[type="button"]:hover {
     background-color: #ea7424;
     color: #fff;
 }
 
-input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[type=text]:hover, textarea:focus, textarea:hover {
+input[type="email"]:focus,
+input[type="email"]:hover,
+input[type="text"]:focus,
+input[type="text"]:hover,
+textarea:focus,
+textarea:hover {
     outline: 0;
-    border: none!important;
-    border: 1px solid #d5d5d5!important;
+    border: none !important;
+    border: 1px solid #d5d5d5 !important;
     box-shadow: none !important;
 }
 
@@ -199,7 +208,10 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     text-align: right;
 }
 
-.material-input input.input-is-active~label, .material-input input:focus~label, .material-input textarea.input-is-active~label, .material-input textarea:focus~label {
+.material-input input.input-is-active ~ label,
+.material-input input:focus ~ label,
+.material-input textarea.input-is-active ~ label,
+.material-input textarea:focus ~ label {
     font-size: 13px;
     top: -15px;
     left: 0;
@@ -246,11 +258,11 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     left: 10px;
 }
 
-@media (min-width:320px) and (max-width:480px) {
+@media (min-width: 320px) and (max-width: 480px) {
     section.contact__panel.contact-hero {
-    margin-top: 0px;
-    padding-top: 90px;
-}
+        margin-top: 0px;
+        padding-top: 90px;
+    }
     .formpanel {
         display: flex;
         flex-wrap: wrap;
@@ -280,26 +292,29 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         font-size: 13px;
         line-height: 20px;
     }
-    .material-input input, .material-input textarea {
+    .material-input input,
+    .material-input textarea {
         padding: 5px 0;
         font-size: 16px;
     }
-    input[type=email], input[type=text], textarea {
+    input[type="email"],
+    input[type="text"],
+    textarea {
         display: block;
         width: 100%;
     }
-   .contact-form input[type=submit] {
+    .contact-form input[type="button"] {
         margin-top: 0px;
     }
-    input[type=submit] {
+    input[type="button"] {
         height: 44px;
     }
-    input[type=submit] {
+    input[type="button"] {
         padding: 5px 34px;
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
-        letter-spacing: .36px;
+        letter-spacing: 0.36px;
         border-radius: 30px;
     }
     .contact-hero--contact {
@@ -309,12 +324,11 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     }
 }
 
-
-@media (min-width:481px) and (max-width:575px) {
+@media (min-width: 481px) and (max-width: 575px) {
     section.contact__panel.contact-hero {
-    margin-top: 0px;
-    padding-top: 90px;
-}
+        margin-top: 0px;
+        padding-top: 90px;
+    }
     .formpanel {
         display: flex;
         flex-wrap: wrap;
@@ -344,26 +358,29 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         font-size: 13px;
         line-height: 20px;
     }
-    .material-input input, .material-input textarea {
+    .material-input input,
+    .material-input textarea {
         padding: 5px 0;
         font-size: 16px;
     }
-    input[type=email], input[type=text], textarea {
+    input[type="email"],
+    input[type="text"],
+    textarea {
         display: block;
         width: 100%;
     }
-   .contact-form input[type=submit] {
+    .contact-form input[type="button"] {
         margin-top: 0px;
     }
-    input[type=submit] {
+    input[type="button"] {
         height: 44px;
     }
-    input[type=submit] {
+    input[type="button"] {
         padding: 5px 34px;
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
-        letter-spacing: .36px;
+        letter-spacing: 0.36px;
         border-radius: 30px;
     }
     .contact-hero--contact {
@@ -373,13 +390,11 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     }
 }
 
-
-
-@media (min-width:576px) and (max-width:767px) {
+@media (min-width: 576px) and (max-width: 767px) {
     section.contact__panel.contact-hero {
-    margin-top: 0px;
-    padding-top: 90px;
-}
+        margin-top: 0px;
+        padding-top: 90px;
+    }
     .formpanel {
         display: flex;
         flex-wrap: wrap;
@@ -409,26 +424,29 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         font-size: 13px;
         line-height: 20px;
     }
-    .material-input input, .material-input textarea {
+    .material-input input,
+    .material-input textarea {
         padding: 5px 0;
         font-size: 16px;
     }
-    input[type=email], input[type=text], textarea {
+    input[type="email"],
+    input[type="text"],
+    textarea {
         display: block;
         width: 100%;
     }
-   .contact-form input[type=submit] {
+    .contact-form input[type="button"] {
         margin-top: 0px;
     }
-    input[type=submit] {
+    input[type="button"] {
         height: 44px;
     }
-    input[type=submit] {
+    input[type="button"] {
         padding: 5px 34px;
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
-        letter-spacing: .36px;
+        letter-spacing: 0.36px;
         border-radius: 30px;
     }
     .contact-hero--contact {
@@ -438,10 +456,7 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     }
 }
 
-
-
-
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .contact-hero h1 {
         font-size: 42px;
         letter-spacing: 1.2px;
@@ -453,14 +468,15 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         font-weight: 400;
         line-height: 30px;
     }
-    .material-input input, .material-input textarea {
+    .material-input input,
+    .material-input textarea {
         padding: 8px 0;
     }
     .material-input {
         position: relative;
         margin-top: 0px;
     }
-    .contact-form input[type=submit] {
+    .contact-form input[type="button"] {
         margin-top: 12px;
     }
     .contact-form .input-group p {
@@ -469,8 +485,7 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     }
 }
 
-
-@media (min-width:992px) and (max-width:1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
     .contact-hero h1 {
         font-size: 42px;
         letter-spacing: 1.2px;
@@ -482,14 +497,15 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         font-weight: 400;
         line-height: 30px;
     }
-    .material-input input, .material-input textarea {
+    .material-input input,
+    .material-input textarea {
         padding: 8px 0;
     }
     .material-input {
         position: relative;
         margin-top: 0px;
     }
-    .contact-form input[type=submit] {
+    .contact-form input[type="button"] {
         margin-top: 12px;
     }
     .contact-form .input-group p {
@@ -498,9 +514,7 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
     }
 }
 
-
-
-@media (min-width:1200px) and (max-width:1366px) {
+@media (min-width: 1200px) and (max-width: 1366px) {
     .contact-hero h1 {
         font-size: 42px;
         letter-spacing: 1.2px;
@@ -512,14 +526,15 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         font-weight: 400;
         line-height: 30px;
     }
-    .material-input input, .material-input textarea {
+    .material-input input,
+    .material-input textarea {
         padding: 8px 0;
     }
     .material-input {
         position: relative;
         margin-top: 0px;
     }
-    .contact-form input[type=submit] {
+    .contact-form input[type="button"] {
         margin-top: 12px;
     }
     .contact-form .input-group p {
@@ -527,5 +542,3 @@ input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[
         margin-bottom: 5px;
     }
 }
-
-

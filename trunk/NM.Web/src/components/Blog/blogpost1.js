@@ -55,9 +55,9 @@ const Blogpost = () => {
             <div className="leftPanel">
               <div className="post">
                 <div className="date">
-                  <h4>Jul</h4>
+                  <h4>Mar</h4>
                   <h2>21</h2>
-                  <h4>2020</h4>
+                  <h4>2022</h4>
                 </div>
                 <div className="title">
                   <h1>
@@ -83,7 +83,7 @@ const Blogpost = () => {
 
                 <div className="post_image">
                   <a href="#">
-                    <img src="assets/img/blogBanners/webdevelop_design.png" />
+                    <img src="assets/img/blogBanners/websitedeveopmentservices.png" />
                   </a>
                 </div>
                 <div className="post_content">
@@ -133,7 +133,7 @@ const Blogpost = () => {
 
                   <div className="post_image m-0 mb-2">
                     <a href="#">
-                      <img src="assets/img/blogBanners/web2.png" />
+                      <img src="assets/img/blogBanners/webdevenew1.png" />
                     </a>
                   </div>
                   <p>
@@ -146,7 +146,7 @@ const Blogpost = () => {
                   </p>
                   <div className="post_image m-0 mb-2">
                     <a href="#">
-                      <img src="assets/img/blogBanners/beaware_advantage_website.png" />
+                      <img src="assets/img/blogBanners/beawarenessnew1.png" />
                     </a>
                   </div>
                   <b>The following are some of the advantages of website development and design:

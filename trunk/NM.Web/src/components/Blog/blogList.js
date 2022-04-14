@@ -62,9 +62,9 @@ const BlogList = () => {
                 </div>
                 <div className="post">
                   <div className="date">
-                    <h4>April</h4>
-                    <h2>5</h2>
-                    <h4>2022</h4>
+                  <h4>Mar</h4>
+                  <h2>21</h2>
+                  <h4>2022</h4>
                   </div>
 
 
@@ -77,7 +77,7 @@ const BlogList = () => {
                   </div>
                   <div className="post_image">
                     <a href="#">
-                      <img src="assets/img/blogBanners//webdevelop_design.png" />
+                      <img src="assets/img/blogBanners//websitedeveopmentservices.png" />
                     </a>
                   </div>
                   <div className="post_content">
@@ -105,9 +105,9 @@ const BlogList = () => {
 
               <div className="post">
                 <div className="date">
-                  <h4>April</h4>
-                  <h2>4</h2>
-                  <h4>2022</h4>
+                <h4>Feb</h4>
+                <h2>21</h2>
+                <h4>2022</h4>
                 </div>
 
                 <div className="title">
@@ -117,7 +117,7 @@ const BlogList = () => {
                 </div>
                 <div className="post_image">
                   <a href="#">
-                    <img src="assets/img/blogBanners//reducecost.png" />
+                    <img src="assets/img/blogBanners//automationreducemanagement.png" />
                   </a>
                 </div>
 
