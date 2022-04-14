@@ -1,4 +1,4 @@
-import { CONTACT_US_REGISTER_USER, EXAMPLE, REGISTER_APP_DESIGN_USER, REGISTER_GRAPHIC_DESIGN_USER, REGISTER_SEO_DESIGN_USER, REGISTER_UIUX_DESIGN_USER, REGISTER_WEB_DESIGN_USER, SUBSCRIBE_NEWSLETTER } from "../Store/Types"
+import { CONTACT_US_REGISTER_USER, EXAMPLE, RESUME_CREATE, GET_ALL_SUBSCRIBERS, REGISTER_APP_DESIGN_USER, REGISTER_GRAPHIC_DESIGN_USER, REGISTER_SEO_DESIGN_USER, REGISTER_UIUX_DESIGN_USER, REGISTER_WEB_DESIGN_USER, SUBSCRIBE_NEWSLETTER } from "../Store/Types"
 
 const initialState = {
     data: "",
@@ -8,7 +8,8 @@ const initialState = {
     Seo_User_register: "",
     UIUX_User_register: "",
     contactUsUser: "",
-    subscribe: ""
+    subscribe: "",
+    resume_create: ""
 }
 const Reducer_Function = (state = initialState, action) => {
     const { type, payload } = action
@@ -53,6 +54,21 @@ const Reducer_Function = (state = initialState, action) => {
             return {
                 ...state, subscribe: payload
             }
+        }
+        case GET_ALL_SUBSCRIBERS: {
+            return {
+                ...state,
+                allSubscribers: payload
+            }
+        }
+
+        case RESUME_CREATE: {
+            return {
+                ...state,
+                resume_create: payload
+
+            }
+
         }
         default: {
             return state
