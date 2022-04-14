@@ -77,7 +77,6 @@ const ContactUsContent = (props) => {
                                         <input type="hidden" name="form-name" value="contact-form" />
                                         <div className="input-group">
                                             <p>Services</p>
-                                            {console.log("errors ", errors)}
                                             <ul>
                                                 <li>
                                                     <label htmlFor="service-option-website">
