@@ -154,11 +154,11 @@ textarea {
     clear: both;
 }
 
-.contact-form input[type="button"] {
+.contact-form input[type="submit"] {
     margin-top: 30px;
 }
 
-input[type="button"] {
+input[type="submit"] {
     padding: 10px 15px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -168,7 +168,7 @@ input[type="button"] {
     height: 60px;
 }
 
-input[type="button"] {
+input[type="submit"] {
     padding: 15px 34px;
     display: inline-block;
     border: 2.5px solid #ea7424;

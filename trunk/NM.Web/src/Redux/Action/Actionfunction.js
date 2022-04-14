@@ -92,7 +92,7 @@ export const contactUSRegister = (user) => dispatch => {
         .then(res => {
             dispatch({ type: CONTACT_US_REGISTER_USER, payload: res?.data })
             if (res.data.success) {
-                const notify = () => toast.success("Thank you for contacting us, we will respond you as quickly as possible.");//, { theme: "colored" }
+                const notify = () => toast.success("Thank you for contacting us,we will respond you as quickly as possible.");//, { theme: "colored" }
                 notify()
             }
             else {

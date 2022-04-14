@@ -2868,10 +2868,13 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
+    
+   
   }
 
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
+    
   }
 
   .newsletter .newsletterContent .newsLetterForm .form-control {
@@ -2892,6 +2895,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
+    max-width: 600px;
   }
 
   .address .addressConetnt .india {
@@ -3085,6 +3089,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
+    max-width: 600px;
   }
 
   .newsletter .newsletterContent .newsLetterSubTitle {
