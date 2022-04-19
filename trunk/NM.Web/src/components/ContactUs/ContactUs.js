@@ -15,7 +15,7 @@ const ContactUsContent = (props) => {
     const dispatch = useDispatch()
     const [services, setServices] = useState([])
 
-    const notify = () => toast.success("Successfully Submitted")
+
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -58,7 +58,6 @@ const ContactUsContent = (props) => {
             };
         }
     }
-
     return <div>
         <section className="contact__panel contact-hero">
             <div className="container">
@@ -77,7 +76,6 @@ const ContactUsContent = (props) => {
                                         <input type="hidden" name="form-name" value="contact-form" />
                                         <div className="input-group">
                                             <p>Services</p>
-                                            {console.log("errors ", errors)}
                                             <ul>
                                                 <li>
                                                     <label htmlFor="service-option-website">

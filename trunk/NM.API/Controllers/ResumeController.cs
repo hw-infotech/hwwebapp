@@ -17,9 +17,9 @@ using System.IO;
 
 namespace NM.API.Controllers
 {
-    [Route("Api/ResumeController")]
+    [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+  //  [Authorize]
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ResumeController : Controller
     {
@@ -41,10 +41,9 @@ namespace NM.API.Controllers
             ResultVM<bool> resultVM = new ResultVM<bool>();
             try
             {
-               
                 var formFile = fileUploadVM.Files.FirstOrDefault();
-                //Check if file size exceeds 2MB
-                if (formFile.Length > (2 * 1024 * 1024))
+             //   Check if file size exceeds 500kb
+                if (formFile.Length > (0.5 * 1024 * 1024))
                     return StatusCode(StatusCodes.Status400BadRequest, new { Codes = new string[] { "FileSizeExceeded" } });
                 var result = resumeBusiness.UploadResume(formFile);
                 mapper.Map(result, resultVM);
@@ -57,9 +56,7 @@ namespace NM.API.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, new { Result = resultVM });
             }
         }
-
         
-      
 
         [HttpGet]
         [Route("get")]

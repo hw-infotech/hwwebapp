@@ -4,10 +4,18 @@
     position: relative;
     margin-top: 100px;
 }
-.whiteWrap {
+/* .whiteWrap {
     width: 100%;
     display: table;
     vertical-align: top;
+} */
+.whiteWrap {
+    width: 80%;
+    vertical-align: top;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: auto;
 }
 .whiteWrap .leftPanel {
     display: table-cell;
@@ -100,12 +108,12 @@
 .whiteWrap .leftPanel .post .comments ul {
     float: left;
     display: inline-block;
-    margin-left: 100px;
+    margin-left: 60px;
 }
 .whiteWrap .leftPanel .post .comments ul li {
     display: inline-block;
     margin-left: 10px;
-    color: #c80734;
+    color: #070707;
     font-size: 15px;
 }
 .whiteWrap .leftPanel .post .comments ul li i {
@@ -113,7 +121,7 @@
     margin-right: 5px;
 }
 .whiteWrap .leftPanel .post .comments ul li a {
-    color: #c80734;
+    color: #000000;
 }
 
 .whiteWrap .rightPanel {
@@ -127,6 +135,8 @@
     position: sticky!important;
     top: 100px!important;
     right: 0;
+
+    display: none;
 }
 .searchForm {
     background: #0360b2;

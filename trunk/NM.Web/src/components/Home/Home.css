@@ -64,6 +64,8 @@
   -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
   -o-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .clb-social-holder {
@@ -2868,10 +2870,13 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
+    
+   
   }
 
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
+    
   }
 
   .newsletter .newsletterContent .newsLetterForm .form-control {
@@ -2892,6 +2897,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .newsletter .newsletterContent .newsLetterForm {
     height: 76px;
+    max-width: 600px;
   }
 
   .address .addressConetnt .india {
@@ -3085,6 +3091,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
+    max-width: 100%;
   }
 
   .newsletter .newsletterContent .newsLetterSubTitle {

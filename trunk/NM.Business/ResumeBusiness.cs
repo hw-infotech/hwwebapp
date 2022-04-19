@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using System.Text;
 
 namespace NM.Business
 {
@@ -37,21 +39,28 @@ namespace NM.Business
         {
             ResultModel<bool> result = new ResultModel<bool>();
             var guid = Guid.NewGuid();
-            var path = Path.Combine(hostEnvironment.ContentRootPath, "Resume" ,$"{guid}.pdf");
-
-            Directory.CreateDirectory(Path.GetDirectoryName(path));
-
-            using (var outStream = new FileStream(path, FileMode.Create))
-            {
-                formFile.CopyToAsync(outStream);
-            }
+            string body = EmailHelper.GetResumeEmailBody(formFile.Name, hostEnvironment.ContentRootPath);
             var extension = System.IO.Path.GetExtension(formFile.FileName);
-            Resume resume = new Resume(formFile.FileName, extension, path, formFile.Length);
+            byte[] fileBytes;
+
+            using (var ms = new MemoryStream())
+            {
+                formFile.CopyTo(ms);
+                 fileBytes = ms.ToArray();
+                // act on the Base64 data
+            }
+
+
+            bool isSent = new Mailer()
+                               .Subject(AppSettingsModel.ResumeRequest)
+                               .Body(body)
+                               .To(AppSettingsModel.MailUserName)
+                               .Attachment(fileBytes, formFile.FileName)
+                               .Send();
+            Resume resume = new Resume(formFile.FileName, extension, formFile.Length);
             resume.CreatedBy = 1;
             unitOfWork.ResumeRepository.Insert(resume);
-            result.StatusCode = Convert.ToInt32(Enums.StatusCode.OK);
-            result.Data = true;
-            result.Success = true;
+            result = ResultModel<bool>.GetResponseModal(true, (int)Enums.StatusCode.OK, true);
             return result;
         }
 
@@ -61,10 +70,10 @@ namespace NM.Business
                 var resume = unitOfWork.ResumeRepository.SingleOrDefault(x => x.BsonId == bsonId && !x.IsDeleted);
                 if(resume != null)
                 {
-                    result.Data = new ResumeModel();
-                    mapper.Map(resume, result.Data);
-                    result.Success = true;
-                    result.StatusCode = (int)Enums.StatusCode.OK;
+                ResumeModel data = new ResumeModel();
+                    mapper.Map(resume, data);
+                result = ResultModel<ResumeModel>.GetResponseModal(data, (int)Enums.StatusCode.OK, true);
+               
                 }     
                 return result;
         }

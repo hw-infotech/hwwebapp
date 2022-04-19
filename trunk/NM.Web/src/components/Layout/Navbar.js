@@ -46,7 +46,7 @@ const NavBar = ({ NavbarStyle }) => {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="/">
-            <img src="assets/img/logo.png" width="250px" />
+            <img src="assets/img/nestormind_logo_250.png"  />
           </a>
           <button
             className="navbar-toggler"

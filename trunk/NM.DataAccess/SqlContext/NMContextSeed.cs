@@ -273,7 +273,7 @@ namespace NM.DataAccess.SqlContext
         {
             return new List<Resume>()
           {
-                new Resume("Document",".pdf","/Document/fileUpload",200)
+                new Resume("Document",".pdf",200)
           };
       }
     }

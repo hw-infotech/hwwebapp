@@ -12,7 +12,7 @@ using System.Collections.Generic;
 
 namespace NM.API.Controllers
 {
-    [Route("api/ProjectController")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ProjectController : ControllerBase
     {

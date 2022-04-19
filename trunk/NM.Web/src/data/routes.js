@@ -3,6 +3,8 @@ import { Redirect } from "react-router"
 import AboutUsContent from "../components/AboutUs/AboutUs"
 import BlogList from "../components/Blog/blogList"
 import Blogpost from "../components/Blog/blogpost"
+import Blogpost1 from "../components/Blog/blogpost1"
+import Blogpost2 from "../components/Blog/blogpost2"
 import Career from "../components/Career/career"
 import UploadCv from "../components/Career/uploadCv"
 import Telemedician from "../components/caseStudies/Telemedician_case"
@@ -22,7 +24,7 @@ import WebDev from "../components/services/WebDevelopment"
 const route = (path, component, exact = true) => ({ path, component, exact })
 
 const routes = [
-    route("/", () => (<Redirect to="/home" />)),    
+    route("/", () => (<Redirect to="/home" />)),
     route("/home", HomeContent),
     route("/about-us", AboutUsContent),
     route("/services", ServicesMain),
@@ -39,6 +41,8 @@ const routes = [
     route("/terms-and-condition", TermsCondition),
     route("/blogs", BlogList),
     route("/blog-post", Blogpost),
+    route("/blog-post1", Blogpost1),
+    route("/blog-post2", Blogpost2),
     route("/under-mantainence", NotFound),
     route("/gallery", Gallery)
 ]

@@ -516,9 +516,6 @@ namespace NM.DataAccess.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("DocumentPath")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<long>("DocumentSize")
                         .HasMaxLength(500)
                         .HasColumnType("bigint");

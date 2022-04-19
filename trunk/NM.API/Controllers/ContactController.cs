@@ -14,7 +14,7 @@ using NM.Utility;
 
 namespace NM.API.Controllers
 {
-    [Route("api/ContactController")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ContactController : ControllerBase
     {
@@ -29,7 +29,11 @@ namespace NM.API.Controllers
             contactBusiness = _contactBusiness;
         }
         #endregion
-
+        /// <summary>
+        /// contact create first we chech email exist or not when email exist in database then update the contact
+        /// </summary>
+        /// <param name="contactVM"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("create")]
         public ActionResult<ResultVM<bool>> Create(ContactVM contactVM)
@@ -40,7 +44,6 @@ namespace NM.API.Controllers
                 ContactModel contactModel = new ContactModel();
                 mapper.Map(contactVM, contactModel);
                 contactModel.Services = String.Join(',', contactVM.Services);
-                //contactModel.Services = contactVM.Services.ToString();
                 var result = contactBusiness.CreateContact(contactModel);
                 mapper.Map(result, resultVM);
                 return resultVM;

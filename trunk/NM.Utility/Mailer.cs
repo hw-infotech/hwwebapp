@@ -23,11 +23,11 @@ namespace NM.Utility
         int _port = 0;
         public Mailer()
         {
-            _host = ConfigMgr.MailHost;
-            _userName = ConfigMgr.MailUserName;
-            _password = ConfigMgr.MailPassword;
-            _enableSSL = ConfigMgr.MailEnableSSL;
-            _port = ConfigMgr.MailPortNumber;
+            _host = AppSettingsModel.MailHost;
+            _userName = AppSettingsModel.MailUserName;
+            _password = AppSettingsModel.MailPassword;
+            _enableSSL = AppSettingsModel.MailEnableSSL;
+            _port = AppSettingsModel.MailPortNumber;
             attachements = new List<Attachment>();
 
         }
@@ -36,12 +36,22 @@ namespace NM.Utility
         public Mailer CC(string address) { _ccAddress = address; return this; }
         public Mailer Subject(string subject) { _subject = subject; return this; }
         public Mailer Body(string body) { _body = body; return this; }
-        public Mailer Attachment(Byte[] bytes, string fileName, string mediaType)
+        public Mailer Attachment(byte[] bytes, string fileName)
         {
-            Attachment att = new Attachment(new MemoryStream(bytes), fileName, mediaType);
-            attachements.Add(att);
+            //Attachment att = new Attachment(new MemoryStream(bytes), fileName);
+          Attachment att = new System.Net.Mail.Attachment(new MemoryStream(bytes), fileName);
+             attachements.Add(att);
             return this;
         }
+        //public Mailer Attachment(string bytes, string fileName, string mediaType)
+        //{
+        //    Attachment att = new System.Net.Mail.Attachment(bytes);
+        //    attachements.Add(att);
+        //    return this;
+        //}
+
+       
+
         public bool Send()
         {
             MailMessage mailMessage = new MailMessage()
@@ -52,9 +62,9 @@ namespace NM.Utility
             };
             if (string.IsNullOrEmpty(_fromAddress))
             {
-                _fromAddress = ConfigMgr.MailUserName;
+                _fromAddress = AppSettingsModel.MailUserName;
             }
-            mailMessage.From = new MailAddress(_fromAddress, ConfigMgr.MailFromName);
+            mailMessage.From = new MailAddress(_fromAddress, AppSettingsModel.MailFromName);
 
             if (!string.IsNullOrEmpty(_toAddress))
             {

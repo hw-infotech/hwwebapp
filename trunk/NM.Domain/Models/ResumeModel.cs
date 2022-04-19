@@ -8,7 +8,6 @@ namespace NM.Domain.Models
     {
         public string DocumentName { get;  set; }
         public string DocumentExtension { get;  set; }
-        public string DocumentPath { get;  set; }
         public long DocumentSize { get;  set; }
     }
 }

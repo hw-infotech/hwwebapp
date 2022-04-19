@@ -16,6 +16,7 @@ using NM.DataAccess.Interface;
 using NM.DataAccess.Repositories;
 using NM.Utility;
 using Microsoft.OpenApi.Models;
+using System.Configuration;
 
 namespace NM.API
 {
@@ -31,10 +32,17 @@ namespace NM.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region --Configure App setting
+            AppSettingConfiguration.ConfigurationAppSetting(Configuration);
+            #endregion
             services.AddControllers().AddNewtonsoftJson();
             services.AddDbContext<NMContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:NestormindDB"]));
             var config = new MapperConfiguration(mc => { mc.AddProfile(new Mapper.MappingProfile<object>(Configuration)); });
             IMapper mapper = config.CreateMapper();
+            //services.Configure<ConfigMgr>(Configuration.GetSection("EmailConfiguration"));
+            // services.Configure<ConfigMgr>(options => Configuration.GetSection("EmailConfiguration").Bind(options));
+            // var myFirstClass = services.GetSection("MyFirstClass").Get<MyFirstClass>();
+            services.Configure<ConfigMgr>(Configuration.GetSection("EmailConfiguration"));
             services.AddSingleton(mapper);
             services.AddTransient<IAccountBusiness, AccountBusiness>();
             services.AddTransient<IBlogBusiness, BlogBusiness>();
@@ -44,6 +52,7 @@ namespace NM.API
             services.AddTransient<INewsLetterBusiness, NewsLetterBusiness>();
             services.AddTransient<ITestimonialsBusiness, TestimonialsBusiness>();
             services.AddTransient<IContactBusiness, ContactBusiness>();
+            services.AddTransient<IResumeBusiness, ResumeBusiness>();
 
             //add changes
             services.Configure<AppSettingsModel>(options => Configuration.GetSection("Jwt").Bind(options));

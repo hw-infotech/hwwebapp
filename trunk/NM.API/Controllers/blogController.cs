@@ -16,7 +16,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace NM.API.Controllers
 {
-    [Route("Api/BlogController")]
+    [Route("Api/[controller]")]
     [ApiController]
     [Authorize]
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]

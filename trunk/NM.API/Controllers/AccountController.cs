@@ -12,7 +12,7 @@ using AutoMapper;
 
 namespace NM.API.Controllers
 {
-    [Route("api/AccountController")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AccountController : BaseController
     {

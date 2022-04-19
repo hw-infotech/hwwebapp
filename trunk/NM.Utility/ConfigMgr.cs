@@ -8,25 +8,18 @@ using System.Text;
 
 namespace NM.Utility
 {
-    public class ConfigMgr
+    public  class ConfigMgr
     {
-        //private IConfiguration _config;
-        
-        //public ConfigMgr(IConfiguration config)
-        //{
-        //    _config = config;
-        //}
+
         public static string MailHost
         {
             get
             {
-                
-                return ConfigurationManager.AppSettings["EmailConfiguration:MailUserName"];
+                return ConfigurationManager.AppSettings["EmailConfiguration:MailHost"];
             }
         }
         public static string MailUserName
         {
-
             get
             {
                 return ConfigurationManager.AppSettings["EmailConfiguration:MailUserName"];
@@ -63,5 +56,25 @@ namespace NM.Utility
                 return Convert.ToInt32(ConfigurationManager.AppSettings["EmailConfiguration:MailPortNumber"]);
             }
         }
+
+        public static string ResumeRequest
+        {
+
+            get
+            {
+                return ConfigurationManager.AppSettings["EmailConfiguration:ResumeRequest"];
+            }
+        }
+
+        public static string ResumeTemplate
+        {
+
+            get
+            {
+                return ConfigurationManager.AppSettings["EmailTemplate:ResumeTemplate"];
+            }
+
+        }
     }
 }
+
