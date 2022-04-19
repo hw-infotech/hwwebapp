@@ -1,11 +1,6 @@
 import React, { Component, useState } from 'react';
-import NavBar from '../Layout/Navbar';
-import Footer from '../Layout/Footer';
 import './blog.css';
-import Footer_new from '../Layout/Footer_new';
-import { Link } from "react-router-dom";
 import { useEffect } from 'react';
-import newsletter from './newsletter.png'
 import { ToastContainer, toast } from 'react-toastify';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
@@ -222,7 +217,7 @@ const Blogpost = () => {
                     <div className="subBox">
                       <div className="labelIcon">
                         <img
-                          src={newsletter}
+                        src={"./assets/img/blogBanners/newsletter.png"}
                           alt="image"
                           className="lazyloaded"
                           data-ll-status="loaded"

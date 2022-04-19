@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from '../Layout/Navbar';
-import Footer from '../Layout/Footer';
 import './blog.css';
-import Footer_new from '../Layout/Footer_new';
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import Dashboard from '../../layout/dashboard';
@@ -292,22 +289,7 @@ const BlogList = () => {
           </div>
         </div>
       </div>
-    </Dashboard >
+    </Dashboard>
   );
 }
 export default BlogList
-// class BlogList extends Component {
-//    componentDidMount = () => {
-//       window.scrollTo({ top: 0, behavior: 'smooth' });
-//    }// this changes the scrolling behavior to "smooth"
-//    render() {
-//       return (
-//          <div>
-//             <NavBar />
-
-//             <Footer_new />
-//          </div>
-//       )
-//    }
-// }
-// export default BlogList;
