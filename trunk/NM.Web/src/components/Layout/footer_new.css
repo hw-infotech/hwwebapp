@@ -189,7 +189,7 @@ a{
   top: -33px;
   position: relative;
   padding-left: 0;
-  padding-top: 50px;
+  padding-top:30px;
   flex-wrap: wrap;
     gap: 10px;
 }

@@ -20,7 +20,7 @@ const Footer_new = () => {
                   </p>
                 </div>
                 <div className="clb-social">
-                  <ul className="clb-social-holder font-titles icons">
+                  <ul className="clb-social-holder font-titles icons mb-0">
                     <li>
                       <a
                         target="_blank"
@@ -57,7 +57,9 @@ const Footer_new = () => {
                         <i className="bx bxl-twitter"></i>{" "}
                       </a>
                     </li>
-
+                  </ul>
+                  <br/>
+                  <ul className="clb-social-holder font-titles icons pt-0">
                     <li>
                       <a
                         target="_blank"

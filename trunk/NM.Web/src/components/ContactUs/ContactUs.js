@@ -58,7 +58,6 @@ const ContactUsContent = (props) => {
             };
         }
     }
-
     return <div>
         <section className="contact__panel contact-hero">
             <div className="container">

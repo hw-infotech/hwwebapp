@@ -76,7 +76,7 @@ const AboutUsContent = (props) => {
                     <div className="row_one">
                         <div className="col-1">
                             <div className="galleryImages medium">
-                                <img src="assets/img/about-us-image1.png" />
+                                <img src="/assets/img/team/team_nestormind.png" />
                             </div>
                         </div>
                         <div className="col-2">
@@ -87,19 +87,19 @@ const AboutUsContent = (props) => {
                                 and when, because the <strong>experience matters.</strong>
                             </div>
                             <div className="galleryImages small">
-                                <img src="assets/img/confrence_room.jpg" />
+                                <img src="/assets/img/team/untitled-14.jpg" />
                             </div>
                         </div>
                     </div>
                     <div className="row_two">
                         <div className="col-1">
                             <div className="galleryImages small">
-                                <img src="assets/img/reception.png" />
+                                <img src="/assets/img/team/barbq.jpg" />
                             </div>
                         </div>
                         <div className="col-2">
                             <div className="galleryImages medium">
-                                <img src="assets/img/team-about.png" />
+                                <img src="assets/img/team/diwaliCel.jpg" />
                             </div>
                         </div>
                         <div className="col-3">
@@ -111,7 +111,7 @@ const AboutUsContent = (props) => {
                     <div className="row_three">
                         <div className="col-1">
                             <div className="galleryImages large">
-                                <img src="assets/img/dev_room.jpg" />
+                                <img src="/assets/img/team/untitled-86.jpg" />
                             </div>
                         </div>
                     </div>

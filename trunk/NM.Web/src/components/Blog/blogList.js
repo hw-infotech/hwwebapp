@@ -51,12 +51,10 @@ const BlogList = () => {
                 <div className="comments">
                   <ul>
                     <li>
-                      {" "}
-                      <i> </i> <a href="">78</a>{" "}
+                      <i class="bi bi-eye"></i> <a href="">78</a>{" "}
                     </li>
                     <li>
-                      {" "}
-                      <i> </i> <a href="">0</a>{" "}
+                      <i class="bi bi-hand-thumbs-up"></i> <a href="">0</a>{" "}
                     </li>
                   </ul>
                 </div>
@@ -89,16 +87,14 @@ const BlogList = () => {
                     </Link>
                   </div>
                   <div className="comments">
-                    <ul>
-                      <li>
-                        {" "}
-                        <i> </i> <a href="">78</a>{" "}
-                      </li>
-                      <li>
-                        {" "}
-                        <i> </i> <a href="">0</a>{" "}
-                      </li>
-                    </ul>
+                  <ul>
+                  <li>
+                    <i class="bi bi-eye"></i> <a href="">78</a>{" "}
+                  </li>
+                  <li>
+                    <i class="bi bi-hand-thumbs-up"></i> <a href="">0</a>{" "}
+                  </li>
+                </ul>
                   </div>
                 </div>
               </div>
@@ -130,14 +126,12 @@ const BlogList = () => {
                   </Link>
                 </div>
                 <div className="comments">
-                  <ul>
+                <ul>
                     <li>
-                      {" "}
-                      <i> </i> <a href="">78</a>{" "}
+                      <i class="bi bi-eye"></i> <a href="">78</a>{" "}
                     </li>
                     <li>
-                      {" "}
-                      <i> </i> <a href="">0</a>{" "}
+                      <i class="bi bi-hand-thumbs-up"></i> <a href="">0</a>{" "}
                     </li>
                   </ul>
                 </div>

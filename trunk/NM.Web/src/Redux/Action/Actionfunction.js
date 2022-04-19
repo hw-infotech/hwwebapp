@@ -136,18 +136,24 @@ export const subscribeNewsletter = (email) => dispatch => {
         })
 }
 export const createResume = (resume) => dispatch => {
-    
+
     apidata.post('Resume/create', resume)
         .then(res => {
             dispatch({ type: RESUME_CREATE, payload: res.data })
-            console.log("this is",res)
-            const notify = () => toast.success('Thank you for contacting us, we will respond you as quickly as possible.');//, { theme: "colored" }
-            notify()
+            if (res.data.success) {
+                const notify = () => toast.success("Thank you for contacting us,we will respond you as quickly as possible.")
+                notify()
+            }
+            else {
+                const notify = () => toast.error("Something Went Wrong")
+                notify()
+            }
+            
         })
         .catch(err => {
+            toast.error("Internal Server Error")
             dispatch({ type: RESUME_CREATE, payload: { data: false, err } })
-            const notify = () => toast.error(err?.response?.data?.error);//, { theme: "colored" }
-            notify()
+           
 
         })
 }

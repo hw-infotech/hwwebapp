@@ -33,7 +33,7 @@ const Career = (props) => {
                   </p>
 
                   <div className="appi-cta">
-                    <Link to="/uploadCv" target="_blank">
+                    <a href="#openPostions" >
                       <span className="text">
                         View current openings
                         <span className="arrow">
@@ -64,7 +64,7 @@ const Career = (props) => {
                           </svg>
                         </span>
                       </span>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -95,7 +95,7 @@ const Career = (props) => {
         </div>
       </div>
 
-      <div className="jobOpening">
+      <div className="jobOpening" id="openPostions">
         <div className="container">
           <div className="small-container" id="open-positions">
             <h2 className="heading2">Open positions</h2>

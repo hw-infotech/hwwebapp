@@ -1,8 +1,8 @@
 .careerPanle {
   width: 100%;
-  padding: 60px 0;
+  padding: 100px 0 60px;
   background: #103d7d;
-  margin-top: 85px;
+  margin-top:0px;
   position: relative;
 }
 .careerPanle .careerImg {
@@ -332,6 +332,18 @@
   bottom: -20px;
   left: 0;
   right: 0;
+}
+
+input.SubmitCv {
+  background: #f1751a;
+  color: #fff;
+  border:#f1751a;
+}
+
+input.SubmitCv.add {
+  background: #cacaca;
+  color: #fff;
+  border:#cacaca;
 }
 
 @media (min-width: 150px) and (max-width: 480px) {

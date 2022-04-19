@@ -33,14 +33,15 @@ const UploadCv = (props) => {
                         </div>
                         <form className="form">
                             <div className="input-form mh-100">
-                                <div className="upload Cv"><img className="outbox" src="assets/img/outbox.svg" /></div>
+                                <div className="upload Cv"><img className="outbox" src="assets/img/outbox.svg" /> Add Docs</div>
                                 <input type="file" accept='.pdf,.docx' className="form-control" onChange={async e => {
                                     try {
                                         let payload = new FormData();
                                         payload.append("files", e.target.files[0]);
-                                       setstate(e.target.files[0])
-                                       setP(payload)
-                                        } catch (e) {
+                                        setstate(e.target.files[0])
+                                        setP(payload)
+                                        console.log(payload);
+                                    } catch (e) {
                                         console.log(e);
                                     }
                                 }}
@@ -49,14 +50,22 @@ const UploadCv = (props) => {
                             </div>
                         </form>
                         <div className="input-form text-center">
-                            <input type="submit" className="SubmitCv" value="Send" onClick={async (e) => {
+                          {p &&  <input type="submit" className="SubmitCv " value="Send" onClick={async (e) => {
                                 try {
                                     await dispatch(createResume(p))
                                 } catch (error) {
                                     console.log(error);
                                 }
                             }
-                            } />
+                            } />}
+                            {!p &&  <input type="submit" className="SubmitCv add" value="Send" onClick={async (e) => {
+                                try {
+                                    await dispatch(createResume(p))
+                                } catch (error) {
+                                    console.log(error);
+                                }
+                            }
+                            } />}
                         </div>
                     </div>
                 </div>
