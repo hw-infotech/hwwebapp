@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-import "../Home/Home.css";
+// import "../Home/Home.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
