@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
 import { subscribeNewsletter } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
+import NewsLetter from './NewsLetter';
 
 const Blogpost = () => {
   const dispatch = useDispatch()
@@ -182,57 +183,8 @@ const Blogpost = () => {
                   <p>Business executives and IT must work together to satisfy market expectations in today's environment. Businesses increasingly focus on establishing innovative methods to automate the entire organization rather than merely optimizing and automating a few internal business operations. As a result, business automation managers aim to create process-driven, agile programs that can swiftly adapt to changing customer requirements.
                   </p>
                 </div>
-                <div className="subscriptionPlan">
-                  <div className="container">
-                    <div className="subBox">
-                      <div className="labelIcon">
-                        <img
-                          src={"./assets/img/blogBanners/newsletter.png"}
-                          alt="image"
-                          className="lazyloaded"
-                          data-ll-status="loaded"
-                        />
-                      </div>
-                      <div className="headings">
-                        <h4>Subscribe to Newsletter</h4>
-                        <p>
-                          Subscribe to be the first to hear about updates, tips
-                          and recommendations!
-                        </p>
-                      </div>
-                      <div className="newsletterPlan">
-                        <div className="tnp tnp-subscription-minimal ">
-                          <Formik
-                            onSubmit={handleFormSubmit}
-                            initialValues={{ email: "" }}
-                            validationSchema={validationSchema}
-                          >
-                            {({ handleSubmit, values }) => (
-                              <form
-                                onSubmit={(e) => {
-                                  e.preventDefault();
-                                  handleSubmit();
-                                }}
-                              >
-                                <Field
-                                  className="tnp-email"
-                                  type="email"
-                                  name="email"
-                                  placeholder="Enter your email here"
-                                />
-                                <input
-                                  className="tnp-submit"
-                                  type="submit"
-                                  value="Subscribe"
-                                ></input>
-                              </form>
-                            )}
-                          </Formik>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
+                <NewsLetter/>
               </div>
             </div>
 

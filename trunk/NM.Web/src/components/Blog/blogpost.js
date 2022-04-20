@@ -7,15 +7,17 @@ import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
 import { subscribeNewsletter } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
+import swal from "sweetalert";
+import NewsLetter from './NewsLetter';
 
 const Blogpost = () => {
   const dispatch = useDispatch()
-  const [newsletter1, setNewsLetter] = useState()
+  const [newsletter1, setNewsLetter1] = useState()
 
-  const handleNewsChange = (e) => {
-    const { name, value } = e.target
-    setNewsLetter(value)
-  }
+  // const handleNewsChange = (e) => {
+  //   const { name, value } = e.target
+  //   setNewsLetter(value)
+  // }
 
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
   // this changes the scrolling behavior to "smooth"
@@ -27,9 +29,43 @@ const Blogpost = () => {
     resetForm()
   }
 
+   const notify = () =>
+     toast.success("Thanks for subscription", {
+       position: "top-right",
+       autoClose: 5000,
+       hideProgressBar: true,
+       closeOnClick: true,
+       pauseOnHover: true,
+       draggable: true,
+       progress: undefined,
+     });
+
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email format').required('Required'),
   })
+
+const emailValidation = () => {
+  const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  return !(!newsletter1 || regex.test(newsletter1) === false);
+};
+  const newsletterEmail = (e)=>{
+     const { name, value } = e.target;
+     setNewsLetter1(value);
+    }
+    console.log("newsletter1",newsletter1);
+  const sendNewsletterEmail= ()=>{
+    if (newsletter1 === "" || !emailValidation()) {
+      swal({
+        text: "Enter valid Email",
+        title: "Warning",
+        icon: "warning",
+      });
+    } else {
+      dispatch(subscribeNewsletter(newsletter1));
+      // console.log("email", dispatch(subscribeNewsletter(newsletter1)));
+      document.getElementById("blogEmail").value = "";
+    }
+  }
 
   return (
     <Dashboard>
@@ -116,10 +152,10 @@ const Blogpost = () => {
                   </h2>
 
                   <p>
-                    A digital transformation for finance uses digital
-                    technology to improve existing processes or introduce new
-                    ways of carrying out corporate tasks, resulting in a better
-                    customer experience and improved conversion rates.
+                    A digital transformation for finance uses digital technology
+                    to improve existing processes or introduce new ways of
+                    carrying out corporate tasks, resulting in a better customer
+                    experience and improved conversion rates.
                   </p>
 
                   <p>
@@ -182,10 +218,10 @@ const Blogpost = () => {
 
                   <p>
                     The adoption of such breakthrough technology results in
-                    digital transformation and the finance function. In
-                    finance, digital transformation refers to drastically
-                    redesigning financial services using technology to improve
-                    the present system.
+                    digital transformation and the finance function. In finance,
+                    digital transformation refers to drastically redesigning
+                    financial services using technology to improve the present
+                    system.
                   </p>
 
                   <ul>
@@ -194,8 +230,8 @@ const Blogpost = () => {
 
                   <p>
                     Moving from legacy to new technology infrastructure and
-                    digital competence necessitates significant expenditures
-                    and costs.
+                    digital competence necessitates significant expenditures and
+                    costs.
                   </p>
 
                   <ul>
@@ -224,8 +260,8 @@ const Blogpost = () => {
                     Changes in workforce and workplace culture are crucial as
                     the talent model shifts and rely on data scientists and
                     analysts, requiring employees to upskill. Time, planning,
-                    clear objectives, and communication are all required in
-                    this endeavor.
+                    clear objectives, and communication are all required in this
+                    endeavor.
                   </p>
 
                   <h6>Competition:</h6>
@@ -237,10 +273,10 @@ const Blogpost = () => {
                     when it comes to becoming digital.
                   </p>
                   <p>
-                    While overcoming these issues in the early stages requires
-                    a lot of time and work, digital transformation in Finance
-                    opens the door to stabilizing and securing an
-                    organization's market position.
+                    While overcoming these issues in the early stages requires a
+                    lot of time and work, digital transformation in Finance
+                    opens the door to stabilizing and securing an organization's
+                    market position.
                   </p>
                   <p>
                     <b>
@@ -271,23 +307,22 @@ const Blogpost = () => {
 
                   <h6>Collaboration is improved. :</h6>
                   <p>
-                    Digital transformation solutions may help companies
-                    increase communication and cooperation across divisions. It
-                    is simple to collaborate to achieve a common objective
-                    using advanced operational models.
+                    Digital transformation solutions may help companies increase
+                    communication and cooperation across divisions. It is simple
+                    to collaborate to achieve a common objective using advanced
+                    operational models.
                   </p>
 
                   <p>
                     The influence of digital transformation may be seen in any
                     form, whether it's a digital payment solution or a fintech
                     solution. Let's take a closer look at the digital
-                    transformation trends affecting the financial sector and
-                    the implications for traditional financial services.
+                    transformation trends affecting the financial sector and the
+                    implications for traditional financial services.
                   </p>
 
                   <h3>
-                    The Fintech Sector's Impact on Digital transformation
-                    Trends
+                    The Fintech Sector's Impact on Digital transformation Trends
                   </h3>
 
                   <div className="post_image m-0 mb-2">
@@ -314,10 +349,10 @@ const Blogpost = () => {
                   <p>
                     This is one of the reasons why many financial institutions
                     have begun to integrate FinTech into their current systems.
-                    Fintech is expected to rise by 25 to 30 percent between
-                    2019 and 2025, according to official projections. The
-                    financial business is growing internationally, primarily to
-                    digital transformation trends.
+                    Fintech is expected to rise by 25 to 30 percent between 2019
+                    and 2025, according to official projections. The financial
+                    business is growing internationally, primarily to digital
+                    transformation trends.
                   </p>
                   <p>
                     <b>
@@ -370,21 +405,21 @@ const Blogpost = () => {
                     industry in the future.
                   </p>
                   <p>
-                    Data and smart contracts may be audited using a
-                    centralized, secure ledger system based on blockchain
-                    technology. It also boosts user or consumer confidence by
-                    enhancing transparency and lowering the chance of human
-                    mistakes. As a result, blockchain technology is used by
-                    numerous financial organizations, including microfinance
-                    firms and even stock exchanges.
+                    Data and smart contracts may be audited using a centralized,
+                    secure ledger system based on blockchain technology. It also
+                    boosts user or consumer confidence by enhancing transparency
+                    and lowering the chance of human mistakes. As a result,
+                    blockchain technology is used by numerous financial
+                    organizations, including microfinance firms and even stock
+                    exchanges.
                   </p>
 
                   <h5>Chatbots for a Personalized Experience</h5>
                   <p>
                     While providing quick and secure digital payment options, a
                     personalized experience is essential. People prefer to
-                    utilize applications that provide a great user experience
-                    by providing all the required features and smooth
+                    utilize applications that provide a great user experience by
+                    providing all the required features and smooth
                     functionality. Chatbots powered by AI is beneficial for
                     providing a customized experience.
                   </p>
@@ -402,8 +437,8 @@ const Blogpost = () => {
                       consumers better.
                     </li>
                     <li>
-                      Chatbots may be used by banks, financial institutions,
-                      and even insurance firms to provide better services and
+                      Chatbots may be used by banks, financial institutions, and
+                      even insurance firms to provide better services and
                       assistance to their consumers.
                     </li>
                     <li>
@@ -419,8 +454,8 @@ const Blogpost = () => {
                     methods. These eWallets or mobile wallet programs have
                     quickly gained traction as customers' paradigm shifts from
                     old, inconvenient banking methods to easy digital services.
-                    The success of these innovative products has prompted a
-                    slew of fintech businesses to develop similar user-friendly
+                    The success of these innovative products has prompted a slew
+                    of fintech businesses to develop similar user-friendly
                     online transaction solutions.
                   </p>
                   <p>
@@ -435,17 +470,17 @@ const Blogpost = () => {
                     The integration of digital technology into all aspects of a
                     business is known as digital transformation. It has a
                     significant impact on the way a company runs. The impact of
-                    digital transformation in financial services may be found
-                    in a variety of industries: It helps firms to upgrade
-                    outdated processes, streamline operations, improve
-                    security, and boost profitability.
+                    digital transformation in financial services may be found in
+                    a variety of industries: It helps firms to upgrade outdated
+                    processes, streamline operations, improve security, and
+                    boost profitability.
                   </p>
                   <p>
                     In a nutshell, impact of digital transformation financial
                     services industry trends is having a big influence on the
-                    fintech industry. Through fintech app development, banks
-                    and other financial institutions worldwide have begun to
-                    reap the benefits of digital transformation and automation.
+                    fintech industry. Through fintech app development, banks and
+                    other financial institutions worldwide have begun to reap
+                    the benefits of digital transformation and automation.
                     Traditional financial service companies must adopt new
                     business models in order to alter their operations and stay
                     ahead of the competition.
@@ -458,57 +493,7 @@ const Blogpost = () => {
                   </p>
                 </div>
 
-                <div className="subscriptionPlan">
-                  <div className="container">
-                    <div className="subBox">
-                      <div className="labelIcon">
-                        <img
-                          src={"./assets/img/blogBanners/newsletter.png"}
-                          alt="image"
-                          className="lazyloaded"
-                          data-ll-status="loaded"
-                        />
-                      </div>
-                      <div className="headings">
-                        <h4>Subscribe to Newsletter</h4>
-                        <p>
-                          Subscribe to be the first to hear about updates, tips
-                          and recommendations!
-                        </p>
-                      </div>
-                      <div className="newsletterPlan">
-                        <div className="tnp tnp-subscription-minimal ">
-                          <Formik
-                            onSubmit={handleFormSubmit}
-                            initialValues={{ email: "" }}
-                            validationSchema={validationSchema}
-                          >
-                            {({ handleSubmit, values }) => (
-                              <form
-                                onSubmit={(e) => {
-                                  e.preventDefault();
-                                  handleSubmit();
-                                }}
-                              >
-                                <Field
-                                  className="tnp-email"
-                                  type="email"
-                                  name="email"
-                                  placeholder="Enter your email here"
-                                />
-                                <input
-                                  className="tnp-submit"
-                                  type="submit"
-                                  value="Subscribe"
-                                ></input>
-                              </form>
-                            )}
-                          </Formik>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <NewsLetter/>
               </div>
             </div>
 
