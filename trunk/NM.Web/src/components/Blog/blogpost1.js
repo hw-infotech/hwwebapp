@@ -7,8 +7,9 @@ import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
 import { subscribeNewsletter } from '../../Redux/Action/Actionfunction';
 import Dashboard from '../../layout/dashboard';
+import RightPannel from './rightPanel';
 
-const Blogpost = () => {
+const Blogpost = ({local,setLocal}) => {
   const dispatch = useDispatch()
   const [newsletter1, setNewsLetter] = useState()
 
@@ -63,14 +64,14 @@ const Blogpost = () => {
                   </h1>
                 </div>
                 <div className="comments">
-                <ul>
-                <li>
-                  <i class="bi bi-eye"></i> <a href="">78</a>{" "}
-                </li>
-                <li>
-                  <i class="bi bi-hand-thumbs-up"></i> <a href="">0</a>{" "}
-                </li>
-              </ul>
+                  <ul>
+                    <li>
+                      <i class="bi bi-eye"></i> <a href="">78</a>{" "}
+                    </li>
+                    <li>
+                      <i class="bi bi-hand-thumbs-up"></i> <a href="">0</a>{" "}
+                    </li>
+                  </ul>
                 </div>
                 <div className="clearfix"></div>
 
@@ -122,7 +123,7 @@ const Blogpost = () => {
 
                   <h3>Why is web design important and what makes it good?
                   </h3>
-                 
+
 
                   <div className="post_image m-0 mb-2">
                     <a href="#">
@@ -174,7 +175,7 @@ const Blogpost = () => {
 
 
                   <h3>To sum it up</h3>
-                 
+
                   <p>
                     People now spend two out of every three minutes on their mobile devices online. With the growing popularity of responsive designs, it's more crucial than ever to give mobile consumers a better experience. At the same time, you must reduce your expenses.
 
@@ -217,7 +218,7 @@ const Blogpost = () => {
                     <div className="subBox">
                       <div className="labelIcon">
                         <img
-                        src={"./assets/img/blogBanners/newsletter.png"}
+                          src={"./assets/img/blogBanners/newsletter.png"}
                           alt="image"
                           className="lazyloaded"
                           data-ll-status="loaded"
@@ -265,202 +266,8 @@ const Blogpost = () => {
                 </div>
               </div>
             </div>
+            <RightPannel  />
 
-            <div
-              id="secondary"
-              className="widget-area rightPanel"
-              role="complementary"
-              aria-label="Blog Sidebar"
-            >
-              <div className="inner">
-                <form
-                  role="search"
-                  method="get"
-                  className="search-form searchForm"
-                  action=""
-                >
-                  <div className="wrap">
-                    <label for="search-form-60b9d7068e4c0">
-                      <span className="screen-reader-text">Search for:</span>
-                    </label>
-                    <input
-                      type="search"
-                      id="search-form-60b9d7068e4c0"
-                      className="search-field"
-                      placeholder="Search …"
-                      value=""
-                      name="s"
-                    />
-                    <input name="" value="" type="submit" />
-                  </div>
-                </form>
-                <div className="listing-right">
-                  <h3>Popular</h3>
-                  <ul>
-                    <li>
-                      <a href="">
-                        Assessing Global Unemployment and Hiring Trends Amid
-                        COVID-19
-                      </a>
-                      <span className="datepost">July 21, 2020</span>
-                    </li>
-                    <li>
-                      <a href="">
-                        Secret to Making People Open Emails Faster and
-                        Frequently DEBUNKED!
-                      </a>
-                      <span className="datepost">August 23, 2013</span>
-                    </li>
-                    <li>
-                      <a href="">
-                        Social Media Presence – Why your business deserves it?
-                      </a>
-                      <span className="datepost">August 26, 2013</span>
-                    </li>
-                    <li>
-                      <a href="">
-                        When Sun Kissed Beaches and Spirit of Nestormind Came
-                        Together
-                      </a>
-                      <span className="datepost">November 18, 2014</span>
-                    </li>
-                    <li>
-                      <a href="">
-                        Nestormind Bags the Most Promising Web Design and
-                        Development Company Award
-                      </a>
-                      <span className="datepost">April 29, 2015</span>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  id="fatbit_category_widget-2"
-                  className="widget listing-right"
-                >
-                  <div className="top">
-                    <h3 className="widget-title">CATEGORIES</h3>
-                  </div>
-                  <div className="middle">
-                    <ul className="categories">
-                      <li>
-                        <a href="">
-                          Nestormind <span>(1)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          Nestormind web design company <span>(1)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          Nestrolife <span>(8)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          {" "}
-                          <span>(14)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          Nestormind Hiring <span>(1)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          Nestormind Team <span>(10)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          Nestormind web design company <span>(5)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          Nestormind Women’s Day <span>(1)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          Nestormind100 <span>(1)</span>
-                        </a>
-                      </li>
-                      <li className="noBorderBottom">
-                        <a href="#">
-                          Celebration <span>(3)</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    id="fatbit_category_widget-2"
-                    className="widget listing-right"
-                  >
-                    <div className="top">
-                      <h3 className="widget-title">CATEGORIES</h3>
-                    </div>
-                    <div className="middle">
-                      <ul className="categories">
-                        <li>
-                          <a href="">
-                            Nestormind <span>(1)</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            Nestormind web design company <span>(1)</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                            Nestrolife <span>(8)</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            {" "}
-                            <span>(14)</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            Nestormind Hiring <span>(1)</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            Nestormind Team <span>(10)</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            Nestormind web design company <span>(5)</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            Nestormind Women’s Day <span>(1)</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            Nestormind100 <span>(1)</span>
-                          </a>
-                        </li>
-                        <li className="noBorderBottom">
-                          <a href="#">
-                            Celebration <span>(3)</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

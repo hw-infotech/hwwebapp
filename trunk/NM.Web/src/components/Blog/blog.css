@@ -14,7 +14,7 @@
     vertical-align: top;
     justify-content: center;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     margin: auto;
 }
 .whiteWrap .leftPanel {
@@ -42,7 +42,7 @@
     text-align: center;
 }
 .whiteWrap .leftPanel .post .date h4 {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 12px;
     line-height: normal;
     margin: 0;
@@ -50,7 +50,7 @@
     text-transform: none;
 }
 .whiteWrap .leftPanel .post .date h2 {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 12px;
     line-height: normal;
     margin: 0;
@@ -58,7 +58,7 @@
     text-transform: none;
 }
 .whiteWrap .leftPanel .post .date h4 {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 12px;
     line-height: normal;
     margin: 0;
@@ -123,7 +123,11 @@
 .whiteWrap .leftPanel .post .comments ul li a {
     color: #000000;
 }
-
+@media (min-width: 320px) and (max-width: 991px) {
+    .listing-right {
+        display: none;
+    }
+}
 .whiteWrap .rightPanel {
     width: auto;
     /* border: solid 1px #e1dfe0; */
@@ -132,11 +136,11 @@
     display: inline-flex;
     vertical-align: top;
     box-shadow: 0px 0px 56px 0px #d5d5d566;
-    position: sticky!important;
-    top: 100px!important;
+    position: sticky !important;
+    top: 100px !important;
     right: 0;
-
-    display: none;
+    margin-left: 30px;
+    height: 100%;
 }
 .searchForm {
     background: #0360b2;
@@ -148,15 +152,19 @@
 }
 
 .searchForm .wrap {
-    background: #FFF;
+    background: #fff;
     border: 1px solid #cfcccc;
     height: 36px;
     padding: 0 10px;
 }
-.comment-reply-link svg, .comment-list .says, #comments .comments-title, .searchForm .wrap label {
+.comment-reply-link svg,
+.comment-list .says,
+#comments .comments-title,
+.searchForm .wrap label {
     display: none;
 }
-.searchForm input[type="text"], .searchForm input[type="search"] {
+.searchForm input[type="text"],
+.searchForm input[type="search"] {
     border: none;
     background: none;
     height: 35px;
@@ -182,7 +190,6 @@
     margin: 6px 0 0 0;
 }
 .listing-right {
-    display: block;
     padding: 10px 16px;
 }
 .listing-right h3 {
@@ -194,6 +201,9 @@
     color: #000000;
     padding: 4px 10px 3px 15px;
     margin: 0px;
+}
+.display_blogpost_none {
+    display: none;
 }
 
 .listing-right ul {
@@ -225,7 +235,7 @@ ul.categories {
     padding: 0;
 }
 ul.categories li {
-    background:url(/public/assets/img/bg-gradi.png) no-repeat bottom left;
+    background: url(/public/assets/img/bg-gradi.png) no-repeat bottom left;
     margin: 0;
     padding: 6px 0px;
     display: block;
@@ -250,7 +260,9 @@ ul.pagination li {
     display: inline-block;
     *display: inline;
 }
-ul.pagination li a:hover, ul.pagination li a.selected, ul.pagination li a.activeLink {
+ul.pagination li a:hover,
+ul.pagination li a.selected,
+ul.pagination li a.activeLink {
     background: #0c5fb0;
     color: #fff;
 }
@@ -276,11 +288,11 @@ ul.pagination li a {
     border-bottom: 1px solid #d5d5d554;
     box-shadow: 0 0 50px 0 #d5d5d5ad;
     max-width: 627px;
-    margin: 0 auto!important;
+    margin: 0 auto !important;
     left: auto;
     right: auto;
     display: flex;
-    margin-bottom: 50px!important;
+    margin-bottom: 50px !important;
 }
 .subscriptionPlan .subBox {
     width: 100%;
@@ -310,7 +322,7 @@ ul.pagination li a {
     font-weight: 800;
     color: #0360b2;
     margin-bottom: 20px;
-    font-family: 'Montserrat',sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 .subscriptionPlan .subBox .headings p {
     font-size: 14px;
@@ -353,8 +365,7 @@ ul.pagination li a {
     border: 0;
 }
 
-
-@media (min-width:320px) and (max-width:480px){
+@media (min-width: 320px) and (max-width: 480px) {
     .whiteWrap {
         width: 100%;
         display: block;
@@ -369,7 +380,6 @@ ul.pagination li a {
         width: 100%;
     }
     .whiteWrap .leftPanel .post .title {
-       
         height: auto;
         min-height: auto;
         display: block;
@@ -398,7 +408,7 @@ ul.pagination li a {
         margin: 0;
         margin-bottom: 10px;
         padding: 0;
-    align-items: center;
+        align-items: center;
     }
     .whiteWrap .leftPanel .post .post_image {
         display: block;
@@ -417,7 +427,7 @@ ul.pagination li a {
     .whiteWrap .leftPanel .post .post_content p {
         font-size: 13px;
     }
-    .searchForm{
+    .searchForm {
         display: none;
     }
     .whiteWrap .leftPanel .post .post_content h2 {
@@ -431,7 +441,7 @@ ul.pagination li a {
     }
 }
 
-@media (min-width:481px) and (max-width:575px){
+@media (min-width: 481px) and (max-width: 575px) {
     .whiteWrap {
         width: 100%;
         display: block;
@@ -446,7 +456,6 @@ ul.pagination li a {
         width: 100%;
     }
     .whiteWrap .leftPanel .post .title {
-       
         height: auto;
         min-height: auto;
         display: block;
@@ -475,7 +484,7 @@ ul.pagination li a {
         margin: 0;
         margin-bottom: 10px;
         padding: 0;
-    align-items: center;
+        align-items: center;
     }
     .whiteWrap .leftPanel .post .post_image {
         display: block;
@@ -494,7 +503,7 @@ ul.pagination li a {
     .whiteWrap .leftPanel .post .post_content p {
         font-size: 14px;
     }
-    .searchForm{
+    .searchForm {
         display: none;
     }
     .whiteWrap .leftPanel .post .post_content h2 {
@@ -508,8 +517,7 @@ ul.pagination li a {
     }
 }
 
-
-@media (min-width:576px) and (max-width:767px){
+@media (min-width: 576px) and (max-width: 767px) {
     .whiteWrap {
         width: 100%;
         display: block;
@@ -524,7 +532,6 @@ ul.pagination li a {
         width: 100%;
     }
     .whiteWrap .leftPanel .post .title {
-       
         height: auto;
         min-height: auto;
         display: block;
@@ -536,7 +543,7 @@ ul.pagination li a {
     .whiteWrap .leftPanel .post .title h1 {
         color: #000000;
         font-size: 25px;
-    line-height: 30px;
+        line-height: 30px;
         margin: 0;
         font-weight: 300;
     }
@@ -553,7 +560,7 @@ ul.pagination li a {
         margin: 0;
         margin-bottom: 10px;
         padding: 0;
-    align-items: center;
+        align-items: center;
     }
     .whiteWrap .leftPanel .post .post_image {
         display: block;
@@ -572,7 +579,7 @@ ul.pagination li a {
     .whiteWrap .leftPanel .post .post_content p {
         font-size: 16px;
     }
-    .searchForm{
+    .searchForm {
         display: none;
     }
     .whiteWrap .leftPanel .post .post_content h2 {
@@ -586,8 +593,7 @@ ul.pagination li a {
     }
 }
 
-
-@media (min-width:768px) and (max-width:991px){
+@media (min-width: 768px) and (max-width: 991px) {
     .whiteWrap {
         width: 100%;
         display: block;
@@ -602,7 +608,6 @@ ul.pagination li a {
         width: 100%;
     }
     .whiteWrap .leftPanel .post .title {
-       
         height: auto;
         min-height: auto;
         display: block;
@@ -614,7 +619,7 @@ ul.pagination li a {
     .whiteWrap .leftPanel .post .title h1 {
         color: #000000;
         font-size: 28px;
-    line-height: 36px;
+        line-height: 36px;
         margin: 0;
         font-weight: 300;
     }
@@ -631,7 +636,7 @@ ul.pagination li a {
         margin: 0;
         margin-bottom: 10px;
         padding: 0;
-    align-items: center;
+        align-items: center;
     }
     .whiteWrap .leftPanel .post .post_image {
         display: block;
@@ -650,12 +655,12 @@ ul.pagination li a {
     .whiteWrap .leftPanel .post .post_content p {
         font-size: 16px;
     }
-    .searchForm{
+    .searchForm {
         display: none;
     }
 }
 
-@media (min-width:992px) and (max-width:1199px){
+@media (min-width: 992px) and (max-width: 1199px) {
     .whiteWrap .leftPanel .post .title h1 {
         font-size: 30px;
     }

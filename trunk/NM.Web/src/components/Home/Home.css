@@ -288,21 +288,9 @@
   width: 100%;
   height: 50%;
   bottom: 0;
-  background: -webkit-linear-gradient(
-    top,
-    rgba(23, 22, 26, 0),
-    rgba(23, 22, 26, 0.4)
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(23, 22, 26, 0),
-    rgba(23, 22, 26, 0.4)
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(23, 22, 26, 0),
-    rgba(23, 22, 26, 0.4)
-  );
+  background: -webkit-linear-gradient(top, rgba(23, 22, 26, 0), rgba(23, 22, 26, 0.4));
+  background: -o-linear-gradient(top, rgba(23, 22, 26, 0), rgba(23, 22, 26, 0.4));
+  background: linear-gradient(180deg, rgba(23, 22, 26, 0), rgba(23, 22, 26, 0.4));
   z-index: 1;
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -325,22 +313,14 @@
   max-height: 500px;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-image
-  img {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-image img {
   vertical-align: middle;
   display: block;
   width: 100%;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
-.portfolioSection
-  .portfolio-item-wrap:hover
-  .portfolio-item
-  .portfolio-item-image
-  img {
+.portfolioSection .portfolio-item-wrap:hover .portfolio-item .portfolio-item-image img {
   -webkit-transform: scale3d(1.1, 1.1, 1);
   transform: scale3d(1.1, 1.1, 1);
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
@@ -367,19 +347,11 @@
   color: #fff;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .portfolio-item-headline {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .portfolio-item-headline {
   font-size: 22px;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .category-holder {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .category-holder {
   display: block;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -389,31 +361,18 @@
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .category-holder
-  .category {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .category-holder .category {
   font-size: 0.94rem;
 }
 
-.portfolioSection
-  .portfolio-item-wrap:hover
-  .portfolio-item
-  .portfolio-item-details
-  .category-holder {
+.portfolioSection .portfolio-item-wrap:hover .portfolio-item .portfolio-item-details .category-holder {
   -webkit-transform: translateY(-20px);
   -ms-transform: translateY(-20px);
   transform: translateY(-20px);
   opacity: 0;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .show-project {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .show-project {
   position: absolute;
   opacity: 0;
   -webkit-transform: translateY(30);
@@ -426,41 +385,23 @@
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
-.portfolioSection
-  .portfolio-item-wrap:hover
-  .portfolio-item
-  .portfolio-item-details
-  .show-project {
+.portfolioSection .portfolio-item-wrap:hover .portfolio-item .portfolio-item-details .show-project {
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
 }
 
-.portfolioSection
-  .portfolio-item-wrap:hover
-  .portfolio-item
-  .portfolio-item-details
-  .show-project {
+.portfolioSection .portfolio-item-wrap:hover .portfolio-item .portfolio-item-details .show-project {
   opacity: 1;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .show-project
-  .show-project-link {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .show-project .show-project-link {
   position: relative;
   font-weight: 600;
   display: inline-block;
 }
 
-.portfolioSection
-  .portfolio-item-wrap
-  .portfolio-item
-  .portfolio-item-details
-  .show-project
-  .show-project-link:after {
+.portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-details .show-project .show-project-link:after {
   content: "";
   position: absolute;
   width: 40px;
@@ -584,13 +525,7 @@
   left: 0;
 }
 
-.accordian-section
-  .collapseBox
-  .accordion
-  .card
-  .card-header
-  h5
-  .btn.collapsed:before {
+.accordian-section .collapseBox .accordion .card .card-header h5 .btn.collapsed:before {
   content: "\f067";
   padding-right: 5px;
   position: absolute;
@@ -894,7 +829,7 @@
   width: 100%;
   float: left;
   position: relative;
-  padding-left: 130px;
+  padding-left: 0px;
   min-height: 480px;
   align-items: center;
   justify-content: center;
@@ -977,12 +912,7 @@
   z-index: 1;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clientFeedbackVideo {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientFeedbackVideo {
   width: 100%;
   height: 100%;
   padding-bottom: 56.1%;
@@ -990,13 +920,11 @@
   float: left;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clientFeedbackVideo
-  iframe {
+.hidecontent {
+  display: none;
+}
+
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientFeedbackVideo iframe {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1005,47 +933,25 @@
   border: 10px solid #f1f1f1;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clientImg {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg {
   width: 100%;
   float: left;
   text-align: center;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clientImg
-  img {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
   width: 222px;
   border-radius: 50%;
   border: 10px solid #b1b1b12e;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clentDetails {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails {
   width: 100%;
   float: left;
   position: relative;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clentDetails
-  .clientName {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
   width: 100%;
   float: left;
   position: relative;
@@ -1053,13 +959,7 @@
   font-weight: 600;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clentDetails
-  .clientPlace {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientPlace {
   width: 100%;
   float: left;
   position: relative;
@@ -1069,13 +969,7 @@
   color: #88c65c;
 }
 
-.testimonialBox
-  .testi_Slider
-  .carousel
-  .carousel-inner
-  .userContent
-  .clentDetails
-  .clientFeedback {
+.testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
   width: 100%;
   float: left;
   position: relative;
@@ -1515,10 +1409,9 @@
   background-position: bottom 3rem center;
 }
 .hm_awcnt h3 img {
-    height: 19px;
-    margin-left: 10px;
+  height: 19px;
+  margin-left: 10px;
 }
-
 
 @media (min-width: 1366px) and (max-width: 1440px) {
   .portfolioSection .portfolio-item-wrap .portfolio-item .portfolio-item-image {
@@ -1704,22 +1597,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     padding-left: 0px;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clientImg {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg {
     text-align: left;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clientImg
-    img {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
     width: 142px;
     border-radius: 50%;
     border: 4px solid #b1b1b12e;
@@ -1924,22 +1806,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     padding-left: 10px;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clientImg {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg {
     text-align: left;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clientImg
-    img {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clientImg img {
     width: 142px;
     border-radius: 50%;
     border: 4px solid #b1b1b12e;
@@ -2151,23 +2022,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 600;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -2365,23 +2224,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 600;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -2579,23 +2426,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 600;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -2793,23 +2628,11 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 600;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }
@@ -2870,13 +2693,10 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .newsletter .newsletterContent .newsletterHeading {
     font-size: 30px;
-    
-   
   }
 
   .newsletter .newsletterContent .newsLetterSubTitle {
     font-size: 16px;
-    
   }
 
   .newsletter .newsletterContent .newsLetterForm .form-control {
@@ -3008,29 +2828,17 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .dark-love-home .cta-texter-home h4 {
     font-size: 30px;
-}
+  }
   .testimonialBox .headings {
     font-size: 30px;
     font-weight: 600;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientName {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientName {
     font-size: 21px;
   }
 
-  .testimonialBox
-    .testi_Slider
-    .carousel
-    .carousel-inner
-    .userContent
-    .clentDetails
-    .clientFeedback {
+  .testimonialBox .testi_Slider .carousel .carousel-inner .userContent .clentDetails .clientFeedback {
     font-size: 14px;
     font-weight: 300;
   }

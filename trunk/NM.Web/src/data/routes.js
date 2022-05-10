@@ -1,6 +1,7 @@
 import React from "react"
 import { Redirect } from "react-router"
 import AboutUsContent from "../components/AboutUs/AboutUs"
+import BlogListComp from "../components/Blog"
 import BlogList from "../components/Blog/blogList"
 import Blogpost from "../components/Blog/blogpost"
 import Blogpost1 from "../components/Blog/blogpost1"
@@ -40,10 +41,11 @@ const routes = [
     route("/privacy-Policy", PrivacyPolicy),
     route("/terms-and-condition", TermsCondition),
     route("/blogs", BlogList),
-    route("/blog-post", Blogpost),
-    route("/blog-post1", Blogpost1),
-    route("/blog-post2", Blogpost2),
+    //route("/impact-digital-transformation", Blogpost),
+    //// route("/blog-post1", Blogpost1),
+    // route("/blog-post2", Blogpost2),
     route("/under-mantainence", NotFound),
-    route("/gallery", Gallery)
+    route("/gallery", Gallery),
+    route('/:name',BlogListComp)
 ]
 export default routes

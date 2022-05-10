@@ -75,7 +75,6 @@ class HomeContent extends Component {
       </div>
     </section>
 
-
     <section className="servicesArea">
         <div className="container">
             <div className="row">
@@ -603,7 +602,7 @@ class HomeContent extends Component {
                         <div className="headings">Startups and Enterprises since 2018.</div>
                         <div className="testi_Slider">
                         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                            <ol className="carousel-indicators">
+                            <ol className="carousel-indicators ">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"><img src="assets/img/user-9.jpg" /></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"><img src="assets/img/user-10.jpg" /></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"><img src="assets/img/user-2.jpg" /></li>

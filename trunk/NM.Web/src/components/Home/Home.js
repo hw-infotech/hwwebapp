@@ -586,7 +586,7 @@ const HomeContent = (props) => {
                 className="carousel slide"
                 data-ride="carousel"
               >
-                <ol className="carousel-indicators">
+                <ol className="carousel-indicators" style={{ display: "none" }}>
                   <li
                     data-target="#carouselExampleIndicators"
                     data-slide-to="0"
