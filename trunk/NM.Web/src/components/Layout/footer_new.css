@@ -1,5 +1,5 @@
-a{
-  text-decoration: none!important;
+a {
+  text-decoration: none !important;
 }
 .footerBox__Panel {
   padding-bottom: 0px;
@@ -7,13 +7,13 @@ a{
   position: relative;
 }
 .footerBox__Panel img {
-    width: 36%;
-    position: absolute;
-    right: 43px;
-    bottom: 23px;
-    -webkit-filter: none;
-    filter: none;
-    opacity: .1;
+  width: 36%;
+  position: absolute;
+  right: 43px;
+  bottom: 23px;
+  -webkit-filter: none;
+  filter: none;
+  opacity: 0.1;
 }
 .footerBox__Panel .footerPanelogo {
   width: 36%;
@@ -170,6 +170,107 @@ a{
   color: #fff;
 }
 
+.clb-social {
+  right: 15px;
+  transform-origin: bottom;
+  transform: rotate(-90deg) translate(50%, 50%);
+  margin-right: 0;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  height: auto;
+  top: auto;
+  bottom: 00;
+  left: 0px;
+  display: none;
+}
+
+.clb-social-holder {
+  display: inline-block;
+}
+
+li.clb-social-holder-follow {
+  display: none;
+}
+
+li.clb-social-holder-dash {
+  display: none;
+}
+
+.clb-social,
+.clb-scroll-top {
+  position: fixed;
+  height: 56px;
+  top: 0;
+  font-weight: 600;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  -o-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.clb-social-holder {
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  list-style: none;
+}
+
+.clb-social {
+  right: 15px;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: rotate(-90deg) translate(50%, -50%);
+  -ms-transform: rotate(-90deg) translate(50%, -50%);
+  transform: rotate(-90deg) translate(50%, -50%);
+  margin-right: 0;
+  -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  -o-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+
+.clb-social-holder.icons li {
+  padding: 0 5px;
+}
+
+.clb-social-holder.icons li a {
+  color: #000000;
+}
+
+.clb-social-holder li {
+  margin: 0 5px;
+}
+
+.clb-social-holder.icons li {
+  padding: 0 5px;
+}
+
+.clb-social-holder.icons li i {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .clb-social,
 .clb-scroll-top {
   position: relative !important;
@@ -189,9 +290,9 @@ a{
   top: -33px;
   position: relative;
   padding-left: 0;
-  padding-top:30px;
+  padding-top: 30px;
   flex-wrap: wrap;
-    gap: 10px;
+  gap: 10px;
 }
 .clb-social-holder.icons li {
   color: #fff;
@@ -203,7 +304,8 @@ a{
   transform: rotate(2deg);
   color: #fff;
 }
-.clb-social-holder.icons li a i,.clb-social-holder.icons li a svg {
+.clb-social-holder.icons li a i,
+.clb-social-holder.icons li a svg {
   color: #fff;
   height: 40px;
   width: 40px;
@@ -214,8 +316,8 @@ a{
   border-radius: 50%;
 }
 .clb-social-holder.icons li a svg.bxl-upwork {
-    padding: 0 10px;
-    fill: #ffffff!important;
+  padding: 0 10px;
+  fill: #ffffff !important;
 }
 .clb-social-holder.icons li a:hover .bxl-linkedin {
   background-color: #0e76a8;
@@ -392,4 +494,48 @@ a{
     line-height: 36px;
     font-size: 14px;
   }
+}
+
+/*-------- for hide icon----*/
+.clib-socia1 {
+  display: flex;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  right: -46px;
+  transition: 0.7s;
+}
+.clib_socialul {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+  padding: 4px !important;
+}
+.clb-social-holder-right-pannel {
+  
+}
+
+.clib-socia1:hover {
+  right: 0px;
+}
+
+.for-arrow-button {
+  position: fixed;
+  z-index: 9999;
+  right: 0px;
+  transition: 0.7s;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+.clb-social-holder-right-pannel:hover,
+.clib-socia1:hover,
+.for-hide:hover {
+  right: 0px;
+}
+.hide_button {
+  padding: 2px 10px 5px;
+  right: 0px;
+  background-color: transparent;
+  border: 0px;
 }

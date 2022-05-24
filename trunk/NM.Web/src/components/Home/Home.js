@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-import "../Home/Home.css";
+// import "../Home/Home.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -338,9 +338,7 @@ const HomeContent = (props) => {
                     className="imagesBox"
                     style={{
                       backgroundImage:
-                        "url(" +
-                        "assets/img/confrence_room.jpg" +
-                        ")",
+                        "url(" + "assets/img/confrence_room.jpg" + ")",
                     }}
                   ></div>
                   <div className="hidden-space"></div>
@@ -579,7 +577,7 @@ const HomeContent = (props) => {
               className="dotImage"
               src="assets/img/testimonial-left-bg-index.svg"
             />
-            <div className="headings">Startups and Enterprises since 2018.</div>
+            <div className="headings">Startups and Enterprises since 2018</div>
             <div className="testi_Slider">
               <div
                 id="carouselExampleIndicators"
@@ -629,14 +627,14 @@ const HomeContent = (props) => {
                   <div className="carousel-item active">
                     <div className="userContent">
                       <div className="row">
-                        <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                           <div className="clientProfilePic">
                             <div className="userPic">
                               <img src="assets/img/pw.png" />
                             </div>
                           </div>
                         </div>
-                        <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                        <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                           <div className="clentDetails">
                             <div className="clientName">Paul W</div>
                             <div className="clientPlace">United State</div>
@@ -668,14 +666,14 @@ const HomeContent = (props) => {
                   <div className="carousel-item">
                     <div className="userContent">
                       <div className="row">
-                        <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                           <div className="clientProfilePic">
                             <div className="userPic">
                               <img src="assets/img/fa.png" />
                             </div>
                           </div>
                         </div>
-                        <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                        <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                           <div className="clentDetails">
                             <div className="clientName">Fahad Ashraf</div>
                             <div className="clientPlace">Saudi Arab</div>
@@ -706,14 +704,14 @@ const HomeContent = (props) => {
                   <div className="carousel-item">
                     <div className="userContent">
                       <div className="row">
-                        <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                           <div className="clientProfilePic">
                             <div className="userPic">
                               <img src="assets/img/ap.png" />
                             </div>
                           </div>
                         </div>
-                        <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                        <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                           <div className="clentDetails">
                             <div className="clientName">Ash Patel </div>
                             <div className="clientPlace">London UK</div>
@@ -747,14 +745,14 @@ const HomeContent = (props) => {
                   <div className="carousel-item">
                     <div className="userContent">
                       <div className="row">
-                        <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                           <div className="clientProfilePic">
                             <div className="userPic">
                               <img src="assets/img/nh.png" />
                             </div>
                           </div>
                         </div>
-                        <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                        <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                           <div className="clentDetails">
                             <div className="clientName">
                               Nicholaz Harmann Svensson{" "}
@@ -777,14 +775,14 @@ const HomeContent = (props) => {
                   <div className="carousel-item">
                     <div className="userContent">
                       <div className="row">
-                        <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                           <div className="clientProfilePic">
                             <div className="userPic">
                               <img src="assets/img/VP.png" />
                             </div>
                           </div>
                         </div>
-                        <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                        <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                           <div className="clentDetails">
                             <div className="clientName">Vince Panuccio </div>
                             <div className="clientPlace">Australia</div>
@@ -810,7 +808,7 @@ const HomeContent = (props) => {
                   <div className="carousel-item">
                     <div className="userContent">
                       <div className="row">
-                        <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                           <div className="clientProfilePic">
                             <div className="userPic">
                               <img src="assets/img/gs.png" />
@@ -828,7 +826,7 @@ const HomeContent = (props) => {
                             ></iframe>
                           </div> */}
                         </div>
-                        <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                        <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                           <div className="clentDetails">
                             <div className="clientName">George Saad</div>
                             <div className="clientPlace">United States</div>
@@ -860,6 +858,7 @@ const HomeContent = (props) => {
         <div className="container">
           <div className="dddl-inner">
             <div className="left-inner">
+              <div className="teamSprint">Team Sprit</div>
               <OwlCarousel
                 className="owl-theme"
                 loop
@@ -879,11 +878,11 @@ const HomeContent = (props) => {
                     determination and team sprit.
                   </p>
                 </div>
-                <div className="item">
+                <div className="item ">
                   <span className="number top-circle">02</span>
                   <h4>Core values</h4>
                   <h3>Tech Savvy </h3>
-                  <p>
+                  <p className="padding_bottom">
                     Nestormind developed an ecosystem that is comprised with
                     tech savvy professionals who proud to brand themselves as
                     the techie animals. Each our actions and reactions are
@@ -891,11 +890,11 @@ const HomeContent = (props) => {
                   </p>
                 </div>
 
-                <div className="item">
+                <div className="item ">
                   <span className="number top-circle">03</span>
                   <h4>Core values</h4>
                   <h3>Learners throughout life </h3>
-                  <p>
+                  <p className="padding_bottom">
                     Learning is the best food to brain and we assume that.
                     Nestormind is pioneering in delivering global standard
                     products implementing out-of-box ideas and it is all
@@ -904,11 +903,11 @@ const HomeContent = (props) => {
                     market needs.
                   </p>
                 </div>
-                <div className="item">
+                <div className="item padding_bottom">
                   <span className="number top-circle">04</span>
                   <h4>Core values</h4>
                   <h3>Outstanding Team Spirit </h3>
-                  <p>
+                  <p className="padding_bottom">
                     We work as a team by speaking up, sharing ideas and offering
                     support while remaining humble and ready to learn from the
                     mistakes. Robust team spirit is our mantra of success and we
@@ -918,6 +917,7 @@ const HomeContent = (props) => {
               </OwlCarousel>
             </div>
             <div className="right-inner">
+              <div className="workProcess">Our Process</div>
               <ul>
                 <li>
                   <div className="image">
@@ -951,10 +951,10 @@ const HomeContent = (props) => {
                 </li>
                 <li>
                   <div className="image">
-                    <img src="assets/img/develop.svg" alt="Develop" />
+                    <img src="assets/img/cuc_automate.svg" alt="Develop" />
                   </div>
                   <div className="text">
-                    <h4>Testing</h4>
+                    <h4>Quality Assurance</h4>
                     <p>Testing and QA</p>
                     <img src="assets/img/line-white.svg" alt="line white" />
                   </div>

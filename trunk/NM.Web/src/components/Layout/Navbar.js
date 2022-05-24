@@ -3,7 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import CommonFunctionality from "../../Shared/CommonFunctionality";
 
 const NavBar = ({ NavbarStyle }) => {
-  console.log("NavbarStyle ", NavbarStyle);
   const history = useHistory();
   const [state, setState] = useState({ isTop: false });
 
@@ -30,8 +29,6 @@ const NavBar = ({ NavbarStyle }) => {
         ? "webDevelopment"
         : ""
       : "";
-
-      console.log("ClassName",ClassName);
 
   return (
     <header

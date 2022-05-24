@@ -520,7 +520,7 @@ export const stories12 = [
   },
   {
     _id: "4",
-    event_title: "Celibration Post",
+    event_title: "Celebration Post",
     event_dics: " it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown ...",
     createAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
     updatedAt: "Tue Dec 28 2021 18:20:54 GMT+0530 (India Standard Time)",
