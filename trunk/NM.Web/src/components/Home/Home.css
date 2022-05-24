@@ -43,7 +43,79 @@
   }
 }
 
+.clb-social,
+.clb-scroll-top {
+  position: fixed;
+  height: 56px;
+  top: 0;
+  font-weight: 600;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  -o-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+.clb-social-holder {
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  list-style: none;
+}
+
+.clb-social {
+  right: 15px;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: rotate(-90deg) translate(50%, -50%);
+  -ms-transform: rotate(-90deg) translate(50%, -50%);
+  transform: rotate(-90deg) translate(50%, -50%);
+  margin-right: 0;
+  -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  -o-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+
+.clb-social-holder.icons li {
+  padding: 0 5px;
+}
+
+.clb-social-holder.icons li a {
+  color: #000000;
+}
+
+.clb-social-holder li {
+  margin: 0 5px;
+}
+
+.clb-social-holder.icons li {
+  padding: 0 5px;
+}
+
+.clb-social-holder.icons li i {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
 
 .w-o-btn {
   height: 48px;
@@ -740,7 +812,7 @@
 }
 
 .testimonialBox .testi_Slider {
-  padding: 0px 0;
+  padding: 70px 0;
   width: 100%;
   float: left;
   position: relative;
@@ -774,7 +846,6 @@
   text-align: center;
   align-items: center;
   border-radius: 10px;
-  display: none;
 }
 
 .testimonialBox .testi_Slider .carousel .carousel-indicators li {
@@ -810,7 +881,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 200px;
 }
 
 .clientProfilePic .userPic {
@@ -914,14 +985,14 @@
 .dddl-inner {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: block;
+  display: flex;
   border-radius: 0.5rem;
   overflow: hidden;
   backface-visibility: hidden;
 }
 
 .dddl-inner .left-inner {
-  width: 100%;
+  width: 64.285%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -931,21 +1002,8 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 40px 3rem 5rem;
+  padding: 0 6rem 5rem;
   background-color: #ffffff;
-  position: relative;
-}
-
-.dddl-inner .left-inner .teamSprint {
-  padding: 30px;
-  font-size: 52px;
-  font-weight: 800;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #00000038;
-  color: transparent;
 }
 
 .dddl-inner .left-inner .number {
@@ -1042,39 +1100,31 @@
 }
 
 .dddl-inner .right-inner {
-  width: 100%;
+  width: 35.715%;
   background-color: #88c65c;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: center;
   -webkit-box-pack: center;
   justify-content: center;
-  margin-top: 20px;
-  padding: 40px 50px 0;
-  flex-direction: column;
-}
-.dddl-inner .right-inner .workProcess {
-  font-size: 39px;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
 }
 
 .dddl-inner .right-inner ul {
-  padding: 20px;
+  padding: 2rem;
   padding-left: 0;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  width: 100%;
-      flex-wrap: wrap;
 }
 
 .dddl-inner .right-inner ul li {
-  display: block;
-  align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0.5rem 0;
 }
 
@@ -1085,7 +1135,6 @@
   width: 3rem;
   height: 3rem;
   opacity: 0.4;
-  margin-bottom: 30px;
 }
 
 .dddl-inner .right-inner ul li .image::before {
@@ -1110,17 +1159,17 @@
 }
 
 .dddl-inner .right-inner ul li .text {
-  padding-left: 0;
+  padding-left: 2.125rem;
 }
 
 .dddl-inner .right-inner ul li .text h4 {
-  font-size: 26px;
+  font-size: 2.4rem;
   color: #ffffff;
   line-height: 1.25;
 }
 
 .dddl-inner .right-inner ul li .text p {
-  font-size: 18px;
+  font-size: 1.6rem;
   color: #ffffff;
   opacity: 0.4;
   margin: 0 0 0.5rem;
@@ -1530,10 +1579,6 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     text-align: center;
   }
 
-  .clientProfilePic {
-  height: 200px;
-}
-
   .testimonialBox .headings {
     font-size: 30px;
   }
@@ -1582,11 +1627,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .dddl-inner .left-inner {
     width: 100%;
-    padding: 30 20px 5rem;
-  }
-  .dddl-inner .left-inner .teamSprint {
-    padding: 30px;
-    font-size: 30px;
+    padding: 0 20px 5rem;
   }
 
   .dddl-inner {
@@ -1655,6 +1696,32 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     font-weight: 600;
   }
 
+  .clb-social {
+    right: 15px;
+    transform-origin: bottom;
+    transform: rotate(-90deg) translate(50%, 50%);
+    margin-right: 0;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    height: auto;
+    top: auto;
+    bottom: 00;
+    left: 0px;
+    display: none;
+  }
+
+  .clb-social-holder {
+    display: inline-block;
+  }
+
+  li.clb-social-holder-follow {
+    display: none;
+  }
+
+  li.clb-social-holder-dash {
+    display: none;
+  }
 
   .storiesImg img {
     margin-left: auto;
@@ -1724,11 +1791,6 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     height: auto !important;
     text-align: center;
   }
-  
-  .clientProfilePic {
-  height: 200px;
-}
-
 
   .testimonialBox .headings {
     font-size: 30px;
@@ -1760,7 +1822,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
 
   .dddl-inner .left-inner {
     width: 100%;
-    padding: 30px 20px 5rem;
+    padding: 0 20px 5rem;
   }
 
   .dddl-inner {
@@ -1781,15 +1843,10 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
     line-height: 24px;
     margin: 0;
   }
-  .dddl-inner .left-inner .teamSprint {
-    padding: 30px;
-    font-size: 30px;
-  }
 
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
-        flex-wrap: wrap;
   }
 
   .dddl-inner .right-inner ul li .text h4 {
@@ -1997,7 +2054,6 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   .dddl-inner .right-inner ul {
     padding: 1rem;
     padding-left: 0;
-    flex-wrap: wrap;
   }
 
   .dddl-inner .right-inner ul li .text h4 {
@@ -2010,8 +2066,8 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   }
 
   .dddl-inner .left-inner {
-    width: 100%;
-    padding: 40px 4rem 0rem;
+    width: 64.285%;
+    padding: 0 4rem 0rem;
   }
 
   .dddl-inner .right-inner ul li .text p {
@@ -2212,8 +2268,8 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   }
 
   .dddl-inner .left-inner {
-    width:100%;
-    padding: 40px 4rem 0rem;
+    width: 64.285%;
+    padding: 0 4rem 0rem;
   }
 
   .dddl-inner .right-inner ul li .text p {
@@ -2414,8 +2470,8 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   }
 
   .dddl-inner .left-inner {
-    width: 100%;
-    padding: 30px 4rem 0rem;
+    width: 64.285%;
+    padding: 0 4rem 0rem;
   }
 
   .dddl-inner .right-inner ul li .text p {
@@ -2616,8 +2672,8 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   }
 
   .dddl-inner .left-inner {
-    width: 100%;
-    padding: 40px 4rem 0rem;
+    width: 64.285%;
+    padding: 0 4rem 0rem;
   }
 
   .dddl-inner .right-inner ul li .text p {
@@ -2822,8 +2878,8 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   }
 
   .dddl-inner .left-inner {
-    width: 100%;
-    padding: 40px 4rem 0rem;
+    width: 64.285%;
+    padding: 0 4rem 0rem;
   }
 
   .dddl-inner .right-inner ul li .text p {

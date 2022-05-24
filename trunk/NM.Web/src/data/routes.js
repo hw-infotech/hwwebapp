@@ -23,6 +23,7 @@ import UIUX from "../components/services/ux_ui_design"
 import WebDev from "../components/services/WebDevelopment"
 
 const route = (path, component, exact = true) => ({ path, component, exact })
+
 const routes = [
     route("/", () => (<Redirect to="/home" />)),
     route("/home", HomeContent),

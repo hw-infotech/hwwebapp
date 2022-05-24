@@ -372,7 +372,7 @@ const Gallery = () => {
                 </Row>
               </div>
             </div>
-            {/* <div className="p-2">
+            <div className="p-2">
               <div className="pt-5">
                 <h2>Nestormind Gallery</h2>
               </div>
@@ -383,7 +383,7 @@ const Gallery = () => {
                   Style={{ overlay: { zIndex: 2000 } }}
                 />
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

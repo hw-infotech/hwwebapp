@@ -354,7 +354,7 @@ ul.pagination li a {
     margin-bottom: 30px;
     border: 1px solid #d5d5d55e;
 }
-.newsletterPlan .tnp-subscription-minimal .tnp-submit {
+.newsletterPlan .tnp-subscription-minimal input.tnp-submit {
     height: 50px;
     line-height: 50px;
     padding: 0 50px;
