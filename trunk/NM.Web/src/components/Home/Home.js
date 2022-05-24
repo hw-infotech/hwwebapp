@@ -9,7 +9,19 @@ import Portfolio from "../Home/portfolio";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
-
+import { InlineWidget } from "react-calendly";
+import Modal from "react-modal";
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "100%"
+  },
+};
 const HomeContent = (props) => {
   const { newsletter, setNewsLetter, navbar, setNavbar } = props;
   // console.log(setNavbar);
@@ -42,6 +54,21 @@ const HomeContent = (props) => {
   }, []);
   // this changes the scrolling behavior to "smooth"
 
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+   
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <div>
       <ToastContainer
@@ -71,9 +98,23 @@ const HomeContent = (props) => {
                 top-rated service to propel your business another level.
               </h2>
               <div className="d-lg-flex mt-5">
-                <a href="/about-us" className="w-o-btn scrollto">
-                  About Us
-                </a>
+                <button onClick={openModal} className="w-o-btn scrollto">
+                  Book an appointment
+                </button>
+
+                <Modal
+                  isOpen={modalIsOpen}
+                  onAfterOpen={afterOpenModal}
+                  onRequestClose={closeModal}
+                  style={customStyles}
+                  contentLabel="Example Modal"
+                >
+                  <div className="ModalContant">
+                    {/* <h2>Hello</h2>
+                    <button onClick={closeModal}>&times;</button> */}
+                    <InlineWidget url="https://calendly.com/robin-sharma-1?primary_color=ef661e" />
+                  </div>
+                </Modal>
               </div>
             </div>
             {/* <div
@@ -338,9 +379,7 @@ const HomeContent = (props) => {
                     className="imagesBox"
                     style={{
                       backgroundImage:
-                        "url(" +
-                        "assets/img/confrence_room.jpg" +
-                        ")",
+                        "url(" + "assets/img/confrence_room.jpg" + ")",
                     }}
                   ></div>
                   <div className="hidden-space"></div>
@@ -474,6 +513,28 @@ const HomeContent = (props) => {
                 rel="noopener noreferrer"
               >
                 <div class="img">
+                  <img src="../../assets/img/GooglePartner.png" />
+                </div>
+              </a>
+              <div class="hm_awcnt">
+                <h3>
+                  5.0
+                  <img src="../../assets/img/stars.svg" />
+                </h3>
+                <p>
+                  Certified app development company, acknowledged by Google.
+                </p>
+              </div>
+            </div>
+
+            <div class="awa_rds awa_rds_one">
+              <a
+                href="https://clutch.co/profile/nestormind#summary"
+                target="_blank"
+                aria-label="Awards"
+                rel="noopener noreferrer"
+              >
+                <div class="img">
                   <img src="../../assets/img/cluch.png" />
                 </div>
               </a>
@@ -487,6 +548,7 @@ const HomeContent = (props) => {
                 </p>
               </div>
             </div>
+
             <div class="awa_rds awa_rds_two">
               <a
                 href="https://www.goodfirms.co/company/nestormind-pvt-ltd"

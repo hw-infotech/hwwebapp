@@ -1,5 +1,5 @@
 import React from "react"
-import { Redirect } from "react-router"
+import { Redirect } from "react-router-dom"
 import AboutUsContent from "../components/AboutUs/AboutUs"
 import BlogListComp from "../components/Blog"
 import BlogList from "../components/Blog/blogList"
@@ -46,6 +46,6 @@ const routes = [
     // route("/blog-post2", Blogpost2),
     route("/under-mantainence", NotFound),
     route("/gallery", Gallery),
-    route('/:name',BlogListComp)
+    route('/blog/:name',BlogListComp)
 ]
 export default routes

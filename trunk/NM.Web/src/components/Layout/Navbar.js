@@ -1,6 +1,21 @@
 import React, { Component, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import CommonFunctionality from "../../Shared/CommonFunctionality";
+import { InlineWidget } from "react-calendly";
+
+
+import Modal from "react-modal";
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "100%",
+  },
+};
 
 const NavBar = ({ NavbarStyle }) => {
   console.log("NavbarStyle ", NavbarStyle);
@@ -33,6 +48,28 @@ const NavBar = ({ NavbarStyle }) => {
 
       console.log("ClassName",ClassName);
 
+
+
+
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+
+
+
+
   return (
     <header
       id="header"
@@ -46,7 +83,7 @@ const NavBar = ({ NavbarStyle }) => {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="/">
-            <img src="assets/img/nestormind_logo_250.png"  />
+            <img src="assets/img/nestormind_logo_250.png" />
           </a>
           <button
             className="navbar-toggler"
@@ -242,6 +279,11 @@ const NavBar = ({ NavbarStyle }) => {
               <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>
               </li>
+              <li className="nav-item">
+                <Link className="w-o-btn" onClick={openModal}>
+                  Get free consultation
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>
@@ -274,6 +316,18 @@ const NavBar = ({ NavbarStyle }) => {
   
         <a href="#about" className="get-started-btn scrollto">Get Quote</a> */}
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <div className="ModalContant">
+          <InlineWidget url="https://calendly.com/robin-sharma-1?primary_color=ef661e" />
+        </div>
+      </Modal>
     </header>
   );
 };
