@@ -25,8 +25,7 @@ const withNewsletterAddress = (Component) => {
       progress: undefined,
     }); //, { theme: "colored" }
     const emailValidation = () => {
-      const regex =
-        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       return !(!newsletter || regex.test(newsletter) === false);
     }
     const notifyWarning = () => toast.error('Enter valid email ', {
@@ -130,7 +129,8 @@ const withNewsletterAddress = (Component) => {
                   SAS Nagar, Mohali, Punjab
                 </div>
                 <div className="coporateOffice__address">
-                  <strong>Phone:</strong> (0172) 5020206
+                  <strong>Phone:</strong> (0172) 408 7063 / 518 7063 <br />
+                  {/* <strong>Phone:</strong> (0172) 518 7063 */}
                 </div>
                 {/* <div className="coporateOffice__address">
                         <strong> Mobile:</strong> +91 9877344996

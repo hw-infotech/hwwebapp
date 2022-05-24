@@ -3,7 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import CommonFunctionality from "../../Shared/CommonFunctionality";
 import { InlineWidget } from "react-calendly";
 
-
 import Modal from "react-modal";
 const customStyles = {
   content: {
@@ -18,7 +17,6 @@ const customStyles = {
 };
 
 const NavBar = ({ NavbarStyle }) => {
-  console.log("NavbarStyle ", NavbarStyle);
   const history = useHistory();
   const [state, setState] = useState({ isTop: false });
 
@@ -46,12 +44,7 @@ const NavBar = ({ NavbarStyle }) => {
         : ""
       : "";
 
-      console.log("ClassName",ClassName);
-
-
-
-
-
+  console.log("ClassName", ClassName);
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const openModal = () => {
@@ -65,10 +58,6 @@ const NavBar = ({ NavbarStyle }) => {
   function closeModal() {
     setIsOpen(false);
   }
-
-
-
-
 
   return (
     <header

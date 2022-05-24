@@ -101,7 +101,7 @@ const Career = (props) => {
             <h2 className="heading2">Open positions</h2>
             <ul className="position_list">
               <li>
-                <Link to="/uploadCv" target="_blank">
+                <Link to="/jobdescription" target="_blank">
                   <span className="heading5">UI/UX Designer</span>
                   <span className="location">
                     Mohali, Punjab

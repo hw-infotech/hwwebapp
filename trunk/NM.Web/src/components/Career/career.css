@@ -2,7 +2,7 @@
   width: 100%;
   padding: 100px 0 60px;
   background: #103d7d;
-  margin-top:0px;
+  margin-top: 0px;
   position: relative;
 }
 .careerPanle .careerImg {
@@ -337,13 +337,13 @@
 input.SubmitCv {
   background: #f1751a;
   color: #fff;
-  border:#f1751a;
+  border: #f1751a;
 }
 
 input.SubmitCv.add {
   background: #cacaca;
   color: #fff;
-  border:#cacaca;
+  border: #cacaca;
 }
 
 @media (min-width: 150px) and (max-width: 480px) {
@@ -765,7 +765,7 @@ input.SubmitCv.add {
     width: 100%;
   }
   .careerPanle .careerBanner_Content .careerContent p {
-    font-size:16px;
+    font-size: 16px;
     margin-bottom: 40px;
     color: #fff;
   }
@@ -996,5 +996,120 @@ input.SubmitCv.add {
   }
   .uploadCvPanel .up-gra .upload-Graphics img {
     max-width: 590px;
+  }
+}
+/*-------Job Description ------- */
+.jobdes_margin {
+  margin-top: 133px;
+  margin-bottom: 100px;
+}
+.titlejob {
+  font-size: 24px;
+}
+.jobdes_card {
+  box-shadow: 0px 0px 15px 0px #d6d6dd9c;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid rgb(233, 227, 227);
+}
+.jobdes_marginbottom {
+}
+.job_location {
+  font-size: 16px;
+  font-weight: 400;
+}
+.job_date {
+  font-size: 14px;
+  font-weight: 350;
+}
+.jobapply_button {
+  margin-top: 10px;
+  padding: 0px 34px;
+  border: 2.5px solid #ea7424;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 116px;
+  color: #eb7823;
+  background-color: #fff;
+  height: 53px;
+  width: 292px;
+  transition: 0.9s;
+}
+.jobapply_button:hover {
+  background: #eb7823;
+  color: white;
+  transition: 0.9s;
+}
+.job_description_heading {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 30px;
+  text-decoration: underline;
+}
+.padd {
+  padding: 30px;
+}
+.job_description_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+}
+.job_description_level_list {
+  list-style: none;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 50% 50%;
+  gap: 40px;
+  max-width: 600px;
+}
+.job_description_level {
+  color: gray;
+  font-size: 16px;
+  font-weight: 300;
+}
+.main-pannle {
+  display: flex;
+}
+.leftt_pannel {
+  width: 80%;
+}
+.right_pannle_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  padding-left: 0;
+  padding-top: 10px;
+}
+.right_pannle_title {
+  font-size: 16px !important;
+  font-weight: 700;
+}
+.right_pannle_list_itmes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.right_pannle_button {
+  background-color: white;
+  color: #1b75cf;
+  border: 0;
+  font-weight: 700;
+}
+.right_pannle_main_heading {
+  font-weight: 400;
+}
+@media (min-width: 200px) and (max-width: 776px) {
+  .mediaqueiry {
+    visibility: hidden;
+  }
+}
+@media (min-width: 200px) and (max-width: 776px) {
+  .leftt_pannel {
+    width: 100%;
   }
 }

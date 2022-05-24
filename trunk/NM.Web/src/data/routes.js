@@ -7,6 +7,7 @@ import Blogpost from "../components/Blog/blogpost"
 import Blogpost1 from "../components/Blog/blogpost1"
 import Blogpost2 from "../components/Blog/blogpost2"
 import Career from "../components/Career/career"
+import Job_Description from "../components/Career/jobdescription"
 import UploadCv from "../components/Career/uploadCv"
 import Telemedician from "../components/caseStudies/Telemedician_case"
 import ContactUsContent from "../components/ContactUs/ContactUs"
@@ -23,7 +24,6 @@ import UIUX from "../components/services/ux_ui_design"
 import WebDev from "../components/services/WebDevelopment"
 
 const route = (path, component, exact = true) => ({ path, component, exact })
-
 const routes = [
     route("/", () => (<Redirect to="/home" />)),
     route("/home", HomeContent),
@@ -41,6 +41,7 @@ const routes = [
     route("/privacy-Policy", PrivacyPolicy),
     route("/terms-and-condition", TermsCondition),
     route("/blogs", BlogList),
+    route("/jobdescription", Job_Description),
     //route("/impact-digital-transformation", Blogpost),
     //// route("/blog-post1", Blogpost1),
     // route("/blog-post2", Blogpost2),
