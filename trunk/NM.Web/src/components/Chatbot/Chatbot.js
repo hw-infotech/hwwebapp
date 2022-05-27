@@ -1,3 +1,4 @@
+import { flexbox } from '@mui/system';
 import React, { Component, useState } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
@@ -45,7 +46,7 @@ const Tab = (e) => {
     )
 }
 function Chatbot1() {
-
+    const[close,setclose]=useState(false)
     const [state, setState] = useState(
         {
             name: '',
@@ -54,7 +55,13 @@ function Chatbot1() {
             email: ""
         })
 
-
+        const open=({opened})=>{
+            setclose(opened)
+        
+        }
+        const close1=()=>{
+            setclose(false)
+        }
     //Review.propTypes = {
     /// steps: PropTypes.object,
     //};
@@ -88,7 +95,11 @@ function Chatbot1() {
         }} /></div>
         <div className='heading' >Nestormind
             <div style={{ fontSize: "13px" }}>Online</div>
+            
         </div>
+        <div style={{marginLeft:"60px"}} onClick={()=>{
+            close1()
+        }}><i class="fs-2 bi-x"></i></div>
     </div>)
     const config = {
         width: "400px",
@@ -248,7 +259,8 @@ function Chatbot1() {
                 botAvatar="ne.png"
                 //userAvatar={image}
                 headerComponent={<Header />}
-
+                opened={close}
+                toggleFloating={open}
                 {...config}
                 steps={stepArray}
             />
