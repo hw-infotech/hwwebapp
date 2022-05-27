@@ -38,6 +38,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-simple-chatbot": "^0.6.1",
     "react-slick": "^0.28.1",
     "react-toastify": "^8.1.0",
     "react-transition-group": "^4.4.2",
@@ -45,6 +46,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5",
     "sweetalert": "^2.1.2",
     "swiper": "^7.0.7",
     "yup": "^0.32.11"

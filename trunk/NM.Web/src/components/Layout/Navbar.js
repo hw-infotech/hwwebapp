@@ -25,10 +25,10 @@ const NavBar = ({ NavbarStyle }) => {
     NavbarStyle == "appDevelopment"
       ? "appDevelopment"
       : NavbarStyle == "appDevelopment"
-      ? "webDevelopment"
         ? "webDevelopment"
-        : ""
-      : "";
+          ? "webDevelopment"
+          : ""
+        : "";
 
   return (
     <header
@@ -43,7 +43,7 @@ const NavBar = ({ NavbarStyle }) => {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="/">
-            <img src="assets/img/nestormind_logo_250.png"  />
+            <img src="assets/img/nestormind_logo_250.png" />
           </a>
           <button
             className="navbar-toggler"
@@ -234,7 +234,7 @@ const NavBar = ({ NavbarStyle }) => {
               </li> */}
 
               <li className="nav-item">
-                <Link to="/career">Career</Link>
+                <Link to="/Career">Career</Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>

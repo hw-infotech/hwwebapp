@@ -18,11 +18,13 @@ import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 // import TermsCondition from '../privacy-terms/terms_Condition.js';
 // import BlogList from '../Blog/blogList.js';
 // import Blogpost from '../Blog/blogpost.js';
+import Chatbot from '../Chatbot/Chatbot'
 import routes from '../../data/routes';
 
 const Layout = () => {
     return (
         <Router>
+            <Chatbot/>
             <Switch>
                 {routes.map((route, index) => (
                     <Route {...route} key={index} />
