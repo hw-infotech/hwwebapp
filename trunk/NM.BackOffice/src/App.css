@@ -1,0 +1,11 @@
+.dashboard1 {
+    width: 100%;
+    display: flex;
+}
+.mainDashboard1 {
+    width: calc(100% - 250px);
+    position: relative;
+}
+.mainDashboardfooter1 {
+    /* width: calc(100% - 250px); */
+}
