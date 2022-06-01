@@ -3,7 +3,6 @@ import Footer_new from "../components/Layout/Footer_new"
 import NavBar from "../components/Layout/Navbar"
 import "../components/Layout/footer_new.css";
 
-
 const Dashboard = ({ children, NavbarStyle }) => {
   const [state, setState] = useState(false)
   return (

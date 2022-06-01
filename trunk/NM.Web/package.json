@@ -19,6 +19,7 @@
     "dotenv": "^16.0.0",
     "formik": "^2.2.9",
     "glamorous": "^5.0.0",
+    "history": "^5.3.0",
     "install": "^0.13.0",
     "lsof": "^0.1.0",
     "moment": "^2.29.1",
