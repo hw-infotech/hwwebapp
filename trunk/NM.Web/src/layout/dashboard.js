@@ -10,7 +10,7 @@ const Dashboard = ({ children, NavbarStyle }) => {
     <div>
       <NavBar NavbarStyle={NavbarStyle} />
       <div className="">
-      <div className="for-arrow-button"> <button type="button" className="hide_button"><i class="fs-4 bi-arrow-left-square"></i></button></div>
+      {/* <div className="for-arrow-button"> <button type="button" className="hide_button"><i class="fs-4 bi-arrow-left-square"></i></button></div> */}
       <div className="clb-social-holder-right-pannel">
         <div className="clib-socia1">
        
