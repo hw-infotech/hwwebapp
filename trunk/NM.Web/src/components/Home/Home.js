@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-// import "../Home/Home.css";
+import "../Home/Home.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -62,7 +62,7 @@ const HomeContent = (props) => {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-   
+
   }
 
   function closeModal() {
@@ -83,7 +83,18 @@ const HomeContent = (props) => {
         pauseOnHover
       />
       <section id="hero" className="d-flex align-items-center">
-        <div className="container">
+        <div className="container " style={{ position: "relative" }}>
+          <video
+            id="vid"
+            className="globeVideo"
+            width="820"
+            height="600"
+            loop
+            autoPlay
+            muted
+          >
+            <source src="assets/music/globe.mp4" type="video/mp4" />
+          </video>
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
               <h1>
@@ -980,7 +991,8 @@ const HomeContent = (props) => {
                 </div>
               </OwlCarousel>
             </div>
-            <div className="right-inner">
+
+            {/* <div className="right-inner">
               <div className="workProcess">Our Process</div>
               <ul>
                 <li>
@@ -1030,6 +1042,89 @@ const HomeContent = (props) => {
                   <div className="text">
                     <h4>Launch</h4>
                     <p>and optimize</p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+              </ul>
+            </div> */}
+
+            <div className="right-process">
+              <div className="workProcess">Agile Methodology</div>
+              <div className="workProcessSlogan">Deriving Test Plan</div>
+              <ul>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/discover.svg" alt="Discover" />
+                  </div>
+                  <div className="text">
+                    <small></small>
+                    <h4>Ideation</h4>
+                    <p>Based on market Analysis and Customer's Expections</p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/design.svg" alt="Design" />
+                  </div>
+                  <div className="text">
+                    <small>Developing & Validatios</small>
+                    <h4> Usage Scenarios</h4>
+                    <p>Complementory Outcomes from this step is UAT plan</p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/develop.svg" alt="Develop" />
+                  </div>
+                  <div className="text">
+                    <small>Creating</small>
+                    <h4>User Stories</h4>
+                    <p>Listing Functional & Non-Functional Requirements</p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/cuc_automate.svg" alt="Develop" />
+                  </div>
+                  <div className="text">
+                    <small></small>
+                    <h4>Core Development</h4>
+                    <p>
+                      Running Automated and semi-automated tests in parallel
+                    </p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/launch.svg" alt="Launch" />
+                  </div>
+                  <div className="text">
+                    <h4>Functional &</h4>
+                    <h4>Regression Testing</h4>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/launch.svg" alt="Launch" />
+                  </div>
+                  <div className="text">
+                    <h4>User Acceptance</h4>
+                    <h4>Testing</h4>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/launch.svg" alt="Launch" />
+                  </div>
+                  <div className="text">
+                    <h4>Markit Acceptance</h4>
+                    <h4>Testing</h4>
                     <img src="assets/img/line-white.svg" alt="line white" />
                   </div>
                 </li>

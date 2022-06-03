@@ -197,7 +197,7 @@ const Footer_new = () => {
           </div>
         </div>
         <div className="bottomFooter">
-          <div className="leftSec">&copy; 2021 All Rights Reserved</div>
+          <div className="leftSec">&copy; 2021 Nestormind Pvt Ltd. All Rights Reserved</div>
         </div>
       </div>
     </section>

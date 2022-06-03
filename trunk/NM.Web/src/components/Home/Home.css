@@ -3015,3 +3015,130 @@ img.underCont {
 .ReactModal__Content.ReactModal__Content--after-open::-webkit-scrollbar {
   display: none!important;
 }
+
+
+
+/* globe Setting */
+video.globeVideo {
+  position: absolute;
+  right: -180px;
+  opacity: 0.4;
+  top: 50%;
+  Z-INDEX: 0;
+  transform: translateY(-50%);
+}
+
+
+
+/* process */
+
+.dddl-inner .right-process {
+  width: 100%;
+  background-color: #111111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 40px 50px 20px;
+  flex-direction: column;
+}
+.dddl-inner .right-process .workProcess {
+  font-size: 39px;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+.dddl-inner .right-process .workProcessSlogan {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 15px;
+
+
+}
+.dddl-inner .right-process ul li .text small {
+    color: #ed6626;
+    height: 20px;
+    display: block;
+}
+
+
+.dddl-inner .right-process ul {
+  padding: 13px;
+  padding-left: 0;
+  display: grid;
+  grid-gap: 3px;
+  gap: 14px;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.dddl-inner .right-process ul li {
+  display: block;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  background: #000000;
+  padding: 10px;
+  border-radius: 10px;
+}
+.dddl-inner .right-process ul li .image {
+  padding-right: 2.125rem;
+  width: 100%;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.4;
+  margin-bottom: 30px;
+}
+
+.dddl-inner .right-process ul li .image::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.dddl-inner .right-process ul li .image img {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  height: 100%;
+  object-fit: contain;
+}
+
+.dddl-inner .right-process ul li .text {
+  padding-left: 0;
+}
+
+.dddl-inner .right-process ul li .text h4 {
+  font-size: 26px;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.dddl-inner .right-process ul li .text p {
+  font-size: 18px;
+  color: #ffffff;
+  opacity: 0.4;
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+.dddl-inner .right-process ul li .text img {
+  max-width: 5.5rem;
+  width: 100%;
+  opacity: 0.4;
+}
