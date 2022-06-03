@@ -123,7 +123,7 @@ const HomeContent = (props) => {
                   <div className="ModalContant">
                     {/* <h2>Hello</h2>
                     <button onClick={closeModal}>&times;</button> */}
-                    <InlineWidget url="https://calendly.com/robin-sharma-1?primary_color=ef661e" />
+                    <InlineWidget url="https://calendly.com/nestormindpvtltd?primary_color=ef661e" />
                   </div>
                 </Modal>
               </div>

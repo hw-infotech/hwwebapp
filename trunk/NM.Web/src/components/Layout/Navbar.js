@@ -314,7 +314,7 @@ const NavBar = ({ NavbarStyle }) => {
         contentLabel="Example Modal"
       >
         <div className="ModalContant">
-          <InlineWidget url="https://calendly.com/robin-sharma-1?primary_color=ef661e" />
+          <InlineWidget url="https://calendly.com/nestormindpvtltd?primary_color=ef661e" />
         </div>
       </Modal>
     </header>
