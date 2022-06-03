@@ -100,8 +100,9 @@ const Career = (props) => {
           <div className="small-container" id="open-positions">
             <h2 className="heading2">Open positions</h2>
             <ul className="position_list">
-              <li>
+              
                 <Link to="/jobdescription" target="_blank">
+                <li>
                   <span className="heading5">UI/UX Designer</span>
                   <span className="location">
                     Mohali, Punjab
@@ -125,10 +126,12 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
+                  </li>
                 </Link>
-              </li>
+             
+              
+              <Link to="/jobdescription" target="_blank">
               <li>
-                <Link to="/uploadCv" target="_blank">
                   <span className="heading5">Product Manager</span>
                   <span className="location">
                     Mohali, Punjab
@@ -152,10 +155,12 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
+                  </li>
                 </Link>
-              </li>
+              
+              
+              <Link to="/jobdescription" target="_blank">
               <li>
-                <Link to="/uploadCv" target="_blank">
                   <span className="heading5">Marketing Manager</span>
                   <span className="location">
                     Mohali, Punjab
@@ -179,10 +184,12 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
+                  </li>
                 </Link>
-              </li>
+             
+              
+              <Link to="/jobdescription" target="_blank">
               <li>
-                <Link to="/uploadCv" target="_blank">
                   <span className="heading5">Project Co-ordinator</span>
                   <span className="location">
                     Mohali, Punjab
@@ -206,10 +213,12 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
+                  </li>
                 </Link>
-              </li>
+             
+            
+              <Link to="/jobdescription" target="_blank">
               <li>
-                <Link to="/uploadCv" target="_blank">
                   <span className="heading5">Senior iOS Developer</span>
                   <span className="location">
                     Mohali, Punjab
@@ -233,10 +242,12 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
-                </Link>
+               
               </li>
+              </Link>
+             
+              <Link to="/jobdescription" target="_blank">
               <li>
-                <Link to="/uploadCv" target="_blank">
                   <span className="heading5">Sales Manager</span>
                   <span className="location">
                     Mohali, Punjab
@@ -260,8 +271,9 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
+                  </li>
                 </Link>
-              </li>
+             
             </ul>
           </div>
         </div>
