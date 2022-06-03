@@ -2,26 +2,25 @@ import React, { useState } from "react"
 import Footer_new from "../components/Layout/Footer_new"
 import NavBar from "../components/Layout/Navbar"
 import "../components/Layout/footer_new.css";
+import "../layout/socialLinks.css";
 
 const Dashboard = ({ children, NavbarStyle }) => {
   const [state, setState] = useState(false)
   return (
     <div>
       <NavBar NavbarStyle={NavbarStyle} />
-      <div className="">
-      {/* <div className="for-arrow-button"> <button type="button" className="hide_button"><i class="fs-4 bi-arrow-left-square"></i></button></div> */}
+      <div className="commonSocialIcons">
+     
       <div className="clb-social-holder-right-pannel">
         <div className="clib-socia1">
-       
+         
           <div className="clb-social clib_socialul" >
-        
+          <div className="socialM">SOCIAL</div>
             <ul className="clb-social-holder clib_socialul font-titles icons mb-0" style={{
               top: 0
             }}>
-              <li>
-               
-              </li>
-              <div className="">
+            
+             
                 <li>
                   <a
                     target="_blank"
@@ -105,7 +104,6 @@ const Dashboard = ({ children, NavbarStyle }) => {
                     </svg>
                   </a>
                 </li>
-              </div>
             </ul>
           </div>
           </div>

@@ -1,0 +1,30 @@
+.commonSocialIcons{
+    position: relative;
+}
+.commonSocialIcons .clb-social-holder{
+    display: flex;
+    gap: 5;
+}
+.commonSocialIcons .clib-socia1 {
+    right: -49px;
+}
+.commonSocialIcons .clib-socia1:hover {
+    right: 0px;
+}
+.socialM {
+    position: absolute;
+    transform: rotate(-90deg);
+    right: 18px;
+    top: 50%;
+    font-size: 12px;
+    background: #000;
+    color: #fff;
+    padding: 3px 21px;
+    border-radius: 15px 15px 0px 0px;
+    transition: all ease-in-out 1s;
+}
+
+.commonSocialIcons .clib-socia1:hover .socialM{
+    opacity: 0;
+    transition: all ease-in-out .5s;
+}

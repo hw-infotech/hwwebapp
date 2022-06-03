@@ -161,51 +161,55 @@ const Portfolio = () => {
               </h6>
             </div>
             <div className="swiperRight">
-              <OwlCarousel
-                {...portStories}
-                className="owl-theme"
-                autoplay={true}
-                items={2}
-                margin={20}
-                nav
-              >
-                {slider?.map((data, index) => (
-                  <div className="item" key={index}>
-                    <div className="projectBox">
-                      <img src={data.image} />
-                      <div className="contant">
-                        <h3>{data.title}</h3>
-                        <p>{data.content}</p>
+              {slider && (
+                <OwlCarousel
+                  {...portStories}
+                  className="owl-theme"
+                  autoplay={true}
+                  items={2}
+                  margin={20}
+                  nav
+                >
+                  {slider?.map((data, index) => (
+                    <div className="item" key={index}>
+                      <div className="projectBox">
+                        <img src={data.image} />
+                        <div className="contant">
+                          <h3>{data.title}</h3>
+                          <p>{data.content}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </OwlCarousel>
+                  ))}
+                </OwlCarousel>
+              )}
             </div>
           </div>
         </div>
         <div className="stackLogo">
-          <OwlCarousel
-            {...brandLogo}
-            className="owl-theme"
-            autoplay={true}
-            items={2}
-            margin={20}
-            nav
-          >
-            {logo?.map((data, index) => (
-              <div className="item" key={index}>
-                <div className="brandlogoBox">
-                  <img src={data.image} />
+          {logo && (
+            <OwlCarousel
+              {...brandLogo}
+              className="owl-theme"
+              autoplay={true}
+              items={2}
+              margin={20}
+              nav
+            >
+              {logo?.map((data, index) => (
+                <div className="item" key={index}>
+                  <div className="brandlogoBox">
+                    <img src={data.image} />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </OwlCarousel>
+              ))}
+            </OwlCarousel>
+          )}
         </div>
       </div>
     </div>
   );
-}
+};
 
 // class Portfolio extends Component {
 //     return (

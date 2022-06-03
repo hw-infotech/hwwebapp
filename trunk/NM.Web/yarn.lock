@@ -10935,6 +10935,11 @@
     "uncontrollable" "^7.2.1"
     "warning" "^4.0.3"
 
+"react-calendly@^4.0.1":
+  "integrity" "sha512-y4IXQ/ghFSPJHlFS2XUb7tUEfLkJAF6SGDDq9EP1pzA1iKW57qwpQO/7pVwshJPPWVkEPYqLN2IkeNzShi2oKQ=="
+  "resolved" "https://registry.npmjs.org/react-calendly/-/react-calendly-4.0.1.tgz"
+  "version" "4.0.1"
+
 "react-dev-utils@^10.2.1":
   "integrity" "sha512-XxTbgJnYZmxuPtY3y/UV0D8/65NKkmaia4rXzViknVnZeVlklSh8u6TnaEYPfAi/Gh1TP4mEOXHI6jQOPbeakQ=="
   "resolved" "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-10.2.1.tgz"

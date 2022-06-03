@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-// import "../Home/Home.css";
+import "../Home/Home.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -9,7 +9,19 @@ import Portfolio from "../Home/portfolio";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
-
+import { InlineWidget } from "react-calendly";
+import Modal from "react-modal";
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "100%"
+  },
+};
 const HomeContent = (props) => {
   const { newsletter, setNewsLetter, navbar, setNavbar } = props;
   // console.log(setNavbar);
@@ -42,6 +54,21 @@ const HomeContent = (props) => {
   }, []);
   // this changes the scrolling behavior to "smooth"
 
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <div>
       <ToastContainer
@@ -56,7 +83,18 @@ const HomeContent = (props) => {
         pauseOnHover
       />
       <section id="hero" className="d-flex align-items-center">
-        <div className="container">
+        <div className="container " style={{ position: "relative" }}>
+          <video
+            id="vid"
+            className="globeVideo"
+            width="820"
+            height="600"
+            loop
+            autoPlay
+            muted
+          >
+            <source src="assets/music/globe.mp4" type="video/mp4" />
+          </video>
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
               <h1>
@@ -71,9 +109,23 @@ const HomeContent = (props) => {
                 top-rated service to propel your business another level.
               </h2>
               <div className="d-lg-flex mt-5">
-                <a href="/about-us" className="w-o-btn scrollto">
-                  About Us
-                </a>
+                <button onClick={openModal} className="w-o-btn scrollto">
+                  Book an appointment
+                </button>
+
+                <Modal
+                  isOpen={modalIsOpen}
+                  onAfterOpen={afterOpenModal}
+                  onRequestClose={closeModal}
+                  style={customStyles}
+                  contentLabel="Example Modal"
+                >
+                  <div className="ModalContant">
+                    {/* <h2>Hello</h2>
+                    <button onClick={closeModal}>&times;</button> */}
+                    <InlineWidget url="https://calendly.com/robin-sharma-1?primary_color=ef661e" />
+                  </div>
+                </Modal>
               </div>
             </div>
             {/* <div
@@ -472,6 +524,28 @@ const HomeContent = (props) => {
                 rel="noopener noreferrer"
               >
                 <div class="img">
+                  <img src="../../assets/img/GooglePartner.png" />
+                </div>
+              </a>
+              <div class="hm_awcnt">
+                <h3>
+                  5.0
+                  <img src="../../assets/img/stars.svg" />
+                </h3>
+                <p>
+                  Certified app development company, acknowledged by Google.
+                </p>
+              </div>
+            </div>
+
+            <div class="awa_rds awa_rds_one">
+              <a
+                href="https://clutch.co/profile/nestormind#summary"
+                target="_blank"
+                aria-label="Awards"
+                rel="noopener noreferrer"
+              >
+                <div class="img">
                   <img src="../../assets/img/cluch.png" />
                 </div>
               </a>
@@ -485,6 +559,7 @@ const HomeContent = (props) => {
                 </p>
               </div>
             </div>
+
             <div class="awa_rds awa_rds_two">
               <a
                 href="https://www.goodfirms.co/company/nestormind-pvt-ltd"
@@ -916,7 +991,8 @@ const HomeContent = (props) => {
                 </div>
               </OwlCarousel>
             </div>
-            <div className="right-inner">
+
+            {/* <div className="right-inner">
               <div className="workProcess">Our Process</div>
               <ul>
                 <li>
@@ -966,6 +1042,89 @@ const HomeContent = (props) => {
                   <div className="text">
                     <h4>Launch</h4>
                     <p>and optimize</p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+              </ul>
+            </div> */}
+
+            <div className="right-process">
+              <div className="workProcess">Agile Methodology</div>
+              <div className="workProcessSlogan">Deriving Test Plan</div>
+              <ul>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/discover.svg" alt="Discover" />
+                  </div>
+                  <div className="text">
+                    <small></small>
+                    <h4>Ideation</h4>
+                    <p>Based on market Analysis and Customer's Expections</p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/design.svg" alt="Design" />
+                  </div>
+                  <div className="text">
+                    <small>Developing & Validatios</small>
+                    <h4> Usage Scenarios</h4>
+                    <p>Complementory Outcomes from this step is UAT plan</p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/develop.svg" alt="Develop" />
+                  </div>
+                  <div className="text">
+                    <small>Creating</small>
+                    <h4>User Stories</h4>
+                    <p>Listing Functional & Non-Functional Requirements</p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/cuc_automate.svg" alt="Develop" />
+                  </div>
+                  <div className="text">
+                    <small></small>
+                    <h4>Core Development</h4>
+                    <p>
+                      Running Automated and semi-automated tests in parallel
+                    </p>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/launch.svg" alt="Launch" />
+                  </div>
+                  <div className="text">
+                    <h4>Functional &</h4>
+                    <h4>Regression Testing</h4>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/launch.svg" alt="Launch" />
+                  </div>
+                  <div className="text">
+                    <h4>User Acceptance</h4>
+                    <h4>Testing</h4>
+                    <img src="assets/img/line-white.svg" alt="line white" />
+                  </div>
+                </li>
+                <li>
+                  <div className="image">
+                    <img src="assets/img/launch.svg" alt="Launch" />
+                  </div>
+                  <div className="text">
+                    <h4>Markit Acceptance</h4>
+                    <h4>Testing</h4>
                     <img src="assets/img/line-white.svg" alt="line white" />
                   </div>
                 </li>
