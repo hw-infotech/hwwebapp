@@ -276,7 +276,6 @@ const NavBar = ({ NavbarStyle }) => {
             </ul>
           </div>
         </nav>
-
         {/* <nav className="nav-menu d-none d-lg-block">
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -305,7 +304,6 @@ const NavBar = ({ NavbarStyle }) => {
   
         <a href="#about" className="get-started-btn scrollto">Get Quote</a> */}
       </div>
-
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -314,7 +312,7 @@ const NavBar = ({ NavbarStyle }) => {
         contentLabel="Example Modal"
       >
         <div className="ModalContant">
-          <InlineWidget url="https://calendly.com/robin-sharma-1?primary_color=ef661e" />
+          <InlineWidget url="https://calendly.com/nestormindpvtltd?primary_color=ef661e" />
         </div>
       </Modal>
     </header>
