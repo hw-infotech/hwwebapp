@@ -2,11 +2,10 @@ import { flexbox } from '@mui/system';
 import React, { Component, useState } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
+
+
 //import image from './logo512.png'
 //import icon1 from './ne.png'
-
-
-
 function GoToPage1() {
     window.open('https://github.com/', "_blank");
 }
@@ -21,47 +20,37 @@ const Tab = (e) => {
     //const { name, gender, Phone, email } = e.target;
 
     return (<div style={{ width: '100%' }}>
-        <h3>Summary</h3>
-        <table>
-            <tbody>
-                <tr>
-                    <td>Name</td>
-                    <td>{e.steps.name.message}</td>
-                </tr>
-                <tr>
-                    <td>Gender</td>
-                    <td>{e.steps.gender.message}</td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                    <td>{e.steps.Phone.message}</td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>{e.steps.email.message}</td>
-                </tr>
-            </tbody>
-        </table>
+        <form>
+            <div class="form-group">
+                <input type="text" id="formControlemail" class="form-control" name='email' placeholder='Enter your Email' />
+            </div>
+            <div class="form-group">
+                <input type="text" id="formControlphn" class="form-control " name='phone' placeholder='Enter your Phone Number' />
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name='message' placeholder='enter your message here'></textarea>
+            </div>
+            <button type="button" class="chatbotbutton">Submit</button>
+        </form>
     </div>
     )
 }
 function Chatbot1() {
-    const[close,setclose]=useState(false)
+    const [close, setclose] = useState(false)
     const [state, setState] = useState(
         {
-            name: '',
-            gender: '',
+            message: '',
             Phone: '',
             email: ""
         })
 
-        const open=({opened})=>{
-            setclose(opened)
-        
-        }
-        const close1=()=>{
-            setclose(false)
-        }
+    const open = ({ opened }) => {
+        setclose(opened)
+
+    }
+    const close1 = () => {
+        setclose(false)
+    }
     //Review.propTypes = {
     /// steps: PropTypes.object,
     //};
@@ -85,34 +74,23 @@ function Chatbot1() {
 
     const Header = (props) => (<div className='chatboatHeaderStyle'>
         {console.log(props, "hellksdalksadkldsfkl;")}
-        <div className='dot'></div>
-        <div> <img src="/ne.png" height={40} style={{
-            border: "2px solid transparent",
-            borderRadius: "50px",
-            marginRight: "8px",
-            marginLeft: "57px",
-            backgroundColor: "white"
-        }} /></div>
-        <div className='heading' >Nestormind
-            <div style={{ fontSize: "13px" }}>Online</div>
-            
+
+        <div className='heading' >Have a Question ?
         </div>
-        <div style={{marginLeft:"60px"}} onClick={()=>{
+        <div className='crosssign' onClick={() => {
             close1()
-        }}><i class="fs-2 bi-x"></i></div>
+        }}><div className=''><i class="fs-2 bi-x"></i></div></div>
     </div>)
     const config = {
         width: "400px",
         height: "500px",
         floating: true,
     }
-
-
     const stepArray = [
         {
             id: '1',
-            message: 'What is your name?',
-            trigger: 'name',
+            message: 'Enter your message and we will write back to you?',
+            trigger: '3',
         },
         {
             id: 'name',
@@ -121,25 +99,15 @@ function Chatbot1() {
         },
         {
             id: '3',
-            message: 'Hi {previousValue}! What is your gender?',
-            trigger: 'gender',
+            component: <Tab />,
+            asMessage: true,
+            trigger: '12'
         },
-        {
-            id: 'gender',
-            options: [
-                { value: 'male', label: 'Male', trigger: '5' },
-                { value: 'female', label: 'Female', trigger: '5' },
-            ],
-        },
-        {
-            id: '5',
-            message: 'Enter Your Mobile Number?',
-            trigger: 'Phone',
-        },
+
         {
             id: 'Phone',
             user: true,
-            trigger: '7',
+            trigger: '12',
             validator: (value) => {
                 if (isNaN(value)) {
                     return 'value must be a number';
@@ -150,105 +118,10 @@ function Chatbot1() {
                 return true;
             },
         },
-        {
-            id: '7',
-            message: 'Enter Your Email Id?',
-            trigger: 'email',
-        },
-        {
-            id: 'email',
-            user: true,
-            trigger: '9',
-        },
-        {
-            id: '9',
-            message: 'Great! Check out your summary',
-            trigger: 'review',
-        },
-        {
-            id: 'review',
-            component: <Tab />,
-            asMessage: true,
-            trigger: 'update',
-        },
-        {
-            id: 'update',
-            message: 'Would you like to update some field?',
-            trigger: 'update-question',
-        },
-        {
-            id: 'update-question',
-            options: [
-                { value: 'yes', label: 'Yes', trigger: 'update-yes' },
-                { value: 'no', label: 'No', trigger: 'end-message' },
-            ],
-        },
-        {
-            id: 'update-yes',
-            message: 'What field would you like to update?',
-            trigger: 'update-fields',
-        },
-        {
-            id: 'update-fields',
-            options: [
-                { value: 'name', label: 'Name', trigger: 'update-name' },
-                { value: 'gender', label: 'Gender', trigger: 'update-gender' },
-                { value: 'Phone', label: 'Phone Number', trigger: 'update-Phone' },
-                { value: 'email', label: 'Phone Number', trigger: 'update-email' }
-            ],
-        },
-        {
-            id: 'update-name',
-            update: 'name',
-            trigger: '9',
-        },
-        {
-            id: 'update-gender',
-            update: 'gender',
-            trigger: '9',
-        },
-        {
-            id: 'update-Phone',
-            update: 'Phone',
-            trigger: '9',
-        },
-        {
-            id: 'update-email',
-            update: 'email',
-            trigger: '9',
-        },
-        {
-            id: 'end-message',
-            message: 'Thanks! Your data was submitted successfully!',
-            trigger: '10',
-        },
-        {
-            id: '10',
-            message: "Choose your Query",
-            trigger: '13'
 
-        },
-        {
-            id: '13',
-            options: [
-                { label: 'UI/UX', value: '1', trigger: '11' },
-                { label: 'Product Manager', value: '2', trigger: '11' },
-            ],
-
-            trigger: '10'
-
-        },
-        {
-            id: '11',
-            component: <GoToPage />,
-            asMessage: true,
-            trigger: '13'
-
-        },
         {
             id: '12',
             user: true,
-
             end: true,
         },
     ]
