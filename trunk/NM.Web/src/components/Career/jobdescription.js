@@ -1,10 +1,12 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 import NavBar from "../Layout/Navbar";
 import "./career.css";
 
 const Job_Description = () => {
+
 
     return (
         <div className="jobdes_margin">
@@ -26,20 +28,16 @@ const Job_Description = () => {
                                 <span>2 months ago</span>
                             </div>
                             <div className="" style={{ display: "flex", gap: "10px" }}>
-                                <button type="button" className="jobapply_button">Apply On Nestormind <i class="fs-6 bi-box-arrow-in-up-right"></i>
-                                </button>
+                                <Link to='uploadCv'>  <button type="button" className="jobapply_button"
+
+                                >Apply On Nestormind <i class="fs-6 bi-box-arrow-in-up-right"></i>
+                                </button></Link>
 
 
                             </div>
                         </div>
                         <div className="">
-                            <div className="job_description_heading ">
-                                <span className="" style={{ textDecoration: "unerlined" }}>About Nestormind</span>
-                            </div>
-                            <div className="padd"> <p className="size_font">Initiated in 2010, Nestormind has come a long way based on honesty, hard-working and commitment. Our mantra is “Serve the clients beyond his expectation”. We forge each relationship with utmost dedication and with an intention to deliver exceptional client service. Ushering digital transformation along with product engineering strategies, our team assists the organization to develop a device or software solution that enhances business operations.
-                            </p>
-                                <p className="size_font">Being the industry leader, Nestormind provides web design, web development, UI/design, different type of application development, IoT solutions, Blockchain solutions, Digital marketing, and IT consulting services to both domestic and global business organizations. Our dedicated team works hand in hand along with the client and ensures that the product on which they are working, not only draws business success but also empowers that business entity to solve futuristic solutions. Due to our excellent customer-friendly services, we have already delivered more than 1500 projects so far and created a strong 200 satisfied client base.</p>
-                            </div>
+
                             <div className="job_description_heading">
                                 <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
                             </div>
@@ -111,7 +109,7 @@ const Job_Description = () => {
                                 <span>20 times</span>
                                 <span className="job_date">Mohali, Punjab</span>
                                 <span className="job_date">3 months ago   '
-                                    <button type="button" className="right_pannle_button">Apply Now</button>
+                                 <Link to='uploadCv'><button type="button" className="right_pannle_button">Apply Now</button></Link>
                                 </span>
                             </li>
                             <li className="right_pannle_list_itmes">
@@ -119,7 +117,7 @@ const Job_Description = () => {
                                 <span>10 times</span>
                                 <span className="job_date">Mohali, Punjab</span>
                                 <span className="job_date">1 months ago   '
-                                    <button type="button" className="right_pannle_button">Apply Now</button>
+                                    <Link to='uploadCV'> <button type="button" className="right_pannle_button">Apply Now</button></Link>
                                 </span>
                             </li>
                             <li className="right_pannle_list_itmes">
@@ -127,7 +125,7 @@ const Job_Description = () => {
                                 <span>20 times</span>
                                 <span className="job_date">Mohali, Punjab</span>
                                 <span className="job_date">2 months ago   '
-                                    <button type="button" className="right_pannle_button">Apply Now</button>
+                                   <Link to='uploadCV'> <button type="button" className="right_pannle_button">Apply Now</button></Link>
                                 </span>
                             </li>
                         </ul>
