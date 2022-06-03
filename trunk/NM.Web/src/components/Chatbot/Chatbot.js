@@ -136,6 +136,7 @@ function Chatbot1() {
                 toggleFloating={open}
                 {...config}
                 steps={stepArray}
+                hideSubmitButton={true}
             />
         </ThemeProvider>
     );

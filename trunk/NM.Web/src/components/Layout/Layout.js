@@ -8,7 +8,7 @@ const Layout = () => {
     const history=createBrowserHistory()
     return (
         <Router history={history}>
-            {/* <Chatbot /> */}
+           <Chatbot /> 
             <Switch>
                 {routes.map((route, index) => (
                     <Route {...route} key={index} />
