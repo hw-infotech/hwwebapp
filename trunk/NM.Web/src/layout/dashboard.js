@@ -20,7 +20,6 @@ const Dashboard = ({ children, NavbarStyle }) => {
                 top: 0
               }}>
 
-
                 <li>
                   <a
                     target="_blank"
