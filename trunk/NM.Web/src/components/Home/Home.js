@@ -9,8 +9,9 @@ import Portfolio from "../Home/portfolio";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
-import { InlineWidget } from "react-calendly";
+import { PopupButton } from "react-calendly";
 import Modal from "react-modal";
+
 const customStyles = {
   content: {
     top: "50%",
@@ -109,23 +110,12 @@ const HomeContent = (props) => {
                 top-rated service to propel your business another level.
               </h2>
               <div className="d-lg-flex mt-5">
-                <button onClick={openModal} className="w-o-btn scrollto">
-                  Book an appointment
-                </button>
-
-                <Modal
-                  isOpen={modalIsOpen}
-                  onAfterOpen={afterOpenModal}
-                  onRequestClose={closeModal}
-                  style={customStyles}
-                  contentLabel="Example Modal"
-                >
-                  <div className="ModalContant">
-                    {/* <h2>Hello</h2>
-                    <button onClick={closeModal}>&times;</button> */}
-                    <InlineWidget url="https://calendly.com/nestormindpvtltd?primary_color=ef661e" />
-                  </div>
-                </Modal>
+                <PopupButton
+                  className="w-o-btn scrollto"
+                  url="https://calendly.com/nestormindpvtltd"
+                  rootElement={document.getElementById("root")}
+                  text="Book an appointment!"
+                />
               </div>
             </div>
             {/* <div
