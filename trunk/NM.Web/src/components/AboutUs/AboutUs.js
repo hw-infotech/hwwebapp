@@ -46,7 +46,7 @@ const AboutUsContent = (props) => {
                     <div className="content">
                         <h3>About Us</h3>
                         <p>
-                            Initiated in 2010, Nestormind has come a long way based on honesty, hard-working and commitment. Our mantra is “Serve the clients beyond his expectation”. We forge each relationship with utmost dedication and with an intention to deliver exceptional client service. Ushering digital transformation along with product engineering strategies, our team assists the organization to develop a device or software solution that enhances business operations.
+                            Initiated in 2019, Nestormind has come a long way based on honesty, hard-working and commitment. Our mantra is “Serve the clients beyond his expectation”. We forge each relationship with utmost dedication and with an intention to deliver exceptional client service. Ushering digital transformation along with product engineering strategies, our team assists the organization to develop a device or software solution that enhances business operations.
                         </p>
                         <p>
                             Being the industry leader, Nestormind provides web design, web development, UI/design, different type of application development, IoT solutions, Blockchain solutions, Digital marketing, and IT consulting services to both domestic and global business organizations.
