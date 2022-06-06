@@ -13,7 +13,6 @@
 }
 .socialM {
     position: absolute;
-    transform: rotate(-90deg);
     right: 18px;
     top: 50%;
     font-size: 12px;
@@ -22,6 +21,7 @@
     padding: 3px 21px;
     border-radius: 15px 15px 0px 0px;
     transition: all ease-in-out 1s;
+    transform: translateY(-50%) rotate(-90deg);
 }
 
 .commonSocialIcons .clib-socia1:hover .socialM{
