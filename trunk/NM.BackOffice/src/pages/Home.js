@@ -1,8 +1,4 @@
 import React, { useEffect } from "react";
-import LockTwoToneIcon from '@mui/icons-material/LockTwoTone';
-import SecurityUpdateGoodTwoToneIcon from '@mui/icons-material/SecurityUpdateGoodTwoTone';
-import Layout from "../components/layout";
-import withHeader from "../HOC/withHeader";
 const Home = () => {
 useEffect(()=>{
     // setTitle("Dashboard")
@@ -28,7 +24,7 @@ useEffect(()=>{
                                     </div>
                                 </div>
                                 <div className="card-footer">
-                                    <SecurityUpdateGoodTwoToneIcon />Update Now
+                                    {/*<SecurityUpdateGoodTwoToneIcon />*/}Update Now
                                 </div>
                             </div>
                         </div>
@@ -53,7 +49,7 @@ useEffect(()=>{
                                     </div>
                                 </div>
                                 <div className="card-footer">
-                                    <SecurityUpdateGoodTwoToneIcon /> Update Now
+                                    {/*<SecurityUpdateGoodTwoToneIcon />*/} Update Now
                                 </div>
                             </div>
                         </div>
@@ -76,7 +72,7 @@ useEffect(()=>{
                                     </div>
                                 </div>
                                 <div className="card-footer">
-                                    <SecurityUpdateGoodTwoToneIcon /> Update Now
+                                    {/*<SecurityUpdateGoodTwoToneIcon />*/} Update Now
                                 </div>
                             </div>
                         </div>
@@ -99,7 +95,7 @@ useEffect(()=>{
                                     </div>
                                 </div>
                                 <div className="card-footer">
-                                    <SecurityUpdateGoodTwoToneIcon />  Update Now
+                                    {/*<SecurityUpdateGoodTwoToneIcon />*/}  Update Now
                                 </div>
                             </div>
                         </div>

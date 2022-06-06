@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik, field, ErrorMessage } from "formik";
-import Flatpickr from "react-flatpickr";
+
 const Calender = ({ id, label, field, placeholder,className }) => {
     const date=new Date();
     return (
@@ -9,12 +9,12 @@ const Calender = ({ id, label, field, placeholder,className }) => {
                 <label className="form-label" htmlFor={id}>
                     {label}
                 </label>
-                <Flatpickr
+                {/*<Flatpickr
                 onChange={date}
                     id={id}                  
                     placeholder={placeholder}
                     className={className}
-                />
+    />*/}
             </div>
         </div>
     )

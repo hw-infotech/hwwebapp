@@ -86,13 +86,7 @@ const Sidebar = ({ sidebarShow }) => {
                                     <span className=" paddingliitems">Success Stories</span>
                                 </div>
                             </li>
-                            <li className="sidebar_list">
-                                <div className="nav-link  text-color gapicontext">
-                                    <span className="d-none d-sm-inline paddingliitems" onClick={() => {
-                                        navigtion('/changegalleryevent')
-                                    }}>Events</span>
-                                </div>
-                            </li>
+
                         </ul>
                     </li>
                     <li className="sidebar_list">
@@ -106,13 +100,6 @@ const Sidebar = ({ sidebarShow }) => {
                                     <span class="d-none d-sm-inline paddingliitems ">Subscriber's</span>
                                 </div>
                             </li>
-                            <li className="sidebar_list">
-                                <div className="nav-link   text-color gapicontext" onClick={() => {
-                                    navigtion('/unSubscriber')
-                                }}>
-                                    <span class="d-none d-sm-inline paddingliitems">Un-Subscriber's</span>
-                                </div>
-                            </li>
                         </ul>
                     </li>
                     <li className="sidebar_list">
@@ -124,20 +111,6 @@ const Sidebar = ({ sidebarShow }) => {
                                     navigtion('/AllEnquiry')
                                 }}>
                                     <span class="d-none d-sm-inline paddingliitems ">All Enquries</span>
-                                </div>
-                            </li>
-                            <li className="sidebar_list">
-                                <div class="nav-link  text-colo text-color gapicontext" onClick={() => {
-                                    navigtion('/Resolved')
-                                }}>
-                                    <span class="d-none d-sm-inline paddingliitems ">Resolved</span>
-                                </div>
-                            </li>
-                            <li className="sidebar_list">
-                                <div class="nav-link  text-colo text-color gapicontext" onClick={() => {
-                                    navigtion('/PendingEnquiry')
-                                }}>
-                                    <span class="d-none d-sm-inline paddingliitems">Pending</span>
                                 </div>
                             </li>
                         </ul>
@@ -161,20 +134,12 @@ const Sidebar = ({ sidebarShow }) => {
                                 </div>
                             </li>
                             <li className="sidebar_list">
-                            <div class="nav-link  text-colo text-color  gapicontext" onClick={() => {
-                                navigtion('/editPostjob')
-                            }}>
-                                <span class="d-none d-sm-inline paddingliitems">Edit Post Job</span>
-                            </div>
-                        </li> 
-                            <li>
-                                <div class="nav-link  text-colo text-color gapicontext" onClick={() => {
-                                    navigtion('/rejecteduser')
+                                <div class="nav-link  text-colo text-color  gapicontext" onClick={() => {
+                                    navigtion('/editPostjob')
                                 }}>
-                                    <span class="paddingliitems">Rejected User</span>
+                                    <span class="d-none d-sm-inline paddingliitems">Edit Post Job</span>
                                 </div>
                             </li>
-
                             <li>
                                 <div class="nav-link  text-colo text-color  gapicontext" onClick={() => {
                                     navigtion('/jobsubscriber')

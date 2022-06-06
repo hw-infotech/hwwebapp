@@ -104,7 +104,7 @@
 
 // sidebar css
 .sidebar {
-	width: 250px;
+	width: 366px;
 	min-height: 100vh;
 	overflow: auto;
 	background-color: #1c324b;
@@ -175,18 +175,19 @@
 }
 //////success stories page/////
 .addbtn {
-	border-radius: 116px;
-	padding: 5px 30px;
-	background-color: #1c324b;
-	border: 2px solid #1c324b;
-	color: white;
-	font-size: 15px;
+	border-radius: 116px !important;
+	padding: 5px 30px !important;
+	color: black !important;
+	background-color: white !important;
+	border: 2px solid #1c324b !important;
 
-	transition: 0.5s;
+	font-size: 15px !important;
+
+	transition: 0.5s !important;
 }
 .addbtn:hover {
-	background-color: white;
-	color: black;
+	background-color: #1c324b !important;
+	color: white !important;
 }
 .cardBoard {
 	padding: 30px;
@@ -196,11 +197,40 @@
 		//global class
 		height: 40px;
 	}
+
+	.serachbar {
+		width: 25%;
+	}
 }
+.addbutnwidth {
+	float: right;
+	width: 100%;
+}
+.gapbetween {
+	display: flex;
+	justify-content: end;
+	gap: 20px;
+}
+.serachbar {
+	width: 25%;
+}
+//.serachbar {
+//	width: 50%;
+//}
 .gapPad {
 	//global class
 	padding-top: 30px;
 }
+.form-check-input:checked {
+	background-color: green !important;
+}
+.form-check-input {
+	background-image: url("/assets/images/a.png") !important;
+	border-radius: 100%;
+
+	background-color: rgb(209, 76, 76) !important;
+}
+
 /////newsletter subscriber///////`
 .topGapPad {
 	//Warning--- Global class----//
@@ -210,7 +240,7 @@
 	////Global class///
 	box-shadow: #ece5e5 0px 8px 5px 0px;
 	background: white;
-	padding: 25px;
+	padding: 20px;
 	font-size: 13px;
 }
 .Serachbarbtn {
@@ -219,8 +249,10 @@
 }
 .searchbar {
 	//global class
-	max-width: 500px;
+	max-width: 250px;
 	width: 100%;
+	display: flex;
+	justify-content: end;
 }
 .content_center {
 	display: flex;
@@ -238,6 +270,9 @@
 		flex-wrap: nowrap !important;
 		list-style: none;
 	}
+}
+.wreap-content{
+	max-width: 150px;
 }
 //Admin Login page
 .centeritmes {
@@ -310,6 +345,9 @@
 }
 .heigh_numberofstacks {
 	height: 100%;
+}
+.inputfieldwidth{
+	width: 100% !important;
 }
 
 ////////////////Gallery////////////
@@ -428,15 +466,7 @@
 	border-top: 1px solid #dee2e6;
 }
 
-table.dataTable thead .sorting:after,
-table.dataTable thead .sorting:before,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_desc:before,
-table.dataTable thead .sorting_desc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:before {
-	bottom: 0.5em;
+//enquiry//
+.wrap{
+	max-width: 150px;
 }

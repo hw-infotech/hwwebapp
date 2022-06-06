@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Pagination from '@material-ui/lab/Pagination';
+//import Pagination from '@material-ui/lab/Pagination';
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import Layout from "../../components/layout";
 import withHeader from "../../HOC/withHeader";
@@ -223,11 +223,11 @@ const List_Of_Blogs = () => {
                 </div>
                 <div className="col-sm-6 col-lg-6 col-md-6 ">
                     <div className="gapPad pagination_justify_end ">
-                        <Pagination
+                        {/*<Pagination
                             className="paginationDiv"
                             count={5}
                             onChange={handlechange}
-                            color="primary" />
+    color="primary" />*/}
                     </div>
                 </div>
             </div>

@@ -1,17 +1,12 @@
 
 import React, { useEffect, useState } from "react";
-import Layout from "../../components/layout";
 import { Modal } from "react-bootstrap";
 import { Field, Formik } from "formik";
 import { Input } from "../../components/commoninputfield";
-import BasicBreadcrumbs from "../../components/breadcumbs";
-import withHeader from "../../HOC/withHeader";
-import { Pagination } from "@material-ui/lab";
+//import BasicBreadcrumbs from "../../components/breadcumbs";
+//import { Pagination } from "@material-ui/lab";
 
 const Change_Gallery_Events = () => {
-    //useEffect(()=>{
-    //setTitle("List of Gallery events")
-    //  },[])
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
@@ -36,7 +31,6 @@ const Change_Gallery_Events = () => {
     const handlechange = (event, value) => {
         var value1;
         setNext(value)
-        //console.log(value, "comp", next)
         if (next <= value) {
             value1 = row * value
             setShowPerPage(value1)
@@ -54,17 +48,15 @@ const Change_Gallery_Events = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
     const route = [
         { name: "Home", route: "/" },
         { name: "Crausel", route: "/" },
         { name: "Change_Gallery_event", route: "/" },
 
     ]
-
     return (
         <div title="Change Gallery Events">
-            <BasicBreadcrumbs route={route} />
+            {/*<BasicBreadcrumbs route={route} />*/}
             <div className="topGapPad margin_bottom_">
                 <div className="boxshadow">
                     <table class="table">
@@ -75,7 +67,6 @@ const Change_Gallery_Events = () => {
                                 <th scope="col">Description</th>
                                 <th scope="col">images</th>
                                 <th scope="col">Music</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -107,14 +98,12 @@ const Change_Gallery_Events = () => {
                                                 <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
                                             </div>
                                         </li>
-
                                         <li class="dropdownList">
                                             <div class="actionBtns">
                                                 <span class="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
                                                         class="bi bi-trash3-fill"></i></span>
                                                 <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
-
                                             </div>
                                         </li>
                                     </ul>
@@ -123,10 +112,8 @@ const Change_Gallery_Events = () => {
                                 <td>Otto</td>
                                 <td>@mdo</td>
                                 <td>@mdo.jpg</td>
-
                             </tr>
                             <tr> <td class="action "><div class="userDetail ">
-
                                 <button type="button" class="btn "
                                     id="dropdownIconMenu" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -143,7 +130,6 @@ const Change_Gallery_Events = () => {
                                             <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>View</button>
                                         </div>
                                     </li>
-
                                     <li class="dropdownList">
                                         <div class="actionBtns">
                                             <span class="viewIcon" data-bs-toggle="modal"
@@ -152,14 +138,12 @@ const Change_Gallery_Events = () => {
                                             <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
                                         </div>
                                     </li>
-
                                     <li class="dropdownList">
                                         <div class="actionBtns">
                                             <span class="deleteAction" data-bs-toggle="modal"
                                                 data-bs-target="#deletebtn"> <i
                                                     class="bi bi-trash3-fill"></i></span>
                                             <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
-
                                         </div>
                                     </li>
                                 </ul>
@@ -168,7 +152,6 @@ const Change_Gallery_Events = () => {
                                 <td>Thornton</td>
                                 <td>@fat</td>
                                 <td>@fat</td>
-
                             </tr>
                             <tr>  <td class="action "><div class="userDetail ">
                                 <button type="button" class="btn "
@@ -201,7 +184,6 @@ const Change_Gallery_Events = () => {
                                                 data-bs-target="#deletebtn"> <i
                                                     class="bi bi-trash3-fill"></i></span>
                                             <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
-
                                         </div>
                                     </li>
                                 </ul>
@@ -210,7 +192,6 @@ const Change_Gallery_Events = () => {
                                 <td>the Bird</td>
                                 <td>@twitter</td>
                                 <td>@twitter</td>
-
                             </tr>
                         </tbody>
                     </table>
@@ -302,78 +283,11 @@ const Change_Gallery_Events = () => {
                                                         </div></li>
                                                 </ul>
                                             </div>
-
                                         </form>
                                     </div>
-
                                 )}
                             </Formik>
-
                         </div>
-
-                        {       /*    Cards   
-                        <div className="row mt-3">
-                            <div className="col-md-3 ">
-                                <div class="card boxshadow" >
-                                    <img src="./assets/images/team_nestormind.png" width={"200px"} height={"200px"} class="card-img-top" alt="..." />
-                                    <div class="card-body d-flex">
-                                        <div class="custom-control custom-switch" style={{ textAlign: "center" }} >
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-                                        <div>
-                                            <button type="button" className="btn btn-outlined-secondary"><i class="fs-5 bi-trash"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div class="card boxshadow" >
-                                    <img src="./assets/images/team_nestormind.png" width={"200px"} height={"200px"} class="card-img-top" alt="..." />
-                                    <div class="card-body d-flex ">
-                                        <div class="custom-control custom-switch  " style={{ textAlign: "center" }} >
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
-
-                                        <div>
-                                            <button type="button" className="btn btn-outlined-secondary"><i class="fs-5 bi-trash"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div class="card boxshadow" >
-                                    <img src="./assets/images/team_nestormind.png" width={"200px"} height={"200px"} class="card-img-top" alt="..." />
-                                    <div class="card-body d-flex ">
-                                        <div class="custom-control custom-switch  " style={{ textAlign: "center" }} >
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch2" />
-                                            <label class="custom-control-label" for="customSwitch2"></label>
-                                        </div>
-
-                                        <div>
-                                            <button type="button" className="btn "><i class="fs-5 bi-trash"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div class="card boxshadow" >
-                                    <img src="./assets/images/team_nestormind.png" width={"200px"} height={"200px"} class="card-img-top" alt="..." />
-                                    <div class="card-body d-flex">
-                                        <div class="custom-control custom-switch  " style={{ textAlign: "center" }} >
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch2" />
-                                            <label class="custom-control-label" for="customSwitch2"></label>
-                                        </div>
-
-                                        <div>
-                                            <button type="button" className="btn "><i class="fs-5 bi-trash"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>*/}
                     </Modal.Body>
                     <Modal.Footer>
                         <div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
@@ -392,7 +306,7 @@ const Change_Gallery_Events = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-sm-6 col-lg-6 col-md-6 ">
+                    {/* <div className="col-sm-6 col-lg-6 col-md-6 ">
                         <div className="gapPad pagination_justify_end ">
                             <Pagination
                                 className="paginationDiv"
@@ -400,9 +314,8 @@ const Change_Gallery_Events = () => {
                                 onChange={handlechange}
                                 color="primary" />
                         </div>
-                    </div>
+                    </div>*/}
                 </div>
-
             </div>
         </div>
     );

@@ -1,13 +1,8 @@
-import { Pagination } from "@material-ui/lab";
+//import { Pagination } from "@material-ui/lab";
 import React, { useEffect, useState } from "react";
-import BasicBreadcrumbs from "../../components/breadcumbs";
-import Layout from "../../components/layout";
-import withHeader from "../../HOC/withHeader";
+//import BasicBreadcrumbs from "../../components/breadcumbs";
 
 const Applied_Job = () => {
-    //useEffect(() => {
-    //  setTitle("Applied Jobs")
-    //   }, [])
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
@@ -32,7 +27,6 @@ const Applied_Job = () => {
     const handlechange = (event, value) => {
         var value1;
         setNext(value)
-        //console.log(value, "comp", next)
         if (next <= value) {
             value1 = row * value
             setShowPerPage(value1)
@@ -51,11 +45,10 @@ const Applied_Job = () => {
         { name: "Home", route: "/" },
         { name: "Job", route: "/" },
         { name: "Applied Jobs", route: "/" },
-
     ]
     return (
         <div className="margin_bottom_">
-            <BasicBreadcrumbs route={route} />
+            {/*<BasicBreadcrumbs route={route} />*/}
             <div className="content_center pt-3 "><h4>Total Number Of Candidates of Applied Job</h4></div>
             <div className="padding-items  ">
                 <div class="input-group ">
@@ -143,7 +136,7 @@ const Applied_Job = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-sm-6 col-lg-6 col-md-6">
+                    {/*<div className="col-sm-6 col-lg-6 col-md-6">
                         <div className="gapPad pagination_justify_end ">
                             <Pagination
                                 className="paginationDiv"
@@ -151,7 +144,7 @@ const Applied_Job = () => {
                                 onChange={handlechange}
                                 color="primary" />
                         </div>
-                    </div>
+    </div>*/}
                 </div>
             </div>
         </div>

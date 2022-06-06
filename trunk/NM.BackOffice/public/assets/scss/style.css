@@ -123,7 +123,7 @@
 }
 
 .sidebar {
-  width: 250px;
+  width: 366px;
   min-height: 100vh;
   overflow: auto;
   background-color: #1c324b;
@@ -217,19 +217,19 @@
 }
 
 .addbtn {
-  border-radius: 116px;
-  padding: 5px 30px;
-  background-color: #1c324b;
-  border: 2px solid #1c324b;
-  color: white;
-  font-size: 15px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  border-radius: 116px !important;
+  padding: 5px 30px !important;
+  color: black !important;
+  background-color: white !important;
+  border: 2px solid #1c324b !important;
+  font-size: 15px !important;
+  -webkit-transition: 0.5s !important;
+  transition: 0.5s !important;
 }
 
 .addbtn:hover {
-  background-color: white;
-  color: black;
+  background-color: #1c324b !important;
+  color: white !important;
 }
 
 .cardBoard {
@@ -243,8 +243,41 @@
   height: 40px;
 }
 
+.cardBoard .serachbar {
+  width: 25%;
+}
+
+.addbutnwidth {
+  float: right;
+  width: 100%;
+}
+
+.gapbetween {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 20px;
+}
+
+.serachbar {
+  width: 25%;
+}
+
 .gapPad {
   padding-top: 30px;
+}
+
+.form-check-input:checked {
+  background-color: green !important;
+}
+
+.form-check-input {
+  background-image: url("/assets/images/a.png") !important;
+  border-radius: 100%;
+  background-color: #d14c4c !important;
 }
 
 .topGapPad {
@@ -255,7 +288,7 @@
   -webkit-box-shadow: #ece5e5 0px 8px 5px 0px;
           box-shadow: #ece5e5 0px 8px 5px 0px;
   background: white;
-  padding: 25px;
+  padding: 20px;
   font-size: 13px;
 }
 
@@ -264,8 +297,14 @@
 }
 
 .searchbar {
-  max-width: 500px;
+  max-width: 250px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 .content_center {
@@ -299,6 +338,10 @@
   -ms-flex-wrap: nowrap !important;
       flex-wrap: nowrap !important;
   list-style: none;
+}
+
+.wreap-content {
+  max-width: 150px;
 }
 
 .centeritmes {
@@ -398,6 +441,10 @@
 
 .heigh_numberofstacks {
   height: 100%;
+}
+
+.inputfieldwidth {
+  width: 100% !important;
 }
 
 .gallery_page-box {
@@ -547,16 +594,7 @@
   border-top: 1px solid #dee2e6;
 }
 
-table.dataTable thead .sorting:after,
-table.dataTable thead .sorting:before,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_desc:before,
-table.dataTable thead .sorting_desc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:before {
-  bottom: 0.5em;
+.wrap {
+  max-width: 150px;
 }
 /*# sourceMappingURL=style.css.map */

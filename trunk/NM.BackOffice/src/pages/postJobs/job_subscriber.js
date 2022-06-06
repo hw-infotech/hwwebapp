@@ -1,13 +1,8 @@
-import { Pagination } from "@material-ui/lab";
+//import { Pagination } from "@material-ui/lab";
 import React, { useEffect, useState } from "react";
-import BasicBreadcrumbs from "../../components/breadcumbs";
-import Layout from "../../components/layout";
-import withHeader from "../../HOC/withHeader";
+//import BasicBreadcrumbs from "../../components/breadcumbs";
 
 const Job_Subscriber = () => {
-   // useEffect(() => {
-     //   setTitle("Job Subscriber")
-  //  }, [])
   const [row, setRow] = useState(10)
    const [state, setState] = useState({
        row_value: ""
@@ -32,7 +27,6 @@ const Job_Subscriber = () => {
    const handlechange = (event, value) => {
        var value1;
        setNext(value)
-       //console.log(value, "comp", next)
        if (next <= value) {
            value1 = row * value
            setShowPerPage(value1)
@@ -55,7 +49,7 @@ const Job_Subscriber = () => {
     return (
         <div>
             <div title="Job Subscriber " className="margin_bottom_">
-                <BasicBreadcrumbs route={route} />
+               {/* <BasicBreadcrumbs route={route} />*/}
                 <div className=" topGapPad">
                     <h4 style={{ paddingBottom: "10px" }}>List Number of Job Subscriber</h4>
                     <div className="boxshadow  ">
@@ -101,7 +95,7 @@ const Job_Subscriber = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-sm-6 col-lg-6 col-md-6">
+                   { /*<div className="col-sm-6 col-lg-6 col-md-6">
                         <div className="gapPad pagination_justify_end ">
                             <Pagination
                                 className="paginationDiv"
@@ -109,7 +103,7 @@ const Job_Subscriber = () => {
                                 onChange={handlechange}
                                 color="primary" />
                         </div>
-                    </div>
+    </div>*/}
                 </div>
                 </div>
             </div>

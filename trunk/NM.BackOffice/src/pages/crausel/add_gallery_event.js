@@ -1,18 +1,16 @@
+import Imageuploader from "../../components/imageUploader";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Layout from "../../components/layout";
 import { Input } from "../../components/commoninputfield";
 import { ErrorMessage, Field, Formik } from "formik";
-import Calender from "../../components/calender";
 import BasicBreadcrumbs from "../../components/breadcumbs";
-import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
-import Dropzone, { useDropzone } from 'react-dropzone'
-import { width } from "@mui/system";
-import Imageuploader from "../../components/imageUploader";
-import withHeader from "../../HOC/withHeader";
+import { initialValues, validationschemeaa } from "../postJobs/validation-schema";;
+
+
+
 const Add_Gallery_Event = () => {
     ///useEffect(() => {
-      //  setTitle("Add Gallery Event")
-   // }, [])
+    //  setTitle("Add Gallery Event")
+    // }, [])
     //var b = `${<span style={{ color: "Blue" }}>"Gallery"</span>}`
     const route = [
         { name: "Home", route: "/" },

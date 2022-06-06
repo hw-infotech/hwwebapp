@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../../components/layout";
-import Pagination from '@material-ui/lab/Pagination';
+import { Button, Form, FormControl, InputGroup } from "react-bootstrap";
+//import Pagination from '@material-ui/lab/Pagination';
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { useDispatch, useSelector } from "react-redux";
+import { BsSearch } from "react-icons/bs";
 import { NewsLetter_Unsubscriber, News_letter_Subscribe } from "../../Services/redux/action/action";
-import { useDropzone } from 'react-dropzone';
-import withHeader from "../../HOC/withHeader";
 const SubScriber = () => {
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
     })
-
     //useEffect(() => { setTitle("Subscriber") }, [])
     const [showPerPage, setShowPerPage] = useState(10)
     const [next, setNext] = useState(0)
@@ -29,7 +27,6 @@ const SubScriber = () => {
     const selector = useSelector(state => state),
         dispatch = useDispatch(),
         [subscribers, setSubscribers] = useState([])
-    // console.log("hellow", subscribers);
     useEffect(() => {
         dispatch(News_letter_Subscribe())
         dispatch(NewsLetter_Unsubscriber())
@@ -44,11 +41,9 @@ const SubScriber = () => {
         setRow(value)
         console.log("this is the select field value", value)
     }
-    // console.log(subscribers, "subscribers");
     const handlechange = (event, value) => {
         var value1;
         setNext(value)
-        //console.log(value, "comp", next)
         if (next <= value) {
             value1 = row * value
             setShowPerPage(value1)
@@ -63,29 +58,63 @@ const SubScriber = () => {
             setpagination({ start: start - row, end: showPerPage - row })
         }
     }
+    const [tableData, setTableData] = useState([
+        {
+            Email: "goldy",
+            date: "hg"
+
+        },
+        {
+            Email: "goldy",
+            date: "hg"
+
+        },
+        {
+            Email: "goldy",
+            date: "hg"
+        },
+    ])
+    function sortt() {
+        const response = tableData.sort((a, b) => (a.Name.toLowerCase() > b.Name.toLowerCase()) ? 1 : ((b.Name.toLowerCase() > a.Name.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    function sortt1() {
+        const response = tableData.sort((a, b) => (a.Name.toLowerCase() < b.Name.toLowerCase()) ? 1 : ((b.Name.toLowerCase() < a.Name.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    const [title, setTitle] = useState(false)
     return (
         <div >
             <BasicBreadcrumbs route={route} />
             <div className="margin_bottom_">
-                <div className="content_center pt-3"><h4>Number of Newsletter Subscriber/Unsubscriber</h4></div>
+                <div className=""><h4></h4></div>
                 <div className="gapPad">
-                   
-                    <div class="input-group ">
-                        <div class="form-outline flex-fill content_center">
-                            <input type="search" class="form-control searchbar" placeholder="Search for free names and emails" />
-                            <label class="form-label" for="form1"></label>
-                            <button type="button" class="btn btn-primary Serachbarbtn">
-                                <i class="fas fa-search"></i>
-                            </button>
+                    <div className="w-100" style={{ display: "flex" }}>
+                        <div className="w-100" >  <Form>
+                            <Form.Select aria-label="row" className="wreap-content">
+                                <option>Select</option>
+                                <option value="1">All</option>
+                                <option value="2">Subscriber</option>
+                                <option value="3">UnSubscriber</option>
+                            </Form.Select></Form></div>
+                        <div className="searchbar">
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    placeholder="Search By Email"
+                                    aria-label="Search By Email"
+                                    aria-describedby="basic-addon2"
+                                />
+                                <Button variant="outline-secondary" id="button-addon2">
+                                    <BsSearch />                                
+                                    </Button>
+                            </InputGroup>
                         </div>
                     </div>
                 </div>
-                <div className="topGapPad">
+                <div className="">
                     <div className="boxshadow">
-                    <div class="form-check  form-switch" style={{paddingBottom:20}}>
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" />
-                    <label class="form-check-label" for="flexSwitchCheckChecked">SubScribe/Unsubscribe</label>
-                </div>
                         <table class="table" >
                             <thead>
                                 <tr>
@@ -105,15 +134,15 @@ const SubScriber = () => {
                 <div className="row padd_bottm">
                     <div className="col-sm-6 col-lg-6 col-md-6">
                         <div className="gapPad">
-                            <select class="form-select w-25 " name={state.row_value} onChange={Chnage}>
-                                <option disabled selected>Rows</option>
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                            </select>
+                            <Form.Select aria-label="row" className="w-25">
+                                <option>Row</option>
+                                <option value="1">10</option>
+                                <option value="2">25</option>
+                                <option value="3">50</option>
+                            </Form.Select>
                         </div>
                     </div>
-                    <div className="col-sm-6 col-lg-6 col-md-6 ">
+                    {/*<div className="col-sm-6 col-lg-6 col-md-6 ">
                         <div className="gapPad pagination_justify_end ">
                             <Pagination
                                 className="paginationDiv"
@@ -121,7 +150,7 @@ const SubScriber = () => {
                                 onChange={handlechange}
                                 color="primary" />
                         </div>
-                    </div>
+                            </div>*/}
                 </div>
             </div>
         </div>

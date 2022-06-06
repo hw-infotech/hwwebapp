@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
-import Layout from "../../components/layout";
-import Header from "../../Parts/header/Header";
-import { admin } from "../../data/Data";
-import { Pagination } from "@material-ui/lab";
+import React, { useEffect, useState } from "react";
+import { BsSearch } from "react-icons/bs";
+//import { Pagination } from "@material-ui/lab";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
-import withHeader from "../../HOC/withHeader";
+import { Button, Form, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
+import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "react-icons/bs";
+import { BiAddToQueue } from "react-icons/bi";
 
 const route = [
     { name: "Home", route: "/" },
@@ -16,126 +17,203 @@ const route = [
 
 ]
 const Success_Stories = () => {
-    //useEffect(() => {
-    //setTitle("Success Stories")
-    //  }, [])
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [tableData, setTableData] = useState([
+        {
+            title: "Mark",
+            content: "gtto",
+            image: "./assets/images/f.jpg",
+            active: false
+
+        },
+        {
+            title: "aark",
+            content: "ptto",
+            image: "./assets/images/f.jpg",
+            active: false
+        },
+        {
+            title: "cark",
+            content: "rtto",
+            image: "./assets/images/f.jpg",
+            active: false
+        }
+    ])
+    function sortt() {
+        const response = tableData.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : ((b.title.toLowerCase() > a.title.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    function sortt1() {
+        const response = tableData.sort((a, b) => (a.title.toLowerCase() < b.title.toLowerCase()) ? 1 : ((b.title.toLowerCase() < a.title.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    const [title, setTitle] = useState(false)
     return (
         <div title="Success Stories">
-            <BasicBreadcrumbs route={route} />
+            <h4>Success Stories</h4>
+            {<BasicBreadcrumbs route={route} />}
             <div className="margin_bottom_ topGapPad">
-                <div className="row font_size">
-                    <div className="col-md-5">
+                <div className="font_size">
+                    <div className="">
+                        <div className="">
+                            <div className="gapbetween">
+                                <div>
+                                    <Form.Select aria-label="Default select example">
+                                        <option >Select </option>
+                                        <option value="1">All</option>
+                                    </Form.Select>
+                                </div>
+                                <div>
+                                    <Form.Select aria-label="Default select example">
+                                        <option >Select </option>
+                                        <option value="1">Active All</option>
+                                        <option value="1">Deactive All</option>
+                                    </Form.Select>
+                                </div>
+                                <div className="serachbar">
+                                    <InputGroup className="mb-3">
+                                        <FormControl
+                                            placeholder="Serach title and name"
+                                            aria-label="Recipient's username"
+                                            aria-describedby="basic-addon2"
+                                        />
+                                        <Button variant="outline-secondary" id="button-addon2">
+                                            <BsSearch />
+                                        </Button>
+                                    </InputGroup>
+                                </div>
+                                <div className="">
+                                    <Button variant="outline-secondary" className="" onClick={handleShow}><BiAddToQueue size="24px" /></Button></div>
+                            </div>
+                            <div>
+                                <Table>
+                                    <thead>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th onClick={() => {
+                                                setTitle(!title)
+                                                { title ? sortt() : sortt1() }
+                                            }}>Title {title ? <BsArrowUp /> : <BsArrowDown />}</th>
+                                            <th>Content</th>
+                                            <th>Image</th>
+                                            <th>Active/Deactive</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {tableData.map((data, index) =>
+                                            <tr>
+                                                <td class="action "><div class="userDetail ">
+                                                    <button type="button" class="btn "
+                                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <span class="actionIcon"> <i
+                                                            class="bi bi-three-dots-vertical"></i> </span>
+                                                    </button>
+                                                    <ul class="IconDropdown dropdown-menu context-menu1 "
+                                                        aria-labelledby="dropdownIconMenu">
+                                                        <li class="dropdownList">
+                                                            <div class="actionBtns">
+                                                                <span class="editAction" data-bs-toggle="modal"
+                                                                    data-bs-target="#editbtn"><i
+                                                                        class="bi bi-pencil-square"></i></span>
+                                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>Edit</button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="dropdownList">
+                                                            <div class="actionBtns">
+                                                                <span class="deleteAction" data-bs-toggle="modal"
+                                                                    data-bs-target="#deletebtn"> <i
+                                                                        class="bi bi-trash3-fill"></i></span>
+                                                                <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div></td>
+                                                <td>{data.title}</td>
+                                                <td>{data.content}</td>
+                                                <td><img src={data.image} width={40} height={40} /></td>
+                                                <td><Form>
+                                                    <Form.Check className=""
+                                                        type="switch"
+                                                        id="custom-switch1"
+                                                        value={data.active}
+
+                                                        label=""
+                                                        onChange={(e) => {
+                                                            console.log(e.target.checked);
+                                                            setTableData(_ => {
+                                                                _[index].active = e.target.checked
+                                                                return [..._]
+                                                            })
+                                                        }}
+
+                                                    />
+                                                </Form></td>
+
+                                            </tr>)}
+
+                                    </tbody>
+                                </Table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Modal show={show} onHide={handleClose} size="md">
+                <Modal.Header closeButton>
+                    <Modal.Title>Project</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {<div className="">
                         <div className="cardBoard">
-                            <h3>Add a New Project</h3>
+                            <h3></h3>
                             <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                                 {() => (
                                     <form onSubmit={(e) => {
                                         e.preventDefault();
                                     }}
                                     >
-                                        <div class="form-group">
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Input type="text" label="Project Title" className="form-control" name="storytitle" placeholder="Enter the Project title" />
-                                        </div>
-                                        <div class="form-group">
+                                        </Form.Group>
+
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Input as={"textarea"} className="form-control" name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
-                                        </div>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                            </div>
-                                            <div class="custom-file form-group">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                                    aria-describedby="inputGroupFileAddon01" name="storyImage" />
-                                                <label class="custom-file-label" for="inputGroupFile01">Choose Image for Stories</label>
-                                            </div>
-                                        </div>
+                                        </Form.Group>
+
+                                        <Form.Group controlId="formFile" className="mb-3 w-100">
+                                            <Form.Label>Choose Image</Form.Label>
+                                            <Form.Control type="file" />
+                                        </Form.Group>
+
                                         <br />
-                                        <div style={{float:"right",}}>
-                                            <button type="submit" class="addbtn">Add</button>
+                                        <div style={{ float: "right", }}>
+                                            <Button className="addbtn">Add</Button>
                                         </div>
-                                        <div class="custom-control custom-switch" style={{ paddingTop: 5 }}>
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="activestory" />
-                                            <label class="custom-control-label" for="customSwitch1">Acitve Stories</label>
-                                        </div>
+                                        <Form.Check
+                                            type="switch"
+                                            id="Active"
+                                            label="Active"
+                                        />
                                     </form>
                                 )}
                             </Formik>
                         </div>
-                        <div className="pt-3">
-                            <select class="form-select w-25">
-                                <option disabled selected>Rows</option>
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="col-md-7">
-                        <div className="cardBoard">
-                            <h3>List of Projects</h3>
-                            <table className="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Title</th>
-                                        <th scope="col">Content</th>
-                                        <th scope="col">Image</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-6 col-lg-6 col-md-6">
-
-                            </div>
-                            <div className="col-sm-6 col-lg-6 col-md-6">
-                                <div className="gapPad pagination_justify_end">
-                                    <Pagination
-                                        className="paginationDiv"
-                                        count={5}
-                                        color="primary" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+                    </div>}
+                </Modal.Body>
+                <Modal.Footer>
+                    {/*<div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
+                        <button type="button" class="btn btn-outline-secondary gallery_add_button">Submit</button>
+                                </div>*/}
+                </Modal.Footer>
+            </Modal>
         </div>
     );
-
-
 }
 export default Success_Stories
