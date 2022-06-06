@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import CommonFunctionality from "../../Shared/CommonFunctionality";
-import { InlineWidget } from "react-calendly";
+import { PopupButton } from "react-calendly";
 
 import Modal from "react-modal";
 const customStyles = {
@@ -273,9 +273,22 @@ const NavBar = ({ NavbarStyle }) => {
                   Get free consultation
                 </Link>
               </li>
+              <li className="nav-item">
+                <PopupButton
+                  className="w-o-btn"
+                  url="https://calendly.com/nestormindpvtltd"
+                  /*
+                   * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
+                   * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
+                   */
+                  rootElement={document.getElementById("root")}
+                  text="Schedule time with me!"
+                />
+              </li>
             </ul>
           </div>
         </nav>
+
         {/* <nav className="nav-menu d-none d-lg-block">
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -304,17 +317,6 @@ const NavBar = ({ NavbarStyle }) => {
   
         <a href="#about" className="get-started-btn scrollto">Get Quote</a> */}
       </div>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <div className="ModalContant">
-          <InlineWidget url="https://calendly.com/nestormindpvtltd?primary_color=ef661e" />
-        </div>
-      </Modal>
     </header>
   );
 };
