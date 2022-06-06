@@ -268,11 +268,11 @@ const NavBar = ({ NavbarStyle }) => {
               <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="w-o-btn" onClick={openModal}>
                   Get free consultation
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <PopupButton
                   className="w-o-btn"
