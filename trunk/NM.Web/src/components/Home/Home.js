@@ -1,34 +1,19 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Home/Home.css";
 import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-import Footer_new from "../Layout/Footer_new";
+// import "owl.carousel/dist/assets/owl.carousel.css";
+// import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Link } from "react-router-dom";
 import Portfolio from "../Home/portfolio";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useDispatch } from "react-redux";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 import { PopupButton } from "react-calendly";
-import Modal from "react-modal";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    width: "100%"
-  },
-};
 const HomeContent = (props) => {
-  const { newsletter, setNewsLetter, navbar, setNavbar } = props;
-  // console.log(setNavbar);
-  // const [newsletter, setNewsLetter] = useState();
+  const { navbar } = props;
+  
   console.log(navbar);
-  const dispatch = useDispatch();
   const [state, setState] = useState({
     responsive: {
       0: {
@@ -54,21 +39,6 @@ const HomeContent = (props) => {
     // setNavbar("Preet Singh")
   }, []);
   // this changes the scrolling behavior to "smooth"
-
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
 
   return (
     <div>
@@ -505,19 +475,19 @@ const HomeContent = (props) => {
           </div>
         </div>
         <div className="container">
-          <div class="awards_accolades_parts">
-            <div class="awa_rds awa_rds_one">
+          <div className="awards_accolades_parts">
+            <div className="awa_rds awa_rds_one">
               <a
                 href="https://clutch.co/profile/nestormind#summary"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
-                <div class="img">
+                <div className="img">
                   <img src="../../assets/img/GooglePartner.png" />
                 </div>
               </a>
-              <div class="hm_awcnt">
+              <div className="hm_awcnt">
                 <h3>
                   5.0
                   <img src="../../assets/img/stars.svg" />
@@ -528,18 +498,18 @@ const HomeContent = (props) => {
               </div>
             </div>
 
-            <div class="awa_rds awa_rds_one">
+            <div className="awa_rds awa_rds_one">
               <a
                 href="https://clutch.co/profile/nestormind#summary"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
-                <div class="img">
+                <div className="img">
                   <img src="../../assets/img/cluch.png" />
                 </div>
               </a>
-              <div class="hm_awcnt">
+              <div className="hm_awcnt">
                 <h3>
                   5.0
                   <img src="../../assets/img/stars.svg" />
@@ -550,18 +520,18 @@ const HomeContent = (props) => {
               </div>
             </div>
 
-            <div class="awa_rds awa_rds_two">
+            <div className="awa_rds awa_rds_two">
               <a
                 href="https://www.goodfirms.co/company/nestormind-pvt-ltd"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
-                <div class="img">
+                <div className="img">
                   <img src="../../assets/img/goodfirms.png" />
                 </div>
               </a>
-              <div class="hm_awcnt">
+              <div className="hm_awcnt">
                 <h3>
                   5.0
                   <img src="../../assets/img/stars.svg" />
@@ -573,18 +543,18 @@ const HomeContent = (props) => {
               </div>
             </div>
 
-            <div class="awa_rds awa_rds_five">
+            <div className="awa_rds awa_rds_five">
               <a
                 href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
-                <div class="img">
+                <div className="img">
                   <img src="../../assets/img/upwork.svg" />
                 </div>
               </a>
-              <div class="hm_awcnt">
+              <div className="hm_awcnt">
                 <h3>100% Job Success</h3>
                 <p>
                   Recognized as the “top- rated plus” company and earned high

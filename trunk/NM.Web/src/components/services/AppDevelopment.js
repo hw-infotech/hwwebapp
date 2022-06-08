@@ -1,25 +1,20 @@
-import React, { Component } from "react";
-import NavBar from "../Layout/Navbar";
+import React from "react";
 import "./ServicesMain.css";
-import Footer_new from "../Layout/Footer_new";
 import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+// import "owl.carousel/dist/assets/owl.carousel.css";
+// import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Link } from "react-router-dom";
-import Portfolio from "../Home/portfolio";
 import { useEffect } from "react";
-import { ErrorMessage, Field, Formik } from "formik";
+import { Field, Formik } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { AppuserRegister } from "../../Redux/Action/Actionfunction";
-import Dashboard from "../../layout/dashboard";
 import AppPortfolio from "../Home/appPortfolio";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 
 const AppDev = (props) => {
-  const { newsletter, setNewsLetter, navbar, setNavbar } = props;
-  console.log(navbar);
+  const { navbar, setNavbar } = props;
 
   const dispatch = useDispatch();
   const selector = useSelector((state) => state.apidata.Web_User_register);

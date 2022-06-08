@@ -1,20 +1,6 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import CommonFunctionality from "../../Shared/CommonFunctionality";
 import { PopupButton } from "react-calendly";
-
-import Modal from "react-modal";
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    width: "100%",
-  },
-};
 
 const NavBar = ({ NavbarStyle }) => {
   const history = useHistory();
@@ -44,21 +30,6 @@ const NavBar = ({ NavbarStyle }) => {
           : ""
         : "";
 
-  console.log("ClassName", ClassName);
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <header
       id="header"
@@ -72,7 +43,7 @@ const NavBar = ({ NavbarStyle }) => {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="/">
-            <img src="assets/img/nestormind_logo_250.png" />
+            <img src="assets/img/nestormind_logo_250.png" alt="" />
           </a>
           <button
             className="navbar-toggler"
@@ -112,30 +83,30 @@ const NavBar = ({ NavbarStyle }) => {
                   <div className="dropdownmenus">
                     <Link className="dropdown-item" to="/app-development">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/appNavIcon.png" />
+                        <img src="assets/img/appNavIcon.png" alt="" />
                         App Development
                         <span></span>
                       </div>
                     </Link>
                     <Link className="dropdown-item" to="/web-development">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/webNavIcon.png" /> Web Development
+                        <img src="assets/img/webNavIcon.png" alt=""/> Web Development
                       </div>
                     </Link>
                     <Link className="dropdown-item" to="/ui-ux-design">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/uiUxNavIcon.png" /> UI UX Design
+                        <img src="assets/img/uiUxNavIcon.png" alt="" /> UI UX Design
                       </div>
                     </Link>
                     <Link className="dropdown-item" to="/seo">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/seoNavIcon.png" />
+                        <img src="assets/img/seoNavIcon.png" alt=""/>
                         Seo
                       </div>
                     </Link>
                     <Link className="dropdown-item" to="/graphic-design">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/graphicsNavIcon.png" />
+                        <img src="assets/img/graphicsNavIcon.png" alt=""/>
                         Graphics Design
                       </div>
                     </Link>

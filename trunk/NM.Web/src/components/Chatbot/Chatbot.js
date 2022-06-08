@@ -1,5 +1,4 @@
-import { flexbox } from '@mui/system';
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 

@@ -154,19 +154,19 @@ const Footer_new = () => {
                       <ul>
                         <li>
                           {/* <Link to="/under-mantainence">Virtual Reality</Link> */}
-                          <Link>Virtual Reality</Link>
+                          <Link to="#">Virtual Reality</Link>
                         </li>
                         <li>
-                          <Link>Augmented Reality</Link>
+                          <Link to="#">Augmented Reality</Link>
                         </li>
                         <li>
-                          <Link>AI</Link>
+                          <Link to="#">AI</Link>
                         </li>
                         <li>
-                          <Link>Internet of things</Link>
+                          <Link to="#">Internet of things</Link>
                         </li>
                         <li>
-                          <Link>Blockchain</Link>
+                          <Link to="#">Blockchain</Link>
                         </li>
                       </ul>
                     </div>

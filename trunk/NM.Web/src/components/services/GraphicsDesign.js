@@ -1,27 +1,20 @@
-import React, { Component, useState } from 'react';
-import NavBar from '../Layout/Navbar';
+import React, { useState } from 'react';
 import './ServicesMain.css';
-import Footer_new from '../Layout/Footer_new';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from "react-router-dom";
-import Portfolio from '../Home/portfolio';
 import { useEffect } from 'react';
-import { ErrorMessage, Field, Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import * as Yup from "yup";
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { graphicDesignuserRegister } from '../../Redux/Action/Actionfunction';
-import Dashboard from '../../layout/dashboard';
 import GraphicsPortfolio from '../Home/graphicsPortfolio';
 import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
 const GraphicsD = (props) => {
-    const {newsLetter, setNewsLetter} = props;
     const dispatch = useDispatch()
     const selector = useSelector(state => state)
-    const [response, setResponse] = useState()
+    // const [response, setResponse] = useState()
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -29,7 +22,7 @@ const GraphicsD = (props) => {
     // this changes the scrolling behavior to "smooth"
 
     useEffect(() => {
-        setResponse(selector.apidata?.graphic_design_register?.data)
+        // setResponse(selector.apidata?.graphic_design_register?.data)
     }, [selector])
 
     const initialValues = {
@@ -70,8 +63,6 @@ const GraphicsD = (props) => {
         // notify()
         resetForm()
     }
-
-    const notify = () => toast.success('Register Successfully');//, { theme: "colored" }
 
     return (
       <div>
@@ -120,7 +111,7 @@ const GraphicsD = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/photoshop-cc.svg" />
+                      <img src="assets/img/photoshop-cc.svg" alt='icon' />
                     </div>
                     <div className="stackTitle"> Photoshop</div>
                   </div>
@@ -128,7 +119,7 @@ const GraphicsD = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/adobe-illustrator-cc.svg" />
+                      <img src="assets/img/adobe-illustrator-cc.svg" alt='icon' />
                     </div>
                     <div className="stackTitle"> illustrator</div>
                   </div>
@@ -136,7 +127,7 @@ const GraphicsD = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/lightroom-cc.svg" />
+                      <img src="assets/img/lightroom-cc.svg" alt='icon' />
                     </div>
                     <div className="stackTitle">Lightroom</div>
                   </div>
@@ -144,7 +135,7 @@ const GraphicsD = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/premiere-cc.svg" />
+                      <img src="assets/img/premiere-cc.svg" alt='icon' />
                     </div>
                     <div className="stackTitle">Premiere</div>
                   </div>
@@ -193,7 +184,7 @@ const GraphicsD = (props) => {
                 <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
                   <div className="processSlider">
                     <div className="webIcon">
-                      <img src="assets/img/graphics-slider.svg" />
+                      <img src="assets/img/graphics-slider.svg" alt='icon' />
                     </div>
                     <OwlCarousel
                       className="owl-theme"

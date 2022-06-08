@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
-import NavBar from '../Layout/Navbar';
+import React from 'react';
 import './ServicesMain.css';
-import Footer_new from '../Layout/Footer_new';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from "react-router-dom";
-import Portfolio from '../Home/portfolio';
 import { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import * as Yup from "yup";
-import { ErrorMessage, Field, Formik } from 'formik';
+import {  Field, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { UIUXuserRegister } from '../../Redux/Action/Actionfunction';
-import Dashboard from '../../layout/dashboard';
 import UiUxPortfolio from '../Home/uiuxPortfolio';
 import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
 const UIUX = (props) => {
-    const {newsLetter, setNewsLetter} = props;
     const dispatch = useDispatch()
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])

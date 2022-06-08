@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import NavBar from '../Layout/Navbar';
-import Footer from '../Layout/Footer';
+import React from 'react';
 import './AboutUs.css';
-import Footer_new from '../Layout/Footer_new';
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
-import Dashboard from '../../layout/dashboard';
 import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
 const AboutUsContent = (props) => {
-    const { newsletter, setNewsLetter } = props;
 
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
     // this changes the scrolling behavior to "smooth"
@@ -56,13 +51,13 @@ const AboutUsContent = (props) => {
                             We value your ideas and also deeply work to find out the solid solutions to your concerns. Our R & D team work round the clock to innovate futuristic solutions that can smoothen the business and the world altogether.
                         </p>
                         <div class="line">
-                            <img src="assets/img/yellow-line.svg" alt="" />
+                            <img src="assets/img/yellow-line.svg" alt='' />
                         </div>
 
                     </div>
                 </div>
                 <div className="left aos-init aos-animate" data-aos="fade-up">
-                    <img src="assets/img/hw-team.png" alt="" />
+                    <img src="assets/img/hw-team.png" alt='' />
                 </div>
             </div>
         </section>
@@ -76,7 +71,7 @@ const AboutUsContent = (props) => {
                     <div className="row_one">
                         <div className="col-1">
                             <div className="galleryImages medium">
-                                <img src="/assets/img/team/team_nestormind.png" />
+                                <img src="/assets/img/team/team_nestormind.png" alt='' />
                             </div>
                         </div>
                         <div className="col-2">
@@ -87,31 +82,31 @@ const AboutUsContent = (props) => {
                                 and when, because the <strong>experience matters.</strong>
                             </div>
                             <div className="galleryImages small">
-                                <img src="/assets/img/team/untitled-14.jpg" />
+                                <img src="/assets/img/team/untitled-14.jpg alt=''" />
                             </div>
                         </div>
                     </div>
                     <div className="row_two">
                         <div className="col-1">
                             <div className="galleryImages small">
-                                <img src="/assets/img/team/barbq.jpg" />
+                                <img src="/assets/img/team/barbq.jpg" alt='' />
                             </div>
                         </div>
                         <div className="col-2">
                             <div className="galleryImages medium">
-                                <img src="assets/img/team/diwaliCel.jpg" />
+                                <img src="assets/img/team/diwaliCel.jpg" alt='' />
                             </div>
                         </div>
                         <div className="col-3">
                             <div className="galleryImages medium">
-                                <img src="assets/img/stiker.png" />
+                                <img src="assets/img/stiker.png" /> alt=''
                             </div>
                         </div>
                     </div>
                     <div className="row_three">
                         <div className="col-1">
                             <div className="galleryImages large">
-                                <img src="/assets/img/team/untitled-86.jpg" />
+                                <img src="/assets/img/team/untitled-86.jpg alt=''" />
                             </div>
                         </div>
                     </div>

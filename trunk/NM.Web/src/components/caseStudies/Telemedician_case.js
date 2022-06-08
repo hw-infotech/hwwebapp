@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../services/ServicesMain.css';
 import './caseStudies.css';
-import Footer_new from '../Layout/Footer_new';
 import { useEffect } from 'react';
 import Dashboard from '../../layout/dashboard';
 
@@ -25,7 +24,7 @@ const Telemedician = () => {
                         </div>
                     </div>
                     <div className="storiesImg">
-                        <img src="assets/img/telemedicine.png" />
+                        <img src="assets/img/telemedicine.png" alt='storiesImg'/>
                     </div>
 
                 </div>
@@ -44,7 +43,7 @@ const Telemedician = () => {
                     <div className="row">
                         <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                             <div className="CaseStoriesImg">
-                                <img className="w-100" src="assets/img/telemedicine.png" />
+                                <img className="w-100" src="assets/img/telemedicine.png" alt='CaseStoriesImg'/>
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -82,7 +81,7 @@ const Telemedician = () => {
                         </div>
                         <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                             <div className="CaseStoriesImg">
-                                <img src="assets/img/telemedicine.png" />
+                                <img src="assets/img/telemedicine.png" alt='CaseStoriesImg' />
                             </div>
                         </div>
                     </div>
@@ -101,7 +100,7 @@ const Telemedician = () => {
                         <li>
                             <div className="stackBox">
                                 <div className="icon">
-                                    <img src="assets/img/brandLogo/angular-icon.svg" />
+                                    <img src="assets/img/brandLogo/angular-icon.svg" alt='icon' />
                                 </div>
                                 <div className="stackTitle">Angular</div>
                             </div>
@@ -109,7 +108,7 @@ const Telemedician = () => {
                         <li>
                             <div className="stackBox">
                                 <div className="icon">
-                                    <img src="assets/img/brandLogo/nodejs-icon.svg" />
+                                    <img src="assets/img/brandLogo/nodejs-icon.svg" alt='icon'/>
                                 </div>
                                 <div className="stackTitle">Node.js</div>
                             </div>
@@ -117,7 +116,7 @@ const Telemedician = () => {
                         <li>
                             <div className="stackBox">
                                 <div className="icon">
-                                    <img src="assets/img/brandLogo/react.svg" />
+                                    <img src="assets/img/brandLogo/react.svg" alt='icon'/>
                                 </div>
                                 <div className="stackTitle">React.js</div>
                             </div>
@@ -125,7 +124,7 @@ const Telemedician = () => {
                         <li>
                             <div className="stackBox">
                                 <div className="icon">
-                                    <img src="assets/img/brandLogo/firebase.svg" />
+                                    <img src="assets/img/brandLogo/firebase.svg" alt='icon' />
                                 </div>
                                 <div className="stackTitle">Firebase</div>
                             </div>
@@ -133,7 +132,7 @@ const Telemedician = () => {
                         <li>
                             <div className="stackBox">
                                 <div className="icon">
-                                    <img src="assets/img/brandLogo/vue-js-logo.svg" />
+                                    <img src="assets/img/brandLogo/vue-js-logo.svg" alt='icon' />
                                 </div>
                                 <div className="stackTitle">Vue.js</div>
                             </div>

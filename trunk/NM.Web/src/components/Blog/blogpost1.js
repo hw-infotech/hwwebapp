@@ -1,7 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import './blog.css';
 import { useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
