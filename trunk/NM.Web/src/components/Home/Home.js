@@ -478,13 +478,13 @@ const HomeContent = (props) => {
           <div className="awards_accolades_parts">
             <div className="awa_rds awa_rds_one">
               <a
-                href="https://clutch.co/profile/nestormind#summary"
+                href="https://www.google.com/search?q=nestormind&rlz=1C1GCEA_enIN1002IN1002&oq=nest&aqs=chrome.1.69i60j69i59j69i57j46i199i291i433i512j46i131i199i291i433i512j0i131i433i512l2j69i60.2226j0j7&sourceid=chrome&ie=UTF-8"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
                 <div className="img">
-                  <img src="../../assets/img/GooglePartner.png" />
+                  <img src="../../assets/img/google_review.png" />
                 </div>
               </a>
               <div className="hm_awcnt">
@@ -543,7 +543,7 @@ const HomeContent = (props) => {
               </div>
             </div>
 
-            <div className="awa_rds awa_rds_five">
+            {/* <div className="awa_rds awa_rds_five">
               <a
                 href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
                 target="_blank"
@@ -561,7 +561,7 @@ const HomeContent = (props) => {
                   rate job success on Upwork.
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* <ul className="list-addon list-addon-home">

@@ -90,7 +90,7 @@ const NavBar = ({ NavbarStyle }) => {
                     </Link>
                     <Link className="dropdown-item" to="/web-development">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/webNavIcon.png" alt=""/> Web Development
+                        <img src="assets/img/webNavIcon.png" alt="" /> Web Development
                       </div>
                     </Link>
                     <Link className="dropdown-item" to="/ui-ux-design">
@@ -100,13 +100,13 @@ const NavBar = ({ NavbarStyle }) => {
                     </Link>
                     <Link className="dropdown-item" to="/seo">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/seoNavIcon.png" alt=""/>
+                        <img src="assets/img/seoNavIcon.png" alt="" />
                         Seo
                       </div>
                     </Link>
                     <Link className="dropdown-item" to="/graphic-design">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/graphicsNavIcon.png" alt=""/>
+                        <img src="assets/img/graphicsNavIcon.png" alt="" />
                         Graphics Design
                       </div>
                     </Link>
@@ -208,7 +208,7 @@ const NavBar = ({ NavbarStyle }) => {
                           />
                           Skype
                         </a>
-                        <a
+                        {/* <a
                           className="webformsIntegration"
                           href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
                           target="_blank"
@@ -220,7 +220,7 @@ const NavBar = ({ NavbarStyle }) => {
                             loading="lazy"
                           />
                           upwork
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>
