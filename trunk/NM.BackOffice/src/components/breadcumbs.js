@@ -9,7 +9,7 @@ function handleClick(event) {
 export default function BasicBreadcrumbs({ route }) {
     const navigate = useNavigate()
     return (
-        <div className="breadecumbs_box pt-2" onClick={handleClick}>
+        <div className="breadecumbs_box " onClick={handleClick}>
             <ul className='breadcumbs_style'>
                 {route?.map((_, index) => (route.length - 1 == index ? <li onClick={() => {
                     navigate(_.route)

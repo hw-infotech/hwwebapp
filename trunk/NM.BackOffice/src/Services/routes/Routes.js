@@ -18,6 +18,7 @@ import Add_Gallery_Event from '../../pages/crausel/add_gallery_event';
 import Change_Gallery_Events from '../../pages/crausel/change_gallery_events';
 import List_Of_Blogs from '../../pages/blogs/list_of_blogs'
 import Edit_postJob from '../../pages/postJobs/editPost_Job';
+import Particularjob from '../../pages/postJobs/particularlist';
 
 const routes = (path, element, exact = true) => {
     return { path, element, exact }
@@ -26,7 +27,8 @@ const route = [
     routes('/', <Home />),
     routes("/addNewPost", <AddNewPost />),
     routes('/draftpost'),
-    routes('/editPostjob',<Edit_postJob/>),
+    routes('/particularjob', <Particularjob />),
+    routes('/editPostjob', <Edit_postJob />),
     routes('./pendingpost'),
     routes('/SuccessStories', <Success_Stories />),
     routes('/Subscriber', <SubScriber />),

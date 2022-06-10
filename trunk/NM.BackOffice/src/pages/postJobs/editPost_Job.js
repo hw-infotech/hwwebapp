@@ -7,8 +7,15 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 //import { Pagination } from "@material-ui/lab";
 import { initialValues, validationschemeaa } from "./validation-schema";
 import { useNavigate } from "react-router";
+import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "react-icons/bs";
+import { MdOutlineNoteAdd } from "react-icons/md";
+import TooltipComp from "../../shared/Tooltipomp";
+import CreatableSelectField from "../../components/selectfield";
+;
 
 const Edit_postJob = (value1) => {
+
     const [requirment2, setRequirments] = useState([])
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -22,9 +29,7 @@ const Edit_postJob = (value1) => {
             start: start,
             end: showPerPage
         })
-
     const nevigate = useNavigate();
-
     useEffect(() => {
         //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
@@ -60,35 +65,33 @@ const Edit_postJob = (value1) => {
         { name: "Edit Post job", route: "/" },
 
     ]
-    const [tableData, setTableData] = useState([
+    const records = [
         {
-
-            Jobtitle: "gtto",
-            description: "goldy",
-            function: "hg",
-            industry: "adf",
-            level: "rfs",
-            type: "gdg"
+            Jobtitle: "UI/UX",
+            description: "Great Opportunity",
+            functions: "Handle events",
+            industry: "Great",
+            level: "Higher",
+            type: "Full time"
         },
         {
-
-            Jobtitle: "gtto",
-            description: "goldy",
-            function: "hg",
-            industry: "adf",
-            level: "rgdg",
-            type: "gdg"
+            Jobtitle: "Project Manager",
+            description: "Great Opportunity",
+            functions: "Handle events",
+            industry: "Great",
+            level: "Higher",
+            type: "Full time"
         },
         {
-
             Jobtitle: "gtto",
-            description: "goldy",
-            function: "hg",
-            industry: "adf",
-            level: "rvbf",
-            type: "gdg"
-        },
-    ])
+            description: "Great Opportunity",
+            functions: "Handle events",
+            industry: "Great",
+            level: "Higher",
+            type: "Full time"
+        }
+    ]
+    const [tableData, setTableData] = useState(records)
     function sortt() {
         const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() > b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() > a.Jobtitle.toLowerCase()) ? -1 : 0));
         console.log(response)
@@ -100,16 +103,34 @@ const Edit_postJob = (value1) => {
         setTableData([...response])
     }
     const [title, setTitle] = useState(false)
+    const requestSearch = (searchedVal) => {
+        const filteredRows = records.filter((row) => {
+            return row.title.toLowerCase().includes(searchedVal.toLowerCase());
+        });
+        setTableData(filteredRows)
+
+    };
+    const onhandlechange = () => {
+
+    }
+   
     return (
         <div title="Edit Post Job">
+            <h4>List Number of Post Jobs</h4>
             {<BasicBreadcrumbs route={route} />}
             <div className="topGapPad margin_bottom_">
                 <div className="gapbetween ">
                     <div>
-                        <Form.Select aria-label="Default select example">
-                            <option disabled>Select </option>
-                            <option value="1">All</option>
-                        </Form.Select>
+                        <TooltipComp component={
+                            <Form.Select aria-label="Default select example">
+                                <option disabled>Select </option>
+                                <option value="1">All</option>
+                                <option value="1">Active all</option>
+                                <option value="1">Deactive all</option>
+                            </Form.Select>}
+                            placement="top"
+                            tooltip={"Filteration Active/Deactive"}
+                        />
                     </div>
                     <div className="serachbar" >
                         <InputGroup className="mb-3">
@@ -117,6 +138,9 @@ const Edit_postJob = (value1) => {
                                 placeholder="Serach title and name"
                                 aria-label="Recipient's username"
                                 aria-describedby="basic-addon2"
+                                onChange={(e) => {
+                                    requestSearch(e.target.value)
+                                }}
                             />
                             <Button variant="outline-secondary" id="button-addon2">
                                 <BsSearch />
@@ -124,9 +148,9 @@ const Edit_postJob = (value1) => {
                         </InputGroup>
                     </div>
                     <div>
-                        <Button variant="primary" onClick={() => {
+                        <Button variant="secondary" onClick={() => {
                             nevigate("/postnewjob")
-                        }}>Post Job</Button>
+                        }}><MdOutlineNoteAdd size={24} /></Button>
                     </div>
                 </div>
                 <div className="boxshadow">
@@ -136,18 +160,20 @@ const Edit_postJob = (value1) => {
                             <tr>
                                 <th>Action</th>
                                 <th onClick={() => {
-                                    // setTitle(!title)
-                                    // { title ? sortt() : sortt1() }
-                                }}>Job title</th>
+                                    setTitle(!title)
+                                    { title ? sortt() : sortt1() }
+                                }}>Job title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                 <th>Job Description</th>
                                 <th>Job Function</th>
                                 <th>Industries</th>
                                 <th>Senority Level</th>
                                 <th>Employement Type</th>
+                                <th>Status</th>
+                                <th>Total Candidates</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {//tableData?.sort((data, index) =>
+                            {tableData.map((data, index) =>
                                 <tr>
                                     <td class="action "><div class="userDetail ">
                                         <button type="button" class="btn "
@@ -163,7 +189,9 @@ const Edit_postJob = (value1) => {
                                                     <span class="editAction" data-bs-toggle="modal"
                                                         data-bs-target="#editbtn"><i
                                                             class="bi bi-pencil-square"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>View</button>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                        nevigate('/particularjob')
+                                                    }}>View</button>
                                                 </div>
                                             </li>
                                             <li class="dropdownList">
@@ -171,7 +199,7 @@ const Edit_postJob = (value1) => {
                                                     <span class="viewIcon" data-bs-toggle="modal"
                                                         data-bs-target="#viewbtn"> <i
                                                             class="bi bi-eye"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow} >Edit</button>
                                                 </div>
                                             </li>
                                             <li class="dropdownList">
@@ -179,20 +207,26 @@ const Edit_postJob = (value1) => {
                                                     <span class="deleteAction" data-bs-toggle="modal"
                                                         data-bs-target="#deletebtn"> <i
                                                             class="bi bi-trash3-fill"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>//)
-                            }
-
+                                    <td>{data.Jobtitle}</td>
+                                    <td>{data.description}</td>
+                                    <td>{data.functions}</td>
+                                    <td>{data.industry}</td>
+                                    <td>{data.level}</td>
+                                    <td>{data.type}</td>
+                                    <td><Form>
+                                        <Form.Check className="switch_padding1"
+                                            type="switch"
+                                            id="custom-switch1"
+                                            value={data.active}
+                                            label="" />
+                                    </Form></td>
+                                    <td>30</td>
+                                </tr>)}
                         </tbody>
                     </Table>
                 </div>
@@ -201,98 +235,82 @@ const Edit_postJob = (value1) => {
                         <Modal.Title>Edit Post Job</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div className="w-100">
-                            <div className="content_center margin_bottom_">
-                                <div className="topGapPad p-3 w-75">
-                                    <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                        {() => (
-                                            <form onSubmit={(e) => {
-                                                e.preventDefault()
-                                            }}>
-                                                <div className="boxshadow ">
-                                                    <div className="content_center">
-                                                        <div className="add_new_post_padding_between_field w-100">
-                                                            <Form.Group>
-                                                                <Input as='select' className="form-control" name='jobtitle' label={"Job title"} id="name" options={[
-                                                                    { value: "" },
-                                                                    { value: "one" },
-                                                                    { value: "two" },
-                                                                    { value: "three" },
-                                                                ]} >
-                                                                </Input>
-                                                            </Form.Group>
-                                                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                                                <Form.Label>Enter Descritption</Form.Label>
-                                                                <Form.Control as="textarea" rows={3} />
-                                                            </Form.Group>
-                                                            <Form.Group>
-                                                                <Input type='text' className="form-control" placeholder='Job Function' name='jobfunction' label={"Job Function"} id="name" />
-                                                            </Form.Group>
-                                                            <Form.Group>
-                                                                <Input as='select' className="form-control" placeholder="Location" name='location' label={"Location"} id="name" options={[
-                                                                    { name: "...." },
-                                                                    { value: "one" },
-                                                                    { value: "two" },
-                                                                    { value: "three" },
-                                                                ]} ></Input>
-                                                            </Form.Group>
-                                                            <Form.Group>
-                                                                <Input
-                                                                    type='text'
-                                                                    className="form-control"
-                                                                    placeholder='Responsibility'
-                                                                    name='responsibility'
-                                                                    label={"Responsibility"}
-                                                                />
-                                                            </Form.Group>
-                                                        </div>
-                                                        <div className="add_new_post_padding_between_field w-100">
-                                                            <Form.Group>
-                                                                <Input
-                                                                    type='text'
-                                                                    className="form-control post_new_job_calcultextfield"
-                                                                    placeholder='Requirments'
-                                                                    name='requirements'
-                                                                    label={"Requirments"}
-                                                                // id="requirements"
-                                                                />
-                                                            </Form.Group>
-                                                            <Form.Group>
-                                                                <Input type='text' className="form-control" placeholder='Industries' name='industries' label={"Industries"} id="name" />
-                                                            </Form.Group>
-                                                            <Form.Group>                                                                <Input type='text'
-                                                                className="form-control"
-                                                                placeholder="Benefits"
-                                                                name='benefits'
-                                                                label={"Benefits"}
-                                                                id="name"
+                        <div className="content_center">
+                            <div className="topGapPad p-3 w-100">
 
-                                                            />
-                                                            </Form.Group>
-                                                            <Form.Group>
-                                                                <Input as='select' className="form-control" placeholder="Senority Level" name='senoritylevel' label={"Senority Level"} id="name" options={[
-                                                                    { value: "" },
-                                                                    { value: "one" },
-                                                                    { value: "two" },
-                                                                    { value: "three" },
-                                                                ]} ></Input>
-                                                            </Form.Group>
-                                                            <Form.Group>
-                                                                <Input as='select' className="form-control" placeholder="Employement type" name='employementtype' label={"Employement type"} id="name" options={[
-                                                                    { value: "...." },
-                                                                    { value: "one" },
-                                                                    { value: "two" },
-                                                                    { value: "three" },
-                                                                ]} ></Input>
-                                                            </Form.Group>
-                                                        </div>
+                                <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
+                                    {() => (
+                                        <form onSubmit={(e) => {
+                                            e.preventDefault()
+                                        }}>
+                                            <div className="">
+                                                <div className="content_center">
+                                                    <div className="add_new_post_padding_between_field w-100">
+
+                                                        <Form.Group className="mb-3">
+
+                                                            <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
+                                                                { value: "..." },
+                                                                { value: "UI/UX" },
+                                                                { value: "Project Manager" },
+                                                                { value: "Web Development" },
+                                                            ]} >
+                                                            </Input>
+                                                        </Form.Group>
+                                                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
+                                                            <Form.Label>Enter Descritption</Form.Label>
+                                                            <Form.Control as="textarea" style={{height:"119px"}} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                        <Form.Label>Responsibility</Form.Label>
+                                                           <CreatableSelectField onChange={onhandlechange} />
+
+                                                        </Form.Group>
                                                     </div>
+                                                    <div className="add_new_post_padding_between_field w-100" >
+                                                        <Form.Group className="">
+                                                        <Form.Label>Requirments</Form.Label>
+                                                        <div style={{marginBottom:"1rem"}}>
+                                                        <CreatableSelectField onChange={onhandlechange} />
+                                                        </div>
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Input type='text' placeholder='Industry' className="form-control" name='industry' label={"Industry"} id="name" onChange={onhandlechange} />
+                                                        </Form.Group>
+                                                        <Form.Group>
 
+                                                        <Form.Label>Benefits</Form.Label>
+                                                        <div style={{marginBottom:"1rem"}}>
+                                                        <CreatableSelectField onChange={onhandlechange}/>
+                                                        </div> 
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Input as='select' placeholder="Senority Level" className="form-control" name='seneritylevel'
+                                                                onChange={onhandlechange} label={"Senority Level"} id="seneritylevel" options={[
+                                                                    { value: "", label: "" },
+                                                                    { value: "Senior", label: "Senior" },
+                                                                    { value: "Junior", label: "Junior" },
+
+                                                                ]} ></Input>
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Input as='select' className="form-control" onChange={onhandlechange} placeholder="Employement type" name='employement' label={"Employement type"} id="name" options={[
+                                                                { value: "...." },
+                                                                { value: "Full time" },
+                                                                { value: "Part time" },
+
+                                                            ]} ></Input>
+                                                        </Form.Group>
+                                                    </div>
                                                 </div>
-                                            </form>
-                                        )}
-                                    </Formik>
-                                </div>
+
+                                            </div>
+                                        </form>
+                                    )}
+                                </Formik>
                             </div>
                         </div>
                     </Modal.Body>

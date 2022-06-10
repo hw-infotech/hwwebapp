@@ -9,14 +9,17 @@ import Creatable, { useCreatable } from 'react-select/creatable';
 import CreatableSelect from 'react-select/creatable';
 import { ActionMeta, OnChangeValue } from 'react-select';
 import CreatableInputOnly from "./customInput";
+import { Link } from "react-router-dom";
+import { date } from "yup";
+import CreatableSelectField from "../../components/selectfield";
 const Post_New_Job = () => {
     const [key, setKey] = useState('Create');
     const [state, setState] = useState({
         jobtitle: "",
         jobfunction: "",
-        responsibility: "",
-        requirment: "",
-        benefits: "",
+        responsibility: [],
+        requirment: [],
+        benefits: [],
         industry: "",
         employement: "",
         seneritylevel: "",
@@ -36,6 +39,7 @@ const Post_New_Job = () => {
     const onhandlechange = (e) => {
         const { name, value } = e.target
         setState({ ...state, [name]: value })
+        console.log(state);
 
     }
     console.log(state);
@@ -56,10 +60,9 @@ const Post_New_Job = () => {
                                             <h4>Post a New Job</h4>
                                             <div className="content_center">
                                                 <div className="add_new_post_padding_between_field w-100">
+                                                    <Form.Group className="mb-3">
 
-                                                    <Form.Group className="mb-3" controlId="Jobtitle">
-
-                                                        <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="name" className="form-control" options={[
+                                                        <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
                                                             { value: "..." },
                                                             { value: "UI/UX" },
                                                             { value: "Project Manager" },
@@ -69,55 +72,62 @@ const Post_New_Job = () => {
                                                     </Form.Group>
                                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                                         <Form.Label>Enter Descritption</Form.Label>
-                                                        <Form.Control as="textarea" rows={4} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                        <Form.Control as="textarea" style={{height:"119px"}} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
                                                     </Form.Group>
                                                     <Form.Group>
-                                                        <Input type='text' placeholder='Job Function' className="form-control" name=' jobfunction' label={"Job Function"} id="name" />
+                                                        <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
                                                     </Form.Group>
                                                     <Form.Group>
-                                                        <Input type='text' placeholder='Responsibility' className="form-control" name='responsibility ' label={"Job Function"} id="name" />
-
+                                                        <Form.Label>Requirement</Form.Label>
+                                                        <CreatableSelectField
+                                                            name="requirment"
+                                                            placeholder="Type requirenments and press tab button..."
+                                                            formState={state}
+                                                            setFormState={setState}
+                                                        />
+                                                        {console.log("state ", state)}
                                                     </Form.Group>
                                                 </div>
                                                 <div className="add_new_post_padding_between_field w-100" >
                                                     <Form.Group className="">
-                                                        <Input
-                                                            type='text'
-                                                            className="form-control"
-                                                            placeholder='Requirments'
-                                                            name='requirment'
-                                                            value={state.requirment}
-                                                            onChange={onhandlechange}
-                                                            label={"Requirments"}
-                                                        // id="requirements"
-                                                        />
+                                                        <div style={{ marginBottom: "1rem" }}>
+                                                            <Form.Label>Responsibility</Form.Label>
+                                                            <CreatableSelectField
+                                                                name="responsibility"
+                                                                placeholder="Type responsibility and press tab button..."
+                                                                formState={state}
+                                                                setFormState={setState}
+                                                            />
+                                                        </div>
                                                     </Form.Group>
                                                     <Form.Group>
-                                                        <Input type='text' placeholder='Industries' className="form-control" name='industry' label={"Industries"} id="name" />
+                                                        <Input type='text' placeholder='Industries' onChange={onhandlechange} className="form-control" name='industry' label={"Industries"} id="name" />
                                                     </Form.Group>
                                                     <Form.Group>
-                                                        <Input type='text'
-                                                            className="form-control"
-                                                            placeholder="Benefits"
-                                                            name='benefits'
-                                                            label="Benefits"
-                                                            id="name"
-                                                        />
+                                                        <Form.Label>Benefits</Form.Label>
+                                                        <div style={{ marginBottom: "1rem" }}>
+                                                            <CreatableSelectField
+                                                                name="benefits"
+                                                                formState={state}
+                                                                setFormState={setState}
+                                                            />
+                                                        </div>
                                                     </Form.Group>
                                                     <Form.Group>
-                                                        <Input as='select' placeholder="Senority Level" className="form-control" name='seneritylevel' value={onchange} label={"Senority Level"} id="name" options={[
-                                                            { value: "" },
-                                                            { value: "Senior" },
-                                                            { value: "Junior" },
+                                                        <Input as='select' placeholder="Senority Level" className="form-control" name='seneritylevel'
+                                                            onChange={onhandlechange} label={"Senority Level"} id="seneritylevel" options={[
+                                                                { value: "", label: "" },
+                                                                { value: "Senior", label: "Senior" },
+                                                                { value: "Junior", label: "Junior" },
 
-                                                        ]} ></Input>
+                                                            ]} ></Input>
                                                     </Form.Group>
                                                     <Form.Group>
-                                                        <Input as='select' className="form-control" placeholder="Employement type" name='employement' label={"Employement type"} id="name" options={[
+                                                        <Input as='select' className="form-control" onChange={onhandlechange} placeholder="Employement type" name='employement' label={"Employement type"} id="name" options={[
                                                             { value: "...." },
-                                                            { value: "one" },
-                                                            { value: "two" },
-                                                            { value: "three" },
+                                                            { value: "Full time" },
+                                                            { value: "Part time" },
+
                                                         ]} ></Input>
                                                     </Form.Group>
                                                 </div>
@@ -136,91 +146,110 @@ const Post_New_Job = () => {
                             <div style={{ justifyContent: "end", display: "flex" }}><Button variant="primary" onClick={() => {
                                 setKey("Create")
                             }}><BiEdit /></Button></div>
-                            <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                {() => (
-                                    <form onSubmit={(e) => {
-                                        e.preventDefault()
-                                    }}>
-                                        <div className="boxshadow ">
-                                            <h4>Post a New Job</h4>
-                                            <div className="content_center">
-                                                <div className="add_new_post_padding_between_field w-100">
-                                                    <Form.Group className="mb-3" controlId="Jobtitle">
-                                                        <Input as='select' name='jobtitle' label={"Job title"} id="name" className="form-control" options={[
-                                                            { value: "..." },
-                                                            { value: "UI/UX" },
-                                                            { value: "Project Manager" },
-                                                            { value: "Web Development" },
-                                                        ]} >
-                                                        </Input>
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                                        <Form.Label>Enter Descritption</Form.Label>
-                                                        <Form.Control as="textarea" rows={4} />
-                                                    </Form.Group>
-                                                    <Form.Group>
-                                                        <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" />
-                                                    </Form.Group>
-                                                    <Form.Group>
-                                                        <Input
-                                                            type='text'
-                                                            placeholder='Responsibility'
-                                                            name='responsibility'
-                                                            label="Responsibility"
-                                                            className="form-control"
-                                                        />
-                                                    </Form.Group>
+                            <div className="jobdes_margin">
+                                <div className="">
+                                    <div className="main-pannle">
+                                        <div className="leftt_pannel">
+                                            <div className="jobdes_card">
+                                                <div className="jobdes_marginbottom">
+                                                    <img src="assets/images/nestor.jfif" height={80} width={80} />
                                                 </div>
-                                                <div className="add_new_post_padding_between_field w-100">
-                                                    <Form.Group >
-                                                        <Input
-                                                            type='text'
-                                                            className="form-control"
-                                                            placeholder='Requirments'
-                                                            name='requirements'
-                                                            label={"Requirments"}
-                                                        // id="requirements"
-                                                        />
-                                                    </Form.Group>
-                                                    <Form.Group>
-                                                        <Input type='text' placeholder='Industries' className="form-control" name='industries' label={"Industries"} id="name" />
-                                                    </Form.Group>
-                                                    <Form.Group>
-                                                        <Input type='text'
-                                                            className="form-control"
-                                                            placeholder="Benefits"
-                                                            name='benefits'
-                                                            label="Benefits"
-                                                            id="name"
-                                                        />
-                                                    </Form.Group>
-                                                    <Form.Group>
-                                                        <Input as='select' placeholder="Senority Level" className="form-control" name='senoritylevel' label={"Senority Level"} id="name" options={[
-                                                            { value: "" },
-                                                            { value: "Senior" },
-                                                            { value: "Junior" },
+                                                <div className="titlejob">
+                                                    <span>{state.jobtitle} - Mohali</span>
+                                                </div>
+                                                <div className="job_location d-flex jobdes_marginbottom">
+                                                    <span >Nestormind </span>
+                                                    <span> - Mohali</span>
+                                                </div>
 
-                                                        ]} ></Input>
-                                                    </Form.Group>
-                                                    <Form.Group>
-                                                        <Input as='select' className="form-control" placeholder="Employement type" name='employementtype' label={"Employement type"} id="name" options={[
-                                                            { value: "...." },
-                                                            { value: "one" },
-                                                            { value: "two" },
-                                                            { value: "three" },
-                                                        ]} ></Input>
-                                                    </Form.Group>
-                                                </div>
+
                                             </div>
-                                            <div className="justyfycontentright">
-                                                <button type="submit" className="btn btn-primary" onClick={() => {
-
-                                                }}>Submit</button>
+                                            <div className="">
+                                                <div className="job_description_heading">
+                                                    <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
+                                                </div>
+                                                <div className="">
+                                                    <ul className="job_description_list">
+                                                        {state?.responsibility?.map((data, index) =>
+                                                            <li className=""> {data?.value}</li>
+                                                        )}
+                                                    </ul>
+                                                </div>
+                                                <div className="job_description_heading">
+                                                    <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
+                                                   
+                                                </div>
+                                                <div className="">
+                                                <ul className="job_description_list">
+                                                {state?.requirment?.map((data, index) =>
+                                                    <li className=""> {data?.value}</li>
+                                                )}
+                                            </ul>
+                                                </div>
+                                                <div className="job_description_heading">
+                                                    <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
+                                                </div>
+                                                <div className="">
+                                                    <ul className="job_description_list">
+                                                        {state?.benefits?.map((data, index) =>
+                                                            <li className=""> {data?.value}</li>
+                                                        )}
+                                                    </ul>
+                                                </div>
+                                                <div style={{ marginTop: 80 }}>
+                                                    <ul className="job_description_level_list">
+                                                        <li>
+                                                            <h3 className="job_description_level">Seniority level</h3>
+                                                            <span>{state.seneritylevel}</span>
+                                                        </li>
+                                                        <li>
+                                                            <h5 className="job_description_level">Employment type</h5>
+                                                            <span>{state.employement}</span>
+                                                        </li>
+                                                        <li>
+                                                            <h5 className="job_description_level">Job function</h5>
+                                                            <span> {state.jobfunction}</span>
+                                                        </li>
+                                                        <li>
+                                                            <h5 className="job_description_level">Industries</h5>
+                                                            <span>{state.industry}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                    </form>
-                                )}
-                            </Formik>
+                                        <div className="mediaqueiry" style={{ paddingLeft: 30 }}>
+                                            <h4 className="right_pannle_main_heading">Nestormind Other Jobs</h4>
+                                            <ul className="right_pannle_list">
+                                                <li className="right_pannle_list_itmes">
+                                                    <h6>Ui/UX Designer</h6>
+                                                    <span>20 times</span>
+                                                    <span className="job_date">Mohali, Punjab</span>
+                                                    <span className="job_date">3 months ago   '
+                                                        <Link to='uploadCv'><button type="button" className="right_pannle_button">Apply Now</button></Link>
+                                                    </span>
+                                                </li>
+                                                <li className="right_pannle_list_itmes">
+                                                    <h6>Product Manager</h6>
+                                                    <span>10 times</span>
+                                                    <span className="job_date">Mohali, Punjab</span>
+                                                    <span className="job_date">1 months ago   '
+                                                        <Link to='uploadCV'> <button type="button" className="right_pannle_button">Apply Now</button></Link>
+                                                    </span>
+                                                </li>
+                                                <li className="right_pannle_list_itmes">
+                                                    <h6>Marketing Manager</h6>
+                                                    <span>20 times</span>
+                                                    <span className="job_date">Mohali, Punjab</span>
+                                                    <span className="job_date">2 months ago   '
+                                                        <Link to='uploadCV'> <button type="button" className="right_pannle_button">Apply Now</button></Link>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </Tab>
                     </Tabs>
 
@@ -324,7 +353,7 @@ const Post_New_Job = () => {
                     </Modal.Body>
                 </Modal>
             </div>
-        </div>
+        </div >
     )
 }
 export default Post_New_Job

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
-//import { Pagination } from "@material-ui/lab";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
@@ -9,6 +8,7 @@ import { Button, Form, FormControl, InputGroup, Modal, Table } from "react-boots
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { BiAddToQueue } from "react-icons/bi";
+import TooltipComp from "../../shared/Tooltipomp";
 
 const route = [
     { name: "Home", route: "/" },
@@ -16,33 +16,50 @@ const route = [
     { name: "Success-Stories", route: "/" },
 
 ]
+
+const records = [
+    {
+        title: "Mark",
+        content: "gtto",
+        image: "./assets/images/team_nestormind.png",
+        active: false
+
+    },
+    {
+        title: "aark",
+        content: "ptto",
+        image: "./assets/images/nestor.jfif",
+        active: false
+    },
+    {
+        title: "cark",
+        content: "rtto",
+        image: "./assets/images/team_nestormind.png",
+        active: false
+    }
+]
 const Success_Stories = () => {
 
+    const [edit, setEdit]=useState();
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {setShow(false)
+    setEdit(false)};
     const handleShow = () => setShow(true);
 
-    const [tableData, setTableData] = useState([
-        {
-            title: "Mark",
-            content: "gtto",
-            image: "./assets/images/f.jpg",
-            active: false
+    const [tableData, setTableData] = useState(records)
+    const requestSearch = (searchedVal) => {
+        const filteredRows = records.filter((row) => {
+            return row.title.toLowerCase().includes(searchedVal.toLowerCase());
+        });
+        setTableData(filteredRows)
+        // if (searchedVal.length < 1) {
+        //     setTableData(tableData)
+        //     console.log("it is for if condition",searchedVal)
+        // }
+        // else {
 
-        },
-        {
-            title: "aark",
-            content: "ptto",
-            image: "./assets/images/f.jpg",
-            active: false
-        },
-        {
-            title: "cark",
-            content: "rtto",
-            image: "./assets/images/f.jpg",
-            active: false
-        }
-    ])
+        // }
+    };
     function sortt() {
         const response = tableData.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : ((b.title.toLowerCase() > a.title.toLowerCase()) ? -1 : 0));
         console.log(response)
@@ -64,24 +81,35 @@ const Success_Stories = () => {
                         <div className="">
                             <div className="gapbetween">
                                 <div>
-                                    <Form.Select aria-label="Default select example">
-                                        <option >Select </option>
-                                        <option value="1">All</option>
-                                    </Form.Select>
+                                    <TooltipComp
+                                        component={<Form.Select aria-label="Default select example">
+                                            <option >Select </option>
+                                            <option value="1">All</option>
+                                        </Form.Select>}
+                                        placement="top"
+                                        tooltip={"Filter as Active all"}
+                                    />
                                 </div>
                                 <div>
-                                    <Form.Select aria-label="Default select example">
-                                        <option >Select </option>
-                                        <option value="1">Active All</option>
-                                        <option value="1">Deactive All</option>
-                                    </Form.Select>
+                                    <TooltipComp component={
+                                        <Form.Select aria-label="Default select example"  >
+                                            <option >Select </option>
+                                            <option value="1">Active All</option>
+                                            <option value="1">Deactive All</option>
+                                        </Form.Select>}
+                                        placement="top"
+                                        tooltip={"Active all/Deactive all"} />
                                 </div>
                                 <div className="serachbar">
                                     <InputGroup className="mb-3">
                                         <FormControl
-                                            placeholder="Serach title and name"
+                                            placeholder="Serach by title"
                                             aria-label="Recipient's username"
                                             aria-describedby="basic-addon2"
+                                            onChange={(e) => {
+                                                console.log(e)
+                                                requestSearch(e.target.value)
+                                            }}
                                         />
                                         <Button variant="outline-secondary" id="button-addon2">
                                             <BsSearch />
@@ -99,7 +127,7 @@ const Success_Stories = () => {
                                             <th onClick={() => {
                                                 setTitle(!title)
                                                 { title ? sortt() : sortt1() }
-                                            }}>Title {title ? <BsArrowUp /> : <BsArrowDown />}</th>
+                                            }}>Title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                             <th>Content</th>
                                             <th>Image</th>
                                             <th>Active/Deactive</th>
@@ -122,7 +150,9 @@ const Success_Stories = () => {
                                                                 <span class="editAction" data-bs-toggle="modal"
                                                                     data-bs-target="#editbtn"><i
                                                                         class="bi bi-pencil-square"></i></span>
-                                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>Edit</button>
+                                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={()=>{
+                                                                    handleShow()
+                                                                    setEdit(true)}}>Edit</button>
                                                             </div>
                                                         </li>
                                                         <li class="dropdownList">
@@ -139,11 +169,10 @@ const Success_Stories = () => {
                                                 <td>{data.content}</td>
                                                 <td><img src={data.image} width={40} height={40} /></td>
                                                 <td><Form>
-                                                    <Form.Check className=""
+                                                    <Form.Check className="switch_padding"
                                                         type="switch"
                                                         id="custom-switch1"
                                                         value={data.active}
-
                                                         label=""
                                                         onChange={(e) => {
                                                             console.log(e.target.checked);
@@ -194,9 +223,14 @@ const Success_Stories = () => {
 
                                         <br />
                                         <div style={{ float: "right", }}>
-                                            <Button className="addbtn">Add</Button>
+                                           {  edit ? <Button className="addbtn" onClick={()=>{
+
+                                           }}>Update</Button>:
+                                            <Button className="addbtn" onClick={()=>{
+                                                
+                                            }}>Add</Button>}
                                         </div>
-                                        <Form.Check
+                                        <Form.Check className="custom1-switch"
                                             type="switch"
                                             id="Active"
                                             label="Active"

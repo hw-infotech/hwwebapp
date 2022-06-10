@@ -13,6 +13,8 @@
 .content-Wrapper {
 	width: 100%;
 	padding: 20px;
+	height: calc(100vh - 122px);
+	overflow: auto;
 }
 
 .font_size {
@@ -20,33 +22,103 @@
 }
 
 ////home page////
-.card {
-	display: flex;
-	flex-direction: column;
-	background-color: #fff;
-	border: 1px solid rgba(0, 0, 0, 0.125);
-	width: 100%;
-	align-items: center;
+
+.card-header1 {
+	position: relative;
+	background: white;
+	border: 0px;
 }
-.card-body {
-	padding: 15px 15px 0;
-}
-.icon-size {
-	padding: 5px;
-}
-.card-footer {
-	padding: 0, 15px, 10px;
-	width: 100%;
-	color: orange;
-	font-size: 13px;
-	line-height: 30px;
-}
-.textsizecolor {
-	font-size: 13px;
-	color: gray;
-	float: right;
+.card1 {
+
+	box-shadow: rgb(219, 212, 212) 0px 8px 34px 0px;
+	position: relative;
+	border-radius: 14px;
+	padding: 20px 20px 20px 20px
 }
 
+.icon-card1 {
+	width: 64px;
+	height: 64px;
+	box-shadow: rgb(219, 212, 212) 0px 8px 5px 0px;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -40px;
+}
+.innerCard {
+	text-align: right;
+	border: 0px;
+	color: gray;
+}
+.card-footer1 {
+	//padding-top : 24px;
+	border: 0px;
+	background: white;
+	color: gray;
+	font-size: 16px;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	padding-top: 24px;
+}
+.decoration {
+	color: green;
+}
+.text-decorationn1 {
+	color: red;
+}
+.card-graphheader {
+	position: relative;
+	background: white;
+	border: 0px !important;
+	display: flex;
+	justify-content: center;
+	height: 200px;
+	top: -50px;
+}
+.chart-card {
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px;
+	border-radius: 15px;
+	position: absolute;
+	
+	border: 0px;
+	
+}
+.backrond{
+	box-shadow: rgba(253, 253, 253, 0.952), 0 7px 10px -5px;
+	background: white;
+	width: 350px;
+}
+.chart-footer {
+	display: flex;
+	flex-direction: column;
+	.chattext-size {
+		color: gray;
+		font-size: 14px;
+	}
+	.heading-chartstyle {
+		font-weight: 600;
+		margin-top: 0px;
+	}
+}
+.lower-footer {
+	display: flex;
+	margin-top: 40px;
+	
+	align-items: center;
+	gap: 5px;
+	.chattext-size {
+		color: gray;
+		font-size: 14px;
+	}
+}
+.chattext-size1 {
+	color: gray;
+	font-size: 14px;
+	font-weight: 600;
+}
 ////header////
 .a {
 	text-decoration: none;
@@ -60,7 +132,6 @@
 	font-family: roboto, helvetica neue, Arial, sans-serif;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 .navbar-brand {
 	text-decoration: none;
 	color: gray;
@@ -180,9 +251,7 @@
 	color: black !important;
 	background-color: white !important;
 	border: 2px solid #1c324b !important;
-
 	font-size: 15px !important;
-
 	transition: 0.5s !important;
 }
 .addbtn:hover {
@@ -190,7 +259,7 @@
 	color: white !important;
 }
 .cardBoard {
-	padding: 30px;
+	padding: 0px 30px;
 	background: white;
 	box-shadow: white 0px 8px 5px 0px;
 	.btnserachbar {
@@ -202,6 +271,7 @@
 		width: 25%;
 	}
 }
+
 .addbutnwidth {
 	float: right;
 	width: 100%;
@@ -230,8 +300,24 @@
 
 	background-color: rgb(209, 76, 76) !important;
 }
-
+.custom1-switch {
+	padding-left: 40px !important;
+}
 /////newsletter subscriber///////`
+
+.newsletter-addbtn {
+	border-radius: 116px !important;
+	padding: 5px 30px !important;
+	color: black !important;
+	background-color: white !important;
+	border: 2px solid #1c324b !important;
+	font-size: 15px !important;
+	transition: 0.5s !important;
+}
+.newsletter-addbtn:hover {
+	background-color: #1c324b !important;
+	color: white !important;
+}
 .topGapPad {
 	//Warning--- Global class----//
 	padding-top: 10px;
@@ -240,7 +326,7 @@
 	////Global class///
 	box-shadow: #ece5e5 0px 8px 5px 0px;
 	background: white;
-	padding: 20px;
+	padding: 15px;
 	font-size: 13px;
 }
 .Serachbarbtn {
@@ -251,8 +337,6 @@
 	//global class
 	max-width: 250px;
 	width: 100%;
-	display: flex;
-	justify-content: end;
 }
 .content_center {
 	display: flex;
@@ -271,8 +355,13 @@
 		list-style: none;
 	}
 }
-.wreap-content{
+.wreap-content {
 	max-width: 150px;
+}
+.setupcontent {
+	display: flex;
+	justify-content: end;
+	gap: 15px;
 }
 //Admin Login page
 .centeritmes {
@@ -301,6 +390,11 @@
 			border-radius: 20px;
 		}
 	}
+}
+.cardBoard2 {
+	padding: 0px 30px;
+	background: white;
+	box-shadow: white 0px 8px 5px 0px;
 }
 //////////////post new Job/////////////
 .add_new_post_padding_between_field {
@@ -346,7 +440,7 @@
 .heigh_numberofstacks {
 	height: 100%;
 }
-.inputfieldwidth{
+.inputfieldwidth {
 	width: 100% !important;
 }
 
@@ -467,6 +561,133 @@
 }
 
 //enquiry//
-.wrap{
+.wrap {
 	max-width: 150px;
+}
+
+.switch_padding {
+	padding-left: 70px;
+}
+.switch_pad_enquiry {
+	padding-left: 40px;
+}
+
+//-----jobpreivew page----///
+.jobdes_margin {
+	margin-bottom: 0px;
+}
+.titlejob {
+	font-size: 24px;
+}
+.jobdes_card {
+	box-shadow: 0px 0px 15px 0px #d6d6dd9c;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	border: 1px solid rgb(233, 227, 227);
+}
+.jobdes_marginbottom {
+}
+.job_location {
+	font-size: 16px;
+	font-weight: 400;
+}
+.job_date {
+	font-size: 14px;
+	font-weight: 350;
+}
+.jobapply_button {
+	margin-top: 10px;
+	padding: 0px 34px;
+	border: 2.5px solid #ea7424;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 116px;
+	color: #eb7823;
+	background-color: #fff;
+	height: 53px;
+	width: 292px;
+	transition: 0.9s;
+}
+.jobapply_button:hover {
+	background: #eb7823;
+	color: white;
+	transition: 0.9s;
+}
+.job_description_heading {
+	font-size: 16px;
+	font-weight: 700;
+	padding: 30px;
+	text-decoration: underline;
+}
+.padd {
+	padding: 30px;
+}
+.job_description_list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-size: 16px;
+}
+.job_description_level_list {
+	list-style: none;
+	display: grid;
+	flex-wrap: wrap;
+	grid-template-columns: 50% 50%;
+	gap: 40px;
+	max-width: 600px;
+}
+.job_description_level {
+	color: gray;
+	font-size: 16px;
+	font-weight: 300;
+}
+.main-pannle {
+	display: flex;
+}
+.leftt_pannel {
+	width: 80%;
+}
+.right_pannle_list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-size: 14px;
+	padding-left: 0;
+	padding-top: 10px;
+}
+.right_pannle_title {
+	font-size: 16px !important;
+	font-weight: 700;
+}
+.right_pannle_list_itmes {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.right_pannle_button {
+	background-color: white;
+	color: #1b75cf;
+	border: 0;
+	font-weight: 700;
+}
+.right_pannle_main_heading {
+	font-weight: 400;
+}
+@media (min-width: 200px) and (max-width: 776px) {
+	.mediaqueiry {
+		visibility: hidden;
+	}
+}
+@media (min-width: 200px) and (max-width: 776px) {
+	.leftt_pannel {
+		width: 100%;
+	}
+}
+
+//----Userdetails-----//
+.userdetails{
+padding: 0px 20px;
 }
