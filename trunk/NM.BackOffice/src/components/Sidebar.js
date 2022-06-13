@@ -6,12 +6,13 @@ const Sidebar = ({ sidebarShow }) => {
     // const transform = createContext()
     const navigtion = useNavigate()
     return (
-        <div className="sidebar" style={sidebarShow ? {
-            transform: "translate3d(0%, 0px,0px)", "transition": "all .7s ease-in-out",
-            "width": "250px"
-        } : {
-            transform: "translate3d(-100%, 0px, 0px)", "transition": "all .7s ease-in-out", "width": 0
-        }}>
+        <div className="sidebar"
+            style={sidebarShow ? {
+                transform: "translate3d(0%, 0px,0px)", "transition": "all .7s ease-in-out",
+                "width": "250px"
+            } : {
+                transform: "translate3d(-100%, 0px, 0px)", "transition": "all .7s ease-in-out", "width": 0
+            }}>
             <div className="align-items-sm-start">
                 <div className="sidebar_header">
                     <span >

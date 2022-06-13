@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
-import Pagination from 'react-bootstrap/Pagination';
 import ReactPaginate from "react-paginate";
 import TooltipComp from "./Tooltipomp";
 
 const CustomPagination = ({ total }) => {
     const [currentItems, setCurrentItems] = useState(null);
-    const [showPerPage, setShowPerPage] = useState(100)
+    const [showPerPage, setShowPerPage] = useState(5)
     const [pageCount, setPageCount] = useState(0);
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
@@ -59,11 +58,11 @@ const CustomPagination = ({ total }) => {
                 <ReactPaginate
                     className="pagination "
                     breakLabel="..."
-                    nextLabel="Next >"
+                    nextLabel=">>"
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={5}
                     pageCount={Math.ceil(total / showPerPage)}
-                    previousLabel="< Previous"
+                    previousLabel="<<"
                     renderOnZeroPageCount={null}
                     activeClassName="active"
                     previousClassName="previousList"

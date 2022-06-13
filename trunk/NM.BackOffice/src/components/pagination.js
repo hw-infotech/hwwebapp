@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Pagination from '@mui/material/Pagination'
+// import Pagination from '@mui/material/Pagination'
 import { Col, Form, Row } from "react-bootstrap";
 
 const Paginationn = () => {
@@ -50,11 +50,11 @@ const Paginationn = () => {
                 </Col>
                 <Col md={6}>
                     <div className=" gapPad pagination_justify_end">
-                    <Pagination
+                    {/* <Pagination
                     className="paginationDiv"
                     count={10}
                     onChange={handlechange}
-                    color="primary" />
+                    color="primary" /> */}
                     </div>
                 </Col>
 

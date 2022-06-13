@@ -40,7 +40,7 @@ function App() {
                   </Routes>
                 </div>
               </div>
-              <Footer />
+              <Footer sidebarShow={sidebarShow} />
             </div>
           </div>
         </div>

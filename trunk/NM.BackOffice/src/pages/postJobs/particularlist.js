@@ -9,13 +9,14 @@ import { initialValues, validationschemeaa } from "./validation-schema";
 import { Input } from "../../components/commoninputfield";
 import { BsSearch } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
+import CustomPagination from "../../shared/pagination";
 
 const Particularjob = () => {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    let [key, setKey] = useState("Aplied")
+    let [key, setKey] = useState("Description")
     const records = [
         {
             Jobtitle: "UI/UX",
@@ -62,7 +63,10 @@ const Particularjob = () => {
     return (
         <div className="content_center margin_bottom_ ">
             <div className="topGapPad p-3 w-100">
-                <Tabs activeKey={key} id="uncontrolled-tab-example" onSelect={(k) => setKey(k)} className="mb-3">
+                <Tabs activeKey={key}
+                    id="uncontrolled-tab-example"
+                    onSelect={(k) => setKey(k)}
+                    className="mb-3">
                     <Tab eventKey="Description" title="Description" onSelect={() => {
                         setKey("Description")
                     }}>
@@ -278,6 +282,11 @@ const Particularjob = () => {
 
                                 </tbody>
                             </Table>
+                        </div>
+                        <div>
+                            <CustomPagination
+                                total={100}
+                            />
                         </div>
                     </Tab>
                 </Tabs>

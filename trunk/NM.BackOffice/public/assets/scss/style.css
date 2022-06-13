@@ -171,15 +171,15 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand11 {
+.navbar-brand {
   text-decoration: none;
   color: gray;
   font-size: 13px;
   height: 70px;
 }
 
-.navbar-padd {
-  padding: 0px 20px !important;
+.navbar-expand-lg .navbar-collapse {
+  gap: 15px;
 }
 
 .dropdown-menu[data-bs-popper] {
@@ -202,7 +202,7 @@
   position: fixed;
   bottom: 0;
   padding: 0px 20px;
-  width: calc(100% - 250px);
+  width: calc(100% - 210px);
   background-color: #f8f9fa !important;
 }
 

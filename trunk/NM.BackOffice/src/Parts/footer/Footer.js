@@ -1,8 +1,12 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ sidebarShow }) => {
     return (
-        <div className="mainfooter bg-light ">
+        <div className="mainfooter bg-light " style={sidebarShow ? {
+            transform: "translate3d(0%, 0px,0px)", "transition": "all .7s ease-in-out",
+        } : {
+            transform: "translate3d(0%, 0px, 0px)", "transition": "all .7s ease-in-out", width:"100%"
+        }}>
             <div class="topfooter">
                 <div className="textcolor font_size ">Profile</div>
                 <div className="textcolor font_size">Blog</div>

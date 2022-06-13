@@ -4,12 +4,12 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
-import { Button, Col, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
+import { Button, Form, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { BiAddToQueue } from "react-icons/bi";
 import TooltipComp from "../../shared/Tooltipomp";
-import Paginationn from "../../components/pagination";
+import CustomPagination from "../../shared/pagination";
 
 const route = [
     { name: "Home", route: "/" },
@@ -196,15 +196,21 @@ const Success_Stories = () => {
                                                                 return [..._]
                                                             })
                                                         }}
+
                                                     />
                                                 </Form></td>
+
                                             </tr>)}
+
                                     </tbody>
                                 </Table>
                             </div>
-                          <Paginationn/>
-
                         </div>
+                    </div>
+                    <div>
+                        <CustomPagination
+                            total={100}
+                        />
                     </div>
                 </div>
             </div>
