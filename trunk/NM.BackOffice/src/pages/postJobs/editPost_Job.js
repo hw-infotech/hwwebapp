@@ -142,24 +142,32 @@ const Edit_postJob = (value1) => {
                         />
                     </div>
                     <div className="serachbar" >
-                        <InputGroup className="mb-3">
-                            <FormControl
-                                placeholder="Serach title and name"
-                                aria-label="Recipient's username"
-                                aria-describedby="basic-addon2"
-                                onChange={(e) => {
-                                    requestSearch(e.target.value)
-                                }}
-                            />
-                            <Button variant="outline-secondary" id="button-addon2">
-                                <BsSearch />
-                            </Button>
-                        </InputGroup>
+                        <TooltipComp
+                            component={<InputGroup className="mb-3">
+                                <FormControl
+                                    placeholder="Search title and name"
+                                    aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                                <Button variant="outline-secondary" id="button-addon2">
+                                    <BsSearch />
+                                </Button>
+                            </InputGroup>}
+                            tooltip="Type here to search by name and title"
+                            placement="top"
+                        />
                     </div>
                     <div>
-                        <Button variant="secondary" onClick={() => {
-                            nevigate("/postnewjob")
-                        }}><MdOutlineNoteAdd size={24} /></Button>
+                        <TooltipComp
+                            component={<Button variant="secondary" onClick={() => {
+                                nevigate("/postnewjob")
+                            }}><MdOutlineNoteAdd size={24} /></Button>}
+                            placement="top"
+                            tooltip="Add new job "
+                        />
                     </div>
                 </div>
                 <div className="boxshadow">
