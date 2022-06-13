@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, FormCheck, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
+import { Button, Col, Form, FormCheck, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 import { Field, Formik, FormikProvider } from "formik";
 import { Input } from "../../components/commoninputfield";
 import { BsSearch } from "react-icons/bs";
@@ -12,6 +12,7 @@ import { BsArrowDown } from "react-icons/bs";
 import { MdOutlineNoteAdd } from "react-icons/md";
 import TooltipComp from "../../shared/Tooltipomp";
 import CreatableSelectField from "../../components/selectfield";
+import Paginationn from "../../components/pagination";
 ;
 
 const Edit_postJob = (value1) => {
@@ -21,6 +22,7 @@ const Edit_postJob = (value1) => {
     const [state, setState] = useState({
         row_value: ""
     })
+
     const [showPerPage, setShowPerPage] = useState(10)
     const [next, setNext] = useState(0)
     const [start, setStart] = useState(1);
@@ -65,6 +67,7 @@ const Edit_postJob = (value1) => {
         { name: "Edit Post job", route: "/" },
 
     ]
+    const [formState, setFormState] = useState()
     const records = [
         {
             Jobtitle: "UI/UX",
@@ -110,10 +113,12 @@ const Edit_postJob = (value1) => {
         setTableData(filteredRows)
 
     };
-    const onhandlechange = () => {
-
+    const onhandlechange = (e) => {
+        //const { name, value } = e.target
+        // setState({ ...state, [name]: value })
+        //console.log(state);
     }
-   
+
     return (
         <div title="Edit Post Job">
             <h4>List Number of Post Jobs</h4>
@@ -230,6 +235,7 @@ const Edit_postJob = (value1) => {
                         </tbody>
                     </Table>
                 </div>
+                <Paginationn/>
                 <Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>Edit Post Job</Modal.Title>
@@ -246,9 +252,7 @@ const Edit_postJob = (value1) => {
                                             <div className="">
                                                 <div className="content_center">
                                                     <div className="add_new_post_padding_between_field w-100">
-
                                                         <Form.Group className="mb-3">
-
                                                             <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
                                                                 { value: "..." },
                                                                 { value: "UI/UX" },
@@ -259,33 +263,32 @@ const Edit_postJob = (value1) => {
                                                         </Form.Group>
                                                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                                             <Form.Label>Enter Descritption</Form.Label>
-                                                            <Form.Control as="textarea" style={{height:"119px"}} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                            <Form.Control as="textarea" style={{ height: "119px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
                                                         </Form.Group>
                                                         <Form.Group>
-                                                        <Form.Label>Responsibility</Form.Label>
-                                                           <CreatableSelectField onChange={onhandlechange} />
-
+                                                            <Form.Label>Responsibility</Form.Label>
+                                                            <CreatableSelectField placeholder="Type Reponsibility and press tab button..." onChange={onhandlechange} formState={formState} setFormState={setFormState}
+                                                                label={"type the text and press tab button..."} />
                                                         </Form.Group>
                                                     </div>
                                                     <div className="add_new_post_padding_between_field w-100" >
                                                         <Form.Group className="">
-                                                        <Form.Label>Requirments</Form.Label>
-                                                        <div style={{marginBottom:"1rem"}}>
-                                                        <CreatableSelectField onChange={onhandlechange} />
-                                                        </div>
+                                                            <Form.Label>Requirments</Form.Label>
+                                                            <div style={{ marginBottom: "1rem" }}>
+                                                                <CreatableSelectField placeholder="Type requirenments and press tab button..." formState={formState} setFormState={setFormState} onChange={onhandlechange} />
+                                                            </div>
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Input type='text' placeholder='Industry' className="form-control" name='industry' label={"Industry"} id="name" onChange={onhandlechange} />
                                                         </Form.Group>
                                                         <Form.Group>
-
-                                                        <Form.Label>Benefits</Form.Label>
-                                                        <div style={{marginBottom:"1rem"}}>
-                                                        <CreatableSelectField onChange={onhandlechange}/>
-                                                        </div> 
+                                                            <Form.Label>Benefits</Form.Label>
+                                                            <div style={{ marginBottom: "1rem" }}>
+                                                                <CreatableSelectField placeholder="Type benefits and press tab button..." formState={formState} setFormState={setFormState} onChange={onhandlechange} />
+                                                            </div>
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Input as='select' placeholder="Senority Level" className="form-control" name='seneritylevel'

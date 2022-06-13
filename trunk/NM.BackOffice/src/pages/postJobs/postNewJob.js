@@ -61,18 +61,17 @@ const Post_New_Job = () => {
                                             <div className="content_center">
                                                 <div className="add_new_post_padding_between_field w-100">
                                                     <Form.Group className="mb-3">
-
                                                         <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
-                                                            { value: "..." },
-                                                            { value: "UI/UX" },
-                                                            { value: "Project Manager" },
-                                                            { value: "Web Development" },
+                                                            { value: "...", label: "" },
+                                                            { value: "UI/UX", label: "UI/UX" },
+                                                            { value: "Project Manager", label: "Project Manager" },
+                                                            { value: "Web Development", label: "Web Development" },
                                                         ]} >
                                                         </Input>
                                                     </Form.Group>
                                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                                         <Form.Label>Enter Descritption</Form.Label>
-                                                        <Form.Control as="textarea" style={{height:"119px"}} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                        <Form.Control as="textarea" style={{ height: "119px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
@@ -143,7 +142,7 @@ const Post_New_Job = () => {
                             </Formik>
                         </Tab>
                         <Tab eventKey="Preview" title="Preview">
-                            <div style={{ justifyContent: "end", display: "flex" }}><Button variant="primary" onClick={() => {
+                            <div className="editbtn"><Button variant="primary" onClick={() => {
                                 setKey("Create")
                             }}><BiEdit /></Button></div>
                             <div className="jobdes_margin">
@@ -161,8 +160,6 @@ const Post_New_Job = () => {
                                                     <span >Nestormind </span>
                                                     <span> - Mohali</span>
                                                 </div>
-
-
                                             </div>
                                             <div className="">
                                                 <div className="job_description_heading">
@@ -177,14 +174,14 @@ const Post_New_Job = () => {
                                                 </div>
                                                 <div className="job_description_heading">
                                                     <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
-                                                   
+
                                                 </div>
                                                 <div className="">
-                                                <ul className="job_description_list">
-                                                {state?.requirment?.map((data, index) =>
-                                                    <li className=""> {data?.value}</li>
-                                                )}
-                                            </ul>
+                                                    <ul className="job_description_list">
+                                                        {state?.requirment?.map((data, index) =>
+                                                            <li className=""> {data?.value}</li>
+                                                        )}
+                                                    </ul>
                                                 </div>
                                                 <div className="job_description_heading">
                                                     <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
@@ -216,9 +213,10 @@ const Post_New_Job = () => {
                                                         </li>
                                                     </ul>
                                                 </div>
+                                                <div style={{ float: "right" }}> <Button variant="secondary">Submit</Button></div>
                                             </div>
                                         </div>
-                                        <div className="mediaqueiry" style={{ paddingLeft: 30 }}>
+                                        { /*<div className="mediaqueiry" style={{ paddingLeft: 30 }}>
                                             <h4 className="right_pannle_main_heading">Nestormind Other Jobs</h4>
                                             <ul className="right_pannle_list">
                                                 <li className="right_pannle_list_itmes">
@@ -246,13 +244,12 @@ const Post_New_Job = () => {
                                                     </span>
                                                 </li>
                                             </ul>
-                                        </div>
+                                         </div>*/}
                                     </div>
                                 </div>
                             </div>
                         </Tab>
                     </Tabs>
-
                 </div>
                 <Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
@@ -261,7 +258,6 @@ const Post_New_Job = () => {
                     </Modal.Header>
                     <Modal.Body>
                         <div className="topGapPad p-3">
-
                             <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                                 {() => (
                                     <form onSubmit={(e) => {

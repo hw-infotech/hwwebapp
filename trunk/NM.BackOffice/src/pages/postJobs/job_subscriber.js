@@ -7,45 +7,49 @@ import { BsArrowDown } from "react-icons/bs";
 import { Button, Form, FormControl, InputGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
+import Paginationn from "../../components/pagination";
+import { useSelector } from "react-redux";
 const Job_Subscriber = () => {
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
     })
+    const selector=useSelector(state=>state)
+    console.log(selector)
     const [showPerPage, setShowPerPage] = useState(10)
-    const [next, setNext] = useState(0)
-    const [start, setStart] = useState(1);
-    const [pagination1, setpagination] = useState(
-        {
-            start: start,
-            end: showPerPage
-        })
+    // const [next, setNext] = useState(0)
+    // const [start, setStart] = useState(1);
+    // const [pagination1, setpagination] = useState(
+    //     {
+    //         start: start,
+    //         end: showPerPage
+    //     })
     useEffect(() => {
         //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
-        setpagination({ start: start, end: showPerPage })
-    }, [pagination1])
-    const Chnage = (e) => {
-        const { name, value } = e.target
-        setRow(value)
-        console.log("this is the select field value", value)
-    }
-    const handlechange = (event, value) => {
-        var value1;
-        setNext(value)
-        if (next <= value) {
-            value1 = row * value
-            setShowPerPage(value1)
-            console.log("this is the if conditon", value, showPerPage, state.row_value)
-            setStart(value1 - row)
-            setpagination({ start: start, end: showPerPage })
-        }
-        else {
-            console.log("else", start, showPerPage)
-            setStart(start - row)
-            setShowPerPage(showPerPage - row)
-            setpagination({ start: start - row, end: showPerPage - row })
-        }
-    }
+        //setpagination({ start: start, end: showPerPage })
+    }, [])
+    // const Chnage = (e) => {
+    //     const { name, value } = e.target
+    //     setRow(value)
+    //     console.log("this is the select field value", value)
+    // }
+    // const handlechange = (event, value) => {
+    //     var value1;
+    //     setNext(value)
+    //     if (next <= value) {
+    //         value1 = row * value
+    //         setShowPerPage(value1)
+    //         console.log("this is the if conditon", value, showPerPage, state.row_value)
+    //         setStart(value1 - row)
+    //         setpagination({ start: start, end: showPerPage })
+    //     }
+    //     else {
+    //         console.log("else", start, showPerPage)
+    //         setStart(start - row)
+    //         setShowPerPage(showPerPage - row)
+    //         setpagination({ start: start - row, end: showPerPage - row })
+    //     }
+    // }
     const route = [
         { name: "Home", route: "/" },
         { name: "Job", route: "/" },
@@ -164,27 +168,8 @@ const Job_Subscriber = () => {
                             </tbody>
                         </table>
                     </div>
-                    <div className="row">
-                        <div className="col-sm-6 col-lg-6 col-md-6">
-                            <div className="gapPad">
-                                <select class="form-select w-25 " name={state.row_value}>
-                                    <option disabled selected>Rows</option>
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                </select>
-                            </div>
-                        </div>
-                        { /*<div className="col-sm-6 col-lg-6 col-md-6">
-                        <div className="gapPad pagination_justify_end ">
-                            <Pagination
-                                className="paginationDiv"
-                                count={10}
-                                onChange={handlechange}
-                                color="primary" />
-                        </div>
-    </div>*/}
-                    </div>
+                    <Paginationn />
+
                 </div>
             </div>
 

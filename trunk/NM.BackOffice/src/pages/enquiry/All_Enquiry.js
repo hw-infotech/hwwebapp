@@ -12,6 +12,7 @@ import { FcCheckmark, FcDeleteColumn } from "react-icons/fc";
 import TooltipComp from "../../shared/Tooltipomp";
 // import { alert } from 'react-bootstrap-confirmation';
 import { confirm } from 'react-bootstrap-confirmation';
+import Paginationn from "../../components/pagination";
 
 const All_Enquiry = () => {
 
@@ -218,30 +219,7 @@ const All_Enquiry = () => {
                         </tbody>
                     </Table>
                 </div>
-                <div>
-                    <div className="padd_bottm">
-                        <Row>
-                            <Col md={6}>
-                                <div className="gapPad">
-                                    <Form.Select aria-label="row" className="w-25">
-                                        <option>Row</option>
-                                        <option value="1">10</option>
-                                        <option value="2">25</option>
-                                        <option value="3">50</option>
-                                    </Form.Select>
-                                </div>
-                            </Col>
-                            {/*<div className="col-sm-6 col-lg-6 col-md-6">
-                                <div className="gapPad pagination_justify_end ">
-                                    <Pagination
-                                        className="paginationDiv "
-                                        count={10}
-                                        color="primary" />
-                                </div>
-    </div>*/}
-                        </Row>
-                    </div>
-                </div>
+                <Paginationn/>
                 {/*<Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>
                         <Modal.Title>Enter the Remarks</Modal.Title>

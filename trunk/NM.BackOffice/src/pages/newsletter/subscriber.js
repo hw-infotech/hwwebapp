@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, FormControl, InputGroup, Modal, Pagination } from "react-bootstrap";
+import { Button, Col, Form, FormControl, InputGroup, Modal, Row } from "react-bootstrap";
 //import Pagination from '@material-ui/lab/Pagination';
+import Pagination from '@mui/material/Pagination'
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { useDispatch, useSelector } from "react-redux";
 import { BsSearch } from "react-icons/bs";
@@ -12,12 +13,12 @@ import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
+import Paginationn from "../../components/pagination";
 const SubScriber = () => {
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
     })
-
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -35,49 +36,60 @@ const SubScriber = () => {
         { name: "Subscriber/Unsubscriber", route: "/" }
     ]
     const selector = useSelector(state => state),
+
         dispatch = useDispatch(),
         [subscribers, setSubscribers] = useState([])
     useEffect(() => {
         dispatch(News_letter_Subscribe())
         dispatch(NewsLetter_Unsubscriber())
+
     }, [])
 
     useEffect(() => {
         setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
-        setpagination({ start: start, end: showPerPage })
-    }, [selector, pagination1])
+        //setpagination({ start: start, end: showPerPage })
+    }, [selector])
     const Chnage = (e) => {
         const { name, value } = e.target
         setRow(value)
         console.log("this is the select field value", value)
     }
-    const handlechange = (event, value) => {
-        var value1;
-        setNext(value)
-        if (next <= value) {
-            value1 = row * value
-            setShowPerPage(value1)
-            console.log("this is the if conditon", value, showPerPage, state.row_value)
-            setStart(value1 - row)
-            setpagination({ start: start, end: showPerPage })
-        }
-        else {
-            console.log("else", start, showPerPage)
-            setStart(start - row)
-            setShowPerPage(showPerPage - row)
-            setpagination({ start: start - row, end: showPerPage - row })
-        }
+    let active = 4;
+    let items = [];
+    for (let number = 1; number <= 10; number++) {
+        items.push(
+            <Pagination.Item key={number}  active={number === active}>
+                {number}
+            </Pagination.Item>,
+        );
     }
+    // const handlechange = (event, value) => {
+    //     var value1;
+    //     setNext(value)
+    //     if (next <= value) {
+    //         value1 = row * value
+    //         setShowPerPage(value1)
+    //         console.log("this is the if conditon", value, showPerPage, state.row_value)
+    //         setStart(value1 - row)
+    //         setpagination({ start: start, end: showPerPage })
+    //     }
+    //     else {
+    //         console.log("else", start, showPerPage)
+    //         setStart(start - row)
+    //         setShowPerPage(showPerPage - row)
+    //         setpagination({ start: start - row, end: showPerPage - row })
+    //     }
+    // }
     const records = [
         {
             Email: "ggoldygoldy33@gmail.com",
-            date: "23-02-2022",
+            date: "2-03-2020",
             comment: "Reason Behind"
 
         },
         {
             Email: "agoldygoldy33@gmail.com",
-            date: "23-02-2022",
+            date: "26-08-2022",
             comment: "Reason Behind"
         },
         {
@@ -87,32 +99,29 @@ const SubScriber = () => {
             comment: "Reason Behind"
         },
     ]
-    const [tableData, setTableData] = useState(records)
+
+    const [tableData, setTableData] = useState(subscribers)
+
     function sortt() {
-        const response = tableData.sort((a, b) => (a.Email.toLowerCase() > b.Email.toLowerCase()) ? 1 : ((b.Email.toLowerCase() > a.Email.toLowerCase()) ? -1 : 0));
+        const response = subscribers.sort((a, b) => (a.email.toLowerCase() > b.email.toLowerCase()) ? 1 : ((b.email.toLowerCase() > a.email.toLowerCase()) ? -1 : 0));
         console.log(response)
         setTableData([...response])
+        console.log(selector, "this the selector");
     }
     function sortt1() {
-        const response = tableData.sort((a, b) => (a.Email.toLowerCase() < b.Email.toLowerCase()) ? 1 : ((b.Email.toLowerCase() < a.Email.toLowerCase()) ? -1 : 0));
+        const response = subscribers.sort((a, b) => (a.email.toLowerCase() < b.email.toLowerCase()) ? 1 : ((b.email.toLowerCase() < a.email.toLowerCase()) ? -1 : 0));
         console.log(response)
         setTableData([...response])
     }
     const requestSearch = (searchedVal) => {
-        const filteredRows = records.filter((row) => {
-            return row.Email.toLowerCase().includes(searchedVal.toLowerCase())
+        const filteredRows = selector?.data?.apidata?.getnewsletterunsubscriber?.data.filter((row) => {
+            return row.email.toLowerCase().includes(searchedVal.toLowerCase())
         });
-        setTableData(filteredRows)
+        setSubscribers(filteredRows)
 
     };
     const [title, setTitle] = useState(false)
-    let paginationConfig = {
-        Item: 20,
-        size: "sm",
-        threeDots: true,
-        prevNext: true,
-        borderColor: 'red',
-    };
+
     return (
         <div >
             <div className=""><h4>Newsletter Subscriber/Unsubscriber</h4></div>
@@ -167,13 +176,13 @@ const SubScriber = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {tableData.map((data, index) =>
+                                {subscribers?.slice(0, 10).map((data, index) =>
                                     <tr>
                                         <td>
-                                            {data.Email}
+                                            {data.email}
                                         </td>
                                         <td>
-                                            {data.date}
+                                            {data.createdOn}
                                         </td>
                                         <td>
                                             {data.comment}
@@ -221,11 +230,9 @@ const SubScriber = () => {
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Input type="text" label="Title" className="form-control" name="title" placeholder="Enter the NewsLetter title" />
                                             </Form.Group>
-
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Input as={"textarea"} className="form-control" placeholder={"Enter the Content for NewsLetter"} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
                                             </Form.Group>
-
                                             <br />
                                             <div style={{ float: "right", }}>
                                                 <Button className="newsletter-addbtn">Add</Button>
@@ -242,34 +249,23 @@ const SubScriber = () => {
                                 </div>*/}
                     </Modal.Footer>
                 </Modal>
-                <div className="row padd_bottm">
-                    <div className="col-sm-6 col-lg-6 col-md-6">
+                <Row>
+                    <Col md={6}>
                         <div className="gapPad">
-                            <Form.Select aria-label="row" className="w-25">
+                            <Form.Select aria-label="Row" className="w-25">
                                 <option>Row</option>
                                 <option value="1">10</option>
                                 <option value="2">25</option>
                                 <option value="3">50</option>
                             </Form.Select>
                         </div>
-                    </div>
-                    <div className="col-sm-6 col-lg-6 col-md-6 ">
+                    </Col>
+                    <Col md={6}>
                         <div className="gapPad pagination_justify_end ">
-                            <Pagination {...paginationConfig}>
-                                <Pagination.First />
-                                <Pagination.Prev />
-                                <Pagination.Item>{1}</Pagination.Item>
-                                <Pagination.Item>{2}</Pagination.Item>
-                                <Pagination.Item>{3}</Pagination.Item>
-                                <Pagination.Item>{4}</Pagination.Item>
-                                <Pagination.Item>{5}</Pagination.Item>
-                                <Pagination.Ellipsis />
-                                <Pagination.Next />
-                                <Pagination.Last />
-                            </Pagination>
+                            <Pagination>{items}</Pagination>
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
             </div>
         </div>
     );

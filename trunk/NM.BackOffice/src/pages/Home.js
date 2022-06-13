@@ -46,7 +46,6 @@ const Home = () => {
         ],
         []
     )
-
     useEffect(() => {
         // graphRef.current.style.background="yellow"
     }, [])
@@ -62,10 +61,10 @@ const Home = () => {
                             </div>
                             <div className="innerCard">
                                 <span>Today's Users</span>
-                                <h4 style={{ fontWeight: "600" }}>$53k</h4>
+                                <h4 style={{ fontWeight: "600" }}>$5k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="decoration">5% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>
                     </div>
                 </Col>
                 <Col md={3} sm={12} lg={3}>
@@ -78,7 +77,6 @@ const Home = () => {
                                 <span>Job's Subscriber</span>
                                 <h4 style={{ fontWeight: "600" }}>$53k</h4>
                             </div>
-
                         </div>
                         <div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>
                     </div>
@@ -93,9 +91,8 @@ const Home = () => {
                                 <span>Newsletter Subscriber</span>
                                 <h4 style={{ fontWeight: "600" }}>$53k</h4>
                             </div>
-
                         </div>
-                        <div className="card-footer1"> <span className="decoration">9% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>
                     </div>
                 </Col>
                 <Col md={3} sm={12} lg={3}>
@@ -107,10 +104,9 @@ const Home = () => {
                             <div className="innerCard">
                                 <span>Performance</span>
                                 <h4 style={{ fontWeight: "600" }}>$53k</h4>
-
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="decoration">8% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="decoration">+8% </span>than yesterday</div>
                     </div>
                 </Col>
             </Row>
@@ -134,8 +130,7 @@ const Home = () => {
                                 <span className="chattext-size">Last Campaign Performance</span></div>
                             <div className="lower-footer">
                                 <div> <BiWallet /></div>
-                                <span className="chattext-size">campaign sent 2 days ago</span>
-
+                                <span className="chattext-size">campaign sent 5 days ago</span>
                             </div>
                         </div>
                     </Col>
@@ -150,8 +145,7 @@ const Home = () => {
                                 <span className="chattext-size">Last Campaign Performance</span></div>
                             <div className="lower-footer ">
                                 <div > <BiWallet /></div>
-                                <span className="chattext-size">campaign sent 2 days ago</span>
-
+                                <span className="chattext-size">campaign sent 8 days ago</span>
                             </div>
                         </div>
                     </Col>
@@ -160,7 +154,6 @@ const Home = () => {
                             <div className="card-graphheader">
                                 <div className="chart-card" style={{ background: "#42424a" }}>
                                     <Chart data={data} axes={axes} />
-
                                 </div>
                             </div>
                             <div className="chart-footer"><h5 className="heading-chartstyle">Website Views</h5>
@@ -168,7 +161,6 @@ const Home = () => {
                             <div className="lower-footer ">
                                 <div> <BiWallet /></div>
                                 <span className="chattext-size">campaign sent 2 days ago</span>
-
                             </div>
                         </div>
                     </Col>
@@ -182,15 +174,15 @@ const Home = () => {
                                     <div>
                                         <p className="chattext-size1">30 done this month</p></div>
                                 </div>
-                                <Table style={{borderTop:"0px"}}>
+                                <Table style={{ borderTop: "0px" }}>
                                     <tr>
-                                        <th style={{color:"gray", fontSize:"13px"}}>Companies
+                                        <th className="textdecorarte" >Companies
                                         </th>
-                                        <th style={{color:"gray", fontSize:"13px"}}>Companies
+                                        <th className="textdecorarte">Companies
                                         </th>
-                                        <th style={{color:"gray", fontSize:"13px"}}>Companies
+                                        <th className="textdecorarte">Companies
                                         </th>
-                                        <th style={{color:"gray", fontSize:"13px"}}>Companies
+                                        <th className="textdecorarte">Companies
                                         </th>
                                     </tr>
                                 </Table>

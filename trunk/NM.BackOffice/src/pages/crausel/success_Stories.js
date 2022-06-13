@@ -4,11 +4,12 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
-import { Button, Form, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
+import { Button, Col, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { BiAddToQueue } from "react-icons/bi";
 import TooltipComp from "../../shared/Tooltipomp";
+import Paginationn from "../../components/pagination";
 
 const route = [
     { name: "Home", route: "/" },
@@ -40,10 +41,12 @@ const records = [
 ]
 const Success_Stories = () => {
 
-    const [edit, setEdit]=useState();
+    const [edit, setEdit] = useState();
     const [show, setShow] = useState(false);
-    const handleClose = () => {setShow(false)
-    setEdit(false)};
+    const handleClose = () => {
+        setShow(false)
+        setEdit(false)
+    };
     const handleShow = () => setShow(true);
 
     const [tableData, setTableData] = useState(records)
@@ -150,9 +153,10 @@ const Success_Stories = () => {
                                                                 <span class="editAction" data-bs-toggle="modal"
                                                                     data-bs-target="#editbtn"><i
                                                                         class="bi bi-pencil-square"></i></span>
-                                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={()=>{
+                                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
                                                                     handleShow()
-                                                                    setEdit(true)}}>Edit</button>
+                                                                    setEdit(true)
+                                                                }}>Edit</button>
                                                             </div>
                                                         </li>
                                                         <li class="dropdownList">
@@ -181,15 +185,14 @@ const Success_Stories = () => {
                                                                 return [..._]
                                                             })
                                                         }}
-
                                                     />
                                                 </Form></td>
-
                                             </tr>)}
-
                                     </tbody>
                                 </Table>
                             </div>
+                          <Paginationn/>
+
                         </div>
                     </div>
                 </div>
@@ -223,12 +226,12 @@ const Success_Stories = () => {
 
                                         <br />
                                         <div style={{ float: "right", }}>
-                                           {  edit ? <Button className="addbtn" onClick={()=>{
+                                            {edit ? <Button className="addbtn" onClick={() => {
 
-                                           }}>Update</Button>:
-                                            <Button className="addbtn" onClick={()=>{
-                                                
-                                            }}>Add</Button>}
+                                            }}>Update</Button> :
+                                                <Button className="addbtn" onClick={() => {
+
+                                                }}>Add</Button>}
                                         </div>
                                         <Form.Check className="custom1-switch"
                                             type="switch"

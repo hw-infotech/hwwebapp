@@ -28,12 +28,15 @@
 	background: white;
 	border: 0px;
 }
+.textdecorarte{
+	font-size: 13px;
+	color: gray;
+}
 .card1 {
-
 	box-shadow: rgb(219, 212, 212) 0px 8px 34px 0px;
 	position: relative;
 	border-radius: 14px;
-	padding: 20px 20px 20px 20px
+	padding: 20px 20px 20px 20px;
 }
 
 .icon-card1 {
@@ -46,6 +49,7 @@
 	align-items: center;
 	position: absolute;
 	top: -40px;
+	color: white;
 }
 .innerCard {
 	text-align: right;
@@ -82,11 +86,10 @@
 	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px;
 	border-radius: 15px;
 	position: absolute;
-	
+
 	border: 0px;
-	
 }
-.backrond{
+.backrond {
 	box-shadow: rgba(253, 253, 253, 0.952), 0 7px 10px -5px;
 	background: white;
 	width: 350px;
@@ -106,7 +109,7 @@
 .lower-footer {
 	display: flex;
 	margin-top: 40px;
-	
+
 	align-items: center;
 	gap: 5px;
 	.chattext-size {
@@ -131,18 +134,27 @@
 	height: 70px;
 	font-family: roboto, helvetica neue, Arial, sans-serif;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	//padding: 0px 0px;
 }
-.navbar-brand {
+.navbar-brand11 {
 	text-decoration: none;
 	color: gray;
-	font-size: 22px;
+	font-size: 13px;
 	height: 70px;
 }
-.navbar-expand-lg {
-	.navbar-collapse {
-		gap: 15px;
-	}
+.navbar-padd{
+	padding: 0px 20px !important;
 }
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -22px;
+    margin-top: 0.125rem;
+}
+// .navbar-expand-lg {
+// 	.navbar-collapse {
+// 		gap: 15px;
+// 	}
+// }
 
 //footer page
 
@@ -400,6 +412,11 @@
 .add_new_post_padding_between_field {
 	padding: 10px;
 }
+.editbtn {
+	justify-content: end !important;
+	display: flex !important;
+	margin: 10px;
+}
 .justyfycontentright {
 	display: flex;
 	justify-content: end;
@@ -647,7 +664,7 @@
 	display: flex;
 }
 .leftt_pannel {
-	width: 80%;
+	width: 100%;
 }
 .right_pannle_list {
 	list-style: none;
@@ -688,6 +705,6 @@
 }
 
 //----Userdetails-----//
-.userdetails{
-padding: 0px 20px;
+.userdetails {
+	padding: 0px 20px;
 }

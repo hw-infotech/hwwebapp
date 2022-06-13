@@ -14,13 +14,13 @@ export const Add_Gallery_Eventt = (user) => dispatch => {
     //     })
 }
 export const News_letter_Subscribe = () => dispatch => {
-   
+
     // console.log("this newsletter",process.env.REACT_API_URL+"api/NewsLetter/getAll")
     apidata.get(`NewsLetter/getAll`)
         .then(res => {
-            dispatch({ 
-                type: GET_NEWSLEETER_SUBSCRIBER, 
-                payload: res.data 
+            dispatch({
+                type: GET_NEWSLEETER_SUBSCRIBER,
+                payload: res.data
             })
         })
         .catch(err => {

@@ -28,6 +28,11 @@
   border: 0px;
 }
 
+.textdecorarte {
+  font-size: 13px;
+  color: gray;
+}
+
 .card1 {
   -webkit-box-shadow: #dbd4d4 0px 8px 34px 0px;
           box-shadow: #dbd4d4 0px 8px 34px 0px;
@@ -53,6 +58,7 @@
           align-items: center;
   position: absolute;
   top: -40px;
+  color: white;
 }
 
 .innerCard {
@@ -165,15 +171,21 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand {
+.navbar-brand11 {
   text-decoration: none;
   color: gray;
-  font-size: 22px;
+  font-size: 13px;
   height: 70px;
 }
 
-.navbar-expand-lg .navbar-collapse {
-  gap: 15px;
+.navbar-padd {
+  padding: 0px 20px !important;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: -22px;
+  margin-top: 0.125rem;
 }
 
 .mainfooter {
@@ -510,6 +522,16 @@
   padding: 10px;
 }
 
+.editbtn {
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: end !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  margin: 10px;
+}
+
 .justyfycontentright {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -833,7 +855,7 @@
 }
 
 .leftt_pannel {
-  width: 80%;
+  width: 100%;
 }
 
 .right_pannle_list {

@@ -6,6 +6,7 @@ import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
 import { BsSearch } from "react-icons/bs";
+import Paginationn from "../../components/pagination";
 
 const Applied_Job = () => {
     const [row, setRow] = useState(10)
@@ -162,27 +163,8 @@ const Applied_Job = () => {
                         </tbody>
                     </Table>
                 </div>
-                <Row>
-                    <Col md={6}>
-                        <div className="gapPad">
-                            <select class="form-select w-25 " name={state.row_value}>
-                                <option disabled selected>Rows</option>
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                            </select>
-                        </div>
-                    </Col>
-                    {/*<div className="col-sm-6 col-lg-6 col-md-6">
-                        <div className="gapPad pagination_justify_end ">
-                            <Pagination
-                                className="paginationDiv"
-                                count={10}
-                                onChange={handlechange}
-                                color="primary" />
-                        </div>
-    </div>*/}
-                </Row>
+               <Paginationn/>
+               
             </div>
         </div>
     )

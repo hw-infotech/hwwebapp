@@ -26,6 +26,7 @@ export const Input = ({ as, id, label, placeholder, type, name, className
                 {as == "select" && <Field
                     as={as}
                     type={type}
+                    value={value}
                     className={className}
                     id={id}
                     onChange={onChange}
