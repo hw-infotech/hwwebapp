@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../../components/layout";
-import Pagination from '@material-ui/lab/Pagination';
+//import Pagination from '@material-ui/lab/Pagination';
 //import { NewsLetter_Unsubscriber, News_letter_Subscribe } from "../../Services/redux/action/action";
 //import { useDispatch, useSelector } from "react-redux";
-import BasicBreadcrumbs from "../../components/breadcumbs";
-import withHeader from "../../HOC/withHeader";
-
+//import BasicBreadcrumbs from "../../components/breadcumbs";
 
 const UNSubScriber = () => {
-    //useEffect(()=>{
-    //// setTitle("Unsubscriber")
-    //},[])
+    
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
@@ -23,12 +18,6 @@ const UNSubScriber = () => {
             start: start,
             end: showPerPage
         });
-    //const selector = useSelector(state => state),
-    //   dispatch = useDispatch(),
-
-    //useEffect(() => {
-    // //    dispatch(NewsLetter_Unsubscriber())
-    //}, [])
     useEffect(() => {
 
         setpagination({ start: start, end: showPerPage })
@@ -39,11 +28,9 @@ const UNSubScriber = () => {
         console.log("this is the select field value", value)
 
     }
-    // console.log(subscribers, "subscribers");
     const handlechange = (event, value) => {
         var value1;
         setNext(value)
-        //console.log(value, "comp", next)
         if (next <= value) {
             value1 = row * value
             setShowPerPage(value1)
@@ -67,7 +54,7 @@ const UNSubScriber = () => {
     return (
         <div title="UnSubscriber">
             <div className="margin_bottom_">
-                <BasicBreadcrumbs route={route} />
+                {/*<BasicBreadcrumbs route={route} />*/}
                 <div className="content_center pt-3"><h4>Number of Newsletter UnSubscriber</h4></div>
                 <div className="gapPad content_center">
                     <div class="input-group  ">
@@ -78,7 +65,6 @@ const UNSubScriber = () => {
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
-
                     </div>
                 </div>
                 <div className="topGapPad">
@@ -110,7 +96,7 @@ const UNSubScriber = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-sm-6 col-lg-6 col-md-6">
+                    {/*<div className="col-sm-6 col-lg-6 col-md-6">
                         <div className="gapPad pagination_justify_end ">
                             <Pagination
                                 className="paginationDiv"
@@ -118,7 +104,7 @@ const UNSubScriber = () => {
                                 onChange={handlechange}
                                 color="primary" />
                         </div>
-                    </div>
+                         </div>*/}
                 </div>
             </div>
         </div>

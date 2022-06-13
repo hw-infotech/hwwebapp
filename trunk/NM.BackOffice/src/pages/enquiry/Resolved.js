@@ -1,74 +1,120 @@
-import { Pagination } from "@material-ui/lab";
-import { SettingsOutlined } from "@mui/icons-material";
-import React, { useEffect } from "react";
-import BasicBreadcrumbs from "../../components/breadcumbs";
-import Layout from "../../components/layout";
-import withHeader from "../../HOC/withHeader";
+//import { Pagination } from "@material-ui/lab";
+import React, { useEffect, useState } from "react";
+import { Col, Form, Pagination, Row, Table } from "react-bootstrap";
+//import BasicBreadcrumbs from "../../components/breadcumbs";
+import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "react-icons/bs";
 
 const Resolved = () => {
-     //useEffect(()=>{
-     // setTitle("Resolved")
-    // },[])
     const route = [
         { name: "Home", route: "/" },
         { name: "Enquiry", route: "/" },
         { name: "Resolved", route: "/" },
-      
     ]
+    const [tableData, setTableData] = useState([
+        {
+            Name: "Mark",
+            Phone: "gtto",
+            Email: "goldy",
+            message: "hg",
+            subject: "adf",
+            Reason: "rrt"
+
+        },
+        {
+            Name: "sdfark",
+            Phone: "ertto",
+            Email: "goldy",
+            message: "ahg",
+            subject: "hadf",
+            Reason: "trt"
+
+        },
+        {
+            Name: "yMark",
+            Phone: "ogtto",
+            Email: "lgkoldy",
+            message: "ehg",
+            subject: "poadf",
+            Reason: "brt"
+
+        },
+    ])
+    function sortt() {
+        const response = tableData.sort((a, b) => (a.Name.toLowerCase() > b.Name.toLowerCase()) ? 1 : ((b.Name.toLowerCase() > a.Name.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    function sortt1() {
+        const response = tableData.sort((a, b) => (a.Name.toLowerCase() < b.Name.toLowerCase()) ? 1 : ((b.Name.toLowerCase() < a.Name.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+
+    const [title, setTitle] = useState(false)
     return (
         <div title="Resolved">
-        <BasicBreadcrumbs route={route}/>
+            {/*<BasicBreadcrumbs route={route}/>*/}
             <div className="topGapPad margin_bottom_">
-            <h4>List Number of Resolved Enquiry</h4>
+                <h4>List Number of Resolved Enquiry</h4>
                 <div className="boxshadow">
-                    <table class="table">
+                    <Table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Sr No</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Message</th>
-                                <th scope="col">Subject</th>
+                                <th onClick={() => {
+                                    setTitle(!title)
+                                    { title ? sortt() : sortt1() }
+                                }}>Name
+                                {title ? <BsArrowDown/>:<BsArrowUp/>}</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>Subject</th>
+                                <th>Reason</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>@twitter</td>
-                            </tr>
+                            {tableData.map((data, index) =>
+                                <tr>
+                                    <td>{data.Name}</td>
+                                    <td>{data.Phone}</td>
+                                    <td>{data.Email}</td>
+                                    <td>{data.message}</td>
+                                    <td>{data.subject}</td>
+                                </tr>)}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
-                <div className="row ">
-                <div className="col-sm-6 col-lg-6 col-md-6">
-                    <div className="gapPad">
-                        <select class="form-select w-25 ">
-                            <option disabled selected>Rows</option>
-                            <option value="10">10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                        </select>
-                    </div>
-                </div>
-                <div className="col-sm-6 col-lg-6 col-md-6">
+                <Row>
+                    <Col md={6}>
+                        <div className="gapPad">
+                            <Form.Select aria-label="row" className="w-25">
+                                <option>Row</option>
+                                <option value="1">10</option>
+                                <option value="2">25</option>
+                                <option value="3">50</option>
+                            </Form.Select>
+                        </div>
+                    </Col>
+                    <Col md={6} className="gapPad">
+                        <Pagination>
+                            <Pagination.First />
+                            <Pagination.Prev />
+                            <Pagination.Item>{1}</Pagination.Item>
+                            <Pagination.Ellipsis />
+                            <Pagination.Item>{10}</Pagination.Item>
+                            <Pagination.Item>{11}</Pagination.Item>
+                            <Pagination.Item >{12}</Pagination.Item>
+                            <Pagination.Item>{13}</Pagination.Item>
+                            <Pagination.Item >{14}</Pagination.Item>
+
+                            <Pagination.Ellipsis />
+                            <Pagination.Item>{20}</Pagination.Item>
+                            <Pagination.Next />
+                            <Pagination.Last />
+                        </Pagination>
+                    </Col>
+                    {/*<div className="col-sm-6 col-lg-6 col-md-6">
                     <div className="gapPad pagination_justify_end ">
                         <Pagination
                             className="paginationDiv "
@@ -76,8 +122,8 @@ const Resolved = () => {
                            
                             color="primary" />
                     </div>
-                </div>
-                </div>
+    </div>*/}
+                </Row>
             </div>
         </div>
     );

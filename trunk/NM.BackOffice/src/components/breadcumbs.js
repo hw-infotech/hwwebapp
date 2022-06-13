@@ -1,7 +1,4 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
 import { useNavigate } from 'react-router';
 
 function handleClick(event) {
@@ -12,7 +9,7 @@ function handleClick(event) {
 export default function BasicBreadcrumbs({ route }) {
     const navigate = useNavigate()
     return (
-        <div className="breadecumbs_box pt-2" onClick={handleClick}>
+        <div className="breadecumbs_box " onClick={handleClick}>
             <ul className='breadcumbs_style'>
                 {route?.map((_, index) => (route.length - 1 == index ? <li onClick={() => {
                     navigate(_.route)

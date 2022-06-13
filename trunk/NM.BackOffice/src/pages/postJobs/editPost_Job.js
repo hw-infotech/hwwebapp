@@ -1,26 +1,29 @@
-
 import React, { useEffect, useState } from "react";
-import Layout from "../../components/layout";
-import { Modal } from "react-bootstrap";
-import { Field, Formik } from "formik";
+import { Button, Form, FormCheck, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
+import { Field, Formik, FormikProvider } from "formik";
 import { Input } from "../../components/commoninputfield";
+import { BsSearch } from "react-icons/bs";
 import BasicBreadcrumbs from "../../components/breadcumbs";
-import withHeader from "../../HOC/withHeader";
-import { Pagination } from "@material-ui/lab";
+//import { Pagination } from "@material-ui/lab";
 import { initialValues, validationschemeaa } from "./validation-schema";
-import $ from 'jquery';
+import { useNavigate } from "react-router";
+import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "react-icons/bs";
+import { MdOutlineNoteAdd } from "react-icons/md";
+import TooltipComp from "../../shared/Tooltipomp";
+import CreatableSelectField from "../../components/selectfield";
+import CustomPagination from "../../shared/pagination";
+;
 
 const Edit_postJob = (value1) => {
-    const [sortedField, setSortedField] = useState(null);
+
+
     const [requirment2, setRequirments] = useState([])
-    const [responsibility, setResponsibility] = useState([])
-    const [benefits, Setbenefits] = useState([])
-    const [formValues, setFormValues] = useState([]);
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
     })
-    const [showPerPage, setShowPerPage] = useState(10)
+    const [showPerPage, setShowPerPage] = useState(100)
     const [next, setNext] = useState(0)
     const [start, setStart] = useState(1);
     const [pagination1, setpagination] = useState(
@@ -28,8 +31,14 @@ const Edit_postJob = (value1) => {
             start: start,
             end: showPerPage
         })
-
-
+    const nevigate = useNavigate();
+    const [pagination2, setpagination2] = useState({
+        start: 0,
+        end: showPerPage
+    });
+    const onPageChange = (start, end) => {
+        setpagination({ start: start, end: end });
+    };
     useEffect(() => {
         //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
@@ -39,54 +48,9 @@ const Edit_postJob = (value1) => {
         setRow(value)
         console.log("this is the select field value", value)
     }
-    let handleChange = (i, e) => {
-        let newFormValues = [...formValues];
-        newFormValues[i][e.target.name] = e.target.value;
-        setFormValues(newFormValues);
-
-    }
-    let handleChangereq = (i, e) => {
-        let requirment1 = [...requirment2]
-        requirment2[i][e.target.name] = e.target.value
-        setRequirments(requirment1)
-
-    }
-    let handleChangebenefits = (i, e) => {
-        let benefits1 = [...benefits]
-        benefits[i][e.target.name] = e.target.value
-        Setbenefits(benefits1)
-
-    }
-    let addFormFields = () => {
-        setFormValues([...formValues, { responsibility: "" }])
-    }
-    const addrequirementt = () => {
-        setRequirments([...requirment2, { requirements: "" }])
-    }
-    const addbenefits = () => {
-        Setbenefits([...benefits, { benefits: "" }])
-    }
-
-    let removeFormFields = (i) => {
-        let newFormValues = [...formValues];
-        newFormValues.splice(i, 1);
-        setFormValues(newFormValues)
-    }
-    let removeFormFieldbeefits = (i) => {
-        let resns = [...benefits];
-        resns.splice(i, 1);
-        setResponsibility(resns)
-    }
-    let removeFormFieldsreq = (i) => {
-        let requirment = [...requirment2]
-        requirment.splice(i, 1);
-        setRequirments(requirment)
-
-    }
     const handlechange1 = (event, value) => {
         var value1;
         setNext(value)
-        //console.log(value, "comp", next)
         if (next <= value) {
             value1 = row * value
             setShowPerPage(value1)
@@ -110,340 +74,269 @@ const Edit_postJob = (value1) => {
         { name: "Edit Post job", route: "/" },
 
     ]
+    const records = [
+        {
+            Jobtitle: "UI/UX",
+            description: "Great Opportunity",
+            functions: "Handle events",
+            industry: "Great",
+            level: "Higher",
+            type: "Full time"
+        },
+        {
+            Jobtitle: "Project Manager",
+            description: "Great Opportunity",
+            functions: "Handle events",
+            industry: "Great",
+            level: "Higher",
+            type: "Full time"
+        },
+        {
+            Jobtitle: "gtto",
+            description: "Great Opportunity",
+            functions: "Handle events",
+            industry: "Great",
+            level: "Higher",
+            type: "Full time"
+        }
+    ]
+    const [tableData, setTableData] = useState(records)
+    function sortt() {
+        const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() > b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() > a.Jobtitle.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    function sortt1() {
+        const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() < b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() < a.Jobtitle.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    const [title, setTitle] = useState(false)
+    const requestSearch = (searchedVal) => {
+        const filteredRows = records.filter((row) => {
+            return row.title.toLowerCase().includes(searchedVal.toLowerCase());
+        });
+        setTableData(filteredRows)
+
+    };
+    const onhandlechange = () => {
+
+    }
 
     return (
-        <div title="Change Gallery Events">
-            <BasicBreadcrumbs route={route} />
+        <div title="Edit Post Job">
+            <h4>List Number of Post Jobs</h4>
+            {<BasicBreadcrumbs route={route} />}
             <div className="topGapPad margin_bottom_">
+                <div className="gapbetween ">
+                    <div>
+                        <TooltipComp component={
+                            <Form.Select aria-label="Default select example">
+                                <option disabled>Select </option>
+                                <option value="1">All</option>
+                                <option value="1">Active all</option>
+                                <option value="1">Deactive all</option>
+                            </Form.Select>}
+                            placement="top"
+                            tooltip={"Filteration Active/Deactive"}
+                        />
+                    </div>
+                    <div className="serachbar" >
+                        <InputGroup className="mb-3">
+                            <FormControl
+                                placeholder="Serach title and name"
+                                aria-label="Recipient's username"
+                                aria-describedby="basic-addon2"
+                                onChange={(e) => {
+                                    requestSearch(e.target.value)
+                                }}
+                            />
+                            <Button variant="outline-secondary" id="button-addon2">
+                                <BsSearch />
+                            </Button>
+                        </InputGroup>
+                    </div>
+                    <div>
+                        <Button variant="secondary" onClick={() => {
+                            nevigate("/postnewjob")
+                        }}><MdOutlineNoteAdd size={24} /></Button>
+                    </div>
+                </div>
                 <div className="boxshadow">
-                    <h4>List Number of Job Posts</h4>
-                    <table class="table" id="dtBasicExample">
+                    {/*<h4>List Number of Job Posts</h4>*/}
+                    <Table id="dtBasicExample">
                         <thead>
                             <tr>
-                                <th scope="col">Job title</th>
-                                <th scope="col">Job Description</th>
-                                <th scope="col">Job Function</th>
-                                <th scope="col">Location</th>
-                                <th scope="col">Industries</th>
-                                <th scope="col">Senority Level</th>
-                                <th scope="col">Employement Type</th>
-                                <th scope="col">Action</th>
+                                <th>Action</th>
+                                <th onClick={() => {
+                                    setTitle(!title)
+                                    { title ? sortt() : sortt1() }
+                                }}>Job title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                <th>Job Description</th>
+                                <th>Job Function</th>
+                                <th>Industries</th>
+                                <th>Senority Level</th>
+                                <th>Employement Type</th>
+                                <th>Status</th>
+                                <th>Total Candidates</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo.jpg</td>
-                                <td>@mdo.jpg</td>
-                                <td>@mdo.jpg</td>
-                                <td>@mdo.jpg</td>
-                                <td class="action "><div class="userDetail ">
-
-                                    <button type="button" class="btn "
-                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <span class="actionIcon"> <i
-                                            class="bi bi-three-dots-vertical"></i> </span>
-                                    </button>
-                                    <ul class="IconDropdown dropdown-menu context-menu1 "
-                                        aria-labelledby="dropdownIconMenu">
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="editAction" data-bs-toggle="modal"
-                                                    data-bs-target="#editbtn"><i
-                                                        class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>View</button>
-                                            </div>
-                                        </li>
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="viewIcon" data-bs-toggle="modal"
-                                                    data-bs-target="#viewbtn"> <i
-                                                        class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
-                                            </div>
-                                        </li>
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="deleteAction" data-bs-toggle="modal"
-                                                    data-bs-target="#deletebtn"> <i
-                                                        class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div></td>
-                            </tr>
-                            <tr>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>@fat</td>
-                                <td>@mdo.jpg</td>
-                                <td>@mdo.jpg</td>
-                                <td>@mdo.jpg</td>
-                                <td class="action "><div class="userDetail ">
-                                    <button type="button" class="btn "
-                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <span class="actionIcon"> <i
-                                            class="bi bi-three-dots-vertical"></i> </span>
-                                    </button>
-                                    <ul class="IconDropdown dropdown-menu context-menu1"
-                                        aria-labelledby="dropdownIconMenu">
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="editAction" data-bs-toggle="modal"
-                                                    data-bs-target="#editbtn"><i
-                                                        class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Edit</button>
-                                            </div>
-                                        </li>
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="viewIcon" data-bs-toggle="modal"
-                                                    data-bs-target="#viewbtn"> <i
-                                                        class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
-                                            </div>
-                                        </li>
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="deleteAction" data-bs-toggle="modal"
-                                                    data-bs-target="#deletebtn"> <i
-                                                        class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div></td>
-                            </tr>
-                            <tr>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>@twitter</td>
-                                <td>@mdo.jpg</td>
-                                <td>@mdo.jpg</td>
-                                <td>@mdo.jpg</td>
-                                <td class="action "><div class="userDetail ">
-
-                                    <button type="button" class="btn "
-                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <span class="actionIcon"> <i
-                                            class="bi bi-three-dots-vertical"></i> </span>
-                                    </button>
-                                    <ul class="IconDropdown dropdown-menu context-menu1 "
-                                        aria-labelledby="dropdownIconMenu">
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="editAction" data-bs-toggle="modal"
-                                                    data-bs-target="#editbtn"><i
-                                                        class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Edit</button>
-                                            </div>
-                                        </li>
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="viewIcon" data-bs-toggle="modal"
-                                                    data-bs-target="#viewbtn"> <i
-                                                        class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
-                                            </div>
-                                        </li>
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="deleteAction" data-bs-toggle="modal"
-                                                    data-bs-target="#deletebtn"> <i
-                                                        class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div></td>
-                            </tr>
+                            {tableData.map((data, index) =>
+                                <tr>
+                                    <td class="action "><div class="userDetail ">
+                                        <button type="button" class="btn "
+                                            id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <span class="actionIcon"> <i
+                                                class="bi bi-three-dots-vertical"></i> </span>
+                                        </button>
+                                        <ul class="IconDropdown dropdown-menu context-menu1 "
+                                            aria-labelledby="dropdownIconMenu">
+                                            <li class="dropdownList">
+                                                <div class="actionBtns">
+                                                    <span class="editAction" data-bs-toggle="modal"
+                                                        data-bs-target="#editbtn"><i
+                                                            class="bi bi-pencil-square"></i></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                        nevigate('/particularjob')
+                                                    }}>View</button>
+                                                </div>
+                                            </li>
+                                            <li class="dropdownList">
+                                                <div class="actionBtns">
+                                                    <span class="viewIcon" data-bs-toggle="modal"
+                                                        data-bs-target="#viewbtn"> <i
+                                                            class="bi bi-eye"></i></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow} >Edit</button>
+                                                </div>
+                                            </li>
+                                            <li class="dropdownList">
+                                                <div class="actionBtns">
+                                                    <span class="deleteAction" data-bs-toggle="modal"
+                                                        data-bs-target="#deletebtn"> <i
+                                                            class="bi bi-trash3-fill"></i></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div></td>
+                                    <td>{data.Jobtitle}</td>
+                                    <td>{data.description}</td>
+                                    <td>{data.functions}</td>
+                                    <td>{data.industry}</td>
+                                    <td>{data.level}</td>
+                                    <td>{data.type}</td>
+                                    <td><Form>
+                                        <Form.Check className="switch_padding1"
+                                            type="switch"
+                                            id="custom-switch1"
+                                            value={data.active}
+                                            label="" />
+                                    </Form></td>
+                                    <td>30</td>
+                                </tr>)}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
                 <Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>Edit Post Job</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div className="w-100">
-                            <div className="content_center margin_bottom_" >
-                                <div className="topGapPad p-3 w-75">
-                                    <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                        {() => (
-                                            <form onSubmit={(e) => {
-                                                e.preventDefault()
-                                            }}>
-                                                <div className="boxshadow ">
+                        <div className="content_center">
+                            <div className="topGapPad p-3 w-100">
 
-                                                    <div className="content_center">
-                                                        <div className="add_new_post_padding_between_field w-100">
-                                                            <div class="form-group">
-                                                                <Input as='select' className="form-control" name='jobtitle' label={"Job title"} id="name" options={[
-                                                                    { value: "" },
-                                                                    { value: "one" },
-                                                                    { value: "two" },
-                                                                    { value: "three" },
-                                                                ]} >
-                                                                </Input>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <Input type='text' className="form-control" placeholder='Job Description' name='jobdescription' label={"Job Description"} id="name" />
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <Input type='text' className="form-control" placeholder='Job Function' name='jobfunction' label={"Job Function"} id="name" />
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <Input as='select' className="form-control" placeholder="Location" name='location' label={"Location"} id="name" options={[
-                                                                    { name: "...." },
-                                                                    { value: "one" },
-                                                                    { value: "two" },
-                                                                    { value: "three" },
-                                                                ]} ></Input>
-                                                            </div>
-                                                            <div className="form-group formGroup">
-                                                                <Input
-                                                                    type='text'
-                                                                    className="form-control"
-                                                                    placeholder='Responsibility'
-                                                                    name='responsibility'
-                                                                    label={"Responsibility"}
+                                <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
+                                    {() => (
+                                        <form onSubmit={(e) => {
+                                            e.preventDefault()
+                                        }}>
+                                            <div className="">
+                                                <div className="content_center">
+                                                    <div className="add_new_post_padding_between_field w-100">
 
-                                                                />
-                                                                <button type="submit" class="btn btn-outline-secondary post_new_job_add_morefield_button" onClick={(e) => {
-                                                                    addFormFields()
-                                                                }}>+</button>
-                                                            </div>
-                                                            {formValues?.map((data, index) =>
-                                                                <div className="form-group formGroup">
-                                                                    <Input
-                                                                        type='text'
-                                                                        className="form-control"
-                                                                        placeholder='Responsibility'
-                                                                        name={'responsibility'}
-                                                                        label={"Responsibility"}
-                                                                        value={data.responsibility || ""}
-                                                                        onChange={e => handleChange(index, e)}
-                                                                    />
-                                                                    <button type="submit" class="btn btn-outline-secondary post_new_job_add_morefield_button" onClick={() => {
-                                                                        removeFormFields(index)
-                                                                    }}>*</button>
-                                                                </div>
-                                                            )}
+                                                        <Form.Group className="mb-3">
 
-                                                        </div>
-                                                        <div className="add_new_post_padding_between_field w-100">
+                                                            <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
+                                                                { value: "..." },
+                                                                { value: "UI/UX" },
+                                                                { value: "Project Manager" },
+                                                                { value: "Web Development" },
+                                                            ]} >
+                                                            </Input>
+                                                        </Form.Group>
+                                                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
+                                                            <Form.Label>Enter Descritption</Form.Label>
+                                                            <Form.Control as="textarea" style={{ height: "119px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Form.Label>Responsibility</Form.Label>
+                                                            <CreatableSelectField onChange={onhandlechange} />
 
-                                                            <div className="form-group  formGroup">
-                                                                <Input
-                                                                    type='text'
-                                                                    className="form-control post_new_job_calcultextfield"
-                                                                    placeholder='Requirments'
-                                                                    name='requirements'
-                                                                    label={"Requirments"}
-                                                                // id="requirements"
-                                                                />
-                                                                <button type="button"
-                                                                    class="btn btn-outline-secondary post_new_job_add_morefield_button"
-                                                                    onClick={(e) => {
-                                                                        addrequirementt()
-                                                                    }}>+</button>
-                                                            </div>
-
-                                                            {requirment2?.map((data, index) =>
-                                                                <div className="form-group  formGroup">
-                                                                    <Input
-                                                                        type='text'
-                                                                        className="form-control"
-                                                                        placeholder='Responsibility'
-                                                                        name={'requirements'}
-                                                                        label={"Requirments"}
-                                                                        value={data.requirements || ""}
-                                                                        onChange={e => handleChangereq(index, e)}
-
-                                                                    />
-                                                                    <button type="submit" class="btn btn-outline-secondary post_new_job_add_morefield_button" onClick={() => {
-                                                                        removeFormFieldsreq(index)
-                                                                    }}
-
-                                                                    >*</button>
-                                                                </div>
-                                                            )}
-                                                            <div className="form-group ">
-                                                                <Input type='text' className="form-control" placeholder='Industries' name='industries' label={"Industries"} id="name" />
-                                                            </div>
-                                                            <div className="form-group formGroup">
-                                                                <Input type='text'
-                                                                    className="form-control"
-                                                                    placeholder="Benefits"
-                                                                    name='benefits'
-                                                                    label={"Benefits"}
-                                                                    id="name"
-
-                                                                />
-                                                                <button type="submit" class="btn btn-outline-secondary post_new_job_add_morefield_button" onClick={() => {
-                                                                    addbenefits()
-                                                                }}>+</button>
-                                                            </div>
-                                                            {benefits.map((data, index) =>
-                                                                <div className="form-group formGroup">
-                                                                    {console.log(data, "data")}
-                                                                    <Input type='text'
-                                                                        className="form-control"
-                                                                        value={data.benefits || ""}
-                                                                        placeholder="Benefits"
-                                                                        name='benefits'
-                                                                        label={"Benefits"}
-                                                                        id="name"
-                                                                        onChange={e => handleChangebenefits(index, e)}
-                                                                    />
-                                                                    <button type="submit" class="btn btn-outline-secondary post_new_job_add_morefield_button" onClick={() => {
-                                                                        removeFormFieldbeefits(index)
-                                                                    }}>*</button>
-                                                                </div>
-                                                            )}
-                                                            <div className="form-group">
-                                                                <Input as='select' className="form-control" placeholder="Senority Level" name='senoritylevel' label={"Senority Level"} id="name" options={[
-                                                                    { value: "" },
-                                                                    { value: "one" },
-                                                                    { value: "two" },
-                                                                    { value: "three" },
-                                                                ]} ></Input>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <Input as='select' className="form-control" placeholder="Employement type" name='employementtype' label={"Employement type"} id="name" options={[
-                                                                    { value: "...." },
-                                                                    { value: "one" },
-                                                                    { value: "two" },
-                                                                    { value: "three" },
-                                                                ]} ></Input>
-                                                            </div>
-                                                        </div>
+                                                        </Form.Group>
                                                     </div>
+                                                    <div className="add_new_post_padding_between_field w-100" >
+                                                        <Form.Group className="">
+                                                            <Form.Label>Requirments</Form.Label>
+                                                            <div style={{ marginBottom: "1rem" }}>
+                                                                <CreatableSelectField onChange={onhandlechange} />
+                                                            </div>
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Input type='text' placeholder='Industry' className="form-control" name='industry' label={"Industry"} id="name" onChange={onhandlechange} />
+                                                        </Form.Group>
+                                                        <Form.Group>
 
+                                                            <Form.Label>Benefits</Form.Label>
+                                                            <div style={{ marginBottom: "1rem" }}>
+                                                                <CreatableSelectField onChange={onhandlechange} />
+                                                            </div>
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Input as='select' placeholder="Senority Level" className="form-control" name='seneritylevel'
+                                                                onChange={onhandlechange} label={"Senority Level"} id="seneritylevel" options={[
+                                                                    { value: "", label: "" },
+                                                                    { value: "Senior", label: "Senior" },
+                                                                    { value: "Junior", label: "Junior" },
+
+                                                                ]} ></Input>
+                                                        </Form.Group>
+                                                        <Form.Group>
+                                                            <Input as='select' className="form-control" onChange={onhandlechange} placeholder="Employement type" name='employement' label={"Employement type"} id="name" options={[
+                                                                { value: "...." },
+                                                                { value: "Full time" },
+                                                                { value: "Part time" },
+
+                                                            ]} ></Input>
+                                                        </Form.Group>
+                                                    </div>
                                                 </div>
-                                            </form>
-                                        )}
-                                    </Formik>
-                                </div>
+
+                                            </div>
+                                        </form>
+                                    )}
+                                </Formik>
                             </div>
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
                         <div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
-                            <button type="button" class="btn btn-outline-secondary gallery_add_button">Submit</button>
+                            <Button type="button" class="gallery_add_button">Submit</Button>
                         </div>
                     </Modal.Footer>
                 </Modal>
 
+                <div>
+                    <CustomPagination
+                        showPerPage={showPerPage}
+                        onPageChange={onPageChange}
+                        total={1000}
+                    />
+                </div>
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { Input } from "../../components/commoninputfield";
 import Layout from "../../components/layout";
 import withHeader from "../../HOC/withHeader";
-import Pagination from '@material-ui/lab/Pagination';
+//import Pagination from '@material-ui/lab/Pagination';
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
 
 const Stacks = () => {
@@ -150,11 +150,11 @@ const Stacks = () => {
                       
                     </div>
                     <div className="gapPad pagination_justify_end ">
-                    <Pagination
+                    {/*<Pagination
                         className="paginationDiv"
                         count={5}
                         onChange={handlechange}
-                        color="primary" />
+                        color="primary" />*/}
                 </div>
                    
                 </div>

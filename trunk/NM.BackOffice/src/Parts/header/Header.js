@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Badge } from '@mui/material';
+//import { Badge } from '@mui/material';
 import success_Stories from '../../pages/crausel/success_Stories'
 import { admin } from "../../data/Data";
+import { useNavigate } from "react-router";
 
 const Header = ({ title, setSidebarShow }) => {
-    
+    const history = useNavigate()
+
     return (
         <div className="topHeader">
             <nav class="navbar navbar-expand-lg navbar-light" style={{ height: "70px" }}>
@@ -31,12 +33,15 @@ const Header = ({ title, setSidebarShow }) => {
                     </ul>
                 </div>}
                 <div>
-                    <Badge badgeContent={5} color="primary">
+                    {/*<Badge badgeContent={5} color="primary">
                         <i class="fs-5 bi-bell-fill"></i>
-                    </Badge>
+            </Badge>*/}
                 </div>
-                <a class="nav-link a navbarDropdown " href="#">Log out</a>
-
+                <span class="nav-link a navbarDropdown" onClick={() => {
+                    localStorage.removeItem("nestor.user")
+                    history('/', { replace: true })
+                    window.location.reload()
+                }}>Log out</span>
             </nav>
         </div>
 

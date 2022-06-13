@@ -1,38 +1,60 @@
 
+
 import { Field, ErrorMessage } from "formik";
+import { Form, FormLabel } from "react-bootstrap";
 
 export const Input = ({ as, id, label, placeholder, type, name, className
     , options, onChange, value
 }) => {
     return (
-        <div className="w-100 input_field">
-            <div className="form-label-group">
-                <label className="form-label" htmlFor={id}>
-                    {label}
+        <div className="input_field">
+            <Form.Group className="mb-3" >
+                <Form.Label>{label}</Form.Label>
+                {/*<Form.Control type="email" placeholder="Enter email" />*/}
+                {as != "select" && <Field
+                    as={as}
+                    type={type}
+                    value={value}
+                    className={className}
+                    options={options}
+                    id={id}
+                    name={name}
+                    placeholder={placeholder}
+                    onChange={onChange}
+                />}
+                {as == "select" && <Field
+                    as={as}
+                    type={type}
+                    className={className}
+                    id={id}
+                    onChange={onChange}
+                    value={value}
+                    name={name}
+                >
+                    {options?.map((_, __) => <option key={__} value={_.value}>{_.value}</option>)}
+                </Field>}
+            </Form.Group>
+
+            {/*            <Form.Group className="mb-3">
+                <FormLabel htmlFor={id}> {label}</FormLabel>
+                {/*<label className="form-label" htmlFor={id}>
                 </label>
-            </div>
-            {as != "select" && <Field
-                as={as}
-                type={type}
-                value={value}
-                className={className}
-                id={id}
-                name={name}
-                placeholder={placeholder}
-                onChange={onChange}
-            />}
-            {as == "select" && <Field
-                as={as}
-                type={type}
-                className={className}
-                id={id}
-                name={name}
-            >
-                {options?.map((_, __) => <option key={__} value={_.value}>{_.value}</option>)}
-            </Field>}
-            <div className="field_input">
-                <ErrorMessage component="div" className="text-danger" name={name} />
-            </div>
+
+                {as != "select" && <Field
+                    as={as}
+                    type={type}
+                    value={value}
+                    className={className}
+                    id={id}
+                    name={name}
+                    placeholder={placeholder}
+                    onChange={onChange}
+                />}
+                
+                <div className="field_input">
+                    <ErrorMessage component="div" className="text-danger" name={name} />
+                </div>
+    </Form.Group>*/}
         </div>
     )
 }

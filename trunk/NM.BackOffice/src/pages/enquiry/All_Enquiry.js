@@ -1,17 +1,21 @@
-import { Pagination } from "@mui/material";
-import { Modal } from "react-bootstrap";
+import { Button, Col, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import BasicBreadcrumbs from "../../components/breadcumbs";
-import Layout from "../../components/layout";
 import { News_letter_Subscribe } from "../../Services/redux/action/action";
 import { useDispatch, useSelector } from "react-redux";
-import withHeader from "../../HOC/withHeader";
 import { Formik } from "formik";
+import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
+import { RiChatDeleteLine } from "react-icons/ri";
+import { FcCheckmark, FcDeleteColumn } from "react-icons/fc";
+import TooltipComp from "../../shared/Tooltipomp";
+// import { alert } from 'react-bootstrap-confirmation';
+import { confirm } from 'react-bootstrap-confirmation';
 
 const All_Enquiry = () => {
-    //useEffect(() => {
-    //   setTitle("All Enquiry")
-    // }, [])
+
+    const [status, setStatus] = useState()
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -33,209 +37,212 @@ const All_Enquiry = () => {
             start: start,
             end: showPerPage
         });
-    const selector = useSelector(state => state),
-        dispatch = useDispatch(),
-        [subscribers, setSubscribers] = useState([])
+    // const selector = useSelector(state => state),
+    //     dispatch = useDispatch(),
+    //     [subscribers, setSubscribers] = useState([])
     // console.log("hellow", subscribers);
-    useEffect(() => {
-        dispatch(News_letter_Subscribe())
-    }, [])
-    if (selector) {
+    // useEffect(() => {
+    //     dispatch(News_letter_Subscribe())
+    // }, [])
 
-    }
-    else {
+    // useEffect(() => {
+    //     // setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+    //     setpagination({ start: start, end: showPerPage })
+    // }, [selector, pagination1])
 
+    const records = [
+        {
+            Name: "Mark",
+            Phone: "gtto",
+            Email: "goldy",
+            message: "hg",
+            status: "pending"
+
+        },
+        {
+            Name: "adfark",
+            Phone: "ertto",
+            Email: "goldy",
+            message: "ahg",
+            status: "pending"
+        },
+        {
+            Name: "yMark",
+            Phone: "ogtto",
+            Email: "lgkoldy",
+            message: "ehg",
+            status: "pending"
+        },
+    ]
+    // const Chnage = (e) => {
+    //     const { name, value } = e.target
+    //     setRow(value)
+    //     console.log("this is the select field value", value)
+    // }
+
+    // const handlechange = (event, value) => {
+    //     var value1;
+    //     setNext(value)
+    //     if (next <= value) {
+    //         value1 = row * value
+    //         setShowPerPage(value1)
+    //         console.log("this is the if conditon", value, showPerPage, state.row_value)
+    //         setStart(value1 - row)
+    //         setpagination({ start: start, end: showPerPage })
+    //     }
+    //     else {
+    //         console.log("else", start, showPerPage)
+    //         setStart(start - row)
+    //         setShowPerPage(showPerPage - row)
+    //         setpagination({ start: start - row, end: showPerPage - row })
+    //     }
+    // }
+    const [tableData, setTableData] = useState(records)
+    function sortt() {
+        const response = tableData.sort((a, b) => (a.Name.toLowerCase() > b.Name.toLowerCase()) ? 1 : ((b.Name.toLowerCase() > a.Name.toLowerCase()) ? -1 : 0));
+        setTableData([...response])
     }
-    useEffect(() => {
-        // setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
-        setpagination({ start: start, end: showPerPage })
-    }, [selector, pagination1])
-    const Chnage = (e) => {
-        const { name, value } = e.target
-        setRow(value)
-        console.log("this is the select field value", value)
+    function sortt1() {
+        const response = tableData.sort((a, b) => (a.Name.toLowerCase() < b.Name.toLowerCase()) ? 1 : ((b.Name.toLowerCase() < a.Name.toLowerCase()) ? -1 : 0));
+        setTableData([...response])
     }
-    // console.log(subscribers, "subscribers");
-    const handlechange = (event, value) => {
-        var value1;
-        setNext(value)
-        //console.log(value, "comp", next)
-        if (next <= value) {
-            value1 = row * value
-            setShowPerPage(value1)
-            console.log("this is the if conditon", value, showPerPage, state.row_value)
-            setStart(value1 - row)
-            setpagination({ start: start, end: showPerPage })
+    const [title, setTitle] = useState(false)
+
+    const requestSearch = (searchedVal) => {
+        const filteredRows = records.filter((row) => {
+            return row.Name.toLowerCase().includes(searchedVal.toLowerCase()) || row.Email.toLowerCase().includes(searchedVal.toLowerCase())
+        });
+        setTableData(filteredRows)
+
+    };
+    const display = async (index) => {
+        const result = await confirm('Are you sure to update status as Rsolved ?');
+        if (result) {
+            setTableData(oldState => {
+                oldState[index].status = "resolved"
+                return [...oldState]
+            })
         }
-        else {
-            console.log("else", start, showPerPage)
-            setStart(start - row)
-            setShowPerPage(showPerPage - row)
-            setpagination({ start: start - row, end: showPerPage - row })
-        }
-    }
+    };
     return (
         <div title="All Enquiry">
+            <h4>All Enquiry</h4>
             <BasicBreadcrumbs route={route} />
             <div className="topGapPad margin_bottom_">
-                <h4>List Number of Enquiry</h4>
+                <div className="gapbetween">
+                    <div><TooltipComp
+                        component={<Form.Select aria-label="row" className="wreap-content">
+                            <option disabled hidden selected>Select</option>
+                            <option value="1">All</option>
+                            <option value="2">Pending</option>
+                            <option value="3">Resolved</option>
+                        </Form.Select>}
+                        placement="top"
+                        tooltip={"Filter as Active/inactive"}
+                    />
+                    </div>
+                    <div className="serachbar">
+                        <TooltipComp component={<InputGroup className="mb-3">
+                            <FormControl
+                                placeholder="Serach Email and Name"
+                                aria-label="Recipient's username"
+                                aria-describedby="basic-addon2"
+                                onChange={(e) => {
+                                    requestSearch(e.target.value)
+                                }}
+                            />
+                            <Button variant="outline-secondary" id="button-addon2">
+                                <BsSearch />
+                            </Button>
+                        </InputGroup>} placement="top" tooltip={"Type here to search by name and email"} />
+                    </div>
+                </div>
                 <div className="boxshadow">
-                    <table class="table">
+                    <Table>
                         <thead>
                             <tr>
-                                <th scope="col">Action</th>
-                                <th scope="col">Sr No</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Message</th>
-                                <th scope="col">Subject</th>
-
+                                <th >Action</th>
+                                <th className="headerSortUp " onClick={() => {
+                                    setTitle(!title)
+                                    { title ? sortt() : sortt1() }
+                                }}>Name{title ? <BsArrowUp /> : <BsArrowDown />}</th>
+                                <th>Phone</th>
+                                <th >Email</th>
+                                <th >Message</th>
+                                <th >Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                               
-                                <td class="action "><div class="userDetail ">
-                                <button type="button" class="btn "
-                                    id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <span class="actionIcon"> <i
-                                        class="bi bi-three-dots-vertical"></i> </span>
-                                </button>
-                                <ul class="IconDropdown dropdown-menu context-menu1 "
-                                    aria-labelledby="dropdownIconMenu">
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="editAction" data-bs-toggle="modal"
-                                                data-bs-target="#editbtn"><i
-                                                    class="bi bi-pencil-square"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>Edit</button>
-                                        </div>
-                                    </li>
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="deleteAction" data-bs-toggle="modal"
-                                                data-bs-target="#deletebtn"> <i
-                                                    class="bi bi-trash3-fill"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                            {tableData.map((data, index) =>
+                                <tr key={index}>
+                                    <td>
+                                        <div style={{ display: "flex", gap: "10px" }}>
+                                            <Button
+                                                variant=""
+                                                key={index}
+                                                style={{ padding: "0px" }}
+                                                onClick={(e) => {
+                                                    display(index)
+                                                    console.log(status)
+                                                    if (status == true) {
+                                                        // setTableData(oldState => {
+                                                        //     oldState[index].status = "resolved"
+                                                        //     return [...oldState]
+                                                        // })
+                                                    }
+                                                    else {
 
+                                                    }
+                                                }}>
+                                                <FcCheckmark size={20} />
+                                            </Button>
+                                            <Button variant="" key={index} style={{ padding: "0px" }} onClick={() => setTableData(oldState => {
+                                                oldState[index].status = "pending"
+                                                return [...oldState]
+                                            })}><FcDeleteColumn size={22} /></Button>
                                         </div>
-                                    </li>
-                                </ul>
-                            </div></td>
-                           
-                            <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                              
-                            </tr>
-                            <tr>
-                                 
-                                <td class="action "><div class="userDetail ">
-                                <button type="button" class="btn "
-                                    id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <span class="actionIcon"> <i
-                                        class="bi bi-three-dots-vertical"></i> </span>
-                                </button>
-                                <ul class="IconDropdown dropdown-menu context-menu1 "
-                                    aria-labelledby="dropdownIconMenu">
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="editAction" data-bs-toggle="modal"
-                                                data-bs-target="#editbtn"><i
-                                                    class="bi bi-pencil-square"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>Edit</button>
-                                        </div>
-                                    </li>
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="deleteAction" data-bs-toggle="modal"
-                                                data-bs-target="#deletebtn"> <i
-                                                    class="bi bi-trash3-fill"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
-
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div></td>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>@fat</td>
-                                <td>@fat</td>
-                              
-                            </tr>
-                            <tr>
-                            <td class="action "><div class="userDetail ">
-                                    <button type="button" class="btn "
-                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <span class="actionIcon"> <i
-                                            class="bi bi-three-dots-vertical"></i> </span>
-                                    </button>
-                                    <ul class="IconDropdown dropdown-menu context-menu1 "
-                                        aria-labelledby="dropdownIconMenu">
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="editAction" data-bs-toggle="modal"
-                                                    data-bs-target="#editbtn"><i
-                                                        class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>Edit</button>
-                                            </div>
-                                        </li>
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="deleteAction" data-bs-toggle="modal"
-                                                    data-bs-target="#deletebtn"> <i
-                                                        class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div></td>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>@twitter</td>
-                                <td>@twitter</td>
-                                
-                            </tr>
+                                    </td>
+                                    <td>{data.Name}</td>
+                                    <td>{data.Phone}</td>
+                                    <td>{data.Email}</td>
+                                    <td>{data.message}</td>
+                                    <td>
+                                        <Form.Check className="switch_pad_enquiry"
+                                            type="switch"
+                                            key={index}
+                                            label=""
+                                            checked={data.status === "resolved" ? true : false}
+                                        />
+                                    </td>
+                                </tr>)}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
                 <div>
                     <div className="padd_bottm">
-                        <div className="row ">
-                            <div className="col-sm-6 col-lg-6 col-md-6">
+                        <Row>
+                            <Col md={6}>
                                 <div className="gapPad">
-                                    <select class="form-select w-25 " name={state.row_value}>
-                                        <option disabled selected>Rows</option>
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                    </select>
+                                    <Form.Select aria-label="row" className="w-25">
+                                        <option>Row</option>
+                                        <option value="1">10</option>
+                                        <option value="2">25</option>
+                                        <option value="3">50</option>
+                                    </Form.Select>
                                 </div>
-                            </div>
-                            <div className="col-sm-6 col-lg-6 col-md-6">
+                            </Col>
+                            {/*<div className="col-sm-6 col-lg-6 col-md-6">
                                 <div className="gapPad pagination_justify_end ">
                                     <Pagination
                                         className="paginationDiv "
                                         count={10}
                                         color="primary" />
                                 </div>
-                            </div>
-                        </div>
+    </div>*/}
+                        </Row>
                     </div>
                 </div>
-                <Modal show={show} onHide={handleClose} size="sm">
+                {/*<Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>
                         <Modal.Title>Enter the Remarks</Modal.Title>
                     </Modal.Header>
@@ -257,10 +264,10 @@ const All_Enquiry = () => {
                     </Modal.Body>
                     <Modal.Footer>
                         <div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
-                            <button type="button" class="btn btn-outline-secondary gallery_add_button">Submit</button>
+                            <Button variant="outline-secondary" type="button" className="gallery_add_button">Submit</Button>
                         </div>
                     </Modal.Footer>
-                </Modal>
+                                </Modal>*/}
             </div>
         </div>
     );

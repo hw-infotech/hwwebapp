@@ -1,13 +1,13 @@
-import { Pagination } from "@material-ui/lab";
+//import { Pagination } from "@material-ui/lab";
 import React, { useEffect, useState } from "react";
+import { Form, FormControl, InputGroup, Table, Button, Row, Col } from "react-bootstrap";
 import BasicBreadcrumbs from "../../components/breadcumbs";
-import Layout from "../../components/layout";
-import withHeader from "../../HOC/withHeader";
+import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "react-icons/bs";
+import TooltipComp from "../../shared/Tooltipomp";
+import { BsSearch } from "react-icons/bs";
 
 const Applied_Job = () => {
-    //useEffect(() => {
-    //  setTitle("Applied Jobs")
-    //   }, [])
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
@@ -32,7 +32,6 @@ const Applied_Job = () => {
     const handlechange = (event, value) => {
         var value1;
         setNext(value)
-        //console.log(value, "comp", next)
         if (next <= value) {
             value1 = row * value
             setShowPerPage(value1)
@@ -51,89 +50,120 @@ const Applied_Job = () => {
         { name: "Home", route: "/" },
         { name: "Job", route: "/" },
         { name: "Applied Jobs", route: "/" },
-
     ]
+    const records = [
+
+        {
+            name: "mark",
+            email: "Ganeshsharma5073@gmail.com",
+            phone: "9803836866",
+            date: "31-02-2022",
+            time: "3:25",
+            action: ""
+
+        },
+        {
+
+            name: "rark",
+            email: "Ganeshsharma5073@gmail.com",
+            phone: "9803836866",
+            date: "31-02-2022",
+            time: "3:25",
+            active: ""
+
+        },
+        {
+            name: "mark",
+            email: "Ganeshsharma5073@gmail.com",
+            phone: "9803836866",
+            date: "31-02-2022",
+            time: "3:25",
+            active: ""
+        }
+    ]
+    const [tableData, setTableData] = useState(records)
+    function sortt() {
+        const response = tableData.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : ((b.name.toLowerCase() > a.name.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    function sortt1() {
+        const response = tableData.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase()) ? 1 : ((b.name.toLowerCase() < a.name.toLowerCase()) ? -1 : 0));
+        console.log(response)
+        setTableData([...response])
+    }
+    const [title, setTitle] = useState(false)
+
+    const requestSearch = (searchedVal) => {
+        const filteredRows = records.filter((row) => {
+            return row.name.toLowerCase().includes(searchedVal.toLowerCase())
+        });
+        console.log(filteredRows)
+        setTableData([...filteredRows])
+    };
     return (
         <div className="margin_bottom_">
+            <div><h4> Posted Job's</h4></div>
             <BasicBreadcrumbs route={route} />
-            <div className="content_center pt-3 "><h4>Total Number Of Candidates of Applied Job</h4></div>
-            <div className="padding-items  ">
-                <div class="input-group ">
-                    <div class="form-outline flex-fill content_center">
-                        <input type="search" class="form-control searchbar" placeholder="Search for free names and emails" />
-                        <label class="form-label" for="form1"></label>
-                        <button type="button" class="btn btn-primary Serachbarbtn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    </div>
-                 
+            <div className="w-100 setupcontent">
+                <div className="">
+                    <TooltipComp
+                        component={<Form.Select aria-label="row" className="wreap-content">
+                            <option disabled hidden selected>Select</option>
+                            <option value="1">All</option>
+                            <option value="2">Subscriber</option>
+                            <option value="3">UnSubscriber</option>
+                        </Form.Select>}
+                        placement="top"
+                        tooltip={"Subscriber all/Unsubscriber all"}
+                    />
+                </div>
+                <div className="searchbar">
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            placeholder="Search By Email"
+                            aria-label="Search By Email"
+                            aria-describedby="basic-addon2"
+                            onChange={(e) => {
+                                requestSearch(e.target.value)
+                            }}
+                        />
+                        <Button variant="outline-secondary" id="button-addon2">
+                            <BsSearch />
+                        </Button>
+                    </InputGroup>
                 </div>
             </div>
             <div className="topGapPad">
                 <div className="boxshadow">
-                    <table class="table">
+                    <Table>
                         <thead>
                             <tr>
-                                <th scope="col">Sr No</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Phone Number</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Time</th>
-                                <th scope="col">Action</th>
+                                <th onClick={() => {
+                                    setTitle(!title)
+                                    { title ? sortt() : sortt1() }
+                                }}>Name{title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Date</th>
+                                <th>Time</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto@gmial.com</td>
-                                <td>9803836866</td>
-                                <td>13-02-2022</td>
-                                <td>3:15 PM</td>
-                                <td>
-                                    <select class="form-select w-50 ">
-                                        <option disabled selected>...</option>
-                                        <option value="10">Select</option>
-                                        <option value="25">Reject</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Mark</td>
-                                <td>Otto@gmial.com</td>
-                                <td>9803836866</td>
-                                <td>13-02-2022</td>
-                                <td>3:15 PM</td>
-                                <td>
-                                    <select class="form-select w-50 ">
-                                        <option disabled selected>...</option>
-                                        <option value="10">Select</option>
-                                        <option value="25">Reject</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Mark</td>
-                                <td>Otto@gmial.com</td>
-                                <td>9803836866</td>
-                                <td>13-02-2022</td>
-                                <td>3:15 PM</td>
-                                <td>
-                                    <select class="form-select w-50 ">
-                                        <option disabled selected>...</option>
-                                        <option value="10">Select</option>
-                                        <option value="25">Reject</option>
-                                    </select>
-                                </td>
-                            </tr>
+                            {tableData.map((data, index) =>
+                                <tr>
+                                    <td>{data.name}</td>
+                                    <td>{data.email}</td>
+                                    <td>{data.phone}</td>
+                                    <td>{data.date}</td>
+                                    <td>{data.time}</td>
+                                </tr>
+                            )}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
-                <div className="row">
-                    <div className="col-sm-6 col-lg-6 col-md-6">
+                <Row>
+                    <Col md={6}>
                         <div className="gapPad">
                             <select class="form-select w-25 " name={state.row_value}>
                                 <option disabled selected>Rows</option>
@@ -142,8 +172,8 @@ const Applied_Job = () => {
                                 <option value="50">50</option>
                             </select>
                         </div>
-                    </div>
-                    <div className="col-sm-6 col-lg-6 col-md-6">
+                    </Col>
+                    {/*<div className="col-sm-6 col-lg-6 col-md-6">
                         <div className="gapPad pagination_justify_end ">
                             <Pagination
                                 className="paginationDiv"
@@ -151,11 +181,10 @@ const Applied_Job = () => {
                                 onChange={handlechange}
                                 color="primary" />
                         </div>
-                    </div>
-                </div>
+    </div>*/}
+                </Row>
             </div>
         </div>
-
     )
 }
 export default Applied_Job
