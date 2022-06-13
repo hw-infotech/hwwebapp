@@ -12,7 +12,7 @@ import { BsArrowDown } from "react-icons/bs";
 import { MdOutlineNoteAdd } from "react-icons/md";
 import TooltipComp from "../../shared/Tooltipomp";
 import CreatableSelectField from "../../components/selectfield";
-import Paginationn from "../../components/pagination";
+import CustomPagination from "../../shared/pagination";
 ;
 
 const Edit_postJob = (value1) => {
@@ -22,8 +22,7 @@ const Edit_postJob = (value1) => {
     const [state, setState] = useState({
         row_value: ""
     })
-
-    const [showPerPage, setShowPerPage] = useState(10)
+    const [showPerPage, setShowPerPage] = useState(100)
     const [next, setNext] = useState(0)
     const [start, setStart] = useState(1);
     const [pagination1, setpagination] = useState(
@@ -32,6 +31,13 @@ const Edit_postJob = (value1) => {
             end: showPerPage
         })
     const nevigate = useNavigate();
+    const [pagination2, setpagination2] = useState({
+        start: 0,
+        end: showPerPage
+    });
+    const onPageChange = (start, end) => {
+        setpagination({ start: start, end: end });
+    };
     useEffect(() => {
         //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
@@ -138,24 +144,32 @@ const Edit_postJob = (value1) => {
                         />
                     </div>
                     <div className="serachbar" >
-                        <InputGroup className="mb-3">
-                            <FormControl
-                                placeholder="Serach title and name"
-                                aria-label="Recipient's username"
-                                aria-describedby="basic-addon2"
-                                onChange={(e) => {
-                                    requestSearch(e.target.value)
-                                }}
-                            />
-                            <Button variant="outline-secondary" id="button-addon2">
-                                <BsSearch />
-                            </Button>
-                        </InputGroup>
+                        <TooltipComp
+                            component={<InputGroup className="mb-3">
+                                <FormControl
+                                    placeholder="Search title and name"
+                                    aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                                <Button variant="outline-secondary" id="button-addon2">
+                                    <BsSearch />
+                                </Button>
+                            </InputGroup>}
+                            tooltip="Type here to search by name and title"
+                            placement="top"
+                        />
                     </div>
                     <div>
-                        <Button variant="secondary" onClick={() => {
-                            nevigate("/postnewjob")
-                        }}><MdOutlineNoteAdd size={24} /></Button>
+                        <TooltipComp
+                            component={<Button variant="secondary" onClick={() => {
+                                nevigate("/postnewjob")
+                            }}><MdOutlineNoteAdd size={24} /></Button>}
+                            placement="top"
+                            tooltip="Add new job "
+                        />
                     </div>
                 </div>
                 <div className="boxshadow">
@@ -235,7 +249,6 @@ const Edit_postJob = (value1) => {
                         </tbody>
                     </Table>
                 </div>
-                <Paginationn/>
                 <Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>Edit Post Job</Modal.Title>
@@ -324,6 +337,13 @@ const Edit_postJob = (value1) => {
                     </Modal.Footer>
                 </Modal>
 
+                <div>
+                    <CustomPagination
+                        showPerPage={showPerPage}
+                        onPageChange={onPageChange}
+                        total={1000}
+                    />
+                </div>
             </div>
         </div>
     );

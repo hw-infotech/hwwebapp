@@ -7,8 +7,7 @@ import { createBrowserHistory } from 'history';
 const Layout = () => {
     const history=createBrowserHistory()
     return (
-        <Router history={history}>
-            
+        <Router history={history}>            
             <Switch>
                 {routes.map((route, index) => (
                     <Route {...route} key={index} />

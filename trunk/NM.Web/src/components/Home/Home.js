@@ -1,33 +1,19 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Home/Home.css";
 import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-import Footer_new from "../Layout/Footer_new";
+// import "owl.carousel/dist/assets/owl.carousel.css";
+// import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Link } from "react-router-dom";
 import Portfolio from "../Home/portfolio";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useDispatch } from "react-redux";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
-import { InlineWidget } from "react-calendly";
-import Modal from "react-modal";
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    width: "100%"
-  },
-};
+import { PopupButton } from "react-calendly";
+
 const HomeContent = (props) => {
-  const { newsletter, setNewsLetter, navbar, setNavbar } = props;
-  // console.log(setNavbar);
-  // const [newsletter, setNewsLetter] = useState();
+  const { navbar } = props;
+  
   console.log(navbar);
-  const dispatch = useDispatch();
   const [state, setState] = useState({
     responsive: {
       0: {
@@ -53,21 +39,6 @@ const HomeContent = (props) => {
     // setNavbar("Preet Singh")
   }, []);
   // this changes the scrolling behavior to "smooth"
-
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
 
   return (
     <div>
@@ -109,23 +80,12 @@ const HomeContent = (props) => {
                 top-rated service to propel your business another level.
               </h2>
               <div className="d-lg-flex mt-5">
-                <button onClick={openModal} className="w-o-btn scrollto">
-                  Book an appointment
-                </button>
-
-                <Modal
-                  isOpen={modalIsOpen}
-                  onAfterOpen={afterOpenModal}
-                  onRequestClose={closeModal}
-                  style={customStyles}
-                  contentLabel="Example Modal"
-                >
-                  <div className="ModalContant">
-                    {/* <h2>Hello</h2>
-                    <button onClick={closeModal}>&times;</button> */}
-                    <InlineWidget url="https://calendly.com/robin-sharma-1?primary_color=ef661e" />
-                  </div>
-                </Modal>
+                <PopupButton
+                  className="w-o-btn scrollto"
+                  url="https://calendly.com/nestormindpvtltd"
+                  rootElement={document.getElementById("root")}
+                  text="Book an appointment!"
+                />
               </div>
             </div>
             {/* <div
@@ -515,19 +475,19 @@ const HomeContent = (props) => {
           </div>
         </div>
         <div className="container">
-          <div class="awards_accolades_parts">
-            <div class="awa_rds awa_rds_one">
+          <div className="awards_accolades_parts">
+            <div className="awa_rds awa_rds_one">
               <a
-                href="https://clutch.co/profile/nestormind#summary"
+                href="https://www.google.com/search?q=nestormind&rlz=1C1GCEA_enIN1002IN1002&oq=nest&aqs=chrome.1.69i60j69i59j69i57j46i199i291i433i512j46i131i199i291i433i512j0i131i433i512l2j69i60.2226j0j7&sourceid=chrome&ie=UTF-8"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
-                <div class="img">
-                  <img src="../../assets/img/GooglePartner.png" />
+                <div className="img">
+                  <img src="../../assets/img/google_review.png" />
                 </div>
               </a>
-              <div class="hm_awcnt">
+              <div className="hm_awcnt">
                 <h3>
                   5.0
                   <img src="../../assets/img/stars.svg" />
@@ -538,18 +498,18 @@ const HomeContent = (props) => {
               </div>
             </div>
 
-            <div class="awa_rds awa_rds_one">
+            <div className="awa_rds awa_rds_one">
               <a
                 href="https://clutch.co/profile/nestormind#summary"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
-                <div class="img">
+                <div className="img">
                   <img src="../../assets/img/cluch.png" />
                 </div>
               </a>
-              <div class="hm_awcnt">
+              <div className="hm_awcnt">
                 <h3>
                   5.0
                   <img src="../../assets/img/stars.svg" />
@@ -560,18 +520,18 @@ const HomeContent = (props) => {
               </div>
             </div>
 
-            <div class="awa_rds awa_rds_two">
+            <div className="awa_rds awa_rds_two">
               <a
                 href="https://www.goodfirms.co/company/nestormind-pvt-ltd"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
-                <div class="img">
+                <div className="img">
                   <img src="../../assets/img/goodfirms.png" />
                 </div>
               </a>
-              <div class="hm_awcnt">
+              <div className="hm_awcnt">
                 <h3>
                   5.0
                   <img src="../../assets/img/stars.svg" />
@@ -583,25 +543,25 @@ const HomeContent = (props) => {
               </div>
             </div>
 
-            <div class="awa_rds awa_rds_five">
+            {/* <div className="awa_rds awa_rds_five">
               <a
                 href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
                 target="_blank"
                 aria-label="Awards"
                 rel="noopener noreferrer"
               >
-                <div class="img">
+                <div className="img">
                   <img src="../../assets/img/upwork.svg" />
                 </div>
               </a>
-              <div class="hm_awcnt">
+              <div className="hm_awcnt">
                 <h3>100% Job Success</h3>
                 <p>
                   Recognized as the “top- rated plus” company and earned high
                   rate job success on Upwork.
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* <ul className="list-addon list-addon-home">

@@ -62,7 +62,7 @@ const Post_New_Job = () => {
                                                 <div className="add_new_post_padding_between_field w-100">
                                                     <Form.Group className="mb-3">
                                                         <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
-                                                            { value: "...", label: "" },
+                                                            { value: "...", label: "..." },
                                                             { value: "UI/UX", label: "UI/UX" },
                                                             { value: "Project Manager", label: "Project Manager" },
                                                             { value: "Web Development", label: "Web Development" },

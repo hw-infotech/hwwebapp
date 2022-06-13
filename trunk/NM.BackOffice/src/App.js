@@ -9,34 +9,44 @@ import AddNewPost from './pages/blogs/addNewPost';
 import Home from './pages/Home';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import routes from './Services/routes/Routes';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Admin_Login from './pages/authnication/admin_login';
 
+const localUser = JSON.parse(localStorage.getItem("nestor.user"))
 function App() {
   const [title, setTitle] = useState("Dashboard")
   const [sidebarShow, setSidebarShow] = useState(true)
   const setPageTitle = (t) => {
     setTitle(t)
   }
+
+  useEffect(() => {
+  }, [])
+  console.log(localUser ? true : false);
   return (
     <Router>
-      <div className="flexing">
-        <div className='dashboard'>
-          <Sidebar sidebarShow={sidebarShow} />
-          <div className='mainDashboard' >
-            <div>
-              <Header setSidebarShow={setSidebarShow} />
-              <div className="content-Wrapper" >
-                <Routes>
-                  {routes?.map((_) => (
-                    <Route {..._} />
-                  ))}
-                </Routes>
+      {localUser ?
+        <div className="flexing">
+          <div className='dashboard'>
+            <Sidebar sidebarShow={sidebarShow} />
+            <div className='mainDashboard' >
+              <div>
+                <Header setSidebarShow={setSidebarShow} />
+                <div className="content-Wrapper" >
+                  <Routes>
+                    {routes?.map((_) => (
+                      <Route {..._} />
+                    ))}
+                  </Routes>
+                </div>
               </div>
+              <Footer />
             </div>
-            <Footer />
           </div>
         </div>
-      </div>
+        : <Routes>
+          <Route path='/' element={<Admin_Login />} exact />
+        </Routes>}
     </Router >
 
 

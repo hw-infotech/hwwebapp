@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Form, FormControl, InputGroup, Modal, Row } from "react-bootstrap";
 //import Pagination from '@material-ui/lab/Pagination';
-import Pagination from '@mui/material/Pagination'
+// import Pagination from '@mui/material/Pagination'
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { useDispatch, useSelector } from "react-redux";
 import { BsSearch } from "react-icons/bs";
@@ -13,7 +13,8 @@ import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
-import Paginationn from "../../components/pagination";
+import CustomPagination from "../../shared/pagination";
+
 const SubScriber = () => {
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -49,20 +50,7 @@ const SubScriber = () => {
         setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         //setpagination({ start: start, end: showPerPage })
     }, [selector])
-    const Chnage = (e) => {
-        const { name, value } = e.target
-        setRow(value)
-        console.log("this is the select field value", value)
-    }
-    let active = 4;
-    let items = [];
-    for (let number = 1; number <= 10; number++) {
-        items.push(
-            <Pagination.Item key={number}  active={number === active}>
-                {number}
-            </Pagination.Item>,
-        );
-    }
+
     // const handlechange = (event, value) => {
     //     var value1;
     //     setNext(value)
@@ -140,7 +128,7 @@ const SubScriber = () => {
                             tooltip={"Filter as Active/inactive"}
                         /></div>
                         <div className="searchbar">
-                            <InputGroup className="mb-3">
+                            <TooltipComp placement={"top"} tooltip="Type here to search by email" component={<InputGroup className="mb-3">
                                 <FormControl
                                     placeholder="Search By Email"
                                     aria-label="Search By Email"
@@ -152,12 +140,12 @@ const SubScriber = () => {
                                 <Button variant="outline-secondary" id="button-addon2">
                                     <BsSearch />
                                 </Button>
-                            </InputGroup>
+                            </InputGroup>} />
                         </div>
                         <div>
-                            <Button variant="outline-secondary" onClick={handleShow}>
+                            <TooltipComp component={<Button variant="outline-secondary" onClick={handleShow}>
                                 <BiAddToQueue size="23px" />
-                            </Button>
+                            </Button>} placement="top" tooltip="Add New" />
                         </div>
                     </div>
                 </div>
@@ -249,23 +237,12 @@ const SubScriber = () => {
                                 </div>*/}
                     </Modal.Footer>
                 </Modal>
-                <Row>
-                    <Col md={6}>
-                        <div className="gapPad">
-                            <Form.Select aria-label="Row" className="w-25">
-                                <option>Row</option>
-                                <option value="1">10</option>
-                                <option value="2">25</option>
-                                <option value="3">50</option>
-                            </Form.Select>
-                        </div>
-                    </Col>
-                    <Col md={6}>
-                        <div className="gapPad pagination_justify_end ">
-                            <Pagination>{items}</Pagination>
-                        </div>
-                    </Col>
-                </Row>
+                <div>
+                    <CustomPagination
+                        // showPerPage={showPerPage}
+                        total={1000}
+                    />
+                </div>
             </div>
         </div>
     );

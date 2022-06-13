@@ -11,7 +11,7 @@ const NotFound = () => {
     <div className="underConstruction">
       <div className="ConstructionContent">
         <Link to="/">
-          <img src="assets/img/nestormind.png" width="250px" />
+          <img src="assets/img/nestormind.png" width="250px"  alt='ConstructionContent'/>
           <h1>Under Maintenance</h1>
           <img className="underCont" src="assets/img/website_under-construct.png" alt="" />
         </Link>

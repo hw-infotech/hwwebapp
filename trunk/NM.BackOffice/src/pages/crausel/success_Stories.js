@@ -104,23 +104,34 @@ const Success_Stories = () => {
                                         tooltip={"Active all/Deactive all"} />
                                 </div>
                                 <div className="serachbar">
-                                    <InputGroup className="mb-3">
-                                        <FormControl
-                                            placeholder="Serach by title"
-                                            aria-label="Recipient's username"
-                                            aria-describedby="basic-addon2"
-                                            onChange={(e) => {
-                                                console.log(e)
-                                                requestSearch(e.target.value)
-                                            }}
-                                        />
-                                        <Button variant="outline-secondary" id="button-addon2">
-                                            <BsSearch />
-                                        </Button>
-                                    </InputGroup>
+                                    <TooltipComp component={
+                                        <InputGroup className="mb-3">
+                                            <FormControl
+                                                placeholder="Search by title"
+                                                aria-label="Recipient's username"
+                                                aria-describedby="basic-addon2"
+                                                onChange={(e) => {
+                                                    console.log(e)
+                                                    requestSearch(e.target.value)
+                                                }}
+                                            />
+                                            <Button variant="outline-secondary" id="button-addon2">
+                                                <BsSearch />
+                                            </Button>
+                                        </InputGroup>
+                                    }
+                                        placement="top"
+                                        tooltip="TYpe here to search by title"
+                                    />
                                 </div>
                                 <div className="">
-                                    <Button variant="outline-secondary" className="" onClick={handleShow}><BiAddToQueue size="24px" /></Button></div>
+                                    <TooltipComp component={
+                                        <Button variant="outline-secondary" className="" onClick={handleShow}><BiAddToQueue size="24px" /></Button>
+                                    }
+                                        tooltip="Add New Story"
+                                        placement="top"
+                                    />
+                                </div>
                             </div>
                             <div>
                                 <Table>

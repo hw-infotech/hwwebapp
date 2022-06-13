@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './blog.css';
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
@@ -24,14 +24,14 @@ const BlogList = () => {
                 </div>
                 <div className="title">
                   <h1>
-                    <a href="">
+                    <a href="#">
                       Impact of digital transformation in financial services
                     </a>
                   </h1>
                 </div>
                 <div className="post_image">
                   <a href="#">
-                    <img src="assets/img/blogBanners/digital-transformation-financial-services.jpg" />
+                    <img alt='' src="assets/img/blogBanners/digital-transformation-financial-services.jpg" />
                   </a>
                 </div>
                 <div className="post_content">
@@ -54,10 +54,10 @@ const BlogList = () => {
                 <div className="comments">
                   <ul>
                     <li>
-                      <i class="bi bi-eye"></i> <a href="">78</a>{" "}
+                      <i class="bi bi-eye"></i> <a href="#">78</a>
                     </li>
                     <li>
-                      <i class="bi bi-hand-thumbs-up"></i> <a href="">0</a>{" "}
+                      <i class="bi bi-hand-thumbs-up"></i> <a href="#">0</a>
                     </li>
                   </ul>
                 </div>

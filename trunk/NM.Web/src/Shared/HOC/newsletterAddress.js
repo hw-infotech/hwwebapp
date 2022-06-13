@@ -12,7 +12,7 @@ const withNewsletterAddress = (Component) => {
     const dispatch = useDispatch()
 
     const handleNewsLetterChange = (e) => {
-      const { name, value } = e.target;
+      const { value } = e.target;
       setNewsLetter(value);
     };
     const notify = () => toast.success('Thanks for subscription', {

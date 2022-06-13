@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
-import NavBar from '../Layout/Navbar';
+import React from 'react';
 import './ServicesMain.css';
-import Footer_new from '../Layout/Footer_new';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+// import 'owl.carousel/dist/assets/owl.carousel.css';
+// import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from "react-router-dom";
-import Portfolio from '../Home/portfolio';
 import { useEffect } from 'react';
 import * as Yup from "yup";
-import { ErrorMessage, Field, Formik } from 'formik';
-import { ToastContainer, toast } from 'react-toastify';
+import {  Field, Formik } from 'formik';
+import { ToastContainer } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { WebuserRegister } from '../../Redux/Action/Actionfunction';
-import Dashboard from '../../layout/dashboard';
 import WebPortfolio from '../Home/webPortfolio';
 import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
 const WebDev = (props) => {
-    const {newsLetter, setNewsLetter} = props;
     const dispatch = useDispatch()
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
     // this changes the scrolling behavior to "smooth"
@@ -48,8 +43,6 @@ const WebDev = (props) => {
             .max(10, "Maximum 10 number's required"),
         message: Yup.string().required("Required").min(15)
     })
-
-    const notify = () => toast.success("Successfully Submitted");//, { theme: "colored" }
 
     const handlFormSubmit = (values, { resetForm }) => {
         values.services = {
@@ -112,7 +105,7 @@ const WebDev = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/brandLogo/angular-icon.svg" />
+                      <img src="assets/img/brandLogo/angular-icon.svg" alt='icon'/>
                     </div>
                     <div className="stackTitle">Angular</div>
                   </div>
@@ -120,7 +113,7 @@ const WebDev = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/brandLogo/nodejs-icon.svg" />
+                      <img src="assets/img/brandLogo/nodejs-icon.svg"  alt='icon'/>
                     </div>
                     <div className="stackTitle">Node.js</div>
                   </div>
@@ -128,7 +121,7 @@ const WebDev = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/brandLogo/react.svg" />
+                      <img src="assets/img/brandLogo/react.svg"  alt='icon'/>
                     </div>
                     <div className="stackTitle">React.js</div>
                   </div>
@@ -136,7 +129,7 @@ const WebDev = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/brandLogo/firebase.svg" />
+                      <img src="assets/img/brandLogo/firebase.svg" alt='icon' />
                     </div>
                     <div className="stackTitle">Firebase</div>
                   </div>
@@ -144,7 +137,7 @@ const WebDev = (props) => {
                 <li>
                   <div className="stackBox">
                     <div className="icon">
-                      <img src="assets/img/brandLogo/vue-js-logo.svg" />
+                      <img src="assets/img/brandLogo/vue-js-logo.svg" alt='icon' />
                     </div>
                     <div className="stackTitle">Vue.js</div>
                   </div>
@@ -195,7 +188,7 @@ const WebDev = (props) => {
                 <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
                   <div className="processSlider">
                     <div className="webIcon">
-                      <img src="assets/img/web-development_services.svg" />
+                      <img src="assets/img/web-development_services.svg" alt='webIcon' />
                     </div>
                     <OwlCarousel
                       className="owl-theme"

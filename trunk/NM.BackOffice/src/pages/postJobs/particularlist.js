@@ -8,6 +8,7 @@ import { Formik } from "formik";
 import { initialValues, validationschemeaa } from "./validation-schema";
 import { Input } from "../../components/commoninputfield";
 import { BsSearch } from "react-icons/bs";
+import TooltipComp from "../../shared/Tooltipomp";
 
 const Particularjob = () => {
 
@@ -62,99 +63,6 @@ const Particularjob = () => {
         <div className="content_center margin_bottom_ ">
             <div className="topGapPad p-3 w-100">
                 <Tabs activeKey={key} id="uncontrolled-tab-example" onSelect={(k) => setKey(k)} className="mb-3">
-                    <Tab eventKey="Aplied" title="Applied" >
-                        <div className="gapbetween ">
-                            <div>
-                                <Form.Select aria-label="Default select example">
-                                    <option disabled selected hidden>Select </option>
-                                    <option value="1">All</option>
-                                    <option value="1">Reject</option>
-                                    <option value="1">Select</option>
-                                </Form.Select>
-                            </div>
-                            <div className="serachbar" >
-                                <InputGroup className="mb-3">
-                                    <FormControl
-                                        placeholder="Serach title and name"
-                                        aria-label="Recipient's username"
-                                        aria-describedby="basic-addon2"
-                                        onChange={(e) => {
-                                            requestSearch(e.target.value)
-                                        }}
-                                    />
-                                    <Button variant="outline-secondary" id="button-addon2">
-                                        <BsSearch />
-                                    </Button>
-                                </InputGroup>
-                            </div>
-                        </div>
-                        <div className="boxshadow">
-                            <Table id="dtBasicExample">
-                                <thead>
-                                    <tr>
-                                        <th>Action</th>
-                                        <th onClick={() => {
-                                            setTitle(!title)
-                                            { title ? sortt() : sortt1() }
-                                        }}>Job title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone Number</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {tableData.map((data, index) =>
-                                        <tr>
-                                            <td class="action "><div class="userDetail ">
-                                                <button type="button" class="btn "
-                                                    id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <span class="actionIcon"> <i
-                                                        class="bi bi-three-dots-vertical"></i> </span>
-                                                </button>
-                                                <ul class="IconDropdown dropdown-menu context-menu1 "
-                                                    aria-labelledby="dropdownIconMenu">
-                                                    <li class="dropdownList">
-                                                        <div class="actionBtns">
-                                                            <span class="editAction" data-bs-toggle="modal"
-                                                                data-bs-target="#editbtn"><i
-                                                                    class="bi bi-pencil-square"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
-                                                                handleShow()
-                                                            }}>View</button>
-                                                        </div>
-                                                    </li>
-
-                                                    <li class="dropdownList">
-                                                        <div class="actionBtns">
-                                                            <span class="deleteAction" data-bs-toggle="modal"
-                                                                data-bs-target="#deletebtn"> <i
-                                                                    class="bi bi-trash3-fill"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div></td>
-
-                                            <td>{data.Jobtitle}</td>
-                                            <td>{data.name}</td>
-                                            <td>{data.email}</td>
-                                            <td>{data.phone}</td>
-                                            <td><Form>
-                                                <Form.Check className="switch_padding1"
-                                                    type="switch"
-                                                    id="custom-switch1"
-                                                    value={data.active}
-                                                    label="" />
-                                            </Form></td>
-
-                                        </tr>)}
-
-                                </tbody>
-                            </Table>
-                        </div>
-                    </Tab>
                     <Tab eventKey="Description" title="Description" onSelect={() => {
                         setKey("Description")
                     }}>
@@ -266,6 +174,110 @@ const Particularjob = () => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </Tab>
+
+                    <Tab eventKey="Aplied" title="Applied" >
+                        <div className="gapbetween ">
+                            <TooltipComp
+                                component={
+                                    <div>
+                                        <Form.Select aria-label="Default select example">
+                                            <option disabled selected hidden>Select </option>
+                                            <option value="1">All</option>
+                                            <option value="1">Reject</option>
+                                            <option value="1">Select</option>
+                                        </Form.Select>
+                                    </div>
+
+                                }
+                                placement="top"
+                                tooltip="Select here to filter by selected/rejected"
+                            />
+                            <div className="serachbar" >
+                                <TooltipComp component={<InputGroup className="mb-3">
+                                    <FormControl
+                                        placeholder="Search title and name"
+                                        aria-label="Recipient's username"
+                                        aria-describedby="basic-addon2"
+                                        onChange={(e) => {
+                                            requestSearch(e.target.value)
+                                        }}
+                                    />
+                                    <Button variant="outline-secondary" id="button-addon2">
+                                        <BsSearch />
+                                    </Button>
+                                </InputGroup>}
+                                    placement="top"
+                                    tooltip="Type here to search by name and title"
+                                />
+                            </div>
+                        </div>
+                        <div className="boxshadow">
+                            <Table id="dtBasicExample">
+                                <thead>
+                                    <tr>
+                                        <th>Action</th>
+                                        <th onClick={() => {
+                                            setTitle(!title)
+                                            { title ? sortt() : sortt1() }
+                                        }}>Job title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone Number</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData.map((data, index) =>
+                                        <tr>
+                                            <td class="action "><div class="userDetail ">
+                                                <button type="button" class="btn "
+                                                    id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span class="actionIcon"> <i
+                                                        class="bi bi-three-dots-vertical"></i> </span>
+                                                </button>
+                                                <ul class="IconDropdown dropdown-menu context-menu1 "
+                                                    aria-labelledby="dropdownIconMenu">
+                                                    <li class="dropdownList">
+                                                        <div class="actionBtns">
+                                                            <span class="editAction" data-bs-toggle="modal"
+                                                                data-bs-target="#editbtn"><i
+                                                                    class="bi bi-pencil-square"></i></span>
+                                                            <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                handleShow()
+                                                            }}>View</button>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="dropdownList">
+                                                        <div class="actionBtns">
+                                                            <span class="deleteAction" data-bs-toggle="modal"
+                                                                data-bs-target="#deletebtn"> <i
+                                                                    class="bi bi-trash3-fill"></i></span>
+                                                            <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div></td>
+
+                                            <td>{data.Jobtitle}</td>
+                                            <td>{data.name}</td>
+                                            <td>{data.email}</td>
+                                            <td>{data.phone}</td>
+                                            <td><Form>
+                                                <Form.Check className="switch_padding1"
+                                                    type="switch"
+                                                    id="custom-switch1"
+                                                    value={data.active}
+                                                    label="" />
+                                            </Form></td>
+
+                                        </tr>)}
+
+                                </tbody>
+                            </Table>
                         </div>
                     </Tab>
                 </Tabs>

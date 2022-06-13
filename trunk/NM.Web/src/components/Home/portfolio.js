@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../Home/portfolio.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -173,7 +173,7 @@ const Portfolio = () => {
                   {slider?.map((data, index) => (
                     <div className="item" key={index}>
                       <div className="projectBox">
-                        <img src={data.image} />
+                        <img src={data.image} alt="projectBox" />
                         <div className="contant">
                           <h3>{data.title}</h3>
                           <p>{data.content}</p>
@@ -199,7 +199,7 @@ const Portfolio = () => {
               {logo?.map((data, index) => (
                 <div className="item" key={index}>
                   <div className="brandlogoBox">
-                    <img src={data.image} />
+                    <img src={data.image} alt="brandlogoBox" />
                   </div>
                 </div>
               ))}
