@@ -12,6 +12,7 @@ import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
+import CustomPagination from "../../shared/pagination";
 
 const SubScriber = () => {
     const [row, setRow] = useState(10)
@@ -243,33 +244,11 @@ const SubScriber = () => {
                                 </div>*/}
                     </Modal.Footer>
                 </Modal>
-                <div className="row padd_bottm">
-                    <div className="col-sm-6 col-lg-6 col-md-6">
-                        <div className="gapPad">
-                            <Form.Select aria-label="row" className="w-25">
-                                <option>Row</option>
-                                <option value="1">10</option>
-                                <option value="2">25</option>
-                                <option value="3">50</option>
-                            </Form.Select>
-                        </div>
-                    </div>
-                    <div className="col-sm-6 col-lg-6 col-md-6 ">
-                        <div className="gapPad pagination_justify_end ">
-                            <Pagination {...paginationConfig}>
-                                <Pagination.First />
-                                <Pagination.Prev />
-                                <Pagination.Item>{1}</Pagination.Item>
-                                <Pagination.Item>{2}</Pagination.Item>
-                                <Pagination.Item>{3}</Pagination.Item>
-                                <Pagination.Item>{4}</Pagination.Item>
-                                <Pagination.Item>{5}</Pagination.Item>
-                                <Pagination.Ellipsis />
-                                <Pagination.Next />
-                                <Pagination.Last />
-                            </Pagination>
-                        </div>
-                    </div>
+                <div>
+                    <CustomPagination
+                        showPerPage={showPerPage}
+                        total={1000}
+                    />
                 </div>
             </div>
         </div>

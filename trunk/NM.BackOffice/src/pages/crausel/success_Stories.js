@@ -127,7 +127,7 @@ const Success_Stories = () => {
                                     <TooltipComp component={
                                         <Button variant="outline-secondary" className="" onClick={handleShow}><BiAddToQueue size="24px" /></Button>
                                     }
-                                        tooltip="Add New"
+                                        tooltip="Add New Story"
                                         placement="top"
                                     />
                                 </div>

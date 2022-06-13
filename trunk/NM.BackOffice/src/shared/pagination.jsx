@@ -4,7 +4,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import ReactPaginate from "react-paginate";
 import TooltipComp from "./Tooltipomp";
 
-const CustomPagination = ({ onPageChange, total }) => {
+const CustomPagination = ({ total }) => {
     const [currentItems, setCurrentItems] = useState(null);
     const [showPerPage, setShowPerPage] = useState(100)
     const [pageCount, setPageCount] = useState(0);
@@ -28,7 +28,7 @@ const CustomPagination = ({ onPageChange, total }) => {
 
     useEffect(() => {
         let value = showPerPage * counter;
-        onPageChange(value - showPerPage, value);
+        // onPageChange(value - showPerPage, value);
     }, [counter]);
 
     const handlePageClick = (event) => {
