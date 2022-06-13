@@ -47,6 +47,6 @@ const routes = [
     // route("/blog-post2", Blogpost2),
     route("/under-mantainence", NotFound),
     route("/gallery", Gallery),
-    route('/blog/:name',BlogListComp)
+    route('/blog/:name', BlogListComp)
 ]
 export default routes
