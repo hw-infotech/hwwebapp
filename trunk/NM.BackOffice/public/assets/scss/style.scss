@@ -260,9 +260,10 @@
 	.gapicontext {
 		width: 100%;
 		gap: 10px;
+		color: #fff;
 
 		&:hover {
-			color: #d1d1bf;
+			color: #ff912a;
 		}
 	}
 }
@@ -419,11 +420,15 @@
 
 	li {
 		border: 1px #a69f9f solid !important;
-		padding: 5px;
-		border-radius: 2px;
+		padding: 5px 10px;
+		border-radius: 0px;
+		font-size: 13px;
 	}
 
 	.previousList {
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+
 		a {
 			// color: #fff;
 			text-decoration: none;
@@ -431,23 +436,27 @@
 	}
 
 	.nextList {
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+
 		a {
 			text-decoration: none;
 		}
 	}
 
 	.disabled {
-		background-color: #bababa;
+		// background-color: #bababa;
 
 		a {
-			color: #fff;
+			color: #000000;
 			cursor: not-allowed;
 		}
 	}
 
 	.active {
 		color: #fff;
-		background: #4a4af1;
+		background: #ff912a;
+		border-color: #ff912a !important
 	}
 }
 
@@ -864,4 +873,27 @@
 //----Userdetails-----//
 .userdetails {
 	padding: 0px 20px;
+}
+
+// --- Scroll bar--- //
+::-webkit-scrollbar {
+	width: 10px;
+	display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #ff912a;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #ff912a;
 }
