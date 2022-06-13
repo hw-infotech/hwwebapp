@@ -12,6 +12,7 @@ import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
+
 const SubScriber = () => {
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -131,7 +132,7 @@ const SubScriber = () => {
                             tooltip={"Filter as Active/inactive"}
                         /></div>
                         <div className="searchbar">
-                            <InputGroup className="mb-3">
+                            <TooltipComp placement={"top"} tooltip="Type here to search by email" component={<InputGroup className="mb-3">
                                 <FormControl
                                     placeholder="Search By Email"
                                     aria-label="Search By Email"
@@ -143,12 +144,12 @@ const SubScriber = () => {
                                 <Button variant="outline-secondary" id="button-addon2">
                                     <BsSearch />
                                 </Button>
-                            </InputGroup>
+                            </InputGroup>} />
                         </div>
                         <div>
-                            <Button variant="outline-secondary" onClick={handleShow}>
+                            <TooltipComp component={<Button variant="outline-secondary" onClick={handleShow}>
                                 <BiAddToQueue size="23px" />
-                            </Button>
+                            </Button>} placement="top" tooltip="Add New" />
                         </div>
                     </div>
                 </div>

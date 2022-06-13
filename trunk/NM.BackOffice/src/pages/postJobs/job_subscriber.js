@@ -110,19 +110,23 @@ const Job_Subscriber = () => {
                         />
                     </div>
                     <div className="searchbar">
-                        <InputGroup className="mb-3">
-                            <FormControl
-                                placeholder="Search By Email"
-                                aria-label="Search By Email"
-                                aria-describedby="basic-addon2"
-                                onChange={(e) => {
-                                    requestSearch(e.target.value)
-                                }}
-                            />
-                            <Button variant="outline-secondary" id="button-addon2">
-                                <BsSearch />
-                            </Button>
-                        </InputGroup>
+                        <TooltipComp
+                            component={<InputGroup className="mb-3">
+                                <FormControl
+                                    placeholder="Search By Email"
+                                    aria-label="Search By Email"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                                <Button variant="outline-secondary" id="button-addon2">
+                                    <BsSearch />
+                                </Button>
+                            </InputGroup>}
+                            placement="top"
+                            tooltip="Type here to search by Email"
+                        />
                     </div>
                 </div>
                 <div className="topGapPad">

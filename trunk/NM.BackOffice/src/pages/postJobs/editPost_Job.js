@@ -12,16 +12,18 @@ import { BsArrowDown } from "react-icons/bs";
 import { MdOutlineNoteAdd } from "react-icons/md";
 import TooltipComp from "../../shared/Tooltipomp";
 import CreatableSelectField from "../../components/selectfield";
+import CustomPagination from "../../shared/pagination";
 ;
 
 const Edit_postJob = (value1) => {
+
 
     const [requirment2, setRequirments] = useState([])
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
     })
-    const [showPerPage, setShowPerPage] = useState(10)
+    const [showPerPage, setShowPerPage] = useState(100)
     const [next, setNext] = useState(0)
     const [start, setStart] = useState(1);
     const [pagination1, setpagination] = useState(
@@ -30,6 +32,13 @@ const Edit_postJob = (value1) => {
             end: showPerPage
         })
     const nevigate = useNavigate();
+    const [pagination2, setpagination2] = useState({
+        start: 0,
+        end: showPerPage
+    });
+    const onPageChange = (start, end) => {
+        setpagination({ start: start, end: end });
+    };
     useEffect(() => {
         //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
@@ -113,7 +122,7 @@ const Edit_postJob = (value1) => {
     const onhandlechange = () => {
 
     }
-   
+
     return (
         <div title="Edit Post Job">
             <h4>List Number of Post Jobs</h4>
@@ -259,33 +268,33 @@ const Edit_postJob = (value1) => {
                                                         </Form.Group>
                                                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                                             <Form.Label>Enter Descritption</Form.Label>
-                                                            <Form.Control as="textarea" style={{height:"119px"}} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                            <Form.Control as="textarea" style={{ height: "119px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
                                                         </Form.Group>
                                                         <Form.Group>
-                                                        <Form.Label>Responsibility</Form.Label>
-                                                           <CreatableSelectField onChange={onhandlechange} />
+                                                            <Form.Label>Responsibility</Form.Label>
+                                                            <CreatableSelectField onChange={onhandlechange} />
 
                                                         </Form.Group>
                                                     </div>
                                                     <div className="add_new_post_padding_between_field w-100" >
                                                         <Form.Group className="">
-                                                        <Form.Label>Requirments</Form.Label>
-                                                        <div style={{marginBottom:"1rem"}}>
-                                                        <CreatableSelectField onChange={onhandlechange} />
-                                                        </div>
+                                                            <Form.Label>Requirments</Form.Label>
+                                                            <div style={{ marginBottom: "1rem" }}>
+                                                                <CreatableSelectField onChange={onhandlechange} />
+                                                            </div>
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Input type='text' placeholder='Industry' className="form-control" name='industry' label={"Industry"} id="name" onChange={onhandlechange} />
                                                         </Form.Group>
                                                         <Form.Group>
 
-                                                        <Form.Label>Benefits</Form.Label>
-                                                        <div style={{marginBottom:"1rem"}}>
-                                                        <CreatableSelectField onChange={onhandlechange}/>
-                                                        </div> 
+                                                            <Form.Label>Benefits</Form.Label>
+                                                            <div style={{ marginBottom: "1rem" }}>
+                                                                <CreatableSelectField onChange={onhandlechange} />
+                                                            </div>
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Input as='select' placeholder="Senority Level" className="form-control" name='seneritylevel'
@@ -321,6 +330,13 @@ const Edit_postJob = (value1) => {
                     </Modal.Footer>
                 </Modal>
 
+                <div>
+                    <CustomPagination
+                        showPerPage={showPerPage}
+                        onPageChange={onPageChange}
+                        total={1000}
+                    />
+                </div>
             </div>
         </div>
     );

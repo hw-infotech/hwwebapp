@@ -4,7 +4,7 @@ import { Field, ErrorMessage } from "formik";
 import { Form, FormLabel } from "react-bootstrap";
 
 export const Input = ({ as, id, label, placeholder, type, name, className
-    , options, onChange, value, controlId
+    , options, onChange, value
 }) => {
     return (
         <div className="input_field">
@@ -21,7 +21,6 @@ export const Input = ({ as, id, label, placeholder, type, name, className
                     name={name}
                     placeholder={placeholder}
                     onChange={onChange}
-                    controlId={controlId}
                 />}
                 {as == "select" && <Field
                     as={as}
@@ -29,6 +28,7 @@ export const Input = ({ as, id, label, placeholder, type, name, className
                     className={className}
                     id={id}
                     onChange={onChange}
+                    value={value}
                     name={name}
                 >
                     {options?.map((_, __) => <option key={__} value={_.value}>{_.value}</option>)}

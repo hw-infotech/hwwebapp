@@ -26,10 +26,8 @@ const routes = (path, element, exact = true) => {
 const route = [
     routes('/', <Home />),
     routes("/addNewPost", <AddNewPost />),
-    routes('/draftpost'),
     routes('/particularjob', <Particularjob />),
     routes('/editPostjob', <Edit_postJob />),
-    routes('./pendingpost'),
     routes('/SuccessStories', <Success_Stories />),
     routes('/Subscriber', <SubScriber />),
     routes('/UNSubscriber', <UNSubScriber />),
@@ -44,6 +42,8 @@ const route = [
     routes('/stacks', <Stacks />),
     routes('/addgalleryevent', <Add_Gallery_Event />),
     routes('/listofblogs', <List_Of_Blogs />),
-    routes('/changegalleryevent', <Change_Gallery_Events />)
+    routes('/changegalleryevent', <Change_Gallery_Events />),
+    // routes('/draftpost'),
+    // routes('./pendingpost'),
 ]
 export default route

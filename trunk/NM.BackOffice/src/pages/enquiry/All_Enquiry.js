@@ -116,7 +116,7 @@ const All_Enquiry = () => {
 
     };
     const display = async (index) => {
-        const result = await confirm('Are you sure to Activate?');
+        const result = await confirm('Are you sure to update status as Rsolved ?');
         if (result) {
             setTableData(oldState => {
                 oldState[index].status = "resolved"
@@ -142,7 +142,7 @@ const All_Enquiry = () => {
                     />
                     </div>
                     <div className="serachbar">
-                        <InputGroup className="mb-3">
+                        <TooltipComp component={<InputGroup className="mb-3">
                             <FormControl
                                 placeholder="Serach Email and Name"
                                 aria-label="Recipient's username"
@@ -154,7 +154,7 @@ const All_Enquiry = () => {
                             <Button variant="outline-secondary" id="button-addon2">
                                 <BsSearch />
                             </Button>
-                        </InputGroup>
+                        </InputGroup>} placement="top" tooltip={"Type here to search by name and email"} />
                     </div>
                 </div>
                 <div className="boxshadow">
