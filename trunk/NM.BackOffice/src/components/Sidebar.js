@@ -87,44 +87,50 @@ const Sidebar = ({ sidebarShow }) => {
                                     <span className=" paddingliitems">Success Stories</span>
                                 </div>
                             </li>
-
+                            <li className="w-100 sidebar_list">
+                                <div className="nav-link  text-color gapicontext" onClick={() => {
+                                    navigtion('/Profile')
+                                }}>
+                                    <span className=" paddingliitems">Profile</span>
+                                </div>
+                            </li>
                         </ul>
                     </li>
                     <li className="sidebar_list">
-                        <a href="#submenu8" data-bs-toggle="collapse" class="nav-link sidebar_focus px-0 align-middle text-color gapicontext">
-                            <i class="fs-4  bi-newspaper"></i> <span class="ms-1 d-none d-sm-inline">Newsletter</span> <span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span></a>
-                        <ul class="collapse nav flex-column " id="submenu8" data-bs-parent="#menu">
-                            <li class="w-100 sidebar_inline">
-                                <div class="nav-link  text-color gapicontext" onClick={() => {
+                        <a href="#submenu8" data-bs-toggle="collapse" className="nav-link sidebar_focus px-0 align-middle text-color gapicontext">
+                            <i class="fs-4  bi-newspaper"></i> <span className="ms-1 d-none d-sm-inline">Newsletter</span> <span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span></a>
+                        <ul className="collapse nav flex-column " id="submenu8" data-bs-parent="#menu">
+                            <li className="w-100 sidebar_inline">
+                                <div className="nav-link  text-color gapicontext" onClick={() => {
                                     navigtion('/Subscriber')
                                 }}>
-                                    <span class="d-none d-sm-inline paddingliitems ">Subscriber's</span>
+                                    <span className="d-none d-sm-inline paddingliitems ">Subscriber's</span>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li className="sidebar_list">
-                        <a href="#submenu9" data-bs-toggle="collapse" class="nav-link sidebar_focus px-0 align-middle text-color gapicontext ">
-                            <i class="fs-4 bi-question-circle"></i> <span class="ms-1 d-none d-sm-inline gapicontext">Enquery</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
-                        <ul class="collapse nav flex-column " id="submenu9" data-bs-parent="#menu">
-                            <li class="w-100 ">
-                                <div class="nav-link  text-color gapicontext" onClick={() => {
+                        <a href="#submenu9" data-bs-toggle="collapse" className="nav-link sidebar_focus px-0 align-middle text-color gapicontext ">
+                            <i className="fs-4 bi-question-circle"></i> <span className="ms-1 d-none d-sm-inline gapicontext">Enquery</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
+                        <ul className="collapse nav flex-column " id="submenu9" data-bs-parent="#menu">
+                            <li className="w-100 ">
+                                <div className="nav-link  text-color gapicontext" onClick={() => {
                                     navigtion('/AllEnquiry')
                                 }}>
-                                    <span class="d-none d-sm-inline paddingliitems ">All Enquries</span>
+                                    <span className="d-none d-sm-inline paddingliitems ">All Enquries</span>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li className="sidebar_list">
-                        <a href="#submenu10" data-bs-toggle="collapse" class="nav-link px-0  sidebar_focus align-middle text-color gapicontext">
-                            <i class="fs-4 bi-building"></i> <span class=" d-none d-sm-inline">Job</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
-                        <ul class="collapse nav flex-column " id="submenu10" data-bs-parent="#menu">
-                            <li class="sidebar_list">
-                                <div class="nav-link  text-color  gapicontext" onClick={() => {
+                        <a href="#submenu10" data-bs-toggle="collapse" className="nav-link px-0  sidebar_focus align-middle text-color gapicontext">
+                            <i className="fs-4 bi-building"></i> <span className=" d-none d-sm-inline">Job</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
+                        <ul className="collapse nav flex-column " id="submenu10" data-bs-parent="#menu">
+                            <li className="sidebar_list">
+                                <div className="nav-link  text-color  gapicontext" onClick={() => {
                                     navigtion('/PostNewJob')
                                 }}>
-                                    <span class="d-none d-sm-inline paddingliitems ">Post New Job</span>
+                                    <span className="d-none d-sm-inline paddingliitems ">Post New Job</span>
                                 </div>
                             </li>
                             {/* <li className="sidebar_list">
@@ -135,17 +141,17 @@ const Sidebar = ({ sidebarShow }) => {
                                 </div>
                             </li> */}
                             <li className="sidebar_list">
-                                <div class="nav-link  text-colo text-color  gapicontext" onClick={() => {
+                                <div className="nav-link  text-colo text-color  gapicontext" onClick={() => {
                                     navigtion('/editPostjob')
                                 }}>
-                                    <span class="d-none d-sm-inline paddingliitems">Job List</span>
+                                    <span className="d-none d-sm-inline paddingliitems">Job List</span>
                                 </div>
                             </li>
                             <li>
-                                <div class="nav-link  text-colo text-color  gapicontext" onClick={() => {
+                                <div className="nav-link  text-colo text-color  gapicontext" onClick={() => {
                                     navigtion('/jobsubscriber')
                                 }}>
-                                    <span class="d-none d-sm-inline paddingliitems">Subscribers</span>
+                                    <span className="d-none d-sm-inline paddingliitems">Subscribers</span>
                                 </div>
                             </li>
                         </ul>

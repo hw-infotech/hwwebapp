@@ -22,9 +22,9 @@ const Edit_postJob = (value1) => {
     const [state, setState] = useState({
         row_value: ""
     })
-    const [showPerPage, setShowPerPage] = useState(100)
-    const [next, setNext] = useState(0)
-    const [start, setStart] = useState(1);
+    const [showPerPage, setShowPerPage] = useState()
+    const [next, setNext] = useState()
+    const [start, setStart] = useState();
     const [pagination1, setpagination] = useState(
         {
             start: start,
@@ -124,7 +124,6 @@ const Edit_postJob = (value1) => {
         // setState({ ...state, [name]: value })
         //console.log(state);
     }
-
     return (
         <div title="Edit Post Job">
             <h4>List Number of Post Jobs</h4>
@@ -194,38 +193,38 @@ const Edit_postJob = (value1) => {
                         <tbody>
                             {tableData.map((data, index) =>
                                 <tr>
-                                    <td class="action "><div class="userDetail ">
+                                    <td className="action "><div className="userDetail ">
                                         <button type="button" class="btn "
                                             id="dropdownIconMenu" data-bs-toggle="dropdown"
                                             aria-expanded="false">
-                                            <span class="actionIcon"> <i
-                                                class="bi bi-three-dots-vertical"></i> </span>
+                                            <span className="actionIcon"> <i
+                                                className="bi bi-three-dots-vertical"></i> </span>
                                         </button>
-                                        <ul class="IconDropdown dropdown-menu context-menu1 "
+                                        <ul className="IconDropdown dropdown-menu context-menu1 "
                                             aria-labelledby="dropdownIconMenu">
-                                            <li class="dropdownList">
-                                                <div class="actionBtns">
-                                                    <span class="editAction" data-bs-toggle="modal"
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="editAction" data-bs-toggle="modal"
                                                         data-bs-target="#editbtn"><i
-                                                            class="bi bi-pencil-square"></i></span>
+                                                            className="bi bi-pencil-square"></i></span>
                                                     <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
                                                         nevigate('/particularjob')
                                                     }}>View</button>
                                                 </div>
                                             </li>
-                                            <li class="dropdownList">
-                                                <div class="actionBtns">
-                                                    <span class="viewIcon" data-bs-toggle="modal"
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="viewIcon" data-bs-toggle="modal"
                                                         data-bs-target="#viewbtn"> <i
-                                                            class="bi bi-eye"></i></span>
+                                                            className="bi bi-eye"></i></span>
                                                     <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow} >Edit</button>
                                                 </div>
                                             </li>
-                                            <li class="dropdownList">
-                                                <div class="actionBtns">
-                                                    <span class="deleteAction" data-bs-toggle="modal"
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="deleteAction" data-bs-toggle="modal"
                                                         data-bs-target="#deletebtn"> <i
-                                                            class="bi bi-trash3-fill"></i></span>
+                                                            className="bi bi-trash3-fill"></i></span>
                                                     <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
                                                 </div>
                                             </li>
@@ -276,7 +275,7 @@ const Edit_postJob = (value1) => {
                                                         </Form.Group>
                                                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                                             <Form.Label>Enter Descritption</Form.Label>
-                                                            <Form.Control as="textarea" style={{ height: "119px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                            <Form.Control as="textarea" style={{ height: "123px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
@@ -332,7 +331,7 @@ const Edit_postJob = (value1) => {
                     </Modal.Body>
                     <Modal.Footer>
                         <div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
-                            <Button type="button" class="gallery_add_button">Submit</Button>
+                            <Button type="button" className="gallery_add_button">Submit</Button>
                         </div>
                     </Modal.Footer>
                 </Modal>
@@ -341,6 +340,7 @@ const Edit_postJob = (value1) => {
                     <CustomPagination
                         showPerPage={showPerPage}
                         onPageChange={onPageChange}
+                        setStart={setpagination}
                         total={1000}
                     />
                 </div>

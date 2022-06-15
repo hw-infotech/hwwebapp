@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
 import TooltipComp from "./Tooltipomp";
 
-const CustomPagination = ({ total }) => {
+const CustomPagination = ({ total, start, setStart }) => {
     const [currentItems, setCurrentItems] = useState(null);
     const [showPerPage, setShowPerPage] = useState(5)
     const [pageCount, setPageCount] = useState(0);
@@ -13,18 +13,19 @@ const CustomPagination = ({ total }) => {
 
     useEffect(() => {
         // Fetch items from another resources.
-        const endOffset = itemOffset + showPerPage;
+        const endOffset = parseInt(itemOffset) + parseInt(showPerPage);
         console.log(`Loading items from ${itemOffset} to ${endOffset}`);
         // setCurrentItems(total.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(total / showPerPage));
+        setStart({
+            start: itemOffset,
+            end: endOffset
+        })
     }, [itemOffset, showPerPage]);
-
-
     const [counter, setCounter] = useState(1);
     const [onChangeButton, setOnChangeButton] = useState(
         Math.ceil(total / showPerPage)
     );
-
     useEffect(() => {
         let value = showPerPage * counter;
         // onPageChange(value - showPerPage, value);

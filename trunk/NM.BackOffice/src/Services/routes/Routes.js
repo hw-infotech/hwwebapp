@@ -19,6 +19,7 @@ import Change_Gallery_Events from '../../pages/crausel/change_gallery_events';
 import List_Of_Blogs from '../../pages/blogs/list_of_blogs'
 import Edit_postJob from '../../pages/postJobs/editPost_Job';
 import Particularjob from '../../pages/postJobs/particularlist';
+import Profile from '../../pages/Profile/Profile';
 
 const routes = (path, element, exact = true) => {
     return { path, element, exact }
@@ -30,7 +31,7 @@ const route = [
     routes('/editPostjob', <Edit_postJob />),
     routes('/SuccessStories', <Success_Stories />),
     routes('/Subscriber', <SubScriber />),
-    //routes('/UNSubscriber', <UNSubScriber />),
+    routes('/Profile', <Profile />),
     routes('/AllEnquiry', <All_Enquiry />),
     //routes('/Resolved', <Resolved />),
     //routes('/PendingEnquiry', <Pending_Enquiry />),

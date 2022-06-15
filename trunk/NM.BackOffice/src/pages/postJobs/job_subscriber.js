@@ -9,14 +9,23 @@ import { BsSearch } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
 import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
+import CustomPagination from "../../shared/pagination";
 const Job_Subscriber = () => {
+    const [showPerPage, setShowPerPage] = useState()
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
     })
+    const [start, setStart] = useState(1);
+    const [pagination1, setpagination] = useState(
+        {
+            start: start,
+            end: showPerPage
+        });
+        
     const selector=useSelector(state=>state)
     console.log(selector)
-    const [showPerPage, setShowPerPage] = useState(10)
+
     // const [next, setNext] = useState(0)
     // const [start, setStart] = useState(1);
     // const [pagination1, setpagination] = useState(
@@ -172,7 +181,12 @@ const Job_Subscriber = () => {
                             </tbody>
                         </table>
                     </div>
-                    <Paginationn />
+                    <CustomPagination
+                    showPerPage={showPerPage}
+                   
+                    setStart={setpagination}
+                    total={1000}
+                />
 
                 </div>
             </div>

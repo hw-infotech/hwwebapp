@@ -12,11 +12,17 @@ import TooltipComp from "../../shared/Tooltipomp";
 import CustomPagination from "../../shared/pagination";
 
 const Particularjob = () => {
-
+    const [showPerPage, setShowPerPage] = useState()
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     let [key, setKey] = useState("Description")
+    const [start, setStart] = useState(1);
+    const [pagination1, setpagination] = useState(
+        {
+            start: start,
+            end: showPerPage
+        });
     const records = [
         {
             Jobtitle: "UI/UX",
@@ -286,6 +292,8 @@ const Particularjob = () => {
                         <div>
                             <CustomPagination
                                 total={100}
+                                start={pagination1}
+                                setStart={setpagination}
                             />
                         </div>
                     </Tab>

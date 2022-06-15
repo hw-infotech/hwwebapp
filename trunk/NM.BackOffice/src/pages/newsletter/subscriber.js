@@ -23,7 +23,7 @@ const SubScriber = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [showPerPage, setShowPerPage] = useState(10)
+    const [showPerPage, setShowPerPage] = useState()
     const [next, setNext] = useState(0)
     const [start, setStart] = useState(1);
     const [pagination1, setpagination] = useState(
@@ -37,7 +37,6 @@ const SubScriber = () => {
         { name: "Subscriber/Unsubscriber", route: "/" }
     ]
     const selector = useSelector(state => state),
-
         dispatch = useDispatch(),
         [subscribers, setSubscribers] = useState([])
     useEffect(() => {
@@ -72,13 +71,14 @@ const SubScriber = () => {
         {
             Email: "ggoldygoldy33@gmail.com",
             date: "2-03-2020",
-            comment: "Reason Behind"
+            comment: "Reason Behind",
+            active: ""
 
         },
         {
             Email: "agoldygoldy33@gmail.com",
             date: "26-08-2022",
-            comment: "Reason Behind"
+            comment: "Reason Behind",
         },
         {
 
@@ -89,7 +89,6 @@ const SubScriber = () => {
     ]
 
     const [tableData, setTableData] = useState(subscribers)
-
     function sortt() {
         const response = subscribers.sort((a, b) => (a.email.toLowerCase() > b.email.toLowerCase()) ? 1 : ((b.email.toLowerCase() > a.email.toLowerCase()) ? -1 : 0));
         console.log(response)
@@ -164,7 +163,7 @@ const SubScriber = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {subscribers?.slice(0, 10).map((data, index) =>
+                                {subscribers?.slice(pagination1.start, pagination1.end).map((data, index) =>
                                     <tr>
                                         <td>
                                             {data.email}
@@ -192,7 +191,6 @@ const SubScriber = () => {
                                         </td>
                                     </tr>
                                 )}
-
                                 {/*subscribers?.slice(pagination1?.start, pagination1?.end).map((data, index) => (<tr>
                                     <td>{data?.email}</td>
                                     <td>{data?.createdOn}</td>
@@ -240,7 +238,9 @@ const SubScriber = () => {
                 <div>
                     <CustomPagination
                         // showPerPage={showPerPage}
-                        total={1000}
+                        start={pagination1}
+                        setStart={setpagination}
+                        total={subscribers?.length}
                     />
                 </div>
             </div>

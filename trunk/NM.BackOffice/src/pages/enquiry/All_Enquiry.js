@@ -13,6 +13,7 @@ import TooltipComp from "../../shared/Tooltipomp";
 // import { alert } from 'react-bootstrap-confirmation';
 import { confirm } from 'react-bootstrap-confirmation';
 import Paginationn from "../../components/pagination";
+import CustomPagination from "../../shared/pagination";
 
 const All_Enquiry = () => {
 
@@ -219,7 +220,12 @@ const All_Enquiry = () => {
                         </tbody>
                     </Table>
                 </div>
-                <Paginationn/>
+                <CustomPagination
+                    showPerPage={showPerPage}
+                   
+                    setStart={setpagination}
+                    total={1000}
+                />
                 {/*<Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>
                         <Modal.Title>Enter the Remarks</Modal.Title>

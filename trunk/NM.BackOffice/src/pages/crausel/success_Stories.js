@@ -43,6 +43,13 @@ const Success_Stories = () => {
 
     const [edit, setEdit] = useState();
     const [show, setShow] = useState(false);
+    const [showPerPage, setShowPerPage] = useState()
+    const [start, setStart] = useState();
+    const [pagination1, setpagination] = useState(
+        {
+            start: start,
+            end: showPerPage
+        });
     const handleClose = () => {
         setShow(false)
         setEdit(false)
@@ -196,12 +203,9 @@ const Success_Stories = () => {
                                                                 return [..._]
                                                             })
                                                         }}
-
                                                     />
                                                 </Form></td>
-
                                             </tr>)}
-
                                     </tbody>
                                 </Table>
                             </div>
@@ -209,6 +213,8 @@ const Success_Stories = () => {
                     </div>
                     <div>
                         <CustomPagination
+                            start={pagination1}
+                            setStart={setpagination}
                             total={100}
                         />
                     </div>

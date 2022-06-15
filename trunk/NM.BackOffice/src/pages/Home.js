@@ -9,29 +9,17 @@ const Home = () => {
     const data = useMemo(
         () => [
             {
-                label: 'Series 1',
+              
                 data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
             },
             {
-                label: 'Series 2',
+               
                 data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
             }
         ],
         []
     )
-    const data1 = useMemo(
-        () => [
-            {
-                label: 'Series 1',
-                data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
-            },
-            {
-                label: 'Series 2',
-                data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
-            }
-        ],
-        []
-    )
+  
     const axes = useMemo(
         () => [
             { primary: true, type: 'linear', position: 'bottom' },
@@ -39,13 +27,20 @@ const Home = () => {
         ],
         []
     )
-    const axes1 = useMemo(
-        () => [
-            { primary: true, type: 'bar', position: 'bottom' },
-            { type: 'bar', position: 'left' }
-        ],
+    const series = React.useMemo(
+        () => ({
+          type: 'bar',
+          showPoints: false
+        }),
         []
-    )
+      )
+      const series1 = React.useMemo(
+        () => ({
+          type: 'area',
+          showPoints: false
+        }),
+        []
+      )
     useEffect(() => {
         // graphRef.current.style.background="yellow"
     }, [])
@@ -53,7 +48,7 @@ const Home = () => {
     return (<div>
         <div style={{ marginTop: "50px" }}>
             <Row>
-                <Col md={3} sm={12} lg={3}>
+                <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
                         <div className="card-header1">
                             <div className="icon-card1" style={{ background: "#42424a" }}>
@@ -67,7 +62,7 @@ const Home = () => {
                         <div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>
                     </div>
                 </Col>
-                <Col md={3} sm={12} lg={3}>
+                <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
                         <div className="card-header1">
                             <div className="icon-card1" style={{ background: "#d81b60" }}>
@@ -81,7 +76,7 @@ const Home = () => {
                         <div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>
                     </div>
                 </Col>
-                <Col md={3} sm={12} lg={3}>
+                <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
                         <div className="card-header1">
                             <div className="icon-card1" style={{ background: "#66bb6a" }}>
@@ -95,7 +90,7 @@ const Home = () => {
                         <div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>
                     </div>
                 </Col>
-                <Col md={3} sm={12} lg={3}>
+                <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
                         <div className="card-header1">
                             <div className="icon-card1" style={{ background: "#49a3f1" }}>
@@ -112,18 +107,16 @@ const Home = () => {
             </Row>
             <div style={{ marginTop: "70px" }}>
                 <Row>
-                    <Col md={4} sm={12}>
+                    <Col md={6} sm={12} lg={4} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader">
-                                <div className="chart-card" style={{ background: "#ec407a" }}>
+                            <div className="card-graphheader" style={{ background: "#ec407a" }}>
+                          
+                                <div className="chart-card" >
                                     <Chart data={data} axes={axes}
-                                        //  options={{
-                                        //     legend:{
-                                        //         background:"green"
-                                        //     }
-                                        // }} 
-                                        width="200px"
-                                    />
+                                    series={series}
+                                    
+                                
+                                    /> 
                                 </div>
                             </div>
                             <div className="chart-footer"><h5 className="heading-chartstyle">Website Views</h5>
@@ -134,11 +127,11 @@ const Home = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={4} sm={12}>
+                    <Col md={6} sm={12} lg={4} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader">
-                                <div className="chart-card" style={{ background: "#66bb6a" }}>
-                                    <Chart data={data} axes={axes} style={{ width: "100px" }} />
+                            <div className="card-graphheader"  style={{ background: "#66bb6a" }}>
+                                <div className="chart-card">
+                                    <Chart data={data} axes={axes} series={series1} />
                                 </div>
                             </div>
                             <div className="chart-footer"><h5 className="heading-chartstyle">Website Views</h5>
@@ -149,10 +142,10 @@ const Home = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={4} sm={12}>
+                    <Col md={6} sm={12} lg={4} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader">
-                                <div className="chart-card" style={{ background: "#42424a" }}>
+                            <div className="card-graphheader" style={{ background: "#42424a" }}>
+                                <div className="chart-card" >
                                     <Chart data={data} axes={axes} />
                                 </div>
                             </div>

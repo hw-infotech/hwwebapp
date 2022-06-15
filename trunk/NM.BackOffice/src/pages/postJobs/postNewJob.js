@@ -71,7 +71,7 @@ const Post_New_Job = () => {
                                                     </Form.Group>
                                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                                         <Form.Label>Enter Descritption</Form.Label>
-                                                        <Form.Control as="textarea" style={{ height: "119px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                        <Form.Control as="textarea" style={{ height: "120px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
@@ -80,7 +80,7 @@ const Post_New_Job = () => {
                                                         <Form.Label>Requirement</Form.Label>
                                                         <CreatableSelectField
                                                             name="requirment"
-                                                            placeholder="Type requirenments and press tab button..."
+                                                            placeholder="Type and press tab button..."
                                                             formState={state}
                                                             setFormState={setState}
                                                         />
@@ -93,7 +93,7 @@ const Post_New_Job = () => {
                                                             <Form.Label>Responsibility</Form.Label>
                                                             <CreatableSelectField
                                                                 name="responsibility"
-                                                                placeholder="Type responsibility and press tab button..."
+                                                                placeholder="Type and press tab button..."
                                                                 formState={state}
                                                                 setFormState={setState}
                                                             />
@@ -109,13 +109,14 @@ const Post_New_Job = () => {
                                                                 name="benefits"
                                                                 formState={state}
                                                                 setFormState={setState}
+                                                                placeholder="Type and press tab button"
                                                             />
                                                         </div>
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input as='select' placeholder="Senority Level" className="form-control" name='seneritylevel'
                                                             onChange={onhandlechange} label={"Senority Level"} id="seneritylevel" options={[
-                                                                { value: "", label: "" },
+                                                                { value: "...", label: "..." },
                                                                 { value: "Senior", label: "Senior" },
                                                                 { value: "Junior", label: "Junior" },
 
@@ -123,7 +124,7 @@ const Post_New_Job = () => {
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input as='select' className="form-control" onChange={onhandlechange} placeholder="Employement type" name='employement' label={"Employement type"} id="name" options={[
-                                                            { value: "...." },
+                                                            { value: "...",label:"..." },
                                                             { value: "Full time" },
                                                             { value: "Part time" },
 
@@ -278,7 +279,7 @@ const Post_New_Job = () => {
                                                     </Form.Group>
                                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                                         <Form.Label>Enter Descritption</Form.Label>
-                                                        <Form.Control as="textarea" rows={3} />
+                                                        <Form.Control as="textarea" style={{ height: "122px" }}  />
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input type='text' className="form-control" placeholder='Job Function' name='jobfunction' label={"Job Function"} id="name" />

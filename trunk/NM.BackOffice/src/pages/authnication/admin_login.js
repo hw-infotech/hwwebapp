@@ -6,7 +6,6 @@ import * as Yup from "yup";
 
 const Admin_Login = () => {
     const history = useNavigate()
-
     return (
         <div className="centeritmes">
             <div className="sign-page-box">
