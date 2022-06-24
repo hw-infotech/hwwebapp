@@ -9,14 +9,19 @@ import { initialValues, validationschemeaa } from "./validation-schema";
 import { useNavigate } from "react-router";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { MdOutlineNoteAdd } from "react-icons/md";
+import { IoAddOutline } from "react-icons/";
 import TooltipComp from "../../shared/Tooltipomp";
 import CreatableSelectField from "../../components/selectfield";
 import CustomPagination from "../../shared/pagination";
+import { FaFilter } from "react-icons/fa";
+import { VscFilterFilled } from "react-icons/vsc";
+import { MdAdd } from "react-icons/md";
 ;
 
 const Edit_postJob = (value1) => {
-
+    const [rowtext, setRowtext] = useState()
+    const [showalert, setShowalert] = useState(false)
+    const [disable, setSdisabled] = useState(true)
     const [requirment2, setRequirments] = useState([])
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -77,27 +82,31 @@ const Edit_postJob = (value1) => {
     const records = [
         {
             Jobtitle: "UI/UX",
-            description: "Great Opportunity",
-            functions: "Handle events",
+            description: "We are looking for an experienced Strategy Manager.",
+            functions: "Supervise and manage department team ",
             industry: "Great",
-            level: "Higher",
-            type: "Full time"
+            level: "Junior",
+            type: "Part time",
+            active: "pending"
+
         },
         {
             Jobtitle: "Project Manager",
-            description: "Great Opportunity",
-            functions: "Handle events",
+            description: "Develop methods for motivating and inspiring stakeholders.",
+            functions: "Provide support and training to team members",
             industry: "Great",
-            level: "Higher",
-            type: "Full time"
+            level: "Senior",
+            type: "Full time",
+            active: "pending"
         },
         {
-            Jobtitle: "gtto",
-            description: "Great Opportunity",
-            functions: "Handle events",
+            Jobtitle: "Project Manager",
+            description: "Develop methods for motivating and inspiring stakeholders.",
+            functions: "Report to directors and executive staff",
             industry: "Great",
-            level: "Higher",
-            type: "Full time"
+            level: "Senior",
+            type: "Full time",
+            active: "pending"
         }
     ]
     const [tableData, setTableData] = useState(records)
@@ -114,7 +123,7 @@ const Edit_postJob = (value1) => {
     const [title, setTitle] = useState(false)
     const requestSearch = (searchedVal) => {
         const filteredRows = records.filter((row) => {
-            return row.title.toLowerCase().includes(searchedVal.toLowerCase());
+            return row.Jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
         });
         setTableData(filteredRows)
 
@@ -124,70 +133,114 @@ const Edit_postJob = (value1) => {
         // setState({ ...state, [name]: value })
         //console.log(state);
     }
+    const display = () => {
+        console.log(deleteObj);
+        setShowalert(true)
+        //const result = await confirm(rowtext.text);
+        // console.log(rowText);
+        if (deleteObj.rowStatus) {
+            setTableData(oldState => {
+                oldState[deleteObj.index].active = "resolved"
+                return [...oldState]
+            })
+        }
+        if (!deleteObj.rowStatus) {
+            setTableData(oldState => {
+                oldState[deleteObj.index].active = "pending"
+                return [...oldState]
+            })
+        }
+    };
+    const [deleteObj, setDeleteObj] = useState({
+        index: 0,
+        rowStatus: false
+    })
     return (
         <div title="Edit Post Job">
-            <h4>List Number of Post Jobs</h4>
             {<BasicBreadcrumbs route={route} />}
+            <div className="filter_header">
+                <div className="filter-title"><h4>Jobs</h4></div>
+                <div className="filter_container">
+                    <div className="">
+                        <Button className="fitlter-sotry" id="button-addon2" onClick={() => setSdisabled(p => !p)}>
+                            <VscFilterFilled size={17} />
+                        </Button>
+                    </div>
+                    <div>
+                        <Button variant="" className="popoup-btn" onClick={() => {
+                            nevigate("/postnewjob")
+                        }}>New Job</Button>
+                    </div>
+                </div>
+            </div>
+
             <div className="topGapPad margin_bottom_">
                 <div className="gapbetween ">
                     <div>
-                        <TooltipComp component={
-                            <Form.Select aria-label="Default select example">
-                                <option disabled>Select </option>
+                        {
+                            <Form.Select aria-label="Default select example" onChange={requestSearch} hidden={disable}>
+                                <option disabled hidden selected>Status  </option>
                                 <option value="1">All</option>
-                                <option value="1">Active all</option>
-                                <option value="1">Deactive all</option>
+                                <option value="1">Subscribe</option>
+                                <option value="1">Unsubscribe</option>
                             </Form.Select>}
-                            placement="top"
-                            tooltip={"Filteration Active/Deactive"}
-                        />
                     </div>
                     <div className="serachbar" >
-                        <TooltipComp
-                            component={<InputGroup className="mb-3">
-                                <FormControl
-                                    placeholder="Search title and name"
-                                    aria-label="Recipient's username"
-                                    aria-describedby="basic-addon2"
-                                    onChange={(e) => {
-                                        requestSearch(e.target.value)
-                                    }}
-                                />
-                                <Button variant="outline-secondary" id="button-addon2">
-                                    <BsSearch />
-                                </Button>
-                            </InputGroup>}
-                            tooltip="Type here to search by name and title"
-                            placement="top"
-                        />
+                        <InputGroup className="mb-3">
+                            <FormControl
+                                hidden={disable}
+                                placeholder="Search by title "
+                                aria-label="Recipient's username"
+                                aria-describedby="basic-addon2"
+                                onChange={(e) => {
+                                    requestSearch(e.target.value)
+                                }}
+                            />
+                            {/*<Button variant="outline-secondary" id="button-addon2">
+                                                <BsSearch />
+                                            </Button>*/}
+                        </InputGroup>
                     </div>
-                    <div>
-                        <TooltipComp
-                            component={<Button variant="secondary" onClick={() => {
-                                nevigate("/postnewjob")
-                            }}><MdOutlineNoteAdd size={24} /></Button>}
-                            placement="top"
-                            tooltip="Add new job "
-                        />
-                    </div>
+
                 </div>
                 <div className="boxshadow">
                     {/*<h4>List Number of Job Posts</h4>*/}
-                    <Table id="dtBasicExample">
+                    <Modal show={showalert} onHide={handleClose}   backdrop="static"
+                    keyboard={false}>
+                        <Modal.Header >
+                            <Modal.Title>Alert</Modal.Title>
+                        </Modal.Header>
+
+                        <Modal.Body>
+                            <p>{rowtext?.text}</p>
+                        </Modal.Body>
+
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={() => {
+
+                                setShowalert(false)
+                            }} >Cancel</Button>
+                            <Button variant="primary" onClick={() => {
+                                display()
+                                setShowalert(false)
+                            }}>Confirm</Button>
+                        </Modal.Footer>
+                    </Modal>
+                    <Table striped bordered hover responsive>
                         <thead>
                             <tr>
-                                <th>Action</th>
-                                <th onClick={() => {
+                                <th className="action_colwidth">Action</th>
+                                <th className="action_titlewidth" onClick={() => {
                                     setTitle(!title)
                                     { title ? sortt() : sortt1() }
-                                }}>Job title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                <th>Job Description</th>
-                                <th>Job Function</th>
-                                <th>Industries</th>
-                                <th>Senority Level</th>
-                                <th>Employement Type</th>
-                                <th>Status</th>
-                                <th>Total Candidates</th>
+                                }}> Title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                <th>Description</th>
+                                <th>Function</th>
+                                <th>Industry</th>
+                                <th>Level</th>
+                                <th>Employement</th>
+                                <th className="action_colwidth">Status</th>
+                                <th className="action_colwidth">Total Candidates</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -200,10 +253,10 @@ const Edit_postJob = (value1) => {
                                             <span className="actionIcon"> <i
                                                 className="bi bi-three-dots-vertical"></i> </span>
                                         </button>
-                                        <ul className="IconDropdown dropdown-menu context-menu1 "
+                                        <ul className="IconDropdown dropdown-menu context-menu11"
                                             aria-labelledby="dropdownIconMenu">
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns  context-menu1">
                                                     <span className="editAction" data-bs-toggle="modal"
                                                         data-bs-target="#editbtn"><i
                                                             className="bi bi-pencil-square"></i></span>
@@ -213,7 +266,7 @@ const Edit_postJob = (value1) => {
                                                 </div>
                                             </li>
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns  context-menu1">
                                                     <span className="viewIcon" data-bs-toggle="modal"
                                                         data-bs-target="#viewbtn"> <i
                                                             className="bi bi-eye"></i></span>
@@ -221,7 +274,7 @@ const Edit_postJob = (value1) => {
                                                 </div>
                                             </li>
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns  context-menu1">
                                                     <span className="deleteAction" data-bs-toggle="modal"
                                                         data-bs-target="#deletebtn"> <i
                                                             className="bi bi-trash3-fill"></i></span>
@@ -231,18 +284,43 @@ const Edit_postJob = (value1) => {
                                         </ul>
                                     </div></td>
                                     <td>{data.Jobtitle}</td>
-                                    <td>{data.description}</td>
+                                    <td className="truncate">{data.description}</td>
                                     <td>{data.functions}</td>
                                     <td>{data.industry}</td>
                                     <td>{data.level}</td>
                                     <td>{data.type}</td>
-                                    <td><Form>
-                                        <Form.Check className="switch_padding1"
-                                            type="switch"
-                                            id="custom-switch1"
-                                            value={data.active}
-                                            label="" />
-                                    </Form></td>
+                                    <td>
+                                        <Form>
+                                            <Form.Check
+                                                type="switch"
+                                                id="custom-switch1"
+                                                checked={data.active === "resolved" ? true : false}
+                                                label=""
+                                                onChange={(e) => {
+                                                    setShowalert(true)
+                                                    setRowtext(e.target.checked ? ({
+                                                        id: 1,
+                                                        text: "Are you sure to update status as Rsolved ?",
+                                                    }) : ({
+                                                        id: 0,
+                                                        text: "Are you sure to update status as Pending ?",
+                                                    }))
+                                                    if (data.active === "resolved") {
+                                                        setDeleteObj({
+                                                            index,
+                                                            rowStatus: e.target.checked
+                                                        })
+                                                    }
+                                                    else {
+                                                        setDeleteObj({
+                                                            index,
+                                                            rowStatus: e.target.checked
+                                                        })
+                                                    }
+                                                }}
+                                            />
+                                        </Form>
+                                    </td>
                                     <td>30</td>
                                 </tr>)}
                         </tbody>

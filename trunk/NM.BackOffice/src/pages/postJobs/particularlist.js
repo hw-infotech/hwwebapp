@@ -189,23 +189,20 @@ const Particularjob = () => {
 
                     <Tab eventKey="Aplied" title="Applied" >
                         <div className="gapbetween ">
-                            <TooltipComp
-                                component={
+                           
                                     <div>
                                         <Form.Select aria-label="Default select example">
-                                            <option disabled selected hidden>Select </option>
+                                            <option disabled selected hidden>Status</option>
                                             <option value="1">All</option>
                                             <option value="1">Reject</option>
                                             <option value="1">Select</option>
                                         </Form.Select>
                                     </div>
 
-                                }
-                                placement="top"
-                                tooltip="Select here to filter by selected/rejected"
-                            />
+                                
+                               
                             <div className="serachbar" >
-                                <TooltipComp component={<InputGroup className="mb-3">
+                                <InputGroup className="mb-3">
                                     <FormControl
                                         placeholder="Search title and name"
                                         aria-label="Recipient's username"
@@ -214,17 +211,15 @@ const Particularjob = () => {
                                             requestSearch(e.target.value)
                                         }}
                                     />
-                                    <Button variant="outline-secondary" id="button-addon2">
-                                        <BsSearch />
-                                    </Button>
-                                </InputGroup>}
-                                    placement="top"
-                                    tooltip="Type here to search by name and title"
-                                />
+                                    {/*<Button variant="outline-secondary" id="button-addon2">
+                                    <BsSearch />
+                                    </Button>*/}
+                                </InputGroup>
+                              
                             </div>
                         </div>
                         <div className="boxshadow">
-                            <Table id="dtBasicExample">
+                            <Table striped bordered hover >
                                 <thead>
                                     <tr>
                                         <th>Action</th>
@@ -235,7 +230,7 @@ const Particularjob = () => {
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone Number</th>
-                                        <th>Status</th>
+                                        <th className="action-col">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
