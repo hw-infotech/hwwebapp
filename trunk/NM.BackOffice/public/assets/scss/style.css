@@ -8,20 +8,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
 }
 
 .dashboard .mainDashboard {
-  width: calc(100% - 250px);
-  width: 100%;
+  width: calc(100% - 0px);
   position: relative;
 }
 
 .content-Wrapper {
   width: 100%;
-  padding: 20px;
-  height: calc(100vh - 130px);
+  padding: 5px 20px;
+  height: calc(100vh - 70px);
   overflow: auto;
-  margin-bottom: 20px;
 }
 
 .font_size {
@@ -296,11 +295,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 40px;
-  position: fixed;
-  padding: 0px 30px;
-  width: calc(100% - 250px);
-  background-color: #ffffff !important;
+  height: 60px;
+  margin-top: 15px;
+  width: calc(100% - 0px);
 }
 
 .mainfooter .footerright {
@@ -787,7 +784,6 @@ body {
 
 .main-wrap-box {
   margin: 0px 30px;
-  margin-top: 50px;
 }
 
 .main-wrap-box .wrap-fields {
@@ -799,7 +795,7 @@ body {
 }
 
 .main-wrap-box .main-job-div {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .main-wrap-box .main-job-div .post-btn {
@@ -1372,5 +1368,30 @@ body {
           box-shadow: none !important;
   outline: none !important;
   font-size: 13px !important;
+}
+
+.btn-primary {
+  color: #ffffff !important;
+  border: 1px solid #eb7823 !important;
+  background: #eb7823 !important;
+  margin-left: 10px;
+}
+
+.btn-primary:hover {
+  background: #ff6b01 !important;
+  border: 1px solid #ff6b01 !important;
+  color: #ffffff !important;
+}
+
+.btn-secondary {
+  color: #ffffff !important;
+  background-color: #bcbbb5 !important;
+  border-color: #bcbbb5 !important;
+}
+
+.btn-secondary:hover {
+  background-color: #ff6b01 !important;
+  border-color: #ff6b01 !important;
+  color: #ffffff !important;
 }
 /*# sourceMappingURL=style.css.map */

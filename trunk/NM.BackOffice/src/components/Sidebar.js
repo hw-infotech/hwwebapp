@@ -77,12 +77,18 @@ const Sidebar = ({ sidebarShow }) => {
                         </ul>
                     </li> */}
                     <li className="sidebar_list">
-                        <a href="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 sidebar_focus align-middle text-color gapicontext">
-                            <i className="fs-4 bi-bootstrap "></i> <span className="ms-1 d-none d-sm-inline">Crausel's</span><span className="dropdownarrowicon "><i className="fs-6 bi-caret-down "></i></span></a>
+                        <a href="#submenu2" data-bs-toggle="collapse" 
+                        className="nav-link px-0 sidebar_focus align-middle text-color gapicontext">
+                            <i className="fs-4 bi-bootstrap "></i>
+                            <span className="ms-1 d-none d-sm-inline">Crausel's</span>
+                            <span className="dropdownarrowicon ">
+                                <i className="fs-6 bi-caret-down "></i>
+                            </span>
+                        </a>
                         <ul className="collapse nav flex-column " id="submenu2" data-bs-parent="#menu">
                             <li className="w-100 sidebar_list">
                                 <div className="nav-link  text-color gapicontext" onClick={() => {
-                                    navigtion('/SuccessStories')
+                                    navigtion('/success-stories')
                                 }}>
                                     <span className=" paddingliitems">Success Stories</span>
                                 </div>
@@ -96,7 +102,7 @@ const Sidebar = ({ sidebarShow }) => {
                         <ul className="collapse nav flex-column " id="submenu8" data-bs-parent="#menu">
                             <li className="w-100 sidebar_inline">
                                 <div className="nav-link  text-color gapicontext" onClick={() => {
-                                    navigtion('/Subscriber')
+                                    navigtion('/newsletter-subscribers')
                                 }}>
                                     <span className="d-none d-sm-inline paddingliitems ">Subscribe/Unsubscribe</span>
                                 </div>
@@ -136,14 +142,14 @@ const Sidebar = ({ sidebarShow }) => {
                             </li> */}
                             <li className="sidebar_list">
                                 <div className="nav-link  text-colo text-color  gapicontext" onClick={() => {
-                                    navigtion('/editPostjob')
+                                    navigtion('/all-jobs')
                                 }}>
                                     <span className="d-none d-sm-inline paddingliitems">Job List</span>
                                 </div>
                             </li>
                             <li>
                                 <div className="nav-link  text-colo text-color  gapicontext" onClick={() => {
-                                    navigtion('/jobsubscriber')
+                                    navigtion('/job-subscriber')
                                 }}>
                                     <span className="d-none d-sm-inline paddingliitems">Subscribe/Unsubscribe</span>
                                 </div>
@@ -154,7 +160,6 @@ const Sidebar = ({ sidebarShow }) => {
                 <hr />
             </div>
         </div>
-
     );
 }
 export default Sidebar

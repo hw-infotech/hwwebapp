@@ -44,7 +44,7 @@ const Edit_postJob = (value1) => {
         setpagination({ start: start, end: end });
     };
     useEffect(() => {
-        //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+        //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
     }, [pagination1])
     const Chnage = (e) => {

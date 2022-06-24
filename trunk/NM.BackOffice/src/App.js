@@ -31,8 +31,8 @@ function App() {
                 ))}
               </Routes>
 
+              <Footer sidebarShow={sidebarShow} />
             </div>
-            <Footer sidebarShow={sidebarShow} />
           </div>
         </div>
 

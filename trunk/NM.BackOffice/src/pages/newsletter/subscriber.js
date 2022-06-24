@@ -110,7 +110,6 @@ const SubScriber = () => {
             return row.email.toLowerCase().includes(searchedVal.toLowerCase())
         });
         setSubscribers(filteredRows)
-
     };
     const [title, setTitle] = useState(false)
 

@@ -22,7 +22,7 @@ const Applied_Job = () => {
             end: showPerPage
         })
     useEffect(() => {
-        //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+        //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
     }, [pagination1])
     const Chnage = (e) => {
@@ -113,11 +113,11 @@ const Applied_Job = () => {
                         component={<Form.Select aria-label="row" className="wreap-content">
                             <option disabled hidden selected>Select</option>
                             <option value="1">All</option>
-                            <option value="2">Subscriber</option>
-                            <option value="3">UnSubscriber</option>
+                            <option value="2">newsletter-subscribers</option>
+                            <option value="3">Unnewsletter-subscribers</option>
                         </Form.Select>}
                         placement="top"
-                        tooltip={"Subscriber all/Unsubscriber all"}
+                        tooltip={"newsletter-subscribers all/Unsubscriber all"}
                     />
                 </div>
                 <div className="searchbar">

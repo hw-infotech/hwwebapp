@@ -11,7 +11,7 @@ import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
-const Job_Subscriber = () => {
+const Job_newsletter = () => {
     const [disable, setSdisabled] = useState(true)
     const [showPerPage, setShowPerPage] = useState()
     const [row, setRow] = useState(10)
@@ -36,7 +36,7 @@ const Job_Subscriber = () => {
     //         end: showPerPage
     //     })
     useEffect(() => {
-        //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+        //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         //setpagination({ start: start, end: showPerPage })
     }, [])
     // const Chnage = (e) => {
@@ -64,7 +64,7 @@ const Job_Subscriber = () => {
     const route = [
         { name: "Home", route: "/" },
         { name: "Job", route: "/" },
-        { name: "Job Subscriber/Unsubscriber", route: "/" },
+        { name: "Job newsletter-subscribers/Unsubscriber", route: "/" },
     ]
     const records = [
         {
@@ -111,7 +111,7 @@ const Job_Subscriber = () => {
             <div className="margin_bottom_">
                 <BasicBreadcrumbs route={route} />
                 <div className="filter_header">
-                    <div className="filter-title"><h4>Subscriber/Unsubscriber</h4></div>
+                    <div className="filter-title"><h4>newsletter-subscribers/Unsubscriber</h4></div>
                     <div className="filter_container">
                         <div className="">
                             <Button className="fitlter-sotry" id="button-addon2" onClick={()=>{
@@ -128,8 +128,8 @@ const Job_Subscriber = () => {
                         <Form.Select aria-label="row" className="wreap-content" hidden={disable}>
                             <option disabled hidden selected>Status</option>
                             <option value="1">All</option>
-                            <option value="2">Subscriber</option>
-                            <option value="3">UnSubscriber</option>
+                            <option value="2">newsletter-subscribers</option>
+                            <option value="3">Unnewsletter-subscribers</option>
                         </Form.Select>
 
                     </div>
@@ -203,4 +203,4 @@ const Job_Subscriber = () => {
         </div>
     );
 }
-export default Job_Subscriber
+export default Job_newsletter

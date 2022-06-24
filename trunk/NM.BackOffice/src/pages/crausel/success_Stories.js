@@ -13,11 +13,12 @@ import { FaFilter } from "react-icons/fa";
 import TooltipComp from "../../shared/Tooltipomp";
 import CustomPagination from "../../shared/pagination";
 import { confirm } from "react-bootstrap-confirmation";
+import { subString } from "../../Services/commonFunctions";
 
 const route = [
     { name: "Home", route: "/" },
     { name: "Carousel", route: "/" },
-    { name: "Success-Stories", route: "/" },
+    { name: "success-stories", route: "/" },
 
 ]
 
@@ -64,13 +65,6 @@ const Success_Stories = () => {
             return row.title.toLowerCase().includes(searchedVal.toLowerCase());
         });
         setTableData(filteredRows)
-        // if (searchedVal.length < 1) {
-        //     setTableData(tableData)
-        //     console.log("it is for if condition",searchedVal)
-        // }
-        // else {
-
-        // }
     };
     function sortt() {
         const response = tableData.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : ((b.title.toLowerCase() > a.title.toLowerCase()) ? -1 : 0));
@@ -106,7 +100,7 @@ const Success_Stories = () => {
             })
         }
     };
-    
+
     return (
         <div>
             {<BasicBreadcrumbs route={route} />}
@@ -149,9 +143,6 @@ const Success_Stories = () => {
                                             requestSearch(e.target.value)
                                         }}
                                     />
-                                    {/*<Button variant="outline-secondary" id="button-addon2">
-                                    <BsSearch />
-                                </Button>*/}
                                 </InputGroup>
                             </div>
                             <Modal show={showalert} onHide={handleClose} >
@@ -165,7 +156,7 @@ const Success_Stories = () => {
 
                                 <Modal.Footer>
                                     <Button variant="secondary" onClick={() => {
-                                        
+
                                         setShowalert(false)
                                     }} >Cancel</Button>
                                     <Button variant="primary" onClick={() => {
@@ -191,38 +182,44 @@ const Success_Stories = () => {
                                 <tbody>
                                     {tableData.map((data, index) =>
                                         <tr>
-                                            <td class="action "><div class="userDetail ">
-                                                <button type="button" class="btn "
-                                                    id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <span class="actionIcon"> <i
-                                                        class="bi bi-three-dots-vertical"></i> </span>
-                                                </button>
-                                                <ul class="IconDropdown dropdown-menu context-menu11"
-                                                    aria-labelledby="dropdownIconMenu">
-                                                    <li class="dropdownList ">
-                                                        <div class="actionBtns  context-menu1 ">
-                                                            <span class="editAction" data-bs-toggle="modal"
-                                                                data-bs-target="#editbtn"><i
-                                                                    class="bi bi-pencil-square"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
-                                                                handleShow()
-                                                                setEdit(true)
-                                                            }}>Edit</button>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dropdownList">
-                                                        <div class="actionBtns context-menu1">
-                                                            <span class="deleteAction" data-bs-toggle="modal"
-                                                                data-bs-target="#deletebtn"> <i
-                                                                    class="bi bi-trash3-fill"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div></td>
+                                            <td class="action ">
+                                                <div class="userDetail ">
+                                                    <button type="button" class="btn "
+                                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <span class="actionIcon"> <i
+                                                            class="bi bi-three-dots-vertical"></i>
+                                                        </span>
+                                                    </button>
+                                                    <ul class="IconDropdown dropdown-menu context-menu11"
+                                                        aria-labelledby="dropdownIconMenu">
+                                                        <li class="dropdownList ">
+                                                            <div class="actionBtns  context-menu1 ">
+                                                                <span class="editAction" data-bs-toggle="modal"
+                                                                    data-bs-target="#editbtn"><i
+                                                                        class="bi bi-pencil-square"></i></span>
+                                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                    handleShow()
+                                                                    setEdit(true)
+                                                                }}>Edit</button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="dropdownList">
+                                                            <div class="actionBtns context-menu1">
+                                                                <span class="deleteAction" data-bs-toggle="modal"
+                                                                    data-bs-target="#deletebtn"> <i
+                                                                        class="bi bi-trash3-fill"></i></span>
+                                                                <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
                                             <td>{data.title}</td>
-                                            <td>{data.content}</td>
+                                            <TooltipComp
+                                                component={<td>{data.content && subString(data.content, 115)}</td>}
+                                                tooltip={data.content}
+                                            />
                                             <td><Form>
                                                 <Form.Check className="switch_padding"
                                                     type="switch"
@@ -230,7 +227,7 @@ const Success_Stories = () => {
                                                     checked={data.active === "resolved" ? true : false}
                                                     label=""
                                                     onChange={(e) => {
-                                                       setShowalert(true)
+                                                        setShowalert(true)
                                                         setRowtext(e.target.checked ? ({
                                                             id: 1,
                                                             text: "Are you sure to update status as Rsolved ?",

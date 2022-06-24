@@ -4,7 +4,7 @@ import { ADD_GALLERY_EVENT, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, GET_ALL_BlOG, GET
 const initialstate = {
     addgalleryevent: "",
     addnewblog: "",
-    addsuccessstories: "",
+    addSuccessStories: "",
     getallblog: "",
     getallenquiry: "",
     getnewsletter: "",
@@ -31,7 +31,7 @@ const Reducer_Function = (state = initialstate, action) => {
         case ADD_SUCCESS_STORIES: {
             return {
                 ...state,
-                addsuccessstories: payload
+                addSuccessStories: payload
             }
         }
         case GET_ALL_BlOG: {

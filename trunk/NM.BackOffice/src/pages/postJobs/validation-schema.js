@@ -2,7 +2,6 @@ import React from 'react'
 import * as yup from 'yup';
 
 export const validationschemeaa = yup.object().shape({
-
     jobtitle: yup.string().required("Job title can not be blank"),
     jobdescription: yup.string().required("Job Description can not be blank"),
     location: yup.string().required("Location must be selected"),

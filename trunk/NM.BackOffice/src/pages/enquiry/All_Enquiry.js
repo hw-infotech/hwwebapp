@@ -45,14 +45,14 @@ const All_Enquiry = () => {
         });
     // const selector = useSelector(state => state),
     //     dispatch = useDispatch(),
-    //     [subscribers, setSubscribers] = useState([])
+    //     [subscribers, setnewsletter-subscriberss] = useState([])
     // console.log("hellow", subscribers);
     // useEffect(() => {
     //     dispatch(News_letter_Subscribe())
     // }, [])
 
     // useEffect(() => {
-    //     // setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+    //     // setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
     //     setpagination({ start: start, end: showPerPage })
     // }, [selector, pagination1])
 

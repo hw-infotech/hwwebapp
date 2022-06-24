@@ -21,7 +21,7 @@ const List_Of_Blogs = () => {
             end: showPerPage
         })
     useEffect(() => {
-        //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+        //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
     }, [ pagination1])
     const Chnage = (e) => {

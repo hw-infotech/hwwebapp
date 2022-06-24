@@ -11,7 +11,9 @@ const Footer = ({ sidebarShow }) => {
             transform: "translate3d(0%, 0px, 0px)", "transition": "all .7s ease-in-out", width: "100%"
         }}>
 
-            <div className="footerright textcolor ">©{moment().format("yyyy")} <span className="font_size"> Nestormind Pvt ltd.</span></div>
+            <div className="footerright textcolor ">©{moment().format("yyyy")}
+                <span className="font_size"> Nestormind Pvt ltd.</span>
+            </div>
         </div>
     );
 }
