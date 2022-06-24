@@ -8,25 +8,25 @@ const Sidebar = ({ sidebarShow }) => {
     return (
         <div className="sidebar"
             style={sidebarShow ? {
-                transform: "translate3d(0%, 0px,0px)", "transition": "all .7s ease-in-out",
-                "width": "250px"
+                transform: "translate3d(0%, 0px,0px)", "transition": "all 0.3s ease-in-out",
+                "maxWidth": "250px", "minWidth": "250px"
             } : {
-                transform: "translate3d(-100%, 0px, 0px)", "transition": "all .7s ease-in-out", "width": 0
+                transform: "translate3d(-100%, 0px, 0px)", "transition": "all 0.3s ease-in-out", "minWidth": "0px", "maxWidth": "0px"
             }}>
-            <div className="align-items-sm-start">
-                <div className="sidebar_header">
-                    <span >
-                        <img src="./assets/images/logo.png" className="Sidebar-logo" />
-                        <span className="font_size header_text">Back<span style={{ fontSize: "15px" }}>O</span>ffice</span>
-                    </span>
+            <div className="">
+                <div className="sidebar_header" onClick={() => {
+                    navigtion("/")
+                }}>
+                    <div> <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" /></div>
+                    <div> <span className="font_size header_text"><b>Back</b>Office</span></div>
                 </div>
             </div>
             <div className="align-items-sm-start px-3 pt-2">
                 <ul className="nav nav-pills  align-items-center" id="menu">
                     <li className="nav-item sidebar_hover ">
                         <div className="nav-link sidebar_hover align-middle px-0 text-color gapicontext" onClick={() => {
-                            navigtion("/")
-                        }} >
+                            navigtion("/post_job")
+                        }}>
                             <i className="fs-4 bi-house"> </i>
                             <span className="ms-1 d-none d-sm-inline ">Dashboard</span>
                         </div>
@@ -78,7 +78,7 @@ const Sidebar = ({ sidebarShow }) => {
                     </li> */}
                     <li className="sidebar_list">
                         <a href="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 sidebar_focus align-middle text-color gapicontext">
-                            <i className="fs-4 bi-bootstrap "></i> <span className="ms-1 d-none d-sm-inline">Crausel's</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span></a>
+                            <i className="fs-4 bi-bootstrap "></i> <span className="ms-1 d-none d-sm-inline">Crausel's</span><span className="dropdownarrowicon "><i className="fs-6 bi-caret-down "></i></span></a>
                         <ul className="collapse nav flex-column " id="submenu2" data-bs-parent="#menu">
                             <li className="w-100 sidebar_list">
                                 <div className="nav-link  text-color gapicontext" onClick={() => {
@@ -87,13 +87,7 @@ const Sidebar = ({ sidebarShow }) => {
                                     <span className=" paddingliitems">Success Stories</span>
                                 </div>
                             </li>
-                            <li className="w-100 sidebar_list">
-                                <div className="nav-link  text-color gapicontext" onClick={() => {
-                                    navigtion('/Profile')
-                                }}>
-                                    <span className=" paddingliitems">Profile</span>
-                                </div>
-                            </li>
+
                         </ul>
                     </li>
                     <li className="sidebar_list">
@@ -104,7 +98,7 @@ const Sidebar = ({ sidebarShow }) => {
                                 <div className="nav-link  text-color gapicontext" onClick={() => {
                                     navigtion('/Subscriber')
                                 }}>
-                                    <span className="d-none d-sm-inline paddingliitems ">Subscriber's</span>
+                                    <span className="d-none d-sm-inline paddingliitems ">Subscribe/Unsubscribe</span>
                                 </div>
                             </li>
                         </ul>
@@ -151,7 +145,7 @@ const Sidebar = ({ sidebarShow }) => {
                                 <div className="nav-link  text-colo text-color  gapicontext" onClick={() => {
                                     navigtion('/jobsubscriber')
                                 }}>
-                                    <span className="d-none d-sm-inline paddingliitems">Subscribers</span>
+                                    <span className="d-none d-sm-inline paddingliitems">Subscribe/Unsubscribe</span>
                                 </div>
                             </li>
                         </ul>

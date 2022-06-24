@@ -8,7 +8,6 @@ import { BiEdit } from "react-icons/bi";
 import Creatable, { useCreatable } from 'react-select/creatable';
 import CreatableSelect from 'react-select/creatable';
 import { ActionMeta, OnChangeValue } from 'react-select';
-import CreatableInputOnly from "./customInput";
 import { Link } from "react-router-dom";
 import { date } from "yup";
 import CreatableSelectField from "../../components/selectfield";
@@ -46,6 +45,7 @@ const Post_New_Job = () => {
     return (
         <div>
             <BasicBreadcrumbs route={route} />
+            <h4>Post a New Job</h4>
             <div className="content_center margin_bottom_ ">
                 <div className="topGapPad p-3 w-100">
                     <Tabs activeKey={key} id="uncontrolled-tab-example" className="mb-3">
@@ -57,7 +57,7 @@ const Post_New_Job = () => {
                                         e.preventDefault()
                                     }}>
                                         <div className="boxshadow">
-                                            <h4>Post a New Job</h4>
+
                                             <div className="content_center">
                                                 <div className="add_new_post_padding_between_field w-100">
                                                     <Form.Group className="mb-3">
@@ -124,7 +124,7 @@ const Post_New_Job = () => {
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input as='select' className="form-control" onChange={onhandlechange} placeholder="Employement type" name='employement' label={"Employement type"} id="name" options={[
-                                                            { value: "...",label:"..." },
+                                                            { value: "...", label: "..." },
                                                             { value: "Full time" },
                                                             { value: "Part time" },
 
@@ -279,7 +279,7 @@ const Post_New_Job = () => {
                                                     </Form.Group>
                                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                                         <Form.Label>Enter Descritption</Form.Label>
-                                                        <Form.Control as="textarea" style={{ height: "122px" }}  />
+                                                        <Form.Control as="textarea" style={{ height: "122px" }} />
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input type='text' className="form-control" placeholder='Job Function' name='jobfunction' label={"Job Function"} id="name" />

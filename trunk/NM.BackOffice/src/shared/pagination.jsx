@@ -5,7 +5,7 @@ import TooltipComp from "./Tooltipomp";
 
 const CustomPagination = ({ total, start, setStart }) => {
     const [currentItems, setCurrentItems] = useState(null);
-    const [showPerPage, setShowPerPage] = useState(5)
+    const [showPerPage, setShowPerPage] = useState(10)
     const [pageCount, setPageCount] = useState(0);
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
@@ -39,8 +39,8 @@ const CustomPagination = ({ total, start, setStart }) => {
         setItemOffset(newOffset);
     };
     return (
-        <div className="d-flex w-100 justify-content-between pt-4 customPagination" >
-            <div className="w-25">
+        <div className="w-100  pt-3 customPagination" >
+            {/*<div className="w-25">
                 <TooltipComp
                     component={<Form.Select className="rowPerPage" value={showPerPage} onChange={(e) => {
                         setShowPerPage(e.target.value)
@@ -54,14 +54,14 @@ const CustomPagination = ({ total, start, setStart }) => {
                     placement="top"
                     tooltip="Row's per page"
                 />
-            </div>
-            <div className="w-50">
+                </div>*/}
+            <div>
                 <ReactPaginate
                     className="pagination "
                     breakLabel="..."
                     nextLabel=">>"
                     onPageChange={handlePageClick}
-                    pageRangeDisplayed={5}
+                    pageRangeDisplayed={0}
                     pageCount={Math.ceil(total / showPerPage)}
                     previousLabel="<<"
                     renderOnZeroPageCount={null}

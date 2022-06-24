@@ -4,13 +4,15 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { Button, Form, FormControl, InputGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { BsSearch } from "react-icons/bs";
+import { Button, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
+import { VscFilterFilled } from "react-icons/vsc";
 import TooltipComp from "../../shared/Tooltipomp";
 import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
+import { FaFilter } from "react-icons/fa";
 const Job_Subscriber = () => {
+    const [disable, setSdisabled] = useState(true)
     const [showPerPage, setShowPerPage] = useState()
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -22,8 +24,8 @@ const Job_Subscriber = () => {
             start: start,
             end: showPerPage
         });
-        
-    const selector=useSelector(state=>state)
+
+    const selector = useSelector(state => state)
     console.log(selector)
 
     // const [next, setNext] = useState(0)
@@ -62,7 +64,7 @@ const Job_Subscriber = () => {
     const route = [
         { name: "Home", route: "/" },
         { name: "Job", route: "/" },
-        { name: "Job Subscriber", route: "/" },
+        { name: "Job Subscriber/Unsubscriber", route: "/" },
     ]
     const records = [
         {
@@ -106,45 +108,52 @@ const Job_Subscriber = () => {
     const [title, setTitle] = useState(false)
     return (
         <div>
-            <div title="Job Subscriber " className="margin_bottom_">
-                <h4>List Number of Job Subscriber</h4>
+            <div className="margin_bottom_">
                 <BasicBreadcrumbs route={route} />
-                <div className="w-100 setupcontent">
+                <div className="filter_header">
+                    <div className="filter-title"><h4>Subscriber/Unsubscriber</h4></div>
+                    <div className="filter_container">
+                        <div className="">
+                            <Button className="fitlter-sotry" id="button-addon2" onClick={()=>{
+                                setSdisabled(p=>!p)
+                            }}>
+                                <VscFilterFilled size={17} />
+                            </Button>
+                        </div>
+
+                    </div>
+                </div>
+                <div className="w-100 setupcontent topGapPad">
                     <div className="">
-                        <TooltipComp
-                            component={<Form.Select aria-label="row" className="wreap-content">
-                                <option disabled hidden selected>Select</option>
-                                <option value="1">All</option>
-                                <option value="2">Subscriber</option>
-                                <option value="3">UnSubscriber</option>
-                            </Form.Select>}
-                            placement="top"
-                            tooltip={"Filter as Active/inactive"}
-                        />
+                        <Form.Select aria-label="row" className="wreap-content" hidden={disable}>
+                            <option disabled hidden selected>Status</option>
+                            <option value="1">All</option>
+                            <option value="2">Subscriber</option>
+                            <option value="3">UnSubscriber</option>
+                        </Form.Select>
+
                     </div>
                     <div className="searchbar">
-                        <TooltipComp
-                            component={<InputGroup className="mb-3">
-                                <FormControl
-                                    placeholder="Search By Email"
-                                    aria-label="Search By Email"
-                                    aria-describedby="basic-addon2"
-                                    onChange={(e) => {
-                                        requestSearch(e.target.value)
-                                    }}
-                                />
-                                <Button variant="outline-secondary" id="button-addon2">
-                                    <BsSearch />
-                                </Button>
-                            </InputGroup>}
-                            placement="top"
-                            tooltip="Type here to search by Email"
-                        />
+                        <InputGroup className="mb-3">
+                            <FormControl
+                            hidden={disable}
+                                placeholder="Search By Email"
+                                aria-label="Search By Email"
+                                aria-describedby="basic-addon2"
+                                onChange={(e) => {
+                                    requestSearch(e.target.value)
+                                }}
+                            />
+                            {/*<Button variant="outline-secondary" id="button-addon2">
+                                                <BsSearch />
+                                            </Button>*/}
+                        </InputGroup>
+
                     </div>
                 </div>
                 <div className="topGapPad">
                     <div className="boxshadow">
-                        <table class="table">
+                        <Table striped bordered hover>
                             <thead>
                                 <tr>
                                     <th onClick={() => {
@@ -153,7 +162,7 @@ const Job_Subscriber = () => {
                                     }}>Name {title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                     <th>Phone</th>
                                     <th>Email</th>
-                                    <th>UnSubscriber/Subscriber</th>
+                                    <th className="action_colwidth">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -179,14 +188,14 @@ const Job_Subscriber = () => {
                                         </td>
                                     </tr>)}
                             </tbody>
-                        </table>
+                        </Table>
                     </div>
                     <CustomPagination
-                    showPerPage={showPerPage}
-                   
-                    setStart={setpagination}
-                    total={1000}
-                />
+                        showPerPage={showPerPage}
+
+                        setStart={setpagination}
+                        total={1000}
+                    />
 
                 </div>
             </div>

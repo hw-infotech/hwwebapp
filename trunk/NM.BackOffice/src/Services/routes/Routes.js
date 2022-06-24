@@ -3,15 +3,10 @@ import Home from '../../pages/Home'
 import AddNewPost from '../../pages/blogs/addNewPost'
 import Success_Stories from '../../pages/crausel/success_Stories';
 import SubScriber from '../../pages/newsletter/subscriber'
-import UNSubScriber from '../../pages/newsletter/UNSubscriber';
 import All_Enquiry from '../../pages/enquiry/All_Enquiry';
-import Resolved from '../../pages/enquiry/Resolved';
-import Pending_Enquiry from '../../pages/enquiry/Pending';
 import Admin_Login from '../../pages/authnication/admin_login';
 import Post_New_Job from '../../pages/postJobs/postNewJob';
 import Applied_Job from '../../pages/postJobs/applied_Jobs';
-import Selected_User from '../../pages/postJobs/selected_user';
-import Rejected_user from '../../pages/postJobs/rejected_user';
 import Job_Subscriber from '../../pages/postJobs/job_subscriber';
 import Stacks from '../../pages/crausel/stacks';
 import Add_Gallery_Event from '../../pages/crausel/add_gallery_event';
@@ -20,12 +15,14 @@ import List_Of_Blogs from '../../pages/blogs/list_of_blogs'
 import Edit_postJob from '../../pages/postJobs/editPost_Job';
 import Particularjob from '../../pages/postJobs/particularlist';
 import Profile from '../../pages/Profile/Profile';
+import Post_Job from '../../pages/postJobs/post_job';
 
 const routes = (path, element, exact = true) => {
     return { path, element, exact }
 }
 const route = [
-    routes('/', <Home />),
+    routes('/',<Home/>),
+    routes('/post_job',<Post_Job/>),
     routes("/addNewPost", <AddNewPost />),
     routes('/particularjob', <Particularjob />),
     routes('/editPostjob', <Edit_postJob />),
@@ -43,6 +40,7 @@ const route = [
     routes('/stacks', <Stacks />),
     routes('/addgalleryevent', <Add_Gallery_Event />),
     routes('/listofblogs', <List_Of_Blogs />),
+    //routes('/test', < />),
     routes('/changegalleryevent', <Change_Gallery_Events />),
     // routes('/draftpost'),
     // routes('./pendingpost'),

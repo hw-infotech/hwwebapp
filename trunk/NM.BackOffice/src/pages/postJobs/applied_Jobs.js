@@ -106,6 +106,7 @@ const Applied_Job = () => {
         <div className="margin_bottom_">
             <div><h4> Posted Job's</h4></div>
             <BasicBreadcrumbs route={route} />
+            <div><h4> Posted Job's</h4></div>
             <div className="w-100 setupcontent">
                 <div className="">
                     <TooltipComp

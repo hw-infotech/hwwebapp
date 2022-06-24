@@ -3,23 +3,25 @@ import { Col, Row, Table } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import { BiDirections, BiTab, BiWallet } from "react-icons/bi";
 import { Chart } from 'react-charts'
+import { FcList, FcBarChart, FcBullish } from "react-icons/fc";
 const Home = () => {
     const graphRef = useRef()
-
+  
     const data = useMemo(
+       
         () => [
             {
-              
+
                 data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
             },
             {
-               
+
                 data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
             }
         ],
         []
     )
-  
+
     const axes = useMemo(
         () => [
             { primary: true, type: 'linear', position: 'bottom' },
@@ -27,20 +29,20 @@ const Home = () => {
         ],
         []
     )
-    const series = React.useMemo(
+    const series = useMemo(
         () => ({
-          type: 'bar',
-          showPoints: false
+            type: 'bar',
+            showPoints: false
         }),
         []
-      )
-      const series1 = React.useMemo(
+    )
+    const series1 = useMemo(
         () => ({
-          type: 'area',
-          showPoints: false
+            type: 'area',
+            showPoints: false
         }),
         []
-      )
+    )
     useEffect(() => {
         // graphRef.current.style.background="yellow"
     }, [])
@@ -51,12 +53,12 @@ const Home = () => {
                 <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
                         <div className="card-header1">
-                            <div className="icon-card1" style={{ background: "#42424a" }}>
+                            <div className="icon-card1 background_box1">
                                 <BiDirections size={24} />
                             </div>
                             <div className="innerCard">
-                                <span>Today's Users</span>
-                                <h4 style={{ fontWeight: "600" }}>$5k</h4>
+                                <span>Pending Enquiry</span>
+                                <h4 style={{ fontWeight: "400" }}>$5k</h4>
                             </div>
                         </div>
                         <div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>
@@ -65,12 +67,12 @@ const Home = () => {
                 <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
                         <div className="card-header1">
-                            <div className="icon-card1" style={{ background: "#d81b60" }}>
+                            <div className="icon-card1 background_box2">
                                 <BiTab size={24} />
                             </div>
                             <div className="innerCard">
                                 <span>Job's Subscriber</span>
-                                <h4 style={{ fontWeight: "600" }}>$53k</h4>
+                                <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
                         <div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>
@@ -79,12 +81,12 @@ const Home = () => {
                 <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
                         <div className="card-header1">
-                            <div className="icon-card1" style={{ background: "#66bb6a" }}>
+                            <div className="icon-card1 background_box3">
                                 <BiWallet size={24} />
                             </div>
                             <div className="innerCard">
-                                <span>Newsletter Subscriber</span>
-                                <h4 style={{ fontWeight: "600" }}>$53k</h4>
+                                <span >Newsletter Subscriber</span>
+                                <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
                         <div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>
@@ -93,12 +95,12 @@ const Home = () => {
                 <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
                         <div className="card-header1">
-                            <div className="icon-card1" style={{ background: "#49a3f1" }}>
+                            <div className="icon-card1 background_box4" >
                                 <BsSearch size={24} />
                             </div>
                             <div className="innerCard">
                                 <span>Performance</span>
-                                <h4 style={{ fontWeight: "600" }}>$53k</h4>
+                                <h4 style={{ fontWeight: "400" }}>$3k</h4>
                             </div>
                         </div>
                         <div className="card-footer1"> <span className="decoration">+8% </span>than yesterday</div>
@@ -107,16 +109,39 @@ const Home = () => {
             </Row>
             <div style={{ marginTop: "70px" }}>
                 <Row>
-                    <Col md={6} sm={12} lg={4} xl={4}>
+                    <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader" style={{ background: "#ec407a" }}>
-                          
+                            <div className="card-graphheader" style={{ }}>
                                 <div className="chart-card" >
+                                    <div className="userDetail1" >
+                                        <button type="button" class="btn "
+                                            id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <span class="actionIcon" style={{ color: "white" }}> <i
+                                                className="bi bi-three-dots-vertical"></i> </span>
+                                        </button>
+                                        <ul class="IconDropdown dropdown-menu context-menu1 "
+                                            aria-labelledby="dropdownIconMenu">
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="editAction" data-bs-toggle="modal"
+                                                        data-bs-target="#editbtn"><FcBullish /></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                    }}>Monthly</button>
+                                                </div>
+                                            </li>
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="deleteAction" data-bs-toggle="modal"
+                                                        data-bs-target="#deletebtn"> <FcBarChart /></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size">Quaterly</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                     <Chart data={data} axes={axes}
-                                    series={series}
-                                    
-                                
-                                    /> 
+                                        series={series}
+                                    />
                                 </div>
                             </div>
                             <div className="chart-footer"><h5 className="heading-chartstyle">Website Views</h5>
@@ -127,12 +152,40 @@ const Home = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={6} sm={12} lg={4} xl={4}>
+                    <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader"  style={{ background: "#66bb6a" }}>
+                            <div className="card-graphheader" style={{ }}>
                                 <div className="chart-card">
+
+                                    <div className="userDetail1" >
+                                        <button type="button" className="btn "
+                                            id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <span className="actionIcon" style={{ color: "white" }}> <i
+                                                className="bi bi-three-dots-vertical"></i> </span>
+                                        </button>
+                                        <ul className="IconDropdown dropdown-menu context-menu1 "
+                                            aria-labelledby="dropdownIconMenu">
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="editAction" data-bs-toggle="modal"
+                                                        data-bs-target="#editbtn"><FcBullish /></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                    }}>Monthly</button>
+                                                </div>
+                                            </li>
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="deleteAction" data-bs-toggle="modal"
+                                                        data-bs-target="#deletebtn"><FcBarChart /></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size">Quaterly</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                     <Chart data={data} axes={axes} series={series1} />
                                 </div>
+
                             </div>
                             <div className="chart-footer"><h5 className="heading-chartstyle">Website Views</h5>
                                 <span className="chattext-size">Last Campaign Performance</span></div>
@@ -142,10 +195,37 @@ const Home = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={6} sm={12} lg={4} xl={4}>
+                    <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader" style={{ background: "#42424a" }}>
+                            <div className="card-graphheader" style={{ }}>
                                 <div className="chart-card" >
+                                    <div className="userDetail1 ">
+                                        <button type="button" class="btn "
+                                            id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <span className="actionIcon" style={{ color: "white" }}> <i
+                                                className="bi bi-three-dots-vertical"></i>
+                                            </span>
+                                        </button>
+                                        <ul className="IconDropdown dropdown-menu context-menu1 "
+                                            aria-labelledby="dropdownIconMenu">
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="editAction" data-bs-toggle="modal"
+                                                        data-bs-target="#editbtn"><FcBullish /></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                    }}>Monthly</button>
+                                                </div>
+                                            </li>
+                                            <li className="dropdownList">
+                                                <div className="actionBtns">
+                                                    <span className="deleteAction" data-bs-toggle="modal"
+                                                        data-bs-target="#deletebtn"> <FcBarChart /></span>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size">Quaterly</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                     <Chart data={data} axes={axes} />
                                 </div>
                             </div>

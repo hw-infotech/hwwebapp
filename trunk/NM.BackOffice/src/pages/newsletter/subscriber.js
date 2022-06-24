@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Form, FormControl, InputGroup, Modal, Row } from "react-bootstrap";
+import { Button, Col, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 //import Pagination from '@material-ui/lab/Pagination';
 // import Pagination from '@mui/material/Pagination'
 import BasicBreadcrumbs from "../../components/breadcumbs";
@@ -14,8 +14,13 @@ import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
 import CustomPagination from "../../shared/pagination";
+import { FaFilter } from "react-icons/fa";
+import { VscFilterFilled } from "react-icons/vsc";
+import { MdAdd } from "react-icons/md";
+import moment from 'moment'
 
 const SubScriber = () => {
+    const [disable, setSdisabled] = useState(true)
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
@@ -34,7 +39,7 @@ const SubScriber = () => {
     const route = [
         { name: "Home", route: "/" },
         { name: "Newsletter", route: "/" },
-        { name: "Subscriber/Unsubscriber", route: "/" }
+        { name: "Subscribe/Unsubscribe", route: "/" }
     ]
     const selector = useSelector(state => state),
         dispatch = useDispatch(),
@@ -111,24 +116,34 @@ const SubScriber = () => {
 
     return (
         <div >
-            <div className=""><h4>Newsletter Subscriber/Unsubscriber</h4></div>
             <BasicBreadcrumbs route={route} />
-            <div className="margin_bottom_">
-                <div className="gapPad">
+            <div className="filter_header">
+                <div className="filter-title"><h4>Subscribe/Unsubscribe</h4></div>
+                <div className="filter_container">
+                    <div className="">
+                        <Button className="fitlter-sotry" onClick={() => setSdisabled(p => !p)}>
+                            <VscFilterFilled size={17} />
+                        </Button>
+                    </div>
+                    <div>
+                        <Button variant="outline-secondary" className="popoup-btn" onClick={handleShow}>Add NewsLetter</Button>
+                    </div>
+                </div>
+            </div>
+            <div className="margin_bottom_ topGapPad">
+                <div className=" ">
                     <div className="w-100 setupcontent">
-                        <div className="" >   <TooltipComp
-                            component={<Form.Select aria-label="row" className="wreap-content">
-                                <option disabled hidden selected>Select</option>
-                                <option value="1">All</option>
-                                <option value="2">Subscriber</option>
-                                <option value="3">UnSubscriber</option>
-                            </Form.Select>}
-                            placement="top"
-                            tooltip={"Filter as Active/inactive"}
-                        /></div>
+                        <div className="" ><Form.Select aria-label="row" className="wreap-content" hidden={disable}>
+                            <option disabled hidden selected>Status</option>
+                            <option value="1">All</option>
+                            <option value="2">Subscriber</option>
+                            <option value="3">UnSubscriber</option>
+                        </Form.Select>
+                        </div>
                         <div className="searchbar">
-                            <TooltipComp placement={"top"} tooltip="Type here to search by email" component={<InputGroup className="mb-3">
+                            <InputGroup className="mb-3">
                                 <FormControl
+                                    hidden={disable}
                                     placeholder="Search By Email"
                                     aria-label="Search By Email"
                                     aria-describedby="basic-addon2"
@@ -136,30 +151,25 @@ const SubScriber = () => {
                                         requestSearch(e.target.value)
                                     }}
                                 />
-                                <Button variant="outline-secondary" id="button-addon2">
-                                    <BsSearch />
-                                </Button>
-                            </InputGroup>} />
-                        </div>
-                        <div>
-                            <TooltipComp component={<Button variant="outline-secondary" onClick={handleShow}>
-                                <BiAddToQueue size="23px" />
-                            </Button>} placement="top" tooltip="Add New" />
+                                {/*<Button variant="outline-secondary" id="button-addon2">
+                                                <BsSearch />
+                                            </Button>*/}
+                            </InputGroup>
                         </div>
                     </div>
                 </div>
                 <div className="">
                     <div className="boxshadow">
-                        <table class="table" >
+                        <Table striped bordered hover >
                             <thead>
                                 <tr>
-                                    <th scope="col" onClick={() => {
+                                    <th onClick={() => {
                                         setTitle(!title)
                                         { title ? sortt() : sortt1() }
                                     }} >Email {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                    <th scope="col">Created Date</th>
-                                    <th scope="col">Comments</th>
-                                    <th scope="col">Unsubscriber/Subscriber</th>
+                                    <th>Created Date</th>
+
+                                    <th className="action_colwidth" >Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -169,11 +179,9 @@ const SubScriber = () => {
                                             {data.email}
                                         </td>
                                         <td>
-                                            {data.createdOn}
+                                            {data.createdOn ? moment(data.createdOn).format("DD-MM-yyyy ") : ""}
                                         </td>
-                                        <td>
-                                            {data.comment}
-                                        </td>
+
                                         <td >
                                             <Form.Check className="switch_padding"
                                                 type="switch"
@@ -181,6 +189,9 @@ const SubScriber = () => {
                                                 value={data.active}
                                                 label=""
                                                 onChange={(e) => {
+                                                    if (e.target.checked == true) {
+
+                                                    }
                                                     console.log(e.target.checked);
                                                     setTableData(_ => {
                                                         _[index].active = e.target.checked
@@ -196,12 +207,12 @@ const SubScriber = () => {
                                     <td>{data?.createdOn}</td>
                                 </tr>))*/}
                             </tbody>
-                        </table>
+                        </Table>
                     </div>
                 </div>
                 <Modal show={show} onHide={handleClose} size="md">
                     <Modal.Header closeButton>
-                        <Modal.Title>Add</Modal.Title>
+                        <Modal.Title>Send Newsletter</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         {<div className="">
@@ -214,15 +225,13 @@ const SubScriber = () => {
                                         }}
                                         >
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input type="text" label="Title" className="form-control" name="title" placeholder="Enter the NewsLetter title" />
+                                                <Input type="text" label="Title" className="form-control" name="title" placeholder="" />
                                             </Form.Group>
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input as={"textarea"} className="form-control" placeholder={"Enter the Content for NewsLetter"} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
+                                                <Input as={"textarea"} className="form-control" placeholder={""} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
                                             </Form.Group>
                                             <br />
-                                            <div style={{ float: "right", }}>
-                                                <Button className="newsletter-addbtn">Add</Button>
-                                            </div>
+
                                         </form>
                                     )}
                                 </Formik>
@@ -230,9 +239,10 @@ const SubScriber = () => {
                         </div>}
                     </Modal.Body>
                     <Modal.Footer>
-                        {/*<div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
-                        <button type="button" class="btn btn-outline-secondary gallery_add_button">Submit</button>
-                                </div>*/}
+                    <Button variant="secondary" className="addbtn" onClick={handleClose}>Close</Button>
+                        <div style={{ float: "right", }}>
+                            <Button className="newsletter-addbtn">Send</Button>
+                        </div>
                     </Modal.Footer>
                 </Modal>
                 <div>
