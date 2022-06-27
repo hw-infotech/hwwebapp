@@ -16,7 +16,6 @@ export const Input = ({ as, id, label, placeholder, type, name, className
                     type={type}
                     value={value}
                     className={className}
-                    options={options}
                     id={id}
                     name={name}
                     placeholder={placeholder}
@@ -25,11 +24,11 @@ export const Input = ({ as, id, label, placeholder, type, name, className
                 {as == "select" && <Field
                     as={as}
                     type={type}
+                    options={options}
                     value={value}
                     className={className}
                     id={id}
                     onChange={onChange}
-                    value={value}
                     name={name}
                 >
                     {options?.map((_, __) => <option key={__} value={_.value}>{_.value}</option>)}

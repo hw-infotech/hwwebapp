@@ -1,8 +1,10 @@
 import { Button, Form } from "react-bootstrap"
+import { useNavigate } from "react-router"
 import { Input } from "../../../components/commoninputfield"
 import CreatableSelectField from "../../../components/selectfield"
 
 const Step3 = ({ setGoSteps, state, setState, onhandlechange,handleChange }) => {
+    //const nevigate=useNavigate()
     return <div className="m-auto w-100">
         <div className="d-flex justify-content-end">
             <Button variant="secondary" onClick={() => setGoSteps(1)}>Back</Button>
@@ -24,6 +26,9 @@ const Step3 = ({ setGoSteps, state, setState, onhandlechange,handleChange }) => 
 
             ]} ></Input>
         </Form.Group>
+        <Form.Group>
+        <Input type='text' className="form-control" placeholder='Industries' name='industries' label={"Industries"} id="name" />
+    </Form.Group>
 
     </div>
 }

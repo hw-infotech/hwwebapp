@@ -738,7 +738,6 @@ body {
             float: right;
         }
     }
-
 }
 
 .wrap_box {
@@ -749,7 +748,6 @@ body {
 .wraping-box {
     width: 100%;
     justify-content: center;
-
 
     .inner-box {
         width: 75%;
@@ -894,7 +892,8 @@ body {
 
 //-------------IMAGE UPLOADER--------------//
 .dropzone {
-    .innerContainer {}
+    .innerContainer {
+    }
 
     .uploadButton {
         display: flex;
@@ -978,7 +977,8 @@ body {
     border: 1px solid rgb(233, 227, 227);
 }
 
-.jobdes_marginbottom {}
+.jobdes_marginbottom {
+}
 
 .job_location {
     font-size: 16px;

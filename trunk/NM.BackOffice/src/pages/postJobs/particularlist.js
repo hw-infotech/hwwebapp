@@ -10,8 +10,11 @@ import { Input } from "../../components/commoninputfield";
 import { BsSearch } from "react-icons/bs";
 import TooltipComp from "../../shared/Tooltipomp";
 import CustomPagination from "../../shared/pagination";
+import { VscFilterFilled } from "react-icons/vsc";
+import CapitalizeFirstLetter from "../../components/first_letter_capital";
 
 const Particularjob = () => {
+    const [disabled, setSdisabled] = useState(true)
     const [showPerPage, setShowPerPage] = useState()
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -60,7 +63,7 @@ const Particularjob = () => {
     const [title, setTitle] = useState(false)
     const requestSearch = (searchedVal) => {
         const filteredRows = records.filter((row) => {
-            return row.name.toLowerCase().includes(searchedVal.toLowerCase());
+            return row.name.toLowerCase().includes(searchedVal.toLowerCase()) || row.Jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
         });
         setTableData(filteredRows)
 
@@ -102,7 +105,6 @@ const Particularjob = () => {
                                                     <li className="">
                                                         {/*state.responsibility*/}
                                                     </li>
-
                                                 </ul>
                                             </div>
                                             <div className="job_description_heading">
@@ -186,25 +188,21 @@ const Particularjob = () => {
                             </div>
                         </div>
                     </Tab>
-
                     <Tab eventKey="Aplied" title="Applied" >
                         <div className="gapbetween ">
-                           
-                                    <div>
-                                        <Form.Select aria-label="Default select example">
-                                            <option disabled selected hidden>Status</option>
-                                            <option value="1">All</option>
-                                            <option value="1">Reject</option>
-                                            <option value="1">Select</option>
-                                        </Form.Select>
-                                    </div>
-
-                                
-                               
-                            <div className="serachbar" >
+                            <div className="w-25">
+                                <Form.Select aria-label="Default select example" hidden={disabled}>
+                                    <option disabled selected hidden>Status</option>
+                                    <option value="1">All</option>
+                                    <option value="1">Reject</option>
+                                    <option value="1">Select</option>
+                                </Form.Select>
+                            </div>
+                            <div className="serachbar w-100" >
                                 <InputGroup className="mb-3">
                                     <FormControl
-                                        placeholder="Search title and name"
+                                        hidden={disabled}
+                                        placeholder="Search by title and name"
                                         aria-label="Recipient's username"
                                         aria-describedby="basic-addon2"
                                         onChange={(e) => {
@@ -215,7 +213,11 @@ const Particularjob = () => {
                                     <BsSearch />
                                     </Button>*/}
                                 </InputGroup>
-                              
+                            </div>
+                            <div style={{width:"100%",height:"100%",}}>
+                            <Button className="fitlter-sotry" style={{float:"right"}} id="button-addon2" onClick={() => setSdisabled(p => !p)}>
+                                <VscFilterFilled size={17} />
+                            </Button>
                             </div>
                         </div>
                         <div className="boxshadow">
@@ -255,7 +257,6 @@ const Particularjob = () => {
                                                             }}>View</button>
                                                         </div>
                                                     </li>
-
                                                     <li class="dropdownList">
                                                         <div class="actionBtns">
                                                             <span class="deleteAction" data-bs-toggle="modal"
@@ -266,9 +267,8 @@ const Particularjob = () => {
                                                     </li>
                                                 </ul>
                                             </div></td>
-
                                             <td>{data.Jobtitle}</td>
-                                            <td>{data.name}</td>
+                                            <td>{CapitalizeFirstLetter(data.name)}</td>
                                             <td>{data.email}</td>
                                             <td>{data.phone}</td>
                                             <td><Form>
@@ -278,15 +278,13 @@ const Particularjob = () => {
                                                     value={data.active}
                                                     label="" />
                                             </Form></td>
-
                                         </tr>)}
-
                                 </tbody>
                             </Table>
                         </div>
                         <div>
                             <CustomPagination
-                                total={100}
+                                total={tableData.length}
                                 start={pagination1}
                                 setStart={setpagination}
                             />

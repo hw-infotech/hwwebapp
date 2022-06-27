@@ -11,6 +11,7 @@ import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
+import CapitalizeFirstLetter from "../../components/first_letter_capital";
 const Job_newsletter = () => {
     const [disable, setSdisabled] = useState(true)
     const [showPerPage, setShowPerPage] = useState()
@@ -63,8 +64,8 @@ const Job_newsletter = () => {
     // }
     const route = [
         { name: "Home", route: "/" },
-        { name: "Job", route: "/" },
-        { name: "Job newsletter-subscribers/Unsubscriber", route: "/" },
+        { name: "Job", route: "job-subscriber/unsubscriber" },
+        { name: "Job Subscribe/Unsubscribe", route: "/job-subscriber/unsubscriber" },
     ]
     const records = [
         {
@@ -111,7 +112,7 @@ const Job_newsletter = () => {
             <div className="margin_bottom_">
                 <BasicBreadcrumbs route={route} />
                 <div className="filter_header">
-                    <div className="filter-title"><h4>newsletter-subscribers/Unsubscriber</h4></div>
+                    <div className="filter-title"><h4>Subscribers/Unsubscriber</h4></div>
                     <div className="filter_container">
                         <div className="">
                             <Button className="fitlter-sotry" id="button-addon2" onClick={()=>{
@@ -168,7 +169,7 @@ const Job_newsletter = () => {
                             <tbody>
                                 {tableData.map((data, index) =>
                                     <tr>
-                                        <td>{data.Name}</td>
+                                        <td>{CapitalizeFirstLetter(data.Name)}</td>
                                         <td>{data.phone}</td>
                                         <td>{data.Email}</td>
                                         <td >
@@ -194,7 +195,7 @@ const Job_newsletter = () => {
                         showPerPage={showPerPage}
 
                         setStart={setpagination}
-                        total={1000}
+                        total={tableData.length}
                     />
 
                 </div>

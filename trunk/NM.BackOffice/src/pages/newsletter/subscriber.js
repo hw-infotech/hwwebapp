@@ -18,6 +18,7 @@ import { FaFilter } from "react-icons/fa";
 import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
 import moment from 'moment'
+import CapitalizeFirstLetter from "../../components/first_letter_capital";
 
 const SubScriber = () => {
     const [disable, setSdisabled] = useState(true)
@@ -38,8 +39,8 @@ const SubScriber = () => {
         });
     const route = [
         { name: "Home", route: "/" },
-        { name: "Newsletter", route: "/" },
-        { name: "Subscribe/Unsubscribe", route: "/" }
+        { name: "Newsletter", route: "" },
+        { name: "Subscribe/Unsubscribe", route: "" }
     ]
     const selector = useSelector(state => state),
         dispatch = useDispatch(),
@@ -175,7 +176,7 @@ const SubScriber = () => {
                                 {subscribers?.slice(pagination1.start, pagination1.end).map((data, index) =>
                                     <tr>
                                         <td>
-                                            {data.email}
+                                            {CapitalizeFirstLetter  (data.email)}
                                         </td>
                                         <td>
                                             {data.createdOn ? moment(data.createdOn).format("DD-MM-yyyy ") : ""}

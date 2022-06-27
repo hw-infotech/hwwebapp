@@ -3,8 +3,8 @@ import { Col, Form, Row, Button } from "react-bootstrap"
 import { Input } from "../../../components/commoninputfield"
 import CreatableSelectField from "../../../components/selectfield"
 
-const Step1 = ({ setGoSteps, state, setState ,onhandlechange }) => {
-    const {handleChange}=useFormikContext()
+const Step1 = ({ setGoSteps, state, setState, onhandlechange }) => {
+    const { handleChange } = useFormikContext()
 
     return <div className="main-wrap-box w-100 m-auto">
         <div className="d-flex justify-content-end mt-2">
@@ -14,7 +14,7 @@ const Step1 = ({ setGoSteps, state, setState ,onhandlechange }) => {
             <Col md={12}>
                 <Form.Group className="mb-3">
                     <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
-                        { value: "...", label: "..." },
+                        { value: "...",  label: "..." },
                         { value: "UI/UX", label: "UI/UX" },
                         { value: "Project Manager", label: "Project Manager" },
                         { value: "Web Development", label: "Web Development" },
@@ -30,7 +30,7 @@ const Step1 = ({ setGoSteps, state, setState ,onhandlechange }) => {
                 <Form.Group>
                     <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
                 </Form.Group>
-                
+
             </Col>
         </Row>
 

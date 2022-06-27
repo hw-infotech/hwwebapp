@@ -71,7 +71,7 @@ const Home = () => {
                                 <BiTab size={24} />
                             </div>
                             <div className="innerCard">
-                                <span>Job's newsletter-subscribers</span>
+                                <span>Job Subscribers</span>
                                 <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ const Home = () => {
                                 <BiWallet size={24} />
                             </div>
                             <div className="innerCard">
-                                <span >Newsletter newsletter-subscribers</span>
+                                <span >Newsletter Subscribers</span>
                                 <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>

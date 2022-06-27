@@ -18,6 +18,7 @@ import Step3 from "./steps/step3";
 import Step4 from "./steps/step4";
 
 const Post_Job = () => {
+    const[post,setpost]=useState()
     const [goSteps, setGoSteps] = useState(0);
     const [state, setState] = useState({
         jobtitle: "",
@@ -33,8 +34,8 @@ const Post_Job = () => {
     })
     const route = [
         { name: "Home", route: "/" },
-        { name: "Job", route: "/" },
-        { name: "Edit Post job", route: "/" },
+        { name: "Job" },
+        { name: "Edit Post job"  },
 
     ]
     const onhandlechange = (e) => {
@@ -47,7 +48,7 @@ const Post_Job = () => {
     return (
         <div>
             <BasicBreadcrumbs route={route} />
-            <h4>Post a New Job</h4>
+            <h4>{post ? "Edit Job":"Post Job" }</h4>
             <div className="w-75 m-auto p-2 z-depth-5 shadow-box-example rounded">
                 <Stepper
                     activeStep={goSteps}
@@ -64,10 +65,10 @@ const Post_Job = () => {
                     <Step onClick={() => setGoSteps(1)} label="Job Description" >
                         <BiFolderOpen />
                     </Step>
-                    <Step onClick={() => setGoSteps(2)} label="Job Function" >
+                    <Step onClick={() => setGoSteps(2)} label="Job Function">
                         <BsReverseLayoutTextSidebarReverse size={13} />
                     </Step>
-                    <Step onClick={() => setGoSteps(3)} label="Finish" >
+                    <Step onClick={() => setGoSteps(3)} label="Preview" >
                         <BiCheck size={24} />
                     </Step>
                 </Stepper>

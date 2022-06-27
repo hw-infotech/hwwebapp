@@ -16,6 +16,7 @@ import Edit_postJob from '../../pages/postJobs/editPost_Job';
 import Particularjob from '../../pages/postJobs/particularlist';
 import Profile from '../../pages/Profile/Profile';
 import Post_Job from '../../pages/postJobs/post_job';
+import Job_Preview from '../../pages/postJobs/job_preview';
 
 const routes = (path, element, exact = true) => {
     return { path, element, exact }
@@ -23,7 +24,8 @@ const routes = (path, element, exact = true) => {
 const route = [
     routes('/', <Navigate to="/home" />),
     routes('/home', <Home />),
-    routes('/post_job', <Post_Job />),
+    routes('/jobpreview', <Job_Preview />),
+    routes('/post-new-job', <Post_Job />),
     routes("/addNewPost", <AddNewPost />),
     routes('/particularjob', <Particularjob />),
     routes('/all-jobs', <Edit_postJob />),
@@ -31,9 +33,9 @@ const route = [
     routes('/newsletter-subscribers', <SubScriber />),
     routes('/Profile', <Profile />),
     routes('/AllEnquiry', <All_Enquiry />),
-    routes('/PostNewJob', <Post_New_Job />),
+    //routes('/PostNewJob', <Post_New_Job />),
     routes('/appliedjobs', <Applied_Job />),
-    routes('/job-subscriber', <Job_Subscriber />),
+    routes('/job-subscriber/unsubscriber', <Job_Subscriber />),
     routes('/stacks', <Stacks />),
     routes('/addgalleryevent', <Add_Gallery_Event />),
     routes('/listofblogs', <List_Of_Blogs />),

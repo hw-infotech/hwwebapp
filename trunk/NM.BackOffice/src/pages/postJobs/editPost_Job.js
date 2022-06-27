@@ -16,9 +16,13 @@ import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
 import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
+import { subString } from "../../Services/commonFunctions";
 ;
 
+
 const Edit_postJob = (value1) => {
+
+    const [jobpost, setjobpost] = useState()
     const [rowtext, setRowtext] = useState()
     const [showalert, setShowalert] = useState(false)
     const [disable, setSdisabled] = useState(true)
@@ -74,17 +78,17 @@ const Edit_postJob = (value1) => {
     const handleShow = () => setShow(true);
     const route = [
         { name: "Home", route: "/" },
-        { name: "Job", route: "/" },
-        { name: "Edit Post job", route: "/" },
+        { name: "Job", route: "" },
+        { name: "Joblist", route: "" },
 
     ]
     const [formState, setFormState] = useState()
     const records = [
         {
             Jobtitle: "UI/UX",
-            description: "We are looking for an experienced Strategy Manager.",
+            description: "We are looking for an experienced Strategy Manager. ",
             functions: "Supervise and manage department team ",
-            industry: "Great",
+            industry: "",
             level: "Junior",
             type: "Part time",
             active: "pending"
@@ -94,7 +98,7 @@ const Edit_postJob = (value1) => {
             Jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Provide support and training to team members",
-            industry: "Great",
+            industry: "",
             level: "Senior",
             type: "Full time",
             active: "pending"
@@ -103,7 +107,7 @@ const Edit_postJob = (value1) => {
             Jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Report to directors and executive staff",
-            industry: "Great",
+            industry: "",
             level: "Senior",
             type: "Full time",
             active: "pending"
@@ -168,12 +172,11 @@ const Edit_postJob = (value1) => {
                     </div>
                     <div>
                         <Button variant="" className="popoup-btn" onClick={() => {
-                            nevigate("/postnewjob")
+                            nevigate("/post-new-job")
                         }}>New Job</Button>
                     </div>
                 </div>
             </div>
-
             <div className="topGapPad margin_bottom_">
                 <div className="gapbetween ">
                     <div>
@@ -201,12 +204,11 @@ const Edit_postJob = (value1) => {
                                             </Button>*/}
                         </InputGroup>
                     </div>
-
                 </div>
                 <div className="boxshadow">
                     {/*<h4>List Number of Job Posts</h4>*/}
-                    <Modal show={showalert} onHide={handleClose}   backdrop="static"
-                    keyboard={false}>
+                    <Modal show={showalert} onHide={handleClose} backdrop="static"
+                        keyboard={false}>
                         <Modal.Header >
                             <Modal.Title>Alert</Modal.Title>
                         </Modal.Header>
@@ -214,7 +216,6 @@ const Edit_postJob = (value1) => {
                         <Modal.Body>
                             <p>{rowtext?.text}</p>
                         </Modal.Body>
-
                         <Modal.Footer>
                             <Button variant="secondary" onClick={() => {
 
@@ -270,7 +271,7 @@ const Edit_postJob = (value1) => {
                                                     <span className="viewIcon" data-bs-toggle="modal"
                                                         data-bs-target="#viewbtn"> <i
                                                             className="bi bi-eye"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow} >Edit</button>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => { nevigate('/post-new-job') }} >Edit</button>
                                                 </div>
                                             </li>
                                             <li className="dropdownList">
@@ -284,7 +285,10 @@ const Edit_postJob = (value1) => {
                                         </ul>
                                     </div></td>
                                     <td>{data.Jobtitle}</td>
-                                    <td className="truncate">{data.description}</td>
+                                    <TooltipComp
+                                        component={<td>{data.description && subString(data.description, 50)}</td>}
+                                        tooltip={data.description}
+                                    />
                                     <td>{data.functions}</td>
                                     <td>{data.industry}</td>
                                     <td>{data.level}</td>
@@ -419,7 +423,7 @@ const Edit_postJob = (value1) => {
                         showPerPage={showPerPage}
                         onPageChange={onPageChange}
                         setStart={setpagination}
-                        total={1000}
+                        total={tableData.length}
                     />
                 </div>
             </div>

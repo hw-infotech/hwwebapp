@@ -17,30 +17,40 @@ import { subString } from "../../Services/commonFunctions";
 
 const route = [
     { name: "Home", route: "/" },
-    { name: "Carousel", route: "/" },
-    { name: "success-stories", route: "/" },
-
+    { name: "Carousel", route: "/success-stories" },
+    { name: "success stories", route: "/success-stories" },
 ]
 
 const records = [
     {
         title: "Birthday Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "resolved"
+        active: "resolved",
+        image: ""
 
     },
     {
         title: "Christmas Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "resolved"
+        active: "resolved",
+        image: ""
     },
     {
         title: "New Year Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "pending"
+        active: "pending",
+        image: ""
     }
 ]
 const Success_Stories = () => {
+    const[index,setindex]=useState()
+    const [state, setState] = useState({
+        title: "",
+        content: "",
+        active: "",
+        image: ""
+    })
+
     const [rowtext, setRowtext] = useState()
     const [showalert, setShowalert] = useState(false)
     const [disable, setSdisabled] = useState(true)
@@ -56,6 +66,13 @@ const Success_Stories = () => {
     const handleClose = () => {
         setShow(false)
         setEdit(false)
+        setState({
+            title: "",
+            content: "",
+            active: "",
+            image: ""
+        })
+        // alert(JSON.stringify(state))
     };
     const handleShow = () => setShow(true);
 
@@ -100,6 +117,23 @@ const Success_Stories = () => {
             })
         }
     };
+    const onhandlechange = (e) => {
+        const { name, value } = e.target
+        setState({ ...state, [name]: value })
+    }
+
+    const handleFormSubmit = (values, { resetForm }) => {
+        handleClose()
+
+      
+        setState({
+            title: "",
+            content: "",
+            active: "",
+            image: ""
+        })
+        // resetForm()
+    }
 
     return (
         <div>
@@ -122,7 +156,7 @@ const Success_Stories = () => {
                     <div className="">
                         <div className="gapbetween">
                             <div>
-                                <Form.Select aria-label="Default select example" hidden={disable} >
+                                <Form.Select aria-label="Default select example" hidden={disable}  >
                                     <option hidden selected>Status</option>
                                     <option value="1">All</option>
                                     <option value="1">Active</option>
@@ -180,11 +214,12 @@ const Success_Stories = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {tableData.map((data, index) =>
+                                    {tableData?.map((data, index) =>
                                         <tr>
+                                      
                                             <td class="action ">
                                                 <div class="userDetail ">
-                                                    <button type="button" class="btn "
+                                                    <button type="button" class="btn " key={index}
                                                         id="dropdownIconMenu" data-bs-toggle="dropdown"
                                                         aria-expanded="false">
                                                         <span class="actionIcon"> <i
@@ -198,9 +233,11 @@ const Success_Stories = () => {
                                                                 <span class="editAction" data-bs-toggle="modal"
                                                                     data-bs-target="#editbtn"><i
                                                                         class="bi bi-pencil-square"></i></span>
-                                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                <button type="button" key={index} className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                    setState(data)
                                                                     handleShow()
                                                                     setEdit(true)
+                                                                    {setindex(index)}
                                                                 }}>Edit</button>
                                                             </div>
                                                         </li>
@@ -209,7 +246,10 @@ const Success_Stories = () => {
                                                                 <span class="deleteAction" data-bs-toggle="modal"
                                                                     data-bs-target="#deletebtn"> <i
                                                                         class="bi bi-trash3-fill"></i></span>
-                                                                <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                                                                <button type="button" key={index} className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                    tableData.splice(index, 1)
+                                                                    setTableData([...tableData])
+                                                                }}>Delete</button>
                                                             </div>
                                                         </li>
                                                     </ul>
@@ -223,6 +263,7 @@ const Success_Stories = () => {
                                             <td><Form>
                                                 <Form.Check className="switch_padding"
                                                     type="switch"
+                                                    key={index}
                                                     id="custom-switch1"
                                                     checked={data.active === "resolved" ? true : false}
                                                     label=""
@@ -230,10 +271,10 @@ const Success_Stories = () => {
                                                         setShowalert(true)
                                                         setRowtext(e.target.checked ? ({
                                                             id: 1,
-                                                            text: "Are you sure to update status as Rsolved ?",
+                                                            text: "Are you sure to Active the  Story ?",
                                                         }) : ({
                                                             id: 0,
-                                                            text: "Are you sure to update status as Pending ?",
+                                                            text: "Are you sure to Deactive the Story  ?",
                                                         }))
                                                         if (data.active === "resolved") {
                                                             setDeleteObj({
@@ -261,7 +302,7 @@ const Success_Stories = () => {
                         <CustomPagination
                             start={pagination1}
                             setStart={setpagination}
-                            total={100}
+                            total={tableData.length}
                         />
                     </div>
                 </div>
@@ -270,47 +311,68 @@ const Success_Stories = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>{edit ? "Edit Project" : "Add Project"}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    {<div className="">
-                        <div className="cardBoard">
-                            <h3></h3>
-                            <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                {() => (
-                                    <form onSubmit={(e) => {
-                                        e.preventDefault();
-                                    }}
-                                    >
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Input type="text" label="Project Title" className="form-control" name="storytitle" placeholder="" />
-                                        </Form.Group>
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Input as={"textarea"} className="form-control" name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Description"} />
-                                        </Form.Group>
-                                        <Form.Group controlId="formFile" className="mb-3 w-100">
-                                            <Form.Label>Choose Image</Form.Label>
-                                            <Form.Control type="file" />
-                                        </Form.Group>
-                                        <br />
-                                        <Form.Check className="custom1-switch"
-                                            type="switch"
-                                            id="Active"
-                                            label="Active"
-                                        />
-                                    </form>
-                                )}
-                            </Formik>
-                        </div>
-                    </div>}
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" className="addbtn" onClick={handleClose}>Close</Button>
-                    <div style={{ float: "right", }}>
-                        {edit ? <Button className="addbtn" onClick={() => {
-                        }}>Update</Button> :
-                            <Button className="addbtn" onClick={() => {
-                            }}>Add</Button>}
-                    </div>
-                </Modal.Footer>
+                <Formik
+                    initialValues={state}
+                    // validationSchema={validationschemeaa}
+                    onSubmit={handleFormSubmit}
+                >
+                    {({ values, handleSubmit, handleChange }) => (
+                        <form onSubmit={(e) => {
+                            e.preventDefault()
+                            handleSubmit()
+                        }}>
+                            {console.log(values)}
+                            <Modal.Body>
+                                {<div className="">
+                                    <div className="cardBoard">
+                                        <h3></h3>
+                                        <div>
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Input
+                                                    type="text"
+                                                    label="Project Title"
+                                                    className="form-control"
+                                                    name="title"
+                                                    placeholder=""
+                                                    onChange={handleChange}
+                                                    id="title"
+                                                    value={values.title}
+                                                />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Input as={"textarea"} className="form-control" name="content" id="exampleFormControlTextarea1" rows="3" label={"Description"} onChange={onhandlechange} value={values.content} />
+                                            </Form.Group>
+                                            <Form.Group controlId="formFile" className="mb-3 w-100">
+                                                <Form.Label>Choose Image</Form.Label>
+                                                <Form.Control type="file" name="img" onChange={onhandlechange} value={values.image} />
+                                            </Form.Group>
+                                            <br />
+                                            <Form.Check className="custom1-switch"
+                                                type="switch"
+                                                id="Active"
+                                                label="Active"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>}
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" className="addbtn" onClick={handleClose}>Close</Button>
+                                <div style={{ float: "right", }}>
+                                    {edit ? <Button className="addbtn" type="submit" onClick={() =>{tableData[index].title=values.title
+                                    tableData[index].content=values.content
+                                    tableData[index].image=values.image
+                                    tableData[index].active=values.active
+                                    setTableData([...tableData])
+                                    }}>Update</Button> :
+                                        <Button className="addbtn" onClick={() => {
+                                            setTableData(old => [...old, state])
+                                        }}>Add</Button>}
+                                </div>
+                            </Modal.Footer>
+                        </form>
+                    )}
+                </Formik>
             </Modal>
         </div>
     );

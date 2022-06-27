@@ -16,6 +16,7 @@ import { confirm } from 'react-bootstrap-confirmation';
 import Paginationn from "../../components/pagination";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
+import capitalizeFirstLetter from "../../components/first_letter_capital";
 
 const All_Enquiry = () => {
     const [rowtext, setRowtext] = useState()
@@ -27,8 +28,8 @@ const All_Enquiry = () => {
     const handleShow = () => setShow(true);
     const route = [
         { name: "Home", route: "/" },
-        { name: "Enquiry", route: "/" },
-        { name: "All Enquiry", route: "/" },
+        { name: "Enquiry", route: "/AllEnquiry" },
+        { name: "All Enquiry", route: "/AllEnquiry" },
 
     ]
     const [row, setRow] = useState(10)
@@ -287,12 +288,12 @@ const All_Enquiry = () => {
                                             </ul>
                                         </div>
                                     </td>
-                                    <td>{data.Name}</td>
+                                    <td>{capitalizeFirstLetter(data.Name)}</td>
                                     <td>{data.Phone}</td>
                                     <td>{data.Email}</td>
                                     <td>{data.message}</td>
                                     <td>
-                                        {data.status === "resolved" ? <Badge bg="success" size={30} style={{ fontSize: "11px", padding: "8px" }}>Resolved</Badge> : <Badge bg="danger" style={{ fontSize: "11px", padding: "8px" }}>Pending</Badge>
+                                        {data.status === "resolved" ? <Badge bg="success" size={30} >Resolved</Badge> : <Badge bg="danger">Pending</Badge>
                                         }
                                         {/*<Form.Check className="switch_pad_enquiry"
                                             type="switch"
@@ -307,9 +308,8 @@ const All_Enquiry = () => {
                 </div>
                 <CustomPagination
                     showPerPage={showPerPage}
-
                     setStart={setpagination}
-                    total={100}
+                    total={tableData.length}
                 />
                 {/*<Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>

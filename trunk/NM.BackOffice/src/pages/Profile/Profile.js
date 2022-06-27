@@ -30,7 +30,7 @@ const Profile = () => {
                 <Col md={12} xl={12}>
                     <div className="main-Profile-card">
                         <div className="Profile-card">
-                            <div className=""><img src="/assets/images/team_nestormind.png" className="profile-image" width={120} height={120} />
+                       <div className=""><img src="/assets/images/team_nestormind.png" className="profile-image" width={120} height={120} />
                             </div>
                             <div className="card-heading4"><h1>Welcome, <strong>Ganesh</strong></h1>
                                 <div className="inner_heading">
