@@ -25,29 +25,30 @@ const records = [
     {
         title: "Birthday Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "resolved",
+        active: false,
         image: ""
 
     },
     {
         title: "Christmas Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "resolved",
+        active: true,
         image: ""
     },
     {
         title: "New Year Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "pending",
+        active: false,
         image: ""
     }
 ]
 const Success_Stories = () => {
-    const[index,setindex]=useState()
+    const[values,setValues]=useState()
+    const [index, setindex] = useState()
     const [state, setState] = useState({
         title: "",
         content: "",
-        active: "",
+        active: false,
         image: ""
     })
 
@@ -69,7 +70,7 @@ const Success_Stories = () => {
         setState({
             title: "",
             content: "",
-            active: "",
+            active: null,
             image: ""
         })
         // alert(JSON.stringify(state))
@@ -123,9 +124,9 @@ const Success_Stories = () => {
     }
 
     const handleFormSubmit = (values, { resetForm }) => {
+        const { name, value } = values
+        setState({ ...state, [name]: value })
         handleClose()
-
-      
         setState({
             title: "",
             content: "",
@@ -162,7 +163,6 @@ const Success_Stories = () => {
                                     <option value="1">Active</option>
                                     <option value="1">Deactive</option>
                                 </Form.Select>
-
                             </div>
                             <div className="serachbar">
                                 <InputGroup className="mb-3" >
@@ -187,7 +187,6 @@ const Success_Stories = () => {
                                 <Modal.Body>
                                     <p>{rowtext?.text}</p>
                                 </Modal.Body>
-
                                 <Modal.Footer>
                                     <Button variant="secondary" onClick={() => {
 
@@ -216,7 +215,7 @@ const Success_Stories = () => {
                                 <tbody>
                                     {tableData?.map((data, index) =>
                                         <tr>
-                                      
+
                                             <td class="action ">
                                                 <div class="userDetail ">
                                                     <button type="button" class="btn " key={index}
@@ -237,7 +236,7 @@ const Success_Stories = () => {
                                                                     setState(data)
                                                                     handleShow()
                                                                     setEdit(true)
-                                                                    {setindex(index)}
+                                                                    { setindex(index) }
                                                                 }}>Edit</button>
                                                             </div>
                                                         </li>
@@ -261,11 +260,13 @@ const Success_Stories = () => {
                                                 tooltip={data.content}
                                             />
                                             <td><Form>
+                                            {console.log(data?.active)}
                                                 <Form.Check className="switch_padding"
                                                     type="switch"
                                                     key={index}
                                                     id="custom-switch1"
-                                                    checked={data.active === "resolved" ? true : false}
+                                                   
+                                                    checked={data.active}
                                                     label=""
                                                     onChange={(e) => {
                                                         setShowalert(true)
@@ -276,7 +277,7 @@ const Success_Stories = () => {
                                                             id: 0,
                                                             text: "Are you sure to Deactive the Story  ?",
                                                         }))
-                                                        if (data.active === "resolved") {
+                                                        if (data.active === true) {
                                                             setDeleteObj({
                                                                 index,
                                                                 rowStatus: e.target.checked
@@ -297,7 +298,6 @@ const Success_Stories = () => {
                             </Table>
                         </div>
                     </div>
-
                     <div>
                         <CustomPagination
                             start={pagination1}
@@ -321,6 +321,7 @@ const Success_Stories = () => {
                             e.preventDefault()
                             handleSubmit()
                         }}>
+                        {setValues(values?.active)}
                             {console.log(values)}
                             <Modal.Body>
                                 {<div className="">
@@ -340,17 +341,20 @@ const Success_Stories = () => {
                                                 />
                                             </Form.Group>
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input as={"textarea"} className="form-control" name="content" id="exampleFormControlTextarea1" rows="3" label={"Description"} onChange={onhandlechange} value={values.content} />
+                                                <Input as={"textarea"} className="form-control" name="content" id="exampleFormControlTextarea1" rows="3" label={"Description"} onChange={handleChange} value={values.content} />
                                             </Form.Group>
                                             <Form.Group controlId="formFile" className="mb-3 w-100">
                                                 <Form.Label>Choose Image</Form.Label>
-                                                <Form.Control type="file" name="img" onChange={onhandlechange} value={values.image} />
+                                                <Form.Control type="file" name="image" onChange={handleChange} value={values.image} />
                                             </Form.Group>
                                             <br />
                                             <Form.Check className="custom1-switch"
                                                 type="switch"
                                                 id="Active"
                                                 label="Active"
+                                                name="active"
+                                               checked={values?.active}
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -359,14 +363,17 @@ const Success_Stories = () => {
                             <Modal.Footer>
                                 <Button variant="secondary" className="addbtn" onClick={handleClose}>Close</Button>
                                 <div style={{ float: "right", }}>
-                                    {edit ? <Button className="addbtn" type="submit" onClick={() =>{tableData[index].title=values.title
-                                    tableData[index].content=values.content
-                                    tableData[index].image=values.image
-                                    tableData[index].active=values.active
-                                    setTableData([...tableData])
+                                    {edit ? <Button className="addbtn" type="submit" onClick={() => {
+                                        tableData[index].title = values.title
+                                        tableData[index].content = values.content
+                                        tableData[index].image = values.image
+                                        tableData[index].active = values.active
+                                        setTableData([...tableData])
                                     }}>Update</Button> :
                                         <Button className="addbtn" onClick={() => {
-                                            setTableData(old => [...old, state])
+                                            setTableData(old => [...old, values])
+                                            console.log("tabledata", tableData)
+                                            setShowalert(false)
                                         }}>Add</Button>}
                                 </div>
                             </Modal.Footer>

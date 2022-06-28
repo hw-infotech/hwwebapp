@@ -3,8 +3,9 @@ import { Col, Form, Row, Button } from "react-bootstrap"
 import { Input } from "../../../components/commoninputfield"
 import CreatableSelectField from "../../../components/selectfield"
 
-const Step1 = ({ setGoSteps, state, setState, onhandlechange }) => {
-    const { handleChange } = useFormikContext()
+const Step1 = ({ setGoSteps, state, setState, handleChange,values
+ }) => {
+    //const { handleChange } = useFormikContext()
 
     return <div className="main-wrap-box w-100 m-auto">
         <div className="d-flex justify-content-end mt-2">
@@ -13,7 +14,7 @@ const Step1 = ({ setGoSteps, state, setState, onhandlechange }) => {
         <Row>
             <Col md={12}>
                 <Form.Group className="mb-3">
-                    <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
+                    <Input as='select' name='jobtitle' onChange={handleChange} label={"Job title"} value={values.jobtitle} id="jobtitle" className="form-control" options={[
                         { value: "...",  label: "..." },
                         { value: "UI/UX", label: "UI/UX" },
                         { value: "Project Manager", label: "Project Manager" },
@@ -21,14 +22,12 @@ const Step1 = ({ setGoSteps, state, setState, onhandlechange }) => {
                     ]} >
                     </Input>
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                     <Form.Label>Enter Descritption</Form.Label>
-                    <Form.Control as="textarea" style={{ height: "120px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                    <Form.Control as="textarea" style={{ height: "120px" }} name="description" value={values.jobdescription} onChange={handleChange} />
                 </Form.Group>
-
                 <Form.Group>
-                    <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
+                    <Input type='text' placeholder='Job Function' className="form-control"  value={values.jobfunction} name='functions' label={"Job Function"} id="name" onChange={handleChange} />
                 </Form.Group>
 
             </Col>

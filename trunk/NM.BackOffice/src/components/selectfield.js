@@ -38,7 +38,6 @@ const CreatableSelectField = ({ formState, setFormState, placeholder, name }) =>
                 event.preventDefault();
         }
     };
-    console.log(formState, "formState");
     const createOption = (label) => ({
         label,
         value: label,

@@ -101,7 +101,7 @@ const Job_newsletter = () => {
     }
     const requestSearch = (searchedVal) => {
         const filteredRows = records.filter((row) => {
-            return row.Name.toLowerCase().includes(searchedVal.toLowerCase())
+            return row.Name.toLowerCase().includes(searchedVal.toLowerCase()) || row.Email.toLowerCase().includes(searchedVal.toLowerCase())
         });
         console.log(filteredRows)
         setTableData([...filteredRows])
@@ -115,8 +115,8 @@ const Job_newsletter = () => {
                     <div className="filter-title"><h4>Subscribers/Unsubscriber</h4></div>
                     <div className="filter_container">
                         <div className="">
-                            <Button className="fitlter-sotry" id="button-addon2" onClick={()=>{
-                                setSdisabled(p=>!p)
+                            <Button className="fitlter-sotry" id="button-addon2" onClick={() => {
+                                setSdisabled(p => !p)
                             }}>
                                 <VscFilterFilled size={17} />
                             </Button>
@@ -129,16 +129,15 @@ const Job_newsletter = () => {
                         <Form.Select aria-label="row" className="wreap-content" hidden={disable}>
                             <option disabled hidden selected>Status</option>
                             <option value="1">All</option>
-                            <option value="2">newsletter-subscribers</option>
-                            <option value="3">Unnewsletter-subscribers</option>
+                            <option value="2">Subscribe</option>
+                            <option value="3">Unsubscribe</option>
                         </Form.Select>
-
                     </div>
                     <div className="searchbar">
                         <InputGroup className="mb-3">
                             <FormControl
-                            hidden={disable}
-                                placeholder="Search By Email"
+                                hidden={disable}
+                                placeholder="Search by email and name"
                                 aria-label="Search By Email"
                                 aria-describedby="basic-addon2"
                                 onChange={(e) => {
@@ -149,7 +148,6 @@ const Job_newsletter = () => {
                                                 <BsSearch />
                                             </Button>*/}
                         </InputGroup>
-
                     </div>
                 </div>
                 <div className="topGapPad">
@@ -193,7 +191,6 @@ const Job_newsletter = () => {
                     </div>
                     <CustomPagination
                         showPerPage={showPerPage}
-
                         setStart={setpagination}
                         total={tableData.length}
                     />

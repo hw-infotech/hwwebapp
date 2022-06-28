@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
-const Job_Preview = () => {
+const Job_Preview = (values) => {
     const nevigate=useNavigate()
     const [state, setState] = useState({
         jobtitle: "",
@@ -15,6 +15,7 @@ const Job_Preview = () => {
         jobfunction: "",
         industry: ""
     })
+    console.log(values)
     return (
         <div>
       
@@ -27,7 +28,7 @@ const Job_Preview = () => {
                                     <img src="assets/images/nestor.jfif" height={80} width={80} />
                                 </div>
                                 <div className="titlejob">
-                                    <span>{state.jobtitle} - Mohali</span>
+                                    <span>{values.values?.jobtitle} - Mohali</span>
                                 </div>
                                 <div className="job_location d-flex jobdes_marginbottom">
                                     <span >Nestormind </span>
@@ -40,7 +41,7 @@ const Job_Preview = () => {
                                 </div>
                                 <div className="">
                                     <ul className="job_description_list">
-                                        {state?.responsibility?.map((data, index) =>
+                                        {values?.values.responsibility?.map((data, index) =>
                                             <li className=""> {data?.value}</li>
                                         )}
                                     </ul>
@@ -51,7 +52,7 @@ const Job_Preview = () => {
                                 </div>
                                 <div className="">
                                     <ul className="job_description_list">
-                                        {state?.requirment?.map((data, index) =>
+                                        {values.values?.requirment?.map((data, index) =>
                                             <li className=""> {data?.value}</li>
                                         )}
                                     </ul>
@@ -61,7 +62,7 @@ const Job_Preview = () => {
                                 </div>
                                 <div className="">
                                     <ul className="job_description_list">
-                                        {state?.benefits?.map((data, index) =>
+                                        {values.values?.benefits?.map((data, index) =>
                                             <li className=""> {data?.value}</li>
                                         )}
                                     </ul>
@@ -70,19 +71,19 @@ const Job_Preview = () => {
                                     <ul className="job_description_level_list">
                                         <li>
                                             <h3 className="job_description_level">Seniority level</h3>
-                                            <span>{state.seneritylevel}</span>
+                                            <span>{values.values?.seneritylevel}</span>
                                         </li>
                                         <li>
                                             <h5 className="job_description_level">Employment type</h5>
-                                            <span>{state.employement}</span>
+                                            <span>{values.values?.employement}</span>
                                         </li>
                                         <li>
                                             <h5 className="job_description_level">Job function</h5>
-                                            <span> {state.jobfunction}</span>
+                                            <span> {values.values?.jobfunction}</span>
                                         </li>
                                         <li>
                                             <h5 className="job_description_level">Industries</h5>
-                                            <span>{state.industry}</span>
+                                            <span>{values.values.industry}</span>
                                         </li>
                                     </ul>
                                 </div>

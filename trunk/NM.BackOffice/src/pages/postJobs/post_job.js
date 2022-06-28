@@ -16,39 +16,57 @@ import Step1 from "./steps/step1";
 import Step2 from "./steps/step2";
 import Step3 from "./steps/step3";
 import Step4 from "./steps/step4";
+import { createContext } from "react";
 
-const Post_Job = () => {
-    const[post,setpost]=useState()
+
+
+
+const Post_Job = ({ stat }) => {
+    const [post, setpost] = useState()
     const [goSteps, setGoSteps] = useState(0);
     const [state, setState] = useState({
         jobtitle: "",
-        jobfunction: "",
+        functions: "",
         responsibility: [],
         requirment: [],
         benefits: [],
         industry: "",
-        employement: "",
-        seneritylevel: "",
-        jobdescription: ""
+        type: "",
+        level: "",
+        description: ""
 
     })
+    const [state1, setState1] = useState({
+        jobtitle: "",
+        functions: "",
+        responsibility: [],
+        requirment: [],
+        benefits: [],
+        industry: "",
+        type: "",
+        level: "",
+        description: ""
+
+    })
+    const DataContext = createContext();
     const route = [
         { name: "Home", route: "/" },
         { name: "Job" },
-        { name: "Edit Post job"  },
+        { name: "Edit Post job" },
 
     ]
     const onhandlechange = (e) => {
         const { name, value } = e.target
         setState({ ...state, [name]: value })
         console.log(state);
-
     }
+
+    // console.log(state1);
 
     return (
         <div>
             <BasicBreadcrumbs route={route} />
-            <h4>{post ? "Edit Job":"Post Job" }</h4>
+            <h4 >{post ? "Edit Job" : "Post Job"}</h4>
             <div className="w-75 m-auto p-2 z-depth-5 shadow-box-example rounded">
                 <Stepper
                     activeStep={goSteps}
@@ -59,43 +77,43 @@ const Post_Job = () => {
                         activeTextColor: "#fff",
                     }}
                 >
-                    <Step onClick={() => setGoSteps(0)} label="Basic Details" >
+                    <Step label="Basic Details" >
                         <BiPencil />
                     </Step>
-                    <Step onClick={() => setGoSteps(1)} label="Job Description" >
+                    <Step label="Job Description" >
                         <BiFolderOpen />
                     </Step>
-                    <Step onClick={() => setGoSteps(2)} label="Job Function">
+                    <Step label="Job Function">
                         <BsReverseLayoutTextSidebarReverse size={13} />
                     </Step>
-                    <Step onClick={() => setGoSteps(3)} label="Preview" >
+                    <Step label="Preview" >
                         <BiCheck size={24} />
                     </Step>
                 </Stepper>
 
-                <Formik initialValues={initialValues}>
-                    {({ handleChange, handleSubmit }) => (<Form onSubmit={(e) => {
+                <Formik initialValues={state}>
+                    {({ values, handleChange, handleSubmit }) => (<Form onSubmit={(e) => {
                         e.preventDefault()
                         handleSubmit()
                     }}>
+                        {console.log(values, "is the values")}
                         {goSteps === 0 && (
-                            <Step1 handleChange={handleChange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                            <Step1 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
                         )}
 
                         {goSteps === 1 && (
-                            <Step2 handleChange={handleChange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                            <Step2 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
                         )}
                         {goSteps === 2 && (
-                            <Step3 handleChange={handleChange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                            <Step3 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
                         )}
                         {goSteps === 3 && (
-                            <Step4 handleChange={handleChange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                            <Step4 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
                         )}
                     </Form>)}
                 </Formik>
             </div>
         </div>
     )
-
 }
 export default Post_Job

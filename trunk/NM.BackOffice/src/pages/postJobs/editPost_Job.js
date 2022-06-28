@@ -17,7 +17,8 @@ import { FaFilter } from "react-icons/fa";
 import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
 import { subString } from "../../Services/commonFunctions";
-;
+import { getAllEnquries, Send_data } from "../../Services/redux/action/action";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const Edit_postJob = (value1) => {
@@ -85,9 +86,12 @@ const Edit_postJob = (value1) => {
     const [formState, setFormState] = useState()
     const records = [
         {
-            Jobtitle: "UI/UX",
+            jobtitle: "UI/UX",
             description: "We are looking for an experienced Strategy Manager. ",
             functions: "Supervise and manage department team ",
+            responsibility: [],
+            benfits: [],
+            requirment: [],
             industry: "",
             level: "Junior",
             type: "Part time",
@@ -95,9 +99,12 @@ const Edit_postJob = (value1) => {
 
         },
         {
-            Jobtitle: "Project Manager",
+            jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Provide support and training to team members",
+            responsibility: [],
+            benfits: [],
+            requirment: [],
             industry: "",
             level: "Senior",
             type: "Full time",
@@ -107,13 +114,23 @@ const Edit_postJob = (value1) => {
             Jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Report to directors and executive staff",
+            responsibility: [],
+            benfits: [],
+            requirment: [],
             industry: "",
             level: "Senior",
             type: "Full time",
             active: "pending"
         }
     ]
-    const [tableData, setTableData] = useState(records)
+    const selector = useSelector(state => state.data.apidata.allEnquries)
+    useEffect(() => {
+        console.log("state this is the selector data", selector)
+        dispatch(getAllEnquries())
+        // setTableData(old=>[...old,selector])  
+    }, [])
+
+    const [tableData, setTableData] = useState(selector)
     function sortt() {
         const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() > b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() > a.Jobtitle.toLowerCase()) ? -1 : 0));
         console.log(response)
@@ -137,6 +154,7 @@ const Edit_postJob = (value1) => {
         // setState({ ...state, [name]: value })
         //console.log(state);
     }
+    const dispatch = useDispatch()
     const display = () => {
         console.log(deleteObj);
         setShowalert(true)
@@ -159,6 +177,7 @@ const Edit_postJob = (value1) => {
         index: 0,
         rowStatus: false
     })
+
     return (
         <div title="Edit Post Job">
             {<BasicBreadcrumbs route={route} />}
@@ -237,6 +256,9 @@ const Edit_postJob = (value1) => {
                                 }}> Title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                 <th>Description</th>
                                 <th>Function</th>
+                                <th>Requirement</th>
+                                <th>Benefits</th>
+                                <th>Responsibility</th>
                                 <th>Industry</th>
                                 <th>Level</th>
                                 <th>Employement</th>
@@ -279,20 +301,27 @@ const Edit_postJob = (value1) => {
                                                     <span className="deleteAction" data-bs-toggle="modal"
                                                         data-bs-target="#deletebtn"> <i
                                                             className="bi bi-trash3-fill"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                        tableData.splice(index, 1
+                                                        )
+                                                        setTableData([...tableData])
+                                                    }}>Delete</button>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div></td>
-                                    <td>{data.Jobtitle}</td>
+                                    <td>{data.Jobtitle || data.jobtitle}</td>
                                     <TooltipComp
                                         component={<td>{data.description && subString(data.description, 50)}</td>}
                                         tooltip={data.description}
                                     />
-                                    <td>{data.functions}</td>
-                                    <td>{data.industry}</td>
-                                    <td>{data.level}</td>
-                                    <td>{data.type}</td>
+                                    <td>{data?.functions}</td>
+                                    <td>{data?.requirment?.length > 0 && data.requirment[0]}</td>
+                                    <td>{data?.benfits?.length > 0 && data.benfits[0]}</td>
+                                    <td>{data?.responsibility?.length > 0 && data.responsibility[0]}</td>
+                                    <td>{data?.industry}</td>
+                                    <td>{data?.level}</td>
+                                    <td>{data?.type}</td>
                                     <td>
                                         <Form>
                                             <Form.Check
@@ -330,14 +359,13 @@ const Edit_postJob = (value1) => {
                         </tbody>
                     </Table>
                 </div>
-                <Modal show={show} onHide={handleClose} size="lg">
+                {/*<Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>Edit Post Job</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <div className="content_center">
                             <div className="topGapPad p-3 w-100">
-
                                 <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                                     {() => (
                                         <form onSubmit={(e) => {
@@ -416,7 +444,7 @@ const Edit_postJob = (value1) => {
                             <Button type="button" className="gallery_add_button">Submit</Button>
                         </div>
                     </Modal.Footer>
-                </Modal>
+                                                        </Modal>*/}
 
                 <div>
                     <CustomPagination
