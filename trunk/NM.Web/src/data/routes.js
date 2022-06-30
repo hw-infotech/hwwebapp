@@ -13,6 +13,8 @@ import Telemedician from "../components/caseStudies/Telemedician_case"
 import ContactUsContent from "../components/ContactUs/ContactUs"
 import Gallery from "../components/Gallery"
 import HomeContent from "../components/Home/Home"
+import meeting from "../components/Meeting/meeting"
+
 import NotFound from "../components/Not-Found/NotFound"
 import PrivacyPolicy from "../components/privacy-terms/privacyPolicy"
 import TermsCondition from "../components/privacy-terms/terms_Condition"
@@ -47,6 +49,7 @@ const routes = [
     // route("/blog-post2", Blogpost2),
     route("/under-mantainence", NotFound),
     route("/gallery", Gallery),
-    route('/blog/:name', BlogListComp)
+    route('/blog/:name', BlogListComp),
+    route('/meeting',meeting)
 ]
 export default routes

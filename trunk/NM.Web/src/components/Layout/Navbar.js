@@ -78,7 +78,6 @@ const NavBar = ({ NavbarStyle }) => {
                 >
                   Services <span className="dropIcon"></span>
                 </a>
-
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <div className="dropdownmenus">
                     <Link className="dropdown-item" to="/app-development">
@@ -244,17 +243,8 @@ const NavBar = ({ NavbarStyle }) => {
                   Get free consultation
                 </Link>
               </li> */}
-              <li className="nav-item">
-                <PopupButton
-                  className="w-o-btn"
-                  url="https://calendly.com/nestormindpvtltd"
-                  /*
-                   * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-                   * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-                   */
-                  rootElement={document.getElementById("root")}
-                  text="Schedule time with me!"
-                />
+              <li className="nav-item w-o-btn">
+             <Link to="/meeting"> Schedule time with me!</Link>
               </li>
             </ul>
           </div>
@@ -282,10 +272,8 @@ const NavBar = ({ NavbarStyle }) => {
             </li>
             <li><Link to="/about-us">About Us</Link></li>
             <li><Link to="/contact-us">Contact Us</Link></li>
-  
           </ul>
         </nav>
-  
         <a href="#about" className="get-started-btn scrollto">Get Quote</a> */}
       </div>
     </header>

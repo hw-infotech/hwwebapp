@@ -12,7 +12,7 @@ import { PopupButton } from "react-calendly";
 
 const HomeContent = (props) => {
   const { navbar } = props;
-  
+
   console.log(navbar);
   const [state, setState] = useState({
     responsive: {
@@ -79,14 +79,14 @@ const HomeContent = (props) => {
                 a team that is comprised of skilled professionals, we deliver
                 top-rated service to propel your business another level.
               </h2>
-              <div className="d-lg-flex mt-5">
+             {/* <div className="d-lg-flex mt-5">
                 <PopupButton
                   className="w-o-btn scrollto"
                   url="https://calendly.com/nestormindpvtltd"
                   rootElement={document.getElementById("root")}
                   text="Book an appointment!"
                 />
-              </div>
+  </div>*/}
             </div>
             {/* <div
                 className="col-lg-7 order-1 order-lg-2 hero-img"
@@ -200,7 +200,6 @@ const HomeContent = (props) => {
         </div>
       </section>
       <Portfolio />
-
       <section>
         <div className="">
           <div className="container">
@@ -208,7 +207,6 @@ const HomeContent = (props) => {
               <h2>Industries We Serve</h2>
               <p>Successfully delivered digital products</p>
             </div>
-
             <div className="row mt30">
               <div
                 className="col-lg-3 col-sm-6  wow fadeIn"
@@ -255,7 +253,6 @@ const HomeContent = (props) => {
                   <h6>Healthcare</h6>
                 </div>
               </div>
-
               <div
                 className="col-lg-3 col-sm-6  wow fadeIn"
                 data-wow-delay="1.1s"
@@ -385,7 +382,6 @@ const HomeContent = (props) => {
                         </button>
                       </h5>
                     </div>
-
                     <div
                       id="collapseOne"
                       className="collapse show"
@@ -506,7 +502,7 @@ const HomeContent = (props) => {
                 rel="noopener noreferrer"
               >
                 <div className="img">
-                  <img src="../../assets/img/cluch.png" />
+                  <img src="../../assets/img/companyregis.svg" />
                 </div>
               </a>
               <div className="hm_awcnt">
@@ -1012,8 +1008,8 @@ const HomeContent = (props) => {
               <div className="workProcess">Agile Methodology</div>
               <div className="workProcessSlogan">Deriving Test Plan</div>
               <ul>
-                <li>
-                  <div className="image">
+                <li className="">
+                  <div className="image ">
                     <img src="assets/img/discover.svg" alt="Discover" />
                   </div>
                   <div className="text">
@@ -1023,8 +1019,8 @@ const HomeContent = (props) => {
                     <img src="assets/img/line-white.svg" alt="line white" />
                   </div>
                 </li>
-                <li>
-                  <div className="image">
+                <li className="">
+                  <div className="image ">
                     <img src="assets/img/design.svg" alt="Design" />
                   </div>
                   <div className="text">
@@ -1070,7 +1066,9 @@ const HomeContent = (props) => {
                 </li>
                 <li>
                   <div className="image">
-                    <img src="assets/img/launch.svg" alt="Launch" />
+
+                    <img src="assets/img/people.svg" alt="people" ></img>
+
                   </div>
                   <div className="text">
                     <h4>User Acceptance</h4>
@@ -1080,7 +1078,7 @@ const HomeContent = (props) => {
                 </li>
                 <li>
                   <div className="image">
-                    <img src="assets/img/launch.svg" alt="Launch" />
+                    <img src="assets/img/gear.svg" alt="Launch" />
                   </div>
                   <div className="text">
                     <h4>Markit Acceptance</h4>
