@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MdFilterAlt, MdAdd } from "react-icons/md";
-import { VscFilterFilled } from "react-icons/vsc";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
@@ -8,38 +8,48 @@ import { Input } from "../../components/commoninputfield";
 import { Button, Form, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { FaFilter } from "react-icons/fa";
-
-import TooltipComp from "../../shared/Tooltipomp";
+import { BsFilter } from "react-icons/bs";
+import { BsFilterLeft } from "react-icons/bs";
 import CustomPagination from "../../shared/pagination";
 import { confirm } from "react-bootstrap-confirmation";
+import { subString } from "../../Services/commonFunctions";
 
 const route = [
-    { name: "Home", route: "/" },
-    { name: "Carousel", route: "/" },
-    { name: "Success-Stories", route: "/" },
-
+    { name: "Dashboard", route: "/" },
+    { name: "Sliders/Carousels", route: "/success-stories" },
+    { name: "Success Stories", route: "/success-stories" },
 ]
-
 const records = [
     {
         title: "Birthday Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "resolved"
+        active: false,
+        image: ""
 
     },
     {
         title: "Christmas Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "resolved"
+        active: true,
+        image: ""
     },
     {
         title: "New Year Post",
         content: "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
-        active: "pending"
+        active: false,
+        image: ""
     }
 ]
 const Success_Stories = () => {
+    const [values, setValues] = useState()
+    const [index, setindex] = useState()
+    const [state, setState] = useState({
+        title: "",
+        content: "",
+        active: false,
+        image: ""
+    })
+
     const [rowtext, setRowtext] = useState()
     const [showalert, setShowalert] = useState(false)
     const [disable, setSdisabled] = useState(true)
@@ -55,6 +65,13 @@ const Success_Stories = () => {
     const handleClose = () => {
         setShow(false)
         setEdit(false)
+        setState({
+            title: "",
+            content: "",
+            active: null,
+            image: ""
+        })
+        // alert(JSON.stringify(state))
     };
     const handleShow = () => setShow(true);
 
@@ -64,13 +81,6 @@ const Success_Stories = () => {
             return row.title.toLowerCase().includes(searchedVal.toLowerCase());
         });
         setTableData(filteredRows)
-        // if (searchedVal.length < 1) {
-        //     setTableData(tableData)
-        //     console.log("it is for if condition",searchedVal)
-        // }
-        // else {
-
-        // }
     };
     function sortt() {
         const response = tableData.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : ((b.title.toLowerCase() > a.title.toLowerCase()) ? -1 : 0));
@@ -95,32 +105,46 @@ const Success_Stories = () => {
         // console.log(rowText);
         if (deleteObj.rowStatus) {
             setTableData(oldState => {
-                oldState[deleteObj.index].active = "resolved"
+                oldState[deleteObj.index].active = true
                 return [...oldState]
             })
         }
         if (!deleteObj.rowStatus) {
             setTableData(oldState => {
-                oldState[deleteObj.index].active = "pending"
+                oldState[deleteObj.index].active = false
                 return [...oldState]
             })
         }
     };
-    
+    const onhandlechange = (e) => {
+        const { name, value } = e.target
+        setState({ ...state, [name]: value })
+    }
+
+    const handleFormSubmit = (values, { resetForm }) => {
+        const { name, value } = values
+        setState({ ...state, [name]: value })
+        handleClose()
+        setState({
+            title: "",
+            content: "",
+            active: "",
+            image: ""
+        })
+        // resetForm()
+    }
+
     return (
         <div>
             {<BasicBreadcrumbs route={route} />}
             <div className="filter_header">
                 <div className="filter-title"><h4>Success Stories</h4></div>
                 <div className="filter_container">
-                    <div className="">
-                        <Button className="fitlter-sotry" onClick={() => setSdisabled(p => !p)}>
-                            <VscFilterFilled size={17} />
-                        </Button>
-                    </div>
-                    <div>
-                        <Button variant="" className="popoup-btn" onClick={handleShow} >Add Project</Button>
-                    </div>
+                   
+                        <BsFilter size={25} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                 
+                        <Button variant="" className="btn-sm" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01"/></Button>
+                    
                 </div>
             </div>
             <div className="margin_bottom_ topGapPad">
@@ -128,13 +152,12 @@ const Success_Stories = () => {
                     <div className="">
                         <div className="gapbetween">
                             <div>
-                                <Form.Select aria-label="Default select example" hidden={disable} >
+                                <Form.Select aria-label="Default select example" hidden={disable}  >
                                     <option hidden selected>Status</option>
                                     <option value="1">All</option>
                                     <option value="1">Active</option>
                                     <option value="1">Deactive</option>
                                 </Form.Select>
-
                             </div>
                             <div className="serachbar">
                                 <InputGroup className="mb-3" >
@@ -149,29 +172,24 @@ const Success_Stories = () => {
                                             requestSearch(e.target.value)
                                         }}
                                     />
-                                    {/*<Button variant="outline-secondary" id="button-addon2">
-                                    <BsSearch />
-                                </Button>*/}
                                 </InputGroup>
                             </div>
                             <Modal show={showalert} onHide={handleClose} >
-                                <Modal.Header >
+                                <Modal.Header closeButton>
                                     <Modal.Title>Alert</Modal.Title>
                                 </Modal.Header>
 
                                 <Modal.Body>
                                     <p>{rowtext?.text}</p>
                                 </Modal.Body>
-
                                 <Modal.Footer>
-                                    <Button variant="secondary" onClick={() => {
-                                        
+                                    <Button variant="secondary" className="btn btn-sm" onClick={() => {
                                         setShowalert(false)
-                                    }} >Cancel</Button>
-                                    <Button variant="primary" onClick={() => {
+                                    }} >No</Button>
+                                    <Button variant="primary" className="btn btn-sm" onClick={() => {
                                         display()
                                         setShowalert(false)
-                                    }}>Confirm</Button>
+                                    }}>Yes</Button>
                                 </Modal.Footer>
                             </Modal>
                         </div>
@@ -189,56 +207,66 @@ const Success_Stories = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {tableData.map((data, index) =>
+                                    {tableData?.map((data, index) =>
                                         <tr>
-                                            <td class="action "><div class="userDetail ">
-                                                <button type="button" class="btn "
-                                                    id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <span class="actionIcon"> <i
-                                                        class="bi bi-three-dots-vertical"></i> </span>
-                                                </button>
-                                                <ul class="IconDropdown dropdown-menu context-menu11"
-                                                    aria-labelledby="dropdownIconMenu">
-                                                    <li class="dropdownList ">
-                                                        <div class="actionBtns  context-menu1 ">
-                                                            <span class="editAction" data-bs-toggle="modal"
-                                                                data-bs-target="#editbtn"><i
-                                                                    class="bi bi-pencil-square"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
-                                                                handleShow()
-                                                                setEdit(true)
-                                                            }}>Edit</button>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dropdownList">
-                                                        <div class="actionBtns context-menu1">
-                                                            <span class="deleteAction" data-bs-toggle="modal"
-                                                                data-bs-target="#deletebtn"> <i
-                                                                    class="bi bi-trash3-fill"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div></td>
+                                            <td class="action ">
+                                                <div class="userDetail ">
+                                                    <button type="button" className="btn actionIcon " key={index}
+                                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <span class="actionIcon"> <i
+                                                            class="bi bi-three-dots-vertical"></i>
+                                                        </span>
+                                                    </button>
+                                                    <ul class="IconDropdown dropdown-menu context-menu11"
+                                                        aria-labelledby="dropdownIconMenu">
+                                                        <li class="dropdownList ">
+                                                            <div class="actionBtns  context-menu1 ">
+                                                                <span class="editAction" data-bs-toggle="modal"
+                                                                    data-bs-target="#editbtn"><i
+                                                                        class="bi bi-pencil-square"></i></span>
+                                                                <button type="button" key={index} className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                    setState(data)
+                                                                    handleShow()
+                                                                    setEdit(true)
+                                                                    { setindex(index) }
+                                                                }}>Edit</button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="dropdownList">
+                                                            <div class="actionBtns context-menu1">
+                                                                <span class="deleteAction" data-bs-toggle="modal"
+                                                                    data-bs-target="#deletebtn"> <i
+                                                                        class="bi bi-trash3-fill"></i></span>
+                                                                <button type="button" key={index} className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                    tableData.splice(index, 1)
+                                                                    setTableData([...tableData])
+                                                                }}>Delete</button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
                                             <td>{data.title}</td>
-                                            <td>{data.content}</td>
+                                            {<td>{data.content && subString(data.content, 115)}</td>}
                                             <td><Form>
+                                                {console.log(data?.active)}
                                                 <Form.Check className="switch_padding"
                                                     type="switch"
+                                                    key={index}
                                                     id="custom-switch1"
-                                                    checked={data.active === "resolved" ? true : false}
+                                                    checked={data.active}
                                                     label=""
                                                     onChange={(e) => {
-                                                       setShowalert(true)
+                                                        setShowalert(true)
                                                         setRowtext(e.target.checked ? ({
                                                             id: 1,
-                                                            text: "Are you sure to update status as Rsolved ?",
+                                                            text: "Are you sure to Active the  Story ?",
                                                         }) : ({
                                                             id: 0,
-                                                            text: "Are you sure to update status as Pending ?",
+                                                            text: "Are you sure to Deactive the Story  ?",
                                                         }))
-                                                        if (data.active === "resolved") {
+                                                        if (data.active === true) {
                                                             setDeleteObj({
                                                                 index,
                                                                 rowStatus: e.target.checked
@@ -259,12 +287,11 @@ const Success_Stories = () => {
                             </Table>
                         </div>
                     </div>
-
                     <div>
                         <CustomPagination
                             start={pagination1}
                             setStart={setpagination}
-                            total={100}
+                            total={tableData.length}
                         />
                     </div>
                 </div>
@@ -273,47 +300,74 @@ const Success_Stories = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>{edit ? "Edit Project" : "Add Project"}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    {<div className="">
-                        <div className="cardBoard">
-                            <h3></h3>
-                            <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                {() => (
-                                    <form onSubmit={(e) => {
-                                        e.preventDefault();
-                                    }}
-                                    >
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Input type="text" label="Project Title" className="form-control" name="storytitle" placeholder="" />
-                                        </Form.Group>
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Input as={"textarea"} className="form-control" name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Description"} />
-                                        </Form.Group>
-                                        <Form.Group controlId="formFile" className="mb-3 w-100">
-                                            <Form.Label>Choose Image</Form.Label>
-                                            <Form.Control type="file" />
+                <Formik
+                    initialValues={state}
+                    // validationSchema={validationschemeaa}
+                    onSubmit={handleFormSubmit}
+                >
+                    {({ values, handleSubmit, handleChange }) => (
+                        <form onSubmit={(e) => {
+                            e.preventDefault()
+                            handleSubmit()
+                        }}>
+                            {setValues(values?.active)}
+                            {console.log(values)}
+                            <Modal.Body>
+                                {<div className="">
+                                    <div className="cardBoard">
+                                        <Form.Group className="" controlId="formBasicEmail">
+                                            <Input
+                                                type="text"
+                                                label="Project Title"
+                                                className="form-control"
+                                                name="title"
+                                                placeholder=""
+                                                onChange={handleChange}
+                                                id="title"
+                                                value={values.title}
+                                            />
+
+                                            <Input as={"textarea"} className="form-control" name="content" id="exampleFormControlTextarea1" rows="3" label={"Description"} onChange={handleChange} value={values.content} />
+
+                                            <Form.Label className="label-size">Choose Image</Form.Label>
+                                            <Form.Control className="label-size" type="file" name="image" onChange={handleChange} value={values.image} />
                                         </Form.Group>
                                         <br />
-                                        <Form.Check className="custom1-switch"
+                                        <Form.Check className="custom1-switch label-size"
                                             type="switch"
                                             id="Active"
                                             label="Active"
+                                            name="active"
+                                            checked={values?.active}
+                                            onChange={handleChange}
+                                            color="#eb7823"
                                         />
-                                    </form>
-                                )}
-                            </Formik>
-                        </div>
-                    </div>}
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" className="addbtn" onClick={handleClose}>Close</Button>
-                    <div style={{ float: "right", }}>
-                        {edit ? <Button className="addbtn" onClick={() => {
-                        }}>Update</Button> :
-                            <Button className="addbtn" onClick={() => {
-                            }}>Add</Button>}
-                    </div>
-                </Modal.Footer>
+                                    </div>
+                                </div>}
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" className="btn-sm font_size" onClick={handleClose}>Close</Button>
+
+                                {edit ? <Button className="btn-sm font_size" type="submit" onClick={() => {
+                                    tableData[index].title = values.title
+                                    tableData[index].content = values.content
+                                    tableData[index].image = values.image
+                                    tableData[index].active = values.active
+                                    setTableData([...tableData])
+                                    setShowalert(false)
+                                }}>Update</Button> :
+                                    <Button className=" btn-sm font_size" onClick={() => {
+
+                                        setTableData(old => [...old, values])
+                                        setShowalert(false)
+                                        console.log("tabledata", tableData)
+
+                                    }}>Add</Button>}
+
+                            </Modal.Footer>
+                        </form>
+                    )}
+                </Formik>
             </Modal>
         </div>
     );

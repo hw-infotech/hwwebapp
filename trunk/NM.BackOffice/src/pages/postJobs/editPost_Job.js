@@ -10,15 +10,21 @@ import { useNavigate } from "react-router";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { IoAddOutline } from "react-icons/";
-import TooltipComp from "../../shared/Tooltipomp";
 import CreatableSelectField from "../../components/selectfield";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
 import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
-;
+import { subString } from "../../Services/commonFunctions";
+import { getAllEnquries, Send_data } from "../../Services/redux/action/action";
+import { useDispatch, useSelector } from "react-redux";
+import { BsFilter } from "react-icons/bs";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+
 
 const Edit_postJob = (value1) => {
+
+    const [jobpost, setjobpost] = useState()
     const [rowtext, setRowtext] = useState()
     const [showalert, setShowalert] = useState(false)
     const [disable, setSdisabled] = useState(true)
@@ -44,7 +50,7 @@ const Edit_postJob = (value1) => {
         setpagination({ start: start, end: end });
     };
     useEffect(() => {
-        //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+        //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
     }, [pagination1])
     const Chnage = (e) => {
@@ -73,28 +79,34 @@ const Edit_postJob = (value1) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const route = [
-        { name: "Home", route: "/" },
-        { name: "Job", route: "/" },
-        { name: "Edit Post job", route: "/" },
+        { name: "Dashboard", route: "/" },
+        { name: "Job Management", route: "" },
+        { name: "Job List", route: "" },
 
     ]
     const [formState, setFormState] = useState()
     const records = [
         {
-            Jobtitle: "UI/UX",
-            description: "We are looking for an experienced Strategy Manager.",
+            jobtitle: "UI/UX",
+            description: "We are looking for an experienced Strategy Manager. ",
             functions: "Supervise and manage department team ",
-            industry: "Great",
+            responsibility: [],
+            benfits: [],
+            requirment: [],
+            industry: "",
             level: "Junior",
             type: "Part time",
             active: "pending"
 
         },
         {
-            Jobtitle: "Project Manager",
+            jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Provide support and training to team members",
-            industry: "Great",
+            responsibility: [],
+            benfits: [],
+            requirment: [],
+            industry: "",
             level: "Senior",
             type: "Full time",
             active: "pending"
@@ -103,13 +115,23 @@ const Edit_postJob = (value1) => {
             Jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Report to directors and executive staff",
-            industry: "Great",
+            responsibility: [],
+            benfits: [],
+            requirment: [],
+            industry: "",
             level: "Senior",
             type: "Full time",
             active: "pending"
         }
     ]
-    const [tableData, setTableData] = useState(records)
+    const selector = useSelector(state => state.data.apidata.allEnquries)
+    useEffect(() => {
+        console.log("state this is the selector data", selector)
+        dispatch(getAllEnquries())
+        // setTableData(old=>[...old,selector])  
+    }, [])
+
+    const [tableData, setTableData] = useState(selector)
     function sortt() {
         const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() > b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() > a.Jobtitle.toLowerCase()) ? -1 : 0));
         console.log(response)
@@ -133,6 +155,7 @@ const Edit_postJob = (value1) => {
         // setState({ ...state, [name]: value })
         //console.log(state);
     }
+    const dispatch = useDispatch()
     const display = () => {
         console.log(deleteObj);
         setShowalert(true)
@@ -155,25 +178,19 @@ const Edit_postJob = (value1) => {
         index: 0,
         rowStatus: false
     })
+
     return (
-        <div title="Edit Post Job">
+        <div>
             {<BasicBreadcrumbs route={route} />}
             <div className="filter_header">
-                <div className="filter-title"><h4>Jobs</h4></div>
+                <div className="filter-title"><h4>Job List</h4></div>
                 <div className="filter_container">
-                    <div className="">
-                        <Button className="fitlter-sotry" id="button-addon2" onClick={() => setSdisabled(p => !p)}>
-                            <VscFilterFilled size={17} />
-                        </Button>
-                    </div>
-                    <div>
-                        <Button variant="" className="popoup-btn" onClick={() => {
-                            nevigate("/postnewjob")
-                        }}>New Job</Button>
-                    </div>
+                    <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                    <Button variant="" className="" onClick={() => {
+                        nevigate("/post-new-job")
+                    }}> <AiOutlinePlusCircle size={24} color="#ff6b01"/></Button>
                 </div>
             </div>
-
             <div className="topGapPad margin_bottom_">
                 <div className="gapbetween ">
                     <div>
@@ -201,12 +218,11 @@ const Edit_postJob = (value1) => {
                                             </Button>*/}
                         </InputGroup>
                     </div>
-
                 </div>
                 <div className="boxshadow">
                     {/*<h4>List Number of Job Posts</h4>*/}
-                    <Modal show={showalert} onHide={handleClose}   backdrop="static"
-                    keyboard={false}>
+                    <Modal show={showalert} onHide={handleClose} backdrop="static"
+                        keyboard={false}>
                         <Modal.Header >
                             <Modal.Title>Alert</Modal.Title>
                         </Modal.Header>
@@ -214,16 +230,15 @@ const Edit_postJob = (value1) => {
                         <Modal.Body>
                             <p>{rowtext?.text}</p>
                         </Modal.Body>
-
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={() => {
+                            <Button className="btn-sm" variant="secondary" onClick={() => {
 
                                 setShowalert(false)
-                            }} >Cancel</Button>
-                            <Button variant="primary" onClick={() => {
+                            }} >No</Button>
+                            <Button className="btn-sm" variant="primary" onClick={() => {
                                 display()
                                 setShowalert(false)
-                            }}>Confirm</Button>
+                            }}>Yes</Button>
                         </Modal.Footer>
                     </Modal>
                     <Table striped bordered hover responsive>
@@ -236,6 +251,9 @@ const Edit_postJob = (value1) => {
                                 }}> Title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                 <th>Description</th>
                                 <th>Function</th>
+                                <th>Requirement</th>
+                                <th>Benefits</th>
+                                <th>Responsibility</th>
                                 <th>Industry</th>
                                 <th>Level</th>
                                 <th>Employement</th>
@@ -270,7 +288,7 @@ const Edit_postJob = (value1) => {
                                                     <span className="viewIcon" data-bs-toggle="modal"
                                                         data-bs-target="#viewbtn"> <i
                                                             className="bi bi-eye"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow} >Edit</button>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => { nevigate('/post-new-job') }} >Edit</button>
                                                 </div>
                                             </li>
                                             <li className="dropdownList">
@@ -278,17 +296,27 @@ const Edit_postJob = (value1) => {
                                                     <span className="deleteAction" data-bs-toggle="modal"
                                                         data-bs-target="#deletebtn"> <i
                                                             className="bi bi-trash3-fill"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                        tableData.splice(index, 1
+                                                        )
+                                                        setTableData([...tableData])
+                                                    }}>Delete</button>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div></td>
-                                    <td>{data.Jobtitle}</td>
-                                    <td className="truncate">{data.description}</td>
-                                    <td>{data.functions}</td>
-                                    <td>{data.industry}</td>
-                                    <td>{data.level}</td>
-                                    <td>{data.type}</td>
+                                    <td>{data.Jobtitle || data.jobtitle}</td>
+
+                                    <td>{data.description && subString(data.description, 50)}</td>
+
+
+                                    <td>{data?.functions}</td>
+                                    <td>{data?.requirment?.length > 0 && data.requirment[0]}</td>
+                                    <td>{data?.benfits?.length > 0 && data.benfits[0]}</td>
+                                    <td>{data?.responsibility?.length > 0 && data.responsibility[0]}</td>
+                                    <td>{data?.industry}</td>
+                                    <td>{data?.level}</td>
+                                    <td>{data?.type}</td>
                                     <td>
                                         <Form>
                                             <Form.Check
@@ -300,10 +328,10 @@ const Edit_postJob = (value1) => {
                                                     setShowalert(true)
                                                     setRowtext(e.target.checked ? ({
                                                         id: 1,
-                                                        text: "Are you sure to update status as Rsolved ?",
+                                                        text: "Are you sure to  show the job ?",
                                                     }) : ({
                                                         id: 0,
-                                                        text: "Are you sure to update status as Pending ?",
+                                                        text: "Are you sure to hide the job ?",
                                                     }))
                                                     if (data.active === "resolved") {
                                                         setDeleteObj({
@@ -326,14 +354,13 @@ const Edit_postJob = (value1) => {
                         </tbody>
                     </Table>
                 </div>
-                <Modal show={show} onHide={handleClose} size="lg">
+                {/*<Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>Edit Post Job</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <div className="content_center">
                             <div className="topGapPad p-3 w-100">
-
                                 <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                                     {() => (
                                         <form onSubmit={(e) => {
@@ -412,14 +439,14 @@ const Edit_postJob = (value1) => {
                             <Button type="button" className="gallery_add_button">Submit</Button>
                         </div>
                     </Modal.Footer>
-                </Modal>
+                                                        </Modal>*/}
 
                 <div>
                     <CustomPagination
                         showPerPage={showPerPage}
                         onPageChange={onPageChange}
                         setStart={setpagination}
-                        total={1000}
+                        total={tableData.length}
                     />
                 </div>
             </div>

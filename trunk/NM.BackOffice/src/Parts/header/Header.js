@@ -11,7 +11,7 @@ const Header = ({ title, setSidebarShow }) => {
     const [state, setState] = useState("Ganesh")
     const history = useNavigate()
     
-    const getTitle = () => (<strong >Welcome, {state}</strong>)
+    const getTitle = () => (<span>Welcome,<strong className="user_content" style={{color:"black"}}> {state}</strong></span>)
 
     return (
         <div className="topHeader">

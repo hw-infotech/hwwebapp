@@ -71,7 +71,7 @@ const Home = () => {
                                 <BiTab size={24} />
                             </div>
                             <div className="innerCard">
-                                <span>Job's Subscriber</span>
+                                <span>Job Subscribers</span>
                                 <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ const Home = () => {
                                 <BiWallet size={24} />
                             </div>
                             <div className="innerCard">
-                                <span >Newsletter Subscriber</span>
+                                <span >Newsletter Subscribers</span>
                                 <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ const Home = () => {
                                         <button type="button" class="btn "
                                             id="dropdownIconMenu" data-bs-toggle="dropdown"
                                             aria-expanded="false">
-                                            <span class="actionIcon" style={{ color: "white" }}> <i
+                                            <span class="actionIcon"> <i
                                                 className="bi bi-three-dots-vertical"></i> </span>
                                         </button>
                                         <ul class="IconDropdown dropdown-menu context-menu1 "
@@ -161,7 +161,7 @@ const Home = () => {
                                         <button type="button" className="btn "
                                             id="dropdownIconMenu" data-bs-toggle="dropdown"
                                             aria-expanded="false">
-                                            <span className="actionIcon" style={{ color: "white" }}> <i
+                                            <span className="actionIcon"> <i
                                                 className="bi bi-three-dots-vertical"></i> </span>
                                         </button>
                                         <ul className="IconDropdown dropdown-menu context-menu1 "
@@ -203,7 +203,7 @@ const Home = () => {
                                         <button type="button" class="btn "
                                             id="dropdownIconMenu" data-bs-toggle="dropdown"
                                             aria-expanded="false">
-                                            <span className="actionIcon" style={{ color: "white" }}> <i
+                                            <span className="actionIcon"> <i
                                                 className="bi bi-three-dots-vertical"></i>
                                             </span>
                                         </button>

@@ -1,4 +1,4 @@
-import { Redirect } from 'react-router'
+import { Navigate } from 'react-router-dom'
 import Home from '../../pages/Home'
 import AddNewPost from '../../pages/blogs/addNewPost'
 import Success_Stories from '../../pages/crausel/success_Stories';
@@ -16,32 +16,35 @@ import Edit_postJob from '../../pages/postJobs/editPost_Job';
 import Particularjob from '../../pages/postJobs/particularlist';
 import Profile from '../../pages/Profile/Profile';
 import Post_Job from '../../pages/postJobs/post_job';
+import Job_Preview from '../../pages/postJobs/job_preview';
 
 const routes = (path, element, exact = true) => {
     return { path, element, exact }
 }
 const route = [
-    routes('/',<Home/>),
-    routes('/post_job',<Post_Job/>),
+    routes('/', <Navigate to="/home" />),
+    routes('/home', <Home />),
+    routes('/jobpreview', <Job_Preview />),
+    routes('/post-new-job', <Post_Job />),
     routes("/addNewPost", <AddNewPost />),
     routes('/particularjob', <Particularjob />),
-    routes('/editPostjob', <Edit_postJob />),
-    routes('/SuccessStories', <Success_Stories />),
-    routes('/Subscriber', <SubScriber />),
+    routes('/all-jobs', <Edit_postJob />),
+    routes('/success-stories', <Success_Stories />),
+    routes('/newsletter-subscribers', <SubScriber />),
     routes('/Profile', <Profile />),
     routes('/AllEnquiry', <All_Enquiry />),
-    //routes('/Resolved', <Resolved />),
-    //routes('/PendingEnquiry', <Pending_Enquiry />),
-    routes('/PostNewJob', <Post_New_Job />),
+    //routes('/PostNewJob', <Post_New_Job />),
     routes('/appliedjobs', <Applied_Job />),
-    ///routes('/selecteduser', <Selected_User />),
-    //routes('/rejecteduser', <Rejected_user />),
-    routes('/jobsubscriber', <Job_Subscriber />),
+    routes('/job-subscriber/unsubscriber', <Job_Subscriber />),
     routes('/stacks', <Stacks />),
     routes('/addgalleryevent', <Add_Gallery_Event />),
     routes('/listofblogs', <List_Of_Blogs />),
-    //routes('/test', < />),
     routes('/changegalleryevent', <Change_Gallery_Events />),
+    //routes('/Resolved', <Resolved />),
+    //routes('/PendingEnquiry', <Pending_Enquiry />),
+    ///routes('/selecteduser', <Selected_User />),
+    //routes('/rejecteduser', <Rejected_user />),
+    //routes('/test', < />),
     // routes('/draftpost'),
     // routes('./pendingpost'),
 ]

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
-import TooltipComp from "./Tooltipomp";
+
 
 const CustomPagination = ({ total, start, setStart }) => {
     const [currentItems, setCurrentItems] = useState(null);

@@ -6,12 +6,12 @@ import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { Button, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
 import { VscFilterFilled } from "react-icons/vsc";
-import TooltipComp from "../../shared/Tooltipomp";
 import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
-const Job_Subscriber = () => {
+import CapitalizeFirstLetter from "../../components/first_letter_capital";
+const Job_newsletter = () => {
     const [disable, setSdisabled] = useState(true)
     const [showPerPage, setShowPerPage] = useState()
     const [row, setRow] = useState(10)
@@ -36,7 +36,7 @@ const Job_Subscriber = () => {
     //         end: showPerPage
     //     })
     useEffect(() => {
-        //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+        //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         //setpagination({ start: start, end: showPerPage })
     }, [])
     // const Chnage = (e) => {
@@ -62,9 +62,9 @@ const Job_Subscriber = () => {
     //     }
     // }
     const route = [
-        { name: "Home", route: "/" },
-        { name: "Job", route: "/" },
-        { name: "Job Subscriber/Unsubscriber", route: "/" },
+        { name: "Dashboard", route: "/" },
+        { name: "Job Management", route: "job-subscriber/unsubscriber" },
+        { name: "Subscribe/Unsubscribe", route: "/job-subscriber/unsubscriber" },
     ]
     const records = [
         {
@@ -100,7 +100,7 @@ const Job_Subscriber = () => {
     }
     const requestSearch = (searchedVal) => {
         const filteredRows = records.filter((row) => {
-            return row.Name.toLowerCase().includes(searchedVal.toLowerCase())
+            return row.Name.toLowerCase().includes(searchedVal.toLowerCase()) || row.Email.toLowerCase().includes(searchedVal.toLowerCase())
         });
         console.log(filteredRows)
         setTableData([...filteredRows])
@@ -111,14 +111,11 @@ const Job_Subscriber = () => {
             <div className="margin_bottom_">
                 <BasicBreadcrumbs route={route} />
                 <div className="filter_header">
-                    <div className="filter-title"><h4>Subscriber/Unsubscriber</h4></div>
+                    <div className="filter-title"><h4>Subscribers/Unsubscriber</h4></div>
                     <div className="filter_container">
                         <div className="">
-                            <Button className="fitlter-sotry" id="button-addon2" onClick={()=>{
-                                setSdisabled(p=>!p)
-                            }}>
-                                <VscFilterFilled size={17} />
-                            </Button>
+                        
+                                <FaFilter size={24} color="#ff6b01" onClick={()=>setSdisabled(p => !p)} />
                         </div>
 
                     </div>
@@ -128,16 +125,15 @@ const Job_Subscriber = () => {
                         <Form.Select aria-label="row" className="wreap-content" hidden={disable}>
                             <option disabled hidden selected>Status</option>
                             <option value="1">All</option>
-                            <option value="2">Subscriber</option>
-                            <option value="3">UnSubscriber</option>
+                            <option value="2">Subscribe</option>
+                            <option value="3">Unsubscribe</option>
                         </Form.Select>
-
                     </div>
                     <div className="searchbar">
                         <InputGroup className="mb-3">
                             <FormControl
-                            hidden={disable}
-                                placeholder="Search By Email"
+                                hidden={disable}
+                                placeholder="Search by email and name"
                                 aria-label="Search By Email"
                                 aria-describedby="basic-addon2"
                                 onChange={(e) => {
@@ -148,7 +144,6 @@ const Job_Subscriber = () => {
                                                 <BsSearch />
                                             </Button>*/}
                         </InputGroup>
-
                     </div>
                 </div>
                 <div className="topGapPad">
@@ -168,7 +163,7 @@ const Job_Subscriber = () => {
                             <tbody>
                                 {tableData.map((data, index) =>
                                     <tr>
-                                        <td>{data.Name}</td>
+                                        <td>{CapitalizeFirstLetter(data.Name)}</td>
                                         <td>{data.phone}</td>
                                         <td>{data.Email}</td>
                                         <td >
@@ -192,9 +187,8 @@ const Job_Subscriber = () => {
                     </div>
                     <CustomPagination
                         showPerPage={showPerPage}
-
                         setStart={setpagination}
-                        total={1000}
+                        total={tableData.length}
                     />
 
                 </div>
@@ -203,4 +197,4 @@ const Job_Subscriber = () => {
         </div>
     );
 }
-export default Job_Subscriber
+export default Job_newsletter

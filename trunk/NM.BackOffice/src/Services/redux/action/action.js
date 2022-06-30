@@ -1,8 +1,9 @@
 import React from "react";
-import { ADD_GALLERY_EVENT, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, STACK } from "../../store/type";
+import { ADD_GALLERY_EVENT, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK } from "../../store/type";
 import apidata from "../../store/api";
 import { ToastContainer, toast } from 'react-toastify';
 import Store from "../../store/store";
+
 
 export const Add_Gallery_Eventt = (user) => dispatch => {
     // apidata.post(``, user)
@@ -37,4 +38,16 @@ export const NewsLetter_Unsubscriber = (data1) => dispatch => {
             dispatch({ type: GET_NEWSLEETER_UNSUBSCRIBER, payload: { data: false, err } })
         }
         )
+}
+export const Send_data = (data1) => dispatch => {
+    dispatch({
+        type: POST_DATA,
+        payload: data1
+    })
+}
+
+export const getAllEnquries = () => dispatch => {
+    dispatch({
+        type: GET_ALL_ENQUIRY,
+    })
 }

@@ -10,12 +10,13 @@ import { BsArrowDown } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { RiChatDeleteLine } from "react-icons/ri";
 import { FcCheckmark, FcDeleteColumn } from "react-icons/fc";
-import TooltipComp from "../../shared/Tooltipomp";
 // import { alert } from 'react-bootstrap-confirmation';
 import { confirm } from 'react-bootstrap-confirmation';
 import Paginationn from "../../components/pagination";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
+import { BsFilter } from "react-icons/bs";
+import capitalizeFirstLetter from "../../components/first_letter_capital";
 
 const All_Enquiry = () => {
     const [rowtext, setRowtext] = useState()
@@ -26,9 +27,9 @@ const All_Enquiry = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const route = [
-        { name: "Home", route: "/" },
-        { name: "Enquiry", route: "/" },
-        { name: "All Enquiry", route: "/" },
+        { name: "Dashboard", route: "/" },
+        { name: "Enquiry", route: "/AllEnquiry" },
+        { name: "All Enquiry", route: "/AllEnquiry" },
 
     ]
     const [row, setRow] = useState(10)
@@ -45,14 +46,14 @@ const All_Enquiry = () => {
         });
     // const selector = useSelector(state => state),
     //     dispatch = useDispatch(),
-    //     [subscribers, setSubscribers] = useState([])
+    //     [subscribers, setnewsletter-subscriberss] = useState([])
     // console.log("hellow", subscribers);
     // useEffect(() => {
     //     dispatch(News_letter_Subscribe())
     // }, [])
 
     // useEffect(() => {
-    //     // setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+    //     // setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
     //     setpagination({ start: start, end: showPerPage })
     // }, [selector, pagination1])
 
@@ -150,16 +151,13 @@ const All_Enquiry = () => {
     };
 
     return (
-        <div title="All Enquiry">
-
+        <div>
             <BasicBreadcrumbs route={route} />
             <div className="filter_header">
                 <div className="filter-title"><h4>All Enquiry</h4></div>
                 <div className="filter_container">
                     <div className="">
-                        <Button className="fitlter-sotry" onClick={() => setSdisabled(p => !p)}>
-                            <VscFilterFilled size={17} />
-                        </Button>
+                    <BsFilter size={24} color="#eb7823" onClick={()=>setSdisabled(p=>!p)}/>    
                     </div>
                 </div>
             </div>
@@ -199,16 +197,16 @@ const All_Enquiry = () => {
                     </Modal.Body>
 
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={() => {
+                        <Button className="btn-sm" variant="secondary" onClick={() => {
 
                             setShowalert(false)
 
-                        }} >Cancel</Button>
-                        <Button variant="primary" onClick={() => {
+                        }} >No</Button>
+                        <Button className="btn-sm" variant="primary" onClick={() => {
                             display()
                             setShowalert(false)
 
-                        }}>Confirm</Button>
+                        }}>Yes</Button>
                     </Modal.Footer>
                 </Modal>
                 <div className="boxshadow">
@@ -248,7 +246,7 @@ const All_Enquiry = () => {
                                                             setwait(true)
                                                             setRowtext(({
                                                                 id: 0,
-                                                                text: "Are you sure to update status as Pending ?",
+                                                                text: "Are you sure to update status as Resolved ?",
                                                             }))
                                                             setShowalert(true)
 
@@ -278,7 +276,7 @@ const All_Enquiry = () => {
                                                             })
                                                             setRowtext({
                                                                 id: 1,
-                                                                text: "Are you sure to update status as Rsolved ?",
+                                                                text: "Are you sure to update status as Panding ?",
                                                             })
 
                                                         }}>Pending</button>
@@ -287,12 +285,12 @@ const All_Enquiry = () => {
                                             </ul>
                                         </div>
                                     </td>
-                                    <td>{data.Name}</td>
+                                    <td>{capitalizeFirstLetter(data.Name)}</td>
                                     <td>{data.Phone}</td>
                                     <td>{data.Email}</td>
                                     <td>{data.message}</td>
                                     <td>
-                                        {data.status === "resolved" ? <Badge bg="success" size={30} style={{ fontSize: "11px", padding: "8px" }}>Resolved</Badge> : <Badge bg="danger" style={{ fontSize: "11px", padding: "8px" }}>Pending</Badge>
+                                        {data.status === "resolved" ? <Badge bg="success" size={30} >Resolved</Badge> : <Badge bg="danger">Pending</Badge>
                                         }
                                         {/*<Form.Check className="switch_pad_enquiry"
                                             type="switch"
@@ -307,9 +305,8 @@ const All_Enquiry = () => {
                 </div>
                 <CustomPagination
                     showPerPage={showPerPage}
-
                     setStart={setpagination}
-                    total={100}
+                    total={tableData.length}
                 />
                 {/*<Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>

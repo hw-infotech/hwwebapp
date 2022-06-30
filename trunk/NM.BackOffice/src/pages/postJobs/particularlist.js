@@ -8,10 +8,14 @@ import { Formik } from "formik";
 import { initialValues, validationschemeaa } from "./validation-schema";
 import { Input } from "../../components/commoninputfield";
 import { BsSearch } from "react-icons/bs";
-import TooltipComp from "../../shared/Tooltipomp";
 import CustomPagination from "../../shared/pagination";
+import { VscFilterFilled } from "react-icons/vsc";
+import CapitalizeFirstLetter from "../../components/first_letter_capital";
+import BasicBreadcrumbs from "../../components/breadcumbs";
+import { FaFilter } from "react-icons/fa";
 
 const Particularjob = () => {
+    const [disabled, setSdisabled] = useState(true)
     const [showPerPage, setShowPerPage] = useState()
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -60,20 +64,27 @@ const Particularjob = () => {
     const [title, setTitle] = useState(false)
     const requestSearch = (searchedVal) => {
         const filteredRows = records.filter((row) => {
-            return row.name.toLowerCase().includes(searchedVal.toLowerCase());
+            return row.name.toLowerCase().includes(searchedVal.toLowerCase()) || row.Jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
         });
         setTableData(filteredRows)
 
     };
+    const route = [
+        { name: "Dashboard", route: "/" },
+        { name: "Job Management", route: "" },
+        { name: "Job List", route: "/all-jobs" },
+        { name: "Detail/Applied", route: "/particularjob" },
 
+    ]
     return (
         <div className="content_center margin_bottom_ ">
-            <div className="topGapPad p-3 w-100">
+            <div className="topGapPad  w-100">
+                {<BasicBreadcrumbs route={route} />}
                 <Tabs activeKey={key}
                     id="uncontrolled-tab-example"
                     onSelect={(k) => setKey(k)}
                     className="mb-3">
-                    <Tab eventKey="Description" title="Description" onSelect={() => {
+                    <Tab eventKey="Description" title="Detail" onSelect={() => {
                         setKey("Description")
                     }}>
                         <div className="jobdes_margin">
@@ -102,7 +113,6 @@ const Particularjob = () => {
                                                     <li className="">
                                                         {/*state.responsibility*/}
                                                     </li>
-
                                                 </ul>
                                             </div>
                                             <div className="job_description_heading">
@@ -153,7 +163,7 @@ const Particularjob = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="mediaqueiry" style={{ paddingLeft: 30 }}>
+                                    {/*<div className="mediaqueiry" style={{ paddingLeft: 30 }}>
                                         <h4 className="right_pannle_main_heading">Nestormind Other Jobs</h4>
                                         <ul className="right_pannle_list">
                                             <li className="right_pannle_list_itmes">
@@ -181,30 +191,26 @@ const Particularjob = () => {
                                                 </span>
                                             </li>
                                         </ul>
-                                    </div>
+                </div>*/}
                                 </div>
                             </div>
                         </div>
                     </Tab>
-
                     <Tab eventKey="Aplied" title="Applied" >
-                        <div className="gapbetween ">
-                           
-                                    <div>
-                                        <Form.Select aria-label="Default select example">
-                                            <option disabled selected hidden>Status</option>
-                                            <option value="1">All</option>
-                                            <option value="1">Reject</option>
-                                            <option value="1">Select</option>
-                                        </Form.Select>
-                                    </div>
-
-                                
-                               
-                            <div className="serachbar" >
+                        <div className="gapbetween">
+                            <div className="w-25">
+                                <Form.Select aria-label="Default select example" hidden={disabled}>
+                                    <option disabled selected hidden>Status</option>
+                                    <option value="1">All</option>
+                                    <option value="1">Reject</option>
+                                    <option value="1">Select</option>
+                                </Form.Select>
+                            </div>
+                            <div className="serachbar w-100" >
                                 <InputGroup className="mb-3">
                                     <FormControl
-                                        placeholder="Search title and name"
+                                        hidden={disabled}
+                                        placeholder="Search by title and name"
                                         aria-label="Recipient's username"
                                         aria-describedby="basic-addon2"
                                         onChange={(e) => {
@@ -215,7 +221,11 @@ const Particularjob = () => {
                                     <BsSearch />
                                     </Button>*/}
                                 </InputGroup>
-                              
+                            </div>
+                            <div style={{ width: "100%", height: "100%",}}>
+
+                                <FaFilter style={{ float:"right"}} size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+
                             </div>
                         </div>
                         <div className="boxshadow">
@@ -255,7 +265,6 @@ const Particularjob = () => {
                                                             }}>View</button>
                                                         </div>
                                                     </li>
-
                                                     <li class="dropdownList">
                                                         <div class="actionBtns">
                                                             <span class="deleteAction" data-bs-toggle="modal"
@@ -266,9 +275,8 @@ const Particularjob = () => {
                                                     </li>
                                                 </ul>
                                             </div></td>
-
                                             <td>{data.Jobtitle}</td>
-                                            <td>{data.name}</td>
+                                            <td>{CapitalizeFirstLetter(data.name)}</td>
                                             <td>{data.email}</td>
                                             <td>{data.phone}</td>
                                             <td><Form>
@@ -278,22 +286,20 @@ const Particularjob = () => {
                                                     value={data.active}
                                                     label="" />
                                             </Form></td>
-
                                         </tr>)}
-
                                 </tbody>
                             </Table>
                         </div>
                         <div>
                             <CustomPagination
-                                total={100}
+                                total={tableData.length}
                                 start={pagination1}
                                 setStart={setpagination}
                             />
                         </div>
                     </Tab>
                 </Tabs>
-                <Modal show={show} onHide={handleClose} size="md">
+                <Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>
                         <Modal.Title>Project</Modal.Title>
                     </Modal.Header>
@@ -322,11 +328,7 @@ const Particularjob = () => {
                             </div>
                         </div>}
                     </Modal.Body>
-                    <Modal.Footer>
-                        {/*<div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
-                        <button type="button" class="btn btn-outline-secondary gallery_add_button">Submit</button>
-                                </div>*/}
-                    </Modal.Footer>
+
                 </Modal>
             </div>
         </div>

@@ -20,7 +20,7 @@ const Change_Gallery_Events = () => {
             end: showPerPage
         })
     useEffect(() => {
-        //setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
+        //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
         setpagination({ start: start, end: showPerPage })
     }, [pagination1])
     const Chnage = (e) => {

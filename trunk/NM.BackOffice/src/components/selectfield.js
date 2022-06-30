@@ -38,7 +38,6 @@ const CreatableSelectField = ({ formState, setFormState, placeholder, name }) =>
                 event.preventDefault();
         }
     };
-    console.log(formState, "formState");
     const createOption = (label) => ({
         label,
         value: label,
@@ -52,6 +51,7 @@ const CreatableSelectField = ({ formState, setFormState, placeholder, name }) =>
                 inputValue={state.inputValue}
                 isClearable
                 isMulti
+                className='label-size'
                 menuIsOpen={false}
                 // options={[
                 //     {value:"Aman",label:"Aman"},
