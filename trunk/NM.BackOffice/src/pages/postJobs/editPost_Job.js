@@ -18,6 +18,8 @@ import { MdAdd } from "react-icons/md";
 import { subString } from "../../Services/commonFunctions";
 import { getAllEnquries, Send_data } from "../../Services/redux/action/action";
 import { useDispatch, useSelector } from "react-redux";
+import { BsFilter } from "react-icons/bs";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 
 const Edit_postJob = (value1) => {
@@ -183,16 +185,10 @@ const Edit_postJob = (value1) => {
             <div className="filter_header">
                 <div className="filter-title"><h4>Job List</h4></div>
                 <div className="filter_container">
-                    <div className="">
-                      
-                            <FaFilter size={24} color="#ff6b01" onClick={()=> setSdisabled(p => !p)} />
-                       
-                    </div>
-                    <div>
-                        <Button variant="" className="popoup-btn" onClick={() => {
-                            nevigate("/post-new-job")
-                        }}>New Job</Button>
-                    </div>
+                    <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                    <Button variant="" className="" onClick={() => {
+                        nevigate("/post-new-job")
+                    }}> <AiOutlinePlusCircle size={24} color="#ff6b01"/></Button>
                 </div>
             </div>
             <div className="topGapPad margin_bottom_">
@@ -310,10 +306,10 @@ const Edit_postJob = (value1) => {
                                         </ul>
                                     </div></td>
                                     <td>{data.Jobtitle || data.jobtitle}</td>
-                                    
-                                        <td>{data.description && subString(data.description, 50)}</td>
-                                      
-                                    
+
+                                    <td>{data.description && subString(data.description, 50)}</td>
+
+
                                     <td>{data?.functions}</td>
                                     <td>{data?.requirment?.length > 0 && data.requirment[0]}</td>
                                     <td>{data?.benfits?.length > 0 && data.benfits[0]}</td>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MdFilterAlt, MdAdd } from "react-icons/md";
-import { VscFilterFilled } from "react-icons/vsc";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
@@ -8,7 +8,8 @@ import { Input } from "../../components/commoninputfield";
 import { Button, Form, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { FaFilter } from "react-icons/fa";
+import { BsFilter } from "react-icons/bs";
+import { BsFilterLeft } from "react-icons/bs";
 import CustomPagination from "../../shared/pagination";
 import { confirm } from "react-bootstrap-confirmation";
 import { subString } from "../../Services/commonFunctions";
@@ -139,12 +140,11 @@ const Success_Stories = () => {
             <div className="filter_header">
                 <div className="filter-title"><h4>Success Stories</h4></div>
                 <div className="filter_container">
-                    <div className="" >
-                        <FaFilter size={25} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
-                    </div>
-                    <div>
-                        <Button variant="" className="popoup-btn" onClick={handleShow} >Add Project</Button>
-                    </div>
+                   
+                        <BsFilter size={25} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                 
+                        <Button variant="" className="btn-sm" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01"/></Button>
+                    
                 </div>
             </div>
             <div className="margin_bottom_ topGapPad">
@@ -184,7 +184,6 @@ const Success_Stories = () => {
                                 </Modal.Body>
                                 <Modal.Footer>
                                     <Button variant="secondary" className="btn btn-sm" onClick={() => {
-
                                         setShowalert(false)
                                     }} >No</Button>
                                     <Button variant="primary" className="btn btn-sm" onClick={() => {
@@ -210,7 +209,6 @@ const Success_Stories = () => {
                                 <tbody>
                                     {tableData?.map((data, index) =>
                                         <tr>
-
                                             <td class="action ">
                                                 <div class="userDetail ">
                                                     <button type="button" className="btn actionIcon " key={index}
@@ -348,24 +346,24 @@ const Success_Stories = () => {
                                 </div>}
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" className="addbtn" onClick={handleClose}>Close</Button>
-                                <div style={{ float: "right", }}>
-                                    {edit ? <Button className="addbtn" type="submit" onClick={() => {
-                                        tableData[index].title = values.title
-                                        tableData[index].content = values.content
-                                        tableData[index].image = values.image
-                                        tableData[index].active = values.active
-                                        setTableData([...tableData])
+                                <Button variant="secondary" className="btn-sm font_size" onClick={handleClose}>Close</Button>
+
+                                {edit ? <Button className="btn-sm font_size" type="submit" onClick={() => {
+                                    tableData[index].title = values.title
+                                    tableData[index].content = values.content
+                                    tableData[index].image = values.image
+                                    tableData[index].active = values.active
+                                    setTableData([...tableData])
+                                    setShowalert(false)
+                                }}>Update</Button> :
+                                    <Button className=" btn-sm font_size" onClick={() => {
+
+                                        setTableData(old => [...old, values])
                                         setShowalert(false)
-                                    }}>Update</Button> :
-                                        <Button className="addbtn" onClick={() => {
+                                        console.log("tabledata", tableData)
 
-                                            setTableData(old => [...old, values])
-                                            setShowalert(false)
-                                            console.log("tabledata", tableData)
+                                    }}>Add</Button>}
 
-                                        }}>Add</Button>}
-                                </div>
                             </Modal.Footer>
                         </form>
                     )}

@@ -17,6 +17,7 @@ import { FaFilter } from "react-icons/fa";
 import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
 import moment from 'moment'
+import { BsFilter } from "react-icons/bs";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 
 const SubScriber = () => {
@@ -120,7 +121,7 @@ const SubScriber = () => {
                 <div className="filter-title"><h4>Subscribe/Unsubscribe</h4></div>
                 <div className="filter_container">
                     <div className="">
-                         <FaFilter size={24} color="#ff6b01" onClick={()=> setSdisabled(p => !p)} />
+                         <BsFilter size={24} color="#ff6b01" onClick={()=> setSdisabled(p => !p)} />
                     </div>
                     <div>
                         <Button variant="outline-secondary" className="popoup-btn" onClick={handleShow}>Add NewsLetter</Button>

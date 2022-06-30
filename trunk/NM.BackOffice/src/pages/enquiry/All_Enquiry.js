@@ -15,6 +15,7 @@ import { confirm } from 'react-bootstrap-confirmation';
 import Paginationn from "../../components/pagination";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
+import { BsFilter } from "react-icons/bs";
 import capitalizeFirstLetter from "../../components/first_letter_capital";
 
 const All_Enquiry = () => {
@@ -156,9 +157,7 @@ const All_Enquiry = () => {
                 <div className="filter-title"><h4>All Enquiry</h4></div>
                 <div className="filter_container">
                     <div className="">
-                    
-                    <FaFilter size={24} color="#eb7823" onClick={()=>setSdisabled(p=>!p)}/>
-                       
+                    <BsFilter size={24} color="#eb7823" onClick={()=>setSdisabled(p=>!p)}/>    
                     </div>
                 </div>
             </div>
