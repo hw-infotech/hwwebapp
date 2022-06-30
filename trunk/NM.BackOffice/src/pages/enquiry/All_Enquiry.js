@@ -10,7 +10,6 @@ import { BsArrowDown } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { RiChatDeleteLine } from "react-icons/ri";
 import { FcCheckmark, FcDeleteColumn } from "react-icons/fc";
-import TooltipComp from "../../shared/Tooltipomp";
 // import { alert } from 'react-bootstrap-confirmation';
 import { confirm } from 'react-bootstrap-confirmation';
 import Paginationn from "../../components/pagination";
@@ -27,7 +26,7 @@ const All_Enquiry = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const route = [
-        { name: "Home", route: "/" },
+        { name: "Dashboard", route: "/" },
         { name: "Enquiry", route: "/AllEnquiry" },
         { name: "All Enquiry", route: "/AllEnquiry" },
 
@@ -151,16 +150,15 @@ const All_Enquiry = () => {
     };
 
     return (
-        <div title="All Enquiry">
-
+        <div>
             <BasicBreadcrumbs route={route} />
             <div className="filter_header">
                 <div className="filter-title"><h4>All Enquiry</h4></div>
                 <div className="filter_container">
                     <div className="">
-                        <Button className="fitlter-sotry" onClick={() => setSdisabled(p => !p)}>
-                            <VscFilterFilled size={17} />
-                        </Button>
+                    
+                    <FaFilter size={24} color="#eb7823" onClick={()=>setSdisabled(p=>!p)}/>
+                       
                     </div>
                 </div>
             </div>
@@ -200,16 +198,16 @@ const All_Enquiry = () => {
                     </Modal.Body>
 
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={() => {
+                        <Button className="btn-sm" variant="secondary" onClick={() => {
 
                             setShowalert(false)
 
-                        }} >Cancel</Button>
-                        <Button variant="primary" onClick={() => {
+                        }} >No</Button>
+                        <Button className="btn-sm" variant="primary" onClick={() => {
                             display()
                             setShowalert(false)
 
-                        }}>Confirm</Button>
+                        }}>Yes</Button>
                     </Modal.Footer>
                 </Modal>
                 <div className="boxshadow">
@@ -249,7 +247,7 @@ const All_Enquiry = () => {
                                                             setwait(true)
                                                             setRowtext(({
                                                                 id: 0,
-                                                                text: "Are you sure to update status as Pending ?",
+                                                                text: "Are you sure to update status as Resolved ?",
                                                             }))
                                                             setShowalert(true)
 
@@ -279,7 +277,7 @@ const All_Enquiry = () => {
                                                             })
                                                             setRowtext({
                                                                 id: 1,
-                                                                text: "Are you sure to update status as Rsolved ?",
+                                                                text: "Are you sure to update status as Panding ?",
                                                             })
 
                                                         }}>Pending</button>

@@ -4,7 +4,6 @@ import { Form, FormControl, InputGroup, Table, Button, Row, Col } from "react-bo
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import TooltipComp from "../../shared/Tooltipomp";
 import { BsSearch } from "react-icons/bs";
 import Paginationn from "../../components/pagination";
 
@@ -109,16 +108,13 @@ const Applied_Job = () => {
             <div><h4> Posted Job's</h4></div>
             <div className="w-100 setupcontent">
                 <div className="">
-                    <TooltipComp
-                        component={<Form.Select aria-label="row" className="wreap-content">
+                   <Form.Select aria-label="row" className="wreap-content">
                             <option disabled hidden selected>Select</option>
                             <option value="1">All</option>
                             <option value="2">newsletter-subscribers</option>
                             <option value="3">Unnewsletter-subscribers</option>
-                        </Form.Select>}
-                        placement="top"
-                        tooltip={"newsletter-subscribers all/Unsubscriber all"}
-                    />
+                        </Form.Select>
+                       
                 </div>
                 <div className="searchbar">
                     <InputGroup className="mb-3">

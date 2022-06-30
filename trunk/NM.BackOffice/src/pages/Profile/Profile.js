@@ -7,7 +7,7 @@ import { GrLocation } from "react-icons/gr";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
 import { ErrorMessage, Formik } from "formik";
-import TooltipComp from "../../shared/Tooltipomp";
+
 import { useNavigate } from "react-router";
 
 const Profile = () => {
@@ -117,7 +117,6 @@ const Profile = () => {
                                                             <div><Button variant="" type="submit" className="popoup-btn" onClick={() => {
                                                                 alert("Data Update successful")
                                                                 setEdit(true)
-
 
                                                             }} disabled={visible}>Save</Button></div>
                                                         </div>

@@ -52,7 +52,7 @@ const Post_Job = ({ stat }) => {
     const route = [
         { name: "Home", route: "/" },
         { name: "Job" },
-        { name: "Edit Post job" },
+        { name: "Post job" },
 
     ]
     const onhandlechange = (e) => {

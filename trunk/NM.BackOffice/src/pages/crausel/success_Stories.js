@@ -9,18 +9,15 @@ import { Button, Form, FormControl, InputGroup, Modal, Table } from "react-boots
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { FaFilter } from "react-icons/fa";
-
-import TooltipComp from "../../shared/Tooltipomp";
 import CustomPagination from "../../shared/pagination";
 import { confirm } from "react-bootstrap-confirmation";
 import { subString } from "../../Services/commonFunctions";
 
 const route = [
-    { name: "Home", route: "/" },
-    { name: "Carousel", route: "/success-stories" },
-    { name: "success stories", route: "/success-stories" },
+    { name: "Dashboard", route: "/" },
+    { name: "Sliders/Carousels", route: "/success-stories" },
+    { name: "Success Stories", route: "/success-stories" },
 ]
-
 const records = [
     {
         title: "Birthday Post",
@@ -43,7 +40,7 @@ const records = [
     }
 ]
 const Success_Stories = () => {
-    const[values,setValues]=useState()
+    const [values, setValues] = useState()
     const [index, setindex] = useState()
     const [state, setState] = useState({
         title: "",
@@ -107,13 +104,13 @@ const Success_Stories = () => {
         // console.log(rowText);
         if (deleteObj.rowStatus) {
             setTableData(oldState => {
-                oldState[deleteObj.index].active = "resolved"
+                oldState[deleteObj.index].active = true
                 return [...oldState]
             })
         }
         if (!deleteObj.rowStatus) {
             setTableData(oldState => {
-                oldState[deleteObj.index].active = "pending"
+                oldState[deleteObj.index].active = false
                 return [...oldState]
             })
         }
@@ -142,10 +139,8 @@ const Success_Stories = () => {
             <div className="filter_header">
                 <div className="filter-title"><h4>Success Stories</h4></div>
                 <div className="filter_container">
-                    <div className="">
-                        <Button className="fitlter-sotry" onClick={() => setSdisabled(p => !p)}>
-                            <VscFilterFilled size={17} />
-                        </Button>
+                    <div className="" >
+                        <FaFilter size={25} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                     </div>
                     <div>
                         <Button variant="" className="popoup-btn" onClick={handleShow} >Add Project</Button>
@@ -180,7 +175,7 @@ const Success_Stories = () => {
                                 </InputGroup>
                             </div>
                             <Modal show={showalert} onHide={handleClose} >
-                                <Modal.Header >
+                                <Modal.Header closeButton>
                                     <Modal.Title>Alert</Modal.Title>
                                 </Modal.Header>
 
@@ -188,14 +183,14 @@ const Success_Stories = () => {
                                     <p>{rowtext?.text}</p>
                                 </Modal.Body>
                                 <Modal.Footer>
-                                    <Button variant="secondary" onClick={() => {
+                                    <Button variant="secondary" className="btn btn-sm" onClick={() => {
 
                                         setShowalert(false)
-                                    }} >Cancel</Button>
-                                    <Button variant="primary" onClick={() => {
+                                    }} >No</Button>
+                                    <Button variant="primary" className="btn btn-sm" onClick={() => {
                                         display()
                                         setShowalert(false)
-                                    }}>Confirm</Button>
+                                    }}>Yes</Button>
                                 </Modal.Footer>
                             </Modal>
                         </div>
@@ -218,7 +213,7 @@ const Success_Stories = () => {
 
                                             <td class="action ">
                                                 <div class="userDetail ">
-                                                    <button type="button" class="btn " key={index}
+                                                    <button type="button" className="btn actionIcon " key={index}
                                                         id="dropdownIconMenu" data-bs-toggle="dropdown"
                                                         aria-expanded="false">
                                                         <span class="actionIcon"> <i
@@ -255,17 +250,13 @@ const Success_Stories = () => {
                                                 </div>
                                             </td>
                                             <td>{data.title}</td>
-                                            <TooltipComp
-                                                component={<td>{data.content && subString(data.content, 115)}</td>}
-                                                tooltip={data.content}
-                                            />
+                                            {<td>{data.content && subString(data.content, 115)}</td>}
                                             <td><Form>
-                                            {console.log(data?.active)}
+                                                {console.log(data?.active)}
                                                 <Form.Check className="switch_padding"
                                                     type="switch"
                                                     key={index}
                                                     id="custom-switch1"
-                                                   
                                                     checked={data.active}
                                                     label=""
                                                     onChange={(e) => {
@@ -321,42 +312,38 @@ const Success_Stories = () => {
                             e.preventDefault()
                             handleSubmit()
                         }}>
-                        {setValues(values?.active)}
+                            {setValues(values?.active)}
                             {console.log(values)}
                             <Modal.Body>
                                 {<div className="">
                                     <div className="cardBoard">
-                                        <h3></h3>
-                                        <div>
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input
-                                                    type="text"
-                                                    label="Project Title"
-                                                    className="form-control"
-                                                    name="title"
-                                                    placeholder=""
-                                                    onChange={handleChange}
-                                                    id="title"
-                                                    value={values.title}
-                                                />
-                                            </Form.Group>
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input as={"textarea"} className="form-control" name="content" id="exampleFormControlTextarea1" rows="3" label={"Description"} onChange={handleChange} value={values.content} />
-                                            </Form.Group>
-                                            <Form.Group controlId="formFile" className="mb-3 w-100">
-                                                <Form.Label>Choose Image</Form.Label>
-                                                <Form.Control type="file" name="image" onChange={handleChange} value={values.image} />
-                                            </Form.Group>
-                                            <br />
-                                            <Form.Check className="custom1-switch"
-                                                type="switch"
-                                                id="Active"
-                                                label="Active"
-                                                name="active"
-                                               checked={values?.active}
+                                        <Form.Group className="" controlId="formBasicEmail">
+                                            <Input
+                                                type="text"
+                                                label="Project Title"
+                                                className="form-control"
+                                                name="title"
+                                                placeholder=""
                                                 onChange={handleChange}
+                                                id="title"
+                                                value={values.title}
                                             />
-                                        </div>
+
+                                            <Input as={"textarea"} className="form-control" name="content" id="exampleFormControlTextarea1" rows="3" label={"Description"} onChange={handleChange} value={values.content} />
+
+                                            <Form.Label className="label-size">Choose Image</Form.Label>
+                                            <Form.Control className="label-size" type="file" name="image" onChange={handleChange} value={values.image} />
+                                        </Form.Group>
+                                        <br />
+                                        <Form.Check className="custom1-switch label-size"
+                                            type="switch"
+                                            id="Active"
+                                            label="Active"
+                                            name="active"
+                                            checked={values?.active}
+                                            onChange={handleChange}
+                                            color="#eb7823"
+                                        />
                                     </div>
                                 </div>}
                             </Modal.Body>
@@ -369,11 +356,14 @@ const Success_Stories = () => {
                                         tableData[index].image = values.image
                                         tableData[index].active = values.active
                                         setTableData([...tableData])
+                                        setShowalert(false)
                                     }}>Update</Button> :
                                         <Button className="addbtn" onClick={() => {
+
                                             setTableData(old => [...old, values])
-                                            console.log("tabledata", tableData)
                                             setShowalert(false)
+                                            console.log("tabledata", tableData)
+
                                         }}>Add</Button>}
                                 </div>
                             </Modal.Footer>

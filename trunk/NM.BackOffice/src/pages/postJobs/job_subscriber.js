@@ -6,7 +6,6 @@ import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { Button, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
 import { VscFilterFilled } from "react-icons/vsc";
-import TooltipComp from "../../shared/Tooltipomp";
 import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
@@ -63,9 +62,9 @@ const Job_newsletter = () => {
     //     }
     // }
     const route = [
-        { name: "Home", route: "/" },
-        { name: "Job", route: "job-subscriber/unsubscriber" },
-        { name: "Job Subscribe/Unsubscribe", route: "/job-subscriber/unsubscriber" },
+        { name: "Dashboard", route: "/" },
+        { name: "Job Management", route: "job-subscriber/unsubscriber" },
+        { name: "Subscribe/Unsubscribe", route: "/job-subscriber/unsubscriber" },
     ]
     const records = [
         {
@@ -115,11 +114,8 @@ const Job_newsletter = () => {
                     <div className="filter-title"><h4>Subscribers/Unsubscriber</h4></div>
                     <div className="filter_container">
                         <div className="">
-                            <Button className="fitlter-sotry" id="button-addon2" onClick={() => {
-                                setSdisabled(p => !p)
-                            }}>
-                                <VscFilterFilled size={17} />
-                            </Button>
+                        
+                                <FaFilter size={24} color="#ff6b01" onClick={()=>setSdisabled(p => !p)} />
                         </div>
 
                     </div>

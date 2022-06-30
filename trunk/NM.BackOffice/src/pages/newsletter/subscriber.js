@@ -12,7 +12,6 @@ import { Input } from "../../components/commoninputfield";
 import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import TooltipComp from "../../shared/Tooltipomp";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
 import { VscFilterFilled } from "react-icons/vsc";
@@ -38,7 +37,7 @@ const SubScriber = () => {
             end: showPerPage
         });
     const route = [
-        { name: "Home", route: "/" },
+        { name: "Dashboard", route: "/" },
         { name: "Newsletter", route: "" },
         { name: "Subscribe/Unsubscribe", route: "" }
     ]
@@ -102,7 +101,7 @@ const SubScriber = () => {
         console.log(selector, "this the selector");
     }
     function sortt1() {
-        const response = subscribers.sort((a, b) => (a.email.toLowerCase() < b.email.toLowerCase()) ? 1 : ((b.email.toLowerCase() < a.email.toLowerCase()) ? -1 : 0));
+        const response = subscribers?.sort((a, b) => (a.email.toLowerCase() < b.email.toLowerCase()) ? 1 : ((b.email.toLowerCase() < a.email.toLowerCase()) ? -1 : 0));
         console.log(response)
         setTableData([...response])
     }
@@ -121,9 +120,7 @@ const SubScriber = () => {
                 <div className="filter-title"><h4>Subscribe/Unsubscribe</h4></div>
                 <div className="filter_container">
                     <div className="">
-                        <Button className="fitlter-sotry" onClick={() => setSdisabled(p => !p)}>
-                            <VscFilterFilled size={17} />
-                        </Button>
+                         <FaFilter size={24} color="#ff6b01" onClick={()=> setSdisabled(p => !p)} />
                     </div>
                     <div>
                         <Button variant="outline-secondary" className="popoup-btn" onClick={handleShow}>Add NewsLetter</Button>
@@ -168,18 +165,17 @@ const SubScriber = () => {
                                         { title ? sortt() : sortt1() }
                                     }} >Email {title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                     <th>Created Date</th>
-
                                     <th className="action_colwidth" >Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {subscribers?.slice(pagination1.start, pagination1.end).map((data, index) =>
+                                {subscribers?.slice(pagination1?.start, pagination1?.end)?.map((data, index) =>
                                     <tr>
                                         <td>
-                                            {CapitalizeFirstLetter  (data.email)}
+                                            {CapitalizeFirstLetter  (data?.email)}
                                         </td>
                                         <td>
-                                            {data.createdOn ? moment(data.createdOn).format("DD-MM-yyyy ") : ""}
+                                            {data.createdOn ? moment(data?.createdOn).format("DD-MM-yyyy ") : ""}
                                         </td>
 
                                         <td >
@@ -215,9 +211,8 @@ const SubScriber = () => {
                         <Modal.Title>Send Newsletter</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {<div className="">
+                       
                             <div className="cardBoard2">
-                                <h3></h3>
                                 <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                                     {() => (
                                         <form onSubmit={(e) => {
@@ -236,13 +231,13 @@ const SubScriber = () => {
                                     )}
                                 </Formik>
                             </div>
-                        </div>}
+                    
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button variant="secondary" className="addbtn" onClick={handleClose}>Close</Button>
-                        <div style={{ float: "right", }}>
-                            <Button className="newsletter-addbtn">Send</Button>
-                        </div>
+                    <Button variant="secondary" className="btn btn-sm" onClick={handleClose}>Close</Button>
+                       
+                            <Button className="btn btn-sm">Send</Button>
+                       
                     </Modal.Footer>
                 </Modal>
                 <div>

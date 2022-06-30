@@ -80,7 +80,7 @@ const Sidebar = ({ sidebarShow }) => {
                         <a href="#submenu2" data-bs-toggle="collapse" 
                         className="nav-link px-0 sidebar_focus align-middle text-color gapicontext">
                             <i className="fs-4 bi-bootstrap "></i>
-                            <span className="ms-1 d-none d-sm-inline">Crausel's</span>
+                            <span className="ms-1 d-none d-sm-inline">Sliders/Carousels</span>
                             <span className="dropdownarrowicon ">
                                 <i className="fs-6 bi-caret-down "></i>
                             </span>
@@ -90,7 +90,7 @@ const Sidebar = ({ sidebarShow }) => {
                                 <div className="nav-link  text-color gapicontext" onClick={() => {
                                     navigtion('/success-stories')
                                 }}>
-                                    <span className=" paddingliitems">Success Stories</span>
+                                    <span className="paddingliitems">Success Stories</span>
                                 </div>
                             </li>
 
@@ -124,7 +124,7 @@ const Sidebar = ({ sidebarShow }) => {
                     </li>
                     <li className="sidebar_list">
                         <a href="#submenu10" data-bs-toggle="collapse" className="nav-link px-0  sidebar_focus align-middle text-color gapicontext">
-                            <i className="fs-4 bi-building"></i> <span className=" d-none d-sm-inline">Job</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
+                            <i className="fs-4 bi-building"></i> <span className=" d-none d-sm-inline">Job Management</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
                         <ul className="collapse nav flex-column " id="submenu10" data-bs-parent="#menu">
                            { /*<li className="sidebar_list">
                                 <div className="nav-link  text-color  gapicontext" onClick={() => {

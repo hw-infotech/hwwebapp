@@ -30,12 +30,10 @@ function App() {
                   <Route {..._} />
                 ))}
               </Routes>
-
-              <Footer sidebarShow={sidebarShow} />
             </div>
+            <Footer sidebarShow={sidebarShow} />
           </div>
         </div>
-
         : <Routes>
           <Route path='/' element={<Admin_Login />} exact />
         </Routes>}

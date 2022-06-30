@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
 const Job_Preview = (values) => {
-    const nevigate=useNavigate()
+    const nevigate = useNavigate()
     const [state, setState] = useState({
         jobtitle: "",
         responsibility: [],
@@ -18,7 +18,7 @@ const Job_Preview = (values) => {
     console.log(values)
     return (
         <div>
-      
+            {console.log("this the formik values", values)}
             <div className="jobdes_margin">
                 <div className="">
                     <div className="main-pannle">
@@ -71,15 +71,15 @@ const Job_Preview = (values) => {
                                     <ul className="job_description_level_list">
                                         <li>
                                             <h3 className="job_description_level">Seniority level</h3>
-                                            <span>{values.values?.seneritylevel}</span>
+                                            <span>{values.values?.level}</span>
                                         </li>
                                         <li>
                                             <h5 className="job_description_level">Employment type</h5>
-                                            <span>{values.values?.employement}</span>
+                                            <span>{values.values?.type}</span>
                                         </li>
                                         <li>
                                             <h5 className="job_description_level">Job function</h5>
-                                            <span> {values.values?.jobfunction}</span>
+                                            <span> {values.values?.functions}</span>
                                         </li>
                                         <li>
                                             <h5 className="job_description_level">Industries</h5>
@@ -87,7 +87,7 @@ const Job_Preview = (values) => {
                                         </li>
                                     </ul>
                                 </div>
-                               { /*<div style={{ float: "right" }}> <Button variant="secondary" onClick={()=>  nevigate(-1)}>Back</Button></div>*/}
+                                { /*<div style={{ float: "right" }}> <Button variant="secondary" onClick={()=>  nevigate(-1)}>Back</Button></div>*/}
                             </div>
                         </div>
                         { /*<div className="mediaqueiry" style={{ paddingLeft: 30 }}>
@@ -127,6 +127,5 @@ const Job_Preview = (values) => {
         </div>
 
     )
-
 }
 export default Job_Preview

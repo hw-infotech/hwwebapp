@@ -9,7 +9,7 @@ export const Input = ({ as, id, label, placeholder, type, name, className
     return (
         <div className="input_field">
             <Form.Group className="mb-3" >
-                <Form.Label>{label}</Form.Label>
+                <Form.Label className="label-size">{label}</Form.Label>
                 {/*<Form.Control type="email" placeholder="Enter email" />*/}
                 {as != "select" && <Field
                     as={as}

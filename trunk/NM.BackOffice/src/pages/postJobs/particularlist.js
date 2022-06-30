@@ -8,10 +8,11 @@ import { Formik } from "formik";
 import { initialValues, validationschemeaa } from "./validation-schema";
 import { Input } from "../../components/commoninputfield";
 import { BsSearch } from "react-icons/bs";
-import TooltipComp from "../../shared/Tooltipomp";
 import CustomPagination from "../../shared/pagination";
 import { VscFilterFilled } from "react-icons/vsc";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
+import BasicBreadcrumbs from "../../components/breadcumbs";
+import { FaFilter } from "react-icons/fa";
 
 const Particularjob = () => {
     const [disabled, setSdisabled] = useState(true)
@@ -68,15 +69,22 @@ const Particularjob = () => {
         setTableData(filteredRows)
 
     };
+    const route = [
+        { name: "Dashboard", route: "/" },
+        { name: "Job Management", route: "" },
+        { name: "Job List", route: "/all-jobs" },
+        { name: "Detail/Applied", route: "/particularjob" },
 
+    ]
     return (
         <div className="content_center margin_bottom_ ">
-            <div className="topGapPad p-3 w-100">
+            <div className="topGapPad  w-100">
+                {<BasicBreadcrumbs route={route} />}
                 <Tabs activeKey={key}
                     id="uncontrolled-tab-example"
                     onSelect={(k) => setKey(k)}
                     className="mb-3">
-                    <Tab eventKey="Description" title="Description" onSelect={() => {
+                    <Tab eventKey="Description" title="Detail" onSelect={() => {
                         setKey("Description")
                     }}>
                         <div className="jobdes_margin">
@@ -155,7 +163,7 @@ const Particularjob = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="mediaqueiry" style={{ paddingLeft: 30 }}>
+                                    {/*<div className="mediaqueiry" style={{ paddingLeft: 30 }}>
                                         <h4 className="right_pannle_main_heading">Nestormind Other Jobs</h4>
                                         <ul className="right_pannle_list">
                                             <li className="right_pannle_list_itmes">
@@ -183,13 +191,13 @@ const Particularjob = () => {
                                                 </span>
                                             </li>
                                         </ul>
-                                    </div>
+                </div>*/}
                                 </div>
                             </div>
                         </div>
                     </Tab>
                     <Tab eventKey="Aplied" title="Applied" >
-                        <div className="gapbetween ">
+                        <div className="gapbetween">
                             <div className="w-25">
                                 <Form.Select aria-label="Default select example" hidden={disabled}>
                                     <option disabled selected hidden>Status</option>
@@ -214,10 +222,10 @@ const Particularjob = () => {
                                     </Button>*/}
                                 </InputGroup>
                             </div>
-                            <div style={{width:"100%",height:"100%",}}>
-                            <Button className="fitlter-sotry" style={{float:"right"}} id="button-addon2" onClick={() => setSdisabled(p => !p)}>
-                                <VscFilterFilled size={17} />
-                            </Button>
+                            <div style={{ width: "100%", height: "100%",}}>
+
+                                <FaFilter style={{ float:"right"}} size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+
                             </div>
                         </div>
                         <div className="boxshadow">
@@ -291,7 +299,7 @@ const Particularjob = () => {
                         </div>
                     </Tab>
                 </Tabs>
-                <Modal show={show} onHide={handleClose} size="md">
+                <Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>
                         <Modal.Title>Project</Modal.Title>
                     </Modal.Header>
@@ -320,11 +328,7 @@ const Particularjob = () => {
                             </div>
                         </div>}
                     </Modal.Body>
-                    <Modal.Footer>
-                        {/*<div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
-                        <button type="button" class="btn btn-outline-secondary gallery_add_button">Submit</button>
-                                </div>*/}
-                    </Modal.Footer>
+
                 </Modal>
             </div>
         </div>

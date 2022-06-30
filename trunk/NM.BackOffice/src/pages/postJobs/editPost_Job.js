@@ -10,7 +10,6 @@ import { useNavigate } from "react-router";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { IoAddOutline } from "react-icons/";
-import TooltipComp from "../../shared/Tooltipomp";
 import CreatableSelectField from "../../components/selectfield";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
@@ -78,9 +77,9 @@ const Edit_postJob = (value1) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const route = [
-        { name: "Home", route: "/" },
-        { name: "Job", route: "" },
-        { name: "Joblist", route: "" },
+        { name: "Dashboard", route: "/" },
+        { name: "Job Management", route: "" },
+        { name: "Job List", route: "" },
 
     ]
     const [formState, setFormState] = useState()
@@ -179,15 +178,15 @@ const Edit_postJob = (value1) => {
     })
 
     return (
-        <div title="Edit Post Job">
+        <div>
             {<BasicBreadcrumbs route={route} />}
             <div className="filter_header">
-                <div className="filter-title"><h4>Jobs</h4></div>
+                <div className="filter-title"><h4>Job List</h4></div>
                 <div className="filter_container">
                     <div className="">
-                        <Button className="fitlter-sotry" id="button-addon2" onClick={() => setSdisabled(p => !p)}>
-                            <VscFilterFilled size={17} />
-                        </Button>
+                      
+                            <FaFilter size={24} color="#ff6b01" onClick={()=> setSdisabled(p => !p)} />
+                       
                     </div>
                     <div>
                         <Button variant="" className="popoup-btn" onClick={() => {
@@ -236,14 +235,14 @@ const Edit_postJob = (value1) => {
                             <p>{rowtext?.text}</p>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={() => {
+                            <Button className="btn-sm" variant="secondary" onClick={() => {
 
                                 setShowalert(false)
-                            }} >Cancel</Button>
-                            <Button variant="primary" onClick={() => {
+                            }} >No</Button>
+                            <Button className="btn-sm" variant="primary" onClick={() => {
                                 display()
                                 setShowalert(false)
-                            }}>Confirm</Button>
+                            }}>Yes</Button>
                         </Modal.Footer>
                     </Modal>
                     <Table striped bordered hover responsive>
@@ -311,10 +310,10 @@ const Edit_postJob = (value1) => {
                                         </ul>
                                     </div></td>
                                     <td>{data.Jobtitle || data.jobtitle}</td>
-                                    <TooltipComp
-                                        component={<td>{data.description && subString(data.description, 50)}</td>}
-                                        tooltip={data.description}
-                                    />
+                                    
+                                        <td>{data.description && subString(data.description, 50)}</td>
+                                      
+                                    
                                     <td>{data?.functions}</td>
                                     <td>{data?.requirment?.length > 0 && data.requirment[0]}</td>
                                     <td>{data?.benfits?.length > 0 && data.benfits[0]}</td>
@@ -333,10 +332,10 @@ const Edit_postJob = (value1) => {
                                                     setShowalert(true)
                                                     setRowtext(e.target.checked ? ({
                                                         id: 1,
-                                                        text: "Are you sure to update status as Rsolved ?",
+                                                        text: "Are you sure to  show the job ?",
                                                     }) : ({
                                                         id: 0,
-                                                        text: "Are you sure to update status as Pending ?",
+                                                        text: "Are you sure to hide the job ?",
                                                     }))
                                                     if (data.active === "resolved") {
                                                         setDeleteObj({

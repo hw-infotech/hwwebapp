@@ -18,33 +18,36 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
         <Row>
             <Col md={12}>
                 <Form.Group>
-                    <Form.Label>Requirement</Form.Label>
+                    <Form.Label className="label-size">Requirement</Form.Label>
                     <CreatableSelectField
                         name="requirment"
-                        placeholder="Type and press tab button..."
+                        placeholder="Type and press tab/enter button"
                         formState={state}
+                        className="label-size"
                         setFormState={setState}
                         value={values.requirment}
                         onChange={handleChange}
 
                     />
-                    <Form.Label>Responsibility</Form.Label>
+                    <Form.Label className="label-size">Responsibility</Form.Label>
                     <CreatableSelectField
                         name="responsibility"
-                        placeholder="Type and press tab button..."
+                        placeholder="Type and press tab/enter button"
                         formState={state}
                         setFormState={setState}
+                        className="label-size"
                         value={values.responsibility}
                         onChange={handleChange}
 
                     />
-                    <Form.Label>Benefits</Form.Label>
+                    <Form.Label className="label-size">Benefits</Form.Label>
                     <div style={{ marginBottom: "1rem" }}>
                         <CreatableSelectField
                             name="benefits"
                             formState={state}
+                            className="label-size"
                             setFormState={setState}
-                            placeholder="Type and press tab button"
+                            placeholder="Type and press tab/enter button"
                             value={values.benefits}
                             onChange={handleChange}
                         />
