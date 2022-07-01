@@ -118,12 +118,7 @@ const Job_newsletter = () => {
                     </div>
                 </div>
                 <div className="w-100 setupcontent topGapPad">
-               
-                <Form.Check 
-                  type={type}
-                  id={`default-${type}`}
-                  label={`default ${type}`}
-                />
+           
                     <div className="">
                         <Form.Select aria-label="row" className="wreap-content font_size" hidden={disable}>
                             <option disabled hidden selected>Status</option>
@@ -155,6 +150,11 @@ const Job_newsletter = () => {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
+                                <th className="action_colwidth"> <Form.Check 
+                                className="font_size mt-2"
+                                   
+                                    label="All"
+                                /></th>
                                     <th onClick={() => {
                                         setTitle(!title)
                                         { title ? sortt() : sortt1() }
@@ -167,7 +167,11 @@ const Job_newsletter = () => {
                             {tableData.length >0 ?
                             <tbody>
                                 {tableData.map((data, index) =>
-                                    <tr>
+                                    <tr>  <td className="content_center_td"><Form.Check 
+                                    className="font_size mt-2"
+                                       
+                                        
+                                    /></td>
                                         <td>{CapitalizeFirstLetter(data.Name)}</td>
                                         <td>{data.phone}</td>
                                         <td>{data.Email}</td>

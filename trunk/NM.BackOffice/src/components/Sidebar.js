@@ -86,12 +86,12 @@ const Sidebar = ({ sidebarShow }) => {
                             </span>
                         </a>
                         <ul className="collapse nav flex-column " id="submenu2" data-bs-parent="#menu">
-                            <li className="w-100 sidebar_list">
-                                <div className="nav-link  text-color gapicontext" onClick={() => {
+                            <li className="w-100 sidebar_list ">
+                                <a className="nav-link  text-color gapicontext sidebar_focus" onClick={() => {
                                     navigtion('/success-stories')
                                 }}>
                                     <span className="paddingliitems">Success Stories</span>
-                                </div>
+                                </a>
                             </li>
 
                         </ul>
