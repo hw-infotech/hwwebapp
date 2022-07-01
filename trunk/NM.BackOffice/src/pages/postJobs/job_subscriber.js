@@ -10,6 +10,7 @@ import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
+import { BsFilter } from "react-icons/bs";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 const Job_newsletter = () => {
     const [disable, setSdisabled] = useState(true)
@@ -113,16 +114,12 @@ const Job_newsletter = () => {
                 <div className="filter_header">
                     <div className="filter-title"><h4>Subscribers/Unsubscriber</h4></div>
                     <div className="filter_container">
-                        <div className="">
-                        
-                                <FaFilter size={24} color="#ff6b01" onClick={()=>setSdisabled(p => !p)} />
-                        </div>
-
+                                <BsFilter size={24} color="#ff6b01" onClick={()=>setSdisabled(p => !p)} />
                     </div>
                 </div>
                 <div className="w-100 setupcontent topGapPad">
                     <div className="">
-                        <Form.Select aria-label="row" className="wreap-content" hidden={disable}>
+                        <Form.Select aria-label="row" className="wreap-content font_size" hidden={disable}>
                             <option disabled hidden selected>Status</option>
                             <option value="1">All</option>
                             <option value="2">Subscribe</option>
@@ -132,6 +129,7 @@ const Job_newsletter = () => {
                     <div className="searchbar">
                         <InputGroup className="mb-3">
                             <FormControl
+                            className="font_size"
                                 hidden={disable}
                                 placeholder="Search by email and name"
                                 aria-label="Search By Email"
@@ -160,6 +158,7 @@ const Job_newsletter = () => {
                                     <th className="action_colwidth">Status</th>
                                 </tr>
                             </thead>
+                            {tableData.length >0 ?
                             <tbody>
                                 {tableData.map((data, index) =>
                                     <tr>
@@ -182,14 +181,16 @@ const Job_newsletter = () => {
                                             />
                                         </td>
                                     </tr>)}
-                            </tbody>
+                            </tbody>:"No Record Found"}
                         </Table>
+                     
                     </div>
+                    {tableData.length>0 ?
                     <CustomPagination
                         showPerPage={showPerPage}
                         setStart={setpagination}
                         total={tableData.length}
-                    />
+                    />:""}
 
                 </div>
             </div>

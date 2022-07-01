@@ -140,11 +140,8 @@ const Success_Stories = () => {
             <div className="filter_header">
                 <div className="filter-title"><h4>Success Stories</h4></div>
                 <div className="filter_container">
-                   
                         <BsFilter size={25} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
-                 
-                        <Button variant="" className="btn-sm" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01"/></Button>
-                    
+                        <Button variant="" className="btn-sm" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01"/></Button> 
                 </div>
             </div>
             <div className="margin_bottom_ topGapPad">
@@ -152,7 +149,7 @@ const Success_Stories = () => {
                     <div className="">
                         <div className="gapbetween">
                             <div>
-                                <Form.Select aria-label="Default select example" hidden={disable}  >
+                                <Form.Select className="font_size" aria-label="Default select example" hidden={disable}  >
                                     <option hidden selected>Status</option>
                                     <option value="1">All</option>
                                     <option value="1">Active</option>
@@ -161,7 +158,7 @@ const Success_Stories = () => {
                             </div>
                             <div className="serachbar">
                                 <InputGroup className="mb-3" >
-                                    <FormControl
+                                    <FormControl className="font_size"
                                         hidden={disable}
                                         placeholder="Search by title"
                                         aria-label="Recipient's username"
@@ -206,6 +203,7 @@ const Success_Stories = () => {
                                         <th className="action_colwidth">Status</th>
                                     </tr>
                                 </thead>
+                                {tableData.length>0 ?
                                 <tbody>
                                     {tableData?.map((data, index) =>
                                         <tr>
@@ -283,17 +281,19 @@ const Success_Stories = () => {
                                                 />
                                             </Form></td>
                                         </tr>)}
-                                </tbody>
+                                </tbody>:"No Record Found"}
                             </Table>
                         </div>
                     </div>
+                    {tableData.length>0 ?
                     <div>
                         <CustomPagination
                             start={pagination1}
                             setStart={setpagination}
                             total={tableData.length}
+                            
                         />
-                    </div>
+                    </div>:""}
                 </div>
             </div>
             <Modal show={show} onHide={handleClose} size="md">
@@ -326,9 +326,7 @@ const Success_Stories = () => {
                                                 id="title"
                                                 value={values.title}
                                             />
-
                                             <Input as={"textarea"} className="form-control" name="content" id="exampleFormControlTextarea1" rows="3" label={"Description"} onChange={handleChange} value={values.content} />
-
                                             <Form.Label className="label-size">Choose Image</Form.Label>
                                             <Form.Control className="label-size" type="file" name="image" onChange={handleChange} value={values.image} />
                                         </Form.Group>

@@ -18,9 +18,6 @@ import Step3 from "./steps/step3";
 import Step4 from "./steps/step4";
 import { createContext } from "react";
 
-
-
-
 const Post_Job = ({ stat }) => {
     const [post, setpost] = useState()
     const [goSteps, setGoSteps] = useState(0);
@@ -67,7 +64,7 @@ const Post_Job = ({ stat }) => {
         <div>
             <BasicBreadcrumbs route={route} />
             <h4 >{post ? "Edit Job" : "Post Job"}</h4>
-            <div className="w-75 m-auto p-2 z-depth-5 shadow-box-example rounded">
+            <div className="w-75 m-auto z-depth-5 shadow-box-example rounded box-shadow-container">
                 <Stepper
                     activeStep={goSteps}
                     completedBgColor="gray"
@@ -77,13 +74,13 @@ const Post_Job = ({ stat }) => {
                         activeTextColor: "#fff",
                     }}
                 >
-                    <Step label="Basic Details" >
-                        <BiPencil />
-                    </Step>
-                    <Step label="Job Description" >
+                <Step label="Basic Details" onClick={()=>setGoSteps(0)} >
+                <BiPencil />
+                </Step>
+                    <Step label="Requirement" onClick={()=>setGoSteps(1)} >
                         <BiFolderOpen />
                     </Step>
-                    <Step label="Job Function">
+                    <Step label="Type" onClick={()=>setGoSteps(2)}>
                         <BsReverseLayoutTextSidebarReverse size={13} />
                     </Step>
                     <Step label="Preview" >

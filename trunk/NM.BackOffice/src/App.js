@@ -23,7 +23,8 @@ function App() {
         <div className='dashboard'>
           <Sidebar sidebarShow={sidebarShow} />
           <div className='mainDashboard' >
-            <Header setSidebarShow={setSidebarShow} />
+            <Header setSidebarShow={setSidebarShow}
+              sidebarShow={sidebarShow} />
             <div className="content-Wrapper" >
               <Routes>
                 {routes?.map((_) => (

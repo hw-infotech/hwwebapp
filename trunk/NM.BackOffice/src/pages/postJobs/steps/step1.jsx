@@ -9,13 +9,12 @@ const Step1 = ({ setGoSteps, state, setState, handleChange,values
 
     return <div className="main-wrap-box w-100 m-auto">
         <div className="d-flex justify-content-end mt-2">
-            <Button variant="primary" className="post-btn" onClick={() => setGoSteps(1)}>Next</Button>
+            <Button variant="primary" className="btn-sm" onClick={() => setGoSteps(1)}>Next</Button>
         </div>
         <Row>
             <Col md={12}>
                 <Form.Group className="mb-3">
-                    <Input as='select' name='jobtitle' onChange={handleChange} label={"Job title"} value={values.jobtitle} id="jobtitle" className="form-control" options={[
-                        { value: "...",  label: "..." },
+                    <Input as='select' name='jobtitle' onChange={handleChange} label={"Title"} value={values.jobtitle} id="jobtitle" className="form-control" options={[
                         { value: "UI/UX", label: "UI/UX" },
                         { value: "Project Manager", label: "Project Manager" },
                         { value: "Web Development", label: "Web Development" },
@@ -23,11 +22,11 @@ const Step1 = ({ setGoSteps, state, setState, handleChange,values
                     </Input>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
-                    <Form.Label className="label-size">Enter Descritption</Form.Label>
+                    <Form.Label className="label-size">Descritption</Form.Label>
                     <Form.Control as="textarea" style={{ height: "120px" }} name="description" value={values.jobdescription} onChange={handleChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Input type='text'  className="form-control"  value={values.jobfunction} name='functions' label={"Job Function"} id="name" onChange={handleChange} />
+                    <Input type='text'  className="form-control"  value={values.jobfunction} name='functions' label={"Function"} id="name" onChange={handleChange} />
                 </Form.Group>
 
             </Col>

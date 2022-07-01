@@ -18,6 +18,7 @@ import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
 import moment from 'moment'
 import { BsFilter } from "react-icons/bs";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 
 const SubScriber = () => {
@@ -120,18 +121,14 @@ const SubScriber = () => {
             <div className="filter_header">
                 <div className="filter-title"><h4>Subscribe/Unsubscribe</h4></div>
                 <div className="filter_container">
-                    <div className="">
-                         <BsFilter size={24} color="#ff6b01" onClick={()=> setSdisabled(p => !p)} />
-                    </div>
-                    <div>
-                        <Button variant="outline-secondary" className="popoup-btn" onClick={handleShow}>Add NewsLetter</Button>
-                    </div>
+                    <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                    <Button title="" variant="" className="btn-sm" onClick={handleShow}><AiOutlinePlusCircle title="" size={24} color="#ff6b01" /></Button>
                 </div>
             </div>
             <div className="margin_bottom_ topGapPad">
                 <div className=" ">
                     <div className="w-100 setupcontent">
-                        <div className="" ><Form.Select aria-label="row" className="wreap-content" hidden={disable}>
+                        <div className="" ><Form.Select aria-label="row" className="wreap-content font_size" hidden={disable}>
                             <option disabled hidden selected>Status</option>
                             <option value="1">All</option>
                             <option value="2">Subscriber</option>
@@ -140,7 +137,7 @@ const SubScriber = () => {
                         </div>
                         <div className="searchbar">
                             <InputGroup className="mb-3">
-                                <FormControl
+                                <FormControl className="font_size"
                                     hidden={disable}
                                     placeholder="Search By Email"
                                     aria-label="Search By Email"
@@ -169,11 +166,11 @@ const SubScriber = () => {
                                     <th className="action_colwidth" >Status</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            {subscribers?.length > 0 ? <tbody>
                                 {subscribers?.slice(pagination1?.start, pagination1?.end)?.map((data, index) =>
                                     <tr>
                                         <td>
-                                            {CapitalizeFirstLetter  (data?.email)}
+                                            {CapitalizeFirstLetter(data?.email)}
                                         </td>
                                         <td>
                                             {data.createdOn ? moment(data?.createdOn).format("DD-MM-yyyy ") : ""}
@@ -203,7 +200,7 @@ const SubScriber = () => {
                                     <td>{data?.email}</td>
                                     <td>{data?.createdOn}</td>
                                 </tr>))*/}
-                            </tbody>
+                            </tbody> : "No Record Found"}
                         </Table>
                     </div>
                 </div>
@@ -212,43 +209,34 @@ const SubScriber = () => {
                         <Modal.Title>Send Newsletter</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                       
-                            <div className="cardBoard2">
-                                <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                    {() => (
-                                        <form onSubmit={(e) => {
-                                            e.preventDefault();
-                                        }}
-                                        >
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input type="text" label="Title" className="form-control" name="title" placeholder="" />
-                                            </Form.Group>
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input as={"textarea"} className="form-control" placeholder={""} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
-                                            </Form.Group>
-                                            <br />
+                        <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
+                            {() => (
+                                <form onSubmit={(e) => {
+                                    e.preventDefault();
+                                }}
+                                >
+                                    <Input type="text" label="Title" className="form-control" name="title" placeholder="" />
+                                    <Input as={"textarea"} className="form-control" placeholder={""} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
+                                </form>
+                            )}
+                        </Formik>
 
-                                        </form>
-                                    )}
-                                </Formik>
-                            </div>
-                    
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button variant="secondary" className="btn btn-sm" onClick={handleClose}>Close</Button>
-                       
-                            <Button className="btn btn-sm">Send</Button>
-                       
+                        <Button variant="secondary" className=" btn-sm font_size" onClick={handleClose}>Close</Button>
+                        <Button className="btn-sm font_size">Send</Button>
+
                     </Modal.Footer>
                 </Modal>
-                <div>
-                    <CustomPagination
-                        // showPerPage={showPerPage}
-                        start={pagination1}
-                        setStart={setpagination}
-                        total={subscribers?.length}
-                    />
-                </div>
+                {tableData.length > 0 ?
+                    <div>
+                        <CustomPagination
+                            // showPerPage={showPerPage}
+                            start={pagination1}
+                            setStart={setpagination}
+                            total={subscribers?.length}
+                        />
+                    </div> : ""}
             </div>
         </div>
     );

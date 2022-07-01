@@ -487,6 +487,7 @@ body {
     //------shared class---------------//
     display: flex;
     width: 100%;
+    align-items: center;
 }
 
 .filter-title {
@@ -549,9 +550,14 @@ body {
 .form-check-input:checked {
     background-color: #eb7823 !important;
     border-color: #eb7823 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    ;
 }
 .custom1-switch {
     padding-left: 40px !important;
+    outline: none !important;
+    box-shadow: none !important;
 
    
 }
@@ -732,6 +738,12 @@ body {
 }
 
 //////////////post new Job/////////////
+
+.box-shadow-container{
+    box-shadow: 0px 0px 35px 20px #00000014;
+    padding: 20px !important;
+}
+
 .add_new_post_padding_between_field {
     padding: 10px;
 }
@@ -984,7 +996,11 @@ body {
 //------------------------------------------jobpreivew page---------------------------------///
 .jobdes_margin {
     margin-bottom: 0px;
-}
+    .buton_positin{
+        
+        width: 100%;
+        justify-content: end;
+    }
 
 .titlejob {
     font-size: 24px;
@@ -999,8 +1015,8 @@ body {
     border: 1px solid rgb(233, 227, 227);
 }
 
-.jobdes_marginbottom {
-}
+
+
 
 .job_location {
     font-size: 16px;
@@ -1104,7 +1120,7 @@ body {
 .right_pannle_main_heading {
     font-weight: 400;
 }
-
+}
 @media (min-width: 200px) and (max-width: 776px) {
     .mediaqueiry {
         visibility: hidden;
@@ -1291,7 +1307,7 @@ body {
     color: #ffffff !important;
     border: 1px solid #eb7823 !important;
     background: #eb7823 !important;
-    margin-left: 10px;
+    // margin-left: 10px;
 
     &:hover {
         background: #ff6b01 !important;
@@ -1306,8 +1322,8 @@ body {
     border-color: #bcbbb5 !important;
 
     &:hover {
-        background-color: #ff6b01 !important;
-        border-color: #ff6b01 !important;
+        background-color: #000000 !important;
+        border-color: #000000 !important;
         color: #ffffff !important;
     }
 }

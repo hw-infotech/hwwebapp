@@ -144,7 +144,7 @@ const Sidebar = ({ sidebarShow }) => {
                                 <div className="nav-link  text-colo text-color  gapicontext" onClick={() => {
                                     navigtion('/all-jobs')
                                 }}>
-                                    <span className="d-none d-sm-inline paddingliitems">Job List</span>
+                                    <span className="d-none d-sm-inline paddingliitems">Job</span>
                                 </div>
                             </li>
                             <li>

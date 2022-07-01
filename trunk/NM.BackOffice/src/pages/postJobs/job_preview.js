@@ -70,20 +70,20 @@ const Job_Preview = (values) => {
                                 <div style={{ marginTop: 80 }}>
                                     <ul className="job_description_level_list">
                                         <li>
-                                            <h3 className="job_description_level">Seniority level</h3>
-                                            <span>{values.values?.level}</span>
+                                            <h6 className="">Seniority level</h6>
+                                            <span className="job_description_level">{values.values?.level}</span>
                                         </li>
                                         <li>
-                                            <h5 className="job_description_level">Employment type</h5>
-                                            <span>{values.values?.type}</span>
+                                            <h6>Employment type</h6>
+                                            <span  className="job_description_level">{values.values?.type}</span>
                                         </li>
                                         <li>
-                                            <h5 className="job_description_level">Job function</h5>
-                                            <span> {values.values?.functions}</span>
+                                            <h6>Job function</h6>
+                                            <span className="job_description_level"> {values.values?.functions}</span>
                                         </li>
                                         <li>
-                                            <h5 className="job_description_level">Industries</h5>
-                                            <span>{values.values.industry}</span>
+                                            <h6 >Industries</h6>
+                                            <span className="job_description_level">{values.values.industry}</span>
                                         </li>
                                     </ul>
                                 </div>

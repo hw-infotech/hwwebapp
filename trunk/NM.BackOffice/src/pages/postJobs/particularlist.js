@@ -1,20 +1,26 @@
 import React, { useState } from "react"
-import { Button, Form, FormCheck, FormControl, InputGroup, Modal, Tab, Table, Tabs } from "react-bootstrap";
+import { Button, Col, Form, FormCheck, FormControl, InputGroup, Modal, Row, Tab, Table, Tabs } from "react-bootstrap";
 import { Link } from "react-router-dom"
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Formik } from "formik";
 import { initialValues, validationschemeaa } from "./validation-schema";
 import { Input } from "../../components/commoninputfield";
-import { BsSearch } from "react-icons/bs";
+import { AiOutlineCheck, AiOutlineCloseCircle } from "react-icons/ai";
 import CustomPagination from "../../shared/pagination";
-import { VscFilterFilled } from "react-icons/vsc";
+import { AiOutlineUser } from "react-icons/ai";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 import BasicBreadcrumbs from "../../components/breadcumbs";
-import { FaFilter } from "react-icons/fa";
+import { BiEdit } from "react-icons/bi";
+import { BsFilter } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
+import {BiUserCheck,BiUserX, BiDirections, BiTab, BiWallet } from "react-icons/bi";
 
 const Particularjob = () => {
+    const data = useParams()
+    const [showalert, setShowalert] = useState(false)
+    const [index, setIndex] = useState()
     const [disabled, setSdisabled] = useState(true)
     const [showPerPage, setShowPerPage] = useState()
     const [show, setShow] = useState(false);
@@ -27,13 +33,23 @@ const Particularjob = () => {
             start: start,
             end: showPerPage
         });
+    const [tr, settr] = useState(false)
     const records = [
         {
             Jobtitle: "UI/UX",
-            name: "Ganesh Sharma",
+            name: "amit Sharma",
             email: "ganesharma5073@gmail.com",
             phone: "9803836866",
+            active: false
 
+        },
+        {
+
+            Jobtitle: "UI/UX",
+            name: "Vikas Sharma",
+            email: "ganesharma5073@gmail.com",
+            phone: "9803836866",
+            active: true
         },
         {
 
@@ -41,13 +57,7 @@ const Particularjob = () => {
             name: "Ganesh Sharma",
             email: "ganesharma5073@gmail.com",
             phone: "9803836866",
-        },
-        {
-
-            Jobtitle: "UI/UX",
-            name: "Ganesh Sharma",
-            email: "ganesharma5073@gmail.com",
-            phone: "9803836866",
+            active: false
         }
     ]
     const [tableData, setTableData] = useState(records)
@@ -69,11 +79,19 @@ const Particularjob = () => {
         setTableData(filteredRows)
 
     };
+    const display = (e) => {
+        if (e) {
+            setShowalert(true)
+        }
+        else {
+            setShowalert(true)
+        }
+    }
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Job Management", route: "" },
         { name: "Job List", route: "/all-jobs" },
-        { name: "Detail/Applied", route: "/particularjob" },
+        { name: "Detail Applied", route: "/particularjob" },
 
     ]
     return (
@@ -87,7 +105,28 @@ const Particularjob = () => {
                     <Tab eventKey="Description" title="Detail" onSelect={() => {
                         setKey("Description")
                     }}>
+                        <Modal show={showalert} onHide={handleClose} >
+                            <Modal.Header closeButton>
+                                <Modal.Title>Alert</Modal.Title>
+                            </Modal.Header>
+
+                            <Modal.Body>
+                                <p>{"Are You Really want to change the status"}</p>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" className="btn-sm font_size" onClick={() => {
+                                    setShowalert(false)
+                                }} >No</Button>
+                                <Button variant="primary" className="btn-sm font_size" onClick={() => {
+                                    { tr ? tableData[index].acitve = true : tableData[index].acitve = false }
+                                    setShowalert(false)
+                                }}>Yes</Button>
+                            </Modal.Footer>
+                        </Modal>
                         <div className="jobdes_margin">
+                            <div className="d-flex buton_positin gap-2" >
+                                <Button variant="secondary" className="btn-sm ">Back</Button>
+                                <Button variant="primary" className="btn-sm ">Edit</Button></div>
                             <div className="">
                                 <div className="main-pannle">
                                     <div className="leftt_pannel">
@@ -196,19 +235,81 @@ const Particularjob = () => {
                             </div>
                         </div>
                     </Tab>
-                    <Tab eventKey="Aplied" title="Applied" >
+
+                    <Tab eventKey="Aplied" title="Applied" >    
+                        <div style={{ marginTop: "50px",marginBottom:"20px" }}>
+                        <Row>
+                            <Col md={6} sm={12} lg={3} xl={3}>
+                                <div className="card1">
+                                    <div className="card-header1">
+                                        <div className="icon-card1 background_box1">
+                                            <AiOutlineUser size={24} />
+                                        </div>
+                                        <div className="innerCard">
+                                            <span>Total Candidates</span>
+                                            <h4 style={{ fontWeight: "400" }}>$5k</h4>
+                                        </div>
+                                    </div>
+            {/*<div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>*/}
+                                </div>
+                            </Col>
+                            <Col md={6} sm={12} lg={3} xl={3}>
+                                <div className="card1">
+                                    <div className="card-header1">
+                                        <div className="icon-card1 background_box2">
+                                            <BiUserCheck size={24} />
+                                        </div>
+                                        <div className="innerCard">
+                                            <span>Selected Candidates</span>
+                                            <h4 style={{ fontWeight: "400" }}>$53k</h4>
+                                        </div>
+                                    </div>
+                                    {/*<div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>*/}
+                                </div>
+                            </Col>
+                            <Col md={6} sm={12} lg={3} xl={3}>
+                                <div className="card1">
+                                    <div className="card-header1">
+                                        <div className="icon-card1 background_box3">
+                                            <BiUserX size={24} />
+                                        </div>
+                                        <div className="innerCard">
+                                            <span >Rejected Candidates</span>
+                                            <h4 style={{ fontWeight: "400" }}>$53k</h4>
+                                        </div>
+                                    </div>
+                      {/*<div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>*/}
+                                </div>
+                            </Col>
+                            <Col md={6} sm={12} lg={3} xl={3}>
+                                <div className="card1">
+                                    <div className="card-header1">
+                                        <div className="icon-card1 background_box4" >
+                                            <BsSearch size={24} />
+                                        </div>
+                                        <div className="innerCard">
+                                            <span>Performance</span>
+                                            <h4 style={{ fontWeight: "400" }}>$3k</h4>
+                                        </div>
+                                    </div>
+                                    {/*<div className="card-footer1"> <span className="decoration">+8% </span>than yesterday</div>*/}
+                                </div>
+                            </Col>
+                        </Row>
+                        </div>
                         <div className="gapbetween">
                             <div className="w-25">
-                                <Form.Select aria-label="Default select example" hidden={disabled}>
+                                <Form.Select aria-label="Default select example" className="font_size" hidden={disabled}>
                                     <option disabled selected hidden>Status</option>
                                     <option value="1">All</option>
                                     <option value="1">Reject</option>
                                     <option value="1">Select</option>
                                 </Form.Select>
                             </div>
-                            <div className="serachbar w-100" >
+                            <div className="w-100" >
                                 <InputGroup className="mb-3">
                                     <FormControl
+                                        className="font_size"
                                         hidden={disabled}
                                         placeholder="Search by title and name"
                                         aria-label="Recipient's username"
@@ -222,10 +323,8 @@ const Particularjob = () => {
                                     </Button>*/}
                                 </InputGroup>
                             </div>
-                            <div style={{ width: "100%", height: "100%",}}>
-
-                                <FaFilter style={{ float:"right"}} size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
-
+                            <div style={{ width: "100%", height: "100%", }}>
+                                <BsFilter style={{ float: "right" }} size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                             </div>
                         </div>
                         <div className="boxshadow">
@@ -233,70 +332,80 @@ const Particularjob = () => {
                                 <thead>
                                     <tr>
                                         <th>Action</th>
+                                        <th 
+                                        >Job getTitle</th>
                                         <th onClick={() => {
                                             setTitle(!title)
-                                            { title ? sortt() : sortt1() }
-                                        }}>Job title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                        <th>Name</th>
+                                            { title ? sortt() : sortt1()}}}>Name{title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                         <th>Email</th>
                                         <th>Phone Number</th>
                                         <th className="action-col">Status</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    {tableData.map((data, index) =>
-                                        <tr>
-                                            <td class="action "><div class="userDetail ">
-                                                <button type="button" class="btn "
-                                                    id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <span class="actionIcon"> <i
-                                                        class="bi bi-three-dots-vertical"></i> </span>
-                                                </button>
-                                                <ul class="IconDropdown dropdown-menu context-menu1 "
-                                                    aria-labelledby="dropdownIconMenu">
-                                                    <li class="dropdownList">
-                                                        <div class="actionBtns">
-                                                            <span class="editAction" data-bs-toggle="modal"
-                                                                data-bs-target="#editbtn"><i
-                                                                    class="bi bi-pencil-square"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
-                                                                handleShow()
-                                                            }}>View</button>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dropdownList">
-                                                        <div class="actionBtns">
-                                                            <span class="deleteAction" data-bs-toggle="modal"
-                                                                data-bs-target="#deletebtn"> <i
-                                                                    class="bi bi-trash3-fill"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div></td>
-                                            <td>{data.Jobtitle}</td>
-                                            <td>{CapitalizeFirstLetter(data.name)}</td>
-                                            <td>{data.email}</td>
-                                            <td>{data.phone}</td>
-                                            <td><Form>
-                                                <Form.Check className="switch_padding1"
-                                                    type="switch"
-                                                    id="custom-switch1"
-                                                    value={data.active}
-                                                    label="" />
-                                            </Form></td>
-                                        </tr>)}
-                                </tbody>
+                                {tableData.length > 0 ?
+                                    <tbody>
+                                        {tableData.map((data, index) =>
+                                            <tr>
+                                                <td class="action "><div class="userDetail ">
+                                                    <button type="button" class="btn "
+                                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <span class="actionIcon"> <i
+                                                            class="bi bi-three-dots-vertical"></i> </span>
+                                                    </button>
+                                                    <ul class="IconDropdown dropdown-menu context-menu11 "
+                                                        aria-labelledby="dropdownIconMenu">
+                                                        <li class="dropdownList ">
+                                                            {data.active == false ?
+                                                                <div class="actionBtns context-menu1">
+                                                                    <span class="editAction" data-bs-toggle="modal"
+                                                                        data-bs-target="#editbtn"><AiOutlineCheck /></span>
+                                                                    <button type="button" className="btn btn-outlined-secondary font_size " onClick={() => {
+                                                                        setShowalert(true)
+                                                                        setIndex(index)
+                                                                        settr(true)
+                                                                    }}>Accept</button>
+                                                                </div> : ""}
+                                                        </li>
+                                                        <li class="dropdownList">
+                                                            {data.active == true ?
+                                                                <div class="actionBtns context-menu1">
+                                                                    <span class="deleteAction" data-bs-toggle="modal"
+                                                                        data-bs-target="#deletebtn"> <AiOutlineCloseCircle /></span>
+                                                                    <button type="button" key={index} className="btn btn-outlined-secondary font_size">Reject</button>
+                                                                </div> : ""}
+                                                        </li>
+                                                    </ul>
+                                                </div></td>
+                                                <td>{data.Jobtitle}</td>
+                                                <td>{CapitalizeFirstLetter(data.name)}</td>
+                                                <td>{CapitalizeFirstLetter(data.email)}</td>
+                                                <td>{data.phone}</td>
+                                                <td><Form>
+                                                    <Form.Check className="switch_padding1"
+                                                        type="switch"
+                                                        key={index}
+                                                        id="custom-switch1"
+                                                        value={data.active}
+                                                        checked={data.active}
+                                                        onChange={(e) => {
+                                                            display(e)
+                                                            setIndex(index)
+                                                        }}
+                                                        label="" />
+                                                </Form></td>
+                                            </tr>)}
+                                    </tbody> : "No Record Found"}
                             </Table>
                         </div>
-                        <div>
-                            <CustomPagination
-                                total={tableData.length}
-                                start={pagination1}
-                                setStart={setpagination}
-                            />
-                        </div>
+                        {tableData.length > 0 ?
+                            <div>
+                                <CustomPagination
+                                    total={tableData.length}
+                                    start={pagination1}
+                                    setStart={setpagination}
+                                />
+                            </div> : ""}
                     </Tab>
                 </Tabs>
                 <Modal show={show} onHide={handleClose} size="sm">

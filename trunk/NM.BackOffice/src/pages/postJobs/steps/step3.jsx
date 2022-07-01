@@ -9,25 +9,23 @@ const Step3 = ({ setGoSteps, state, setState, onhandlechange, handleChange, valu
     //const nevigate=useNavigate()
     const dispatch = useDispatch()
     return <div className="m-auto w-100">
-        <div className="d-flex justify-content-end">
-            <Button variant="secondary" onClick={() => setGoSteps(1)}>Back</Button>
-            <Button variant="primary" onClick={() => {
+        <div className="d-flex justify-content-end gap-2">
+            <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(1)}>Back</Button>
+            <Button variant="primary" className="btn-sm" onClick={() => {
                 setGoSteps(3)
                 dispatch(Send_data(values))
 
             }}>Next</Button>
         </div>
         <Form.Group>
-            <Input as='select' placeholder="Senority Level" value={values.seneritylevel} className="form-control" name='level'
-                onChange={handleChange} label={"Senority Level"} id="seneritylevel" options={[
-                    { value: "...", label: "..." },
+            <Input as='select' placeholder="Level" value={values.seneritylevel} className="form-control" name='level'
+                onChange={handleChange} label={"Level"} id="seneritylevel" options={[
                     { value: "Senior", label: "Senior" },
                     { value: "Junior", label: "Junior" },
 
                 ]} />
 
-            <Input as='select' className="form-control" onChange={handleChange} placeholder="Employement type" value={values.employement} name='type' label={"Employement type"} id="name" options={[
-                { value: "...", label: "..." },
+            <Input as='select' className="form-control" onChange={handleChange} placeholder="Type" value={values.employement} name='type' label={"Type"} id="name" options={[
                 { value: "Full time" },
                 { value: "Part time" },
 
