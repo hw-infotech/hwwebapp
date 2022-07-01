@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Col, Form, FormCheck, FormControl, InputGroup, Modal, Row, Tab, Table, Tabs } from "react-bootstrap";
+import { Badge, Button, Col, Form, FormCheck, FormControl, InputGroup, Modal, Row, Tab, Table, Tabs } from "react-bootstrap";
 import { Link } from "react-router-dom"
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
@@ -9,13 +9,14 @@ import { initialValues, validationschemeaa } from "./validation-schema";
 import { Input } from "../../components/commoninputfield";
 import { AiOutlineCheck, AiOutlineCloseCircle } from "react-icons/ai";
 import CustomPagination from "../../shared/pagination";
-import { AiOutlineUser } from "react-icons/ai";
+import { GoCloudDownload } from "react-icons/go";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BiEdit } from "react-icons/bi";
 import { BsFilter } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
-import {BiUserCheck,BiUserX, BiDirections, BiTab, BiWallet } from "react-icons/bi";
+import { BiUserCheck, BiUserX, BiDirections, BiTab, BiWallet } from "react-icons/bi";
+import { tab } from "@testing-library/user-event/dist/tab";
 
 const Particularjob = () => {
     const data = useParams()
@@ -34,13 +35,14 @@ const Particularjob = () => {
             end: showPerPage
         });
     const [tr, settr] = useState(false)
+    const nevigate = useNavigate()
     const records = [
         {
             Jobtitle: "UI/UX",
             name: "amit Sharma",
             email: "ganesharma5073@gmail.com",
             phone: "9803836866",
-            active: false
+            active: "accepted"
 
         },
         {
@@ -49,7 +51,7 @@ const Particularjob = () => {
             name: "Vikas Sharma",
             email: "ganesharma5073@gmail.com",
             phone: "9803836866",
-            active: true
+            active: "rejected"
         },
         {
 
@@ -57,7 +59,7 @@ const Particularjob = () => {
             name: "Ganesh Sharma",
             email: "ganesharma5073@gmail.com",
             phone: "9803836866",
-            active: false
+            active: "accepted"
         }
     ]
     const [tableData, setTableData] = useState(records)
@@ -98,6 +100,13 @@ const Particularjob = () => {
         <div className="content_center margin_bottom_ ">
             <div className="topGapPad  w-100">
                 {<BasicBreadcrumbs route={route} />}
+                <div className="filter_header">
+                    <div className="filter-title"><h4>Detail and Applied</h4></div>
+                    <div className="filter_container">
+                        <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+
+                    </div>
+                </div>
                 <Tabs activeKey={key}
                     id="uncontrolled-tab-example"
                     onSelect={(k) => setKey(k)}
@@ -118,19 +127,29 @@ const Particularjob = () => {
                                     setShowalert(false)
                                 }} >No</Button>
                                 <Button variant="primary" className="btn-sm font_size" onClick={() => {
-                                    { tr ? tableData[index].acitve = true : tableData[index].acitve = false }
+                                    setTableData(oldState => {
+                                        oldState[index].active = oldState[index].active == "accepted" ? "rejected" : "accepted"
+                                        return oldState
+                                    })
+                                    //setTableData([...tableData])
                                     setShowalert(false)
                                 }}>Yes</Button>
+                                {console.log(tableData)}
                             </Modal.Footer>
                         </Modal>
                         <div className="jobdes_margin">
-                            <div className="d-flex buton_positin gap-2" >
-                                <Button variant="secondary" className="btn-sm ">Back</Button>
-                                <Button variant="primary" className="btn-sm ">Edit</Button></div>
                             <div className="">
                                 <div className="main-pannle">
                                     <div className="leftt_pannel">
                                         <div className="jobdes_card">
+                                            <div className="d-flex buton_positin gap-2" >
+                                                <Button variant="secondary" className="btn-sm " onClick={() => {
+                                                    nevigate(-1)
+                                                }}>Back</Button>
+                                                <Button variant="primary" className="btn-sm " onClick={() => {
+                                                    nevigate('/post-new-job')
+                                                }}
+                                                >Edit</Button></div>
                                             <div className="jobdes_marginbottom">
                                                 <img src="assets/images/nestor.jfif" height={80} width={80} />
                                             </div>
@@ -235,110 +254,93 @@ const Particularjob = () => {
                             </div>
                         </div>
                     </Tab>
+                    <Tab eventKey="Aplied" title="Applied" >
+                        <div style={{ marginTop: "20px", marginBottom: "20px" }}>
 
-                    <Tab eventKey="Aplied" title="Applied" >    
-                        <div style={{ marginTop: "50px",marginBottom:"20px" }}>
-                        <Row>
-                            <Col md={6} sm={12} lg={3} xl={3}>
-                                <div className="card1">
-                                    <div className="card-header1">
-                                        <div className="icon-card1 background_box1">
-                                            <AiOutlineUser size={24} />
+                            <Row className="main-applied-contaier">
+                                <Col md={6} sm={12} lg={2} xl={2}>
+                                    <div className="card2">
+                                        <div className="card-header2">
+
+                                            <div className="innerCard1">
+                                                <span>Total Candidates</span>
+                                                <h4 style={{ fontWeight: "400" }}>56</h4>
+                                            </div>
                                         </div>
-                                        <div className="innerCard">
-                                            <span>Total Candidates</span>
-                                            <h4 style={{ fontWeight: "400" }}>$5k</h4>
-                                        </div>
+                                        {/*<div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>*/}
                                     </div>
-            {/*<div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>*/}
-                                </div>
-                            </Col>
-                            <Col md={6} sm={12} lg={3} xl={3}>
-                                <div className="card1">
-                                    <div className="card-header1">
-                                        <div className="icon-card1 background_box2">
-                                            <BiUserCheck size={24} />
+                                </Col>
+                                <Col md={6} sm={12} lg={2} xl={2}>
+                                    <div className="card2">
+                                        <div className="card-header2">
+                                            <div className="innerCard1">
+                                                <span>Selected</span>
+                                                <h4 style={{ fontWeight: "400" }}>53</h4>
+                                            </div>
                                         </div>
-                                        <div className="innerCard">
-                                            <span>Selected Candidates</span>
-                                            <h4 style={{ fontWeight: "400" }}>$53k</h4>
-                                        </div>
+                                        {/*<div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>*/}
                                     </div>
-                                    {/*<div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>*/}
-                                </div>
-                            </Col>
-                            <Col md={6} sm={12} lg={3} xl={3}>
-                                <div className="card1">
-                                    <div className="card-header1">
-                                        <div className="icon-card1 background_box3">
-                                            <BiUserX size={24} />
+                                </Col>
+                                <Col md={6} sm={12} lg={2} xl={2}>
+                                    <div className="card2">
+                                        <div className="card-header2">
+                                            <div className="innerCard1">
+                                                <span >Rejected</span>
+                                                <h4 style={{ fontWeight: "400" }}>10</h4>
+                                            </div>
                                         </div>
-                                        <div className="innerCard">
-                                            <span >Rejected Candidates</span>
-                                            <h4 style={{ fontWeight: "400" }}>$53k</h4>
-                                        </div>
+                                        {/*<div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>*/}
                                     </div>
-                      {/*<div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>*/}
-                                </div>
-                            </Col>
-                            <Col md={6} sm={12} lg={3} xl={3}>
-                                <div className="card1">
-                                    <div className="card-header1">
-                                        <div className="icon-card1 background_box4" >
-                                            <BsSearch size={24} />
+                                </Col>
+                                <Col md={6} sm={12} lg={6} xl={6}>
+                                    <div className="d-flex justify-content-between gap-2 m-auto">
+                                        <div className="w-25">
+                                            <Form.Select aria-label="Default select example" className="font_size" hidden={disabled}>
+                                                <option disabled selected hidden>Status</option>
+                                                <option value="1">All</option>
+                                                <option value="1">Reject</option>
+                                                <option value="1">Select</option>
+                                            </Form.Select>
                                         </div>
-                                        <div className="innerCard">
-                                            <span>Performance</span>
-                                            <h4 style={{ fontWeight: "400" }}>$3k</h4>
+                                        <div className="w-100" >
+                                            <InputGroup className="mb-3">
+                                                <FormControl
+                                                    className="font_size"
+                                                    hidden={disabled}
+                                                    placeholder="Search by title and name"
+                                                    aria-label="Recipient's username"
+                                                    aria-describedby="basic-addon2"
+                                                    onChange={(e) => {
+                                                        requestSearch(e.target.value)
+                                                    }}
+                                                />
+                                                {/*<Button variant="outline-secondary" id="button-addon2">
+                                        <BsSearch />
+                                        </Button>*/}
+                                            </InputGroup>
                                         </div>
+
                                     </div>
-                                    {/*<div className="card-footer1"> <span className="decoration">+8% </span>than yesterday</div>*/}
-                                </div>
-                            </Col>
-                        </Row>
+                                </Col>
+
+                            </Row>
                         </div>
-                        <div className="gapbetween">
-                            <div className="w-25">
-                                <Form.Select aria-label="Default select example" className="font_size" hidden={disabled}>
-                                    <option disabled selected hidden>Status</option>
-                                    <option value="1">All</option>
-                                    <option value="1">Reject</option>
-                                    <option value="1">Select</option>
-                                </Form.Select>
-                            </div>
-                            <div className="w-100" >
-                                <InputGroup className="mb-3">
-                                    <FormControl
-                                        className="font_size"
-                                        hidden={disabled}
-                                        placeholder="Search by title and name"
-                                        aria-label="Recipient's username"
-                                        aria-describedby="basic-addon2"
-                                        onChange={(e) => {
-                                            requestSearch(e.target.value)
-                                        }}
-                                    />
-                                    {/*<Button variant="outline-secondary" id="button-addon2">
-                                    <BsSearch />
-                                    </Button>*/}
-                                </InputGroup>
-                            </div>
-                            <div style={{ width: "100%", height: "100%", }}>
-                                <BsFilter style={{ float: "right" }} size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
-                            </div>
-                        </div>
+
+
                         <div className="boxshadow">
                             <Table striped bordered hover >
                                 <thead>
                                     <tr>
                                         <th>Action</th>
-                                        <th 
+                                        <th
                                         >Job getTitle</th>
                                         <th onClick={() => {
                                             setTitle(!title)
-                                            { title ? sortt() : sortt1()}}}>Name{title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                            { title ? sortt() : sortt1() }
+                                        }}>Name{title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                         <th>Email</th>
                                         <th>Phone Number</th>
+                                        <th>Resume</th>
                                         <th className="action-col">Status</th>
                                     </tr>
                                 </thead>
@@ -346,42 +348,49 @@ const Particularjob = () => {
                                     <tbody>
                                         {tableData.map((data, index) =>
                                             <tr>
-                                                <td class="action "><div class="userDetail ">
-                                                    <button type="button" class="btn "
-                                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        <span class="actionIcon"> <i
-                                                            class="bi bi-three-dots-vertical"></i> </span>
-                                                    </button>
-                                                    <ul class="IconDropdown dropdown-menu context-menu11 "
-                                                        aria-labelledby="dropdownIconMenu">
-                                                        <li class="dropdownList ">
-                                                            {data.active == false ?
-                                                                <div class="actionBtns context-menu1">
-                                                                    <span class="editAction" data-bs-toggle="modal"
-                                                                        data-bs-target="#editbtn"><AiOutlineCheck /></span>
-                                                                    <button type="button" className="btn btn-outlined-secondary font_size " onClick={() => {
-                                                                        setShowalert(true)
-                                                                        setIndex(index)
-                                                                        settr(true)
-                                                                    }}>Accept</button>
-                                                                </div> : ""}
-                                                        </li>
-                                                        <li class="dropdownList">
-                                                            {data.active == true ?
-                                                                <div class="actionBtns context-menu1">
-                                                                    <span class="deleteAction" data-bs-toggle="modal"
-                                                                        data-bs-target="#deletebtn"> <AiOutlineCloseCircle /></span>
-                                                                    <button type="button" key={index} className="btn btn-outlined-secondary font_size">Reject</button>
-                                                                </div> : ""}
-                                                        </li>
-                                                    </ul>
-                                                </div></td>
+                                                <td class="action">
+                                                    <div class="userDetail ">
+                                                        <button type="button" class="btn "
+                                                            id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                            <span class="actionIcon"> <i
+                                                                class="bi bi-three-dots-vertical"></i> </span>
+                                                        </button>
+                                                        <ul class="IconDropdown dropdown-menu context-menu11 "
+                                                            aria-labelledby="dropdownIconMenu">
+                                                            <li class="dropdownList ">
+
+                                                                {data.active === "rejected" ?
+                                                                    <div class="actionBtns context-menu1">
+                                                                        <span class="editAction" data-bs-toggle="modal"
+                                                                            data-bs-target="#editbtn"><AiOutlineCheck /></span>
+                                                                        <button type="button" className="btn btn-outlined-secondary font_size " onClick={() => {
+                                                                            setShowalert(true)
+                                                                            setIndex(index)
+                                                                            settr(true)
+                                                                        }}>Accept</button>
+                                                                    </div> : ""}
+                                                            </li>
+                                                            <li class="dropdownList">
+                                                                {data.active == "accepted" ?
+                                                                    <div class="actionBtns context-menu1">
+                                                                        <span class="deleteAction" data-bs-toggle="modal"
+                                                                            data-bs-target="#deletebtn"> <AiOutlineCloseCircle /></span>
+                                                                        <button type="button" key={index} className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                            setShowalert(true)
+                                                                            setIndex(index)
+                                                                            settr(false)
+                                                                        }}>Reject</button>
+                                                                    </div> : ""}
+                                                            </li>
+                                                        </ul>
+                                                    </div></td>
                                                 <td>{data.Jobtitle}</td>
                                                 <td>{CapitalizeFirstLetter(data.name)}</td>
                                                 <td>{CapitalizeFirstLetter(data.email)}</td>
                                                 <td>{data.phone}</td>
-                                                <td><Form>
+                                                <td className="content_cente_td"><a target="_blank" href="http://www.africau.edu/images/default/sample.pdf"><GoCloudDownload size={20} color="green" /></a></td>
+                                                <td>{/*<Form>
                                                     <Form.Check className="switch_padding1"
                                                         type="switch"
                                                         key={index}
@@ -393,7 +402,9 @@ const Particularjob = () => {
                                                             setIndex(index)
                                                         }}
                                                         label="" />
-                                                </Form></td>
+                                                    </Form>*/}
+
+                                                    {data?.active == "accepted" ? <Badge bg="success" size={30}>Accepted</Badge> : <Badge bg="danger" size={30}>Rejected</Badge>} </td>
                                             </tr>)}
                                     </tbody> : "No Record Found"}
                             </Table>

@@ -183,7 +183,7 @@ const Edit_postJob = (value1) => {
         <div>
             {<BasicBreadcrumbs route={route} />}
             <div className="filter_header">
-                <div className="filter-title"><h4>Job List</h4></div>
+                <div className="filter-title"><h4>Job</h4></div>
                 <div className="filter_container">
                     <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                     <Button variant="" className="btn-sm" onClick={() => {
@@ -205,7 +205,7 @@ const Edit_postJob = (value1) => {
                     <div className="serachbar" >
                         <InputGroup className="mb-3">
                             <FormControl
-                            className="font_size"
+                                className="font_size"
                                 hidden={disable}
                                 placeholder="Search by title "
                                 aria-label="Recipient's username"
@@ -233,7 +233,6 @@ const Edit_postJob = (value1) => {
                         </Modal.Body>
                         <Modal.Footer>
                             <Button className="btn-sm font_size" variant="secondary" onClick={() => {
-
                                 setShowalert(false)
                             }} >No</Button>
                             <Button className="btn-sm font_size" variant="primary" onClick={() => {
@@ -442,14 +441,14 @@ const Edit_postJob = (value1) => {
                                                         </Modal>*/}
 
                 {tableData.length > 0 ?
-                     <div>
-                    <CustomPagination
-                        showPerPage={showPerPage}
-                        onPageChange={onPageChange}
-                        setStart={setpagination}
-                        total={tableData.length}
-                    />
-                </div>:""}
+                    <div>
+                        <CustomPagination
+                            showPerPage={showPerPage}
+                            onPageChange={onPageChange}
+                            setStart={setpagination}
+                            total={tableData.length}
+                        />
+                    </div> : ""}
             </div>
         </div>
     );

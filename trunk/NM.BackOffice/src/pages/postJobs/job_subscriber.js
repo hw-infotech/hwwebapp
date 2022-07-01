@@ -4,7 +4,7 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { Button, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
+import { Badge, Button, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
 import { VscFilterFilled } from "react-icons/vsc";
 import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
@@ -65,7 +65,7 @@ const Job_newsletter = () => {
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Job Management", route: "job-subscriber/unsubscriber" },
-        { name: "Subscribe/Unsubscribe", route: "/job-subscriber/unsubscriber" },
+        { name: "Subscriber Unsubscriber", route: "/job-subscriber/unsubscriber" },
     ]
     const records = [
         {
@@ -112,12 +112,18 @@ const Job_newsletter = () => {
             <div className="margin_bottom_">
                 <BasicBreadcrumbs route={route} />
                 <div className="filter_header">
-                    <div className="filter-title"><h4>Subscribers/Unsubscriber</h4></div>
+                    <div className="filter-title"><h4>Subscriber Unsubscriber</h4></div>
                     <div className="filter_container">
                                 <BsFilter size={24} color="#ff6b01" onClick={()=>setSdisabled(p => !p)} />
                     </div>
                 </div>
                 <div className="w-100 setupcontent topGapPad">
+               
+                <Form.Check 
+                  type={type}
+                  id={`default-${type}`}
+                  label={`default ${type}`}
+                />
                     <div className="">
                         <Form.Select aria-label="row" className="wreap-content font_size" hidden={disable}>
                             <option disabled hidden selected>Status</option>
@@ -166,7 +172,8 @@ const Job_newsletter = () => {
                                         <td>{data.phone}</td>
                                         <td>{data.Email}</td>
                                         <td >
-                                            <Form.Check className="switch_padding"
+                                        {<Badge bg="success" size={30} >Subscribe</Badge>}
+                                           { /*<Form.Check className="switch_padding"
                                                 type="switch"
                                                 id="custom-switch1"
                                                 value={data.active}
@@ -178,7 +185,7 @@ const Job_newsletter = () => {
                                                         return [..._]
                                                     })
                                                 }}
-                                            />
+                                            />*/}
                                         </td>
                                     </tr>)}
                             </tbody>:"No Record Found"}

@@ -191,16 +191,12 @@ const All_Enquiry = () => {
                     <Modal.Header >
                         <Modal.Title>Alert</Modal.Title>
                     </Modal.Header>
-
                     <Modal.Body>
                         <p>{rowtext?.text}</p>
                     </Modal.Body>
-
                     <Modal.Footer>
                         <Button className="btn-sm font_size" variant="secondary" onClick={() => {
-
                             setShowalert(false)
-
                         }} >No</Button>
                         <Button className="btn-sm font_size" variant="primary" onClick={() => {
                             display()
@@ -272,7 +268,6 @@ const All_Enquiry = () => {
                                                                     class="bi bi-trash3-fill"></i></span>
                                                             <button type="button" key={index} className="btn btn-outlined-secondary font_size" onClick={() => {
                                                                 setwait(false)
-
                                                                 setShowalert(true)
 
                                                                 setDeleteObj({
