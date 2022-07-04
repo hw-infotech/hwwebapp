@@ -148,6 +148,7 @@ const Particularjob = () => {
                                                 }}>Back</Button>
                                                 <Button variant="primary" className="btn-sm " onClick={() => {
                                                     nevigate('/post-new-job')
+                                                    localStorage.setItem("key","Edit Job")
                                                 }}
                                                 >Edit</Button></div>
                                             <div className="jobdes_marginbottom">

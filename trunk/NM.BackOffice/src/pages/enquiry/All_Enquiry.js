@@ -1,4 +1,4 @@
-import { Badge, Button, Col, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
+import { Badge, Button, Col, Collapse, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { News_letter_Subscribe } from "../../Services/redux/action/action";
@@ -21,7 +21,7 @@ import capitalizeFirstLetter from "../../components/first_letter_capital";
 const All_Enquiry = () => {
     const [rowtext, setRowtext] = useState()
     const [showalert, setShowalert] = useState()
-    const [disable, setSdisabled] = useState(true)
+    const [disable, setSdisabled] = useState(false)
     const [status, setStatus] = useState()
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -163,17 +163,20 @@ const All_Enquiry = () => {
             </div>
             <div className="topGapPad margin_bottom_">
                 <div className="gapbetween">
-                    <div><Form.Select aria-label="row" className="wreap-content font_size" hidden={disable}>
+                <Collapse in={disable}>
+                    <div><Form.Select aria-label="row" className="wreap-content font_size">
                         <option disabled hidden selected>Status</option>
                         <option value="1">All</option>
                         <option value="2">Pending</option>
                         <option value="3">Resolved</option>
                     </Form.Select>
                     </div>
+                    </Collapse>
+                    <Collapse in={disable}>
                     <div className="serachbar">
                         <InputGroup className="mb-3">
                             <FormControl className="font_size"
-                                hidden={disable}
+                               
                                 placeholder="Serach by Email and Name"
                                 aria-label="Recipient's username"
                                 aria-describedby="basic-addon2"
@@ -186,6 +189,7 @@ const All_Enquiry = () => {
                                             </Button>*/}
                         </InputGroup>
                     </div>
+                    </Collapse>
                 </div>
                 <Modal show={showalert} onHide={handleClose} >
                     <Modal.Header >

@@ -1,18 +1,18 @@
 import { useFormikContext } from "formik"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import CreatableSelectField from "../../../components/selectfield"
+import CreatableSelectField from "../../components/selectfield"
 
-const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
-    const { setFieldValue } = useFormikContext()
+const Update_Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
+  
    // const selector = useSelector(state => state.data.apidata.edit_data)
     return <div className="w-100 m-auto">
         <div className="d-flex w-100 justify-content-end gap-2">
             <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(0)} >Back</Button>
-            <Button variant="primary" className="btn-sm" onClick={() => {
-                setFieldValue('responsibility', state.responsibility.map((_)=>(_.value)))
-                setFieldValue("requirment", state.requirment.map((_)=>(_.value)))
-                setFieldValue('benefits', state.benefits.map((_)=>(_.value)))
+            <Button variant="primary" className="btn-sm" type="button" onClick={() => {
+                // setFieldValue('responsibility', state.responsibility.map((_)=>(_.value)))
+                // setFieldValue("requirment", state.requirment.map((_)=>(_.value)))
+                // setFieldValue('benefits', state.benefits.map((_)=>(_.value)))
                 setGoSteps(2)
             }} >Next</Button>
         </div>
@@ -26,8 +26,8 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
                         formState={state}
                         className="label-size"
                         setFormState={setState}
-                        value={values.requirment}
-                        onChange={handleChange}
+                        value={state.requirment}
+                        onChange={()=>handleChange()}
 
                     />
                     <Form.Label className="label-size">Responsibility</Form.Label>
@@ -37,8 +37,8 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
                         formState={state}
                         setFormState={setState}
                         className="label-size"
-                        value={values.responsibility}
-                        onChange={handleChange}
+                        value={state.responsibility}
+                        onChange={()=>handleChange()}
 
                     />
                     <Form.Label className="label-size">Benefits</Form.Label>
@@ -49,8 +49,8 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
                             className="label-size"
                             setFormState={setState}
                             placeholder="Type and press tab/enter button"
-                            value={values.benefits}
-                            onChange={handleChange}
+                            value={state.benefits}
+                            onChange={()=>handleChange()}
                         />
                     </div>
                 </Form.Group>
@@ -59,4 +59,4 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
     </div>
 }
 
-export default Step2
+export default Update_Step2

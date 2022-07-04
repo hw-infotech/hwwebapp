@@ -12,16 +12,15 @@ import CustomPagination from "../../shared/pagination";
 import { BiPencil, BiFolderOpen, BiCheck } from "react-icons/bi";
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs";
 import { Stepper, Step } from 'react-form-stepper';
-import Step1 from "./steps/step1";
-import Step2 from "./steps/step2";
-import Step3 from "./steps/step3";
-import Step4 from "./steps/step4";
+import Update_Step1 from "./update_step1";
+import Update_Step2 from "./update_step2";
+import Update_Step3 from "./update_step3";
+import Update_Step4 from "./updata_step4";
 import { createContext } from "react";
 import { useSelector } from "react-redux";
 
-const Post_Job = ({ stat }) => {
-   
-  
+const Update_Job = ({ stat }) => {
+
     const [post, setpost] = useState()
     const [goSteps, setGoSteps] = useState(0);
     const [state, setState] = useState({
@@ -36,34 +35,25 @@ const Post_Job = ({ stat }) => {
         description: ""
 
     })
- const selector   = useSelector(state => state.data?.apidata?.edit_data?.data)
+    const selector = useSelector(state => state)
 
-    const [state1, setState1] = useState({
-        jobtitle: "",
-        functions: "",
-        responsibility: [],
-        requirment: [],
-        benefits: [],
-        industry: "",
-        type: "",
-        level: "",
-        description: ""
+    useEffect(() => {
+        setState(selector.data?.apidata?.edit_data?.data)
+    }, [selector])
 
-    })
     const DataContext = createContext();
     const route = [
         { name: "Home", route: "/" },
         { name: "Job" },
         { name: "Post job" },
-
     ]
-    const onhandlechange = (e) => {
+
+    const handlechange = (e) => {
         const { name, value } = e.target
         setState({ ...state, [name]: value })
-       
     }
-   
 
+    console.log(state,"state");
     let tiitle = localStorage?.getItem("key")
     return (
         <div>
@@ -92,31 +82,25 @@ const Post_Job = ({ stat }) => {
                         <BiCheck size={24} />
                     </Step>
                 </Stepper>
+                <Form onSubmit={(e) => {
+                    e.preventDefault()
+                }}>
+                    {goSteps === 0 && (
+                        <Update_Step1 handlechange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                    )}
 
-                <Formik initialValues={state}>
-                    {({ values, handleChange, handleSubmit }) => (<Form onSubmit={(e) => {
-              
-                        e.preventDefault()
-                        handleSubmit()
-                    }}>
-               
-                        {goSteps === 0 && (
-                            <Step1 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
-                        )}
-
-                        {goSteps === 1 && (
-                            <Step2 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
-                        )}
-                        {goSteps === 2 && (
-                            <Step3 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
-                        )}
-                        {goSteps === 3 && (
-                            <Step4 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
-                        )}
-                    </Form>)}
-                </Formik>
+                    {goSteps === 1 && (
+                        <Update_Step2 handlechange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                    )}
+                    {goSteps === 2 && (
+                        <Update_Step3 handlechange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                    )}
+                    {goSteps === 3 && (
+                        <Update_Step4 handlechange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                    )}
+                </Form>
             </div>
         </div>
     )
 }
-export default Post_Job
+export default Update_Job

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Form, FormCheck, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
+import { Button, Col, Collapse, Form, FormCheck, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 import { Field, Formik, FormikProvider } from "formik";
 import { Input } from "../../components/commoninputfield";
 import { BsSearch } from "react-icons/bs";
@@ -16,7 +16,7 @@ import { FaFilter } from "react-icons/fa";
 import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
 import { subString } from "../../Services/commonFunctions";
-import { getAllEnquries, Send_data } from "../../Services/redux/action/action";
+import { Edit_Data, getAllEnquries, Send_data } from "../../Services/redux/action/action";
 import { useDispatch, useSelector } from "react-redux";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
@@ -27,7 +27,7 @@ const Edit_postJob = (value1) => {
     const [jobpost, setjobpost] = useState()
     const [rowtext, setRowtext] = useState()
     const [showalert, setShowalert] = useState(false)
-    const [disable, setSdisabled] = useState(true)
+    const [disable, setSdisabled] = useState(false)
     const [requirment2, setRequirments] = useState([])
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -56,7 +56,7 @@ const Edit_postJob = (value1) => {
     const Chnage = (e) => {
         const { name, value } = e.target
         setRow(value)
-        console.log("this is the select field value", value)
+
     }
     const handlechange1 = (event, value) => {
         var value1;
@@ -64,12 +64,12 @@ const Edit_postJob = (value1) => {
         if (next <= value) {
             value1 = row * value
             setShowPerPage(value1)
-            console.log("this is the if conditon", value, showPerPage, state.row_value)
+
             setStart(value1 - row)
             setpagination({ start: start, end: showPerPage })
         }
         else {
-            console.log("else", start, showPerPage)
+
             setStart(start - row)
             setShowPerPage(showPerPage - row)
             setpagination({ start: start - row, end: showPerPage - row })
@@ -124,9 +124,10 @@ const Edit_postJob = (value1) => {
             active: "pending"
         }
     ]
-    const selector = useSelector(state => state.data.apidata.allEnquries)
+    const selector = useSelector(state => state.data.apidata?.allEnquries)
     useEffect(() => {
-        console.log("state this is the selector data", selector)
+
+
         dispatch(getAllEnquries())
         // setTableData(old=>[...old,selector])  
     }, [])
@@ -134,12 +135,12 @@ const Edit_postJob = (value1) => {
     const [tableData, setTableData] = useState(selector)
     function sortt() {
         const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() > b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() > a.Jobtitle.toLowerCase()) ? -1 : 0));
-        console.log(response)
+
         setTableData([...response])
     }
     function sortt1() {
         const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() < b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() < a.Jobtitle.toLowerCase()) ? -1 : 0));
-        console.log(response)
+
         setTableData([...response])
     }
     const [title, setTitle] = useState(false)
@@ -157,7 +158,7 @@ const Edit_postJob = (value1) => {
     }
     const dispatch = useDispatch()
     const display = () => {
-        console.log(deleteObj);
+
         setShowalert(true)
         //const result = await confirm(rowtext.text);
         // console.log(rowText);
@@ -187,26 +188,31 @@ const Edit_postJob = (value1) => {
                 <div className="filter_container">
                     <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                     <Button variant="" className="btn-sm" onClick={() => {
+
                         navigate("/post-new-job")
+                        localStorage.setItem("key", "Post Job")
                     }}> <AiOutlinePlusCircle size={24} color="#ff6b01" /></Button>
                 </div>
             </div>
             <div className="topGapPad margin_bottom_">
                 <div className="gapbetween ">
+                <Collapse in={disable}>
                     <div>
                         {
-                            <Form.Select aria-label="Default select example" className="font_size" onChange={requestSearch} hidden={disable}>
+                            <Form.Select aria-label="Default select example" className="font_size" onChange={requestSearch} >
                                 <option disabled hidden selected>Status  </option>
                                 <option value="1">All</option>
                                 <option value="1">Subscribe</option>
                                 <option value="1">Unsubscribe</option>
                             </Form.Select>}
                     </div>
+                    </Collapse>
+                    <Collapse in={disable}>
                     <div className="serachbar" >
                         <InputGroup className="mb-3">
                             <FormControl
                                 className="font_size"
-                                hidden={disable}
+                                
                                 placeholder="Search by title "
                                 aria-label="Recipient's username"
                                 aria-describedby="basic-addon2"
@@ -219,6 +225,7 @@ const Edit_postJob = (value1) => {
                                             </Button>*/}
                         </InputGroup>
                     </div>
+                    </Collapse>
                 </div>
                 <div className="boxshadow">
                     {/*<h4>List Number of Job Posts</h4>*/}
@@ -261,7 +268,7 @@ const Edit_postJob = (value1) => {
                                 <th className="action_colwidth">Total Candidates</th>
                             </tr>
                         </thead>
-                        {tableData.length > 0 ?
+                        {tableData?.length > 0 ?
                             <tbody>
                                 {tableData.map((data, index) =>
                                     <tr>
@@ -280,6 +287,7 @@ const Edit_postJob = (value1) => {
                                                             data-bs-target="#editbtn"><i
                                                                 className="bi bi-pencil-square"></i></span>
                                                         <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+
                                                             navigate('/particularjob')
                                                         }}>View</button>
                                                     </div>
@@ -289,7 +297,11 @@ const Edit_postJob = (value1) => {
                                                         <span className="viewIcon" data-bs-toggle="modal"
                                                             data-bs-target="#viewbtn"> <i
                                                                 className="bi bi-eye"></i></span>
-                                                        <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => { navigate('/post-new-job') }} >Edit</button>
+                                                        <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                            localStorage.setItem("key", "Edit Job")
+                                                            dispatch(Edit_Data(data, index))
+                                                            navigate('/updatejob')
+                                                        }} >Edit</button>
                                                     </div>
                                                 </li>
                                                 <li className="dropdownList">
@@ -306,9 +318,9 @@ const Edit_postJob = (value1) => {
                                                 </li>
                                             </ul>
                                         </div></td>
-                                        <td>{data.Jobtitle || data.jobtitle}</td>
+                                        <td>{data?.Jobtitle || data?.jobtitle}</td>
 
-                                        <td>{data.description && subString(data.description, 50)}</td>
+                                        <td>{data?.description && subString(data.description, 50)}</td>
                                         <td>{data?.functions}</td>
                                         <td>{data?.requirment?.length > 0 && data.requirment[0]}</td>
                                         <td>{data?.benfits?.length > 0 && data.benfits[0]}</td>
@@ -440,7 +452,7 @@ const Edit_postJob = (value1) => {
                     </Modal.Footer>
                                                         </Modal>*/}
 
-                {tableData.length > 0 ?
+                {tableData?.length > 0 ?
                     <div>
                         <CustomPagination
                             showPerPage={showPerPage}

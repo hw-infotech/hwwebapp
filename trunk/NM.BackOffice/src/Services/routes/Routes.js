@@ -17,6 +17,7 @@ import Particularjob from '../../pages/postJobs/particularlist';
 import Profile from '../../pages/Profile/Profile';
 import Post_Job from '../../pages/postJobs/post_job';
 import Job_Preview from '../../pages/postJobs/job_preview';
+import Update_Job from '../../pages/postJobs/updata-job';
 
 const routes = (path, element, exact = true) => {
     return { path, element, exact }
@@ -33,7 +34,7 @@ const route = [
     routes('/newsletter-subscribers', <SubScriber />),
     routes('/Profile', <Profile />),
     routes('/AllEnquiry', <All_Enquiry />),
-    //routes('/PostNewJob', <Post_New_Job />),
+    routes('/updatejob', <Update_Job />),
     routes('/appliedjobs', <Applied_Job />),
     routes('/job-subscriber/unsubscriber', <Job_Subscriber />),
     routes('/stacks', <Stacks />),

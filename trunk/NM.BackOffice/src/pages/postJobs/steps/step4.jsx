@@ -15,7 +15,9 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
                 setGoSteps(2)
             }}>Back</Button>
             <Button variant="warning" className="btn-sm" onClick={() => setGoSteps(3)}>Save as Draft</Button>
-            <Button variant="primary" className="btn-sm" onClick={() => setGoSteps(3)}>Save & Publish</Button>
+            <Button variant="primary" className="btn-sm" onClick={() => {setGoSteps(3)
+                dispatch(Send_data(values))
+            }}>Save & Publish</Button>
 
         </div>
         <Job_Preview values={values} />

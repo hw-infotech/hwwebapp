@@ -3,11 +3,10 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
-const Job_Preview = (values,state   )  => {
+const Edit_Job_Preview = (values, state) => {
     const nevigate = useNavigate()
-   
     console.log(values)
-    let tiitle=localStorage?.getItem("key")
+    let tiitle = localStorage?.getItem("key")
     return (
         <div>
             {console.log("this the formik values", values)}
@@ -35,7 +34,7 @@ const Job_Preview = (values,state   )  => {
                                     <ul className="job_description_list">
                                         {values?.values?.responsibility?.map((data, index) =>
                                             <li className=""> {data}</li>
-                                            
+
                                         )}
                                     </ul>
                                 </div>
@@ -68,7 +67,7 @@ const Job_Preview = (values,state   )  => {
                                         </li>
                                         <li>
                                             <h6>Employment type</h6>
-                                            <span  className="job_description_level">{values.values?.type}</span>
+                                            <span className="job_description_level">{values.values?.type}</span>
                                         </li>
                                         <li>
                                             <h6>Job function</h6>
@@ -121,4 +120,4 @@ const Job_Preview = (values,state   )  => {
 
     )
 }
-export default Job_Preview
+export default Edit_Job_Preview

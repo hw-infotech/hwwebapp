@@ -114,11 +114,11 @@ const Job_newsletter = () => {
                 <div className="filter_header">
                     <div className="filter-title"><h4>Subscriber Unsubscriber</h4></div>
                     <div className="filter_container">
-                                <BsFilter size={24} color="#ff6b01" onClick={()=>setSdisabled(p => !p)} />
+                        <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                     </div>
                 </div>
                 <div className="w-100 setupcontent topGapPad">
-           
+
                     <div className="">
                         <Form.Select aria-label="row" className="wreap-content font_size" hidden={disable}>
                             <option disabled hidden selected>Status</option>
@@ -130,7 +130,7 @@ const Job_newsletter = () => {
                     <div className="searchbar">
                         <InputGroup className="mb-3">
                             <FormControl
-                            className="font_size"
+                                className="font_size"
                                 hidden={disable}
                                 placeholder="Search by email and name"
                                 aria-label="Search By Email"
@@ -150,11 +150,11 @@ const Job_newsletter = () => {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                <th className="action_colwidth"> <Form.Check 
-                                className="font_size mt-2"
-                                   
-                                    label="All"
-                                /></th>
+                                    <th className="action_colwidth"> <Form.Check
+                                        className="font_size mt-2"
+
+                                        label="All"
+                                    /></th>
                                     <th onClick={() => {
                                         setTitle(!title)
                                         { title ? sortt() : sortt1() }
@@ -164,20 +164,20 @@ const Job_newsletter = () => {
                                     <th className="action_colwidth">Status</th>
                                 </tr>
                             </thead>
-                            {tableData.length >0 ?
-                            <tbody>
-                                {tableData.map((data, index) =>
-                                    <tr>  <td className="content_center_td"><Form.Check 
-                                    className="font_size mt-2"
-                                       
-                                        
-                                    /></td>
-                                        <td>{CapitalizeFirstLetter(data.Name)}</td>
-                                        <td>{data.phone}</td>
-                                        <td>{data.Email}</td>
-                                        <td >
-                                        {<Badge bg="success" size={30} >Subscribe</Badge>}
-                                           { /*<Form.Check className="switch_padding"
+                            {tableData.length > 0 ?
+                                <tbody>
+                                    {tableData.map((data, index) =>
+                                        <tr>  <td className="content_cente_td"><Form.Check
+                                            className="font_size mt-2"
+
+
+                                        /></td>
+                                            <td>{CapitalizeFirstLetter(data.Name)}</td>
+                                            <td>{data.phone}</td>
+                                            <td>{data.Email}</td>
+                                            <td >
+                                                {<Badge bg="success" size={30} >Subscribe</Badge>}
+                                                { /*<Form.Check className="switch_padding"
                                                 type="switch"
                                                 id="custom-switch1"
                                                 value={data.active}
@@ -190,18 +190,18 @@ const Job_newsletter = () => {
                                                     })
                                                 }}
                                             />*/}
-                                        </td>
-                                    </tr>)}
-                            </tbody>:"No Record Found"}
+                                            </td>
+                                        </tr>)}
+                                </tbody> : "No Record Found"}
                         </Table>
-                     
+
                     </div>
-                    {tableData.length>0 ?
-                    <CustomPagination
-                        showPerPage={showPerPage}
-                        setStart={setpagination}
-                        total={tableData.length}
-                    />:""}
+                    {tableData.length > 0 ?
+                        <CustomPagination
+                            showPerPage={showPerPage}
+                            setStart={setpagination}
+                            total={tableData.length}
+                        /> : ""}
 
                 </div>
             </div>

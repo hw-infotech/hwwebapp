@@ -5,7 +5,7 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
-import { Button, Form, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
+import { Button, Collapse, Form, FormControl, InputGroup, Modal, Table } from "react-bootstrap";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { BsFilter } from "react-icons/bs";
@@ -41,6 +41,7 @@ const records = [
     }
 ]
 const Success_Stories = () => {
+    const [open, setOpen] = useState(false);
     const [values, setValues] = useState()
     const [index, setindex] = useState()
     const [state, setState] = useState({
@@ -52,7 +53,7 @@ const Success_Stories = () => {
 
     const [rowtext, setRowtext] = useState()
     const [showalert, setShowalert] = useState(false)
-    const [disable, setSdisabled] = useState(true)
+    const [disable, setSdisabled] = useState(false)
     const [edit, setEdit] = useState();
     const [show, setShow] = useState(false);
     const [showPerPage, setShowPerPage] = useState()
@@ -137,73 +138,80 @@ const Success_Stories = () => {
     return (
         <div>
             {<BasicBreadcrumbs route={route} />}
-            <div className="filter_header">
+            <div className="filter_header" >
                 <div className="filter-title"><h4>Success Stories</h4></div>
-                <div className="filter_container">
-                        <BsFilter size={25} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
-                        <Button variant="" className="btn-sm" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01"/></Button> 
+                <div className="filter_container"  >
+                    <BsFilter size={25} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                    <Button variant=""   aria-controls="example-collapse-text"
+                    aria-expanded={disable} className="btn-sm" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01" /></Button>
                 </div>
             </div>
-            <div className="margin_bottom_ topGapPad">
-                <div className="font_size">
-                    <div className="">
-                        <div className="gapbetween">
-                            <div>
-                                <Form.Select className="font_size" aria-label="Default select example" hidden={disable}  >
-                                    <option hidden selected>Status</option>
-                                    <option value="1">All</option>
-                                    <option value="1">Active</option>
-                                    <option value="1">Deactive</option>
-                                </Form.Select>
-                            </div>
-                            <div className="serachbar">
-                                <InputGroup className="mb-3" >
-                                    <FormControl className="font_size"
-                                        hidden={disable}
-                                        placeholder="Search by title"
-                                        aria-label="Recipient's username"
-                                        aria-describedby="basic-addon2"
-                                        onChange={(e) => {
+            <div className="pt-4">
+                <div className="font_size" >
+               
+                    <div className="gapbetween" >
+                     <Collapse in={disable}>
+                        <div id="example-collapse-text">
+                            <Form.Select className="font_size" aria-label="Default select example"  id="example-collapse-text" >
+                                <option hidden selected>Status</option>
+                                <option value="1">All</option>
+                                <option value="1">Active</option>
+                                <option value="1">Deactive</option>
+                            </Form.Select>
+                        </div>
+                        </Collapse>
+                        <Collapse in={disable}>
+                        <div className="serachbar" >
+                            <InputGroup className="mb-3"  >
+                                <FormControl className="font_size"
+                                    placeholder="Search by title"
+                                    aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
 
-                                            console.log(e)
-                                            requestSearch(e.target.value)
-                                        }}
-                                    />
-                                </InputGroup>
-                            </div>
-                            <Modal show={showalert} onHide={handleClose} >
-                                <Modal.Header closeButton>
-                                    <Modal.Title>Alert</Modal.Title>
-                                </Modal.Header>
-
-                                <Modal.Body>
-                                    <p>{rowtext?.text}</p>
-                                </Modal.Body>
-                                <Modal.Footer>
-                                    <Button variant="secondary" className="btn btn-sm" onClick={() => {
-                                        setShowalert(false)
-                                    }} >No</Button>
-                                    <Button variant="primary" className="btn btn-sm" onClick={() => {
-                                        display()
-                                        setShowalert(false)
-                                    }}>Yes</Button>
-                                </Modal.Footer>
-                            </Modal>
+                                        console.log(e)
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                            </InputGroup>
+                           
+                        </div>
+                        </Collapse>
                         </div>
                         <div>
-                            <Table striped bordered hover>
-                                <thead>
-                                    <tr>
-                                        <th className="action_colwidth">Action</th>
-                                        <th className="action_titlewidth" onClick={() => {
-                                            setTitle(!title)
-                                            { title ? sortt() : sortt1() }
-                                        }}>Title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                        <th>Content</th>
-                                        <th className="action_colwidth">Status</th>
-                                    </tr>
-                                </thead>
-                                {tableData.length>0 ?
+                        <Modal show={showalert} onHide={handleClose} >
+                            <Modal.Header closeButton>
+                                <Modal.Title>Alert</Modal.Title>
+                            </Modal.Header>
+
+                            <Modal.Body>
+                                <p>{rowtext?.text}</p>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" className="btn btn-sm" onClick={() => {
+                                    setShowalert(false)
+                                }} >No</Button>
+                                <Button variant="primary" className="btn btn-sm" onClick={() => {
+                                    display()
+                                    setShowalert(false)
+                                }}>Yes</Button>
+                            </Modal.Footer>
+                        </Modal>
+                    </div>
+                    <div >
+                        <Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th className="action_colwidth">Action</th>
+                                    <th className="action_titlewidth" onClick={() => {
+                                        setTitle(!title)
+                                        { title ? sortt() : sortt1() }
+                                    }}>Title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                    <th>Content</th>
+                                    <th className="action_colwidth">Status</th>
+                                </tr>
+                            </thead>
+                            {tableData.length > 0 ?
                                 <tbody>
                                     {tableData?.map((data, index) =>
                                         <tr>
@@ -281,19 +289,19 @@ const Success_Stories = () => {
                                                 />
                                             </Form></td>
                                         </tr>)}
-                                </tbody>:"No Record Found"}
-                            </Table>
-                        </div>
+                                </tbody> : "No Record Found"}
+                        </Table>
                     </div>
-                    {tableData.length>0 ?
-                    <div>
-                        <CustomPagination
-                            start={pagination1}
-                            setStart={setpagination}
-                            total={tableData.length}
-                            
-                        />
-                    </div>:""}
+
+                    {tableData.length > 0 ?
+                        <div>
+                            <CustomPagination
+                                start={pagination1}
+                                setStart={setpagination}
+                                total={tableData.length}
+
+                            />
+                        </div> : ""}
                 </div>
             </div>
             <Modal show={show} onHide={handleClose} size="md">
@@ -367,7 +375,7 @@ const Success_Stories = () => {
                     )}
                 </Formik>
             </Modal>
-        </div>
+        </div >
     );
 }
 export default Success_Stories

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
+import { Button, Col, Collapse, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 //import Pagination from '@material-ui/lab/Pagination';
 // import Pagination from '@mui/material/Pagination'
 import BasicBreadcrumbs from "../../components/breadcumbs";
@@ -22,7 +22,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 
 const SubScriber = () => {
-    const [disable, setSdisabled] = useState(true)
+    const [disable, setSdisabled] = useState(false)
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
@@ -128,17 +128,20 @@ const SubScriber = () => {
             <div className="margin_bottom_ topGapPad">
                 <div className=" ">
                     <div className="w-100 setupcontent">
-                        <div className="" ><Form.Select aria-label="row" className="wreap-content font_size" hidden={disable}>
+                    <Collapse in={disable}>
+                        <div className="" ><Form.Select aria-label="row" className="wreap-content font_size" >
                             <option disabled hidden selected>Status</option>
                             <option value="1">All</option>
                             <option value="2">Subscriber</option>
                             <option value="3">UnSubscriber</option>
                         </Form.Select>
                         </div>
+                        </Collapse>
+                        <Collapse in={disable}>
                         <div className="searchbar">
                             <InputGroup className="mb-3">
                                 <FormControl className="font_size"
-                                    hidden={disable}
+                                   
                                     placeholder="Search By Email"
                                     aria-label="Search By Email"
                                     aria-describedby="basic-addon2"
@@ -151,6 +154,7 @@ const SubScriber = () => {
                                             </Button>*/}
                             </InputGroup>
                         </div>
+                        </Collapse>
                     </div>
                 </div>
                 <div className="">
