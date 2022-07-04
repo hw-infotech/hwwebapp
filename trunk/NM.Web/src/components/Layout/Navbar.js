@@ -62,8 +62,8 @@ const NavBar = ({ NavbarStyle }) => {
             id="navbarNav"
           >
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <Link to="/">Home </Link>
+              <li className="nav-item">
+                <Link to="/ourWorks">Our Works</Link>
               </li>
               <li className="nav-item dropdown position-static">
                 <a
@@ -89,12 +89,14 @@ const NavBar = ({ NavbarStyle }) => {
                     </Link>
                     <Link className="dropdown-item" to="/web-development">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/webNavIcon.png" alt="" /> Web Development
+                        <img src="assets/img/webNavIcon.png" alt="" /> Web
+                        Development
                       </div>
                     </Link>
                     <Link className="dropdown-item" to="/ui-ux-design">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/uiUxNavIcon.png" alt="" /> UI UX Design
+                        <img src="assets/img/uiUxNavIcon.png" alt="" /> UI UX
+                        Design
                       </div>
                     </Link>
                     <Link className="dropdown-item" to="/seo">
@@ -228,6 +230,7 @@ const NavBar = ({ NavbarStyle }) => {
               <li className="nav-item">
                 <Link to="/about-us">About Us</Link>
               </li>
+
               {/* <li className="nav-item">
                 <Link to="/under-mantainence">Blog</Link>
               </li> */}
@@ -244,7 +247,7 @@ const NavBar = ({ NavbarStyle }) => {
                 </Link>
               </li> */}
               <li className="nav-item w-o-btn">
-             <Link to="/meeting"> Schedule time with me!</Link>
+                <Link to="/meeting"> Schedule time with me!</Link>
               </li>
             </ul>
           </div>

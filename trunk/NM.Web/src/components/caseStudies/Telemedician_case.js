@@ -26,11 +26,9 @@ const Telemedician = () => {
                     <div className="storiesImg">
                         <img src="assets/img/telemedicine.png" alt='storiesImg'/>
                     </div>
-
                 </div>
             </div>
         </section>
-
         <section className="caseStudies_AboutContent">
             <div className="container">
                 <div className="caseStudies_About">
@@ -59,7 +57,6 @@ const Telemedician = () => {
                         </div>
                     </div>
                 </div>
-
                 <div className="caseStudies_About">
                     <div className="title">Types of Real-Estate Apps:</div>
                     <div className="caseStudies_details">
@@ -69,8 +66,6 @@ const Telemedician = () => {
                         There are about two types of apps that depend on how they function when talking about real estate’s mobile app development. The first is the agency based app, and the other one is a third party app. Now, let’s see how this app functions.
                     </div>
                 </div>
-
-
                 <div className="caseStudies_About">
                     <div className="row">
                         <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -86,8 +81,6 @@ const Telemedician = () => {
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </section>
         <section className="technologyStack">
@@ -141,11 +134,6 @@ const Telemedician = () => {
                 </div>
             </div>
         </section>
-
-
-
-
-
         <section className="formBox">
             <div className="container">
                 <div className="row">
@@ -200,7 +188,6 @@ const Telemedician = () => {
                 </div>
             </div>
         </section>
-
     </Dashboard>
 }
 export default Telemedician

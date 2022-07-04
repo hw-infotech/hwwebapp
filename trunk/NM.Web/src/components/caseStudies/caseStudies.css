@@ -241,3 +241,107 @@
         height: auto;
     }
 }
+
+
+/* Our Work Code */
+.ourWorksBanner {
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background: #000000;
+}
+.ourWorksBanner .ourWorkbannerContent {
+    color: #fff;
+    position: relative;
+}
+.ourWorksBanner .ourWorkbannerContent h1 {
+    font-size: 72px;
+    font-weight: 700;
+}
+.ourWorksBanner .ourWorkbannerContent h3 {
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 38px;
+    max-width: 800px;
+}
+.storiesBox {
+    padding: 100px 0;
+    position: relative;
+}
+.storiesPanelItem {
+    position: relative;
+        margin-bottom: 100px;
+}
+.storiesPanelItem:last-child {
+    margin-bottom: 0px;
+}
+.storiesPanelItem .headingPart {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+.storiesPanelItem .headingPart .projectDetails {
+    position: relative;
+}
+.storiesPanelItem .headingPart .projectDetails {
+    position: relative;
+}
+.storiesPanelItem .headingPart .projectDetails .chips {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.storiesPanelItem .headingPart .projectDetails .chips span {
+    font-size: 14px;
+    background: #e2e2e2;
+    padding: 6px 20px;
+    border-radius: 30px;
+}
+.storiesPanelItem .headingPart .projectDetails .projectName {
+    font-size: 42px;
+    font-weight: 800;
+}
+.storiesPanelItem .headingPart .projectDetails .projectSubtitle {
+    font-size: 18px;
+    position: relative;
+}
+.projectsContentBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    gap: 40px;
+}
+.projectsContentBox .projectGraphics {
+    position: relative;
+    width: 100%;
+}
+.projectsContentBox .projectGraphics img{
+    width: 100%;
+}
+.projectsContentBox .projectDiscriptions {
+    position: relative;
+    background: #e7e7e7;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.projectsContentBox .projectDiscriptions .projectsContentPera {
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+.projectsContentBox .projectDiscriptions .clientDetails .clientName {
+    font-size: 18px;
+    font-weight: 700;
+}
+.projectsContentBox .projectDiscriptions .clientDetails .clientPost {
+    font-size: 16px;
+    font-weight: 300;
+    color: #8d8d8d;
+}
+.projectsContentBox .projectDiscriptions .clientDetails {
+    text-align: end;
+}
