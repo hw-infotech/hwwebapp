@@ -314,6 +314,7 @@ body {
   height: 30px;
   margin-top: 15px;
   width: calc(100% - 0px);
+  padding-right: 20px !important;
 }
 
 .mainfooter .footerright {
@@ -484,32 +485,6 @@ body {
   font-size: 13px !important;
 }
 
-.popoup-btn {
-  padding: 9px 11px !important;
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  font-size: 13px !important;
-  -webkit-box-align: center !important;
-      -ms-flex-align: center !important;
-          align-items: center !important;
-  border: 1px solid #eb7823 !important;
-  background: #eb7823 !important;
-  color: white !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  outline: none !important;
-}
-
-.popoup-btn:hover {
-  font-size: 13px !important;
-  background: #ff6b01 !important;
-  color: white !important;
-  -webkit-transition: 0.9s !important;
-  transition: 0.9s !important;
-  border: 1px solid #ff6b01 !important;
-}
-
 .fitlter-sotry {
   background: white !important;
   background-color: white;
@@ -579,8 +554,6 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
-  -webkit-transition: 4s !important;
-  transition: 4s !important;
 }
 
 .serachbar {

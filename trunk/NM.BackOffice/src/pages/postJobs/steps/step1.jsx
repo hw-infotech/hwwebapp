@@ -10,9 +10,7 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
 
     console.log(values, "this is s the values in first ");
     return <div className="main-wrap-box w-100 m-auto">
-        <div className="d-flex justify-content-end mt-2">
-            <Button variant="primary" className="btn-sm" onClick={() => setGoSteps(1)}>Next</Button>
-        </div>
+     
         <Row>
             <Col md={12}>
                 <Form.Group className="mb-3">
@@ -34,7 +32,9 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
 
             </Col>
         </Row>
-
+        <div className="d-flex justify-content-end mt-2">
+        <Button variant="primary" className="btn-sm" onClick={() => setGoSteps(1)}>Next</Button>
+    </div>
     </div>
 }
 

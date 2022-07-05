@@ -196,35 +196,34 @@ const Edit_postJob = (value1) => {
             </div>
             <div className="topGapPad margin_bottom_">
                 <div className="gapbetween ">
-                <Collapse in={disable}>
-                    <div>
-                        {
-                            <Form.Select aria-label="Default select example" className="font_size" onChange={requestSearch} >
-                                <option disabled hidden selected>Status  </option>
-                                <option value="1">All</option>
-                                <option value="1">Subscribe</option>
-                                <option value="1">Unsubscribe</option>
-                            </Form.Select>}
-                    </div>
+                    <Collapse in={disable}>
+                        <div>
+                            {
+                                <Form.Select aria-label="Default select example" className="font_size" onChange={requestSearch} >
+                                    <option disabled hidden selected>Status  </option>
+                                    <option value="1">All</option>
+                                    <option value="1">Subscribe</option>
+                                    <option value="1">Unsubscribe</option>
+                                </Form.Select>}
+                        </div>
                     </Collapse>
                     <Collapse in={disable}>
-                    <div className="serachbar" >
-                        <InputGroup className="mb-3">
-                            <FormControl
-                                className="font_size"
-                                
-                                placeholder="Search by title "
-                                aria-label="Recipient's username"
-                                aria-describedby="basic-addon2"
-                                onChange={(e) => {
-                                    requestSearch(e.target.value)
-                                }}
-                            />
-                            {/*<Button variant="outline-secondary" id="button-addon2">
+                        <div className="serachbar" >
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    className="font_size"
+                                    placeholder="Search by title "
+                                    aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                                {/*<Button variant="outline-secondary" id="button-addon2">
                                                 <BsSearch />
                                             </Button>*/}
-                        </InputGroup>
-                    </div>
+                            </InputGroup>
+                        </div>
                     </Collapse>
                 </div>
                 <div className="boxshadow">
@@ -234,7 +233,6 @@ const Edit_postJob = (value1) => {
                         <Modal.Header >
                             <Modal.Title>Alert</Modal.Title>
                         </Modal.Header>
-
                         <Modal.Body>
                             <p>{rowtext?.text}</p>
                         </Modal.Body>
@@ -287,7 +285,7 @@ const Edit_postJob = (value1) => {
                                                             data-bs-target="#editbtn"><i
                                                                 className="bi bi-pencil-square"></i></span>
                                                         <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
-
+                                                            dispatch(Edit_Data(data, index))
                                                             navigate('/particularjob')
                                                         }}>View</button>
                                                     </div>
@@ -319,12 +317,19 @@ const Edit_postJob = (value1) => {
                                             </ul>
                                         </div></td>
                                         <td>{data?.Jobtitle || data?.jobtitle}</td>
-
-                                        <td>{data?.description && subString(data.description, 50)}</td>
-                                        <td>{data?.functions}</td>
-                                        <td>{data?.requirment?.length > 0 && data.requirment[0]}</td>
-                                        <td>{data?.benfits?.length > 0 && data.benfits[0]}</td>
-                                        <td>{data?.responsibility?.length > 0 && data.responsibility[0]}</td>
+                                        <td>{data?.description && subString(data.description, 30)}</td>
+                                        <td>{data?.functions && subString(data?.functions, 30)}</td>
+                                        <td>
+                                            {data?.requirment?.map((data1) => <ul>
+                                                <li>{data1.value && subString(data1.value, 30)}</li>
+                                            </ul>)}
+                                        </td>
+                                        <td> {data?.benefits?.map((data1) => <ul>
+                                            <li>{data1.value && subString(data1.value, 30)}</li>
+                                        </ul>)}</td>
+                                        <td> {data?.responsibility?.map((data1) => <ul>
+                                            <li>{data1.value}</li>
+                                        </ul>)}</td>
                                         <td>{data?.industry}</td>
                                         <td>{data?.level}</td>
                                         <td>{data?.type}</td>

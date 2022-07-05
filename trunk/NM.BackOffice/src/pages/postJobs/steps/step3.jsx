@@ -10,14 +10,7 @@ const Step3 = ({ setGoSteps, state, setState, onhandlechange, handleChange, valu
   //  const selector = useSelector(state => state.data.apidata.edit_data)
     const dispatch = useDispatch()
     return <div className="m-auto w-100">
-        <div className="d-flex justify-content-end gap-2">
-            <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(1)}>Back</Button>
-            <Button variant="primary" className="btn-sm" onClick={() => {
-                setGoSteps(3)
-               
-
-            }}>Next</Button>
-        </div>
+        
         <Form.Group>
             <Input as='select' placeholder="Level" value={values.seneritylevel} className="form-control" name='level'
                 onChange={handleChange} label={"Level"} id="seneritylevel" options={[
@@ -35,7 +28,14 @@ const Step3 = ({ setGoSteps, state, setState, onhandlechange, handleChange, valu
         <Form.Group>
             <Input type='text' className="form-control" onChange={handleChange} placeholder='Industries' name='industry' value={values.industries} label={"Industries"} id="name" />
         </Form.Group>
+        <div className="d-flex justify-content-end gap-2">
+        <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(1)}>Back</Button>
+        <Button variant="primary" className="btn-sm" onClick={() => {
+            setGoSteps(3)
+           
 
+        }}>Next</Button>
+    </div>
     </div>
 }
 

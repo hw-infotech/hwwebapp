@@ -9,7 +9,8 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
     const dispatch = useDispatch()
     const nevigate = useNavigate()
     return <div className="w-100 m-auto ">
-        <div className="justify-content-end d-flex mb-2 gap-2" >
+    <Job_Preview values={values} />
+        <div className="justify-content-end d-flex mt-4 gap-2" >
             {/*<Button variant="secondary" onClick={() => setGoSteps(2)}>Back</Button>*/}
             <Button variant="secondary" className="btn-sm" onClick={() => {
                 setGoSteps(2)
@@ -20,7 +21,7 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
             }}>Save & Publish</Button>
 
         </div>
-        <Job_Preview values={values} />
+       
 
     </div>
 }

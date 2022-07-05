@@ -20,8 +20,8 @@ import { createContext } from "react";
 import { useSelector } from "react-redux";
 
 const Post_Job = ({ stat }) => {
-   
-  
+
+
     const [post, setpost] = useState()
     const [goSteps, setGoSteps] = useState(0);
     const [state, setState] = useState({
@@ -36,7 +36,7 @@ const Post_Job = ({ stat }) => {
         description: ""
 
     })
- const selector   = useSelector(state => state.data?.apidata?.edit_data?.data)
+    const selector = useSelector(state => state.data?.apidata?.edit_data?.data)
 
     const [state1, setState1] = useState({
         jobtitle: "",
@@ -60,15 +60,13 @@ const Post_Job = ({ stat }) => {
     const onhandlechange = (e) => {
         const { name, value } = e.target
         setState({ ...state, [name]: value })
-       
-    }
-   
 
+    }
     let tiitle = localStorage?.getItem("key")
     return (
         <div>
             <BasicBreadcrumbs route={route} />
-            <h4 >{tiitle}</h4>
+            <h4 >Post Job</h4>
             <div className="w-75 m-auto z-depth-5 shadow-box-example rounded box-shadow-container">
                 <Stepper
                     activeStep={goSteps}
@@ -95,11 +93,11 @@ const Post_Job = ({ stat }) => {
 
                 <Formik initialValues={state}>
                     {({ values, handleChange, handleSubmit }) => (<Form onSubmit={(e) => {
-              
+
                         e.preventDefault()
                         handleSubmit()
                     }}>
-               
+
                         {goSteps === 0 && (
                             <Step1 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
                         )}

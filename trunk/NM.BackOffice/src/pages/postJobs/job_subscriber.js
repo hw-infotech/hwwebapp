@@ -4,7 +4,7 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { Badge, Button, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
+import { Badge, Button, Collapse, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
 import { VscFilterFilled } from "react-icons/vsc";
 import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
@@ -13,7 +13,8 @@ import { FaFilter } from "react-icons/fa";
 import { BsFilter } from "react-icons/bs";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 const Job_newsletter = () => {
-    const [disable, setSdisabled] = useState(true)
+    const [checked, setChecked]=useState()
+    const [disable, setSdisabled] = useState(false)
     const [showPerPage, setShowPerPage] = useState()
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -117,22 +118,23 @@ const Job_newsletter = () => {
                         <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                     </div>
                 </div>
-                <div className="w-100 setupcontent topGapPad">
-
+                <div className="w-100 setupcontent">
+                <Collapse in={disable}>
                     <div className="">
-                        <Form.Select aria-label="row" className="wreap-content font_size" hidden={disable}>
+                        <Form.Select aria-label="row" className="wreap-content font_size" >
                             <option disabled hidden selected>Status</option>
                             <option value="1">All</option>
                             <option value="2">Subscribe</option>
                             <option value="3">Unsubscribe</option>
                         </Form.Select>
                     </div>
+                    </Collapse>
+                    <Collapse in={disable}>
                     <div className="searchbar">
                         <InputGroup className="mb-3">
                             <FormControl
-                                className="font_size"
-                                hidden={disable}
-                                placeholder="Search by email and name"
+                                className="font_size" 
+                                placeholder="Search by name"
                                 aria-label="Search By Email"
                                 aria-describedby="basic-addon2"
                                 onChange={(e) => {
@@ -144,15 +146,18 @@ const Job_newsletter = () => {
                                             </Button>*/}
                         </InputGroup>
                     </div>
+                    </Collapse>
                 </div>
-                <div className="topGapPad">
-                    <div className="boxshadow">
+               
+                    <div className="boxshadow pt-2">
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th className="action_colwidth"> <Form.Check
+                                    <th className="action_colwidth"> 
+                                    <Form.Check
                                         className="font_size mt-2"
-
+                                        onClick={()=> setChecked(p=>!p)}
+                                      
                                         label="All"
                                     /></th>
                                     <th onClick={() => {
@@ -168,13 +173,12 @@ const Job_newsletter = () => {
                                 <tbody>
                                     {tableData.map((data, index) =>
                                         <tr>  <td className="content_cente_td"><Form.Check
-                                            className="font_size mt-2"
-
-
+                                                  className="font_size mt-2"
+                                                  checked={checked}
                                         /></td>
                                             <td>{CapitalizeFirstLetter(data.Name)}</td>
                                             <td>{data.phone}</td>
-                                            <td>{data.Email}</td>
+                                            <td>{CapitalizeFirstLetter(data.Email)}</td>
                                             <td >
                                                 {<Badge bg="success" size={30} >Subscribe</Badge>}
                                                 { /*<Form.Check className="switch_padding"
@@ -203,7 +207,7 @@ const Job_newsletter = () => {
                             total={tableData.length}
                         /> : ""}
 
-                </div>
+                
             </div>
 
         </div>

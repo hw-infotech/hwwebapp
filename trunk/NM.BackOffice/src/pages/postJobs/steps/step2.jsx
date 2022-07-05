@@ -5,17 +5,9 @@ import CreatableSelectField from "../../../components/selectfield"
 
 const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
     const { setFieldValue } = useFormikContext()
-   // const selector = useSelector(state => state.data.apidata.edit_data)
+    // const selector = useSelector(state => state.data.apidata.edit_data)
     return <div className="w-100 m-auto">
-        <div className="d-flex w-100 justify-content-end gap-2">
-            <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(0)} >Back</Button>
-            <Button variant="primary" className="btn-sm" onClick={() => {
-                setFieldValue('responsibility', state.responsibility.map((_)=>(_.value)))
-                setFieldValue("requirment", state.requirment.map((_)=>(_.value)))
-                setFieldValue('benefits', state.benefits.map((_)=>(_.value)))
-                setGoSteps(2)
-            }} >Next</Button>
-        </div>
+
         <Row>
             <Col md={12}>
                 <Form.Group>
@@ -56,6 +48,15 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
                 </Form.Group>
             </Col>
         </Row>
+        <div className="d-flex w-100 justify-content-end gap-2">
+            <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(0)} >Back</Button>
+            <Button variant="primary" className="btn-sm" onClick={() => {
+                setFieldValue('responsibility', state.responsibility.map((_) => (_.value)))
+                setFieldValue("requirment", state.requirment.map((_) => (_.value)))
+                setFieldValue('benefits', state.benefits.map((_) => (_.value)))
+                setGoSteps(2)
+            }} >Next</Button>
+        </div>
     </div>
 }
 

@@ -17,10 +17,15 @@ const initialstate = {
             jobtitle: "UI/UX",
             description: "We are looking for an experienced Strategy Manager. ",
             functions: "Supervise and manage department team ",
-            responsibility: [],
-            benefits: [],
-            requirment: [],
-            industry: "",
+            responsibility: [
+                { value: 'Handling Team', label: 'Maintance' },
+               ],
+            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            requirment: [
+                { value: 'Graduate', label: 'Graduate' },
+               
+            ],
+            industry: "Technology",
             level: "Junior",
             type: "Part time",
             active: "pending"
@@ -31,9 +36,12 @@ const initialstate = {
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Provide support and training to team members",
             responsibility: [],
-            benefits: [],
-            requirment: [],
-            industry: "",
+            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            requirment: [
+                { value: 'Graduate', label: 'Graduate' },
+             
+            ],
+            industry: "Technology",
             level: "Senior",
             type: "Full time",
             active: "pending"
@@ -43,9 +51,12 @@ const initialstate = {
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Report to directors and executive staff",
             responsibility: [],
-            benefits: [],
-            requirment: [],
-            industry: "",
+            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            requirment: [
+                { value: 'Graduate', label: 'Graduate' },
+               
+            ],
+            industry: "Technology",
             level: "Senior",
             type: "Full time",
             active: "pending"
@@ -135,12 +146,12 @@ const Reducer_Function = (state = initialstate, action) => {
             }
         }
         case UPDATE: {
-            state.allEnquries[state.edit_data.index]= payload
-           
-            console.log( state,"this  is the action creators");
+            state.allEnquries[state.edit_data.index] = payload
+
+         
             return {
                 ...state,
-                
+
             }
         }
 

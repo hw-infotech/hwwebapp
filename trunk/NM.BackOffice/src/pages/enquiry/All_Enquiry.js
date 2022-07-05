@@ -151,7 +151,7 @@ const All_Enquiry = () => {
     };
 
     return (
-        <div>
+        <div className="main-body-enquiry">
             <BasicBreadcrumbs route={route} />
             <div className="filter_header">
                 <div className="filter-title"><h4>All Enquiry</h4></div>
@@ -161,10 +161,9 @@ const All_Enquiry = () => {
                     </div>
                 </div>
             </div>
-            <div className="topGapPad margin_bottom_">
-                <div className="gapbetween">
+                <div className="gapbetween pt-2">
                 <Collapse in={disable}>
-                    <div><Form.Select aria-label="row" className="wreap-content font_size">
+                    <div className="status_filter"><Form.Select aria-label="row" className="wreap-content font_size">
                         <option disabled hidden selected>Status</option>
                         <option value="1">All</option>
                         <option value="2">Pending</option>
@@ -340,7 +339,7 @@ const All_Enquiry = () => {
                         </div>
                     </Modal.Footer>
                                 </Modal>*/}
-            </div>
+            
         </div>
     );
 }

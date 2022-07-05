@@ -41,7 +41,7 @@ const SubScriber = () => {
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Newsletter", route: "" },
-        { name: "Subscribe/Unsubscribe", route: "" }
+        { name: "Subscribe Unsubscribe", route: "" }
     ]
     const selector = useSelector(state => state),
         dispatch = useDispatch(),
@@ -119,14 +119,13 @@ const SubScriber = () => {
         <div >
             <BasicBreadcrumbs route={route} />
             <div className="filter_header">
-                <div className="filter-title"><h4>Subscribe/Unsubscribe</h4></div>
+                <div className="filter-title"><h4>Subscribe Unsubscribe</h4></div>
                 <div className="filter_container">
                     <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                     <Button title="" variant="" className="btn-sm" onClick={handleShow}><AiOutlinePlusCircle title="" size={24} color="#ff6b01" /></Button>
                 </div>
             </div>
-            <div className="margin_bottom_ topGapPad">
-                <div className=" ">
+            <div className="inner-part">
                     <div className="w-100 setupcontent">
                     <Collapse in={disable}>
                         <div className="" ><Form.Select aria-label="row" className="wreap-content font_size" >
@@ -156,9 +155,8 @@ const SubScriber = () => {
                         </div>
                         </Collapse>
                     </div>
-                </div>
-                <div className="">
-                    <div className="boxshadow">
+              
+                    <div className="font_size pt-2">
                         <Table striped bordered hover >
                             <thead>
                                 <tr>
@@ -207,7 +205,7 @@ const SubScriber = () => {
                             </tbody> : "No Record Found"}
                         </Table>
                     </div>
-                </div>
+              
                 <Modal show={show} onHide={handleClose} size="md">
                     <Modal.Header closeButton>
                         <Modal.Title>Send Newsletter</Modal.Title>

@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Form, FormCheck, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
-import { Field, Formik, FormikProvider } from "formik";
-import { Input } from "../../components/commoninputfield";
+import { Form } from "react-bootstrap";
 import BasicBreadcrumbs from "../../components/breadcumbs";
-//import { Pagination } from "@material-ui/lab";
-import { initialValues, validationschemeaa } from "./validation-schema";
-import { useNavigate } from "react-router";
-import CreatableSelectField from "../../components/selectfield";
-import CustomPagination from "../../shared/pagination";
-//import { CDBStepper, CDBStep } from "cdbreact";
 import { BiPencil, BiFolderOpen, BiCheck } from "react-icons/bi";
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs";
 import { Stepper, Step } from 'react-form-stepper';
@@ -45,7 +37,7 @@ const Update_Job = ({ stat }) => {
     const route = [
         { name: "Home", route: "/" },
         { name: "Job" },
-        { name: "Post job" },
+        { name: "Edit job" },
     ]
 
     const handlechange = (e) => {
@@ -86,17 +78,17 @@ const Update_Job = ({ stat }) => {
                     e.preventDefault()
                 }}>
                     {goSteps === 0 && (
-                        <Update_Step1 handlechange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                        <Update_Step1 handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
                     )}
 
                     {goSteps === 1 && (
-                        <Update_Step2 handlechange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                        <Update_Step2 handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
                     )}
                     {goSteps === 2 && (
-                        <Update_Step3 handlechange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                        <Update_Step3  handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
                     )}
                     {goSteps === 3 && (
-                        <Update_Step4 handlechange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                        <Update_Step4  handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
                     )}
                 </Form>
             </div>

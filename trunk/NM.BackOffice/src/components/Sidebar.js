@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router";
+import { NavLink } from "react-bootstrap";
 const Sidebar = ({ sidebarShow }) => {
     //const passdata = createContext();
     // const transform = createContext()
@@ -17,7 +18,7 @@ const Sidebar = ({ sidebarShow }) => {
                 <div className="sidebar_header" onClick={() => {
                     navigtion("/")
                 }}>
-                    <div> <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" /></div>
+                    <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" />
                     <div> <span className="font_size header_text"><b>Back</b>Office</span></div>
                 </div>
             </div>
@@ -77,8 +78,8 @@ const Sidebar = ({ sidebarShow }) => {
                         </ul>
                     </li> */}
                     <li className="sidebar_list">
-                        <a href="#submenu2" data-bs-toggle="collapse" 
-                        className="nav-link px-0 sidebar_focus align-middle text-color gapicontext">
+                        <a href="#submenu2" data-bs-toggle="collapse"
+                            className="nav-link px-0 sidebar_focus align-middle text-color gapicontext">
                             <i className="fs-4 bi-bootstrap "></i>
                             <span className="ms-1 d-none d-sm-inline">Sliders/Carousels</span>
                             <span className="dropdownarrowicon ">
@@ -87,11 +88,14 @@ const Sidebar = ({ sidebarShow }) => {
                         </a>
                         <ul className="collapse nav flex-column " id="submenu2" data-bs-parent="#menu">
                             <li className="w-100 sidebar_list ">
+
                                 <a className="nav-link  text-color gapicontext sidebar_focus" onClick={() => {
                                     navigtion('/success-stories')
                                 }}>
                                     <span className="paddingliitems">Success Stories</span>
+
                                 </a>
+
                             </li>
 
                         </ul>
@@ -126,7 +130,7 @@ const Sidebar = ({ sidebarShow }) => {
                         <a href="#submenu10" data-bs-toggle="collapse" className="nav-link px-0  sidebar_focus align-middle text-color gapicontext">
                             <i className="fs-4 bi-building"></i> <span className=" d-none d-sm-inline">Job Management</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
                         <ul className="collapse nav flex-column " id="submenu10" data-bs-parent="#menu">
-                           { /*<li className="sidebar_list">
+                            { /*<li className="sidebar_list">
                                 <div className="nav-link  text-color  gapicontext" onClick={() => {
                                     navigtion('/PostNewJob')
                                 }}>

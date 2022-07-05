@@ -22,9 +22,9 @@ const Job_Preview = (values,state   )  => {
                                 <div className="titlejob">
                                     <span>{values.values?.jobtitle || state.jobtitle} - Mohali</span>
                                 </div>
-                                <div className="job_location d-flex jobdes_marginbottom">
-                                    <span >Nestormind </span>
-                                    <span> - Mohali</span>
+                                <div className="job_location  jobdes_marginbottom gap-2">
+                                    <h6 >Description: </h6>
+                                    <p> {values?.values?.description}</p>
                                 </div>
                             </div>
                             <div className="">

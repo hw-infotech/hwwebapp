@@ -130,14 +130,14 @@ const Profile = () => {
                                                 <div className="prfile-card11">
                                                     <div className="inner-profile1">
                                                         <div className=""><h6>{edit ? "Profile Details" : "Edit Profile"}</h6></div>
-                                                        <div className="changeable_btn">{edit ? <Button variant="" className="popoup-btn" onClick={() => {
+                                                        <div className="changeable_btn">{edit ? <Button variant="primary" className="btn-sm" onClick={() => {
                                                             setVisible(false)
                                                             setEdit(p => !p)
-                                                        }}>Edit Profile</Button> : <Button variant="" className="popoup-btn" onClick={() => {
+                                                        }}>Edit Profile</Button> : <Button variant="secondry" className="btn-sm" onClick={() => {
                                                             setEdit(p => !p)
                                                             setVisible(true)
                                                         }}>Back</Button>}
-                                                            <div><Button variant="" type="submit" className="popoup-btn" onClick={() => {
+                                                            <div><Button variant="primary" type="submit" className="btn-sm" onClick={() => {
                                                                 alert("Data Update successful")
                                                                 setEdit(true)
 
@@ -211,14 +211,14 @@ const Profile = () => {
                                         <div className="prfile-card11">
                                             <div className="inner-profile1">
                                                 <div className=""><h6>{edit ? "Profile Details" : "Edit Profile"}</h6></div>
-                                                <div className="changeable_btn">{edit ? <Button variant="primary" className=" btn-sm" onClick={() => {
+                                                <div className="changeable_btn">{edit ? <Button variant="primary" className="btn btn-sm" onClick={() => {
                                                     setVisible(false)
                                                     setEdit(p => !p)
                                                 }}>Change Password</Button> : <Button variant="secondary" className="btn-sm" onClick={() => {
                                                     setEdit(p => !p)
                                                     setVisible(true)
                                                 }}>Back</Button>}
-                                                    <div><Button variant="primary" type="submit" className="btn btn-sm" onClick={() => {
+                                                    <div><Button variant="primary" type="submit" className="btn-sm" onClick={() => {
                                                         alert("Data Update successful")
                                                         setEdit(true)
 
