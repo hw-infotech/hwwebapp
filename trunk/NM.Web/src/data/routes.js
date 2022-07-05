@@ -31,7 +31,7 @@ const routes = [
   route("/", () => <Redirect to="/home" />),
   route("/home", HomeContent),
   route("/about-us", AboutUsContent),
-  route("/ourWorks", ourWorks),
+  route("/our-works", ourWorks),
   route("/services", ServicesMain),
   route("/contact-us", ContactUsContent),
   route("/web-development", WebDev),

@@ -63,7 +63,7 @@ const NavBar = ({ NavbarStyle }) => {
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to="/ourWorks">Our Works</Link>
+                <Link to="/our-works">Our Work</Link>
               </li>
               <li className="nav-item dropdown position-static">
                 <a

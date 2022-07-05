@@ -189,7 +189,7 @@ const Footer_new = () => {
                           <Link to="/blogs">Blog</Link>
                         </li>
                         <li>
-                          <Link to="/gallery">Gallery</Link>
+                          {/* <Link to="/gallery">Gallery</Link> */}
                         </li>
                         <li>
                           {/* <Link to="/under-mantainence">Our Products</Link> */}
