@@ -12,7 +12,9 @@ import { createContext } from "react";
 import { useSelector } from "react-redux";
 
 const Update_Job = ({ stat }) => {
-
+    useEffect(() => {
+      document.title="Edit Job"
+    }, [])
     const [post, setpost] = useState()
     const [goSteps, setGoSteps] = useState(0);
     const [state, setState] = useState({
@@ -45,7 +47,7 @@ const Update_Job = ({ stat }) => {
         setState({ ...state, [name]: value })
     }
 
-    console.log(state,"state");
+    console.log(state, "state");
     let tiitle = localStorage?.getItem("key")
     return (
         <div>
@@ -85,10 +87,10 @@ const Update_Job = ({ stat }) => {
                         <Update_Step2 handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
                     )}
                     {goSteps === 2 && (
-                        <Update_Step3  handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                        <Update_Step3 handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
                     )}
                     {goSteps === 3 && (
-                        <Update_Step4  handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
+                        <Update_Step4 handleFieldchange={handlechange} setGoSteps={setGoSteps} state={state} setState={setState} />
                     )}
                 </Form>
             </div>

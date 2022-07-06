@@ -4,10 +4,14 @@ import { Input } from "../../../components/commoninputfield"
 import CreatableSelectField from "../../../components/selectfield"
 import { useDispatch, useSelector } from "react-redux";
 import { Send_data } from "../../../Services/redux/action/action";
+import { useEffect } from "react";
 
 const Step3 = ({ setGoSteps, state, setState, onhandlechange, handleChange, values }) => {
     //const nevigate=useNavigate()
   //  const selector = useSelector(state => state.data.apidata.edit_data)
+  useEffect(() => {
+    document.title = "Type"
+  }, [])
     const dispatch = useDispatch()
     return <div className="m-auto w-100">
         

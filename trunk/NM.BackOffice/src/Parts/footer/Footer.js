@@ -12,7 +12,7 @@ const Footer = ({ sidebarShow }) => {
         }}>
 
             <div className="footerright textcolor ">©{moment().format("yyyy")}
-                <span className="font_size"> Nestormind Pvt ltd.</span>
+                <span className="fs_13"> Nestormind Pvt ltd.</span>
             </div>
         </div>
     );

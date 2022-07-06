@@ -3,8 +3,12 @@ import { useNavigate } from "react-router"
 import { useDispatch, useSelector } from "react-redux";
 import { Send_data } from "../../Services/redux/action/action";
 import { Input } from "../../components/commoninputfield";
+import { useEffect } from "react";
 
 const Update_Step3 = ({ setGoSteps, state, setState, onhandlechange, handleFieldchange, values }) => {
+    useEffect(() => {
+        document.title="Edit Type"
+      }, [])
     //const nevigate=useNavigate()
     //  const selector = useSelector(state => state.data.apidata.edit_data)
     const dispatch = useDispatch()

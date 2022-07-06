@@ -149,33 +149,37 @@ const All_Enquiry = () => {
             })
         }
     };
-
+    useEffect(() => {
+        document.title = "All Enquiry"
+    }, [])
     return (
         <div className="main-body-enquiry">
             <BasicBreadcrumbs route={route} />
-            <div className="filter_header">
-                <div className="filter-title"><h4>All Enquiry</h4></div>
-                <div className="filter_container">
+            <div className="panle_body">
+            <div className="panle_header">
+                <div className="left-panle-title"><h4>All Enquiry</h4></div>
+                <div className="right_panle_container">
                     <div className="">
                         <BsFilter size={24} color="#eb7823" onClick={() => setSdisabled(p => !p)} />
                     </div>
                 </div>
             </div>
-                <div className="gapbetween pt-2">
+            <div className="gapbetween pt-1">
                 <Collapse in={disable}>
-                    <div className="status_filter"><Form.Select aria-label="row" className="wreap-content font_size">
+                    <div className="status_filter">
+                    <Form.Select aria-label="row" className="wreap-content fs_13">
                         <option disabled hidden selected>Status</option>
                         <option value="1">All</option>
                         <option value="2">Pending</option>
                         <option value="3">Resolved</option>
                     </Form.Select>
                     </div>
-                    </Collapse>
-                    <Collapse in={disable}>
+                </Collapse>
+                <Collapse in={disable}>
                     <div className="serachbar">
                         <InputGroup className="mb-3">
-                            <FormControl className="font_size"
-                               
+                            <FormControl className="fs_13"
+
                                 placeholder="Serach by Email and Name"
                                 aria-label="Recipient's username"
                                 aria-describedby="basic-addon2"
@@ -188,27 +192,31 @@ const All_Enquiry = () => {
                                             </Button>*/}
                         </InputGroup>
                     </div>
-                    </Collapse>
-                </div>
-                <Modal show={showalert} onHide={handleClose} >
-                    <Modal.Header >
-                        <Modal.Title>Alert</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <p>{rowtext?.text}</p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button className="btn-sm font_size" variant="secondary" onClick={() => {
-                            setShowalert(false)
-                        }} >No</Button>
-                        <Button className="btn-sm font_size" variant="primary" onClick={() => {
-                            display()
-                            setShowalert(false)
+                   
+                </Collapse>
+                </div> 
+               
+            </div>
+            <Modal show={showalert} onHide={handleClose} >
+                <Modal.Header >
+                    <Modal.Title>Alert</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>{rowtext?.text}</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button className="btn-sm fs_13" variant="secondary" onClick={() => {
+                        setShowalert(false)
+                    }} >No</Button>
+                    <Button className="btn-sm fs_13" variant="primary" onClick={() => {
+                        display()
+                        setShowalert(false)
 
-                        }}>Yes</Button>
-                    </Modal.Footer>
-                </Modal>
-                <div className="boxshadow">
+                    }}>Yes</Button>
+                </Modal.Footer>
+            </Modal>
+            <div className="content_box">
+                <div className="data-table">
                     <Table striped bordered hover>
                         <thead>
                             <tr>
@@ -228,7 +236,7 @@ const All_Enquiry = () => {
                                 {tableData.map((data, index) =>
                                     <tr key={index}>
                                         <td>
-                                            <div class="userDetail ">
+                                            <div class="userDetail">
                                                 <button type="button" class="btn "
                                                     id="dropdownIconMenu" data-bs-toggle="dropdown"
                                                     aria-expanded="false">
@@ -238,52 +246,52 @@ const All_Enquiry = () => {
                                                 <ul class="IconDropdown dropdown-menu context-menu11 "
                                                     aria-labelledby="dropdownIconMenu">
                                                     <li class="dropdownList">
-                                                    {data.status=="pending" ?
-                                                        <div class="actionBtns context-menu1" >
-                                                      
-                                                            <span class="editAction" data-bs-toggle="modal"
-                                                                data-bs-target="#editbtn"><i
-                                                                    class="bi bi-pencil-square"></i></span>
-                                                            <button type="button" hidden={data.status=="resolved" ?true:false}
-                                                         className="btn btn-outlined-secondary font_size" onClick={() => {
-                                                                setwait(true)
-                                                                setRowtext(({
-                                                                    id: 0,
-                                                                    text: "Are you sure to update status as Resolved ?",
-                                                                }))
-                                                                setShowalert(true)
+                                                        {data.status == "pending" ?
+                                                            <div class="actionBtns context-menu1" >
+
+                                                                <span class="editAction" data-bs-toggle="modal"
+                                                                    data-bs-target="#editbtn"><i
+                                                                        class="bi bi-pencil-square"></i></span>
+                                                                <button type="button" hidden={data.status == "resolved" ? true : false}
+                                                                    className="btn btn-outlined-secondary fs_13" onClick={() => {
+                                                                        setwait(true)
+                                                                        setRowtext(({
+                                                                            id: 0,
+                                                                            text: "Are you sure to update status as Resolved ?",
+                                                                        }))
+                                                                        setShowalert(true)
 
 
-                                                                setDeleteObj({
-                                                                    index,
-                                                                    rowStatus: true
+                                                                        setDeleteObj({
+                                                                            index,
+                                                                            rowStatus: true
 
-                                                                })
+                                                                        })
 
-                                                            }}>Resolved</button>
-                                                        </div>:""}
+                                                                    }}>Resolved</button>
+                                                            </div> : ""}
                                                     </li>
                                                     <li class="dropdownList">
-                                                    {data.status=="resolved" ?
-                                                        <div class="actionBtns  context-menu1">
-                                                            <span class="deleteAction" data-bs-toggle="modal"
-                                                                data-bs-target="#deletebtn"> <i
-                                                                    class="bi bi-trash3-fill"></i></span>
-                                                            <button type="button" key={index} className="btn btn-outlined-secondary font_size" onClick={() => {
-                                                                setwait(false)
-                                                                setShowalert(true)
+                                                        {data.status == "resolved" ?
+                                                            <div class="actionBtns  context-menu1">
+                                                                <span class="deleteAction" data-bs-toggle="modal"
+                                                                    data-bs-target="#deletebtn"> <i
+                                                                        class="bi bi-trash3-fill"></i></span>
+                                                                <button type="button" key={index} className="btn btn-outlined-secondary fs_13" onClick={() => {
+                                                                    setwait(false)
+                                                                    setShowalert(true)
 
-                                                                setDeleteObj({
-                                                                    index,
-                                                                    rowStatus: false
-                                                                })
-                                                                setRowtext({
-                                                                    id: 1,
-                                                                    text: "Are you sure to update status as Panding ?",
-                                                                })
+                                                                    setDeleteObj({
+                                                                        index,
+                                                                        rowStatus: false
+                                                                    })
+                                                                    setRowtext({
+                                                                        id: 1,
+                                                                        text: "Are you sure to update status as Panding ?",
+                                                                    })
 
-                                                            }}>Pending</button>
-                                                        </div>:""}
+                                                                }}>Pending</button>
+                                                            </div> : ""}
                                                     </li>
                                                 </ul>
                                             </div>
@@ -303,17 +311,19 @@ const All_Enquiry = () => {
                                                     />*/}
                                         </td>
                                     </tr>)}
-                            </tbody>:"No Record Found"}
+                            </tbody> : "No Record Found"}
                     </Table>
-                   
                 </div>
-                {tableData.length>0 ?
-                <CustomPagination
-                    showPerPage={showPerPage}
-                    setStart={setpagination}
-                    total={tableData.length}
-                />:""}
-                {/*<Modal show={show} onHide={handleClose} size="sm">
+            </div>
+            {
+                tableData.length > 0 ?
+                    <CustomPagination
+                        showPerPage={showPerPage}
+                        setStart={setpagination}
+                        total={tableData.length}
+                    /> : ""
+            }
+            {/*<Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>
                         <Modal.Title>Enter the Remarks</Modal.Title>
                     </Modal.Header>
@@ -339,8 +349,8 @@ const All_Enquiry = () => {
                         </div>
                     </Modal.Footer>
                                 </Modal>*/}
-            
-        </div>
+
+        </div >
     );
 }
 export default All_Enquiry

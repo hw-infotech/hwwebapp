@@ -13,7 +13,7 @@ import { FaFilter } from "react-icons/fa";
 import { BsFilter } from "react-icons/bs";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 const Job_newsletter = () => {
-    const [checked, setChecked]=useState()
+    const [checked, setChecked] = useState()
     const [disable, setSdisabled] = useState(false)
     const [showPerPage, setShowPerPage] = useState()
     const [row, setRow] = useState(10)
@@ -66,7 +66,7 @@ const Job_newsletter = () => {
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Job Management", route: "job-subscriber/unsubscriber" },
-        { name: "Subscriber Unsubscriber", route: "/job-subscriber/unsubscriber" },
+        { name: "Subscriber-Unsubscriber", route: "/job-subscriber/unsubscriber" },
     ]
     const records = [
         {
@@ -108,80 +108,87 @@ const Job_newsletter = () => {
         setTableData([...filteredRows])
     };
     const [title, setTitle] = useState(false)
+    useEffect(() => {
+        document.title = "Subscriber-Unsubscriber"
+    }, [])
+
     return (
-        <div>
-            <div className="margin_bottom_">
-                <BasicBreadcrumbs route={route} />
-                <div className="filter_header">
-                    <div className="filter-title"><h4>Subscriber Unsubscriber</h4></div>
-                    <div className="filter_container">
+
+        <div className="main-jobsubscriber-box">
+            <BasicBreadcrumbs route={route} />
+            <div className="panle_body">
+                <div className="panle_header">
+                    <div className="left-panle-title"><h4>Subscriber-Unsubscriber</h4></div>
+                    <div className="right_panle_container">
                         <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                     </div>
                 </div>
-                <div className="w-100 setupcontent">
-                <Collapse in={disable}>
-                    <div className="">
-                        <Form.Select aria-label="row" className="wreap-content font_size" >
-                            <option disabled hidden selected>Status</option>
-                            <option value="1">All</option>
-                            <option value="2">Subscribe</option>
-                            <option value="3">Unsubscribe</option>
-                        </Form.Select>
-                    </div>
+                <div className="w-100 setupcontent pt-1">
+                    <Collapse in={disable}>
+                        <div className="">
+                            <Form.Select aria-label="row" className="wreap-content fs_13" >
+                                <option disabled hidden selected>Status</option>
+                                <option value="1">All</option>
+                                <option value="2">Subscribe</option>
+                                <option value="3">Unsubscribe</option>
+                            </Form.Select>
+                        </div>
                     </Collapse>
                     <Collapse in={disable}>
-                    <div className="searchbar">
-                        <InputGroup className="mb-3">
-                            <FormControl
-                                className="font_size" 
-                                placeholder="Search by name"
-                                aria-label="Search By Email"
-                                aria-describedby="basic-addon2"
-                                onChange={(e) => {
-                                    requestSearch(e.target.value)
-                                }}
-                            />
-                            {/*<Button variant="outline-secondary" id="button-addon2">
+                        <div className="searchbar">
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    className="fs_13"
+                                    placeholder="Search by name"
+                                    aria-label="Search By Email"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                                {/*<Button variant="outline-secondary" id="button-addon2">
                                                 <BsSearch />
                                             </Button>*/}
-                        </InputGroup>
-                    </div>
+                            </InputGroup>
+                        </div>
                     </Collapse>
                 </div>
-               
-                    <div className="boxshadow pt-2">
-                        <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th className="action_colwidth"> 
+            </div>
+            <div className="content_box">
+                <div className="data-table">
+
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th className="action_colwidth">
                                     <Form.Check
-                                        className="font_size mt-2"
-                                        onClick={()=> setChecked(p=>!p)}
-                                      
+                                        className="fs_13 mt-2"
+                                        onClick={() => setChecked(p => !p)}
+
                                         label="All"
                                     /></th>
-                                    <th onClick={() => {
-                                        setTitle(!title)
-                                        { title ? sortt() : sortt1() }
-                                    }}>Name {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th className="action_colwidth">Status</th>
-                                </tr>
-                            </thead>
-                            {tableData.length > 0 ?
-                                <tbody>
-                                    {tableData.map((data, index) =>
-                                        <tr>  <td className="content_cente_td"><Form.Check
-                                                  className="font_size mt-2"
-                                                  checked={checked}
-                                        /></td>
-                                            <td>{CapitalizeFirstLetter(data.Name)}</td>
-                                            <td>{data.phone}</td>
-                                            <td>{CapitalizeFirstLetter(data.Email)}</td>
-                                            <td >
-                                                {<Badge bg="success" size={30} >Subscribe</Badge>}
-                                                { /*<Form.Check className="switch_padding"
+                                <th onClick={() => {
+                                    setTitle(!title)
+                                    { title ? sortt() : sortt1() }
+                                }}>Name {title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th className="action_colwidth">Status</th>
+                            </tr>
+                        </thead>
+                        {tableData.length > 0 ?
+                            <tbody>
+                                {tableData.map((data, index) =>
+                                    <tr>  <td className="content_cente_td"><Form.Check
+                                        className="fs_13 mt-2"
+                                        checked={checked}
+                                    /></td>
+                                        <td>{CapitalizeFirstLetter(data.Name)}</td>
+                                        <td>{data.phone}</td>
+                                        <td>{CapitalizeFirstLetter(data.Email)}</td>
+                                        <td >
+                                            {<Badge bg="success" size={30} >Subscribe</Badge>}
+                                            { /*<Form.Check className="switch_padding"
                                                 type="switch"
                                                 id="custom-switch1"
                                                 value={data.active}
@@ -194,23 +201,23 @@ const Job_newsletter = () => {
                                                     })
                                                 }}
                                             />*/}
-                                            </td>
-                                        </tr>)}
-                                </tbody> : "No Record Found"}
-                        </Table>
-
-                    </div>
-                    {tableData.length > 0 ?
-                        <CustomPagination
-                            showPerPage={showPerPage}
-                            setStart={setpagination}
-                            total={tableData.length}
-                        /> : ""}
-
-                
+                                        </td>
+                                    </tr>)}
+                            </tbody> : "No Record Found"}
+                    </Table>
+                </div>
             </div>
+            {tableData.length > 0 ?
+                <CustomPagination
+                    showPerPage={showPerPage}
+                    setStart={setpagination}
+                    total={tableData.length}
+                /> : ""}
+
 
         </div>
+
+
     );
 }
 export default Job_newsletter

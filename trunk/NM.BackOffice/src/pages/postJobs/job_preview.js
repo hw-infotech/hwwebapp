@@ -1,28 +1,30 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
 const Job_Preview = (values,state   )  => {
     const nevigate = useNavigate()
-   
+    useEffect(() => {
+        document.title = "Preview"
+      }, [])
     console.log(values)
     let tiitle=localStorage?.getItem("key")
     return (
-        <div>
+        <div className="preview-box">
             {console.log("this the formik values", values)}
-            <div className="jobdes_margin">
+            <div className="jobes_margin">
                 <div className="">
                     <div className="main-pannle">
                         <div className="leftt_pannel">
-                            <div className="jobdes_card">
-                                <div className="jobdes_marginbottom">
+                            <div className="jobes_card">
+                                <div className="jobes_marginbottom">
                                     <img src="assets/images/nestor.jfif" height={80} width={80} />
                                 </div>
                                 <div className="titlejob">
                                     <span>{values.values?.jobtitle || state.jobtitle} - Mohali</span>
                                 </div>
-                                <div className="job_location  jobdes_marginbottom gap-2">
+                                <div className="job_location  jobes_marginbottom gap-2">
                                     <h6 >Description: </h6>
                                     <p> {values?.values?.description}</p>
                                 </div>

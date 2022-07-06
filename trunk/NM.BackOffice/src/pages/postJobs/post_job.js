@@ -63,6 +63,9 @@ const Post_Job = ({ stat }) => {
 
     }
     let tiitle = localStorage?.getItem("key")
+    useEffect(() => {
+        document.title = "Post job"
+      }, [])
     return (
         <div>
             <BasicBreadcrumbs route={route} />

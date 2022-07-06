@@ -1,4 +1,5 @@
 import { useFormikContext } from "formik"
+import { useEffect } from "react"
 import { Col, Form, Row, Button } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { Input } from "../../../components/commoninputfield"
@@ -7,7 +8,9 @@ import CreatableSelectField from "../../../components/selectfield"
 const Step1 = ({ setGoSteps, state, setState, handleChange, values
 }) => {
     //const { handleChange } = useFormikContext()
-
+    useEffect(() => {
+        document.title = "Basic Detail"
+      }, [])
     console.log(values, "this is s the values in first ");
     return <div className="main-wrap-box w-100 m-auto">
      

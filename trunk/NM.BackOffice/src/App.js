@@ -12,11 +12,12 @@ const localUser = JSON.parse(localStorage.getItem("nestor.user"))
 function App() {
   const [title, setTitle] = useState("Dashboard")
   const [sidebarShow, setSidebarShow] = useState(true)
+  const [title1, setTitle1] = useState()
 
   const setPageTitle = (t) => {
     setTitle(t)
   }
-
+ 
   return (
     <Router>
       {localUser ?
@@ -29,6 +30,7 @@ function App() {
               <Routes>
                 {routes?.map((_) => (
                   <Route {..._} />
+                 
                 ))}
               </Routes>
             </div>
@@ -38,7 +40,7 @@ function App() {
         : <Routes>
           <Route path='/' element={<Admin_Login />} exact />
         </Routes>}
-    </Router >
+    </Router>
 
 
     // <div className='dashboard'>

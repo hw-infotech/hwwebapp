@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import CreatableSelectField from "../../components/selectfield"
@@ -5,6 +6,10 @@ import CreatableSelectField from "../../components/selectfield"
 const Update_Step2 = ({ setGoSteps, state, setState, handleFieldchange, values }) => {
   
    // const selector = useSelector(state => state.data.apidata.edit_data)
+   useEffect(() => {
+    document.title="Edit Requirement"
+  }, [])
+ 
     return <div className="w-100 m-auto">
         
         <Row>
@@ -17,8 +22,8 @@ const Update_Step2 = ({ setGoSteps, state, setState, handleFieldchange, values }
                         formState={state}
                         className="label-size"
                         setFormState={setState}
-                        value={state.requirment}
-                        onChange={(e)=> {handleFieldchange()}}
+                        value={["sdjkd"]}
+                        onChange={(e)=> {handleFieldchange(e)}}
 
                     />
                     <Form.Label className="label-size">Responsibility</Form.Label>

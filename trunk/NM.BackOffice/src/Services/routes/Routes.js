@@ -23,8 +23,8 @@ const routes = (path, element, exact = true) => {
     return { path, element, exact }
 }
 const route = [
-    routes('/', <Navigate to="/home" />),
-    routes('/home', <Home />),
+    routes('/', <Navigate to="/dashboard" />),
+    routes('/dashboard', <Home />),
     routes('/jobpreview', <Job_Preview />),
     routes('/post-new-job', <Post_Job />),
     routes("/addNewPost", <AddNewPost />),
@@ -34,7 +34,7 @@ const route = [
     routes('/newsletter-subscribers', <SubScriber />),
     routes('/Profile', <Profile />),
     routes('/AllEnquiry', <All_Enquiry />),
-    routes('/updatejob', <Update_Job />),
+    routes('/edit-job', <Update_Job />),
     routes('/appliedjobs', <Applied_Job />),
     routes('/job-subscriber/unsubscriber', <Job_Subscriber />),
     routes('/stacks', <Stacks />),

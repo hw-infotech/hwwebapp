@@ -1,8 +1,12 @@
+import { useEffect } from "react"
 import { Col, Form, Row, Button } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { Input } from "../../components/commoninputfield"
 
 const Update_Step1 = ({ setGoSteps, state, setState, handleFieldchange }) => {
+    useEffect(() => {
+        document.title="Edit Basic Detail"
+      }, [])
     return <div className="main-wrap-box w-100 m-auto">
        
         <Row>

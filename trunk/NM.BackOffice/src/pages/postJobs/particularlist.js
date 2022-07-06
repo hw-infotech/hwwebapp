@@ -96,24 +96,24 @@ const Particularjob = () => {
         { name: "Dashboard", route: "/" },
         { name: "Job Management", route: "" },
         { name: "Job List", route: "/all-jobs" },
-        { name: "Detail Applied", route: "/particularjob" },
+        { name: "Detail-Applied", route: "/particularjob" },
 
     ]
     var selector = useSelector(state => state.data?.apidata?.edit_data?.data)
-
     useEffect(() => {
-
-    }, [])
-
+        document.title = "Detail-Applied"
+      }, [])
     return (
         <div className="content_center margin_bottom_ ">
             <div className="topGapPad  w-100">
                 {<BasicBreadcrumbs route={route} />}
-                <div className="filter_header">
-                    <div className="filter-title"><h4>Detail and Applied</h4></div>
-                    <div className="filter_container">
+                <div className="panle_body">
+                <div className="panle_header">
+                    <div className="left-panle-title"><h4>Detail-Applied</h4></div>
+                    <div className="right_panle_container">
                         <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
 
+                    </div>
                     </div>
                 </div>
                 <Tabs activeKey={key}
@@ -132,10 +132,10 @@ const Particularjob = () => {
                                 <p>{"Are You Really want to change the status"}</p>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" className="btn-sm font_size" onClick={() => {
+                                <Button variant="secondary" className="btn-sm fs_13" onClick={() => {
                                     setShowalert(false)
                                 }} >No</Button>
-                                <Button variant="primary" className="btn-sm font_size" onClick={() => {
+                                <Button variant="primary" className="btn-sm fs_13" onClick={() => {
                                     setTableData(oldState => {
                                         oldState[index].active = oldState[index].active == "accepted" ? "rejected" : "accepted"
                                         return oldState
@@ -146,11 +146,10 @@ const Particularjob = () => {
                                 {console.log(tableData)}
                             </Modal.Footer>
                         </Modal>
-                        <div className="jobdes_margin">
-                            <div className="">
+                        <div className="jobes_margin">
                                 <div className="main-pannle">
                                     <div className="leftt_pannel">
-                                        <div className="jobdes_card">
+                                        <div className="jobes_card">
                                             <div className="d-flex buton_positin gap-2" >
                                                 <Button variant="secondary" className="btn-sm " onClick={() => {
                                                     nevigate(-1)
@@ -161,13 +160,13 @@ const Particularjob = () => {
                                                     localStorage.setItem("key", "Edit Job")
                                                 }}
                                                 >Edit</Button></div>
-                                            <div className="jobdes_marginbottom">
+                                            <div className="jobes_marginbottom">
                                                 <img src="assets/images/nestor.jfif" height={80} width={80} />
                                             </div>
                                             <div className="titlejob">
                                                 <span>{selector?.jobtitle} - Mohali</span>
                                             </div>
-                                            <div className="job_location  jobdes_marginbottom">
+                                            <div className="job_location  jobes_marginbottom">
                                             <h5 >Description: </h5>
                                             <p> {selector?.description}</p>
                                             </div>
@@ -260,7 +259,7 @@ const Particularjob = () => {
                                         </ul>
                 </div>*/}
                             </div>
-                        </div>
+                        
                     </div>
                 </Tab>
                 <Tab eventKey="Aplied" title="Applied" >
@@ -304,7 +303,7 @@ const Particularjob = () => {
                                 <div className="d-flex justify-content-between gap-2 m-auto">
                                     <Collapse in={disabled}>
                                         <div className="w-25">
-                                            <Form.Select aria-label="Default select example" className="font_size" >
+                                            <Form.Select aria-label="Default select example" className="fs_13" >
                                                 <option disabled selected hidden>Status</option>
                                                 <option value="1">All</option>
                                                 <option value="1">Reject</option>
@@ -316,7 +315,7 @@ const Particularjob = () => {
                                         <div className="w-100" >
                                             <InputGroup className="mb-3">
                                                 <FormControl
-                                                    className="font_size"
+                                                    className="fs_13"
                                                     placeholder="Search by title and name"
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
@@ -371,7 +370,7 @@ const Particularjob = () => {
                                                                 <div class="actionBtns context-menu1">
                                                                     <span class="editAction" data-bs-toggle="modal"
                                                                         data-bs-target="#editbtn"><AiOutlineCheck /></span>
-                                                                    <button type="button" className="btn btn-outlined-secondary font_size " onClick={() => {
+                                                                    <button type="button" className="btn btn-outlined-secondary fs_13 " onClick={() => {
                                                                         setShowalert(true)
                                                                         setIndex(index)
                                                                         settr(true)
@@ -383,7 +382,7 @@ const Particularjob = () => {
                                                                 <div class="actionBtns context-menu1">
                                                                     <span class="deleteAction" data-bs-toggle="modal"
                                                                         data-bs-target="#deletebtn"> <AiOutlineCloseCircle /></span>
-                                                                    <button type="button" key={index} className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                                    <button type="button" key={index} className="btn btn-outlined-secondary fs_13" onClick={() => {
                                                                         setShowalert(true)
                                                                         setIndex(index)
                                                                         settr(false)

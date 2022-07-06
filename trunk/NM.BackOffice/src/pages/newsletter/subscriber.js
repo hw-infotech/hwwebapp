@@ -20,6 +20,7 @@ import moment from 'moment'
 import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
+import { Filters } from "../../components/header-filter";
 
 const SubScriber = () => {
     const [disable, setSdisabled] = useState(false)
@@ -114,49 +115,18 @@ const SubScriber = () => {
         setSubscribers(filteredRows)
     };
     const [title, setTitle] = useState(false)
-
+    useEffect(() => {
+        document.title = "Newsletter Subscribe-Unsubscribe"
+        
+    }, [])
+    let titl="Subscribe-Unsubscribe"
+    let placeholder="Search by email"
     return (
-        <div >
+        <div className="main-newsletter-panle" >
             <BasicBreadcrumbs route={route} />
-            <div className="filter_header">
-                <div className="filter-title"><h4>Subscribe Unsubscribe</h4></div>
-                <div className="filter_container">
-                    <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
-                    <Button title="" variant="" className="btn-sm" onClick={handleShow}><AiOutlinePlusCircle title="" size={24} color="#ff6b01" /></Button>
-                </div>
-            </div>
-            <div className="inner-part">
-                    <div className="w-100 setupcontent">
-                    <Collapse in={disable}>
-                        <div className="" ><Form.Select aria-label="row" className="wreap-content font_size" >
-                            <option disabled hidden selected>Status</option>
-                            <option value="1">All</option>
-                            <option value="2">Subscriber</option>
-                            <option value="3">UnSubscriber</option>
-                        </Form.Select>
-                        </div>
-                        </Collapse>
-                        <Collapse in={disable}>
-                        <div className="searchbar">
-                            <InputGroup className="mb-3">
-                                <FormControl className="font_size"
-                                   
-                                    placeholder="Search By Email"
-                                    aria-label="Search By Email"
-                                    aria-describedby="basic-addon2"
-                                    onChange={(e) => {
-                                        requestSearch(e.target.value)
-                                    }}
-                                />
-                                {/*<Button variant="outline-secondary" id="button-addon2">
-                                                <BsSearch />
-                                            </Button>*/}
-                            </InputGroup>
-                        </div>
-                        </Collapse>
-                    </div>
-              
-                    <div className="font_size pt-2">
+            <Filters placeholder={placeholder} requestSearch={requestSearch} handleShow={handleShow} titl={titl}/>
+                <div className="content_box">
+                    <div className="data-table">
                         <Table striped bordered hover >
                             <thead>
                                 <tr>
@@ -165,7 +135,7 @@ const SubScriber = () => {
                                         { title ? sortt() : sortt1() }
                                     }} >Email {title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                     <th>Created Date</th>
-                                    <th className="action_colwidth" >Status</th>
+                                    <th >Status</th>
                                 </tr>
                             </thead>
                             {subscribers?.length > 0 ? <tbody>
@@ -178,7 +148,7 @@ const SubScriber = () => {
                                             {data.createdOn ? moment(data?.createdOn).format("DD-MM-yyyy ") : ""}
                                         </td>
 
-                                        <td >
+                                        <td colSpan={1}>
                                             <Form.Check className="switch_padding"
                                                 type="switch"
                                                 id="custom-switch1"
@@ -205,7 +175,8 @@ const SubScriber = () => {
                             </tbody> : "No Record Found"}
                         </Table>
                     </div>
-              
+                </div>
+
                 <Modal show={show} onHide={handleClose} size="md">
                     <Modal.Header closeButton>
                         <Modal.Title>Send Newsletter</Modal.Title>
@@ -225,8 +196,8 @@ const SubScriber = () => {
 
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" className=" btn-sm font_size" onClick={handleClose}>Close</Button>
-                        <Button className="btn-sm font_size">Send</Button>
+                        <Button variant="secondary" className=" btn-sm fs_13" onClick={handleClose}>Close</Button>
+                        <Button className="btn-sm fs_13">Send</Button>
 
                     </Modal.Footer>
                 </Modal>
@@ -239,7 +210,6 @@ const SubScriber = () => {
                             total={subscribers?.length}
                         />
                     </div> : ""}
-            </div>
         </div>
     );
 }

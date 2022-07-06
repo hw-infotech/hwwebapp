@@ -4,10 +4,14 @@ import Job_Preview from "../job_preview"
 import { BiEdit } from "react-icons/bi";
 import { Send_data } from "../../../Services/redux/action/action";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
     const dispatch = useDispatch()
     const nevigate = useNavigate()
+    useEffect(() => {
+        document.title = "Preview"
+      }, [])
     return <div className="w-100 m-auto ">
     <Job_Preview values={values} />
         <div className="justify-content-end d-flex mt-4 gap-2" >

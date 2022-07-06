@@ -1,4 +1,5 @@
 import { useFormikContext } from "formik"
+import { useEffect } from "react"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import CreatableSelectField from "../../../components/selectfield"
@@ -6,6 +7,9 @@ import CreatableSelectField from "../../../components/selectfield"
 const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
     const { setFieldValue } = useFormikContext()
     // const selector = useSelector(state => state.data.apidata.edit_data)
+    useEffect(() => {
+        document.title = "Requirment "
+      }, [])
     return <div className="w-100 m-auto">
 
         <Row>
