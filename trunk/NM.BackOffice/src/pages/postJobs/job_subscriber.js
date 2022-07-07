@@ -113,14 +113,13 @@ const Job_newsletter = () => {
     }, [])
 
     return (
-
         <div className="main-jobsubscriber-box">
             <BasicBreadcrumbs route={route} />
             <div className="panle_body">
                 <div className="panle_header">
                     <div className="left-panle-title"><h4>Subscriber-Unsubscriber</h4></div>
                     <div className="right_panle_container">
-                        <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                        <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>
                     </div>
                 </div>
                 <div className="w-100 setupcontent pt-1">
@@ -203,7 +202,7 @@ const Job_newsletter = () => {
                                             />*/}
                                         </td>
                                     </tr>)}
-                            </tbody> : "No Record Found"}
+                            </tbody> : <h3 className="table_no_records">No Record Found</h3>}
                     </Table>
                 </div>
             </div>

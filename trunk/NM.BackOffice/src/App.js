@@ -17,7 +17,7 @@ function App() {
   const setPageTitle = (t) => {
     setTitle(t)
   }
- 
+
   return (
     <Router>
       {localUser ?
@@ -30,7 +30,6 @@ function App() {
               <Routes>
                 {routes?.map((_) => (
                   <Route {..._} />
-                 
                 ))}
               </Routes>
             </div>

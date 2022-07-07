@@ -21,7 +21,8 @@ const Update_Step4 = ({ setGoSteps, state, setState, handleFieldchange, values }
             <Button variant="primary" type="button" className="btn-sm" onClick={() => {setGoSteps(3)
             
             dispatch(Update_Data(state))
-            console.log(state,"this is the four step")
+           nevigate('/all-jobs')
+
             }}>Update & Publish</Button>
 
         </div>

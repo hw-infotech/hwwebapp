@@ -156,46 +156,44 @@ const All_Enquiry = () => {
         <div className="main-body-enquiry">
             <BasicBreadcrumbs route={route} />
             <div className="panle_body">
-            <div className="panle_header">
-                <div className="left-panle-title"><h4>All Enquiry</h4></div>
-                <div className="right_panle_container">
-                    <div className="">
-                        <BsFilter size={24} color="#eb7823" onClick={() => setSdisabled(p => !p)} />
+                <div className="panle_header">
+                    <div className="left-panle-title"><h4>All Enquiry</h4></div>
+                    <div className="right_panle_container">
+                        <div className="">
+                        <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="gapbetween pt-1">
-                <Collapse in={disable}>
-                    <div className="status_filter">
-                    <Form.Select aria-label="row" className="wreap-content fs_13">
-                        <option disabled hidden selected>Status</option>
-                        <option value="1">All</option>
-                        <option value="2">Pending</option>
-                        <option value="3">Resolved</option>
-                    </Form.Select>
-                    </div>
-                </Collapse>
-                <Collapse in={disable}>
-                    <div className="serachbar">
-                        <InputGroup className="mb-3">
-                            <FormControl className="fs_13"
+                <div className="gapbetween pt-1">
+                    <Collapse in={disable}>
+                        <div className="status_filter">
+                            <Form.Select aria-label="row" className="wreap-content fs_13">
+                                <option disabled hidden selected>Status</option>
+                                <option value="1">All</option>
+                                <option value="2">Pending</option>
+                                <option value="3">Resolved</option>
+                            </Form.Select>
+                        </div>
+                    </Collapse>
+                    <Collapse in={disable}>
+                        <div className="serachbar">
+                            <InputGroup className="mb-3">
+                                <FormControl className="fs_13"
 
-                                placeholder="Serach by Email and Name"
-                                aria-label="Recipient's username"
-                                aria-describedby="basic-addon2"
-                                onChange={(e) => {
-                                    requestSearch(e.target.value)
-                                }}
-                            />
-                            {/*<Button variant="outline-secondary" id="button-addon2">
+                                    placeholder="Serach by Email and Name"
+                                    aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                                {/*<Button variant="outline-secondary" id="button-addon2">
                                                 <BsSearch />
                                             </Button>*/}
-                        </InputGroup>
-                    </div>
-                   
-                </Collapse>
-                </div> 
-               
+                            </InputGroup>
+                        </div>
+                    </Collapse>
+                </div>
             </div>
             <Modal show={showalert} onHide={handleClose} >
                 <Modal.Header >
@@ -211,7 +209,6 @@ const All_Enquiry = () => {
                     <Button className="btn-sm fs_13" variant="primary" onClick={() => {
                         display()
                         setShowalert(false)
-
                     }}>Yes</Button>
                 </Modal.Footer>
             </Modal>
@@ -311,7 +308,7 @@ const All_Enquiry = () => {
                                                     />*/}
                                         </td>
                                     </tr>)}
-                            </tbody> : "No Record Found"}
+                            </tbody> : <h3 className="table_no_records">No Record Found</h3>}
                     </Table>
                 </div>
             </div>

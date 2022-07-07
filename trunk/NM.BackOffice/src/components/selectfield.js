@@ -5,21 +5,21 @@ const CreatableSelectField = ({ formState, setFormState, placeholder, name }) =>
 
     const [state, setState] = useState({
         inputValue: '',
-        value: [],
+        value: formState[name]
     })
+    console.log(state.value);
     const handleChange = (value) => {
         setState({ ...state, value });
     };
 
-    // console.log(state.value);
     const handleInputChange = (inputValue) => {
         setState({ ...state, inputValue });
-        // console.log(state.value)
     };
+
     useEffect(() => {
         setFormState({ ...formState, [name]: [...state.value] })
     }, [state])
-
+    console.log("this is the form state", state)
     const components = {
         DropdownIndicator: null,
     };
@@ -52,21 +52,11 @@ const CreatableSelectField = ({ formState, setFormState, placeholder, name }) =>
                 isMulti
                 className='label-size'
                 menuIsOpen={false}
-                // options={[
-                //     {value:"Aman",label:"Aman"},
-                //     {value:"Ganesh",label:"Ganesh"},
-                //     {value:"Robin",label:"Robin"},
-                //     {value:"Karan",label:"Karan"},
-                //     {value:"Sunil",label:"Sunil"},
-                //     {value:"Deep",label:"Deep"},
-                //     {value:"Jagi",label:"Jagi"},
-                // ]}
                 onChange={handleChange}
                 onInputChange={handleInputChange}
                 onKeyDown={handleKeyDown}
                 placeholder={placeholder}
                 value={state.value}
-
             /></div>)
 }
 

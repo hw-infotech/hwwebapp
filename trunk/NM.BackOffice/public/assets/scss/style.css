@@ -3,6 +3,27 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
+.table_no_records {
+  text-align: center !important;
+  position: absolute !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  font-size: 18px;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+
+.remove_button_padding {
+  padding: 0px !important;
+}
+
 .dashboard {
   width: 100%;
   display: -webkit-box;
@@ -357,8 +378,17 @@ body {
   min-width: 250px;
   max-width: 250px;
   min-height: 100vh;
+  height: 100vh;
   overflow: auto;
   background-color: #212529 !important;
+}
+
+.sidebar .activeMenu i {
+  color: #ff6b01 !important;
+}
+
+.sidebar .activeMenu span {
+  color: #ff6b01 !important;
 }
 
 .sidebar .sidebar_focus:focus {
@@ -377,7 +407,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 70px;
+  max-height: 70px;
   height: 100%;
   position: relative;
   background-color: #212529 !important;
@@ -445,8 +475,8 @@ body {
 
 .sidebar_list .collapsed[aria-expanded="false"] .dropdownarrowicon {
   margin-left: auto;
-  -webkit-transform: rotate(0deg) !important;
-          transform: rotate(0deg) !important;
+  -webkit-transform: rotate(180deg) !important;
+          transform: rotate(180deg) !important;
   -webkit-transition: all ease 0.5s !important;
   transition: all ease 0.5s !important;
 }
@@ -897,27 +927,6 @@ body {
 
 .margin_content {
   margin: 30px;
-}
-
-.spaces-content .stacks_page_box {
-  max-width: 600px;
-  width: 100%;
-  height: 100%;
-}
-
-.spaces-content .stacks_button {
-  padding-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-}
-
-.heigh_numberofstacks {
-  height: 100%;
 }
 
 .inputfieldwidth {

@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 
 const Update_Job = ({ stat }) => {
     useEffect(() => {
-      document.title="Edit Job"
+        document.title = "Edit Job"
     }, [])
     const [post, setpost] = useState()
     const [goSteps, setGoSteps] = useState(0);
@@ -35,6 +35,7 @@ const Update_Job = ({ stat }) => {
         setState(selector.data?.apidata?.edit_data?.data)
     }, [selector])
 
+    console.log("Edit Details ", selector.data?.apidata?.edit_data?.data);
     const DataContext = createContext();
     const route = [
         { name: "Home", route: "/" },
@@ -46,8 +47,6 @@ const Update_Job = ({ stat }) => {
         const { name, value } = e.target
         setState({ ...state, [name]: value })
     }
-
-    console.log(state, "state");
     let tiitle = localStorage?.getItem("key")
     return (
         <div>

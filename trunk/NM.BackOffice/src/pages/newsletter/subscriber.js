@@ -117,99 +117,100 @@ const SubScriber = () => {
     const [title, setTitle] = useState(false)
     useEffect(() => {
         document.title = "Newsletter Subscribe-Unsubscribe"
-        
+
     }, [])
-    let titl="Subscribe-Unsubscribe"
-    let placeholder="Search by email"
+    let titl = "Subscribe-Unsubscribe"
+    let placeholder = "Search by email"
     return (
         <div className="main-newsletter-panle" >
             <BasicBreadcrumbs route={route} />
-            <Filters placeholder={placeholder} requestSearch={requestSearch} handleShow={handleShow} titl={titl}/>
-                <div className="content_box">
-                    <div className="data-table">
-                        <Table striped bordered hover >
-                            <thead>
+            <Filters placeholder={placeholder} requestSearch={requestSearch} handleShow={handleShow} titl={titl} />
+            <div className="content_box">
+                <div className="data-table">
+                    <Table striped bordered hover >
+                        <thead>
+                            <tr>
+                                <th onClick={() => {
+                                    setTitle(!title)
+                                    { title ? sortt() : sortt1() }
+                                }} >Email {title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                <th>Created Date</th>
+                                <th >Status</th>
+                            </tr>
+                        </thead>
+                        {subscribers?.length > 0 ? <tbody>
+                            {subscribers?.slice(pagination1?.start, pagination1?.end)?.map((data, index) =>
                                 <tr>
-                                    <th onClick={() => {
-                                        setTitle(!title)
-                                        { title ? sortt() : sortt1() }
-                                    }} >Email {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                    <th>Created Date</th>
-                                    <th >Status</th>
+                                    <td>
+                                        {CapitalizeFirstLetter(data?.email)}
+                                    </td>
+                                    <td>
+                                        {data.createdOn ? moment(data?.createdOn).format("DD-MM-yyyy ") : ""}
+                                    </td>
+
+                                    <td colSpan={1}>
+                                        <Form.Check className="switch_padding"
+                                            type="switch"
+                                            id="custom-switch1"
+                                            value={data.active}
+                                            label=""
+                                            onChange={(e) => {
+                                                if (e.target.checked == true) {
+
+                                                }
+                                                console.log(e.target.checked);
+                                                setTableData(_ => {
+                                                    _[index].active = e.target.checked
+                                                    return [..._]
+                                                })
+                                            }}
+                                        />
+                                    </td>
                                 </tr>
-                            </thead>
-                            {subscribers?.length > 0 ? <tbody>
-                                {subscribers?.slice(pagination1?.start, pagination1?.end)?.map((data, index) =>
-                                    <tr>
-                                        <td>
-                                            {CapitalizeFirstLetter(data?.email)}
-                                        </td>
-                                        <td>
-                                            {data.createdOn ? moment(data?.createdOn).format("DD-MM-yyyy ") : ""}
-                                        </td>
-
-                                        <td colSpan={1}>
-                                            <Form.Check className="switch_padding"
-                                                type="switch"
-                                                id="custom-switch1"
-                                                value={data.active}
-                                                label=""
-                                                onChange={(e) => {
-                                                    if (e.target.checked == true) {
-
-                                                    }
-                                                    console.log(e.target.checked);
-                                                    setTableData(_ => {
-                                                        _[index].active = e.target.checked
-                                                        return [..._]
-                                                    })
-                                                }}
-                                            />
-                                        </td>
-                                    </tr>
-                                )}
-                                {/*subscribers?.slice(pagination1?.start, pagination1?.end).map((data, index) => (<tr>
+                            )}
+                            {/*subscribers?.slice(pagination1?.start, pagination1?.end).map((data, index) => (<tr>
                                     <td>{data?.email}</td>
                                     <td>{data?.createdOn}</td>
                                 </tr>))*/}
-                            </tbody> : "No Record Found"}
-                        </Table>
-                    </div>
+                        </tbody> : <h3 className="table_no_records"
+                        >No Record Found</h3>}
+                    </Table>
                 </div>
+            </div>
 
-                <Modal show={show} onHide={handleClose} size="md">
-                    <Modal.Header closeButton>
-                        <Modal.Title>Send Newsletter</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                            {() => (
-                                <form onSubmit={(e) => {
-                                    e.preventDefault();
-                                }}
-                                >
-                                    <Input type="text" label="Title" className="form-control" name="title" placeholder="" />
-                                    <Input as={"textarea"} className="form-control" placeholder={""} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
-                                </form>
-                            )}
-                        </Formik>
+            <Modal show={show} onHide={handleClose} size="md">
+                <Modal.Header closeButton>
+                    <Modal.Title>Send Newsletter</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
+                        {() => (
+                            <form onSubmit={(e) => {
+                                e.preventDefault();
+                            }}
+                            >
+                                <Input type="text" label="Title" className="form-control" name="title" placeholder="" />
+                                <Input as={"textarea"} className="form-control" placeholder={""} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
+                            </form>
+                        )}
+                    </Formik>
 
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" className=" btn-sm fs_13" onClick={handleClose}>Close</Button>
-                        <Button className="btn-sm fs_13">Send</Button>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" className=" btn-sm fs_13" onClick={handleClose}>Close</Button>
+                    <Button className="btn-sm fs_13">Send</Button>
 
-                    </Modal.Footer>
-                </Modal>
-                {tableData.length > 0 ?
-                    <div>
-                        <CustomPagination
-                            // showPerPage={showPerPage}
-                            start={pagination1}
-                            setStart={setpagination}
-                            total={subscribers?.length}
-                        />
-                    </div> : ""}
+                </Modal.Footer>
+            </Modal>
+            {tableData.length > 0 ?
+                <div>
+                    <CustomPagination
+                        // showPerPage={showPerPage}
+                        start={pagination1}
+                        setStart={setpagination}
+                        total={subscribers?.length}
+                    />
+                </div> : ""}
         </div>
     );
 }

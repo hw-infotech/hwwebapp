@@ -97,7 +97,7 @@ const Edit_postJob = (value1) => {
             industry: "",
             level: "Junior",
             type: "Part time",
-            active: "pending"
+            active: "deactive"
 
         },
         {
@@ -110,7 +110,7 @@ const Edit_postJob = (value1) => {
             industry: "",
             level: "Senior",
             type: "Full time",
-            active: "pending"
+            active: "deactive"
         },
         {
             Jobtitle: "Project Manager",
@@ -122,7 +122,7 @@ const Edit_postJob = (value1) => {
             industry: "",
             level: "Senior",
             type: "Full time",
-            active: "pending"
+            active: "active"
         }
     ]
     const selector = useSelector(state => state.data.apidata?.allEnquries)
@@ -165,13 +165,13 @@ const Edit_postJob = (value1) => {
         // console.log(rowText);
         if (deleteObj.rowStatus) {
             setTableData(oldState => {
-                oldState[deleteObj.index].active = "resolved"
+                oldState[deleteObj.index].active = "active"
                 return [...oldState]
             })
         }
         if (!deleteObj.rowStatus) {
             setTableData(oldState => {
-                oldState[deleteObj.index].active = "pending"
+                oldState[deleteObj.index].active = "deactive"
                 return [...oldState]
             })
         }
@@ -188,8 +188,8 @@ const Edit_postJob = (value1) => {
                 <div className="panle_header">
                     <div className="left-panle-title"><h4>Job</h4></div>
                     <div className="right_panle_container">
-                        <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
-                        <Button variant="" className="btn-sm" onClick={() => {
+                    <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={24} color="#ff6b01" /></Button>
+                        <Button variant="" className="btn-sm remove_button_padding" onClick={() => {
                             navigate("/post-new-job")
 
                         }}> <AiOutlinePlusCircle size={24} color="#ff6b01" /></Button>
@@ -293,6 +293,7 @@ const Edit_postJob = (value1) => {
                                                             }}>View</button>
                                                         </div>
                                                     </li>
+                                                    {data.active=="active" ?   <div></div>:
                                                     <li className="dropdownList">
                                                         <div className="actionBtns  context-menu1">
                                                             <span className="viewIcon" data-bs-toggle="modal"
@@ -304,7 +305,7 @@ const Edit_postJob = (value1) => {
                                                                 navigate('/edit-job')
                                                             }} >Edit</button>
                                                         </div>
-                                                    </li>
+                                                    </li>}
                                                     <li className="dropdownList">
                                                         <div className="actionBtns  context-menu1">
                                                             <span className="deleteAction" data-bs-toggle="modal"
@@ -320,19 +321,17 @@ const Edit_postJob = (value1) => {
                                                 </ul>
                                             </div></td>
                                             <td>{data?.Jobtitle || data?.jobtitle}</td>
-                                            <td>{data?.description && subString(data.description, 30)}</td>
-                                            <td>{data?.functions && subString(data?.functions, 30)}</td>
+                                            <td>{data?.description && subString(data.description, 20)}</td>
+                                            <td>{data?.functions && subString(data?.functions, 20)}</td>
                                             <td>
                                                 {data?.requirment?.map((data1) => <ul>
-                                                    <li>{data1.value && subString(data1.value, 30)}</li>
+                                                    <li>{data1?.value&& subString(data1.value, 30)}</li>
                                                 </ul>)}
                                             </td>
-                                            <td> {data?.benefits?.map((data1) => <ul>
-                                                <li>{data1.value && subString(data1.value, 30)}</li>
-                                            </ul>)}</td>
-                                            <td> {data?.responsibility?.map((data1) => <ul>
-                                                <li>{data1.value}</li>
-                                            </ul>)}</td>
+                                            <td> {data.benefits[0].value && subString(data.benefits[0].value, 20)}</td>
+                                            <td> { data.responsibility[0].value && subString(data.responsibility[0].value, 20)   /*data?.responsibility?.map((data1) => <ul>
+                                                <li>{data1?.value&& subString(data1.value, 30)}</li>
+                                                </ul>)*/} </td>
                                             <td>{data?.industry}</td>
                                             <td>{data?.level}</td>
                                             <td>{data?.type}</td>
@@ -341,7 +340,7 @@ const Edit_postJob = (value1) => {
                                                     <Form.Check
                                                         type="switch"
                                                         id="custom-switch1"
-                                                        checked={data.active === "resolved" ? true : false}
+                                                        checked={data.active === "active" ? true : false}
                                                         label=""
                                                         onChange={(e) => {
                                                             setShowalert(true)
@@ -352,7 +351,7 @@ const Edit_postJob = (value1) => {
                                                                 id: 0,
                                                                 text: "Are you sure to hide the job ?",
                                                             }))
-                                                            if (data.active === "resolved") {
+                                                            if (data.active === "active") {
                                                                 setDeleteObj({
                                                                     index,
                                                                     rowStatus: e.target.checked
@@ -370,7 +369,7 @@ const Edit_postJob = (value1) => {
                                             </td>
                                             <td>30</td>
                                         </tr>)}
-                                </tbody> : "No Record Found"}
+                                </tbody> : <h3 className="table_no_records">No Record Found</h3>}
                         </Table>
                     </div>
                 </div>

@@ -252,7 +252,7 @@ const Success_Stories = () => {
                                                 />
                                             </Form></td>
                                         </tr>)}
-                                </tbody> : "No Record Found"}
+                                </tbody> :<h3 className="table_data_empty">No Record Found</h3>}
                         </Table>
                     </div>
                     {tableData.length > 0 ?

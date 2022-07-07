@@ -18,7 +18,9 @@ const initialstate = {
             description: "We are looking for an experienced Strategy Manager. ",
             functions: "Supervise and manage department team ",
             responsibility: [
-                { value: 'Handling Team', label: 'Maintance' },
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                ],
             benefits: [  { value: 'Insurance', label: 'Insurance' }],
             requirment: [
@@ -28,14 +30,18 @@ const initialstate = {
             industry: "Technology",
             level: "Junior",
             type: "Part time",
-            active: "pending"
+            active: "active"
 
         },
         {
             jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Provide support and training to team members",
-            responsibility: [],
+            responsibility: [
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+               ],
             benefits: [  { value: 'Insurance', label: 'Insurance' }],
             requirment: [
                 { value: 'Graduate', label: 'Graduate' },
@@ -44,13 +50,17 @@ const initialstate = {
             industry: "Technology",
             level: "Senior",
             type: "Full time",
-            active: "pending"
+            active: "deactive"
         },
         {
             Jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Report to directors and executive staff",
-            responsibility: [],
+            responsibility: [
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+               ],
             benefits: [  { value: 'Insurance', label: 'Insurance' }],
             requirment: [
                 { value: 'Graduate', label: 'Graduate' },
@@ -59,7 +69,7 @@ const initialstate = {
             industry: "Technology",
             level: "Senior",
             type: "Full time",
-            active: "pending"
+            active: "deactive"
         },
 
 
