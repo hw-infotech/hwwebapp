@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./footer_new.css";
 
@@ -6,7 +6,7 @@ const Footer_new = () => {
   let years  = new Date().getFullYear();
   return (
     <section className="footerBox__Panel">
-      <img src="assets/img/nestormind.png" width="250px" />
+      <img src="assets/img/nestormind.png" width="250px" alt="" />
       <div className="container">
         <div className="footerContent">
           <div className="row">
@@ -24,6 +24,7 @@ const Footer_new = () => {
                   <ul className="clb-social-holder font-titles icons mb-0">
                     <li>
                       <a
+                        rel=""
                         target="_blank"
                         href="https://www.facebook.com/nestormindpvtltd"
                         className="facebook"

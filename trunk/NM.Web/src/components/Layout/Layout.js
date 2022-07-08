@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
-import { HashRouter, BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Chatbot from '../Chatbot/Chatbot'
-import routes from '../../data/routes';
-import { createBrowserHistory } from 'history';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import Chatbot from "../Chatbot/Chatbot";
+import routes from "../../data/routes";
 
 const Layout = () => {
-    const history=createBrowserHistory()
-    return (
-        <Router history={history}>            
-            <Switch>
-                {routes.map((route, index) => (
-                    <Route {...route} key={index} />
-                )
-                )}
-            </Switch>
-        </Router>
-    )
-}
+  return (
+    <Router>
+      <Switch>
+        {routes.map((route, index) => (
+          <Route {...route} key={index} />
+        ))}
+      </Switch>
+    </Router>
+  );
+};
 
-export default Layout
+export default Layout;

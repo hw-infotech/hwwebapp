@@ -1,21 +1,13 @@
-import React, { Component, useState } from "react";
-import { Link } from "react-router-dom";
-import NavBar from "../Layout/Navbar";
-import Footer from "../Layout/Footer";
+import React, { useState } from "react";
 import "./career.css";
-import Footer_new from "../Layout/Footer_new";
 import { useEffect } from "react";
-import Dashboard from "../../layout/dashboard";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
-import apidata from "../../Redux/Store/api";
 import { useDispatch } from "react-redux";
 import { createResume } from "../../Redux/Action/Actionfunction";
 
-const UploadCv = (props) => {
-  const { newsletter, setNewsLetter } = props;
+const UploadCv = () => {
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false);
-
+  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -28,14 +20,14 @@ const UploadCv = (props) => {
         <div className="container">
           <div className="up-gra">
             <div className="upload-Graphics">
-              <img className="uploadGra" src="assets/img/upload-file.png" />
+              <img className="uploadGra" src="assets/img/upload-file.png" alt="" />
             </div>
             <div className="uploadBox">
               <div className="titleBox">Upload Your Resume</div>
               <form className="form">
                 <div className="input-form mh-100">
                   <div className="upload Cv">
-                    <img className="outbox" src="assets/img/outbox.svg" /> Add
+                    <img className="outbox" src="assets/img/outbox.svg" alt=""/> Add
                     Docs
                   </div>
                   <input
@@ -48,14 +40,12 @@ const UploadCv = (props) => {
                         payload.append("files", e.target.files[0]);
                         setstate(e.target.files[0]);
                         setP(payload);
-                        console.log(payload);
                       } catch (e) {
                         console.log(e);
                       }
                     }}
                   />
                   <div className="fileName">{state?.name}</div>
-                  {console.log("state ", state)}
                 </div>
               </form>
               <div className="input-form text-center">
@@ -66,9 +56,7 @@ const UploadCv = (props) => {
                     value="Send"
                     onClick={async (e) => {
                       try {
-                         await dispatch(createResume(p));
-                        setLoading(true);
-                        
+                        await dispatch(createResume(p));
                         setstate("");
                         setP("");
                       } catch (error) {
