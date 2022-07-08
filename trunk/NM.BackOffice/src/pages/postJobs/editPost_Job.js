@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Form, FormCheck, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
+import { Button, Col, Collapse, Form, FormCheck, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 import { Field, Formik, FormikProvider } from "formik";
 import { Input } from "../../components/commoninputfield";
 import { BsSearch } from "react-icons/bs";
@@ -16,18 +16,20 @@ import { FaFilter } from "react-icons/fa";
 import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
 import { subString } from "../../Services/commonFunctions";
-import { getAllEnquries, Send_data } from "../../Services/redux/action/action";
+import { Edit_Data, getAllEnquries, Send_data } from "../../Services/redux/action/action";
 import { useDispatch, useSelector } from "react-redux";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
 
 const Edit_postJob = (value1) => {
-
+    useEffect(() => {
+        document.title = "Job"
+    }, [])
     const [jobpost, setjobpost] = useState()
     const [rowtext, setRowtext] = useState()
     const [showalert, setShowalert] = useState(false)
-    const [disable, setSdisabled] = useState(true)
+    const [disable, setSdisabled] = useState(false)
     const [requirment2, setRequirments] = useState([])
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -41,8 +43,8 @@ const Edit_postJob = (value1) => {
             start: start,
             end: showPerPage
         })
-    const nevigate = useNavigate();
-    const [pagination2, setpagination2] = useState({
+    const navigate = useNavigate();
+    const [paginaion2, setpagination2] = useState({
         start: 0,
         end: showPerPage
     });
@@ -56,7 +58,7 @@ const Edit_postJob = (value1) => {
     const Chnage = (e) => {
         const { name, value } = e.target
         setRow(value)
-        console.log("this is the select field value", value)
+
     }
     const handlechange1 = (event, value) => {
         var value1;
@@ -64,12 +66,11 @@ const Edit_postJob = (value1) => {
         if (next <= value) {
             value1 = row * value
             setShowPerPage(value1)
-            console.log("this is the if conditon", value, showPerPage, state.row_value)
             setStart(value1 - row)
             setpagination({ start: start, end: showPerPage })
         }
         else {
-            console.log("else", start, showPerPage)
+
             setStart(start - row)
             setShowPerPage(showPerPage - row)
             setpagination({ start: start - row, end: showPerPage - row })
@@ -81,7 +82,7 @@ const Edit_postJob = (value1) => {
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Job Management", route: "" },
-        { name: "Job List", route: "" },
+        { name: "Job", route: "" },
 
     ]
     const [formState, setFormState] = useState()
@@ -124,9 +125,10 @@ const Edit_postJob = (value1) => {
             active: "pending"
         }
     ]
-    const selector = useSelector(state => state.data.apidata.allEnquries)
+    const selector = useSelector(state => state.data.apidata?.allEnquries)
     useEffect(() => {
-        console.log("state this is the selector data", selector)
+
+
         dispatch(getAllEnquries())
         // setTableData(old=>[...old,selector])  
     }, [])
@@ -134,18 +136,18 @@ const Edit_postJob = (value1) => {
     const [tableData, setTableData] = useState(selector)
     function sortt() {
         const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() > b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() > a.Jobtitle.toLowerCase()) ? -1 : 0));
-        console.log(response)
+
         setTableData([...response])
     }
     function sortt1() {
         const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() < b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() < a.Jobtitle.toLowerCase()) ? -1 : 0));
-        console.log(response)
+
         setTableData([...response])
     }
     const [title, setTitle] = useState(false)
     const requestSearch = (searchedVal) => {
-        const filteredRows = records.filter((row) => {
-            return row.Jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
+        const filteredRows = tableData.filter((row) => {
+            return row.jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
         });
         setTableData(filteredRows)
 
@@ -157,7 +159,7 @@ const Edit_postJob = (value1) => {
     }
     const dispatch = useDispatch()
     const display = () => {
-        console.log(deleteObj);
+
         setShowalert(true)
         //const result = await confirm(rowtext.text);
         // console.log(rowText);
@@ -180,181 +182,200 @@ const Edit_postJob = (value1) => {
     })
 
     return (
-        <div>
+        <div className="joblist-main-body">
             {<BasicBreadcrumbs route={route} />}
-            <div className="filter_header">
-                <div className="filter-title"><h4>Job List</h4></div>
-                <div className="filter_container">
-                    <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
-                    <Button variant="" className="" onClick={() => {
-                        nevigate("/post-new-job")
-                    }}> <AiOutlinePlusCircle size={24} color="#ff6b01"/></Button>
-                </div>
-            </div>
-            <div className="topGapPad margin_bottom_">
-                <div className="gapbetween ">
-                    <div>
-                        {
-                            <Form.Select aria-label="Default select example" onChange={requestSearch} hidden={disable}>
-                                <option disabled hidden selected>Status  </option>
-                                <option value="1">All</option>
-                                <option value="1">Subscribe</option>
-                                <option value="1">Unsubscribe</option>
-                            </Form.Select>}
+            <div className="panle_body">
+                <div className="panle_header">
+                    <div className="left-panle-title"><h4>Job</h4></div>
+                    <div className="right_panle_container">
+                        <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                        <Button variant="" className="btn-sm" onClick={() => {
+                            navigate("/post-new-job")
+
+                        }}> <AiOutlinePlusCircle size={24} color="#ff6b01" /></Button>
                     </div>
-                    <div className="serachbar" >
-                        <InputGroup className="mb-3">
-                            <FormControl
-                                hidden={disable}
-                                placeholder="Search by title "
-                                aria-label="Recipient's username"
-                                aria-describedby="basic-addon2"
-                                onChange={(e) => {
-                                    requestSearch(e.target.value)
-                                }}
-                            />
-                            {/*<Button variant="outline-secondary" id="button-addon2">
+                </div>
+                <div className="gapbetween pt-1">
+                    <Collapse in={disable}>
+                        <div>
+                            {
+                                <Form.Select aria-label="Default select example" className="fs_13" onChange={requestSearch} >
+                                    <option disabled hidden selected>Status  </option>
+                                    <option value="1">All</option>
+                                    <option value="1">Subscribe</option>
+                                    <option value="1">Unsubscribe</option>
+                                </Form.Select>}
+                        </div>
+                    </Collapse>
+                    <Collapse in={disable}>
+                        <div className="serachbar" >
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    className="fs_13"
+                                    placeholder="Search by title "
+                                    aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                                {/*<Button variant="outline-secondary" id="button-addon2">
                                                 <BsSearch />
                                             </Button>*/}
-                        </InputGroup>
+                            </InputGroup>
+                        </div>
+                    </Collapse>
+                </div>
+            </div>
+            <div className="boxshadow">
+                {/*<h4>List Number of Job Posts</h4>*/}
+                <Modal show={showalert} onHide={handleClose} backdrop="static"
+                    keyboard={false}>
+                    <Modal.Header >
+                        <Modal.Title>Alert</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>{rowtext?.text}</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button className="btn-sm fs_13" variant="secondary" onClick={() => {
+                            setShowalert(false)
+                        }} >No</Button>
+                        <Button className="btn-sm fs_13" variant="primary" onClick={() => {
+                            display()
+                            setShowalert(false)
+                        }}>Yes</Button>
+                    </Modal.Footer>
+                </Modal>
+                <div className="content_box">
+                    <div className="data-table">
+                        <Table striped bordered hover responsive>
+                            <thead>
+                                <tr>
+                                    <th className="action_colwidth">Action</th>
+                                    <th className="action_titlewidth" onClick={() => {
+                                        setTitle(!title)
+                                        { title ? sortt() : sortt1() }
+                                    }}> Title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                    <th>Description</th>
+                                    <th>Function</th>
+                                    <th>Requirement</th>
+                                    <th>Benefits</th>
+                                    <th>Responsibility</th>
+                                    <th>Industry</th>
+                                    <th>Level</th>
+                                    <th>Employement</th>
+                                    <th className="action_colwidth">Status</th>
+                                    <th className="action_colwidth">Total Candidates</th>
+                                </tr>
+                            </thead>
+                            {tableData?.length > 0 ?
+                                <tbody>
+                                    {tableData.map((data, index) =>
+                                        <tr>
+                                            <td className="action "><div className="userDetail ">
+                                                <button type="button" class="btn "
+                                                    id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span className="actionIcon"> <i
+                                                        className="bi bi-three-dots-vertical"></i> </span>
+                                                </button>
+                                                <ul className="IconDropdown dropdown-menu context-menu11"
+                                                    aria-labelledby="dropdownIconMenu">
+                                                    <li className="dropdownList">
+                                                        <div className="actionBtns  context-menu1">
+                                                            <span className="editAction" data-bs-toggle="modal"
+                                                                data-bs-target="#editbtn"><i
+                                                                    className="bi bi-pencil-square"></i></span>
+                                                            <button type="button" className="btn btn-outlined-secondary fs_13" onClick={() => {
+                                                                dispatch(Edit_Data(data, index))
+                                                                navigate('/particularjob')
+                                                            }}>View</button>
+                                                        </div>
+                                                    </li>
+                                                    <li className="dropdownList">
+                                                        <div className="actionBtns  context-menu1">
+                                                            <span className="viewIcon" data-bs-toggle="modal"
+                                                                data-bs-target="#viewbtn"> <i
+                                                                    className="bi bi-eye"></i></span>
+                                                            <button type="button" className="btn btn-outlined-secondary fs_13" onClick={() => {
+                                                                localStorage.setItem("key", "Edit Job")
+                                                                dispatch(Edit_Data(data, index))
+                                                                navigate('/edit-job')
+                                                            }} >Edit</button>
+                                                        </div>
+                                                    </li>
+                                                    <li className="dropdownList">
+                                                        <div className="actionBtns  context-menu1">
+                                                            <span className="deleteAction" data-bs-toggle="modal"
+                                                                data-bs-target="#deletebtn"> <i
+                                                                    className="bi bi-trash3-fill"></i></span>
+                                                            <button type="button" className="btn btn-outlined-secondary fs_13" onClick={() => {
+                                                                tableData.splice(index, 1
+                                                                )
+                                                                setTableData([...tableData])
+                                                            }}>Delete</button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div></td>
+                                            <td>{data?.Jobtitle || data?.jobtitle}</td>
+                                            <td>{data?.description && subString(data.description, 30)}</td>
+                                            <td>{data?.functions && subString(data?.functions, 30)}</td>
+                                            <td>
+                                                {data?.requirment?.map((data1) => <ul>
+                                                    <li>{data1.value && subString(data1.value, 30)}</li>
+                                                </ul>)}
+                                            </td>
+                                            <td> {data?.benefits?.map((data1) => <ul>
+                                                <li>{data1.value && subString(data1.value, 30)}</li>
+                                            </ul>)}</td>
+                                            <td> {data?.responsibility?.map((data1) => <ul>
+                                                <li>{data1.value}</li>
+                                            </ul>)}</td>
+                                            <td>{data?.industry}</td>
+                                            <td>{data?.level}</td>
+                                            <td>{data?.type}</td>
+                                            <td>
+                                                <Form>
+                                                    <Form.Check
+                                                        type="switch"
+                                                        id="custom-switch1"
+                                                        checked={data.active === "resolved" ? true : false}
+                                                        label=""
+                                                        onChange={(e) => {
+                                                            setShowalert(true)
+                                                            setRowtext(e.target.checked ? ({
+                                                                id: 1,
+                                                                text: "Are you sure to  show the job ?",
+                                                            }) : ({
+                                                                id: 0,
+                                                                text: "Are you sure to hide the job ?",
+                                                            }))
+                                                            if (data.active === "resolved") {
+                                                                setDeleteObj({
+                                                                    index,
+                                                                    rowStatus: e.target.checked
+                                                                })
+                                                            }
+                                                            else {
+                                                                setDeleteObj({
+                                                                    index,
+                                                                    rowStatus: e.target.checked
+                                                                })
+                                                            }
+                                                        }}
+                                                    />
+                                                </Form>
+                                            </td>
+                                            <td>30</td>
+                                        </tr>)}
+                                </tbody> : "No Record Found"}
+                        </Table>
                     </div>
                 </div>
-                <div className="boxshadow">
-                    {/*<h4>List Number of Job Posts</h4>*/}
-                    <Modal show={showalert} onHide={handleClose} backdrop="static"
-                        keyboard={false}>
-                        <Modal.Header >
-                            <Modal.Title>Alert</Modal.Title>
-                        </Modal.Header>
-
-                        <Modal.Body>
-                            <p>{rowtext?.text}</p>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button className="btn-sm" variant="secondary" onClick={() => {
-
-                                setShowalert(false)
-                            }} >No</Button>
-                            <Button className="btn-sm" variant="primary" onClick={() => {
-                                display()
-                                setShowalert(false)
-                            }}>Yes</Button>
-                        </Modal.Footer>
-                    </Modal>
-                    <Table striped bordered hover responsive>
-                        <thead>
-                            <tr>
-                                <th className="action_colwidth">Action</th>
-                                <th className="action_titlewidth" onClick={() => {
-                                    setTitle(!title)
-                                    { title ? sortt() : sortt1() }
-                                }}> Title {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                <th>Description</th>
-                                <th>Function</th>
-                                <th>Requirement</th>
-                                <th>Benefits</th>
-                                <th>Responsibility</th>
-                                <th>Industry</th>
-                                <th>Level</th>
-                                <th>Employement</th>
-                                <th className="action_colwidth">Status</th>
-                                <th className="action_colwidth">Total Candidates</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {tableData.map((data, index) =>
-                                <tr>
-                                    <td className="action "><div className="userDetail ">
-                                        <button type="button" class="btn "
-                                            id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                            aria-expanded="false">
-                                            <span className="actionIcon"> <i
-                                                className="bi bi-three-dots-vertical"></i> </span>
-                                        </button>
-                                        <ul className="IconDropdown dropdown-menu context-menu11"
-                                            aria-labelledby="dropdownIconMenu">
-                                            <li className="dropdownList">
-                                                <div className="actionBtns  context-menu1">
-                                                    <span className="editAction" data-bs-toggle="modal"
-                                                        data-bs-target="#editbtn"><i
-                                                            className="bi bi-pencil-square"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
-                                                        nevigate('/particularjob')
-                                                    }}>View</button>
-                                                </div>
-                                            </li>
-                                            <li className="dropdownList">
-                                                <div className="actionBtns  context-menu1">
-                                                    <span className="viewIcon" data-bs-toggle="modal"
-                                                        data-bs-target="#viewbtn"> <i
-                                                            className="bi bi-eye"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => { nevigate('/post-new-job') }} >Edit</button>
-                                                </div>
-                                            </li>
-                                            <li className="dropdownList">
-                                                <div className="actionBtns  context-menu1">
-                                                    <span className="deleteAction" data-bs-toggle="modal"
-                                                        data-bs-target="#deletebtn"> <i
-                                                            className="bi bi-trash3-fill"></i></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
-                                                        tableData.splice(index, 1
-                                                        )
-                                                        setTableData([...tableData])
-                                                    }}>Delete</button>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div></td>
-                                    <td>{data.Jobtitle || data.jobtitle}</td>
-
-                                    <td>{data.description && subString(data.description, 50)}</td>
-
-
-                                    <td>{data?.functions}</td>
-                                    <td>{data?.requirment?.length > 0 && data.requirment[0]}</td>
-                                    <td>{data?.benfits?.length > 0 && data.benfits[0]}</td>
-                                    <td>{data?.responsibility?.length > 0 && data.responsibility[0]}</td>
-                                    <td>{data?.industry}</td>
-                                    <td>{data?.level}</td>
-                                    <td>{data?.type}</td>
-                                    <td>
-                                        <Form>
-                                            <Form.Check
-                                                type="switch"
-                                                id="custom-switch1"
-                                                checked={data.active === "resolved" ? true : false}
-                                                label=""
-                                                onChange={(e) => {
-                                                    setShowalert(true)
-                                                    setRowtext(e.target.checked ? ({
-                                                        id: 1,
-                                                        text: "Are you sure to  show the job ?",
-                                                    }) : ({
-                                                        id: 0,
-                                                        text: "Are you sure to hide the job ?",
-                                                    }))
-                                                    if (data.active === "resolved") {
-                                                        setDeleteObj({
-                                                            index,
-                                                            rowStatus: e.target.checked
-                                                        })
-                                                    }
-                                                    else {
-                                                        setDeleteObj({
-                                                            index,
-                                                            rowStatus: e.target.checked
-                                                        })
-                                                    }
-                                                }}
-                                            />
-                                        </Form>
-                                    </td>
-                                    <td>30</td>
-                                </tr>)}
-                        </tbody>
-                    </Table>
-                </div>
-                {/*<Modal show={show} onHide={handleClose} size="lg">
+            </div>
+            {/*<Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>Edit Post Job</Modal.Title>
                     </Modal.Header>
@@ -441,6 +462,7 @@ const Edit_postJob = (value1) => {
                     </Modal.Footer>
                                                         </Modal>*/}
 
+            {tableData?.length > 0 ?
                 <div>
                     <CustomPagination
                         showPerPage={showPerPage}
@@ -448,8 +470,8 @@ const Edit_postJob = (value1) => {
                         setStart={setpagination}
                         total={tableData.length}
                     />
-                </div>
-            </div>
+                </div> : ""}
+
         </div>
     );
 

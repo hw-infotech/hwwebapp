@@ -16,9 +16,9 @@ const CreatableSelectField = ({ formState, setFormState, placeholder, name }) =>
         setState({ ...state, inputValue });
         // console.log(state.value)
     };
-    useEffect(()=>{
+    useEffect(() => {
         setFormState({ ...formState, [name]: [...state.value] })
-    },[state])
+    }, [state])
 
     const components = {
         DropdownIndicator: null,
@@ -45,7 +45,6 @@ const CreatableSelectField = ({ formState, setFormState, placeholder, name }) =>
 
     return (
         <div>
-
             <CreatableSelect
                 components={components}
                 inputValue={state.inputValue}

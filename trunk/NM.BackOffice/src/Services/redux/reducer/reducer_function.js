@@ -1,5 +1,5 @@
 import React from "react";
-import { ADD_GALLERY_EVENT, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK } from "../../store/type";
+import { ADD_GALLERY_EVENT, UPDATE, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK } from "../../store/type";
 
 const initialstate = {
     addgalleryevent: "",
@@ -11,17 +11,21 @@ const initialstate = {
     getnewsletterunsubscriber: [],
     getpendingenquiry: "",
     getresolvedenquiry: "",
-    stack: "",
-
+    edit_data: [],
     allEnquries: [
         {
             jobtitle: "UI/UX",
             description: "We are looking for an experienced Strategy Manager. ",
             functions: "Supervise and manage department team ",
-            responsibility: [],
-            benfits: [],
-            requirment: [],
-            industry: "",
+            responsibility: [
+                { value: 'Handling Team', label: 'Maintance' },
+               ],
+            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            requirment: [
+                { value: 'Graduate', label: 'Graduate' },
+               
+            ],
+            industry: "Technology",
             level: "Junior",
             type: "Part time",
             active: "pending"
@@ -32,9 +36,12 @@ const initialstate = {
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Provide support and training to team members",
             responsibility: [],
-            benfits: [],
-            requirment: [],
-            industry: "",
+            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            requirment: [
+                { value: 'Graduate', label: 'Graduate' },
+             
+            ],
+            industry: "Technology",
             level: "Senior",
             type: "Full time",
             active: "pending"
@@ -44,16 +51,25 @@ const initialstate = {
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Report to directors and executive staff",
             responsibility: [],
-            benfits: [],
-            requirment: [],
-            industry: "",
+            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            requirment: [
+                { value: 'Graduate', label: 'Graduate' },
+               
+            ],
+            industry: "Technology",
             level: "Senior",
             type: "Full time",
             active: "pending"
-        }
+        },
+
+
     ]
+
+
+
 }
 const Reducer_Function = (state = initialstate, action) => {
+    console.log(action, "this is the acton ")
     const { type, payload } = action
     switch (type) {
         case ADD_GALLERY_EVENT: {
@@ -121,6 +137,21 @@ const Reducer_Function = (state = initialstate, action) => {
             return {
                 ...state,
                 STACK: payload
+            }
+        }
+        case EDIT_DATA: {
+            return {
+                ...state,
+                edit_data: payload
+            }
+        }
+        case UPDATE: {
+            state.allEnquries[state.edit_data.index] = payload
+
+         
+            return {
+                ...state,
+
             }
         }
 

@@ -90,7 +90,7 @@ const List_Of_Blogs = () => {
                                                 <span class="editAction" data-bs-toggle="modal"
                                                     data-bs-target="#editbtn"><i
                                                         class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Edit</button>
+                                                <button type="button" className="btn btn-outlined-secondary fa_13">Edit</button>
                                             </div>
                                         </li>
 
@@ -99,7 +99,7 @@ const List_Of_Blogs = () => {
                                                 <span class="viewIcon" data-bs-toggle="modal"
                                                     data-bs-target="#viewbtn"> <i
                                                         class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
 
                                             </div>
                                         </li>
@@ -109,7 +109,7 @@ const List_Of_Blogs = () => {
                                                 <span class="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
                                                         class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
 
                                             </div>
                                         </li>
@@ -136,7 +136,7 @@ const List_Of_Blogs = () => {
                                                 <span class="editAction" data-bs-toggle="modal"
                                                     data-bs-target="#editbtn"><i
                                                         class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Edit</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13">Edit</button>
                                             </div>
                                         </li>
 
@@ -145,7 +145,7 @@ const List_Of_Blogs = () => {
                                                 <span class="viewIcon" data-bs-toggle="modal"
                                                     data-bs-target="#viewbtn"> <i
                                                         class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
 
                                             </div>
                                         </li>
@@ -155,7 +155,7 @@ const List_Of_Blogs = () => {
                                                 <span class="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
                                                         class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
 
                                             </div>
                                         </li>
@@ -182,7 +182,7 @@ const List_Of_Blogs = () => {
                                                 <span class="editAction" data-bs-toggle="modal"
                                                     data-bs-target="#editbtn"><i
                                                         class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Edit</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13">Edit</button>
                                             </div>
                                         </li>
 
@@ -191,7 +191,7 @@ const List_Of_Blogs = () => {
                                                 <span class="viewIcon" data-bs-toggle="modal"
                                                     data-bs-target="#viewbtn"> <i
                                                         class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
 
                                             </div>
                                         </li>
@@ -201,7 +201,7 @@ const List_Of_Blogs = () => {
                                                 <span class="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
                                                         class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Delete</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13">Delete</button>
                                             </div>
                                         </li>
                                     </ul>

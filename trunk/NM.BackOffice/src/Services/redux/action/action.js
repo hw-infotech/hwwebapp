@@ -1,5 +1,5 @@
 import React from "react";
-import { ADD_GALLERY_EVENT, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK } from "../../store/type";
+import { ADD_GALLERY_EVENT, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK, UPDATE } from "../../store/type";
 import apidata from "../../store/api";
 import { ToastContainer, toast } from 'react-toastify';
 import Store from "../../store/store";
@@ -49,5 +49,19 @@ export const Send_data = (data1) => dispatch => {
 export const getAllEnquries = () => dispatch => {
     dispatch({
         type: GET_ALL_ENQUIRY,
+    })
+}
+export const Edit_Data = (data, index) => dispath => {
+    console.log(data, "editdata")
+    dispath({
+        type: EDIT_DATA,
+        payload: { data, index }
+    })
+}
+export const Update_Data = (data, index) => dispath => {
+
+    dispath({
+        type: UPDATE,
+        payload: data
     })
 }

@@ -4,15 +4,17 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { Button, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
+import { Badge, Button, Collapse, Form, FormControl, InputGroup, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
 import { VscFilterFilled } from "react-icons/vsc";
 import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
 import { FaFilter } from "react-icons/fa";
+import { BsFilter } from "react-icons/bs";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 const Job_newsletter = () => {
-    const [disable, setSdisabled] = useState(true)
+    const [checked, setChecked] = useState()
+    const [disable, setSdisabled] = useState(false)
     const [showPerPage, setShowPerPage] = useState()
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
@@ -64,7 +66,7 @@ const Job_newsletter = () => {
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Job Management", route: "job-subscriber/unsubscriber" },
-        { name: "Subscribe/Unsubscribe", route: "/job-subscriber/unsubscriber" },
+        { name: "Subscriber-Unsubscriber", route: "/job-subscriber/unsubscriber" },
     ]
     const records = [
         {
@@ -106,68 +108,87 @@ const Job_newsletter = () => {
         setTableData([...filteredRows])
     };
     const [title, setTitle] = useState(false)
-    return (
-        <div>
-            <div className="margin_bottom_">
-                <BasicBreadcrumbs route={route} />
-                <div className="filter_header">
-                    <div className="filter-title"><h4>Subscribers/Unsubscriber</h4></div>
-                    <div className="filter_container">
-                        <div className="">
-                        
-                                <FaFilter size={24} color="#ff6b01" onClick={()=>setSdisabled(p => !p)} />
-                        </div>
+    useEffect(() => {
+        document.title = "Subscriber-Unsubscriber"
+    }, [])
 
+    return (
+
+        <div className="main-jobsubscriber-box">
+            <BasicBreadcrumbs route={route} />
+            <div className="panle_body">
+                <div className="panle_header">
+                    <div className="left-panle-title"><h4>Subscriber-Unsubscriber</h4></div>
+                    <div className="right_panle_container">
+                        <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
                     </div>
                 </div>
-                <div className="w-100 setupcontent topGapPad">
-                    <div className="">
-                        <Form.Select aria-label="row" className="wreap-content" hidden={disable}>
-                            <option disabled hidden selected>Status</option>
-                            <option value="1">All</option>
-                            <option value="2">Subscribe</option>
-                            <option value="3">Unsubscribe</option>
-                        </Form.Select>
-                    </div>
-                    <div className="searchbar">
-                        <InputGroup className="mb-3">
-                            <FormControl
-                                hidden={disable}
-                                placeholder="Search by email and name"
-                                aria-label="Search By Email"
-                                aria-describedby="basic-addon2"
-                                onChange={(e) => {
-                                    requestSearch(e.target.value)
-                                }}
-                            />
-                            {/*<Button variant="outline-secondary" id="button-addon2">
+                <div className="w-100 setupcontent pt-1">
+                    <Collapse in={disable}>
+                        <div className="">
+                            <Form.Select aria-label="row" className="wreap-content fs_13" >
+                                <option disabled hidden selected>Status</option>
+                                <option value="1">All</option>
+                                <option value="2">Subscribe</option>
+                                <option value="3">Unsubscribe</option>
+                            </Form.Select>
+                        </div>
+                    </Collapse>
+                    <Collapse in={disable}>
+                        <div className="searchbar">
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    className="fs_13"
+                                    placeholder="Search by name"
+                                    aria-label="Search By Email"
+                                    aria-describedby="basic-addon2"
+                                    onChange={(e) => {
+                                        requestSearch(e.target.value)
+                                    }}
+                                />
+                                {/*<Button variant="outline-secondary" id="button-addon2">
                                                 <BsSearch />
                                             </Button>*/}
-                        </InputGroup>
-                    </div>
+                            </InputGroup>
+                        </div>
+                    </Collapse>
                 </div>
-                <div className="topGapPad">
-                    <div className="boxshadow">
-                        <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th onClick={() => {
-                                        setTitle(!title)
-                                        { title ? sortt() : sortt1() }
-                                    }}>Name {title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th className="action_colwidth">Status</th>
-                                </tr>
-                            </thead>
+            </div>
+            <div className="content_box">
+                <div className="data-table">
+
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th className="action_colwidth">
+                                    <Form.Check
+                                        className="fs_13 mt-2"
+                                        onClick={() => setChecked(p => !p)}
+
+                                        label="All"
+                                    /></th>
+                                <th onClick={() => {
+                                    setTitle(!title)
+                                    { title ? sortt() : sortt1() }
+                                }}>Name {title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th className="action_colwidth">Status</th>
+                            </tr>
+                        </thead>
+                        {tableData.length > 0 ?
                             <tbody>
                                 {tableData.map((data, index) =>
-                                    <tr>
+                                    <tr>  <td className="content_cente_td"><Form.Check
+                                        className="fs_13 mt-2"
+                                        checked={checked}
+                                    /></td>
                                         <td>{CapitalizeFirstLetter(data.Name)}</td>
                                         <td>{data.phone}</td>
-                                        <td>{data.Email}</td>
+                                        <td>{CapitalizeFirstLetter(data.Email)}</td>
                                         <td >
-                                            <Form.Check className="switch_padding"
+                                            {<Badge bg="success" size={30} >Subscribe</Badge>}
+                                            { /*<Form.Check className="switch_padding"
                                                 type="switch"
                                                 id="custom-switch1"
                                                 value={data.active}
@@ -179,22 +200,24 @@ const Job_newsletter = () => {
                                                         return [..._]
                                                     })
                                                 }}
-                                            />
+                                            />*/}
                                         </td>
                                     </tr>)}
-                            </tbody>
-                        </Table>
-                    </div>
-                    <CustomPagination
-                        showPerPage={showPerPage}
-                        setStart={setpagination}
-                        total={tableData.length}
-                    />
-
+                            </tbody> : "No Record Found"}
+                    </Table>
                 </div>
             </div>
+            {tableData.length > 0 ?
+                <CustomPagination
+                    showPerPage={showPerPage}
+                    setStart={setpagination}
+                    total={tableData.length}
+                /> : ""}
+
 
         </div>
+
+
     );
 }
 export default Job_newsletter

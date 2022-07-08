@@ -86,7 +86,7 @@ const Change_Gallery_Events = () => {
                                                 <span class="editAction" data-bs-toggle="modal"
                                                     data-bs-target="#editbtn"><i
                                                         class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>View</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13" onClick={handleShow}>View</button>
                                             </div>
                                         </li>
 
@@ -95,7 +95,7 @@ const Change_Gallery_Events = () => {
                                                 <span class="viewIcon" data-bs-toggle="modal"
                                                     data-bs-target="#viewbtn"> <i
                                                         class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
                                             </div>
                                         </li>
                                         <li class="dropdownList">
@@ -103,7 +103,7 @@ const Change_Gallery_Events = () => {
                                                 <span class="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
                                                         class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
+                                                <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
                                             </div>
                                         </li>
                                     </ul>
@@ -127,7 +127,7 @@ const Change_Gallery_Events = () => {
                                             <span class="editAction" data-bs-toggle="modal"
                                                 data-bs-target="#editbtn"><i
                                                     class="bi bi-pencil-square"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size" onClick={handleShow}>View</button>
+                                            <button type="button" className="btn btn-outlined-secondary fs_13" onClick={handleShow}>View</button>
                                         </div>
                                     </li>
                                     <li class="dropdownList">
@@ -135,7 +135,7 @@ const Change_Gallery_Events = () => {
                                             <span class="viewIcon" data-bs-toggle="modal"
                                                 data-bs-target="#viewbtn"> <i
                                                     class="bi bi-eye"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
+                                            <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
                                         </div>
                                     </li>
                                     <li class="dropdownList">
@@ -143,7 +143,7 @@ const Change_Gallery_Events = () => {
                                             <span class="deleteAction" data-bs-toggle="modal"
                                                 data-bs-target="#deletebtn"> <i
                                                     class="bi bi-trash3-fill"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
+                                            <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
                                         </div>
                                     </li>
                                 </ul>
@@ -167,7 +167,7 @@ const Change_Gallery_Events = () => {
                                             <span class="editAction" data-bs-toggle="modal"
                                                 data-bs-target="#editbtn"><i
                                                     class="bi bi-pencil-square"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size">Edit</button>
+                                            <button type="button" className="btn btn-outlined-secondary fs_13">Edit</button>
                                         </div>
                                     </li>
                                     <li class="dropdownList">
@@ -175,7 +175,7 @@ const Change_Gallery_Events = () => {
                                             <span class="viewIcon" data-bs-toggle="modal"
                                                 data-bs-target="#viewbtn"> <i
                                                     class="bi bi-eye"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size" >Update</button>
+                                            <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
                                         </div>
                                     </li>
                                     <li class="dropdownList">
@@ -183,7 +183,7 @@ const Change_Gallery_Events = () => {
                                             <span class="deleteAction" data-bs-toggle="modal"
                                                 data-bs-target="#deletebtn"> <i
                                                     class="bi bi-trash3-fill"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary font_size">Deletes</button>
+                                            <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
                                         </div>
                                     </li>
                                 </ul>
@@ -207,7 +207,7 @@ const Change_Gallery_Events = () => {
                                     <div className="w-100">
                                         <form >
                                             <div className="content_center ">
-                                                <div className="w-100  font_size">
+                                                <div className="w-100  fs_13">
                                                     <div className="form-group">
                                                         <Input type='text' className="form-control" placeholder='Event Name' name='eventname' label={"Event Name"} id="name" />
                                                     </div>

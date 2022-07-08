@@ -17,11 +17,11 @@ import Step2 from "./steps/step2";
 import Step3 from "./steps/step3";
 import Step4 from "./steps/step4";
 import { createContext } from "react";
-
-
-
+import { useSelector } from "react-redux";
 
 const Post_Job = ({ stat }) => {
+
+
     const [post, setpost] = useState()
     const [goSteps, setGoSteps] = useState(0);
     const [state, setState] = useState({
@@ -36,6 +36,8 @@ const Post_Job = ({ stat }) => {
         description: ""
 
     })
+    const selector = useSelector(state => state.data?.apidata?.edit_data?.data)
+
     const [state1, setState1] = useState({
         jobtitle: "",
         functions: "",
@@ -58,16 +60,17 @@ const Post_Job = ({ stat }) => {
     const onhandlechange = (e) => {
         const { name, value } = e.target
         setState({ ...state, [name]: value })
-        console.log(state);
+
     }
-
-    // console.log(state1);
-
+    let tiitle = localStorage?.getItem("key")
+    useEffect(() => {
+        document.title = "Post job"
+      }, [])
     return (
         <div>
             <BasicBreadcrumbs route={route} />
-            <h4 >{post ? "Edit Job" : "Post Job"}</h4>
-            <div className="w-75 m-auto p-2 z-depth-5 shadow-box-example rounded">
+            <h4 >Post Job</h4>
+            <div className="w-75 m-auto z-depth-5 shadow-box-example rounded box-shadow-container">
                 <Stepper
                     activeStep={goSteps}
                     completedBgColor="gray"
@@ -77,13 +80,13 @@ const Post_Job = ({ stat }) => {
                         activeTextColor: "#fff",
                     }}
                 >
-                    <Step label="Basic Details" >
+                    <Step label="Basic Details" onClick={() => setGoSteps(0)} >
                         <BiPencil />
                     </Step>
-                    <Step label="Job Description" >
+                    <Step label="Requirement" onClick={() => setGoSteps(1)} >
                         <BiFolderOpen />
                     </Step>
-                    <Step label="Job Function">
+                    <Step label="Type" onClick={() => setGoSteps(2)}>
                         <BsReverseLayoutTextSidebarReverse size={13} />
                     </Step>
                     <Step label="Preview" >
@@ -93,10 +96,11 @@ const Post_Job = ({ stat }) => {
 
                 <Formik initialValues={state}>
                     {({ values, handleChange, handleSubmit }) => (<Form onSubmit={(e) => {
+
                         e.preventDefault()
                         handleSubmit()
                     }}>
-                        {console.log(values, "is the values")}
+
                         {goSteps === 0 && (
                             <Step1 handleChange={handleChange} values={values} setGoSteps={setGoSteps} state={state1} setState={setState1} />
                         )}

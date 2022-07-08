@@ -19,6 +19,12 @@ const Profile = () => {
         email: "ganeshsharma5073@gmail.com",
         location: "Mohali"
     })
+    const [state1, setState1] = useState({
+        User: "Ganesh",
+        pass: 123456,
+        confirm:0
+       
+    })
     const [key, setKey] = useState()
     const [visible, setVisible] = useState(true)
     const [edit, setEdit] = useState(true)
@@ -39,6 +45,23 @@ const Profile = () => {
         state.phone = values.phone
 
         setState({ ...state })
+        console.log(state)
+
+        // setState({
+        //     name: "",
+        //     phone: "",
+        //     email: "",
+        //     location: ""
+        // })
+        // resetForm()
+    }
+    const handleFormSubmit1 = (values) => {
+        // const { name, value } = values
+        // setState({ ...state, [name]: value })
+
+        state.User = values.User
+        state.pass = values.pass
+        setState1({ ...state })
         console.log(state)
 
         // setState({
@@ -107,14 +130,14 @@ const Profile = () => {
                                                 <div className="prfile-card11">
                                                     <div className="inner-profile1">
                                                         <div className=""><h6>{edit ? "Profile Details" : "Edit Profile"}</h6></div>
-                                                        <div className="changeable_btn">{edit ? <Button variant="" className="popoup-btn" onClick={() => {
+                                                        <div className="changeable_btn">{edit ? <Button variant="primary" className="btn-sm" onClick={() => {
                                                             setVisible(false)
                                                             setEdit(p => !p)
-                                                        }}>Edit Profile</Button> : <Button variant="" className="popoup-btn" onClick={() => {
+                                                        }}>Edit Profile</Button> : <Button variant="secondry" className="btn-sm" onClick={() => {
                                                             setEdit(p => !p)
                                                             setVisible(true)
                                                         }}>Back</Button>}
-                                                            <div><Button variant="" type="submit" className="popoup-btn" onClick={() => {
+                                                            <div><Button variant="primary" type="submit" className="btn-sm" onClick={() => {
                                                                 alert("Data Update successful")
                                                                 setEdit(true)
 
@@ -175,6 +198,74 @@ const Profile = () => {
                         </Row>
                     </Tab>
                     <Tab eventKey="Security" title="Security">
+                    <Row>
+                    <Col>
+                        <Formik initialValues={state1}
+                            onSubmit={handleFormSubmit1}>
+                            {({ values, handleSubmit, handleChange }) => (
+                                <form onSubmit={(e) => {
+                                    e.preventDefault()
+                                    handleSubmit()
+                                }}>
+                                    <div className="main-Profile-card1">
+                                        <div className="prfile-card11">
+                                            <div className="inner-profile1">
+                                                <div className=""><h6>{edit ? "Profile Details" : "Edit Profile"}</h6></div>
+                                                <div className="changeable_btn">{edit ? <Button variant="primary" className="btn btn-sm" onClick={() => {
+                                                    setVisible(false)
+                                                    setEdit(p => !p)
+                                                }}>Change Password</Button> : <Button variant="secondary" className="btn-sm" onClick={() => {
+                                                    setEdit(p => !p)
+                                                    setVisible(true)
+                                                }}>Back</Button>}
+                                                    <div><Button variant="primary" type="submit" className="btn-sm" onClick={() => {
+                                                        alert("Data Update successful")
+                                                        setEdit(true)
+
+                                                    }} disabled={visible}>Save</Button></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        {edit ?
+                                            <div className="mainform">
+                                                <div className="formData">
+                                                    <div className="innerform">UserName</div>
+                                                    <div className="innerform1">{state1.User}</div>
+                                                </div>
+                                                <div className="formData">
+                                                    <div className="innerform">Password</div>
+                                                    <div className="innerform1">{state1.pass}</div>
+                                                </div>
+                                              
+                                            </div>
+                                            :
+                                            <div className="mainform">
+                                                <div className="formData">
+                                                    <div className="innerform">Old Password</div>
+                                                    <div className="innerform1"><Form.Group controlId="formBasicEmail">
+                                                        <Form.Control className="forms_input" type="number" onChange={handleChange} /></Form.Group></div>
+                                                </div>
+                                                <div className="formData">
+                                                    <div className="innerform">New Password</div>
+                                                    <div className="innerform1"><Form.Group controlId="formBasicEmail">
+                                                        <Form.Control type="number" name="pass" className="forms_input" onChange={handleChange}  /></Form.Group></div>
+                                                </div>
+                                                <div className="formData">
+                                                    <div className="innerform">Confirm Password</div>
+                                                    <div className="innerform1"><Form.Group controlId="formBasicEmail">
+                                                        <Form.Control type="number" name="confirm" className="forms_input" onChange={handleChange}  /></Form.Group></div>
+                                                </div>
+                                               
+                                            </div>
+
+                                        }
+                                    </div>
+                                </form>
+                            )}
+                        </Formik>
+                    </Col>
+                </Row>
                     </Tab>
                 </Tabs>
             </div>

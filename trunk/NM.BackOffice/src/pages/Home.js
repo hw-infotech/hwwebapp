@@ -6,6 +6,9 @@ import { Chart } from 'react-charts'
 import { FcList, FcBarChart, FcBullish } from "react-icons/fc";
 const Home = () => {
     const graphRef = useRef()
+    useEffect(() => {
+        document.title = "Dashboard"
+      }, [])
   
     const data = useMemo(
        
@@ -120,21 +123,21 @@ const Home = () => {
                                             <span class="actionIcon"> <i
                                                 className="bi bi-three-dots-vertical"></i> </span>
                                         </button>
-                                        <ul class="IconDropdown dropdown-menu context-menu1 "
+                                        <ul class="IconDropdown dropdown-menu context-menu11 "
                                             aria-labelledby="dropdownIconMenu">
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns context-menu1">
                                                     <span className="editAction" data-bs-toggle="modal"
                                                         data-bs-target="#editbtn"><FcBullish /></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                    <button type="button" className="btn btn-outlined-secondary fs_13" onClick={() => {
                                                     }}>Monthly</button>
                                                 </div>
                                             </li>
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns context-menu1">
                                                     <span className="deleteAction" data-bs-toggle="modal"
                                                         data-bs-target="#deletebtn"> <FcBarChart /></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size">Quaterly</button>
+                                                    <button type="button" className="btn btn-outlined-secondary fs_13">Quaterly</button>
                                                 </div>
                                             </li>
                                         </ul>
@@ -164,21 +167,21 @@ const Home = () => {
                                             <span className="actionIcon"> <i
                                                 className="bi bi-three-dots-vertical"></i> </span>
                                         </button>
-                                        <ul className="IconDropdown dropdown-menu context-menu1 "
+                                        <ul className="IconDropdown dropdown-menu context-menu11 "
                                             aria-labelledby="dropdownIconMenu">
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns context-menu1">
                                                     <span className="editAction" data-bs-toggle="modal"
                                                         data-bs-target="#editbtn"><FcBullish /></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                    <button type="button" className="btn btn-outlined-secondary fs_13" onClick={() => {
                                                     }}>Monthly</button>
                                                 </div>
                                             </li>
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns context-menu1">
                                                     <span className="deleteAction" data-bs-toggle="modal"
                                                         data-bs-target="#deletebtn"><FcBarChart /></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size">Quaterly</button>
+                                                    <button type="button" className="btn btn-outlined-secondary fs_13">Quaterly</button>
                                                 </div>
                                             </li>
                                         </ul>
@@ -207,21 +210,21 @@ const Home = () => {
                                                 className="bi bi-three-dots-vertical"></i>
                                             </span>
                                         </button>
-                                        <ul className="IconDropdown dropdown-menu context-menu1 "
+                                        <ul className="IconDropdown dropdown-menu context-menu11 "
                                             aria-labelledby="dropdownIconMenu">
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns context-menu1">
                                                     <span className="editAction" data-bs-toggle="modal"
                                                         data-bs-target="#editbtn"><FcBullish /></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size" onClick={() => {
+                                                    <button type="button" className="btn btn-outlined-secondary fa_13" onClick={() => {
                                                     }}>Monthly</button>
                                                 </div>
                                             </li>
                                             <li className="dropdownList">
-                                                <div className="actionBtns">
+                                                <div className="actionBtns context-menu1">
                                                     <span className="deleteAction" data-bs-toggle="modal"
                                                         data-bs-target="#deletebtn"> <FcBarChart /></span>
-                                                    <button type="button" className="btn btn-outlined-secondary font_size">Quaterly</button>
+                                                    <button type="button" className="btn btn-outlined-secondary fa_13">Quaterly</button>
                                                 </div>
                                             </li>
                                         </ul>

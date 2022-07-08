@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
+import { Button, Col, Collapse, Form, FormControl, InputGroup, Modal, Row, Table } from "react-bootstrap";
 //import Pagination from '@material-ui/lab/Pagination';
 // import Pagination from '@mui/material/Pagination'
 import BasicBreadcrumbs from "../../components/breadcumbs";
@@ -18,10 +18,12 @@ import { VscFilterFilled } from "react-icons/vsc";
 import { MdAdd } from "react-icons/md";
 import moment from 'moment'
 import { BsFilter } from "react-icons/bs";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
+import { Filters } from "../../components/header-filter";
 
 const SubScriber = () => {
-    const [disable, setSdisabled] = useState(true)
+    const [disable, setSdisabled] = useState(false)
     const [row, setRow] = useState(10)
     const [state, setState] = useState({
         row_value: ""
@@ -40,7 +42,7 @@ const SubScriber = () => {
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Newsletter", route: "" },
-        { name: "Subscribe/Unsubscribe", route: "" }
+        { name: "Subscribe Unsubscribe", route: "" }
     ]
     const selector = useSelector(state => state),
         dispatch = useDispatch(),
@@ -113,51 +115,18 @@ const SubScriber = () => {
         setSubscribers(filteredRows)
     };
     const [title, setTitle] = useState(false)
-
+    useEffect(() => {
+        document.title = "Newsletter Subscribe-Unsubscribe"
+        
+    }, [])
+    let titl="Subscribe-Unsubscribe"
+    let placeholder="Search by email"
     return (
-        <div >
+        <div className="main-newsletter-panle" >
             <BasicBreadcrumbs route={route} />
-            <div className="filter_header">
-                <div className="filter-title"><h4>Subscribe/Unsubscribe</h4></div>
-                <div className="filter_container">
-                    <div className="">
-                         <BsFilter size={24} color="#ff6b01" onClick={()=> setSdisabled(p => !p)} />
-                    </div>
-                    <div>
-                        <Button variant="outline-secondary" className="popoup-btn" onClick={handleShow}>Add NewsLetter</Button>
-                    </div>
-                </div>
-            </div>
-            <div className="margin_bottom_ topGapPad">
-                <div className=" ">
-                    <div className="w-100 setupcontent">
-                        <div className="" ><Form.Select aria-label="row" className="wreap-content" hidden={disable}>
-                            <option disabled hidden selected>Status</option>
-                            <option value="1">All</option>
-                            <option value="2">Subscriber</option>
-                            <option value="3">UnSubscriber</option>
-                        </Form.Select>
-                        </div>
-                        <div className="searchbar">
-                            <InputGroup className="mb-3">
-                                <FormControl
-                                    hidden={disable}
-                                    placeholder="Search By Email"
-                                    aria-label="Search By Email"
-                                    aria-describedby="basic-addon2"
-                                    onChange={(e) => {
-                                        requestSearch(e.target.value)
-                                    }}
-                                />
-                                {/*<Button variant="outline-secondary" id="button-addon2">
-                                                <BsSearch />
-                                            </Button>*/}
-                            </InputGroup>
-                        </div>
-                    </div>
-                </div>
-                <div className="">
-                    <div className="boxshadow">
+            <Filters placeholder={placeholder} requestSearch={requestSearch} handleShow={handleShow} titl={titl}/>
+                <div className="content_box">
+                    <div className="data-table">
                         <Table striped bordered hover >
                             <thead>
                                 <tr>
@@ -166,20 +135,20 @@ const SubScriber = () => {
                                         { title ? sortt() : sortt1() }
                                     }} >Email {title ? <BsArrowDown /> : <BsArrowUp />}</th>
                                     <th>Created Date</th>
-                                    <th className="action_colwidth" >Status</th>
+                                    <th >Status</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            {subscribers?.length > 0 ? <tbody>
                                 {subscribers?.slice(pagination1?.start, pagination1?.end)?.map((data, index) =>
                                     <tr>
                                         <td>
-                                            {CapitalizeFirstLetter  (data?.email)}
+                                            {CapitalizeFirstLetter(data?.email)}
                                         </td>
                                         <td>
                                             {data.createdOn ? moment(data?.createdOn).format("DD-MM-yyyy ") : ""}
                                         </td>
 
-                                        <td >
+                                        <td colSpan={1}>
                                             <Form.Check className="switch_padding"
                                                 type="switch"
                                                 id="custom-switch1"
@@ -203,53 +172,44 @@ const SubScriber = () => {
                                     <td>{data?.email}</td>
                                     <td>{data?.createdOn}</td>
                                 </tr>))*/}
-                            </tbody>
+                            </tbody> : "No Record Found"}
                         </Table>
                     </div>
                 </div>
+
                 <Modal show={show} onHide={handleClose} size="md">
                     <Modal.Header closeButton>
                         <Modal.Title>Send Newsletter</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                       
-                            <div className="cardBoard2">
-                                <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                    {() => (
-                                        <form onSubmit={(e) => {
-                                            e.preventDefault();
-                                        }}
-                                        >
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input type="text" label="Title" className="form-control" name="title" placeholder="" />
-                                            </Form.Group>
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Input as={"textarea"} className="form-control" placeholder={""} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
-                                            </Form.Group>
-                                            <br />
+                        <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
+                            {() => (
+                                <form onSubmit={(e) => {
+                                    e.preventDefault();
+                                }}
+                                >
+                                    <Input type="text" label="Title" className="form-control" name="title" placeholder="" />
+                                    <Input as={"textarea"} className="form-control" placeholder={""} name="content_story" id="exampleFormControlTextarea1" rows="3" label={"Enter the Content"} />
+                                </form>
+                            )}
+                        </Formik>
 
-                                        </form>
-                                    )}
-                                </Formik>
-                            </div>
-                    
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button variant="secondary" className="btn btn-sm" onClick={handleClose}>Close</Button>
-                       
-                            <Button className="btn btn-sm">Send</Button>
-                       
+                        <Button variant="secondary" className=" btn-sm fs_13" onClick={handleClose}>Close</Button>
+                        <Button className="btn-sm fs_13">Send</Button>
+
                     </Modal.Footer>
                 </Modal>
-                <div>
-                    <CustomPagination
-                        // showPerPage={showPerPage}
-                        start={pagination1}
-                        setStart={setpagination}
-                        total={subscribers?.length}
-                    />
-                </div>
-            </div>
+                {tableData.length > 0 ?
+                    <div>
+                        <CustomPagination
+                            // showPerPage={showPerPage}
+                            start={pagination1}
+                            setStart={setpagination}
+                            total={subscribers?.length}
+                        />
+                    </div> : ""}
         </div>
     );
 }
