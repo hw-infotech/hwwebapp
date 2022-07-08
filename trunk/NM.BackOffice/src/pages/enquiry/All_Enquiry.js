@@ -14,7 +14,7 @@ import { FcCheckmark, FcDeleteColumn } from "react-icons/fc";
 import { confirm } from 'react-bootstrap-confirmation';
 import Paginationn from "../../components/pagination";
 import CustomPagination from "../../shared/pagination";
-import { FaFilter } from "react-icons/fa";
+import { MdOutlinePendingActions } from "react-icons/md";
 import { BsFilter } from "react-icons/bs";
 import capitalizeFirstLetter from "../../components/first_letter_capital";
 
@@ -245,7 +245,6 @@ const All_Enquiry = () => {
                                                     <li class="dropdownList">
                                                         {data.status == "pending" ?
                                                             <div class="actionBtns context-menu1" >
-
                                                                 <span class="editAction" data-bs-toggle="modal"
                                                                     data-bs-target="#editbtn"><i
                                                                         class="bi bi-pencil-square"></i></span>
@@ -257,8 +256,6 @@ const All_Enquiry = () => {
                                                                             text: "Are you sure to update status as Resolved ?",
                                                                         }))
                                                                         setShowalert(true)
-
-
                                                                         setDeleteObj({
                                                                             index,
                                                                             rowStatus: true
@@ -272,8 +269,7 @@ const All_Enquiry = () => {
                                                         {data.status == "resolved" ?
                                                             <div class="actionBtns  context-menu1">
                                                                 <span class="deleteAction" data-bs-toggle="modal"
-                                                                    data-bs-target="#deletebtn"> <i
-                                                                        class="bi bi-trash3-fill"></i></span>
+                                                                    data-bs-target="#deletebtn"> <MdOutlinePendingActions/></span>
                                                                 <button type="button" key={index} className="btn btn-outlined-secondary fs_13" onClick={() => {
                                                                     setwait(false)
                                                                     setShowalert(true)

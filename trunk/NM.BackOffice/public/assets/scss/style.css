@@ -3,6 +3,12 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
+@media only screen and (min-width: 468px) and (max-width: 1068px) {
+  .card1 {
+    margin-top: 40px !important;
+  }
+}
+
 .table_no_records {
   text-align: center !important;
   position: absolute !important;
@@ -483,8 +489,8 @@ body {
 
 .sidebar_list .dropdownarrowicon {
   margin-left: auto;
-  -webkit-transform: rotate(180deg) !important;
-          transform: rotate(180deg) !important;
+  -webkit-transform: rotate(0deg) !important;
+          transform: rotate(0deg) !important;
   -webkit-transition: all ease 0.5s !important;
   transition: all ease 0.5s !important;
 }
@@ -1433,6 +1439,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 

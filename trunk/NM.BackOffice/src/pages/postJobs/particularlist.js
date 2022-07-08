@@ -156,7 +156,7 @@ const Particularjob = () => {
                                         <div className="d-flex buton_positin gap-2" >
 
                                             <Button variant="primary" className="btn-sm " onClick={() => {
-                                                nevigate('/updatejob')
+                                                nevigate('/edit-job')
 
                                                 localStorage.setItem("key", "Edit Job")
                                             }}

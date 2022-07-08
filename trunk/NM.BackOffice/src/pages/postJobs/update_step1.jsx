@@ -14,6 +14,7 @@ const Update_Step1 = ({ setGoSteps, state, setState, handleFieldchange }) => {
                 <Form.Label>Title</Form.Label>
                 <Form.Select aria-label="Default select example" name='jobtitle' value={state?.jobtitle}
                     onChange={(e) => handleFieldchange(e)} id="jobtitle">
+                    <option value="">Select any value</option>
                     <option value="UI/UX">UI/UX</option>
                     <option value="Project Manager">Project Manager</option>
                     <option value="Web development">Web Development</option>

@@ -188,7 +188,7 @@ const Edit_postJob = (value1) => {
                 <div className="panle_header">
                     <div className="left-panle-title"><h4>Job</h4></div>
                     <div className="right_panle_container">
-                    <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={24} color="#ff6b01" /></Button>
+                        <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={24} color="#ff6b01" /></Button>
                         <Button variant="" className="btn-sm remove_button_padding" onClick={() => {
                             navigate("/post-new-job")
 
@@ -293,19 +293,19 @@ const Edit_postJob = (value1) => {
                                                             }}>View</button>
                                                         </div>
                                                     </li>
-                                                    {data.active=="active" ?   <div></div>:
-                                                    <li className="dropdownList">
-                                                        <div className="actionBtns  context-menu1">
-                                                            <span className="viewIcon" data-bs-toggle="modal"
-                                                                data-bs-target="#viewbtn"> <i
-                                                                    className="bi bi-eye"></i></span>
-                                                            <button type="button" className="btn btn-outlined-secondary fs_13" onClick={() => {
-                                                                localStorage.setItem("key", "Edit Job")
-                                                                dispatch(Edit_Data(data, index))
-                                                                navigate('/edit-job')
-                                                            }} >Edit</button>
-                                                        </div>
-                                                    </li>}
+                                                    {data.active == "active" ? <div></div> :
+                                                        <li className="dropdownList">
+                                                            <div className="actionBtns  context-menu1">
+                                                                <span className="viewIcon" data-bs-toggle="modal"
+                                                                    data-bs-target="#viewbtn"> <i
+                                                                        className="bi bi-eye"></i></span>
+                                                                <button type="button" className="btn btn-outlined-secondary fs_13" onClick={() => {
+                                                                    localStorage.setItem("key", "Edit Job")
+                                                                    dispatch(Edit_Data(data, index))
+                                                                    navigate('/edit-job')
+                                                                }} >Edit</button>
+                                                            </div>
+                                                        </li>}
                                                     <li className="dropdownList">
                                                         <div className="actionBtns  context-menu1">
                                                             <span className="deleteAction" data-bs-toggle="modal"
@@ -325,11 +325,11 @@ const Edit_postJob = (value1) => {
                                             <td>{data?.functions && subString(data?.functions, 20)}</td>
                                             <td>
                                                 {data?.requirment?.map((data1) => <ul>
-                                                    <li>{data1?.value&& subString(data1.value, 30)}</li>
+                                                    <li>{data1?.value && subString(data1.value, 30)}</li>
                                                 </ul>)}
                                             </td>
                                             <td> {data.benefits[0].value && subString(data.benefits[0].value, 20)}</td>
-                                            <td> { data.responsibility[0].value && subString(data.responsibility[0].value, 20)   /*data?.responsibility?.map((data1) => <ul>
+                                            <td> {data.responsibility[0].value && subString(data.responsibility[0].value, 20)   /*data?.responsibility?.map((data1) => <ul>
                                                 <li>{data1?.value&& subString(data1.value, 30)}</li>
                                                 </ul>)*/} </td>
                                             <td>{data?.industry}</td>

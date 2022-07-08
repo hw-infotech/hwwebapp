@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { NavLink } from "react-bootstrap";
 const Sidebar = ({ sidebarShow }) => {
     const classname = 'activeMenu'
+    let classes = 'reverse'
     const navigtion = useNavigate()
     return (
         <div className="sidebar" title="sidebar"
@@ -13,14 +14,14 @@ const Sidebar = ({ sidebarShow }) => {
             } : {
                 transform: "translate3d(-100%, 0px, 0px)", "transition": "all 0.3s ease-in-out", "minWidth": "0px", "maxWidth": "0px"
             }}>
-          
-                <div className="sidebar_header" onClick={() => {
-                    navigtion("/")
-                }}>
-                    <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" />
-                    <div> <span className="fs_13 header_text"><b>Back</b>Office</span></div>
-                </div>
-          
+
+            <div className="sidebar_header" onClick={() => {
+                navigtion("/")
+            }}>
+                <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" />
+                <div> <span className="fs_13 header_text"><b>Back</b>Office</span></div>
+            </div>
+
             <div className="align-items-sm-start px-3 pt-2">
                 <ul className="nav nav-pills  align-items-center" id="menu">
                     <li className={`nav-item sidebar_hover`}>
@@ -80,10 +81,12 @@ const Sidebar = ({ sidebarShow }) => {
                     <li className="sidebar_list">
                         <a href="#submenu2" data-bs-toggle="collapse"
                             className="nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text">
-                            <i className="fs-4 bi-bootstrap "></i>
+                            <i className="fs-4 bi-bootstrap  "></i>
                             <span className="ms-1 d-none d-sm-inline">Sliders/Carousels</span>
-                            <span className="dropdownarrowicon ">
-                                <i className="fs-6 bi-caret-down "></i>
+                            <span className={'dropdownarrowicon '} id="dropdownarrowicon">
+                                <i className={'fs-6 bi-caret-down  dropdownarrowicon '} onClick={() => {
+                                   
+                                }} ></i>
                             </span>
                         </a>
                         <ul className="collapse nav flex-column " id="submenu2" data-bs-parent="#menu">
@@ -94,11 +97,8 @@ const Sidebar = ({ sidebarShow }) => {
                                     navigtion('/success-stories')
                                 }}>
                                     <span className="navbar-submenu">Success Stories</span>
-
                                 </a>
-
                             </li>
-
                         </ul>
                     </li>
                     <li className="sidebar_list">

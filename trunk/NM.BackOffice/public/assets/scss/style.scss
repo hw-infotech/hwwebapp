@@ -3,6 +3,12 @@
 body {
     font-family: "Roboto", sans-serif !important;
 }
+
+@media only screen and (min-width: 468px) and (max-width: 992px)  {
+    .card1 {
+        margin-top: 40px !important;
+    }
+}
 .table_no_records {
     text-align: center !important;
     position: absolute !important;
@@ -461,9 +467,15 @@ body {
     }
     .dropdownarrowicon {
         margin-left: auto;
-        transform: rotate(180deg) !important;
+        transform: rotate(0deg) !important;
         transition: all ease 0.5s !important;
     }
+
+    // .reverse {
+    //     margin-left: auto;
+    //     transform: rotate(90deg) !important;
+    //     transition: all ease 0.5s !important;
+    // }
 }
 
 //////=================================success stories page=======================/////
@@ -1308,7 +1320,7 @@ body {
 
         .formData {
             display: flex;
-
+            align-items: center;
             width: 100%;
 
             .innerform {
