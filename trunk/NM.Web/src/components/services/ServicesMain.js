@@ -45,7 +45,7 @@ const ServicesMain = (props) => {
                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                   <div className="bannerContentText">
                     <h1>
-                      Nestromind <br />
+                      Nestormind <br />
                       Where Search Ends and <strong>Partnership</strong> <br />
                       Begins
                     </h1>
