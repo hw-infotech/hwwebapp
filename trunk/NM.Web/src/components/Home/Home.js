@@ -79,7 +79,7 @@ const HomeContent = (props) => {
                 a team that is comprised of skilled professionals, we deliver
                 top-rated service to propel your business another level.
               </h2>
-             {/* <div className="d-lg-flex mt-5">
+              {/* <div className="d-lg-flex mt-5">
                 <PopupButton
                   className="w-o-btn scrollto"
                   url="https://calendly.com/nestormindpvtltd"
@@ -495,21 +495,18 @@ const HomeContent = (props) => {
             </div>
 
             <div className="awa_rds awa_rds_one">
-              <a
-                href="https://clutch.co/profile/nestormind#summary"
-                target="_blank"
-                aria-label="Awards"
-                rel="noopener noreferrer"
-              >
-                <div className="img">
-                  <img src="../../assets/img/companyregis.svg" />
-                </div>
-              </a>
+              <div
+                className="clutch-widget"
+                data-nofollow="true"
+                data-url="https://widget.clutch.co"
+                data-widget-type="2"
+                data-darkbg="false"
+                data-height="45"
+                data-clutchcompany-id="1883044"
+              ></div>
+             
               <div className="hm_awcnt">
-                <h3>
-                  5.0
-                  <img src="../../assets/img/stars.svg" />
-                </h3>
+                
                 <p>
                   Certified app development company, acknowledged by Clutch.
                 </p>
@@ -524,7 +521,7 @@ const HomeContent = (props) => {
                 rel="noopener noreferrer"
               >
                 <div className="img">
-                  <img src="../../assets/img/goodfirms.png" />
+                  <img src="https://assets.goodfirms.co/badges/normal-badge/top-software-development-companies.svg" />
                 </div>
               </a>
               <div className="hm_awcnt">
@@ -1066,9 +1063,7 @@ const HomeContent = (props) => {
                 </li>
                 <li>
                   <div className="image">
-
-                    <img src="assets/img/people.svg" alt="people" ></img>
-
+                    <img src="assets/img/people.svg" alt="people"></img>
                   </div>
                   <div className="text">
                     <h4>User Acceptance</h4>
