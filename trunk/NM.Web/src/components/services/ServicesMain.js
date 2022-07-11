@@ -233,8 +233,7 @@ const ServicesMain = (props) => {
                     marketing strategy after thorough research on the current
                     business position, competitor, and future business goal.
                   </p>
-                  <div className="actBtn">
-                  
+                  <div className="actBtn">                  
                     <a href="/graphic-design">Explore</a>
                   </div>
                 </div>
