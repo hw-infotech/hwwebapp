@@ -64,7 +64,7 @@ const Home = () => {
                                 <h4 style={{ fontWeight: "400" }}>$5k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="text-decoration-green">+5% </span>than yesterday</div>
                     </div>
                 </Col>
                 <Col md={6} sm={12} lg={3} xl={3}>
@@ -78,7 +78,7 @@ const Home = () => {
                                 <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>
+                        <div className="card-footer1"> <span className="text-decoration-red">-3%</span> than yesterday</div>
                     </div>
                 </Col>
                 <Col md={6} sm={12} lg={3} xl={3}>
@@ -92,7 +92,7 @@ const Home = () => {
                                 <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="text-decoration-green">+9% </span>than yesterday</div>
                     </div>
                 </Col>
                 <Col md={6} sm={12} lg={3} xl={3}>
@@ -106,7 +106,7 @@ const Home = () => {
                                 <h4 style={{ fontWeight: "400" }}>$3k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="decoration">+8% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="text-decoration-green">+8% </span>than yesterday</div>
                     </div>
                 </Col>
             </Row>
@@ -277,7 +277,7 @@ const Home = () => {
 }
 export default Home
 
-{/* <div className="gapPad">
+{/* <div className="padding-30">
              <div className="row">
                 <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-lg-3">
                     <div className="card">

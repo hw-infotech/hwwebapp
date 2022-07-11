@@ -179,8 +179,8 @@ const SubScriber = () => {
             </div>
 
             <Modal show={show} onHide={handleClose} size="md">
-                <Modal.Header closeButton>
-                    <Modal.Title>Send Newsletter</Modal.Title>
+                <Modal.Header className="modal-header text-white" closeButton>
+                    <Modal.Title className="modal-titlee">Send Newsletter</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
@@ -203,14 +203,14 @@ const SubScriber = () => {
                 </Modal.Footer>
             </Modal>
             {tableData.length > 0 ?
-                <div>
-                    <CustomPagination
-                        // showPerPage={showPerPage}
-                        start={pagination1}
-                        setStart={setpagination}
-                        total={subscribers?.length}
-                    />
-                </div> : ""}
+
+                <CustomPagination
+                    // showPerPage={showPerPage}
+                    start={pagination1}
+                    setStart={setpagination}
+                    total={subscribers?.length}
+                />
+                : ""}
         </div>
     );
 }

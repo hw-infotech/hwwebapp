@@ -212,7 +212,7 @@ const List_Of_Blogs = () => {
                 </div>
                 <div className="row padd_bottm">
                 <div className="col-sm-6 col-lg-6 col-md-6">
-                    <div className="gapPad">
+                    <div className="padding-30">
                         <select class="form-select w-25 " name={state.row_value} onChange={Chnage}>
                             <option disabled selected>Rows</option>
                             <option value="10">10</option>
@@ -222,7 +222,7 @@ const List_Of_Blogs = () => {
                     </div>
                 </div>
                 <div className="col-sm-6 col-lg-6 col-md-6 ">
-                    <div className="gapPad pagination_justify_end ">
+                    <div className="padding-30 pagination_justify_end ">
                         {/*<Pagination
                             className="paginationDiv"
                             count={5}

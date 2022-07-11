@@ -19,6 +19,7 @@ import { FiArrowLeftCircle } from "react-icons/fi";
 import { tab } from "@testing-library/user-event/dist/tab";
 import { useDispatch, useSelector } from "react-redux";
 import { Edit_Data } from "../../Services/redux/action/action";
+import TooltipComp from "../../shared/Tooltipomp";
 
 const Particularjob = () => {
     const data = useParams()
@@ -111,11 +112,10 @@ const Particularjob = () => {
                     <div className="panle_header">
                         <div className="left-panle-title"><h4>Detail-Applied</h4></div>
                         <div className="right_panle_container">
-                            <Button variant="" className="btn-sm remove_button_padding" onClick={() => {
+                            <TooltipComp component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => {
                                 nevigate(-1)
-                            }}><FiArrowLeftCircle size={21} color="#ff6b01" /></Button>
-                            <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>
-
+                            }}><FiArrowLeftCircle size={21} color="#ff6b01" /></Button>} tooltip="Back" />
+                            <TooltipComp component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>} tooltip="Filter" />
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ const Particularjob = () => {
                     }}>
                         <Modal show={showalert} onHide={handleClose} >
                             <Modal.Header closeButton>
-                                <Modal.Title>Alert</Modal.Title>
+                                <Modal.Title className="modal-titlee"> Alert</Modal.Title>
                             </Modal.Header>
 
                             <Modal.Body>
@@ -259,7 +259,6 @@ const Particularjob = () => {
                     </Tab>
                     <Tab eventKey="Aplied" title="Applied" >
                         <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-
                             <Row className="main-applied-contaier">
                                 <Col md={6} sm={12} lg={2} xl={2}>
                                     <div className="card2">
@@ -269,7 +268,7 @@ const Particularjob = () => {
                                                 <h4 style={{ fontWeight: "400" }}>56</h4>
                                             </div>
                                         </div>
-                                        {/*<div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>*/}
+                                        {/*<div className="card-footer1"> <span className="text-decoration-green">+5% </span>than yesterday</div>*/}
                                     </div>
                                 </Col>
                                 <Col md={6} sm={12} lg={2} xl={2}>
@@ -280,7 +279,7 @@ const Particularjob = () => {
                                                 <h4 style={{ fontWeight: "400" }}>53</h4>
                                             </div>
                                         </div>
-                                        {/*<div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>*/}
+                                        {/*<div className="card-footer1"> <span className="text-decoration-red">-3%</span> than yesterday</div>*/}
                                     </div>
                                 </Col>
                                 <Col md={6} sm={12} lg={2} xl={2}>
@@ -291,7 +290,7 @@ const Particularjob = () => {
                                                 <h4 style={{ fontWeight: "400" }}>10</h4>
                                             </div>
                                         </div>
-                                        {/*<div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>*/}
+                                        {/*<div className="card-footer1"> <span className="text-decoration-green">+9% </span>than yesterday</div>*/}
                                     </div>
                                 </Col>
                                 <Col md={6} sm={12} lg={6} xl={6}>
@@ -411,18 +410,18 @@ const Particularjob = () => {
                             </Table>
                         </div>
                         {tableData.length > 0 ?
-                            <div>
+                           
                                 <CustomPagination
                                     total={tableData.length}
                                     start={pagination1}
                                     setStart={setpagination}
                                 />
-                            </div> : ""}
+                            : ""}
                     </Tab>
                 </Tabs>
                 <Modal show={show} onHide={handleClose} size="sm">
                     <Modal.Header closeButton>
-                        <Modal.Title>Project</Modal.Title>
+                        <Modal.Title className="modal-titlee">Project</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         {<div className="">

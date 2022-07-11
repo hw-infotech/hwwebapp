@@ -39,7 +39,7 @@ const Paginationn = () => {
     return (<div>
         <Row>
                 {/*<Col md={6}>
-                <div className="gapPad">
+                <div className="padding-30">
                     <Form.Select aria-label="row" className="w-25" >
                         <option>Row</option>
                         <option value="1">10</option>
@@ -49,7 +49,7 @@ const Paginationn = () => {
                     </div>
     </Col>*/}
                 <Col>
-                    <div className=" gapPad pagination_justify_end">
+                    <div className=" padding-30 pagination_justify_end">
                     {/* <Pagination
                     className="paginationDiv"
                     count={10}

@@ -17,36 +17,35 @@ const Edit_Job_Preview = (values, state) => {
                                 <img src="assets/images/nestor.jfif" height={80} width={80} />
                             </div>
                             <div className="box-inner-content">
-                            <div className="titlejob">
-                                <span>{values.state?.jobtitle || state.jobtitle} - Mohali</span>
-                            </div>
-                            <div className="job_location">
-                            <span className="job_heading" >Description: </span>
-                                <p className="job_description">{values?.state?.description}</p>
-                            </div>
+                                <div className="titlejob">
+                                    <span>{values.state?.jobtitle || state.jobtitle} - Mohali</span>
+                                </div>
+                                <div className="job_location">
+                                    <span className="job_heading" >Description: </span>
+                                    <p className="job_description">{values?.state?.description}</p>
+                                </div>
                             </div>
                         </div>
                         <div className="content-box">
                             <div className="job_heading">
                                 <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
                             </div>
-                          
-                                <ul className="job__list">
-                                    {values?.state?.responsibility?.map((data, index) =>
-                                        <li className=""> {data.value}</li>
+                            <ul className="job__list">
+                                {values?.state?.responsibility?.map((data, index) =>
+                                    <li className=""> {data.value}</li>
 
-                                    )}
-                                </ul>
-                           
+                                )}
+                            </ul>
+
                             <div className="job_heading">
                                 <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
 
                             </div>
-                                <ul className="job__list">
-                                    {values.state?.requirment?.map((data, index) =>
-                                        <li className=""> {data.value}</li>
-                                    )}
-                                </ul>
+                            <ul className="job__list">
+                                {values.state?.requirment?.map((data, index) =>
+                                    <li className=""> {data.value}</li>
+                                )}
+                            </ul>
                             <div className="job_heading">
                                 <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
                             </div>
@@ -60,7 +59,7 @@ const Edit_Job_Preview = (values, state) => {
                             <div className="main_information_list">
                                 <ul className="job_description_level_list">
                                     <li className="jobes_inner_li">
-                                    <h3 className="job_description_level">Seniority level</h3>
+                                        <h3 className="job_description_level">Seniority level</h3>
                                         <span className="level_contentl">{values.state?.level}</span>
                                     </li>
                                     <li className="jobes_inner_li">

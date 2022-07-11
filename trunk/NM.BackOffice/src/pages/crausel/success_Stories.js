@@ -139,13 +139,13 @@ const Success_Stories = () => {
     let placeholder = 'Search by title'
     return (
         <>
-            <div className="Main-story-body">
+            <div className="Main-story-box">
                 <title>Success_Stories</title>
                 {<BasicBreadcrumbs route={route} />}
                 <Filters placeholder={placeholder} requestSearch={requestSearch} showalert={showalert} handleShow={handleShow} setShowalert={setShowalert} titl={titl} />
                 <Modal show={showalert} onHide={handleClose} >
                     <Modal.Header closeButton>
-                        <Modal.Title>Alert</Modal.Title>
+                        <Modal.Title className="modal-titlee">Alert</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <p>{rowtext?.text}</p>
@@ -256,19 +256,19 @@ const Success_Stories = () => {
                         </Table>
                     </div>
                     {tableData.length > 0 ?
-                        <div className="paginate">
-                            <CustomPagination
-                                start={pagination1}
-                                setStart={setpagination}
-                                total={tableData.length}
 
-                            />
-                        </div> : ""}
+                        <CustomPagination
+                            start={pagination1}
+                            setStart={setpagination}
+                            total={tableData.length}
+
+                        />
+                        : ""}
 
                 </div>
                 <Modal show={show} onHide={handleClose} size="md">
-                    <Modal.Header closeButton style={{ outline: "none", boxShadow: "none" }}>
-                        <Modal.Title>{edit ? "Edit Project" : "Add Project"}</Modal.Title>
+                    <Modal.Header closeButton className="modal-header text-white ">
+                        <Modal.Title className="modal-titlee  ">{edit ? "Edit Project" : "Add Project"}</Modal.Title>
                     </Modal.Header>
                     <Formik
                         initialValues={state}
@@ -314,7 +314,7 @@ const Success_Stories = () => {
 
                                         </div>}
                                 </Modal.Body>
-                                <Modal.Footer>
+                                <Modal.Footer  >
                                     <Button variant="secondary" className="btn-sm fs_13" onClick={handleClose}>Close</Button>
 
                                     {edit ? <Button className="btn-sm fs_13" type="submit" onClick={() => {

@@ -20,6 +20,7 @@ import { Edit_Data, getAllEnquries, Send_data } from "../../Services/redux/actio
 import { useDispatch, useSelector } from "react-redux";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import TooltipComp from "../../shared/Tooltipomp";
 
 
 const Edit_postJob = (value1) => {
@@ -182,17 +183,18 @@ const Edit_postJob = (value1) => {
     })
 
     return (
-        <div className="joblist-main-body">
+        <div className="joblist-main-box">
             {<BasicBreadcrumbs route={route} />}
             <div className="panle_body">
                 <div className="panle_header">
                     <div className="left-panle-title"><h4>Job</h4></div>
                     <div className="right_panle_container">
-                        <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={24} color="#ff6b01" /></Button>
-                        <Button variant="" className="btn-sm remove_button_padding" onClick={() => {
+                        <TooltipComp component={ <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={24} color="#ff6b01" /></Button>} tooltip="filter"/>
+                        <TooltipComp component={   <Button variant="" className="btn-sm remove_button_padding" onClick={() => {
                             navigate("/post-new-job")
 
-                        }}> <AiOutlinePlusCircle size={24} color="#ff6b01" /></Button>
+                        }}> <AiOutlinePlusCircle size={24} color="#ff6b01" /></Button>} tooltip="Add"/>
+                      
                     </div>
                 </div>
                 <div className="gapbetween pt-1">
@@ -227,12 +229,12 @@ const Edit_postJob = (value1) => {
                     </Collapse>
                 </div>
             </div>
-            <div className="boxshadow">
+            <div className="fs-13">
                 {/*<h4>List Number of Job Posts</h4>*/}
                 <Modal show={showalert} onHide={handleClose} backdrop="static"
                     keyboard={false}>
-                    <Modal.Header >
-                        <Modal.Title>Alert</Modal.Title>
+                    <Modal.Header  className="modal-titlee">
+                        <Modal.Title className="modal-titlee">Alert</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <p>{rowtext?.text}</p>
@@ -324,12 +326,10 @@ const Edit_postJob = (value1) => {
                                             <td>{data?.description && subString(data.description, 20)}</td>
                                             <td>{data?.functions && subString(data?.functions, 20)}</td>
                                             <td>
-                                                {data?.requirment?.map((data1) => <ul>
-                                                    <li>{data1?.value && subString(data1.value, 30)}</li>
-                                                </ul>)}
+                                                {data?.requirment[0].value}
                                             </td>
-                                            <td> {data.benefits[0].value && subString(data.benefits[0].value, 20)}</td>
-                                            <td> {data.responsibility[0].value && subString(data.responsibility[0].value, 20)   /*data?.responsibility?.map((data1) => <ul>
+                                            <td> {data?.benefits[0].value && subString(data.benefits[0].value, 20)}</td>
+                                            <td> {data?.responsibility[0].value && subString(data.responsibility[0].value, 20)   /*data?.responsibility?.map((data1) => <ul>
                                                 <li>{data1?.value&& subString(data1.value, 30)}</li>
                                                 </ul>)*/} </td>
                                             <td>{data?.industry}</td>
@@ -462,14 +462,14 @@ const Edit_postJob = (value1) => {
                                                         </Modal>*/}
 
             {tableData?.length > 0 ?
-                <div>
+                
                     <CustomPagination
                         showPerPage={showPerPage}
                         onPageChange={onPageChange}
                         setStart={setpagination}
                         total={tableData.length}
                     />
-                </div> : ""}
+                 : ""}
 
         </div>
     );

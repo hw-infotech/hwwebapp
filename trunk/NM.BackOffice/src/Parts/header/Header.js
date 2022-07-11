@@ -10,11 +10,9 @@ import { GoThreeBars } from "react-icons/go";
 const Header = ({ title, sidebarShow, setSidebarShow }) => {
     const [state, setState] = useState("Ganesh")
     const history = useNavigate()
-
     const getTitle = () => (<span>Welcome,<strong className="user_content" style={{ color: "black" }}> {state}</strong></span>)
-
     return (
-        <div className="topHeader">
+        <div className="main-header-box">
             <Navbar className="navbarBox" style={{ height: "70px" }}>
                 <Navbar.Brand style={{ display: "flex", alignItems: "center" }} ><Button variant=""
                     className="move-sidebar" onClick={() => {
@@ -22,8 +20,8 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                     }}><GoThreeBars color={sidebarShow ? "#707070" : "black"} size={30} /> </Button></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" style={{ justifyContent: "end" }} >
-                    <Nav className="navbar-padd a " >
-                        <NavDropdown title={getTitle()} id="basic-nav-dropdown" className="font-size11" >
+                    <Nav>
+                        <NavDropdown title={getTitle()} id="basic-nav-dropdown" className="fs-19" >
                             <NavDropdown.Item className="dropdown-item12" onClick={() => {
                                 history('/profile')
                             }}><span><AiOutlineUser size={16} style={{ marginRight: 5 }} /> </span> My Profile</NavDropdown.Item>
