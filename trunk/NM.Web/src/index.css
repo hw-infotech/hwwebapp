@@ -1,4 +1,4 @@
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   width: 5px;
 }
 
@@ -59,10 +59,10 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   background: #ef6c00;
   justify-content: center;
-  /* padding: 10px 0px 5px 25px; */
+   padding: 10px 0px 5px 25px;
   position: relative;
   border-start-start-radius: 10px;
-  /* max-height: 59px; */
+ max-height: 59px; 
   border-start-end-radius: 10px;
   align-items: center;
   height: 60px;
@@ -131,7 +131,7 @@ body::-webkit-scrollbar-thumb {
 .evhBdP {
   -webkit-animation: gZmgDU 0.3s ease forwards;
   animation: gZmgDU 0.3s ease forwards;
-  /* background: #ffffff; */
+ background: #ffffff;
   border-radius: 0 18px 18px 18px;
   box-shadow: none !important;
   color: #fff;
@@ -157,4 +157,4 @@ body::-webkit-scrollbar-thumb {
   padding-top: 12px !important;
   background: white !important;
 }
-  
+   */

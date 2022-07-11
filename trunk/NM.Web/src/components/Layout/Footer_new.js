@@ -1,17 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./footer_new.css";
 
 const Footer_new = () => {
+  let years  = new Date().getFullYear();
   return (
     <section className="footerBox__Panel">
-
-      <img src="assets/img/nestormind.png" width="250px" />
+      <img src="assets/img/nestormind.png" width="250px" alt="" />
       <div className="container">
         <div className="footerContent">
           <div className="row">
             <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-
               <div className="companyLinsk">
                 <h4>About Us</h4>
                 <div className="content">
@@ -21,10 +20,11 @@ const Footer_new = () => {
                     to businesses across the globe.
                   </p>
                 </div>
-                <div className="clb-social" >
+                <div className="clb-social">
                   <ul className="clb-social-holder font-titles icons mb-0">
                     <li>
                       <a
+                        rel=""
                         target="_blank"
                         href="https://www.facebook.com/nestormindpvtltd"
                         className="facebook"
@@ -190,7 +190,7 @@ const Footer_new = () => {
                           <Link to="/blogs">Blog</Link>
                         </li>
                         <li>
-                          <Link to="/gallery">Gallery</Link>
+                          {/* <Link to="/gallery">Gallery</Link> */}
                         </li>
                         <li>
                           {/* <Link to="/under-mantainence">Our Products</Link> */}
@@ -198,14 +198,15 @@ const Footer_new = () => {
                       </ul>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="bottomFooter">
-          <div className="leftSec">&copy; 2021 Nestormind Pvt Ltd. All Rights Reserved</div>
+          <div className="leftSec">
+            &copy; {years} Nestormind Pvt Ltd. All Rights Reserved
+          </div>
         </div>
       </div>
     </section>

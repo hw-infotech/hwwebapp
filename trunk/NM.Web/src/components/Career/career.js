@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from '../Layout/Navbar';
-import Footer from '../Layout/Footer';
-import './career.css';
-import Footer_new from '../Layout/Footer_new';
-import { useEffect } from 'react';
-import Dashboard from '../../layout/dashboard';
-import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
+import "./career.css";
+import { useEffect } from "react";
+import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 
-const Career = (props) => {
-  const { newsletter, setNewsLetter } = props;
-
-  useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [])
+const Career = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   // this changes the scrolling behavior to "smooth"
 
   return (
     <div>
       <div className="careerPanle">
-        <img className="careerImg" src="assets/img/career-post.svg" />
+        <img className="careerImg" src="assets/img/career-post.svg" alt="" />
         <div className="container">
           <div className="careerBanner_Content">
             <div className="row">
@@ -33,7 +29,7 @@ const Career = (props) => {
                   </p>
 
                   <div className="appi-cta">
-                    <a href="#openPostions" >
+                    <a href="#openPostions">
                       <span className="text">
                         View current openings
                         <span className="arrow">
@@ -79,10 +75,10 @@ const Career = (props) => {
             <h2 className="heading2">Why Nestormind?</h2>
             <h3 className="heading5">
               Nestormind emphasizes on delivering high quality graphic designs
-              that can rightly elevate the stature of business across the
-              globe. Our designs are meant to translate core value, business
-              culture and vision of the brand. We add feather on the
-              imagination and let the business to get their new avatar.
+              that can rightly elevate the stature of business across the globe.
+              Our designs are meant to translate core value, business culture
+              and vision of the brand. We add feather on the imagination and let
+              the business to get their new avatar.
             </h3>
             <p className="para">
               We endorse raw talent and passionate techies. Our creative team
@@ -100,8 +96,7 @@ const Career = (props) => {
           <div className="small-container" id="open-positions">
             <h2 className="heading2">Open positions</h2>
             <ul className="position_list">
-              
-                <Link to="/jobdescription" target="_blank">
+              <Link to="/jobdescription" target="_blank">
                 <li>
                   <span className="heading5">UI/UX Designer</span>
                   <span className="location">
@@ -126,12 +121,11 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
-                  </li>
-                </Link>
-             
-              
+                </li>
+              </Link>
+
               <Link to="/jobdescription" target="_blank">
-              <li>
+                <li>
                   <span className="heading5">Product Manager</span>
                   <span className="location">
                     Mohali, Punjab
@@ -155,12 +149,11 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
-                  </li>
-                </Link>
-              
-              
+                </li>
+              </Link>
+
               <Link to="/jobdescription" target="_blank">
-              <li>
+                <li>
                   <span className="heading5">Marketing Manager</span>
                   <span className="location">
                     Mohali, Punjab
@@ -184,12 +177,11 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
-                  </li>
-                </Link>
-             
-              
+                </li>
+              </Link>
+
               <Link to="/jobdescription" target="_blank">
-              <li>
+                <li>
                   <span className="heading5">Project Co-ordinator</span>
                   <span className="location">
                     Mohali, Punjab
@@ -213,12 +205,11 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
-                  </li>
-                </Link>
-             
-            
+                </li>
+              </Link>
+
               <Link to="/jobdescription" target="_blank">
-              <li>
+                <li>
                   <span className="heading5">Senior iOS Developer</span>
                   <span className="location">
                     Mohali, Punjab
@@ -242,12 +233,11 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
-               
-              </li>
+                </li>
               </Link>
-             
+
               <Link to="/jobdescription" target="_blank">
-              <li>
+                <li>
                   <span className="heading5">Sales Manager</span>
                   <span className="location">
                     Mohali, Punjab
@@ -271,9 +261,8 @@ const Career = (props) => {
                       </svg>
                     </figure>
                   </span>
-                  </li>
-                </Link>
-             
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
@@ -320,7 +309,7 @@ const Career = (props) => {
       </div>
     </div>
   );
-}
+};
 export default withNewsletterAddress(Career);
 
 // class Career extends Component {
@@ -479,7 +468,6 @@ export default withNewsletterAddress(Career);
 //                     </div>
 //                 </div>
 
-
 //                 <div className="min-container">
 //                     <div className="container">
 //                         <div className="newsletter_wrapper">
@@ -512,7 +500,6 @@ export default withNewsletterAddress(Career);
 //                         </div>
 //                     </div>
 //                 </div>
-
 
 //                 <Footer_new />
 //             </>

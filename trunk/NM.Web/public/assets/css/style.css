@@ -2650,6 +2650,7 @@ input:focus {
   color: #323232;
   font-weight: 500;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .navbar .navbar-nav .nav-item .dropdown-item {

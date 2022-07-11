@@ -5,6 +5,7 @@ a {
   padding-bottom: 0px;
   background: #000000;
   position: relative;
+  width: 100%;
 }
 .footerBox__Panel img {
   width: 36%;

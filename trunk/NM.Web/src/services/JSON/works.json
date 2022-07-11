@@ -1,0 +1,202 @@
+[
+    {
+        "id": "0",
+        "category": [
+            "Visual Design",
+            "Ui Ux",
+            "Healthcare"
+        ],
+        "projectName": "Planet Fitness",
+        "projectSub": " A whole body and mind approach to feeling great.",
+        "projectImg": [
+            "/assets/img/caseStudies/PlanetFitness1.png ",
+            "/assets/img/caseStudies/PlanetFitnessMobile.png ",
+            "/assets/img/caseStudies/PlanetFitness2.png "
+        ],
+        "projectPera": [
+            "Planet Fitness provides you the fitness solution that's more personal, intelligent and encouraging than ever before.",
+            "Achieving the fitness results you want can sometimes   feel overwhelming with so many experts giving advice  on diet, exercise, and even sleep. Joining a gym can  be equally perplexing. From navigating the exercise machines to developing a routine that achieves your personal goals can be daunting tasks."
+        ],
+        "founder": "Robbie Anderson",
+        "place": " Founder & CEO of Planet Fitness, NY, USA"
+    },
+    {
+        "id": "1",
+        "category": [
+            "Madical",
+            "Visual Design",
+            "Ui Ux",
+            "Healthcare"
+        ],
+        "projectName": "MadiboX",
+        "projectSub": " A whole body and mind approach to feeling great.",
+        "projectImg": [
+            "/assets/img/caseStudies/madibox1.png ",
+            "/assets/img/caseStudies/madiboxMobile.png ",
+            "/assets/img/caseStudies/madibox2.png "
+        ],
+        "projectPera": [
+            "Accidents happen, injuries occur and illnesses crop up, but you or your loved one won’t face them alone. We have the medical training, experience and the heart to rebuild your health, confidence and quality of life.",
+            "Changes in health can happen over time, or quickly and unexpectedly. When those changes occur, life can change, too. But with the support of our attentive, experienced nurses and therapists, you’ll have experts by your side for short-term treatment or long-term care."
+        ],
+        "founder": "Dr. Mark Anthony",
+        "place": " Founder & CEO of Madibox, NY, USA"
+    },
+    {
+        "id": "2",
+        "category": [
+            "Shopping",
+            "Products",
+            "Grocery",
+            "E-commerce"
+        ],
+        "projectName": "Buyer World",
+        "projectSub": "You can buy personal care products right from the comfort of your home by shopping online at Buyer world.",
+        "projectImg": [
+            "/assets/img/caseStudies/buyerworld1.png ",
+            "/assets/img/caseStudies/buyerworldMobile.png ",
+            "/assets/img/caseStudies/buyerworld2.png "
+        ],
+        "projectPera": [
+            "It's always difficult to pick what to wear and what to not during rainy season. This segment of Style Mynt will give you some ideas about monsoon styling. It's is much necessary that the hemlines should be high when it rains and that's why Piali selects a coral shorts and a crisp olive shirt.",
+            "You can buy personal care products right from the comfort of your home by shopping online at Buyer world."
+        ],
+        "founder": "Margaret Wood",
+        "place": " Founder & CEO of Buyer World, NY, USA"
+    },
+    {
+        "id": "3",
+        "category": [
+            "International",
+            "Logtactics",
+            "Transport",
+            "Cargo"
+        ],
+        "projectName": "Logtactics International",
+        "projectSub": "Logtactics  International has a mission to provide our customers with safe and efficient transportation services around the globe.",
+        "projectImg": [
+            "/assets/img/caseStudies/logitactics1.png ",
+            "/assets/img/caseStudies/logitacticsMobile.png ",
+            "/assets/img/caseStudies/logitactics2.png "
+        ],
+        "projectPera": [
+            "Shipping internationally can be a complex process. Here at Logtactics  International, we minimize the complexity by offering a single point of contact for your shipment to assist, update and relay relevant information to you directly throughout the shipment process.",
+            "Logtactics has provided premium customer service to ensure our needs are met to the fullest. Our customers and we have a piece of mind shipping with Cargo Solution Express knowing that the freight will be delivered on time."
+        ],
+        "founder": "Khao",
+        "place": " Founder & CEO of Logtactics, Russia"
+    },
+    {
+        "id": "4",
+        "category": [
+            "Market",
+            "Parts",
+            "Machines",
+            "Tracking"
+        ],
+        "projectName": "Braap",
+        "projectSub": "Owners of machines and assets to diagnose, repair, and maintain their mechanical stuff.",
+        "projectImg": [
+            "/assets/img/caseStudies/Braap1.png ",
+            "/assets/img/caseStudies/BraapMobile.png ",
+            "/assets/img/caseStudies/Braap3.png "
+        ],
+        "projectPera": [
+            "An intelligent solution built for service companies, technicians, enterprises, and owners of machines and assets to diagnose, repair, and maintain their mechanical stuff.",
+            "A comprehensive, simple-to-use turnkey platform for service and repair businesses that offers unique features that enhance customer and technician collaboration.",
+            "“According to several sources and our own interpretation “Braap” defines a flow, a connection between a customer and technician. We explain it as the unison of working together to maintain, diagnose, and fix mechanical problems in a comprehensive yet simple collaborative environment."
+        ],
+        "founder": "David",
+        "place": " Founder & CEO of Braap, UK"
+    },
+    {
+        "id": "5",
+        "category": [
+            "Market",
+            "Parts",
+            "Machines",
+            "Tracking"
+        ],
+        "projectName": "NestHouse",
+        "projectSub": "Your Dream Luxury Property Nestled in the Heart of Your City.",
+        "projectImg": [
+            "/assets/img/caseStudies/Nesthouse1.png ",
+            "/assets/img/caseStudies/Nesthouse2.png ",
+            "/assets/img/caseStudies/Nesthouse4.png "
+        ],
+        "projectPera": [
+            "Our properties each have their own unique design aesthetic, providing an aspirational lifestyle within a thriving community, supported by Nesthouse community management team.",
+            "One allows homeowners and tenants to fully manage their property from their phones. From raising service requests to digital access cards, it has been designed using the latest technology to make your life with Nesthouse as easy as possible."
+            
+        ],
+        "founder": "David",
+        "place": " Founder & CEO of Nesthouse, UK"
+    },
+    {
+        "id": "6",
+        "category": [
+            "Carpenter",
+            "Worker",
+            "Wrenches",
+            "Craftsman"
+        ],
+        "projectName": "Craftstime",
+        "projectSub": " The full lineup of ratchets, wrenches, sockets, and more are designed to professional specifications and backed by our Full Lifetime Warranty.",
+        "projectImg": [
+            "/assets/img/caseStudies/craftswork1.png ",
+            "/assets/img/caseStudies/craftswork2.png ",
+            "/assets/img/caseStudies/craftswork3.png "
+        ],
+        "projectPera": [
+            "We’re CRAFTSMAN®, an authentic icon. For nearly a century we’ve been the brand homeowners, home builders, auto enthusiasts, and master mechanics trust. Today’s CRAFTSMAN continues that legacy.",
+            "At CRAFTSMAN, we believe that time spent with tools should be time well spent. CRAFTSMAN users look for reasons to get their hands dirty. They take pride in every accomplishment from the simplest oil change to coaxing a few more horsepower from their favorite ride.",
+            "Before arriving in the store, CRAFTSMAN tools are tested in real-world situations to make sure they exceed your expectations. You can depend on us for products that work as hard as you do and for CRAFTSMAN to stand behind those products as we have from the beginning."
+        ],
+        "founder": "Anders Byrialsen",
+        "place": " Founder & CEO of Craftsworks, UK"
+    },
+    {
+        "id": "7",
+        "category": [
+            "Dogs",
+            "Pets",
+            "petHealth"
+        ],
+        "projectName": "Joinvet",
+        "projectSub": "Our range of innovative health products are designed to give your pet their best life.",
+        "projectImg": [
+            "/assets/img/caseStudies/joinvet.png ",
+            "/assets/img/caseStudies/joinvet1.png ",
+            "/assets/img/caseStudies/joinvet3.png "
+        ],
+        "projectPera": [
+            " Pets are always there for us – so it’s only fair that we’re always there for them, too. That’s why our team of pet-lovers, scientists, vets, and more, have dedicated over 65 years to advancing pet health. Our products are so trusted and effective, they’re in almost every vet practice in the country.",
+            "We’ve innovated many firsts in animal health and our team continues to research and develop new and better ways to help pets live their best lives. Our range of medicines, treatments, and diagnostics are designed to help you and your vet actively prevent diseases, manage skin conditions, treat infections, reduce pain, minimize anxiety, and much more. "
+            
+        ],
+        "founder": "David",
+        "place": " Founder & CEO of JoinVet, UK"
+    },
+    {
+        "id": "8",
+        "category": [
+            "Health",
+            "Team",
+            "Machines",
+            "Health Tracking System"
+        ],
+        "projectName": "Dr.Q",
+        "projectSub": "Virtual Care Chat with your health team.",
+        "projectImg": [
+            "/assets/img/caseStudies/Telemedician.png ",
+            "/assets/img/caseStudies/Telemedician1.png ",
+            "/assets/img/caseStudies/Telemedician2.png "
+        ],
+        "projectPera": [
+            " High-quality health care helps prevent diseases and improve quality of life. Healthy People 2030 focuses on improving health care quality and making sure all people get the health care services they need.",
+            "Helping health care providers communicate more effectively can help improve health and well-being. Strategies to make sure health care providers are aware of treatment guidelines and recommended services are also key to improving health."
+        ],
+        "founder": "Dr.Quee",
+        "place": " Founder & CEO of Dr.q, UK"
+    }
+]
