@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router";
 import { NavLink } from "react-bootstrap";
+import { BiRotateLeft } from "react-icons/bi";
 const Sidebar = ({ sidebarShow }) => {
     const classname = 'activeMenu'
     let classes = 'reverse'
+    const [show, setshow] = useState(false)
     const navigtion = useNavigate()
+
+    function jqry(){
+            
+    }
+    // $(makeTogglable: function(element) {
+    //     $element = $(element);
+      
+    //     this.toggle = function() {
+    //       $element.slideToggle();
+    //     };
+    //   },)
     return (
         <div className="sidebar" title="sidebar"
             style={sidebarShow ? {
@@ -21,7 +34,6 @@ const Sidebar = ({ sidebarShow }) => {
                 <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" />
                 <div> <span className="fs_13 header_text"><b>Back</b>Office</span></div>
             </div>
-
             <div className="align-items-sm-start px-3 pt-2">
                 <ul className="nav nav-pills  align-items-center" id="menu">
                     <li className={`nav-item sidebar_hover`}>
@@ -81,17 +93,16 @@ const Sidebar = ({ sidebarShow }) => {
                     <li className="sidebar_list">
                         <a href="#submenu2" data-bs-toggle="collapse"
                             className="nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text">
-                            <i className="fs-4 bi-bootstrap  "></i>
+                            <i class="fs-4 bi-sliders"></i>
                             <span className="ms-1 d-none d-sm-inline">Sliders/Carousels</span>
-                            <span className={'dropdownarrowicon '} id="dropdownarrowicon">
+                            <span className={'dropdownarrowicon '} style={show ? { transform: "rotate(180deg)" } : { transform: "rotate(0deg)" }}>
                                 <i className={'fs-6 bi-caret-down  dropdownarrowicon '} onClick={() => {
-                                   
+                                    setshow(true)
                                 }} ></i>
                             </span>
                         </a>
                         <ul className="collapse nav flex-column " id="submenu2" data-bs-parent="#menu">
                             <li className={`w-100 sidebar_list`}>
-
                                 <a className={`nav-link  text-color-white gap-icon-text sidebar_focus ${localStorage.getItem("className") == "success" && classname}`} onClick={() => {
                                     localStorage.setItem('className', "success")
                                     navigtion('/success-stories')
@@ -110,7 +121,6 @@ const Sidebar = ({ sidebarShow }) => {
                                     localStorage.setItem('className', "subscirber")
                                     navigtion('/newsletter-subscribers')
                                 }}>
-
                                     <span className="d-none d-sm-inline navbar-submenu ">Subscribe/Unsubscribe</span>
                                 </a>
                             </li>

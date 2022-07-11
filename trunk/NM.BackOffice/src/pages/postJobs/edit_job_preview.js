@@ -9,71 +9,71 @@ const Edit_Job_Preview = (values, state) => {
     let tiitle = localStorage?.getItem("key")
     return (
         <div className="edit-preview-box">
-            <div className="jobes_margin">
+            <div className="view_main_box">
                 <div className="main-pannle">
                     <div className="leftt_pannel">
                         <div className="jobes_card">
                             <div className="jobes_marginbottom">
                                 <img src="assets/images/nestor.jfif" height={80} width={80} />
                             </div>
+                            <div className="box-inner-content">
                             <div className="titlejob">
                                 <span>{values.state?.jobtitle || state.jobtitle} - Mohali</span>
                             </div>
                             <div className="job_location">
-                                <h6 >Description: </h6>
-                                <p>{values?.state?.description}</p>
+                            <span className="job_heading" >Description: </span>
+                                <p className="job_description">{values?.state?.description}</p>
+                            </div>
                             </div>
                         </div>
-                        <div className="">
-                            <div className="job_description_heading">
+                        <div className="content-box">
+                            <div className="job_heading">
                                 <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
                             </div>
-                            <div className="">
-                                <ul className="job_description_list">
+                          
+                                <ul className="job__list">
                                     {values?.state?.responsibility?.map((data, index) =>
                                         <li className=""> {data.value}</li>
 
                                     )}
                                 </ul>
-                            </div>
-                            <div className="job_description_heading">
+                           
+                            <div className="job_heading">
                                 <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
 
                             </div>
-                            <div className="">
-                                <ul className="job_description_list">
+                                <ul className="job__list">
                                     {values.state?.requirment?.map((data, index) =>
                                         <li className=""> {data.value}</li>
                                     )}
                                 </ul>
-                            </div>
-                            <div className="job_description_heading">
+                            <div className="job_heading">
                                 <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
                             </div>
                             <div className="">
-                                <ul className="job_description_list">
+                                <ul className="job__list">
                                     {values.state?.benefits?.map((data, index) =>
                                         <li className=""> {data.value}</li>
                                     )}
                                 </ul>
                             </div>
-                            <div style={{ marginTop: 80 }}>
+                            <div className="main_information_list">
                                 <ul className="job_description_level_list">
-                                    <li>
-                                        <h6 className="">Seniority level</h6>
-                                        <span className="job_description_level">{values.state?.level}</span>
+                                    <li className="jobes_inner_li">
+                                    <h3 className="job_description_level">Seniority level</h3>
+                                        <span className="level_contentl">{values.state?.level}</span>
                                     </li>
-                                    <li>
-                                        <h6>Employment type</h6>
-                                        <span className="job_description_level">{values.state?.type}</span>
+                                    <li className="jobes_inner_li">
+                                        <h3 className="job_description_level">Employment type</h3>
+                                        <span className="level_content">{values.state?.type}</span>
                                     </li>
-                                    <li>
-                                        <h6>Job function</h6>
-                                        <span className="job_description_level"> {values.state?.functions}</span>
+                                    <li className="jobes_inner_li">
+                                        <h3 className="job_description_level">Job function</h3>
+                                        <span className="level_content"> {values.state?.functions}</span>
                                     </li>
-                                    <li>
-                                        <h6 >Industries</h6>
-                                        <span className="job_description_level">{values.state?.industry}</span>
+                                    <li className="jobes_inner_li">
+                                        <h3 className="job_description_level" >Industries</h3>
+                                        <span className="level_content">{values.state?.industry}</span>
                                     </li>
                                 </ul>
                             </div>

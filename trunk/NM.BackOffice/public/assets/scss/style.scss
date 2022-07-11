@@ -4,7 +4,7 @@ body {
     font-family: "Roboto", sans-serif !important;
 }
 
-@media only screen and (min-width: 468px) and (max-width: 992px)  {
+@media only screen and (min-width: 468px) and (max-width: 992px) {
     .card1 {
         margin-top: 40px !important;
     }
@@ -50,156 +50,165 @@ body {
 }
 
 ////home page////
+.main_dashboard_content {
+    margin-top: 50px;
 
-.card-header1 {
-    position: relative;
-    background: white;
-    border: 0px;
-}
+    .main_graphcard_box {
+        margin-top: 50px;
+        .card1 {
+            box-shadow: 0px 0px 26px 5px #0000000d;
+            position: relative;
+            border-radius: 14px;
+            padding: 20px 20px 20px 20px;
 
-.userDetail1 {
-    visibility: hidden;
-    transition: 0.3s;
-    display: flex;
-    justify-content: end;
-    position: relative;
-    right: -24px;
-}
+            .card-graphheader {
+                position: relative;
+                background: white;
+                //border: 0px !important;
+                display: flex;
+                justify-content: center;
+                height: 230px;
+                width: 100%;
+                top: -50px;
+                box-shadow: 0px 0px 26px 5px #0000000d;
+                border-radius: 20px;
+                padding: 5px;
+                //align-items: center;
+                .chart-card {
+                    width: 270px;
+                    height: 170px;
+                    //box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px;
+                    //border-radius: 15px;
+                    position: absolute;
+                    border: 0px;
+                    .userDetail1 {
+                        visibility: hidden;
+                        transition: 0.3s;
+                        display: flex;
+                        justify-content: end;
+                        position: relative;
+                        right: -24px;
+                    }
+                }
+            }
+        }
+        .chart-footer {
+            display: flex;
+            flex-direction: column;
 
-.card1:hover .userDetail1 {
-    visibility: visible;
-}
-
-.textdecorarte {
-    font-size: 13px;
-    color: gray;
-}
-
-.card1 {
-    box-shadow: rgb(219, 212, 212) 0px 8px 34px 0px;
-    position: relative;
-    border-radius: 14px;
-    padding: 20px 20px 20px 20px;
-
-    .innerCard {
-        text-align: right;
+            .chattext-size {
+                color: gray;
+                font-size: 14px;
+            }
+            .heading-chartstyle {
+                font-weight: 600;
+                margin-top: 0px;
+            }
+        }
+    }
+    .card-header1 {
+        position: relative;
+        background: white;
         border: 0px;
-        color: #808080a3;
-        word-wrap: break-word;
-        font-size: 13px !important;
     }
 
-    .background_box1 {
-        background-image: linear-gradient(to right, #253c86, #1b8ccc);
+    .card1:hover .userDetail1 {
+        visibility: visible;
     }
 
-    .background_box2 {
-        background-image: linear-gradient(to right, #ef6723, #ff8100);
+    .textdecorarte {
+        font-size: 13px;
+        color: gray;
+    }
+    .card1 {
+        box-shadow: 0px 0px 26px 5px #0000000d;
+        position: relative;
+        border-radius: 14px;
+        padding: 20px 20px 20px 20px;
+
+        .innerCard {
+            text-align: right;
+            border: 0px;
+            color: #808080a3;
+            word-wrap: break-word;
+            font-size: 13px !important;
+        }
+
+        .background_box1 {
+            background-image: linear-gradient(to right, #253c86, #1b8ccc);
+        }
+
+        .background_box2 {
+            background-image: linear-gradient(to right, #ef6723, #ff8100);
+        }
+
+        .background_box3 {
+            background-image: linear-gradient(to right, #0d793d, #80c341);
+        }
+
+        .background_box4 {
+            background-image: linear-gradient(to right, #a61e22, #ee2a2a);
+        }
     }
 
-    .background_box3 {
-        background-image: linear-gradient(to right, #0d793d, #80c341);
+    .icon-card1 {
+        width: 64px;
+        height: 64px;
+        box-shadow: rgb(219, 212, 212) 0px 8px 5px 0px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -40px;
+        color: white;
     }
 
-    .background_box4 {
-        background-image: linear-gradient(to right, #a61e22, #ee2a2a);
+    .card-footer1 {
+        //padding-top : 24px;
+        border: 0px;
+        background: white;
+        color: gray;
+        font-size: 16px;
+        padding-top: 24px;
     }
-}
 
-.icon-card1 {
-    width: 64px;
-    height: 64px;
-    box-shadow: rgb(219, 212, 212) 0px 8px 5px 0px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -40px;
-    color: white;
-}
+    .decoration {
+        color: green;
+    }
 
-.card-footer1 {
-    //padding-top : 24px;
-    border: 0px;
-    background: white;
-    color: gray;
-    font-size: 16px;
-    padding-top: 24px;
-}
+    .text-decorationn1 {
+        color: red;
+    }
 
-.decoration {
-    color: green;
-}
+    .chart-card {
+        width: 270px;
+        height: 170px;
+        //box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px;
+        //border-radius: 15px;
+        position: absolute;
+        border: 0px;
+    }
 
-.text-decorationn1 {
-    color: red;
-}
+    .lower-footer {
+        display: flex;
+        margin-top: 40px;
 
-.card-graphheader {
-    position: relative;
-    background: white;
-    //border: 0px !important;
-    display: flex;
-    justify-content: center;
-    height: 230px;
-    width: 100%;
-    top: -50px;
-    box-shadow: rgb(219, 212, 212) 0px 8px 34px 0px;
-    border-radius: 20px;
-    padding: 5px;
-    //align-items: center;
-}
+        align-items: center;
+        gap: 5px;
 
-.chart-card {
-    width: 270px;
-    height: 170px;
-    //box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px;
-    //border-radius: 15px;
-    position: absolute;
-    border: 0px;
-}
+        .chattext-size {
+            color: gray;
+            font-size: 14px;
+        }
+    }
 
-.backrond {
-    box-shadow: rgba(253, 253, 253, 0.952), 0 7px 10px -5px;
-    background: white;
-    width: 350px;
-}
-
-.chart-footer {
-    display: flex;
-    flex-direction: column;
-
-    .chattext-size {
+    .chattext-size1 {
         color: gray;
         font-size: 14px;
-    }
-
-    .heading-chartstyle {
         font-weight: 600;
-        margin-top: 0px;
     }
 }
-
-.lower-footer {
-    display: flex;
-    margin-top: 40px;
-
-    align-items: center;
-    gap: 5px;
-
-    .chattext-size {
-        color: gray;
-        font-size: 14px;
-    }
-}
-
-.chattext-size1 {
-    color: gray;
-    font-size: 14px;
-    font-weight: 600;
-}
-
 ////header////
 
 .move-sidebar {
@@ -250,7 +259,7 @@ body {
     height: 70px;
 
     padding: 0px 20px !important;
-    box-shadow: 0px 0px 35px 20px #00000014;
+    box-shadow: 0px 0px 26px 5px #0000000d;
     .dropdown-toggle::after {
         vertical-align: 0.1rem !important;
     }
@@ -458,16 +467,16 @@ body {
     //     }
     // }
 
-    .collapsed[aria-expanded="false"] {
+    .collapsed {
         .dropdownarrowicon {
             margin-left: auto;
-            transform: rotate(180deg) !important;
+            transform: rotate(0deg) !important;
             transition: all ease 0.5s !important;
         }
     }
     .dropdownarrowicon {
         margin-left: auto;
-        transform: rotate(0deg) !important;
+        transform: rotate(180deg) !important;
         transition: all ease 0.5s !important;
     }
 
@@ -479,10 +488,10 @@ body {
 }
 
 //////=================================success stories page=======================/////
-
 .content_box {
     .data-table {
         font-size: 13px;
+       
     }
 }
 
@@ -838,7 +847,7 @@ body {
     height: 80px;
     align-items: center;
     .card2 {
-        box-shadow: rgb(219, 212, 212) 0px 8px 34px 0px;
+        box-shadow: 0px 0px 26px 5px #0000000d;
         position: relative;
         border-radius: 14px;
         padding: 10px;
@@ -927,7 +936,7 @@ body {
 }
 
 .boxshadow1 {
-    box-shadow: #ffffff 0px 8px 40px 0px;
+    box-shadow: 0px 0px 26px 5px #0000000d;
     background: rgb(255, 249, 249);
     padding: 10px;
 }
@@ -1021,7 +1030,7 @@ body {
 .table {
     th {
         padding: 0.75rem;
-        vertical-align: baseline;
+        vertical-align: middle !important;
         border-top: 1px solid #dee2e6;
         white-space: nowrap !important;
         overflow: hidden !important;
@@ -1043,72 +1052,54 @@ body {
 }
 
 //------------------------------------------jobpreivew page---------------------------------///
-.jobes_margin {
+.view_main_box {
     margin-bottom: 0px;
     .buton_positin {
         width: 100%;
         justify-content: end;
     }
 
-    .titlejob {
-        font-size: 24px;
-    }
-
     .jobes_card {
-        box-shadow: 0px 0px 15px 0px #d6d6dd9c;
-        padding: 30px;
+        box-shadow: 0px 0px 26px 5px #0000000d;
+        padding: 20px;
         display: flex;
-        flex-direction: column;
         gap: 8px;
         border: 1px solid rgb(233, 227, 227);
+        .box-inner-content {
+            width: 100%;
+            .titlejob {
+                font-size: 24px;
+            }
+            .job_description {
+                margin-bottom: 0;
+                font-size: 13px;
+            }
+            .edit_button {
+                float: right;
+            }
+        }
     }
 
     .job_location {
         font-size: 16px;
         font-weight: 400;
     }
-
-    .job_date {
-        font-size: 14px;
-        font-weight: 350;
+    .job_icon {
     }
 
-    .jobapply_button {
-        margin-top: 10px;
-        padding: 0px 34px;
-        border: 2.5px solid #ea7424;
-        font-size: 18px;
+    .job_heading {
+        font-size: 16px !important;
         font-weight: 700;
-        border-radius: 116px;
-        color: white;
-        background-color: #fff;
-        height: 53px;
-        width: 292px;
-        transition: 0.9s;
-    }
-
-    .jobapply_button:hover {
-        background: #ff6b01;
-        color: white;
-        transition: 0.9s;
-    }
-
-    .job_description_heading {
-        font-size: 16px;
-        font-weight: 700;
-        padding: 30px;
+        padding-top: 20px;
+        padding-bottom: 5px;
         text-decoration: underline;
     }
 
-    .padd {
-        padding: 30px;
-    }
-
-    .job_description_list {
+    .job__list {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        font-size: 16px;
+        gap: 4px;
+        font-size: 13px;
     }
 
     .job_description_level_list {
@@ -1116,14 +1107,25 @@ body {
         display: grid;
         flex-wrap: wrap;
         grid-template-columns: 50% 50%;
-        gap: 40px;
+        gap: 10px;
         max-width: 600px;
+        font-size: 13px;
+        padding: 0;
+
+        .jobes_inner_li {
+            .job_description_level {
+                color: black !important;
+                font-size: 16px;
+            }
+            .level_content {
+                font-size: 13px;
+                color: gray;
+            }
+        }
     }
 
-    .job_description_level {
-        color: gray;
-        font-size: 16px;
-        font-weight: 300;
+    .main_information_list {
+        padding-top: 20px;
     }
 
     .main-pannle {
@@ -1289,7 +1291,7 @@ body {
 
     .main-Profile-card1 {
         margin-top: 20px;
-        box-shadow: 0px 0px 35px 0px #00000014;
+        box-shadow: 0px 0px 26px 5px #0000000d;
         padding: 1rem;
 
         .prfile-card11 {

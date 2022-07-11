@@ -13,54 +13,53 @@ const Job_Preview = (values, state) => {
     return (
         <div className="preview-box">
             {console.log("this the formik values", values)}
-            <div className="jobes_margin">
+            <div className="view_main_box">
                 <div className="">
                     <div className="main-pannle">
                         <div className="leftt_pannel">
                             <div className="jobes_card">
-                                <div className="jobes_marginbottom">
+                                <div className="job_icon">
                                     <img src="assets/images/nestor.jfif" height={80} width={80} />
                                 </div>
+                                <div className="box-inner-content">
                                 <div className="titlejob">
                                     <span>{values.values?.jobtitle || state.jobtitle} - Mohali</span>
                                 </div>
                                 <div className="job_location  ">
-                                    <h6 >Description: </h6>
-                                    <p> {values?.values?.description}</p>
+                                <span className="job_heading" >Description: </span>
+                                    <p className="job_description"> {values?.values?.description}</p>
+                                </div>
                                 </div>
                             </div>
-                            <div className="">
-                                <div className="job_description_heading">
+                            <div className="content-box">
+                                <div className="job_heading">
                                     <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
                                 </div>
-                                <div className="">
-                                    <ul className="job_description_list">
+                                    <ul className="job__list">
                                         {values?.values?.responsibility?.map((data, index) =>
                                             <li className=""> {data.value}</li>)}
                                     </ul>
-                                </div>
-                                <div className="job_description_heading">
+                                <div className="job_heading">
                                     <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
 
                                 </div>
-                                <div className="">
-                                    <ul className="job_description_list">
+                                    <ul className="job__list">
                                         {values.values?.requirment?.map((data, index) =>
                                             <li className=""> {data.value}</li>
                                         )}
                                     </ul>
-                                </div>
-                                <div className="job_description_heading">
+                               
+                                <div className="job_heading">
                                     <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
                                 </div>
-                                <div className="">
-                                    <ul className="job_description_list">
+                               
+                                    <ul className="job__list">
                                         {values.values?.benefits?.map((data, index) =>
                                             <li className=""> {data.value}</li>
                                         )}
                                     </ul>
-                                </div>
-                                <div style={{ marginTop: 80 }}>
+                                
+                                <div className="main_information_list">
                                     <ul className="job_description_level_list">
                                         <li>
                                             <h6 className="">Seniority level</h6>

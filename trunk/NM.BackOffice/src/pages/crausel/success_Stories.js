@@ -162,7 +162,7 @@ const Success_Stories = () => {
                 </Modal>
                 <div className="content_box">
                     <div className="data-table">
-                        <Table striped bordered hover>
+                        <Table striped bordered hover className="table-content">
                             <thead>
                                 <tr>
                                     <th colSpan={1}>Action</th>
@@ -252,7 +252,7 @@ const Success_Stories = () => {
                                                 />
                                             </Form></td>
                                         </tr>)}
-                                </tbody> : <h3 className="table_data_empty">No Record Found</h3>}
+                                </tbody> : <h3 className="table_no_records">No Record Found</h3>}
                         </Table>
                     </div>
                     {tableData.length > 0 ?

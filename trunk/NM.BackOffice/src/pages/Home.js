@@ -8,10 +8,10 @@ const Home = () => {
     const graphRef = useRef()
     useEffect(() => {
         document.title = "Dashboard"
-      }, [])
-  
+    }, [])
+
     const data = useMemo(
-       
+
         () => [
             {
 
@@ -51,7 +51,7 @@ const Home = () => {
     }, [])
 
     return (<div>
-        <div style={{ marginTop: "50px" }}>
+        <div className="main_dashboard_content">
             <Row>
                 <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
@@ -110,11 +110,11 @@ const Home = () => {
                     </div>
                 </Col>
             </Row>
-            <div style={{ marginTop: "70px" }}>
+            <div className="main_graphcard_box">
                 <Row>
                     <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader" style={{ }}>
+                            <div className="card-graphheader" style={{}}>
                                 <div className="chart-card" >
                                     <div className="userDetail1" >
                                         <button type="button" class="btn "
@@ -157,7 +157,7 @@ const Home = () => {
                     </Col>
                     <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader" style={{ }}>
+                            <div className="card-graphheader" style={{}}>
                                 <div className="chart-card">
 
                                     <div className="userDetail1" >
@@ -200,7 +200,7 @@ const Home = () => {
                     </Col>
                     <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader" style={{ }}>
+                            <div className="card-graphheader" style={{}}>
                                 <div className="chart-card" >
                                     <div className="userDetail1 ">
                                         <button type="button" class="btn "

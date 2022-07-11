@@ -15,7 +15,7 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BiEdit } from "react-icons/bi";
 import { BsFilter } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
-import {FiArrowLeftCircle } from "react-icons/fi";
+import { FiArrowLeftCircle } from "react-icons/fi";
 import { tab } from "@testing-library/user-event/dist/tab";
 import { useDispatch, useSelector } from "react-redux";
 import { Edit_Data } from "../../Services/redux/action/action";
@@ -104,8 +104,8 @@ const Particularjob = () => {
         document.title = "Detail-Applied"
     }, [])
     return (
-        <div className="content_center margin_bottom_ ">
-            <div className="topGapPad  w-100">
+        <div className="box__content">
+            <div className="topGapPad w-100">
                 {<BasicBreadcrumbs route={route} />}
                 <div className="panle_body">
                     <div className="panle_header">
@@ -149,82 +149,76 @@ const Particularjob = () => {
                                 {console.log(tableData)}
                             </Modal.Footer>
                         </Modal>
-                        <div className="jobes_margin">
+                        <div className="view_main_box">
                             <div className="main-pannle">
                                 <div className="leftt_pannel">
                                     <div className="jobes_card">
-                                        <div className="d-flex buton_positin gap-2" >
-
-                                            <Button variant="primary" className="btn-sm " onClick={() => {
-                                                nevigate('/edit-job')
-
-                                                localStorage.setItem("key", "Edit Job")
-                                            }}
-                                            >Edit</Button></div>
-                                        <div className="jobes_marginbottom">
+                                        <div className="job_icon">
                                             <img src="assets/images/nestor.jfif" height={80} width={80} />
                                         </div>
-                                        <div className="titlejob">
-                                            <span>{selector?.jobtitle} - Mohali</span>
-                                        </div>
-                                        <div className="job_location  jobes_marginbottom">
-                                            <h5 >Description: </h5>
-                                            <p> {selector?.description}</p>
+                                        <div className="box-inner-content">
+                                            <div className="titlejob">
+                                                <span>{selector?.jobtitle} - Mohali</span>
+                                                {selector?.active == "deactive" ?
+                                                    <Button variant="primary" className="btn-sm edit_button " onClick={() => {
+                                                        nevigate('/edit-job')
+                                                        localStorage.setItem("key", "Edit Job")
+                                                    }}
+                                                    >Edit</Button> : ""}
+                                            </div>
+                                            <span className="job_heading" >Description: </span>
+                                            <p className="job_description"> {selector?.description}</p>
                                         </div>
                                     </div>
-                                    <div className="">
-                                        <div className="job_description_heading">
-                                            <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
+                                    <div className="content-box">
+                                        <div className="job_heading">
+                                            Job Responsibility
                                         </div>
-                                        <div className="">
-                                            <ul className="job_description_list">
-                                                {selector?.responsibility?.map((data, index) =>
-                                                    <li className="">
-                                                        {data.value}
-                                                    </li>
-                                                )}
+                                        <ul className="job__list">
+                                            {selector?.responsibility?.map((data, index) =>
+                                                <li>
+                                                    {data.value}
+                                                </li>
+                                            )}
 
-                                            </ul>
-                                        </div>
-                                        <div className="job_description_heading">
+                                        </ul>
+                                        <div className="job_heading">
                                             <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
                                         </div>
-                                        <div className="">
-                                            <ul className="job_description_list">
-                                                {selector?.requirment?.map((data, index) =>
-                                                    <li className="">
-                                                        {data.value}
-                                                    </li>)}
-                                            </ul>
-                                        </div>
-                                        <div className="job_description_heading">
+                                        <ul className="job__list">
+                                            {selector?.requirment?.map((data, index) =>
+                                                <li>
+                                                    {data.value}
+                                                </li>)}
+                                        </ul>
+                                        <div className="job_heading">
                                             <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
                                         </div>
-                                        <div className="">
-                                            <ul className="job_description_list">
+                                        <div className="main-description-box">
+                                            <ul className="job__list">
                                                 {selector?.benefits?.map((data, index) =>
-                                                    <li className="">
+                                                    <li>
                                                         {data.value}
                                                     </li>)}
                                             </ul>
                                         </div>
-                                        <div style={{ marginTop: 80 }}>
+                                        <div className="main_information_list">
                                             <ul className="job_description_level_list">
-                                                <li>
+                                                <li className="jobes_inner_li" >
                                                     <h3 className="job_description_level">Seniority level</h3>
-                                                    <span>{selector?.level}</span>
+                                                    <span className="level_content">{selector?.level}</span>
                                                 </li>
-                                                <li>
+                                                <li className="jobes_inner_li">
                                                     <h5 className="job_description_level">Employment type</h5>
-                                                    <span>{selector?.type}</span>
+                                                    <span className="level_content">{selector?.type}</span>
                                                 </li>
-                                                <li>
+                                                <li className="jobes_inner_li">
                                                     <h5 className="job_description_level">Job function</h5>
-                                                    <span> {selector?.functions}</span>
+                                                    <span className="level_content"> {selector?.functions}</span>
                                                 </li>
-                                                <li>
+                                                <li className="jobes_inner_li">
                                                     <h5 className="job_description_level">Industries</h5>
-                                                    <span>{selector?.industry}</span>
+                                                    <span className="level_content"> {selector?.industry}</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -367,7 +361,7 @@ const Particularjob = () => {
                                                             aria-labelledby="dropdownIconMenu">
                                                             <li class="dropdownList ">
 
-                                                                {data.active === "rejected" ?
+                                                                {data?.active === "rejected" ?
                                                                     <div class="actionBtns context-menu1">
                                                                         <span class="editAction" data-bs-toggle="modal"
                                                                             data-bs-target="#editbtn"><AiOutlineCheck /></span>

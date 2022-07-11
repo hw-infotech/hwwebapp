@@ -3,7 +3,7 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
-@media only screen and (min-width: 468px) and (max-width: 1068px) {
+@media only screen and (min-width: 468px) and (max-width: 992px) {
   .card1 {
     margin-top: 40px !important;
   }
@@ -55,13 +55,48 @@ body {
   font-size: 13px !important;
 }
 
-.card-header1 {
+.main_dashboard_content {
+  margin-top: 50px;
+}
+
+.main_dashboard_content .main_graphcard_box {
+  margin-top: 50px;
+}
+
+.main_dashboard_content .main_graphcard_box .card1 {
+  -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
+          box-shadow: 0px 0px 26px 5px #0000000d;
+  position: relative;
+  border-radius: 14px;
+  padding: 20px 20px 20px 20px;
+}
+
+.main_dashboard_content .main_graphcard_box .card1 .card-graphheader {
   position: relative;
   background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 230px;
+  width: 100%;
+  top: -50px;
+  -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
+          box-shadow: 0px 0px 26px 5px #0000000d;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.main_dashboard_content .main_graphcard_box .card1 .card-graphheader .chart-card {
+  width: 270px;
+  height: 170px;
+  position: absolute;
   border: 0px;
 }
 
-.userDetail1 {
+.main_dashboard_content .main_graphcard_box .card1 .card-graphheader .chart-card .userDetail1 {
   visibility: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -75,24 +110,50 @@ body {
   right: -24px;
 }
 
-.card1:hover .userDetail1 {
+.main_dashboard_content .main_graphcard_box .chart-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main_dashboard_content .main_graphcard_box .chart-footer .chattext-size {
+  color: gray;
+  font-size: 14px;
+}
+
+.main_dashboard_content .main_graphcard_box .chart-footer .heading-chartstyle {
+  font-weight: 600;
+  margin-top: 0px;
+}
+
+.main_dashboard_content .card-header1 {
+  position: relative;
+  background: white;
+  border: 0px;
+}
+
+.main_dashboard_content .card1:hover .userDetail1 {
   visibility: visible;
 }
 
-.textdecorarte {
+.main_dashboard_content .textdecorarte {
   font-size: 13px;
   color: gray;
 }
 
-.card1 {
-  -webkit-box-shadow: #dbd4d4 0px 8px 34px 0px;
-          box-shadow: #dbd4d4 0px 8px 34px 0px;
+.main_dashboard_content .card1 {
+  -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
+          box-shadow: 0px 0px 26px 5px #0000000d;
   position: relative;
   border-radius: 14px;
   padding: 20px 20px 20px 20px;
 }
 
-.card1 .innerCard {
+.main_dashboard_content .card1 .innerCard {
   text-align: right;
   border: 0px;
   color: #808080a3;
@@ -100,27 +161,27 @@ body {
   font-size: 13px !important;
 }
 
-.card1 .background_box1 {
+.main_dashboard_content .card1 .background_box1 {
   background-image: -webkit-gradient(linear, left top, right top, from(#253c86), to(#1b8ccc));
   background-image: linear-gradient(to right, #253c86, #1b8ccc);
 }
 
-.card1 .background_box2 {
+.main_dashboard_content .card1 .background_box2 {
   background-image: -webkit-gradient(linear, left top, right top, from(#ef6723), to(#ff8100));
   background-image: linear-gradient(to right, #ef6723, #ff8100);
 }
 
-.card1 .background_box3 {
+.main_dashboard_content .card1 .background_box3 {
   background-image: -webkit-gradient(linear, left top, right top, from(#0d793d), to(#80c341));
   background-image: linear-gradient(to right, #0d793d, #80c341);
 }
 
-.card1 .background_box4 {
+.main_dashboard_content .card1 .background_box4 {
   background-image: -webkit-gradient(linear, left top, right top, from(#a61e22), to(#ee2a2a));
   background-image: linear-gradient(to right, #a61e22, #ee2a2a);
 }
 
-.icon-card1 {
+.main_dashboard_content .icon-card1 {
   width: 64px;
   height: 64px;
   -webkit-box-shadow: #dbd4d4 0px 8px 5px 0px;
@@ -140,7 +201,7 @@ body {
   color: white;
 }
 
-.card-footer1 {
+.main_dashboard_content .card-footer1 {
   border: 0px;
   background: white;
   color: gray;
@@ -148,67 +209,22 @@ body {
   padding-top: 24px;
 }
 
-.decoration {
+.main_dashboard_content .decoration {
   color: green;
 }
 
-.text-decorationn1 {
+.main_dashboard_content .text-decorationn1 {
   color: red;
 }
 
-.card-graphheader {
-  position: relative;
-  background: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 230px;
-  width: 100%;
-  top: -50px;
-  -webkit-box-shadow: #dbd4d4 0px 8px 34px 0px;
-          box-shadow: #dbd4d4 0px 8px 34px 0px;
-  border-radius: 20px;
-  padding: 5px;
-}
-
-.chart-card {
+.main_dashboard_content .chart-card {
   width: 270px;
   height: 170px;
   position: absolute;
   border: 0px;
 }
 
-.backrond {
-  -webkit-box-shadow: rgba(253, 253, 253, 0.952), 0 7px 10px -5px;
-          box-shadow: rgba(253, 253, 253, 0.952), 0 7px 10px -5px;
-  background: white;
-  width: 350px;
-}
-
-.chart-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.chart-footer .chattext-size {
-  color: gray;
-  font-size: 14px;
-}
-
-.chart-footer .heading-chartstyle {
-  font-weight: 600;
-  margin-top: 0px;
-}
-
-.lower-footer {
+.main_dashboard_content .lower-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,12 +235,12 @@ body {
   gap: 5px;
 }
 
-.lower-footer .chattext-size {
+.main_dashboard_content .lower-footer .chattext-size {
   color: gray;
   font-size: 14px;
 }
 
-.chattext-size1 {
+.main_dashboard_content .chattext-size1 {
   color: gray;
   font-size: 14px;
   font-weight: 600;
@@ -278,8 +294,8 @@ body {
   background-color: #ffffff !important;
   height: 70px;
   padding: 0px 20px !important;
-  -webkit-box-shadow: 0px 0px 35px 20px #00000014;
-          box-shadow: 0px 0px 35px 20px #00000014;
+  -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
+          box-shadow: 0px 0px 26px 5px #0000000d;
 }
 
 .topHeader .dropdown-toggle::after {
@@ -479,18 +495,18 @@ body {
   position: relative;
 }
 
-.sidebar_list .collapsed[aria-expanded="false"] .dropdownarrowicon {
+.sidebar_list .collapsed .dropdownarrowicon {
   margin-left: auto;
-  -webkit-transform: rotate(180deg) !important;
-          transform: rotate(180deg) !important;
+  -webkit-transform: rotate(0deg) !important;
+          transform: rotate(0deg) !important;
   -webkit-transition: all ease 0.5s !important;
   transition: all ease 0.5s !important;
 }
 
 .sidebar_list .dropdownarrowicon {
   margin-left: auto;
-  -webkit-transform: rotate(0deg) !important;
-          transform: rotate(0deg) !important;
+  -webkit-transform: rotate(180deg) !important;
+          transform: rotate(180deg) !important;
   -webkit-transition: all ease 0.5s !important;
   transition: all ease 0.5s !important;
 }
@@ -883,8 +899,8 @@ body {
 }
 
 .main-applied-contaier .card2 {
-  -webkit-box-shadow: #dbd4d4 0px 8px 34px 0px;
-          box-shadow: #dbd4d4 0px 8px 34px 0px;
+  -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
+          box-shadow: 0px 0px 26px 5px #0000000d;
   position: relative;
   border-radius: 14px;
   padding: 10px;
@@ -988,8 +1004,8 @@ body {
 }
 
 .boxshadow1 {
-  -webkit-box-shadow: #ffffff 0px 8px 40px 0px;
-          box-shadow: #ffffff 0px 8px 40px 0px;
+  -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
+          box-shadow: 0px 0px 26px 5px #0000000d;
   background: #fff9f9;
   padding: 10px;
 }
@@ -1085,7 +1101,7 @@ body {
 .table td th,
 .table th {
   padding: 0.75rem;
-  vertical-align: baseline;
+  vertical-align: middle !important;
   border-top: 1px solid #dee2e6;
   white-space: nowrap !important;
   overflow: hidden !important;
@@ -1104,80 +1120,59 @@ body {
   padding-left: 40px;
 }
 
-.jobes_margin {
+.view_main_box {
   margin-bottom: 0px;
 }
 
-.jobes_margin .buton_positin {
+.view_main_box .buton_positin {
   width: 100%;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
 }
 
-.jobes_margin .titlejob {
-  font-size: 24px;
-}
-
-.jobes_margin .jobes_card {
-  -webkit-box-shadow: 0px 0px 15px 0px #d6d6dd9c;
-          box-shadow: 0px 0px 15px 0px #d6d6dd9c;
-  padding: 30px;
+.view_main_box .jobes_card {
+  -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
+          box-shadow: 0px 0px 26px 5px #0000000d;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   gap: 8px;
   border: 1px solid #e9e3e3;
 }
 
-.jobes_margin .job_location {
+.view_main_box .jobes_card .box-inner-content {
+  width: 100%;
+}
+
+.view_main_box .jobes_card .box-inner-content .titlejob {
+  font-size: 24px;
+}
+
+.view_main_box .jobes_card .box-inner-content .job_description {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.view_main_box .jobes_card .box-inner-content .edit_button {
+  float: right;
+}
+
+.view_main_box .job_location {
   font-size: 16px;
   font-weight: 400;
 }
 
-.jobes_margin .job_date {
-  font-size: 14px;
-  font-weight: 350;
-}
-
-.jobes_margin .jobapply_button {
-  margin-top: 10px;
-  padding: 0px 34px;
-  border: 2.5px solid #ea7424;
-  font-size: 18px;
+.view_main_box .job_heading {
+  font-size: 16px !important;
   font-weight: 700;
-  border-radius: 116px;
-  color: white;
-  background-color: #fff;
-  height: 53px;
-  width: 292px;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
-}
-
-.jobes_margin .jobapply_button:hover {
-  background: #ff6b01;
-  color: white;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
-}
-
-.jobes_margin .job_description_heading {
-  font-size: 16px;
-  font-weight: 700;
-  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 5px;
   text-decoration: underline;
 }
 
-.jobes_margin .padd {
-  padding: 30px;
-}
-
-.jobes_margin .job_description_list {
+.view_main_box .job__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1185,11 +1180,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
-  font-size: 16px;
+  gap: 4px;
+  font-size: 13px;
 }
 
-.jobes_margin .job_description_level_list {
+.view_main_box .job_description_level_list {
   list-style: none;
   display: -ms-grid;
   display: grid;
@@ -1197,27 +1192,37 @@ body {
       flex-wrap: wrap;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
-  gap: 40px;
+  gap: 10px;
   max-width: 600px;
+  font-size: 13px;
+  padding: 0;
 }
 
-.jobes_margin .job_description_level {
-  color: gray;
+.view_main_box .job_description_level_list .jobes_inner_li .job_description_level {
+  color: black !important;
   font-size: 16px;
-  font-weight: 300;
 }
 
-.jobes_margin .main-pannle {
+.view_main_box .job_description_level_list .jobes_inner_li .level_content {
+  font-size: 13px;
+  color: gray;
+}
+
+.view_main_box .main_information_list {
+  padding-top: 20px;
+}
+
+.view_main_box .main-pannle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.jobes_margin .leftt_pannel {
+.view_main_box .leftt_pannel {
   width: 100%;
 }
 
-.jobes_margin .right_pannle_list {
+.view_main_box .right_pannle_list {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1232,12 +1237,12 @@ body {
   padding-top: 10px;
 }
 
-.jobes_margin .right_pannle_title {
+.view_main_box .right_pannle_title {
   font-size: 16px !important;
   font-weight: 700;
 }
 
-.jobes_margin .right_pannle_list_itmes {
+.view_main_box .right_pannle_list_itmes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1248,14 +1253,14 @@ body {
   gap: 5px;
 }
 
-.jobes_margin .right_pannle_button {
+.view_main_box .right_pannle_button {
   background-color: white;
   color: #1b75cf;
   border: 0;
   font-weight: 700;
 }
 
-.jobes_margin .right_pannle_main_heading {
+.view_main_box .right_pannle_main_heading {
   font-weight: 400;
 }
 
@@ -1391,8 +1396,8 @@ body {
 
 .profile_form .main-Profile-card1 {
   margin-top: 20px;
-  -webkit-box-shadow: 0px 0px 35px 0px #00000014;
-          box-shadow: 0px 0px 35px 0px #00000014;
+  -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
+          box-shadow: 0px 0px 26px 5px #0000000d;
   padding: 1rem;
 }
 

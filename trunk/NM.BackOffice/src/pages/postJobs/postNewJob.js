@@ -163,32 +163,32 @@ const Post_New_Job = () => {
                                                 </div>
                                             </div>
                                             <div className="">
-                                                <div className="job_description_heading">
+                                                <div className="job_heading">
                                                     <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
                                                 </div>
                                                 <div className="">
-                                                    <ul className="job_description_list">
+                                                    <ul className="job__list">
                                                         {state?.responsibility?.map((data, index) =>
                                                             <li className=""> {data?.value}</li>
                                                         )}
                                                     </ul>
                                                 </div>
-                                                <div className="job_description_heading">
+                                                <div className="job_heading">
                                                     <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
 
                                                 </div>
                                                 <div className="">
-                                                    <ul className="job_description_list">
+                                                    <ul className="job__list">
                                                         {state?.requirment?.map((data, index) =>
                                                             <li className=""> {data?.value}</li>
                                                         )}
                                                     </ul>
                                                 </div>
-                                                <div className="job_description_heading">
+                                                <div className="job_heading">
                                                     <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
                                                 </div>
                                                 <div className="">
-                                                    <ul className="job_description_list">
+                                                    <ul className="job__list">
                                                         {state?.benefits?.map((data, index) =>
                                                             <li className=""> {data?.value}</li>
                                                         )}
