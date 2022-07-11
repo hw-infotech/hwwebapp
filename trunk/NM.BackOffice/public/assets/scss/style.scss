@@ -4,6 +4,24 @@ body {
     font-family: "Roboto", sans-serif !important;
 }
 
+@media only screen and (min-width: 468px) and (max-width: 992px)  {
+    .card1 {
+        margin-top: 40px !important;
+    }
+}
+.table_no_records {
+    text-align: center !important;
+    position: absolute !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    font-size: 18px;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.remove_button_padding {
+    padding: 0px !important;
+}
 //--------------Dashboard------------//
 
 .dashboard {
@@ -326,9 +344,18 @@ body {
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
+    height: 100vh;
     overflow: auto;
     background-color: #212529 !important;
 
+    .activeMenu {
+        i {
+            color: #ff6b01 !important;
+        }
+        span {
+            color: #ff6b01 !important;
+        }
+    }
     .sidebar_focus:focus {
         color: rgb(194, 150, 68);
     }
@@ -343,7 +370,7 @@ body {
 
     .sidebar_header {
         display: flex;
-        min-height: 70px;
+        max-height: 70px;
         height: 100%;
         position: relative;
         background-color: #212529 !important;
@@ -387,9 +414,7 @@ body {
     font-weight: 600;
 }
 
-
-
-.navbar-submenu{
+.navbar-submenu {
     padding-left: 20px;
     font-size: 12px;
 }
@@ -436,15 +461,21 @@ body {
     .collapsed[aria-expanded="false"] {
         .dropdownarrowicon {
             margin-left: auto;
-            transform: rotate(0deg) !important;
+            transform: rotate(180deg) !important;
             transition: all ease 0.5s !important;
         }
     }
     .dropdownarrowicon {
         margin-left: auto;
-        transform: rotate(180deg) !important;
+        transform: rotate(0deg) !important;
         transition: all ease 0.5s !important;
     }
+
+    // .reverse {
+    //     margin-left: auto;
+    //     transform: rotate(90deg) !important;
+    //     transition: all ease 0.5s !important;
+    // }
 }
 
 //////=================================success stories page=======================/////
@@ -849,28 +880,8 @@ body {
     padding: 10px;
 }
 
-////stacks////
 .margin_content {
     margin: 30px;
-}
-
-.spaces-content {
-    .stacks_page_box {
-        max-width: 600px;
-        width: 100%;
-        height: 100%;
-    }
-
-    .stacks_button {
-        padding-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
-}
-
-.heigh_numberofstacks {
-    height: 100%;
 }
 
 .inputfieldwidth {
@@ -1309,7 +1320,7 @@ body {
 
         .formData {
             display: flex;
-
+            align-items: center;
             width: 100%;
 
             .innerform {

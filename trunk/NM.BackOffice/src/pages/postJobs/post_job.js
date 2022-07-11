@@ -18,6 +18,8 @@ import Step3 from "./steps/step3";
 import Step4 from "./steps/step4";
 import { createContext } from "react";
 import { useSelector } from "react-redux";
+import { Send_data } from "../../Services/redux/action/action";
+import { useDispatch } from "react-redux";
 
 const Post_Job = ({ stat }) => {
 
@@ -25,14 +27,14 @@ const Post_Job = ({ stat }) => {
     const [post, setpost] = useState()
     const [goSteps, setGoSteps] = useState(0);
     const [state, setState] = useState({
-        jobtitle: "",
+        jobtitle: "UI/UX",
         functions: "",
         responsibility: [],
         requirment: [],
         benefits: [],
         industry: "",
-        type: "",
-        level: "",
+        type: "Full time",
+        level: "Senior",
         description: ""
 
     })
@@ -45,8 +47,8 @@ const Post_Job = ({ stat }) => {
         requirment: [],
         benefits: [],
         industry: "",
-        type: "",
-        level: "",
+        type: "Full time",
+        level: "Senior",
         description: ""
 
     })
@@ -65,7 +67,8 @@ const Post_Job = ({ stat }) => {
     let tiitle = localStorage?.getItem("key")
     useEffect(() => {
         document.title = "Post job"
-      }, [])
+    }, [])
+    const dispatch = useDispatch()
     return (
         <div>
             <BasicBreadcrumbs route={route} />
@@ -94,8 +97,12 @@ const Post_Job = ({ stat }) => {
                     </Step>
                 </Stepper>
 
-                <Formik initialValues={state}>
-                    {({ values, handleChange, handleSubmit }) => (<Form onSubmit={(e) => {
+                <Formik initialValues={state} onSubmit={(values, { resetForm }) => {
+
+                    dispatch(Send_data(values))
+                    resetForm()
+                }}>
+                    {({ values, handleChange, handleSubmit, handleReset }) => (<Form onSubmit={(e) => {
 
                         e.preventDefault()
                         handleSubmit()

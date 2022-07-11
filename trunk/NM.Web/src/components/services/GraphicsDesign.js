@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import './ServicesMain.css';
 import OwlCarousel from 'react-owl-carousel';
 import { Link } from "react-router-dom";
-import { useEffect } from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from "yup";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { graphicDesignuserRegister } from '../../Redux/Action/Actionfunction';
 import GraphicsPortfolio from '../Home/graphicsPortfolio';

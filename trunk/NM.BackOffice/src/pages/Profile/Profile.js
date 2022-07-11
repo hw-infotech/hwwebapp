@@ -7,7 +7,6 @@ import { GrLocation } from "react-icons/gr";
 import { initialValues, validationschemeaa } from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
 import { ErrorMessage, Formik } from "formik";
-
 import { useNavigate } from "react-router";
 
 const Profile = () => {
@@ -22,14 +21,13 @@ const Profile = () => {
     const [state1, setState1] = useState({
         User: "Ganesh",
         pass: 123456,
-        confirm:0
-       
+        confirm: 0
+
     })
     const [key, setKey] = useState()
     const [visible, setVisible] = useState(true)
     const [edit, setEdit] = useState(true)
     const history = useNavigate()
-
     const route = [
         { name: "Home", route: "/" },
         { name: "User", route: "/" },
@@ -38,7 +36,6 @@ const Profile = () => {
     const handleFormSubmit = (values) => {
         // const { name, value } = values
         // setState({ ...state, [name]: value })
-
         state.name = values.name
         state.email = values.email
         state.location = values.location
@@ -58,7 +55,6 @@ const Profile = () => {
     const handleFormSubmit1 = (values) => {
         // const { name, value } = values
         // setState({ ...state, [name]: value })
-
         state.User = values.User
         state.pass = values.pass
         setState1({ ...state })
@@ -140,10 +136,8 @@ const Profile = () => {
                                                             <div><Button variant="primary" type="submit" className="btn-sm" onClick={() => {
                                                                 alert("Data Update successful")
                                                                 setEdit(true)
-
                                                             }} disabled={visible}>Save</Button></div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 {edit ?
@@ -188,7 +182,6 @@ const Profile = () => {
                                                                 <Form.Control type="text" name="location" className="forms_input" onChange={handleChange} value={values.location} /></Form.Group></div>
                                                         </div>
                                                     </div>
-
                                                 }
                                             </div>
                                         </form>
@@ -198,74 +191,74 @@ const Profile = () => {
                         </Row>
                     </Tab>
                     <Tab eventKey="Security" title="Security">
-                    <Row>
-                    <Col>
-                        <Formik initialValues={state1}
-                            onSubmit={handleFormSubmit1}>
-                            {({ values, handleSubmit, handleChange }) => (
-                                <form onSubmit={(e) => {
-                                    e.preventDefault()
-                                    handleSubmit()
-                                }}>
-                                    <div className="main-Profile-card1">
-                                        <div className="prfile-card11">
-                                            <div className="inner-profile1">
-                                                <div className=""><h6>{edit ? "Profile Details" : "Edit Profile"}</h6></div>
-                                                <div className="changeable_btn">{edit ? <Button variant="primary" className="btn btn-sm" onClick={() => {
-                                                    setVisible(false)
-                                                    setEdit(p => !p)
-                                                }}>Change Password</Button> : <Button variant="secondary" className="btn-sm" onClick={() => {
-                                                    setEdit(p => !p)
-                                                    setVisible(true)
-                                                }}>Back</Button>}
-                                                    <div><Button variant="primary" type="submit" className="btn-sm" onClick={() => {
-                                                        alert("Data Update successful")
-                                                        setEdit(true)
+                        <Row>
+                            <Col>
+                                <Formik initialValues={state1}
+                                    onSubmit={handleFormSubmit1}>
+                                    {({ values, handleSubmit, handleChange }) => (
+                                        <form onSubmit={(e) => {
+                                            e.preventDefault()
+                                            handleSubmit()
+                                        }}>
+                                            <div className="main-Profile-card1">
+                                                <div className="prfile-card11">
+                                                    <div className="inner-profile1">
+                                                        <div className=""><h6>{edit ? "Profile Details" : "Edit Profile"}</h6></div>
+                                                        <div className="changeable_btn">{edit ? <Button variant="primary" className="btn btn-sm" onClick={() => {
+                                                            setVisible(false)
+                                                            setEdit(p => !p)
+                                                        }}>Change Password</Button> : <Button variant="secondary" className="btn-sm" onClick={() => {
+                                                            setEdit(p => !p)
+                                                            setVisible(true)
+                                                        }}>Back</Button>}
+                                                            <Button variant="primary" type="submit" className="btn-sm" onClick={() => {
+                                                                alert("Data Update successful")
+                                                                setEdit(true)
 
-                                                    }} disabled={visible}>Save</Button></div>
-                                                </div>
+                                                            }} disabled={visible}>Save</Button>
+                                                        </div>
 
-                                            </div>
-                                        </div>
-                                        {edit ?
-                                            <div className="mainform">
-                                                <div className="formData">
-                                                    <div className="innerform">UserName</div>
-                                                    <div className="innerform1">{state1.User}</div>
+                                                    </div>
                                                 </div>
-                                                <div className="formData">
-                                                    <div className="innerform">Password</div>
-                                                    <div className="innerform1">{state1.pass}</div>
-                                                </div>
-                                              
-                                            </div>
-                                            :
-                                            <div className="mainform">
-                                                <div className="formData">
-                                                    <div className="innerform">Old Password</div>
-                                                    <div className="innerform1"><Form.Group controlId="formBasicEmail">
-                                                        <Form.Control className="forms_input" type="number" onChange={handleChange} /></Form.Group></div>
-                                                </div>
-                                                <div className="formData">
-                                                    <div className="innerform">New Password</div>
-                                                    <div className="innerform1"><Form.Group controlId="formBasicEmail">
-                                                        <Form.Control type="number" name="pass" className="forms_input" onChange={handleChange}  /></Form.Group></div>
-                                                </div>
-                                                <div className="formData">
-                                                    <div className="innerform">Confirm Password</div>
-                                                    <div className="innerform1"><Form.Group controlId="formBasicEmail">
-                                                        <Form.Control type="number" name="confirm" className="forms_input" onChange={handleChange}  /></Form.Group></div>
-                                                </div>
-                                               
-                                            </div>
+                                                {edit ?
+                                                    <div className="mainform">
+                                                        <div className="formData">
+                                                            <div className="innerform">UserName</div>
+                                                            <div className="innerform1">{state1.User}</div>
+                                                        </div>
+                                                        <div className="formData">
+                                                            <div className="innerform">Password</div>
+                                                            <div className="innerform1">{state1.pass}</div>
+                                                        </div>
 
-                                        }
-                                    </div>
-                                </form>
-                            )}
-                        </Formik>
-                    </Col>
-                </Row>
+                                                    </div>
+                                                    :
+                                                    <div className="mainform">
+                                                        <div className="formData">
+                                                            <div className="innerform">Old Password</div>
+                                                            <div className="innerform1"><Form.Group controlId="formBasicEmail">
+                                                                <Form.Control className="forms_input" type="Password" onChange={handleChange} /></Form.Group></div>
+                                                        </div>
+                                                        <div className="formData">
+                                                            <div className="innerform">New Password</div>
+                                                            <div className="innerform1"><Form.Group controlId="formBasicEmail">
+                                                                <Form.Control type="password" name="pass" className="forms_input" onChange={handleChange} /></Form.Group></div>
+                                                        </div>
+                                                        <div className="formData">
+                                                            <div className="innerform">Confirm Password</div>
+                                                            <div className="innerform1"><Form.Group controlId="formBasicEmail">
+                                                                <Form.Control type="password" name="confirm" className="forms_input" onChange={handleChange} /></Form.Group></div>
+                                                        </div>
+
+                                                    </div>
+
+                                                }
+                                            </div>
+                                        </form>
+                                    )}
+                                </Formik>
+                            </Col>
+                        </Row>
                     </Tab>
                 </Tabs>
             </div>

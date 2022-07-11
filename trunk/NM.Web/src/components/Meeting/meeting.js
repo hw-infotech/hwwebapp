@@ -1,33 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 import { InlineWidget } from "react-calendly";
-import '../Meeting/meeting.css'
+import "../Meeting/meeting.css";
 
 const Meeting = () => {
-    // {window.open("https://calendly.com/nestormindpvtltd")}
-    //     <PopupButton
-    //     className="w-o-btn"
-    //     url="https://calendly.com/nestormindpvtltd"
-    //     /*
-    //      * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-    //      * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-    //      */
-    //     rootElement={document.getElementById("root")}
-    //     text="Schedule time with me!"
-    //   />
-    //<iframe src="https://calendly.com/nestormindpvtltd" className="appointment"></iframe>
+  useEffect(() => {
+    // const element = document.querySelector("#candely").contentDocument
+    //   .children[0].lastElementChild;
 
-    // <object data="https://calendly.com/nestormindpvtltd"
-    //     className="appointment"
-    //     type="text/html">
-    // </object>
-    return (
-        <div style={{ marginTop: 50 }} className=" ">
-        <object data="https://calendly.com/nestormindpvtltd"
+    // var iframe = document.getElementById("candely");
+    // var iframeDocument =
+    //   iframe.contentDocument || iframe.contentWindow.document;
+    // if (!iframeDocument) {
+    //   throw "iframe couldn't be found in DOM.";
+    // }
+    //var iframeContent = iframeDocument.querySelectorAll("#frameBody");
+    var iframe = document.getElementById("candely");
+    var innerDoc = iframe.contentDocument
+      ? iframe.contentDocument
+      : iframe.contentWindow.document;
+    console.log(innerDoc);
+  }, []);
+
+  return (
+    <div style={{ marginTop: 50 }} className=" ">
+      <iframe
+        id="candely"
+        src="https://calendly.com/nestormindpvtltd"
         className="appointment"
-        type="text/html">
-    </object>
-        </div>
-    )
-}
-export default withNewsletterAddress(Meeting)
+        type="text/html"
+      ></iframe>
+    </div>
+  );
+};
+export default withNewsletterAddress(Meeting);

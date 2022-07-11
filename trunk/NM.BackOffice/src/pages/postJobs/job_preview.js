@@ -3,13 +3,13 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
-const Job_Preview = (values,state   )  => {
+const Job_Preview = (values, state) => {
     const nevigate = useNavigate()
     useEffect(() => {
         document.title = "Preview"
-      }, [])
+    }, [])
     console.log(values)
-    let tiitle=localStorage?.getItem("key")
+    let tiitle = localStorage?.getItem("key")
     return (
         <div className="preview-box">
             {console.log("this the formik values", values)}
@@ -24,7 +24,7 @@ const Job_Preview = (values,state   )  => {
                                 <div className="titlejob">
                                     <span>{values.values?.jobtitle || state.jobtitle} - Mohali</span>
                                 </div>
-                                <div className="job_location  jobes_marginbottom gap-2">
+                                <div className="job_location  ">
                                     <h6 >Description: </h6>
                                     <p> {values?.values?.description}</p>
                                 </div>
@@ -36,9 +36,7 @@ const Job_Preview = (values,state   )  => {
                                 <div className="">
                                     <ul className="job_description_list">
                                         {values?.values?.responsibility?.map((data, index) =>
-                                            <li className=""> {data}</li>
-                                            
-                                        )}
+                                            <li className=""> {data.value}</li>)}
                                     </ul>
                                 </div>
                                 <div className="job_description_heading">
@@ -48,7 +46,7 @@ const Job_Preview = (values,state   )  => {
                                 <div className="">
                                     <ul className="job_description_list">
                                         {values.values?.requirment?.map((data, index) =>
-                                            <li className=""> {data}</li>
+                                            <li className=""> {data.value}</li>
                                         )}
                                     </ul>
                                 </div>
@@ -58,7 +56,7 @@ const Job_Preview = (values,state   )  => {
                                 <div className="">
                                     <ul className="job_description_list">
                                         {values.values?.benefits?.map((data, index) =>
-                                            <li className=""> {data}</li>
+                                            <li className=""> {data.value}</li>
                                         )}
                                     </ul>
                                 </div>
@@ -70,7 +68,7 @@ const Job_Preview = (values,state   )  => {
                                         </li>
                                         <li>
                                             <h6>Employment type</h6>
-                                            <span  className="job_description_level">{values.values?.type}</span>
+                                            <span className="job_description_level">{values.values?.type}</span>
                                         </li>
                                         <li>
                                             <h6>Job function</h6>

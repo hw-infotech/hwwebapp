@@ -11,21 +11,23 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
     const nevigate = useNavigate()
     useEffect(() => {
         document.title = "Preview"
-      }, [])
+    }, [])
     return <div className="w-100 m-auto ">
-    <Job_Preview values={values} />
+        <Job_Preview values={values} />
         <div className="justify-content-end d-flex mt-4 gap-2" >
             {/*<Button variant="secondary" onClick={() => setGoSteps(2)}>Back</Button>*/}
             <Button variant="secondary" className="btn-sm" onClick={() => {
                 setGoSteps(2)
             }}>Back</Button>
             <Button variant="warning" className="btn-sm" onClick={() => setGoSteps(3)}>Save as Draft</Button>
-            <Button variant="primary" className="btn-sm" onClick={() => {setGoSteps(3)
-                dispatch(Send_data(values))
+            <Button variant="primary" type="submit" className="btn-sm" onClick={() => {
+                setGoSteps(3)
+                console.log(values, "Values");
+              
             }}>Save & Publish</Button>
 
         </div>
-       
+
 
     </div>
 }

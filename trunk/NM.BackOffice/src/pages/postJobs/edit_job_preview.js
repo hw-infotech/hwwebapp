@@ -17,11 +17,11 @@ const Edit_Job_Preview = (values, state) => {
                                 <img src="assets/images/nestor.jfif" height={80} width={80} />
                             </div>
                             <div className="titlejob">
-                                <span>{values.values?.jobtitle || state.jobtitle} - Mohali</span>
+                                <span>{values.state?.jobtitle || state.jobtitle} - Mohali</span>
                             </div>
-                            <div className="job_location d-flex jobes_marginbottom">
-                                <span >Nestormind </span>
-                                <span> - Mohali</span>
+                            <div className="job_location">
+                                <h6 >Description: </h6>
+                                <p>{values?.state?.description}</p>
                             </div>
                         </div>
                         <div className="">
@@ -30,8 +30,8 @@ const Edit_Job_Preview = (values, state) => {
                             </div>
                             <div className="">
                                 <ul className="job_description_list">
-                                    {values?.values?.responsibility?.map((data, index) =>
-                                        <li className=""> {data}</li>
+                                    {values?.state?.responsibility?.map((data, index) =>
+                                        <li className=""> {data.value}</li>
 
                                     )}
                                 </ul>
@@ -42,8 +42,8 @@ const Edit_Job_Preview = (values, state) => {
                             </div>
                             <div className="">
                                 <ul className="job_description_list">
-                                    {values.values?.requirment?.map((data, index) =>
-                                        <li className=""> {data}</li>
+                                    {values.state?.requirment?.map((data, index) =>
+                                        <li className=""> {data.value}</li>
                                     )}
                                 </ul>
                             </div>
@@ -52,8 +52,8 @@ const Edit_Job_Preview = (values, state) => {
                             </div>
                             <div className="">
                                 <ul className="job_description_list">
-                                    {values.values?.benefits?.map((data, index) =>
-                                        <li className=""> {data}</li>
+                                    {values.state?.benefits?.map((data, index) =>
+                                        <li className=""> {data.value}</li>
                                     )}
                                 </ul>
                             </div>
@@ -61,19 +61,19 @@ const Edit_Job_Preview = (values, state) => {
                                 <ul className="job_description_level_list">
                                     <li>
                                         <h6 className="">Seniority level</h6>
-                                        <span className="job_description_level">{values.values?.level}</span>
+                                        <span className="job_description_level">{values.state?.level}</span>
                                     </li>
                                     <li>
                                         <h6>Employment type</h6>
-                                        <span className="job_description_level">{values.values?.type}</span>
+                                        <span className="job_description_level">{values.state?.type}</span>
                                     </li>
                                     <li>
                                         <h6>Job function</h6>
-                                        <span className="job_description_level"> {values.values?.functions}</span>
+                                        <span className="job_description_level"> {values.state?.functions}</span>
                                     </li>
                                     <li>
                                         <h6 >Industries</h6>
-                                        <span className="job_description_level">{values.values?.industry}</span>
+                                        <span className="job_description_level">{values.state?.industry}</span>
                                     </li>
                                 </ul>
                             </div>

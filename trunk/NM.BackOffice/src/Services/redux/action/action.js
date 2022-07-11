@@ -52,7 +52,6 @@ export const getAllEnquries = () => dispatch => {
     })
 }
 export const Edit_Data = (data, index) => dispath => {
-    console.log(data, "editdata")
     dispath({
         type: EDIT_DATA,
         payload: { data, index }

@@ -115,7 +115,7 @@ const AppPortfolio = () => {
                       tiltMaxAngleY={3}
                     >
                       <div className="tiltImagePanel">
-                        <img src="../assets/img/Home_dashbaord.png" />
+                        <img src="../assets/img/Home_dashbaord.png" alt="" />
                       </div>
                     </Tilt>
                   </div>

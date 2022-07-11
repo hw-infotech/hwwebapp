@@ -15,7 +15,7 @@ import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BiEdit } from "react-icons/bi";
 import { BsFilter } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
-import { BiUserCheck, BiUserX, BiDirections, BiTab, BiWallet } from "react-icons/bi";
+import {FiArrowLeftCircle } from "react-icons/fi";
 import { tab } from "@testing-library/user-event/dist/tab";
 import { useDispatch, useSelector } from "react-redux";
 import { Edit_Data } from "../../Services/redux/action/action";
@@ -102,18 +102,21 @@ const Particularjob = () => {
     var selector = useSelector(state => state.data?.apidata?.edit_data?.data)
     useEffect(() => {
         document.title = "Detail-Applied"
-      }, [])
+    }, [])
     return (
         <div className="content_center margin_bottom_ ">
             <div className="topGapPad  w-100">
                 {<BasicBreadcrumbs route={route} />}
                 <div className="panle_body">
-                <div className="panle_header">
-                    <div className="left-panle-title"><h4>Detail-Applied</h4></div>
-                    <div className="right_panle_container">
-                        <BsFilter size={24} color="#ff6b01" onClick={() => setSdisabled(p => !p)} />
+                    <div className="panle_header">
+                        <div className="left-panle-title"><h4>Detail-Applied</h4></div>
+                        <div className="right_panle_container">
+                            <Button variant="" className="btn-sm remove_button_padding" onClick={() => {
+                                nevigate(-1)
+                            }}><FiArrowLeftCircle size={21} color="#ff6b01" /></Button>
+                            <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>
 
-                    </div>
+                        </div>
                     </div>
                 </div>
                 <Tabs activeKey={key}
@@ -147,41 +150,39 @@ const Particularjob = () => {
                             </Modal.Footer>
                         </Modal>
                         <div className="jobes_margin">
-                                <div className="main-pannle">
-                                    <div className="leftt_pannel">
-                                        <div className="jobes_card">
-                                            <div className="d-flex buton_positin gap-2" >
-                                                <Button variant="secondary" className="btn-sm " onClick={() => {
-                                                    nevigate(-1)
-                                                }}>Back</Button>
-                                                <Button variant="primary" className="btn-sm " onClick={() => {
-                                                    nevigate('/updatejob')
+                            <div className="main-pannle">
+                                <div className="leftt_pannel">
+                                    <div className="jobes_card">
+                                        <div className="d-flex buton_positin gap-2" >
 
-                                                    localStorage.setItem("key", "Edit Job")
-                                                }}
-                                                >Edit</Button></div>
-                                            <div className="jobes_marginbottom">
-                                                <img src="assets/images/nestor.jfif" height={80} width={80} />
-                                            </div>
-                                            <div className="titlejob">
-                                                <span>{selector?.jobtitle} - Mohali</span>
-                                            </div>
-                                            <div className="job_location  jobes_marginbottom">
+                                            <Button variant="primary" className="btn-sm " onClick={() => {
+                                                nevigate('/edit-job')
+
+                                                localStorage.setItem("key", "Edit Job")
+                                            }}
+                                            >Edit</Button></div>
+                                        <div className="jobes_marginbottom">
+                                            <img src="assets/images/nestor.jfif" height={80} width={80} />
+                                        </div>
+                                        <div className="titlejob">
+                                            <span>{selector?.jobtitle} - Mohali</span>
+                                        </div>
+                                        <div className="job_location  jobes_marginbottom">
                                             <h5 >Description: </h5>
                                             <p> {selector?.description}</p>
-                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="">
+                                        <div className="job_description_heading">
+                                            <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
                                         </div>
                                         <div className="">
-                                            <div className="job_description_heading">
-                                                <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
-                                            </div>
-                                            <div className="">
-                                                <ul className="job_description_list">
-                                                    {selector?.responsibility?.map((data, index)=>
-                                                        <li className = "">
-                                                        { data.value }
+                                            <ul className="job_description_list">
+                                                {selector?.responsibility?.map((data, index) =>
+                                                    <li className="">
+                                                        {data.value}
                                                     </li>
-                                              )  }
+                                                )}
 
                                             </ul>
                                         </div>
@@ -190,10 +191,10 @@ const Particularjob = () => {
                                         </div>
                                         <div className="">
                                             <ul className="job_description_list">
-                                            {selector?.requirment?.map((data, index)=>
-                                                <li className = "">
-                                                { data.value }
-                                                </li>)}
+                                                {selector?.requirment?.map((data, index) =>
+                                                    <li className="">
+                                                        {data.value}
+                                                    </li>)}
                                             </ul>
                                         </div>
                                         <div className="job_description_heading">
@@ -201,10 +202,10 @@ const Particularjob = () => {
                                         </div>
                                         <div className="">
                                             <ul className="job_description_list">
-                                            {selector?.benefits?.map((data, index)=>
-                                                <li className = "">
-                                                { data.value }
-                                                </li>)}
+                                                {selector?.benefits?.map((data, index) =>
+                                                    <li className="">
+                                                        {data.value}
+                                                    </li>)}
                                             </ul>
                                         </div>
                                         <div style={{ marginTop: 80 }}>
@@ -223,7 +224,7 @@ const Particularjob = () => {
                                                 </li>
                                                 <li>
                                                     <h5 className="job_description_level">Industries</h5>
-                                                    <span>{selector.industry}</span>
+                                                    <span>{selector?.industry}</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -259,144 +260,144 @@ const Particularjob = () => {
                                         </ul>
                 </div>*/}
                             </div>
-                        
-                    </div>
-                </Tab>
-                <Tab eventKey="Aplied" title="Applied" >
-                    <div style={{ marginTop: "20px", marginBottom: "20px" }}>
 
-                        <Row className="main-applied-contaier">
-                            <Col md={6} sm={12} lg={2} xl={2}>
-                                <div className="card2">
-                                    <div className="card-header2">
-                                        <div className="innerCard1">
-                                            <span>Total Candidates</span>
-                                            <h4 style={{ fontWeight: "400" }}>56</h4>
+                        </div>
+                    </Tab>
+                    <Tab eventKey="Aplied" title="Applied" >
+                        <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+
+                            <Row className="main-applied-contaier">
+                                <Col md={6} sm={12} lg={2} xl={2}>
+                                    <div className="card2">
+                                        <div className="card-header2">
+                                            <div className="innerCard1">
+                                                <span>Total Candidates</span>
+                                                <h4 style={{ fontWeight: "400" }}>56</h4>
+                                            </div>
                                         </div>
+                                        {/*<div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>*/}
                                     </div>
-                                    {/*<div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>*/}
-                                </div>
-                            </Col>
-                            <Col md={6} sm={12} lg={2} xl={2}>
-                                <div className="card2">
-                                    <div className="card-header2">
-                                        <div className="innerCard1">
-                                            <span>Selected</span>
-                                            <h4 style={{ fontWeight: "400" }}>53</h4>
+                                </Col>
+                                <Col md={6} sm={12} lg={2} xl={2}>
+                                    <div className="card2">
+                                        <div className="card-header2">
+                                            <div className="innerCard1">
+                                                <span>Selected</span>
+                                                <h4 style={{ fontWeight: "400" }}>53</h4>
+                                            </div>
                                         </div>
+                                        {/*<div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>*/}
                                     </div>
-                                    {/*<div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>*/}
-                                </div>
-                            </Col>
-                            <Col md={6} sm={12} lg={2} xl={2}>
-                                <div className="card2">
-                                    <div className="card-header2">
-                                        <div className="innerCard1">
-                                            <span >Rejected</span>
-                                            <h4 style={{ fontWeight: "400" }}>10</h4>
+                                </Col>
+                                <Col md={6} sm={12} lg={2} xl={2}>
+                                    <div className="card2">
+                                        <div className="card-header2">
+                                            <div className="innerCard1">
+                                                <span >Rejected</span>
+                                                <h4 style={{ fontWeight: "400" }}>10</h4>
+                                            </div>
                                         </div>
+                                        {/*<div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>*/}
                                     </div>
-                                    {/*<div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>*/}
-                                </div>
-                            </Col>
-                            <Col md={6} sm={12} lg={6} xl={6}>
-                                <div className="d-flex justify-content-between gap-2 m-auto">
-                                    <Collapse in={disabled}>
-                                        <div className="w-25">
-                                            <Form.Select aria-label="Default select example" className="fs_13" >
-                                                <option disabled selected hidden>Status</option>
-                                                <option value="1">All</option>
-                                                <option value="1">Reject</option>
-                                                <option value="1">Select</option>
-                                            </Form.Select>
-                                        </div>
-                                    </Collapse>
-                                    <Collapse in={disabled}>
-                                        <div className="w-100" >
-                                            <InputGroup className="mb-3">
-                                                <FormControl
-                                                    className="fs_13"
-                                                    placeholder="Search by title and name"
-                                                    aria-label="Recipient's username"
-                                                    aria-describedby="basic-addon2"
-                                                    onChange={(e) => {
-                                                        requestSearch(e.target.value)
-                                                    }}
-                                                />
-                                                {/*<Button variant="outline-secondary" id="button-addon2">
+                                </Col>
+                                <Col md={6} sm={12} lg={6} xl={6}>
+                                    <div className="d-flex justify-content-between gap-2 m-auto">
+                                        <Collapse in={disabled}>
+                                            <div className="w-25">
+                                                <Form.Select aria-label="Default select example" className="fs_13" >
+                                                    <option disabled selected hidden>Status</option>
+                                                    <option value="1">All</option>
+                                                    <option value="1">Reject</option>
+                                                    <option value="1">Select</option>
+                                                </Form.Select>
+                                            </div>
+                                        </Collapse>
+                                        <Collapse in={disabled}>
+                                            <div className="w-100" >
+                                                <InputGroup className="mb-3">
+                                                    <FormControl
+                                                        className="fs_13"
+                                                        placeholder="Search by title and name"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2"
+                                                        onChange={(e) => {
+                                                            requestSearch(e.target.value)
+                                                        }}
+                                                    />
+                                                    {/*<Button variant="outline-secondary" id="button-addon2">
                                         <BsSearch />
                                         </Button>*/}
-                                            </InputGroup>
-                                        </div>
-                                    </Collapse>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                    <div className="boxshadow">
-                        <Table striped bordered hover >
-                            <thead>
-                                <tr>
-                                    <th>Action</th>
-                                    <th
-                                    >Title</th>
-                                    <th onClick={() => {
-                                        setTitle(!title)
-                                        { title ? sortt() : sortt1() }
-                                    }}>Name{title ? <BsArrowDown /> : <BsArrowUp />}</th>
-                                    <th>Email</th>
-                                    <th>Phone Number</th>
-                                    <th>Resume</th>
-                                    <th className="action-col">Status</th>
-                                </tr>
-                            </thead>
-                            {tableData.length > 0 ?
-                                <tbody>
-                                    {tableData.map((data, index) =>
-                                        <tr>
-                                            <td class="action">
-                                                <div class="userDetail ">
-                                                    <button type="button" class="btn "
-                                                        id="dropdownIconMenu" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        <span class="actionIcon"> <i
-                                                            class="bi bi-three-dots-vertical"></i> </span>
-                                                    </button>
-                                                    <ul class="IconDropdown dropdown-menu context-menu11 "
-                                                        aria-labelledby="dropdownIconMenu">
-                                                        <li class="dropdownList ">
+                                                </InputGroup>
+                                            </div>
+                                        </Collapse>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                        <div className="boxshadow">
+                            <Table striped bordered hover >
+                                <thead>
+                                    <tr>
+                                        <th>Action</th>
+                                        <th
+                                        >Title</th>
+                                        <th onClick={() => {
+                                            setTitle(!title)
+                                            { title ? sortt() : sortt1() }
+                                        }}>Name{title ? <BsArrowDown /> : <BsArrowUp />}</th>
+                                        <th>Email</th>
+                                        <th>Phone Number</th>
+                                        <th>Resume</th>
+                                        <th className="action-col">Status</th>
+                                    </tr>
+                                </thead>
+                                {tableData.length > 0 ?
+                                    <tbody>
+                                        {tableData.map((data, index) =>
+                                            <tr>
+                                                <td class="action">
+                                                    <div class="userDetail ">
+                                                        <button type="button" class="btn "
+                                                            id="dropdownIconMenu" data-bs-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                            <span class="actionIcon"> <i
+                                                                class="bi bi-three-dots-vertical"></i> </span>
+                                                        </button>
+                                                        <ul class="IconDropdown dropdown-menu context-menu11 "
+                                                            aria-labelledby="dropdownIconMenu">
+                                                            <li class="dropdownList ">
 
-                                                            {data.active === "rejected" ?
-                                                                <div class="actionBtns context-menu1">
-                                                                    <span class="editAction" data-bs-toggle="modal"
-                                                                        data-bs-target="#editbtn"><AiOutlineCheck /></span>
-                                                                    <button type="button" className="btn btn-outlined-secondary fs_13 " onClick={() => {
-                                                                        setShowalert(true)
-                                                                        setIndex(index)
-                                                                        settr(true)
-                                                                    }}>Accept</button>
-                                                                </div> : ""}
-                                                        </li>
-                                                        <li class="dropdownList">
-                                                            {data.active == "accepted" ?
-                                                                <div class="actionBtns context-menu1">
-                                                                    <span class="deleteAction" data-bs-toggle="modal"
-                                                                        data-bs-target="#deletebtn"> <AiOutlineCloseCircle /></span>
-                                                                    <button type="button" key={index} className="btn btn-outlined-secondary fs_13" onClick={() => {
-                                                                        setShowalert(true)
-                                                                        setIndex(index)
-                                                                        settr(false)
-                                                                    }}>Reject</button>
-                                                                </div> : ""}
-                                                        </li>
-                                                    </ul>
-                                                </div></td>
-                                            <td>{data.Jobtitle}</td>
-                                            <td>{CapitalizeFirstLetter(data.name)}</td>
-                                            <td>{CapitalizeFirstLetter(data.email)}</td>
-                                            <td>{data.phone}</td>
-                                            <td className="content_cente_td"><a target="_blank" href="http://www.africau.edu/images/default/sample.pdf"><GoCloudDownload size={20} color="green" /></a></td>
-                                            <td>{/*<Form>
+                                                                {data.active === "rejected" ?
+                                                                    <div class="actionBtns context-menu1">
+                                                                        <span class="editAction" data-bs-toggle="modal"
+                                                                            data-bs-target="#editbtn"><AiOutlineCheck /></span>
+                                                                        <button type="button" className="btn btn-outlined-secondary fs_13 " onClick={() => {
+                                                                            setShowalert(true)
+                                                                            setIndex(index)
+                                                                            settr(true)
+                                                                        }}>Accept</button>
+                                                                    </div> : ""}
+                                                            </li>
+                                                            <li class="dropdownList">
+                                                                {data.active == "accepted" ?
+                                                                    <div class="actionBtns context-menu1">
+                                                                        <span class="deleteAction" data-bs-toggle="modal"
+                                                                            data-bs-target="#deletebtn"> <AiOutlineCloseCircle /></span>
+                                                                        <button type="button" key={index} className="btn btn-outlined-secondary fs_13" onClick={() => {
+                                                                            setShowalert(true)
+                                                                            setIndex(index)
+                                                                            settr(false)
+                                                                        }}>Reject</button>
+                                                                    </div> : ""}
+                                                            </li>
+                                                        </ul>
+                                                    </div></td>
+                                                <td>{data.Jobtitle}</td>
+                                                <td>{CapitalizeFirstLetter(data.name)}</td>
+                                                <td>{CapitalizeFirstLetter(data.email)}</td>
+                                                <td>{data.phone}</td>
+                                                <td className="content_cente_td"><a target="_blank" href="http://www.africau.edu/images/default/sample.pdf"><GoCloudDownload size={20} color="green" /></a></td>
+                                                <td>{/*<Form>
                                                     <Form.Check className="switch_padding1"
                                                         type="switch"
                                                         key={index}
@@ -410,53 +411,53 @@ const Particularjob = () => {
                                                         label="" />
                                                     </Form>*/}
 
-                                                {data?.active == "accepted" ? <Badge bg="success" size={30}>Accepted</Badge> : <Badge bg="danger" size={30}>Rejected</Badge>} </td>
-                                        </tr>)}
-                                </tbody> : "No Record Found"}
-                        </Table>
-                    </div>
-                    {tableData.length > 0 ?
-                        <div>
-                            <CustomPagination
-                                total={tableData.length}
-                                start={pagination1}
-                                setStart={setpagination}
-                            />
-                        </div> : ""}
-                </Tab>
-            </Tabs>
-            <Modal show={show} onHide={handleClose} size="sm">
-                <Modal.Header closeButton>
-                    <Modal.Title>Project</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    {<div className="">
-                        <div className="userdetails">
-                            <h3></h3>
-                            <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                {() => (
-                                    <form onSubmit={(e) => {
-                                        e.preventDefault();
-                                    }}
-                                    >
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Input type="text" label="Name" className="form-control" name="storytitle" />
-                                        </Form.Group>
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Input type="text" label="Email" className="form-control" name="Email" />
-                                        </Form.Group>
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Input type="text" label="Phone Number" className="form-control" name="Email" />
-                                        </Form.Group>
-                                    </form>
-                                )}
-                            </Formik>
+                                                    {data?.active == "accepted" ? <Badge bg="success" size={30}>Accepted</Badge> : <Badge bg="danger" size={30}>Rejected</Badge>} </td>
+                                            </tr>)}
+                                    </tbody> : <h3 className="table_no_records">No Record Found</h3>}
+                            </Table>
                         </div>
-                    </div>}
-                </Modal.Body>
+                        {tableData.length > 0 ?
+                            <div>
+                                <CustomPagination
+                                    total={tableData.length}
+                                    start={pagination1}
+                                    setStart={setpagination}
+                                />
+                            </div> : ""}
+                    </Tab>
+                </Tabs>
+                <Modal show={show} onHide={handleClose} size="sm">
+                    <Modal.Header closeButton>
+                        <Modal.Title>Project</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        {<div className="">
+                            <div className="userdetails">
+                                <h3></h3>
+                                <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
+                                    {() => (
+                                        <form onSubmit={(e) => {
+                                            e.preventDefault();
+                                        }}
+                                        >
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Input type="text" label="Name" className="form-control" name="storytitle" />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Input type="text" label="Email" className="form-control" name="Email" />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Input type="text" label="Phone Number" className="form-control" name="Email" />
+                                            </Form.Group>
+                                        </form>
+                                    )}
+                                </Formik>
+                            </div>
+                        </div>}
+                    </Modal.Body>
 
-            </Modal>
-        </div>
+                </Modal>
+            </div>
         </div >
     )
 }

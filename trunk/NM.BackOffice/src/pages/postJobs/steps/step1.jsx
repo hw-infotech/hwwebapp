@@ -10,10 +10,10 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
     //const { handleChange } = useFormikContext()
     useEffect(() => {
         document.title = "Basic Detail"
-      }, [])
+    }, [])
     console.log(values, "this is s the values in first ");
     return <div className="main-wrap-box w-100 m-auto">
-     
+
         <Row>
             <Col md={12}>
                 <Form.Group className="mb-3">
@@ -23,7 +23,7 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
                         { value: "Web Development", label: "Web Development" },
                     ]} >
                     </Input>
-                 
+
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                     <Form.Label className="label-size">Descritption</Form.Label>
@@ -36,8 +36,8 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
             </Col>
         </Row>
         <div className="d-flex justify-content-end mt-2">
-        <Button variant="primary" className="btn-sm" onClick={() => setGoSteps(1)}>Next</Button>
-    </div>
+            <Button variant="primary" className="btn-sm" onClick={() => setGoSteps(1)}>Next</Button>
+        </div>
     </div>
 }
 
