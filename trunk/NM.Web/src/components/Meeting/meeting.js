@@ -7,7 +7,6 @@ const Meeting = () => {
   useEffect(() => {
     // const element = document.querySelector("#candely").contentDocument
     //   .children[0].lastElementChild;
-
     // var iframe = document.getElementById("candely");
     // var iframeDocument =
     //   iframe.contentDocument || iframe.contentWindow.document;
@@ -15,21 +14,22 @@ const Meeting = () => {
     //   throw "iframe couldn't be found in DOM.";
     // }
     //var iframeContent = iframeDocument.querySelectorAll("#frameBody");
-    var iframe = document.getElementById("candely");
-    var innerDoc = iframe.contentDocument
-      ? iframe.contentDocument
-      : iframe.contentWindow.document;
-    console.log(innerDoc);
+    // var iframe = document.getElementById("candely");
+    // var innerDoc = iframe.contentDocument
+    //   ? iframe.contentDocument
+    //   : iframe.contentWindow.document;
+    // console.log(innerDoc);
   }, []);
 
   return (
-    <div style={{ marginTop: 50 }} className=" ">
-      <iframe
-        id="candely"
-        src="https://calendly.com/nestormindpvtltd"
-        className="appointment"
-        type="text/html"
-      ></iframe>
+    <div className="candelyCal">
+      <InlineWidget
+        className="candely"
+        url="https://calendly.com/nestormindpvtltd"
+        pageSettings={{
+          hideGdprBanner: true,
+        }}
+      />
     </div>
   );
 };
