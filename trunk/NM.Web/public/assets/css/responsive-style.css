@@ -76,9 +76,11 @@
     width: 150px;
   }
   .navbar .navbar-nav .nav-item {
-    padding: 10px 10px !important;
+    padding: 0px 10px !important;
     width: 100%;
     float: left;
+    position: relative!important;
+    flex-direction: column;
   }
   .servicesArea .serviceBox h2 {
     font-size: 24px !important;
@@ -414,6 +416,9 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  .navbar .navbar-nav .nav-item {
+    padding: 12px 13px;
+}
   .navbar .navbar-nav .nav-item .dropdown-menu .dropdownmenus {
     width: 100% !important;
   }
