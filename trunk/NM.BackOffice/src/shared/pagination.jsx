@@ -39,7 +39,7 @@ const CustomPagination = ({ total, start, setStart }) => {
         setItemOffset(newOffset);
     };
     return (
-        <div className="w-100  pt-3 customPagination" >
+        <div className="w-100 customPagination" >
             {/*<div className="w-25">
                 <TooltipComp
                     component={<Form.Select className="rowPerPage" value={showPerPage} onChange={(e) => {
@@ -55,22 +55,22 @@ const CustomPagination = ({ total, start, setStart }) => {
                     tooltip="Row's per page"
                 />
                 </div>*/}
-            <div>
-                <ReactPaginate
-                    className="pagination "
-                    breakLabel="..."
-                    nextLabel=">>"
-                    onPageChange={handlePageClick}
-                    pageRangeDisplayed={0}
-                    pageCount={Math.ceil(total / showPerPage)}
-                    previousLabel="<<"
-                    renderOnZeroPageCount={null}
-                    activeClassName="active"
-                    previousClassName="previousList"
-                    nextClassName="nextList"
-                />
 
-            </div>
+            <ReactPaginate
+                className="pagination "
+                breakLabel="..."
+                nextLabel=">>"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={0}
+                pageCount={Math.ceil(total / showPerPage)}
+                previousLabel="<<"
+                renderOnZeroPageCount={null}
+                activeClassName="active"
+                previousClassName="previousList"
+                nextClassName="nextList"
+            />
+
+
         </div>)
 };
 

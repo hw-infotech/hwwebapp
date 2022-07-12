@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router";
 import { NavLink } from "react-bootstrap";
+import { RiGalleryLine } from "react-icons/ri";
+import { BsBuilding } from "react-icons/bs";
+import { BiNews } from "react-icons/bi";
+import { RiHome2Line } from "react-icons/ri";
+import { GoQuestion } from "react-icons/go";
 const Sidebar = ({ sidebarShow }) => {
     const classname = 'activeMenu'
     let classes = 'reverse'
+    const [show, setshow] = useState(false)
     const navigtion = useNavigate()
+
+    function jqry() {
+
+    }
+    // $(makeTogglable: function(element) {
+    //     $element = $(element);
+
+    //     this.toggle = function() {
+    //       $element.slideToggle();
+    //     };
+    //   },)
     return (
         <div className="sidebar" title="sidebar"
             style={sidebarShow ? {
@@ -21,7 +38,6 @@ const Sidebar = ({ sidebarShow }) => {
                 <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" />
                 <div> <span className="fs_13 header_text"><b>Back</b>Office</span></div>
             </div>
-
             <div className="align-items-sm-start px-3 pt-2">
                 <ul className="nav nav-pills  align-items-center" id="menu">
                     <li className={`nav-item sidebar_hover`}>
@@ -29,7 +45,7 @@ const Sidebar = ({ sidebarShow }) => {
                             navigtion("/home")
                             localStorage.setItem('className', "Dashboard")
                         }}>
-                            <i className="fs-4 bi-house"> </i>
+                            <RiHome2Line size={28} />
                             <span className="ms-1 d-none d-sm-inline">Dashboard</span>
                         </div>
                     </li>
@@ -81,17 +97,17 @@ const Sidebar = ({ sidebarShow }) => {
                     <li className="sidebar_list">
                         <a href="#submenu2" data-bs-toggle="collapse"
                             className="nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text">
-                            <i className="fs-4 bi-bootstrap  "></i>
+                            <RiGalleryLine size={27} />
+                            {/*<img src="./assets/images/car.png" style={{background:"white"}} width={25} height={25}/>*/}
                             <span className="ms-1 d-none d-sm-inline">Sliders/Carousels</span>
-                            <span className={'dropdownarrowicon '} id="dropdownarrowicon">
+                            <span className={'dropdownarrowicon '} style={show ? { transform: "rotate(180deg)" } : { transform: "rotate(0deg)" }}>
                                 <i className={'fs-6 bi-caret-down  dropdownarrowicon '} onClick={() => {
-                                   
+                                    setshow(true)
                                 }} ></i>
                             </span>
                         </a>
                         <ul className="collapse nav flex-column " id="submenu2" data-bs-parent="#menu">
                             <li className={`w-100 sidebar_list`}>
-
                                 <a className={`nav-link  text-color-white gap-icon-text sidebar_focus ${localStorage.getItem("className") == "success" && classname}`} onClick={() => {
                                     localStorage.setItem('className', "success")
                                     navigtion('/success-stories')
@@ -103,14 +119,13 @@ const Sidebar = ({ sidebarShow }) => {
                     </li>
                     <li className="sidebar_list">
                         <a href="#submenu8" data-bs-toggle="collapse" className="nav-link sidebar_focus px-0 align-middle text-color-white gap-icon-text">
-                            <i class="fs-4  bi-newspaper"></i> <span className="ms-1 d-none d-sm-inline">Newsletter</span> <span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span></a>
+                            <BiNews size={28} /> <span className="ms-1 d-none d-sm-inline">Newsletter</span> <span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span></a>
                         <ul className="collapse nav flex-column " id="submenu8" data-bs-parent="#menu">
                             <li className="w-100 sidebar_inline">
                                 <a className={`nav-link  text-color-white gap-icon-text sidebar_focus ${localStorage.getItem("className") == "subscirber" && classname}`} onClick={() => {
                                     localStorage.setItem('className', "subscirber")
                                     navigtion('/newsletter-subscribers')
                                 }}>
-
                                     <span className="d-none d-sm-inline navbar-submenu ">Subscribe/Unsubscribe</span>
                                 </a>
                             </li>
@@ -118,7 +133,7 @@ const Sidebar = ({ sidebarShow }) => {
                     </li>
                     <li className="sidebar_list">
                         <a href="#submenu9" data-bs-toggle="collapse" className="nav-link sidebar_focus px-0 align-middle text-color-white gap-icon-text ">
-                            <i className="fs-4 bi-question-circle"></i> <span className="ms-1 d-none d-sm-inline gap-icon-text">Enquery</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
+                            <GoQuestion size={39} /> <span className="ms-1 d-none d-sm-inline gap-icon-text">Enquery</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
                         <ul className="collapse nav flex-column " id="submenu9" data-bs-parent="#menu">
                             <li className="w-100 ">
                                 <a className={`nav-link  text-color-white gap-icon-text sidebar_focus ${localStorage.getItem("className") == "allenquiry" && classname}`} onClick={() => {
@@ -132,7 +147,7 @@ const Sidebar = ({ sidebarShow }) => {
                     </li>
                     <li className="sidebar_list">
                         <a href="#submenu10" data-bs-toggle="collapse" className="nav-link px-0  sidebar_focus align-middle text-color-white gap-icon-text">
-                            <i className="fs-4 bi-building"></i> <span className=" d-none d-sm-inline">Job Management</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
+                            <BsBuilding size={26} /> <span className=" d-none d-sm-inline">Job Management</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
                         <ul className="collapse nav flex-column " id="submenu10" data-bs-parent="#menu">
                             { /*<li className="sidebar_list">
                                 <div className="nav-link  text-color-white  gap-icon-text" onClick={() => {

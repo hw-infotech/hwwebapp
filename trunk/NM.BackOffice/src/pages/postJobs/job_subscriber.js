@@ -113,7 +113,7 @@ const Job_newsletter = () => {
     }, [])
 
     return (
-        <div className="main-jobsubscriber-box">
+        <div className="main-jobsubscriber-content">
             <BasicBreadcrumbs route={route} />
             <div className="panle_body">
                 <div className="panle_header">
@@ -155,7 +155,6 @@ const Job_newsletter = () => {
             </div>
             <div className="content_box">
                 <div className="data-table">
-
                     <Table striped bordered hover>
                         <thead>
                             <tr>

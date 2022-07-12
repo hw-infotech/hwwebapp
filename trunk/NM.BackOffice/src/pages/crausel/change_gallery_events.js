@@ -57,7 +57,7 @@ const Change_Gallery_Events = () => {
     return (
         <div title="Change Gallery Events">
             {/*<BasicBreadcrumbs route={route} />*/}
-            <div className="topGapPad margin_bottom_">
+            <div className="topPadding-10 margin_bottom_">
                 <div className="boxshadow">
                     <table class="table">
                         <thead>
@@ -297,7 +297,7 @@ const Change_Gallery_Events = () => {
                 </Modal>
                 <div className="row padd_bottm">
                     <div className="col-sm-6 col-lg-6 col-md-6">
-                        <div className="gapPad">
+                        <div className="padding-30">
                             <select class="form-select w-25 " name={state.row_value} onChange={Chnage}>
                                 <option disabled selected>Rows</option>
                                 <option value="10">10</option>
@@ -307,7 +307,7 @@ const Change_Gallery_Events = () => {
                         </div>
                     </div>
                     {/* <div className="col-sm-6 col-lg-6 col-md-6 ">
-                        <div className="gapPad pagination_justify_end ">
+                        <div className="padding-30 pagination_justify_end ">
                             <Pagination
                                 className="paginationDiv"
                                 count={5}

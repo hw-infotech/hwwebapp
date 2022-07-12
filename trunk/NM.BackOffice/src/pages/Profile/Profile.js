@@ -110,7 +110,7 @@ const Profile = () => {
                     id="controlled-tab-example"
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
-                    className="mb-3  tab_changes"
+                    className="mb-3  tab_border_zero"
                 >
                     <Tab eventKey="Overview" title="Overview" className="">
                         <Row>

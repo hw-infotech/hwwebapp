@@ -131,7 +131,7 @@ const Applied_Job = () => {
                     </InputGroup>
                 </div>
             </div>
-            <div className="topGapPad">
+            <div className="topPadding-10">
                 <div className="boxshadow">
                     <Table>
                         <thead>

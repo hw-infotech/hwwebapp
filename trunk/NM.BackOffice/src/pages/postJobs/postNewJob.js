@@ -47,7 +47,7 @@ const Post_New_Job = () => {
             <BasicBreadcrumbs route={route} />
             <h4>Post a New Job</h4>
             <div className="content_center margin_bottom_ ">
-                <div className="topGapPad p-3 w-100">
+                <div className="topPadding-10 p-3 w-100">
                     <Tabs activeKey={key} id="uncontrolled-tab-example" className="mb-3">
                         <Tab eventKey="Create" title="Create">
 
@@ -163,32 +163,32 @@ const Post_New_Job = () => {
                                                 </div>
                                             </div>
                                             <div className="">
-                                                <div className="job_description_heading">
+                                                <div className="job_heading">
                                                     <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
                                                 </div>
                                                 <div className="">
-                                                    <ul className="job_description_list">
+                                                    <ul className="job__list">
                                                         {state?.responsibility?.map((data, index) =>
                                                             <li className=""> {data?.value}</li>
                                                         )}
                                                     </ul>
                                                 </div>
-                                                <div className="job_description_heading">
+                                                <div className="job_heading">
                                                     <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
 
                                                 </div>
                                                 <div className="">
-                                                    <ul className="job_description_list">
+                                                    <ul className="job__list">
                                                         {state?.requirment?.map((data, index) =>
                                                             <li className=""> {data?.value}</li>
                                                         )}
                                                     </ul>
                                                 </div>
-                                                <div className="job_description_heading">
+                                                <div className="job_heading">
                                                     <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
                                                 </div>
                                                 <div className="">
-                                                    <ul className="job_description_list">
+                                                    <ul className="job__list">
                                                         {state?.benefits?.map((data, index) =>
                                                             <li className=""> {data?.value}</li>
                                                         )}
@@ -258,7 +258,7 @@ const Post_New_Job = () => {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div className="topGapPad p-3">
+                        <div className="topPadding-10 p-3">
                             <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                                 {() => (
                                     <form onSubmit={(e) => {

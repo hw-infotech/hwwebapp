@@ -8,17 +8,14 @@ const Home = () => {
     const graphRef = useRef()
     useEffect(() => {
         document.title = "Dashboard"
-      }, [])
-  
+    }, [])
+
     const data = useMemo(
-       
         () => [
             {
-
                 data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
             },
             {
-
                 data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
             }
         ],
@@ -51,7 +48,7 @@ const Home = () => {
     }, [])
 
     return (<div>
-        <div style={{ marginTop: "50px" }}>
+        <div className="main_dashboard_content">
             <Row>
                 <Col md={6} sm={12} lg={3} xl={3}>
                     <div className="card1">
@@ -64,7 +61,7 @@ const Home = () => {
                                 <h4 style={{ fontWeight: "400" }}>$5k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="decoration">+5% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="text-decoration-green">+5% </span>than yesterday</div>
                     </div>
                 </Col>
                 <Col md={6} sm={12} lg={3} xl={3}>
@@ -78,7 +75,7 @@ const Home = () => {
                                 <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="text-decorationn1">-3%</span> than yesterday</div>
+                        <div className="card-footer1"> <span className="text-decoration-red">-3%</span> than yesterday</div>
                     </div>
                 </Col>
                 <Col md={6} sm={12} lg={3} xl={3}>
@@ -92,7 +89,7 @@ const Home = () => {
                                 <h4 style={{ fontWeight: "400" }}>$53k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="decoration">+9% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="text-decoration-green">+9% </span>than yesterday</div>
                     </div>
                 </Col>
                 <Col md={6} sm={12} lg={3} xl={3}>
@@ -106,18 +103,18 @@ const Home = () => {
                                 <h4 style={{ fontWeight: "400" }}>$3k</h4>
                             </div>
                         </div>
-                        <div className="card-footer1"> <span className="decoration">+8% </span>than yesterday</div>
+                        <div className="card-footer1"> <span className="text-decoration-green">+8% </span>than yesterday</div>
                     </div>
                 </Col>
             </Row>
-            <div style={{ marginTop: "70px" }}>
+            <div className="main_graphcard_box">
                 <Row>
                     <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader" style={{ }}>
+                            <div className="card-graphheader" style={{}}>
                                 <div className="chart-card" >
                                     <div className="userDetail1" >
-                                        <button type="button" class="btn "
+                                        <button type="button" class="btn"
                                             id="dropdownIconMenu" data-bs-toggle="dropdown"
                                             aria-expanded="false">
                                             <span class="actionIcon"> <i
@@ -157,7 +154,7 @@ const Home = () => {
                     </Col>
                     <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader" style={{ }}>
+                            <div className="card-graphheader" style={{}}>
                                 <div className="chart-card">
 
                                     <div className="userDetail1" >
@@ -200,7 +197,7 @@ const Home = () => {
                     </Col>
                     <Col md={7} sm={12} lg={6} xl={4}>
                         <div className="card1">
-                            <div className="card-graphheader" style={{ }}>
+                            <div className="card-graphheader" style={{}}>
                                 <div className="chart-card" >
                                     <div className="userDetail1 ">
                                         <button type="button" class="btn "
@@ -277,7 +274,7 @@ const Home = () => {
 }
 export default Home
 
-{/* <div className="gapPad">
+{/* <div className="padding-30">
              <div className="row">
                 <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-lg-3">
                     <div className="card">

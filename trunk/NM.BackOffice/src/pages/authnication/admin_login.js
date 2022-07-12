@@ -10,7 +10,7 @@ const Admin_Login = () => {
         <div className="centeritmes">
             <div className="sign-page-box">
                 <div className="padding_around">
-                    <div className="gapPad text-center "><h2 >Admin Login</h2></div>
+                    <div className="padding-30 text-center "><h2 >Admin Login</h2></div>
                     <Formik
                         initialValues={{ email: "", password: "" }}
                         onSubmit={(values) => {
