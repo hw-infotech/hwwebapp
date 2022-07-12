@@ -14,12 +14,13 @@ import CapitalizeFirstLetter from "../../components/first_letter_capital";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BiEdit } from "react-icons/bi";
 import { BsFilter } from "react-icons/bs";
-import { BsSearch } from "react-icons/bs";
+
 import { FiArrowLeftCircle } from "react-icons/fi";
 import { tab } from "@testing-library/user-event/dist/tab";
 import { useDispatch, useSelector } from "react-redux";
 import { Edit_Data } from "../../Services/redux/action/action";
 import TooltipComp from "../../shared/Tooltipomp";
+
 
 const Particularjob = () => {
     const data = useParams()
@@ -106,7 +107,7 @@ const Particularjob = () => {
     }, [])
     return (
         <div className="box__content">
-            <div className="topGapPad w-100">
+            <div className="topPadding-10 w-100">
                 {<BasicBreadcrumbs route={route} />}
                 <div className="panle_body">
                     <div className="panle_header">
@@ -128,7 +129,7 @@ const Particularjob = () => {
                     }}>
                         <Modal show={showalert} onHide={handleClose} >
                             <Modal.Header closeButton>
-                                <Modal.Title className="modal-titlee"> Alert</Modal.Title>
+                                <Modal.Title className="modal-titleenpm"> Alert</Modal.Title>
                             </Modal.Header>
 
                             <Modal.Body>

@@ -47,7 +47,7 @@ const Post_New_Job = () => {
             <BasicBreadcrumbs route={route} />
             <h4>Post a New Job</h4>
             <div className="content_center margin_bottom_ ">
-                <div className="topGapPad p-3 w-100">
+                <div className="topPadding-10 p-3 w-100">
                     <Tabs activeKey={key} id="uncontrolled-tab-example" className="mb-3">
                         <Tab eventKey="Create" title="Create">
 
@@ -258,7 +258,7 @@ const Post_New_Job = () => {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div className="topGapPad p-3">
+                        <div className="topPadding-10 p-3">
                             <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                                 {() => (
                                     <form onSubmit={(e) => {

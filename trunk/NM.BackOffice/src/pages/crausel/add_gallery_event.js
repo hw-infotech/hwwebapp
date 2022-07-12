@@ -27,7 +27,7 @@ const Add_Gallery_Event = () => {
                         <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                             {() => (
                                 <form >
-                                    <div className="fs_13 w-100 topGapPad boxshadow">
+                                    <div className="fs_13 w-100 topPadding-10 boxshadow">
                                         <h4>Add Gallery Event</h4>
                                         <div className="d-flex w-100 ">
                                             <div className="w-100 spaces_between">

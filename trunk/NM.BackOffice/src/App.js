@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import routes from './Services/routes/Routes';
 import { useEffect, useState } from 'react';
 import Admin_Login from './pages/authnication/admin_login';
+import Todo from './components/todo';
 
 const localUser = JSON.parse(localStorage.getItem("nestor.user"))
 
@@ -40,7 +41,7 @@ function App() {
           <Route path='/' element={<Admin_Login />} exact />
         </Routes>}
     </Router>
-
+//<Todo/>
 
     // <div className='dashboard'>
     //   <Sidebar />

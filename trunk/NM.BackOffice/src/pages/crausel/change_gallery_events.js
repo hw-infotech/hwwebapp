@@ -57,7 +57,7 @@ const Change_Gallery_Events = () => {
     return (
         <div title="Change Gallery Events">
             {/*<BasicBreadcrumbs route={route} />*/}
-            <div className="topGapPad margin_bottom_">
+            <div className="topPadding-10 margin_bottom_">
                 <div className="boxshadow">
                     <table class="table">
                         <thead>

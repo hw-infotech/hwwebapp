@@ -11,14 +11,11 @@ const Home = () => {
     }, [])
 
     const data = useMemo(
-
         () => [
             {
-
                 data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
             },
             {
-
                 data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
             }
         ],
@@ -117,7 +114,7 @@ const Home = () => {
                             <div className="card-graphheader" style={{}}>
                                 <div className="chart-card" >
                                     <div className="userDetail1" >
-                                        <button type="button" class="btn "
+                                        <button type="button" class="btn"
                                             id="dropdownIconMenu" data-bs-toggle="dropdown"
                                             aria-expanded="false">
                                             <span class="actionIcon"> <i

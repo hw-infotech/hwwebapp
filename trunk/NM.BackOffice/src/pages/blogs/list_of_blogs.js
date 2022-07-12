@@ -56,7 +56,7 @@ const List_Of_Blogs = () => {
     return (
         <div>
             <BasicBreadcrumbs route={route} />
-            <div className="topGapPad">
+            <div className="topPadding-10">
                 <div className="boxshadow">
                     <h4>List of Blogs</h4>
                     <table class="table">

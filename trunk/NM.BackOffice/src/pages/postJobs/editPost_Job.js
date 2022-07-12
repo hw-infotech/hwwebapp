@@ -380,7 +380,7 @@ const Edit_postJob = (value1) => {
                     </Modal.Header>
                     <Modal.Body>
                         <div className="content_center">
-                            <div className="topGapPad p-3 w-100">
+                            <div className="topPadding-10 p-3 w-100">
                                 <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
                                     {() => (
                                         <form onSubmit={(e) => {
