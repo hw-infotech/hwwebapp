@@ -1,5 +1,5 @@
 import React from "react";
-import { ADD_GALLERY_EVENT, UPDATE, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK } from "../../store/type";
+import { ADD_GALLERY_EVENT, UPDATE, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK, UPDATE_PROFILE, GET_PROFILE_DATA } from "../../store/type";
 
 const initialstate = {
     addgalleryevent: "",
@@ -12,6 +12,13 @@ const initialstate = {
     getpendingenquiry: "",
     getresolvedenquiry: "",
     edit_data: [],
+    profile_data: {
+        name: "Ganesh",
+        phone: 9803836866,
+        email: "ganeshsharma5073@gmail.com",
+        location: "Mohali",
+        image: "/assets/images/shi.jpg"
+    },
     allEnquries: [
         {
             jobtitle: "UI/UX",
@@ -21,11 +28,11 @@ const initialstate = {
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
-               ],
-            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            ],
+            benefits: [{ value: 'Insurance', label: 'Insurance' }],
             requirment: [
                 { value: 'Graduate', label: 'Graduate' },
-               
+
             ],
             industry: "Technology",
             level: "Junior",
@@ -41,11 +48,11 @@ const initialstate = {
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
-               ],
-            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            ],
+            benefits: [{ value: 'Insurance', label: 'Insurance' }],
             requirment: [
                 { value: 'Graduate', label: 'Graduate' },
-             
+
             ],
             industry: "Technology",
             level: "Senior",
@@ -53,18 +60,18 @@ const initialstate = {
             active: "deactive"
         },
         {
-            Jobtitle: "Project Manager",
+            jobtitle: "Project Manager",
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Report to directors and executive staff",
             responsibility: [
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
-               ],
-            benefits: [  { value: 'Insurance', label: 'Insurance' }],
+            ],
+            benefits: [{ value: 'Insurance', label: 'Insurance' }],
             requirment: [
                 { value: 'Graduate', label: 'Graduate' },
-               
+
             ],
             industry: "Technology",
             level: "Senior",
@@ -79,7 +86,7 @@ const initialstate = {
 
 }
 const Reducer_Function = (state = initialstate, action) => {
-    console.log(action, "this is the acton ")
+
     const { type, payload } = action
     switch (type) {
         case ADD_GALLERY_EVENT: {
@@ -143,12 +150,7 @@ const Reducer_Function = (state = initialstate, action) => {
                 getallenquiry: state.allEnquries.push(payload)
             }
         }
-        case STACK: {
-            return {
-                ...state,
-                STACK: payload
-            }
-        }
+     
         case EDIT_DATA: {
             return {
                 ...state,
@@ -157,14 +159,24 @@ const Reducer_Function = (state = initialstate, action) => {
         }
         case UPDATE: {
             state.allEnquries[state.edit_data.index] = payload
-
-         
             return {
                 ...state,
 
             }
         }
+        case UPDATE_PROFILE: {
+            state.profile_data = payload
+            return {
+                ...state,
+            }
+        }
+        case GET_PROFILE_DATA: {
+            return {
+                ...state,
+                profile_data: state.profile_data
 
+            }
+        }
         default: {
             return state
         }

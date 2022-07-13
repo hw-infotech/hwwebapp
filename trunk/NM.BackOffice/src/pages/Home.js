@@ -249,13 +249,13 @@ const Home = () => {
                                 </div>
                                 <Table style={{ borderTop: "0px" }}>
                                     <tr>
-                                        <th className="textdecorarte" >Companies
+                                        <th className="text-decorationn" >Companies
                                         </th>
-                                        <th className="textdecorarte">Companies
+                                        <th className="text-decorationn">Companies
                                         </th>
-                                        <th className="textdecorarte">Companies
+                                        <th className="text-decorationn">Companies
                                         </th>
-                                        <th className="textdecorarte">Companies
+                                        <th className="text-decorationn">Companies
                                         </th>
                                     </tr>
                                 </Table>

@@ -97,7 +97,7 @@ const Particularjob = () => {
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Job Management", route: "" },
-        { name: "Job List", route: "/all-jobs" },
+        { name: "Job", route: "/all-jobs" },
         { name: "Detail-Applied", route: "/particularjob" },
 
     ]
@@ -129,10 +129,9 @@ const Particularjob = () => {
                     }}>
                         <Modal show={showalert} onHide={handleClose} >
                             <Modal.Header closeButton>
-                                <Modal.Title className="modal-titleenpm"> Alert</Modal.Title>
+                                <Modal.Title className="modal-titleenpm">Alert</Modal.Title>
                             </Modal.Header>
-
-                            <Modal.Body>
+                            <Modal.Body className="label-size">
                                 <p>{"Are You Really want to change the status"}</p>
                             </Modal.Body>
                             <Modal.Footer>
@@ -181,7 +180,6 @@ const Particularjob = () => {
                                                     {data.value}
                                                 </li>
                                             )}
-
                                         </ul>
                                         <div className="job_heading">
                                             <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
@@ -255,7 +253,6 @@ const Particularjob = () => {
                                         </ul>
                 </div>*/}
                             </div>
-
                         </div>
                     </Tab>
                     <Tab eventKey="Aplied" title="Applied" >
@@ -411,12 +408,12 @@ const Particularjob = () => {
                             </Table>
                         </div>
                         {tableData.length > 0 ?
-                           
-                                <CustomPagination
-                                    total={tableData.length}
-                                    start={pagination1}
-                                    setStart={setpagination}
-                                />
+
+                            <CustomPagination
+                                total={tableData.length}
+                                start={pagination1}
+                                setStart={setpagination}
+                            />
                             : ""}
                     </Tab>
                 </Tabs>

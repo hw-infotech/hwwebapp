@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //import { Badge } from '@mui/material';
 import success_Stories from '../../pages/crausel/success_Stories'
 import { admin } from "../../data/Data";
@@ -6,11 +6,18 @@ import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
 import { GoThreeBars } from "react-icons/go";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = ({ title, sidebarShow, setSidebarShow }) => {
+    const[data1,getdata]=useState()
     const [state, setState] = useState("Ganesh")
+    let selector = useSelector(state => state)
+    useEffect(() => {
+        getdata(selector?.data?.apidata?.profile_data)
+        console.log("this is the profile page", data1)
+    }, [selector])
     const history = useNavigate()
-    const getTitle = () => (<span>Welcome,<strong className="user_content" style={{ color: "black" }}> {state}</strong></span>)
+    const getTitle = () => (<span>Welcome,<strong className="user_content" style={{ color: "black" }}> {data1?.name}</strong></span>)
     return (
         <div className="main-header-box">
             <Navbar className="navbarBox" style={{ height: "70px" }}>

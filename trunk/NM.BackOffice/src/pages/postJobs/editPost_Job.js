@@ -131,26 +131,33 @@ const Edit_postJob = (value1) => {
 
 
         dispatch(getAllEnquries())
+        console.log(tableData)
         // setTableData(old=>[...old,selector])  
     }, [])
 
     const [tableData, setTableData] = useState(selector)
+    const [filterrow, setFilterrow] = useState(tableData)
+
+
     function sortt() {
-        const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() > b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() > a.Jobtitle.toLowerCase()) ? -1 : 0));
+        const response = selector.sort((a, b) => (a.jobtitle.toLowerCase() > b.jobtitle.toLowerCase()) ? 1 : ((b.jobtitle.toLowerCase() > a.jobtitle.toLowerCase()) ? -1 : 0));
 
         setTableData([...response])
     }
     function sortt1() {
-        const response = tableData.sort((a, b) => (a.Jobtitle.toLowerCase() < b.Jobtitle.toLowerCase()) ? 1 : ((b.Jobtitle.toLowerCase() < a.Jobtitle.toLowerCase()) ? -1 : 0));
+        const response = selector.sort((a, b) => (a.jobtitle.toLowerCase() < b.jobtitle.toLowerCase()) ? 1 : ((b.jobtitle.toLowerCase() < a.jobtitle.toLowerCase()) ? -1 : 0));
 
         setTableData([...response])
     }
     const [title, setTitle] = useState(false)
     const requestSearch = (searchedVal) => {
-        const filteredRows = tableData.filter((row) => {
+
+        const filteredRows = selector.filter((row) => {
             return row.jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
         });
         setTableData(filteredRows)
+
+
 
     };
     const onhandlechange = (e) => {
@@ -189,20 +196,20 @@ const Edit_postJob = (value1) => {
                 <div className="panle_header">
                     <div className="left-panle-title"><h4>Job</h4></div>
                     <div className="right_panle_container">
-                        <TooltipComp component={ <Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={24} color="#ff6b01" /></Button>} tooltip="filter"/>
-                        <TooltipComp component={   <Button variant="" className="btn-sm remove_button_padding" onClick={() => {
+                        <TooltipComp component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={24} color="#ff6b01" /></Button>} tooltip="filter" />
+                        <TooltipComp component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => {
                             navigate("/post-new-job")
 
-                        }}> <AiOutlinePlusCircle size={24} color="#ff6b01" /></Button>} tooltip="Add"/>
-                      
+                        }}> <AiOutlinePlusCircle size={24} color="#ff6b01" /></Button>} tooltip="Add" />
+
                     </div>
                 </div>
                 <div className="gapbetween pt-1">
                     <Collapse in={disable}>
                         <div>
                             {
-                                <Form.Select aria-label="Default select example" className="fs_13" onChange={requestSearch} >
-                                    <option disabled hidden selected>Status  </option>
+                                <Form.Select aria-label="Default select example" className="fs_13"   >
+                                    <option disabled hidden selected >Status  </option>
                                     <option value="1">All</option>
                                     <option value="1">Subscribe</option>
                                     <option value="1">Unsubscribe</option>
@@ -233,10 +240,10 @@ const Edit_postJob = (value1) => {
                 {/*<h4>List Number of Job Posts</h4>*/}
                 <Modal show={showalert} onHide={handleClose} backdrop="static"
                     keyboard={false}>
-                    <Modal.Header  className="modal-titlee">
+                    <Modal.Header className="modal-titlee ">
                         <Modal.Title className="modal-titlee">Alert</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body className="label-size">
                         <p>{rowtext?.text}</p>
                     </Modal.Body>
                     <Modal.Footer>
@@ -273,7 +280,7 @@ const Edit_postJob = (value1) => {
                             </thead>
                             {tableData?.length > 0 ?
                                 <tbody>
-                                    {tableData.map((data, index) =>
+                                    {tableData?.map((data, index) =>
                                         <tr>
                                             <td className="action "><div className="userDetail ">
                                                 <button type="button" class="btn "
@@ -462,14 +469,14 @@ const Edit_postJob = (value1) => {
                                                         </Modal>*/}
 
             {tableData?.length > 0 ?
-                
-                    <CustomPagination
-                        showPerPage={showPerPage}
-                        onPageChange={onPageChange}
-                        setStart={setpagination}
-                        total={tableData.length}
-                    />
-                 : ""}
+
+                <CustomPagination
+                    showPerPage={showPerPage}
+                    onPageChange={onPageChange}
+                    setStart={setpagination}
+                    total={tableData.length}
+                />
+                : ""}
 
         </div>
     );

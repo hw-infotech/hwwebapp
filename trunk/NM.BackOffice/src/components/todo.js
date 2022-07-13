@@ -16,7 +16,6 @@ const Todo = () => {
   function dropIt(ev) {
     ev.preventDefault();  // default is not to allow drop
     let sourceId = ev.dataTransfer.getData("text/plain");
-
     let sourceIdEl = document.getElementById(sourceId);
     let sourceIdParentEl = sourceIdEl.parentElement;
     console.log(sourceIdEl, "this is the dropit ")
@@ -63,19 +62,15 @@ const Todo = () => {
   return (
     <div className="rop">
       <div class="board-layout">
-
         <div class="left">
           <div class="board-text">Today Board</div>
-
         </div>
-
         <div id='boardlists' class="board-lists">
           <div id='list1' class="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
             <div class="list-title">
               To Do
             </div>
-
-            <div id='card1' class="card" draggable="true" onDragStart={(event) => dragStart(event)}>
+            <div id='card1' class="card" draggable={true} onDragStart={(event) => dragStart(event)}>
               Work on article
             </div>
             <div id='card2' class="card" draggable="true" onDragStart={(event) => dragStart(event)}>
@@ -90,20 +85,16 @@ const Todo = () => {
             <div id='card5' class="card" draggable="true" onDragStart={(event) => dragStart(event)}>
               Debug SQL code
             </div>
-
           </div>
           <div id='list2' class="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
             <div class="list-title">
               In Progress
             </div>
-
-
           </div>
           <div id='list3' class="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
             <div class="list-title">
               Done
             </div>
-
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ const Sidebar = ({ sidebarShow }) => {
     //     };
     //   },)
     return (
-        <div className="sidebar" title="sidebar"
+        <div className="sidebar"
             style={sidebarShow ? {
                 transform: "translate3d(0%, 0px,0px)", "transition": "all 0.3s ease-in-out",
                 "maxWidth": "250px", "minWidth": "250px"
@@ -39,13 +39,13 @@ const Sidebar = ({ sidebarShow }) => {
                 <div> <span className="fs_13 header_text"><b>Back</b>Office</span></div>
             </div>
             <div className="align-items-sm-start px-3 pt-2">
-                <ul className="nav nav-pills  align-items-center" id="menu">
+                <ul className="nav nav-pills sidebar-ul align-items-center" id="menu">
                     <li className={`nav-item sidebar_hover`}>
                         <div className={`nav-link sidebar_hover align-middle px-0 text-color-white gap-icon-text ${localStorage.getItem("className") == "Dashboard" && classname}`} onClick={() => {
-                            navigtion("/home")
+                            navigtion("/dashboard")
                             localStorage.setItem('className', "Dashboard")
                         }}>
-                            <RiHome2Line size={28} />
+                            <RiHome2Line size={20} />
                             <span className="ms-1 d-none d-sm-inline">Dashboard</span>
                         </div>
                     </li>
@@ -97,7 +97,7 @@ const Sidebar = ({ sidebarShow }) => {
                     <li className="sidebar_list">
                         <a href="#submenu2" data-bs-toggle="collapse"
                             className="nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text">
-                            <RiGalleryLine size={27} />
+                            <RiGalleryLine size={20} />
                             {/*<img src="./assets/images/car.png" style={{background:"white"}} width={25} height={25}/>*/}
                             <span className="ms-1 d-none d-sm-inline">Sliders/Carousels</span>
                             <span className={'dropdownarrowicon '} style={show ? { transform: "rotate(180deg)" } : { transform: "rotate(0deg)" }}>
@@ -119,12 +119,12 @@ const Sidebar = ({ sidebarShow }) => {
                     </li>
                     <li className="sidebar_list">
                         <a href="#submenu8" data-bs-toggle="collapse" className="nav-link sidebar_focus px-0 align-middle text-color-white gap-icon-text">
-                            <BiNews size={28} /> <span className="ms-1 d-none d-sm-inline">Newsletter</span> <span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span></a>
+                            <BiNews size={20} /> <span className="ms-1 d-none d-sm-inline">Newsletter</span> <span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span></a>
                         <ul className="collapse nav flex-column " id="submenu8" data-bs-parent="#menu">
                             <li className="w-100 sidebar_inline">
                                 <a className={`nav-link  text-color-white gap-icon-text sidebar_focus ${localStorage.getItem("className") == "subscirber" && classname}`} onClick={() => {
                                     localStorage.setItem('className', "subscirber")
-                                    navigtion('/newsletter-subscribers')
+                                    navigtion('/subscribers-unsubscribers')
                                 }}>
                                     <span className="d-none d-sm-inline navbar-submenu ">Subscribe/Unsubscribe</span>
                                 </a>
@@ -133,12 +133,12 @@ const Sidebar = ({ sidebarShow }) => {
                     </li>
                     <li className="sidebar_list">
                         <a href="#submenu9" data-bs-toggle="collapse" className="nav-link sidebar_focus px-0 align-middle text-color-white gap-icon-text ">
-                            <GoQuestion size={39} /> <span className="ms-1 d-none d-sm-inline gap-icon-text">Enquery</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
+                            <GoQuestion size={26} /> <span className="ms-1 d-none d-sm-inline gap-icon-text">Enquery</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
                         <ul className="collapse nav flex-column " id="submenu9" data-bs-parent="#menu">
                             <li className="w-100 ">
                                 <a className={`nav-link  text-color-white gap-icon-text sidebar_focus ${localStorage.getItem("className") == "allenquiry" && classname}`} onClick={() => {
                                     localStorage.setItem('className', "allenquiry")
-                                    navigtion('/AllEnquiry')
+                                    navigtion('/all-Enquiry')
                                 }}>
                                     <span className="d-none d-sm-inline navbar-submenu ">All Enquries</span>
                                 </a>
@@ -147,7 +147,7 @@ const Sidebar = ({ sidebarShow }) => {
                     </li>
                     <li className="sidebar_list">
                         <a href="#submenu10" data-bs-toggle="collapse" className="nav-link px-0  sidebar_focus align-middle text-color-white gap-icon-text">
-                            <BsBuilding size={26} /> <span className=" d-none d-sm-inline">Job Management</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
+                            <BsBuilding size={20} /> <span className=" d-none d-sm-inline">Job Management</span><span className="dropdownarrowicon"><i className="fs-6 bi-caret-down "></i></span> </a>
                         <ul className="collapse nav flex-column " id="submenu10" data-bs-parent="#menu">
                             { /*<li className="sidebar_list">
                                 <div className="nav-link  text-color-white  gap-icon-text" onClick={() => {
@@ -175,7 +175,7 @@ const Sidebar = ({ sidebarShow }) => {
                             <li>
                                 <a className={`nav-link  text-color-white gap-icon-text sidebar_focus ${localStorage.getItem("className") == "jobsub" && classname}`} onClick={() => {
                                     localStorage.setItem('className', "jobsub")
-                                    navigtion('/job-subscriber/unsubscriber')
+                                    navigtion('/job-subscriber-unsubscriber')
                                 }}>
                                     <span className="d-none d-sm-inline navbar-submenu">Subscribe/Unsubscribe</span>
                                 </a>

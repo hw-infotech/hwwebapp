@@ -197,9 +197,9 @@ const All_Enquiry = () => {
                 </div>
             </div>
             <Modal show={showalert} onHide={handleClose}  >
-                <Modal.Header closeButton >
+                <Modal.Header closeButton className="label-size">
                     <Modal.Title className="modal-titlee">Alert</Modal.Title>
-                </Modal.Header>
+                </Modal.Header >
                 <Modal.Body>
                     <p>{rowtext?.text}</p>
                 </Modal.Body>

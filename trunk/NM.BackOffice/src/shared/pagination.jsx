@@ -14,7 +14,7 @@ const CustomPagination = ({ total, start, setStart }) => {
     useEffect(() => {
         // Fetch items from another resources.
         const endOffset = parseInt(itemOffset) + parseInt(showPerPage);
-        console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+       
         // setCurrentItems(total.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(total / showPerPage));
         setStart({
@@ -33,9 +33,7 @@ const CustomPagination = ({ total, start, setStart }) => {
 
     const handlePageClick = (event) => {
         const newOffset = (event.selected * showPerPage) % total;
-        console.log(
-            `User requested page number ${event.selected}, which is offset ${newOffset}`
-        );
+      
         setItemOffset(newOffset);
     };
     return (

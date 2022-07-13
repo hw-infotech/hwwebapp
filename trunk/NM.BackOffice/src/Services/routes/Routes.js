@@ -17,29 +17,31 @@ import Profile from '../../pages/Profile/Profile';
 import Post_Job from '../../pages/postJobs/post_job';
 import Job_Preview from '../../pages/postJobs/job_preview';
 import Update_Job from '../../pages/postJobs/updata-job';
+import NotFound from '../../components/Not-found';
 
 const routes = (path, element, exact = true) => {
     return { path, element, exact }
 }
 const route = [
-    routes('/', <Navigate to="/home" />),
-    routes('/home', <Home />),
+    routes('/', <Navigate to="/dashboard" />),
+    routes('*', <NotFound />),
+  
     routes('/jobpreview', <Job_Preview />),
     routes('/post-new-job', <Post_Job />),
     routes("/addNewPost", <AddNewPost />),
     routes('/particularjob', <Particularjob />),
     routes('/all-jobs', <Edit_postJob />),
     routes('/success-stories', <Success_Stories />),
-    routes('/newsletter-subscribers', <SubScriber />),
+    routes('/subscribers-unsubscribers', <SubScriber />),
     routes('/Profile', <Profile />),
-    routes('/AllEnquiry', <All_Enquiry />),
+    routes('/all-Enquiry', <All_Enquiry />),
     routes('/edit-job', <Update_Job />),
     routes('/appliedjobs', <Applied_Job />),
-    routes('/job-subscriber/unsubscriber', <Job_Subscriber />),
-   
+    routes('/job-subscriber-unsubscriber', <Job_Subscriber />),
     routes('/addgalleryevent', <Add_Gallery_Event />),
     routes('/listofblogs', <List_Of_Blogs />),
     routes('/changegalleryevent', <Change_Gallery_Events />),
+    routes('/dashboard', <Home />),
     //routes('/Resolved', <Resolved />),
     //routes('/PendingEnquiry', <Pending_Enquiry />),
     ///routes('/selecteduser', <Selected_User />),

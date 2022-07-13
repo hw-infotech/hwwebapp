@@ -9,6 +9,10 @@ body {
   }
 }
 
+.label-size {
+  font-size: 14px !important;
+}
+
 .topPadding-10 {
   padding-top: 10px;
 }
@@ -450,6 +454,7 @@ body {
 
 .sidebar ul#menu {
   width: 100%;
+  gap: 6px;
 }
 
 .sidebar li {
@@ -577,10 +582,11 @@ body {
 .modal-dialog .modal-header {
   background-color: #eb7823;
   color: white;
+  height: 45px;
 }
 
 .modal-dialog .modal-header .modal-titlee {
-  font-size: 20px !important;
+  font-size: 16px !important;
 }
 
 .modal-dialog .modal-header .btn-close {
@@ -683,7 +689,7 @@ body {
 
 .pagination .nextList a {
   color: #000000;
-  text-text-decoration-green: none;
+  text-decoration: none;
 }
 
 .pagination .disabled a {
@@ -783,13 +789,6 @@ body {
   border-radius: 20px;
 }
 
-.cardBoard2 {
-  padding: 0px 0px;
-  background: white;
-  -webkit-box-shadow: white 0px 8px 5px 0px;
-          box-shadow: white 0px 8px 5px 0px;
-}
-
 .joblist-main-box .content_box .data-table {
   font-size: 13px;
 }
@@ -825,14 +824,6 @@ body {
   width: 75%;
 }
 
-.main-wrap-box .main-job-div {
-  margin-top: 30px;
-}
-
-.main-wrap-box .main-job-div .post-btn {
-  float: right;
-}
-
 .wrap_box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -849,20 +840,6 @@ body {
 
 .wraping-box .inner-box {
   width: 75%;
-}
-
-.justyfycontentright {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-}
-
-.post_new_job_add_morefield_button {
-  height: 40px;
-  width: 50px;
 }
 
 .main-jobsubscriber-content .content_box .data-table {
@@ -889,7 +866,7 @@ body {
   right: -24px;
 }
 
-.textdecorarte {
+.text-decorationn {
   font-size: 13px;
   color: gray;
 }
@@ -1162,7 +1139,6 @@ body {
   font-weight: 700;
   padding-top: 20px;
   padding-bottom: 5px;
-  text-text-decoration-green: underline;
 }
 
 .view_main_box .job__list {
@@ -1270,20 +1246,20 @@ body {
 }
 
 /* Handle on hover */
-.main-Profile-card {
+.main-content-holder .main-Profile-card {
   -webkit-box-shadow: 0px 0px 35px 0px #00000014;
           box-shadow: 0px 0px 35px 0px #00000014;
   padding: 1.5rem;
   width: 100%;
 }
 
-.main-Profile-card .buttonContainer {
+.main-content-holder .main-Profile-card .buttonContainer {
   width: 120px;
   height: 120px;
   position: relative;
 }
 
-.main-Profile-card .buttonContainer img {
+.main-content-holder .main-Profile-card .buttonContainer img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
@@ -1291,7 +1267,7 @@ body {
   border-radius: 10px;
 }
 
-.main-Profile-card .buttonContainer .uploadButton {
+.main-content-holder .main-Profile-card .buttonContainer .uploadButton {
   position: absolute;
   width: 120px;
   height: 120px;
@@ -1302,7 +1278,7 @@ body {
   cursor: pointer;
 }
 
-.main-Profile-card .Profile-card {
+.main-content-holder .main-Profile-card .Profile-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1312,28 +1288,29 @@ body {
   margin-bottom: 10px;
 }
 
-.main-Profile-card .Profile-card .profile-image {
+.main-content-holder .main-Profile-card .Profile-card .profile-image {
   border-radius: 5px;
   width: 120px !important;
   height: 120px !important;
   position: relative;
+  background-size: cover !important;
 }
 
-.main-Profile-card .Profile-card .profile-image .profile-image11 {
+.main-content-holder .main-Profile-card .Profile-card .profile-image .profile-image11 {
   width: 100%;
   height: 100%;
 }
 
-.main-Profile-card .Profile-card .prfille-back-btn {
+.main-content-holder .main-Profile-card .Profile-card .prfille-back-btn {
   width: 100%;
   float: right;
 }
 
-.main-Profile-card .Profile-card .card-heading4 {
+.main-content-holder .main-Profile-card .Profile-card .card-heading4 {
   width: 100%;
 }
 
-.main-Profile-card .Profile-card .inner_heading {
+.main-content-holder .main-Profile-card .Profile-card .inner_heading {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1341,12 +1318,12 @@ body {
   margin-top: 7px;
 }
 
-.main-Profile-card .Profile-card .text-muted {
+.main-content-holder .main-Profile-card .Profile-card .text-muted {
   color: #878080c7 !important;
   font-size: 13px;
 }
 
-.main-Profile-card .Profile-card .inner-heading-icon {
+.main-content-holder .main-Profile-card .Profile-card .inner-heading-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1356,7 +1333,7 @@ body {
           align-items: center;
 }
 
-.main-Profile-card .Profile-card .inner-heading-icon1 {
+.main-content-holder .main-Profile-card .Profile-card .inner-heading-icon1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1366,14 +1343,14 @@ body {
           align-items: center;
 }
 
-.main-Profile-card .Profile-card .inner-location-email {
+.main-content-holder .main-Profile-card .Profile-card .inner-location-email {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 15px;
 }
 
-.main-Profile-card .Profile-card .mesg-butn {
+.main-content-holder .main-Profile-card .Profile-card .mesg-butn {
   margin-left: 4px;
   border: 1px solid #0d6efd;
   color: #0d6efd;
@@ -1383,18 +1360,18 @@ body {
   text-align: center;
 }
 
-.profile_form .tab_border_zero {
+.main-content-holder .profile_form .tab_border_zero {
   border: 0px !important;
 }
 
-.profile_form .main-Profile-card1 {
+.main-content-holder .profile_form .main-Profile-card1 {
   margin-top: 20px;
   -webkit-box-shadow: 0px 0px 26px 5px #0000000d;
           box-shadow: 0px 0px 26px 5px #0000000d;
   padding: 1rem;
 }
 
-.profile_form .main-Profile-card1 .prfile-card11 {
+.main-content-holder .profile_form .main-Profile-card1 .prfile-card11 {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1402,7 +1379,7 @@ body {
   border-radius: 20px;
 }
 
-.profile_form .main-Profile-card1 .prfile-card11 .inner-profile1 {
+.main-content-holder .profile_form .main-Profile-card1 .prfile-card11 .inner-profile1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1415,14 +1392,14 @@ body {
   border-bottom: 1px solid #8080803b;
 }
 
-.profile_form .main-Profile-card1 .prfile-card11 .inner-profile1 .changeable_btn {
+.main-content-holder .profile_form .main-Profile-card1 .prfile-card11 .inner-profile1 .changeable_btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
 }
 
-.profile_form .main-Profile-card1 .mainform {
+.main-content-holder .profile_form .main-Profile-card1 .mainform {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1433,7 +1410,7 @@ body {
   gap: 30px;
 }
 
-.profile_form .main-Profile-card1 .formData {
+.main-content-holder .profile_form .main-Profile-card1 .formData {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1443,20 +1420,20 @@ body {
   width: 100%;
 }
 
-.profile_form .main-Profile-card1 .formData .innerform {
+.main-content-holder .profile_form .main-Profile-card1 .formData .innerform {
   width: 25%;
   font-size: 13px;
   color: gray;
 }
 
-.profile_form .main-Profile-card1 .formData .innerform1 {
+.main-content-holder .profile_form .main-Profile-card1 .formData .innerform1 {
   width: 25%;
   color: black;
   font-size: 13px;
   font-weight: 600;
 }
 
-.profile_form .main-Profile-card1 .formData .innerform1 .forms_input {
+.main-content-holder .profile_form .main-Profile-card1 .formData .innerform1 .forms_input {
   border: 0px !important;
   border-bottom: 1px solid #80808057 !important;
   -webkit-box-shadow: none !important;
@@ -1487,5 +1464,43 @@ body {
   background-color: #000000 !important;
   border-color: #000000 !important;
   color: #ffffff !important;
+}
+
+.underConstruction .ConstructionContent h1 {
+  font-size: 35px !important;
+  margin: 18px 0 !important;
+}
+
+.underConstruction .ConstructionContent h1 {
+  font-size: 48px !important;
+  margin: 18px 0 !important;
+}
+
+.underConstruction {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+.underConstruction .ConstructionContent {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.underConstruction .ConstructionContent h1 {
+  font-size: 72px;
+  font-weight: 900;
+  color: #fc9d08;
+  margin: 30px;
+}
+
+img.underCont {
+  width: 80%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 /*# sourceMappingURL=style.css.map */

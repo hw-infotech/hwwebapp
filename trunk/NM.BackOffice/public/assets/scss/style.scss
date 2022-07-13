@@ -10,7 +10,9 @@ body {
     }
 }
 
-
+.label-size {
+    font-size: 14px !important;
+}
 .topPadding-10 {
     //--- shared class----//
     padding-top: 10px;
@@ -284,7 +286,6 @@ body {
         border: 0;
         font-size: 13px;
     }
-
     .move-sidebar {
         padding: 0px !important;
         border: 0px !important;
@@ -322,7 +323,6 @@ body {
         gap: 15px;
     }
 }
-
 .dropdown-menu[data-bs-popper] {
     top: 100%;
     left: 58px !important;
@@ -331,7 +331,6 @@ body {
 }
 
 //----------------------------footer page//-------------------//
-
 .mainfooter {
     display: flex;
     align-items: center;
@@ -366,7 +365,6 @@ body {
         font-weight: 600;
     }
 }
-
 // sidebar css
 .sidebar {
     width: 250px;
@@ -376,7 +374,6 @@ body {
     height: 100vh;
     overflow: auto;
     background-color: #212529 !important;
-
     .activeMenu {
         i {
             color: #ff6b01 !important;
@@ -391,12 +388,12 @@ body {
 
     ul#menu {
         width: 100%;
+        gap: 6px;
     }
 
     li {
         width: 100%;
     }
-
     .sidebar_header {
         display: flex;
         max-height: 70px;
@@ -409,7 +406,8 @@ body {
         gap: 10px;
         border-bottom: 1px solid #ffffff17;
         cursor: pointer;
-
+        .sidebar-ul {
+        }
         .Sidebar-logo {
             width: 46px;
             height: 47px;
@@ -424,7 +422,6 @@ body {
             text-transform: uppercase;
         }
     }
-
     .gap-icon-text {
         width: 100%;
         gap: 8px;
@@ -436,13 +433,11 @@ body {
         }
     }
 }
-
 .text-color-white {
     color: white;
     font-size: 14px !important;
     font-weight: 600;
 }
-
 .navbar-submenu {
     padding-left: 20px;
     font-size: 12px;
@@ -548,9 +543,10 @@ body {
     .modal-header {
         background-color: #eb7823;
         color: white;
+        height: 45px;
 
         .modal-titlee {
-            font-size: 20px !important;
+            font-size: 16px !important;
         }
         .btn-close {
             color: white !important;
@@ -597,7 +593,6 @@ body {
         outline: none !important;
     }
 }
-
 
 .boxshadow {
     ////Global class///
@@ -659,7 +654,7 @@ body {
 
         a {
             color: #000000;
-            text-text-decoration-green: none;
+            text-decoration: none;
         }
     }
 
@@ -744,11 +739,6 @@ body {
     }
 }
 
-.cardBoard2 {
-    padding: 0px 0px;
-    background: white;
-    box-shadow: white 0px 8px 5px 0px;
-}
 
 //////////////post new Job/////////////
 
@@ -782,13 +772,6 @@ body {
         width: 75%;
     }
 
-    .main-job-div {
-        margin-top: 30px;
-
-        .post-btn {
-            float: right;
-        }
-    }
 }
 
 .wrap_box {
@@ -805,15 +788,7 @@ body {
     }
 }
 
-.justyfycontentright {
-    display: flex;
-    justify-content: end;
-}
 
-.post_new_job_add_morefield_button {
-    height: 40px;
-    width: 50px;
-}
 
 //-----------jobsubscriber/unsubscriber--------------------////////////////////
 
@@ -842,7 +817,7 @@ body {
     right: -24px;
 }
 
-.textdecorarte {
+.text-decorationn {
     font-size: 13px;
     color: gray;
 }
@@ -1086,7 +1061,7 @@ body {
         font-weight: 700;
         padding-top: 20px;
         padding-bottom: 5px;
-        text-text-decoration-green: underline;
+        // text-text-decoration: underline;
     }
 
     .job__list {
@@ -1181,6 +1156,9 @@ body {
 /* Handle on hover */
 
 //----------------------------Profile Page----------------------------------//
+.main-content-holder{
+
+
 .main-Profile-card {
     box-shadow: 0px 0px 35px 0px #00000014;
     padding: 1.5rem;
@@ -1223,6 +1201,7 @@ body {
             width: 120px !important;
             height: 120px !important;
             position: relative;
+            background-size: cover !important;
             .profile-image11 {
                 width: 100%;
                 height: 100%;
@@ -1342,7 +1321,7 @@ body {
         }
     }
 }
-
+}
 // buttons
 .btn-primary {
     color: #ffffff !important;
@@ -1367,4 +1346,40 @@ body {
         border-color: #000000 !important;
         color: #ffffff !important;
     }
+}
+
+.underConstruction .ConstructionContent h1 {
+    font-size: 35px !important;
+    margin: 18px 0 !important;
+}
+.underConstruction .ConstructionContent h1 {
+    font-size: 48px !important;
+    margin: 18px 0 !important;
+}
+.underConstruction {
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.underConstruction .ConstructionContent {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.underConstruction .ConstructionContent h1 {
+    font-size: 72px;
+    font-weight: 900;
+    color: #fc9d08;
+    margin: 30px;
+}
+img.underCont {
+    width: 80%;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }

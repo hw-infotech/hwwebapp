@@ -41,6 +41,7 @@ const records = [
         image: ""
     }
 ]
+
 const Success_Stories = () => {
     const [open, setOpen] = useState(false);
     const [values, setValues] = useState()
@@ -86,12 +87,12 @@ const Success_Stories = () => {
     };
     function sortt() {
         const response = tableData.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : ((b.title.toLowerCase() > a.title.toLowerCase()) ? -1 : 0));
-        console.log(response)
+
         setTableData([...response])
     }
     function sortt1() {
         const response = tableData.sort((a, b) => (a.title.toLowerCase() < b.title.toLowerCase()) ? 1 : ((b.title.toLowerCase() < a.title.toLowerCase()) ? -1 : 0));
-        console.log(response)
+
         setTableData([...response])
     }
     const [title, setTitle] = useState(false)
@@ -101,7 +102,7 @@ const Success_Stories = () => {
     })
 
     const display = () => {
-        console.log(deleteObj);
+
         setShowalert(true)
         //const result = await confirm(rowtext.text);
         // console.log(rowText);
@@ -137,6 +138,18 @@ const Success_Stories = () => {
     }
     let titl = "Success Stories"
     let placeholder = 'Search by title'
+
+    const getBase64 = (e, setFieldValue) => {
+        var file = e.target.files[0];
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            setFieldValue('image', reader.result)
+        };
+        reader.onerror = function (error) {
+            console.log("Error: ", error);
+        };
+    };
     return (
         <>
             <div className="Main-story-box">
@@ -147,7 +160,7 @@ const Success_Stories = () => {
                     <Modal.Header closeButton>
                         <Modal.Title className="modal-titlee">Alert</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body className="label-size">
                         <p>{rowtext?.text}</p>
                     </Modal.Body>
                     <Modal.Footer>
@@ -219,7 +232,7 @@ const Success_Stories = () => {
                                             <td>{data.title}</td>
                                             {<td>{data.content && subString(data.content, 115)}</td>}
                                             <td><Form>
-                                                {console.log(data?.active)}
+                                                {/*console.log(data?.active)*/}
                                                 <Form.Check className="switch_padding"
                                                     type="switch"
                                                     key={index}
@@ -275,14 +288,14 @@ const Success_Stories = () => {
                         // validationSchema={validationschemeaa}
                         onSubmit={handleFormSubmit}
                     >
-                        {({ values, handleSubmit, handleChange }) => (
+                        {({ values, handleSubmit, handleChange, setFieldValue }) => (
                             <form onSubmit={(e) => {
                                 e.preventDefault()
                                 handleSubmit()
                             }}>
                                 {setValues(values?.active)}
                                 {console.log(values)}
-                                <Modal.Body>
+                                <Modal.Body >
                                     {
                                         <div className="cardBoard">
                                             <Form.Group className="" controlId="formBasicEmail">
@@ -298,10 +311,14 @@ const Success_Stories = () => {
                                                 />
                                                 <Input as={"textarea"} className="form-control" name="content" id="exampleFormControlTextarea1" rows="3" label={"Description"} onChange={handleChange} value={values.content} />
                                                 <Form.Label className="label-size">Choose Image</Form.Label>
-                                                <Form.Control className="label-size" type="file" name="image" onChange={handleChange} //value={values.image}
+                                                <Form.Control className="label-size" type="file" accept=".png,.jpg" name="image" onChange={(e) => {
+                                                    getBase64(e, setFieldValue)
+                                                }}
+                                                //value={values.image}
                                                 />
+                                                <div className="m-2"><img src={values.image} width={50} height={50}></img></div>
                                             </Form.Group>
-                                            <br />
+
                                             <Form.Check className="custom1-switch label-size"
                                                 type="switch"
                                                 id="Active"
@@ -328,7 +345,7 @@ const Success_Stories = () => {
                                         <Button className=" btn-sm fs_13" onClick={() => {
                                             setTableData(old => [...old, values])
                                             setShowalert(false)
-                                            console.log("tabledata", tableData)
+
 
                                         }}>Add</Button>}
 

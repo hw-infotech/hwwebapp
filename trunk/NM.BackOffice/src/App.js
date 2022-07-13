@@ -2,59 +2,82 @@ import './App.css';
 import Header from './Parts/header/Header';
 import Footer from './Parts/footer/Footer'
 import Sidebar from './components/Sidebar';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import routes from './Services/routes/Routes';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Admin_Login from './pages/authnication/admin_login';
 import Todo from './components/todo';
+import NotFound from './components/Not-found';
+import Home from './pages/Home';
 
 const localUser = JSON.parse(localStorage.getItem("nestor.user"))
 
+
 function App() {
-  const [title, setTitle] = useState("Dashboard")
+  const path1 = useLocation()
   const [sidebarShow, setSidebarShow] = useState(true)
-  const [title1, setTitle1] = useState()
+  const [found, setFound] = useState(false)
 
-  const setPageTitle = (t) => {
-    setTitle(t)
+ 
+  // useMemo(() => {
+  //   getRoute()
+  // }, [])
+  let a;
+  const getRoute = (path) => {
+
+  
+
+    if (path1.pathname === path) {
+
+      a = false
+    }
+    else {
+      a = true
+
+    }
+
   }
+  useEffect(() => {
+    setFound(a)
+  }, [a])
+  return (<>
+    {localUser ? <>
+      {<div className='dashboard' hidden={found}>
+        <Sidebar sidebarShow={sidebarShow} />
+        <div className='mainDashboard'>
+          <Header setSidebarShow={setSidebarShow}
+            sidebarShow={sidebarShow} />
+          <div className="content-Wrapper">
+            <Routes>
+              {routes?.map((_) => {
+                // if (path1.pathname === _.path) {
+                    
+                //     setFound(false)
+                     
+                // }
+                // else {
+                //  setFound(true)
+                // }
+                // getRoute(_.path)
+                return < Route {..._} />
 
-  return (
-    <Router>
-      {localUser ?
-        <div className='dashboard'>
-          <Sidebar sidebarShow={sidebarShow} />
-          <div className='mainDashboard' >
-            <Header setSidebarShow={setSidebarShow}
-              sidebarShow={sidebarShow} />
-            <div className="content-Wrapper" >
-              <Routes>
-                {routes?.map((_) => (
-                  <Route {..._} />
-                ))}
-              </Routes>
-            </div>
-            <Footer sidebarShow={sidebarShow} />
+              })}
+            </Routes>
           </div>
+          <Footer sidebarShow={sidebarShow} />
+
         </div>
-        : <Routes>
-          <Route path='/' element={<Admin_Login />} exact />
-        </Routes>}
-    </Router>
-//<Todo/>
+      </div>}
 
-    // <div className='dashboard'>
-    //   <Sidebar />
-    //   <div className='mainDashboard'>
-    //     <Header></Header>
-    //     <section >
-    //       <AddNewPost />
-    //     </section>
-    //     <Footer></Footer>
-    //   </div>
-    // </div>
+      {found && <Routes>  <Route path="*" element={<NotFound />} exact /></Routes>}
+    </>
+      : <Routes>
+        <Route path='/' element={<Admin_Login />} exact />
+      </Routes>}
+  </>);
 
-  );
+
 }
+
 
 export default App;

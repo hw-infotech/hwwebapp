@@ -42,7 +42,7 @@ const SubScriber = () => {
     const route = [
         { name: "Dashboard", route: "/" },
         { name: "Newsletter", route: "" },
-        { name: "Subscribe Unsubscribe", route: "" }
+        { name: "Subscribe-Unsubscribe", route: "" }
     ]
     const selector = useSelector(state => state),
         dispatch = useDispatch(),
@@ -179,7 +179,7 @@ const SubScriber = () => {
             </div>
 
             <Modal show={show} onHide={handleClose} size="md">
-                <Modal.Header className="modal-header text-white" closeButton>
+                <Modal.Header className=" text-white" closeButton>
                     <Modal.Title className="modal-titlee">Send Newsletter</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
