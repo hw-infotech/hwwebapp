@@ -1,5 +1,5 @@
 import React from "react";
-import { ADD_GALLERY_EVENT, UPDATE, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK, UPDATE_PROFILE, GET_PROFILE_DATA } from "../../store/type";
+import { ADD_GALLERY_EVENT, UPDATE, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK, UPDATE_PROFILE, GET_PROFILE_DATA, UPDATE_PROFILE_PASSWORD, GET_PROFILE_PASSWORD } from "../../store/type";
 
 const initialstate = {
     addgalleryevent: "",
@@ -17,8 +17,11 @@ const initialstate = {
         phone: 9803836866,
         email: "ganeshsharma5073@gmail.com",
         location: "Mohali",
-        image: "/assets/images/shi.jpg"
+        image: "/assets/images/shi.jpg",
+        username: "Ganesh",
+        profile_password: "6464564",
     },
+
     allEnquries: [
         {
             jobtitle: "UI/UX",
@@ -78,16 +81,11 @@ const initialstate = {
             type: "Full time",
             active: "deactive"
         },
-
-
     ]
-
-
-
 }
 const Reducer_Function = (state = initialstate, action) => {
 
-    const { type, payload } = action
+    const { payload, type } = action
     switch (type) {
         case ADD_GALLERY_EVENT: {
             return {
@@ -150,7 +148,7 @@ const Reducer_Function = (state = initialstate, action) => {
                 getallenquiry: state.allEnquries.push(payload)
             }
         }
-     
+
         case EDIT_DATA: {
             return {
                 ...state,
@@ -175,6 +173,19 @@ const Reducer_Function = (state = initialstate, action) => {
                 ...state,
                 profile_data: state.profile_data
 
+            }
+        }
+        case UPDATE_PROFILE_PASSWORD: {
+          
+            state.profile_data.profile_password = payload
+            return {
+                ...state
+            }
+        }
+        case GET_PROFILE_PASSWORD: {
+            return {
+                ...state,
+                profile_password: state.profile_password
             }
         }
         default: {
