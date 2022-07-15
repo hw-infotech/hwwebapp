@@ -460,7 +460,9 @@ const Success_Stories = () => {
                         //value={values.image}
                       />
                       {errors?.image && touched.image ? (
-                        <label className="text-danger label-size">{errors.image}</label>
+                        <label className="text-danger label-size">
+                          {errors.image}
+                        </label>
                       ) : (
                         ""
                       )}

@@ -243,7 +243,6 @@ const Profile = () => {
                         handleSubmit();
                       }}
                     >
-              
                       <div className="main-Profile-card1">
                         <div className="prfile-card11">
                           <div className="inner-profile1">
