@@ -126,8 +126,8 @@ const Job_newsletter = () => {
                     <Collapse in={disable}>
                         <div className="">
                             <Form.Select aria-label="row" className="wreap-content fs_13" >
-                                <option disabled hidden selected>Status</option>
-                                <option value="1">All</option>
+                                <option disabled hidden>Status</option>
+                                <option  defaultValue={"ALL"}>All</option>
                                 <option value="2">Subscribe</option>
                                 <option value="3">Unsubscribe</option>
                             </Form.Select>

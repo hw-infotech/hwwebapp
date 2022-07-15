@@ -283,7 +283,7 @@ const Edit_postJob = (value1) => {
                                     {tableData?.map((data, index) =>
                                         <tr>
                                             <td className="action "><div className="userDetail ">
-                                                <button type="button" class="btn "
+                                                <button type="button" className="btn "
                                                     id="dropdownIconMenu" data-bs-toggle="dropdown"
                                                     aria-expanded="false">
                                                     <span className="actionIcon"> <i

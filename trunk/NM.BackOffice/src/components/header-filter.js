@@ -26,8 +26,8 @@ export const Filters = ({ requestSearch, showalert, setShowalert, handleShow, ti
                     <Collapse in={disable}>
                         <div id="example-collapse-text">
                             <Form.Select className="fs_13" aria-label="Default select example" id="example-collapse-text" >
-                                <option hidden selected>Status</option>
-                                <option value="1">All</option>
+                            <option hidden >Select</option>
+                                <option value={"ALL"} >All</option>
                                 <option value="1">Active</option>
                                 <option value="1">Deactive</option>
                             </Form.Select>

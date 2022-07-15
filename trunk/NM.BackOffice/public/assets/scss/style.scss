@@ -66,6 +66,7 @@ body {
     display: flex !important;
     align-items: center !important;
     padding-top: 15px;
+    font-weight: 600 !important;
 }
 .remove_button_padding {
     padding: 0px !important;
@@ -365,7 +366,8 @@ body {
         font-weight: 600;
     }
 }
-// sidebar css
+/////-------------- sidebar ---------------/////
+
 .sidebar {
     width: 250px;
     min-width: 250px;
@@ -432,6 +434,20 @@ body {
             color: #ff912a;
         }
     }
+    .sidebar_list {
+        .collapsed {
+            .dropdownarrowicon {
+                margin-left: auto;
+                transform: rotate(0deg) !important;
+                transition: all ease 0.5s !important;
+            }
+        }
+        .dropdownarrowicon {
+            margin-left: auto;
+            transform: rotate(180deg) !important;
+            transition: all ease 0.5s !important;
+        }
+    }
 }
 .text-color-white {
     color: white;
@@ -452,58 +468,7 @@ body {
     }
 }
 
-.sidebar_list {
-    position: relative;
-    // .nav-link {
-    //     position: relative;
-    //     &[aria-expanded="false"]:before{
-    //         position: absolute;
-    //         content: "";
-    //         width: 10px;
-    //         height: 11px;
-    //         right: 0px;
-    //         top: 17px;
-    //         border-top: 2px solid white;
-    //         border-left: 2px solid white;
-    //         border-bottom: 2px solid black;
-    //         transform: rotate(225deg);
-    //     }
-    //     &.collapsed[aria-expanded="true"]::before{
-    //         position: absolute;
-    //         content: "";
-    //         width: 10px;
-    //         height: 11px;
-    //         right: 0px;
-    //         top: 17px;
-    //         border-top: 2px solid white;
-    //         border-left: 2px solid white;
-    //         border-bottom: 2px solid black;
-    //         transform: rotate(30deg);
-    //     }
-    // }
-
-    .collapsed {
-        .dropdownarrowicon {
-            margin-left: auto;
-            transform: rotate(0deg) !important;
-            transition: all ease 0.5s !important;
-        }
-    }
-    .dropdownarrowicon {
-        margin-left: auto;
-        transform: rotate(180deg) !important;
-        transition: all ease 0.5s !important;
-    }
-
-    // .reverse {
-    //     margin-left: auto;
-    //     transform: rotate(90deg) !important;
-    //     transition: all ease 0.5s !important;
-    // }
-}
-
 //////=================================success stories page=======================/////
-
 .Main-story-box {
     .content_box {
         .data-table {
@@ -739,7 +704,6 @@ body {
     }
 }
 
-
 //////////////post new Job/////////////
 
 .joblist-main-box {
@@ -771,7 +735,6 @@ body {
         gap: 5px;
         width: 75%;
     }
-
 }
 
 .wrap_box {
@@ -787,8 +750,6 @@ body {
         width: 75%;
     }
 }
-
-
 
 //-----------jobsubscriber/unsubscriber--------------------////////////////////
 
@@ -1156,171 +1117,169 @@ body {
 /* Handle on hover */
 
 //----------------------------Profile Page----------------------------------//
-.main-content-holder{
+.main-content-holder {
+    .main-Profile-card {
+        box-shadow: 0px 0px 35px 0px #00000014;
+        padding: 1.5rem;
+        width: 100%;
 
-
-.main-Profile-card {
-    box-shadow: 0px 0px 35px 0px #00000014;
-    padding: 1.5rem;
-    width: 100%;
-
-    .buttonContainer {
-        width: 120px;
-        height: 120px;
-        position: relative;
-        // background: #000000;
-
-        img {
-            object-fit: cover;
-            height: 100%;
-            width: auto;
-            border-radius: 10px;
-        }
-
-        .uploadButton {
-            position: absolute;
+        .buttonContainer {
             width: 120px;
             height: 120px;
-            opacity: 0;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            cursor: pointer;
-        }
-    }
-
-    .Profile-card {
-        display: flex;
-        border-radius: 20px;
-        width: 100%;
-        gap: 15px;
-        margin-bottom: 10px;
-
-        .profile-image {
-            border-radius: 5px;
-            width: 120px !important;
-            height: 120px !important;
             position: relative;
-            background-size: cover !important;
-            .profile-image11 {
-                width: 100%;
+            // background: #000000;
+
+            img {
+                object-fit: cover;
                 height: 100%;
+                width: auto;
+                border-radius: 10px;
+            }
+
+            .uploadButton {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                opacity: 0;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                cursor: pointer;
             }
         }
 
-        .prfille-back-btn {
-            width: 100%;
-            float: right;
-        }
-
-        .card-heading4 {
-            width: 100%;
-        }
-
-        .inner_heading {
-            display: flex;
-            gap: 20px;
-            margin-top: 7px;
-        }
-
-        .text-muted {
-            color: #878080c7 !important;
-            font-size: 13px;
-        }
-
-        .inner-heading-icon {
-            display: flex;
-            gap: 2px;  
-            align-items: center;
-        }
-
-        .inner-heading-icon1 {
-            display: flex;
-            gap: 7px;
-            align-items: center;
-        }
-
-        .inner-location-email {
-            display: flex;
-            gap: 15px;
-        }
-
-        .mesg-butn {
-            margin-left: 4px;
-            border: 1px solid #0d6efd;
-            color: #0d6efd;
-            background-color: white;
-            padding-left: 25px;
-            padding-right: 25px;
-            text-align: center;
-        }
-    }
-}
-
-.profile_form {
-    .tab_border_zero {
-        border: 0px !important;
-    }
-
-    .main-Profile-card1 {
-        margin-top: 20px;
-        box-shadow: 0px 0px 26px 5px #0000000d;
-        padding: 1rem;
-
-        .prfile-card11 {
-            width: 100%;
+        .Profile-card {
             display: flex;
             border-radius: 20px;
+            width: 100%;
+            gap: 15px;
+            margin-bottom: 10px;
 
-            .inner-profile1 {
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-                margin-bottom: 30px;
-                padding: 10px;
-                border-bottom: 1px solid #8080803b;
-
-                .changeable_btn {
-                    display: flex;
-                    gap: 10px;
+            .profile-image {
+                border-radius: 5px;
+                width: 120px !important;
+                height: 120px !important;
+                position: relative;
+                background-size: cover !important;
+                .profile-image11 {
+                    width: 100%;
+                    height: 100%;
                 }
             }
-        }
 
-        .mainform {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .formData {
-            display: flex;
-            align-items: center;
-            width: 100%;
-
-            .innerform {
-                width: 25%;
-                font-size: 13px;
-                color: gray;
+            .prfille-back-btn {
+                width: 100%;
+                float: right;
             }
 
-            .innerform1 {
-                width: 25%;
-                color: black;
-                font-size: 13px;
-                font-weight: 600;
+            .card-heading4 {
+                width: 100%;
+            }
 
-                .forms_input {
-                    border: 0px !important;
-                    border-bottom: 1px solid #80808057 !important;
-                    box-shadow: none !important;
-                    outline: none !important;
-                    font-size: 13px !important;
+            .inner_heading {
+                display: flex;
+                gap: 20px;
+                margin-top: 7px;
+            }
+
+            .text-muted {
+                color: #878080c7 !important;
+                font-size: 13px;
+            }
+
+            .inner-heading-icon {
+                display: flex;
+                gap: 2px;
+                align-items: center;
+            }
+
+            .inner-heading-icon1 {
+                display: flex;
+                gap: 7px;
+                align-items: center;
+            }
+
+            .inner-location-email {
+                display: flex;
+                gap: 15px;
+            }
+
+            .mesg-butn {
+                margin-left: 4px;
+                border: 1px solid #0d6efd;
+                color: #0d6efd;
+                background-color: white;
+                padding-left: 25px;
+                padding-right: 25px;
+                text-align: center;
+            }
+        }
+    }
+
+    .profile_form {
+        .tab_border_zero {
+            border: 0px !important;
+        }
+
+        .main-Profile-card1 {
+            margin-top: 20px;
+            box-shadow: 0px 0px 26px 5px #0000000d;
+            padding: 1rem;
+
+            .prfile-card11 {
+                width: 100%;
+                display: flex;
+                border-radius: 20px;
+
+                .inner-profile1 {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin-bottom: 30px;
+                    padding: 10px;
+                    border-bottom: 1px solid #8080803b;
+
+                    .changeable_btn {
+                        display: flex;
+                        gap: 10px;
+                    }
+                }
+            }
+
+            .mainform {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .formData {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                .innerform {
+                    width: 25%;
+                    font-size: 13px;
+                    color: gray;
+                }
+
+                .innerform1 {
+                    width: 25%;
+                    color: black;
+                    font-size: 13px;
+                    font-weight: 600;
+
+                    .forms_input {
+                        border: 0px !important;
+                        border-bottom: 1px solid #80808057 !important;
+                        box-shadow: none !important;
+                        outline: none !important;
+                        font-size: 13px !important;
+                    }
                 }
             }
         }
     }
-}
 }
 // buttons
 .btn-primary {

@@ -57,9 +57,9 @@ const Change_Gallery_Events = () => {
     return (
         <div title="Change Gallery Events">
             {/*<BasicBreadcrumbs route={route} />*/}
-            <div className="topPadding-10 margin_bottom_">
-                <div className="boxshadow">
-                    <table class="table">
+            <div classNameName="topPadding-10 margin_bottom_">
+                <div classNameName="boxshadow">
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th scope="col">Action</th>
@@ -71,39 +71,39 @@ const Change_Gallery_Events = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="action "><div class="userDetail ">
+                                <td className="action "><div className="userDetail ">
 
-                                    <button type="button" class="btn "
+                                    <button type="button" className="btn "
                                         id="dropdownIconMenu" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        <span class="actionIcon"> <i
-                                            class="bi bi-three-dots-vertical"></i> </span>
+                                        <span className="actionIcon"> <i
+                                            className="bi bi-three-dots-vertical"></i> </span>
                                     </button>
-                                    <ul class="IconDropdown dropdown-menu context-menu1 "
+                                    <ul className="IconDropdown dropdown-menu context-menu1 "
                                         aria-labelledby="dropdownIconMenu">
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="editAction" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="editAction" data-bs-toggle="modal"
                                                     data-bs-target="#editbtn"><i
-                                                        class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13" onClick={handleShow}>View</button>
+                                                        className="bi bi-pencil-square"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13" onClick={handleShow}>View</button>
                                             </div>
                                         </li>
 
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="viewIcon" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="viewIcon" data-bs-toggle="modal"
                                                     data-bs-target="#viewbtn"> <i
-                                                        class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
+                                                        className="bi bi-eye"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13" >Update</button>
                                             </div>
                                         </li>
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="deleteAction" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
-                                                        class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
+                                                        className="bi bi-trash3-fill"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13">Deletes</button>
                                             </div>
                                         </li>
                                     </ul>
@@ -113,37 +113,37 @@ const Change_Gallery_Events = () => {
                                 <td>@mdo</td>
                                 <td>@mdo.jpg</td>
                             </tr>
-                            <tr> <td class="action "><div class="userDetail ">
-                                <button type="button" class="btn "
+                            <tr> <td className="action "><div className="userDetail ">
+                                <button type="button" className="btn "
                                     id="dropdownIconMenu" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <span class="actionIcon"> <i
-                                        class="bi bi-three-dots-vertical"></i> </span>
+                                    <span className="actionIcon"> <i
+                                        className="bi bi-three-dots-vertical"></i> </span>
                                 </button>
-                                <ul class="IconDropdown dropdown-menu context-menu1 "
+                                <ul className="IconDropdown dropdown-menu context-menu1 "
                                     aria-labelledby="dropdownIconMenu">
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="editAction" data-bs-toggle="modal"
+                                    <li className="dropdownList">
+                                        <div className="actionBtns">
+                                            <span className="editAction" data-bs-toggle="modal"
                                                 data-bs-target="#editbtn"><i
-                                                    class="bi bi-pencil-square"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary fs_13" onClick={handleShow}>View</button>
+                                                    className="bi bi-pencil-square"></i></span>
+                                            <button type="button" classNameName="btn btn-outlined-secondary fs_13" onClick={handleShow}>View</button>
                                         </div>
                                     </li>
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="viewIcon" data-bs-toggle="modal"
+                                    <li className="dropdownList">
+                                        <div className="actionBtns">
+                                            <span className="viewIcon" data-bs-toggle="modal"
                                                 data-bs-target="#viewbtn"> <i
-                                                    class="bi bi-eye"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
+                                                    className="bi bi-eye"></i></span>
+                                            <button type="button" classNameName="btn btn-outlined-secondary fs_13" >Update</button>
                                         </div>
                                     </li>
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="deleteAction" data-bs-toggle="modal"
+                                    <li className="dropdownList">
+                                        <div className="actionBtns">
+                                            <span className="deleteAction" data-bs-toggle="modal"
                                                 data-bs-target="#deletebtn"> <i
-                                                    class="bi bi-trash3-fill"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
+                                                    className="bi bi-trash3-fill"></i></span>
+                                            <button type="button" classNameName="btn btn-outlined-secondary fs_13">Deletes</button>
                                         </div>
                                     </li>
                                 </ul>
@@ -153,37 +153,37 @@ const Change_Gallery_Events = () => {
                                 <td>@fat</td>
                                 <td>@fat</td>
                             </tr>
-                            <tr>  <td class="action "><div class="userDetail ">
-                                <button type="button" class="btn "
+                            <tr>  <td className="action "><div className="userDetail ">
+                                <button type="button" className="btn "
                                     id="dropdownIconMenu" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <span class="actionIcon"> <i
-                                        class="bi bi-three-dots-vertical"></i> </span>
+                                    <span className="actionIcon"> <i
+                                        className="bi bi-three-dots-vertical"></i> </span>
                                 </button>
-                                <ul class="IconDropdown dropdown-menu context-menu1 "
+                                <ul className="IconDropdown dropdown-menu context-menu1 "
                                     aria-labelledby="dropdownIconMenu">
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="editAction" data-bs-toggle="modal"
+                                    <li className="dropdownList">
+                                        <div className="actionBtns">
+                                            <span className="editAction" data-bs-toggle="modal"
                                                 data-bs-target="#editbtn"><i
-                                                    class="bi bi-pencil-square"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary fs_13">Edit</button>
+                                                    className="bi bi-pencil-square"></i></span>
+                                            <button type="button" classNameName="btn btn-outlined-secondary fs_13">Edit</button>
                                         </div>
                                     </li>
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="viewIcon" data-bs-toggle="modal"
+                                    <li className="dropdownList">
+                                        <div className="actionBtns">
+                                            <span className="viewIcon" data-bs-toggle="modal"
                                                 data-bs-target="#viewbtn"> <i
-                                                    class="bi bi-eye"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
+                                                    className="bi bi-eye"></i></span>
+                                            <button type="button" classNameName="btn btn-outlined-secondary fs_13" >Update</button>
                                         </div>
                                     </li>
-                                    <li class="dropdownList">
-                                        <div class="actionBtns">
-                                            <span class="deleteAction" data-bs-toggle="modal"
+                                    <li className="dropdownList">
+                                        <div className="actionBtns">
+                                            <span className="deleteAction" data-bs-toggle="modal"
                                                 data-bs-target="#deletebtn"> <i
-                                                    class="bi bi-trash3-fill"></i></span>
-                                            <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
+                                                    className="bi bi-trash3-fill"></i></span>
+                                            <button type="button" classNameName="btn btn-outlined-secondary fs_13">Deletes</button>
                                         </div>
                                     </li>
                                 </ul>
@@ -201,84 +201,84 @@ const Change_Gallery_Events = () => {
                         <Modal.Title>Edit Event</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div className="w-100">
+                        <div classNameName="w-100">
                             <Formik initialValues={{ name: "", image: "" }}>
                                 {() => (
-                                    <div className="w-100">
+                                    <div classNameName="w-100">
                                         <form >
-                                            <div className="content_center ">
-                                                <div className="w-100  fs_13">
-                                                    <div className="form-group">
-                                                        <Input type='text' className="form-control" placeholder='Event Name' name='eventname' label={"Event Name"} id="name" />
+                                            <div classNameName="content_center ">
+                                                <div classNameName="w-100  fs_13">
+                                                    <div classNameName="form-group">
+                                                        <Input type='text' classNameName="form-control" placeholder='Event Name' name='eventname' label={"Event Name"} id="name" />
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleFormControlTextarea1" class="form-label">Event Description</label>
-                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                    <div className="mb-3">
+                                                        <label for="exampleFormControlTextarea1" className="form-label">Event Description</label>
+                                                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                     </div>
-                                                    <div className="form-group">
+                                                    <div classNameName="form-group">
                                                         <label>Event Date</label>
-                                                        <Field type="date" className="form-control" />
+                                                        <Field type="date" classNameName="form-control" />
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label for="formFile" class="form-label">Choose Audio</label>
-                                                        <input class="form-control" type="file" id="formFile" />
+                                                    <div className="mb-3">
+                                                        <label for="formFile" className="form-label">Choose Audio</label>
+                                                        <input className="form-control" type="file" id="formFile" />
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label for="formFile" class="form-label">Choose images for Add</label>
-                                                        <input class="form-control" type="file" id="formFile" />
+                                                    <div className="mb-3">
+                                                        <label for="formFile" className="form-label">Choose images for Add</label>
+                                                        <input className="form-control" type="file" id="formFile" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="mt-4">
-                                                <ul className="d-flex change_gallery_event_Pics">
-                                                    <li className="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} class="card-img-top" alt="..." />
-                                                        <div className="d-flex pt-1 imageTopButton">
-                                                            <div class="custom-control custom-switch"  >
-                                                                <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-                                                                <label class="custom-control-label" for="customSwitch1"></label>
+                                            <div classNameName="mt-4">
+                                                <ul classNameName="d-flex change_gallery_event_Pics">
+                                                    <li classNameName="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} className="card-img-top" alt="..." />
+                                                        <div classNameName="d-flex pt-1 imageTopButton">
+                                                            <div className="custom-control custom-switch"  >
+                                                                <input type="checkbox" className="custom-control-input" id="customSwitch1" />
+                                                                <label className="custom-control-label" for="customSwitch1"></label>
                                                             </div>
                                                             <div>
-                                                                <button type="button" className="btn btn-outlined-secondary"><i class="fs-5 bi-trash"></i></button>
+                                                                <button type="button" classNameName="btn btn-outlined-secondary"><i className="fs-5 bi-trash"></i></button>
                                                             </div>
                                                         </div></li>
-                                                    <li className="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} class="card-img-top" alt="..." />
-                                                        <div className="d-flex pt-1 imageTopButton">
-                                                            <div class="custom-control custom-switch" style={{ textAlign: "center" }} >
-                                                                <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-                                                                <label class="custom-control-label" for="customSwitch1"></label>
+                                                    <li classNameName="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} className="card-img-top" alt="..." />
+                                                        <div classNameName="d-flex pt-1 imageTopButton">
+                                                            <div className="custom-control custom-switch" style={{ textAlign: "center" }} >
+                                                                <input type="checkbox" className="custom-control-input" id="customSwitch1" />
+                                                                <label className="custom-control-label" for="customSwitch1"></label>
                                                             </div>
                                                             <div>
-                                                                <button type="button" className="btn btn-outlined-secondary"><i class="fs-5 bi-trash"></i></button>
+                                                                <button type="button" classNameName="btn btn-outlined-secondary"><i className="fs-5 bi-trash"></i></button>
                                                             </div>
                                                         </div></li>
-                                                    <li className="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} class="card-img-top" alt="..." />
-                                                        <div className="d-flex pt-1 imageTopButton">
-                                                            <div class="custom-control custom-switch" style={{ textAlign: "center" }} >
-                                                                <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-                                                                <label class="custom-control-label" for="customSwitch1"></label>
+                                                    <li classNameName="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} className="card-img-top" alt="..." />
+                                                        <div classNameName="d-flex pt-1 imageTopButton">
+                                                            <div className="custom-control custom-switch" style={{ textAlign: "center" }} >
+                                                                <input type="checkbox" className="custom-control-input" id="customSwitch1" />
+                                                                <label className="custom-control-label" for="customSwitch1"></label>
                                                             </div>
                                                             <div>
-                                                                <button type="button" className="btn btn-outlined-secondary"><i class="fs-5 bi-trash"></i></button>
+                                                                <button type="button" classNameName="btn btn-outlined-secondary"><i className="fs-5 bi-trash"></i></button>
                                                             </div>
                                                         </div></li>
-                                                    <li className="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} class="card-img-top" alt="..." />
-                                                        <div className="d-flex pt-1 imageTopButton">
-                                                            <div class="custom-control custom-switch" style={{ textAlign: "center" }} >
-                                                                <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-                                                                <label class="custom-control-label" for="customSwitch1"></label>
+                                                    <li classNameName="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} className="card-img-top" alt="..." />
+                                                        <div classNameName="d-flex pt-1 imageTopButton">
+                                                            <div className="custom-control custom-switch" style={{ textAlign: "center" }} >
+                                                                <input type="checkbox" className="custom-control-input" id="customSwitch1" />
+                                                                <label className="custom-control-label" for="customSwitch1"></label>
                                                             </div>
                                                             <div>
-                                                                <button type="button" className="btn btn-outlined-secondary"><i class="fs-5 bi-trash"></i></button>
+                                                                <button type="button" classNameName="btn btn-outlined-secondary"><i className="fs-5 bi-trash"></i></button>
                                                             </div>
                                                         </div></li>
-                                                    <li className="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} class="card-img-top" alt="..." />
-                                                        <div className="d-flex pt-1 imageTopButton">
-                                                            <div class="custom-control custom-switch" style={{ textAlign: "center" }} >
-                                                                <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-                                                                <label class="custom-control-label" for="customSwitch1"></label>
+                                                    <li classNameName="change_gallery_event_Pics_height_width">  <img src="./assets/images/team_nestormind.png" style={{ width: "100%" }} className="card-img-top" alt="..." />
+                                                        <div classNameName="d-flex pt-1 imageTopButton">
+                                                            <div className="custom-control custom-switch" style={{ textAlign: "center" }} >
+                                                                <input type="checkbox" className="custom-control-input" id="customSwitch1" />
+                                                                <label className="custom-control-label" for="customSwitch1"></label>
                                                             </div>
                                                             <div>
-                                                                <button type="button" className="btn btn-outlined-secondary"><i class="fs-5 bi-trash"></i></button>
+                                                                <button type="button" classNameName="btn btn-outlined-secondary"><i className="fs-5 bi-trash"></i></button>
                                                             </div>
                                                         </div></li>
                                                 </ul>
@@ -290,26 +290,26 @@ const Change_Gallery_Events = () => {
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
-                        <div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
-                            <button type="button" class="btn btn-outline-secondary gallery_add_button">Submit</button>
+                        <div classNameName="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
+                            <button type="button" className="btn btn-outline-secondary gallery_add_button">Submit</button>
                         </div>
                     </Modal.Footer>
                 </Modal>
-                <div className="row padd_bottm">
-                    <div className="col-sm-6 col-lg-6 col-md-6">
-                        <div className="padding-30">
-                            <select class="form-select w-25 " name={state.row_value} onChange={Chnage}>
-                                <option disabled selected>Rows</option>
+                <div classNameName="row padd_bottm">
+                    <div classNameName="col-sm-6 col-lg-6 col-md-6">
+                        <div classNameName="padding-30">
+                            <select className="form-select w-25 " name={state.row_value} onChange={Chnage}>
+                                <option disabled>Rows</option>
                                 <option value="10">10</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>
                             </select>
                         </div>
                     </div>
-                    {/* <div className="col-sm-6 col-lg-6 col-md-6 ">
-                        <div className="padding-30 pagination_justify_end ">
+                    {/* <div classNameName="col-sm-6 col-lg-6 col-md-6 ">
+                        <div classNameName="padding-30 pagination_justify_end ">
                             <Pagination
-                                className="paginationDiv"
+                                classNameName="paginationDiv"
                                 count={5}
                                 onChange={handlechange}
                                 color="primary" />

@@ -169,7 +169,7 @@ const All_Enquiry = () => {
                     <Collapse in={disable}>
                         <div className="status_filter">
                             <Form.Select aria-label="row" className="wreap-content fs_13">
-                                <option disabled hidden selected>Status</option>
+                                <option hidden  >Status</option>
                                 <option value="1">All</option>
                                 <option value="2">Pending</option>
                                 <option value="3">Resolved</option>
@@ -181,7 +181,7 @@ const All_Enquiry = () => {
                             <InputGroup className="mb-3">
                                 <FormControl className="fs_13"
 
-                                    placeholder="Serach by Email and Name"
+                                    placeholder="Serach by Name"
                                     aria-label="Recipient's username"
                                     aria-describedby="basic-addon2"
                                     onChange={(e) => {
@@ -234,21 +234,21 @@ const All_Enquiry = () => {
                                 {tableData.map((data, index) =>
                                     <tr key={index}>
                                         <td>
-                                            <div class="userDetail">
-                                                <button type="button" class="btn "
+                                            <div className="userDetail">
+                                                <button type="button" className="btn "
                                                     id="dropdownIconMenu" data-bs-toggle="dropdown"
                                                     aria-expanded="false">
-                                                    <span class="actionIcon"> <i
-                                                        class="bi bi-three-dots-vertical"></i> </span>
+                                                    <span className="actionIcon"> <i
+                                                        className="bi bi-three-dots-vertical"></i> </span>
                                                 </button>
-                                                <ul class="IconDropdown dropdown-menu context-menu11 "
+                                                <ul className="IconDropdown dropdown-menu context-menu11 "
                                                     aria-labelledby="dropdownIconMenu">
-                                                    <li class="dropdownList">
+                                                    <li className="dropdownList">
                                                         {data.status == "pending" ?
-                                                            <div class="actionBtns context-menu1" >
-                                                                <span class="editAction" data-bs-toggle="modal"
+                                                            <div className="actionBtns context-menu1" >
+                                                                <span className="editAction" data-bs-toggle="modal"
                                                                     data-bs-target="#editbtn"><i
-                                                                        class="bi bi-pencil-square"></i></span>
+                                                                        className="bi bi-pencil-square"></i></span>
                                                                 <button type="button" hidden={data.status == "resolved" ? true : false}
                                                                     className="btn btn-outlined-secondary fs_13" onClick={() => {
                                                                         setwait(true)
@@ -266,10 +266,10 @@ const All_Enquiry = () => {
                                                                     }}>Resolved</button>
                                                             </div> : ""}
                                                     </li>
-                                                    <li class="dropdownList">
+                                                    <li className="dropdownList">
                                                         {data.status == "resolved" ?
-                                                            <div class="actionBtns  context-menu1">
-                                                                <span class="deleteAction" data-bs-toggle="modal"
+                                                            <div className="actionBtns  context-menu1">
+                                                                <span className="deleteAction" data-bs-toggle="modal"
                                                                     data-bs-target="#deletebtn"> <MdOutlinePendingActions/></span>
                                                                 <button type="button" key={index} className="btn btn-outlined-secondary fs_13" onClick={() => {
                                                                     setwait(false)

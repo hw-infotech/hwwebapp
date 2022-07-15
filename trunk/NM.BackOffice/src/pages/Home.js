@@ -114,13 +114,13 @@ const Home = () => {
                             <div className="card-graphheader" style={{}}>
                                 <div className="chart-card" >
                                     <div className="userDetail1" >
-                                        <button type="button" class="btn"
+                                        <button type="button" className="btn"
                                             id="dropdownIconMenu" data-bs-toggle="dropdown"
                                             aria-expanded="false">
-                                            <span class="actionIcon"> <i
+                                            <span className="actionIcon"> <i
                                                 className="bi bi-three-dots-vertical"></i> </span>
                                         </button>
-                                        <ul class="IconDropdown dropdown-menu context-menu11 "
+                                        <ul className="IconDropdown dropdown-menu context-menu11 "
                                             aria-labelledby="dropdownIconMenu">
                                             <li className="dropdownList">
                                                 <div className="actionBtns context-menu1">
@@ -200,7 +200,7 @@ const Home = () => {
                             <div className="card-graphheader" style={{}}>
                                 <div className="chart-card" >
                                     <div className="userDetail1 ">
-                                        <button type="button" class="btn "
+                                        <button type="button" className="btn "
                                             id="dropdownIconMenu" data-bs-toggle="dropdown"
                                             aria-expanded="false">
                                             <span className="actionIcon"> <i
@@ -248,6 +248,7 @@ const Home = () => {
                                         <p className="chattext-size1">30 done this month</p></div>
                                 </div>
                                 <Table style={{ borderTop: "0px" }}>
+                                <thead>
                                     <tr>
                                         <th className="text-decorationn" >Companies
                                         </th>
@@ -258,6 +259,7 @@ const Home = () => {
                                         <th className="text-decorationn">Companies
                                         </th>
                                     </tr>
+                                    </thead>
                                 </Table>
                             </div>
                         </Col>

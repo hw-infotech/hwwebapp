@@ -64,8 +64,8 @@ const AddNewPost = () => {
                         setState([...state, { tag: "img", id: last + 1, text: e.target.value }])
                     }} />
                 </div>
-                <div class="form-outline center">
-                <textarea class="form-control" id="textAreaExample1" rows="4" onChange={(e) => {
+                <div className="form-outline center">
+                <textarea className="form-control" id="textAreaExample1" rows="4" onChange={(e) => {
                     setD(e.target.value)
                 }}></textarea>
 

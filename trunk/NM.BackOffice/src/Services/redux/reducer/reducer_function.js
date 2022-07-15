@@ -1,5 +1,5 @@
 import React from "react";
-import { ADD_GALLERY_EVENT, UPDATE, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK, UPDATE_PROFILE, GET_PROFILE_DATA, UPDATE_PROFILE_PASSWORD, GET_PROFILE_PASSWORD } from "../../store/type";
+import { ADD_GALLERY_EVENT, UPDATE, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK, UPDATE_PROFILE, GET_PROFILE_DATA, UPDATE_PROFILE_PASSWORD, GET_PROFILE_PASSWORD, EDIT_PROFILE_DATA } from "../../store/type";
 
 const initialstate = {
     addgalleryevent: "",
@@ -11,6 +11,7 @@ const initialstate = {
     getnewsletterunsubscriber: [],
     getpendingenquiry: "",
     getresolvedenquiry: "",
+    edit_profile_data:"",
     edit_data: [],
     profile_data: {
         name: "Ganesh",
@@ -186,6 +187,12 @@ const Reducer_Function = (state = initialstate, action) => {
             return {
                 ...state,
                 profile_password: state.profile_password
+            }
+        }
+        case EDIT_PROFILE_DATA: {
+            return {
+                ...state,
+                edit_profile_data: payload
             }
         }
         default: {

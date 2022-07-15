@@ -75,11 +75,17 @@ export const GET_profile_data = () => dispatch => {
         type: GET_PROFILE_DATA,
     })
 }
+export const Edit_profile_data = () => dispatch => {
+    dispatch({
+        type: GET_PROFILE_DATA,
+    })
+}
 export const GET_profile_password = () => dispatch => {
     dispatch({
         type: GET_PROFILE_PASSWORD,
     })
 }
+
 export const Update_Profile_Password = (data) => dispath => {
     dispath({
         type: UPDATE_PROFILE_PASSWORD,
