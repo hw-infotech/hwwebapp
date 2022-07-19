@@ -65,7 +65,7 @@ const AddNewPost = () => {
                     }} />
                 </div>
                 <div className="form-outline center">
-                <textarea className="form-control" id="textAreaExample1" rows="4" onChange={(e) => {
+                <textarea className="form-control" id="textAreaExample1" rows="3" onChange={(e) => {
                     setD(e.target.value)
                 }}></textarea>
 

@@ -54,10 +54,10 @@ const Post_Job = ({ stat }) => {
     })
     const DataContext = createContext();
     const route = [
-        { name: "Home", route: "/" },
-        { name: "Job" },
-        { name: "Post job" },
-
+        { name: "Dashboard", route: "/" },
+        { name: "Job Management", route: "" },
+        { name: "Job", route: "/all-jobs" },
+        { name: "Add Job", route: "/add-job" },
     ]
     const onhandlechange = (e) => {
         const { name, value } = e.target
@@ -66,13 +66,13 @@ const Post_Job = ({ stat }) => {
     }
     let tiitle = localStorage?.getItem("key")
     useEffect(() => {
-        document.title = "Post job"
+        document.title = "Add Job"
     }, [])
     const dispatch = useDispatch()
     return (
         <div>
             <BasicBreadcrumbs route={route} />
-            <h4 >Post Job</h4>
+            <h4 >Add Job</h4>
             <div className="w-75 m-auto z-depth-5 shadow-box-example rounded box-shadow-container">
                 <Stepper
                     activeStep={goSteps}

@@ -229,7 +229,7 @@ const Edit_postJob = (value1) => {
                   variant=""
                   className="btn-sm remove_button_padding"
                   onClick={() => {
-                    navigate("/post-new-job");
+                    navigate("/add-job");
                   }}
                 >
                   {" "}
@@ -249,9 +249,7 @@ const Edit_postJob = (value1) => {
                   className="fs_13"
                   defaultValue={"status"}
                 >
-                  <option  hidden  >
-                    Status{" "}
-                  </option>
+                  <option hidden>Status </option>
                   <option value="1">All</option>
                   <option value="1">Subscribe</option>
                   <option value="1">Unsubscribe</option>
@@ -279,13 +277,14 @@ const Edit_postJob = (value1) => {
           </Collapse>
         </div>
       </div>
-      <div className="fs-13">
+      
         {/*<h4>List Number of Job Posts</h4>*/}
         <Modal
           show={showalert}
           onHide={handleClose}
           backdrop="static"
           keyboard={false}
+          className="fs-13"
         >
           <Modal.Header className="modal-titlee ">
             <Modal.Title className="modal-titlee">Alert</Modal.Title>
@@ -315,205 +314,207 @@ const Edit_postJob = (value1) => {
             </Button>
           </Modal.Footer>
         </Modal>
-        <div className="content_box">
-          <div className="data-table">
-            <Table striped bordered hover responsive>
-              <thead>
-                <tr>
-                  <th className="action_colwidth">Action</th>
-                  <th
-                    className="action_titlewidth"
-                    onClick={() => {
-                      setTitle(!title);
-                      {
-                        title ? sortt() : sortt1();
-                      }
-                    }}
-                  >
-                    {" "}
-                    Title {title ? <BsArrowDown /> : <BsArrowUp />}
-                  </th>
-                  <th>Description</th>
-                  <th>Function</th>
-                  <th>Requirement</th>
-                  <th>Benefits</th>
-                  <th>Responsibility</th>
-                  <th>Industry</th>
-                  <th>Level</th>
-                  <th>Employement</th>
-                  <th className="action_colwidth">Status</th>
-                  <th className="action_colwidth">Total Candidates</th>
-                </tr>
-              </thead>
-              {tableData?.length > 0 ? (
-                <tbody>
-                  {tableData?.map((data, index) => (
-                    <tr key={index}>
-                      <td className="action ">
-                        <div className="userDetail ">
-                          <button
-                            type="button"
-                            className="btn "
-                            id="dropdownIconMenu"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <span className="actionIcon">
-                              {" "}
-                              <i className="bi bi-three-dots-vertical"></i>{" "}
-                            </span>
-                          </button>
-                          <ul
-                            className="IconDropdown dropdown-menu context-menu11"
-                            aria-labelledby="dropdownIconMenu"
-                          >
+  
+      <div className="content_box">
+        <div className="data-table">
+          <Table striped bordered hover responsive>
+            <thead>
+              <tr>
+                <th className="action_colwidth">Action</th>
+                <th className="action_colwidth">Status</th>
+                <th
+                  className="action_titlewidth"
+                  onClick={() => {
+                    setTitle(!title);
+                    {
+                      title ? sortt() : sortt1();
+                    }
+                  }}
+                >
+                  {" "}
+                  Title {title ? <BsArrowDown /> : <BsArrowUp />}
+                </th>
+                <th>Description</th>
+                <th>Function</th>
+                <th>Requirement</th>
+                <th>Benefits</th>
+                <th>Responsibility</th>
+                <th>Industry</th>
+                <th>Level</th>
+                <th>Employement</th>
+                
+                <th className="action_colwidth">Candidates</th>
+              </tr>
+            </thead>
+            <tbody>
+            {tableData?.length > 0  &&
+              tableData?.map((data, index) => (
+                  <tr key={index}>
+                    <td className="action">
+                      <div className="userDetail ">
+                        <button
+                          type="button"
+                          className="btn "
+                          id="dropdownIconMenu"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <span className="actionIcon">
+                            {" "}
+                            <i className="bi bi-three-dots-vertical"></i>{" "}
+                          </span>
+                        </button>
+                        <ul
+                          className="IconDropdown dropdown-menu context-menu11"
+                          aria-labelledby="dropdownIconMenu"
+                        >
+                          <li className="dropdownList">
+                            <div className="actionBtns  context-menu1">
+                              <span
+                                className="editAction"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editbtn"
+                              >
+                                <i className="bi bi-pencil-square"></i>
+                              </span>
+                              <button
+                                type="button"
+                                className="btn btn-outlined-secondary fs_13"
+                                onClick={() => {
+                                  dispatch(Edit_Data(data, index));
+                                  navigate("/particularjob");
+                                }}
+                              >
+                                View
+                              </button>
+                            </div>
+                          </li>
+                          {data.active == "active" ? (
+                            <div></div>
+                          ) : (
                             <li className="dropdownList">
                               <div className="actionBtns  context-menu1">
                                 <span
-                                  className="editAction"
+                                  className="viewIcon"
                                   data-bs-toggle="modal"
-                                  data-bs-target="#editbtn"
-                                >
-                                  <i className="bi bi-pencil-square"></i>
-                                </span>
-                                <button
-                                  type="button"
-                                  className="btn btn-outlined-secondary fs_13"
-                                  onClick={() => {
-                                    dispatch(Edit_Data(data, index));
-                                    navigate("/particularjob");
-                                  }}
-                                >
-                                  View
-                                </button>
-                              </div>
-                            </li>
-                            {data.active == "active" ? (
-                              <div></div>
-                            ) : (
-                              <li className="dropdownList">
-                                <div className="actionBtns  context-menu1">
-                                  <span
-                                    className="viewIcon"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#viewbtn"
-                                  >
-                                    {" "}
-                                    <i className="bi bi-eye"></i>
-                                  </span>
-                                  <button
-                                    type="button"
-                                    className="btn btn-outlined-secondary fs_13"
-                                    onClick={() => {
-                                      localStorage.setItem("key", "Edit Job");
-                                      dispatch(Edit_Data(data, index));
-                                      navigate("/edit-job");
-                                    }}
-                                  >
-                                    Edit
-                                  </button>
-                                </div>
-                              </li>
-                            )}
-                            <li className="dropdownList">
-                              <div className="actionBtns  context-menu1">
-                                <span
-                                  className="deleteAction"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#deletebtn"
+                                  data-bs-target="#viewbtn"
                                 >
                                   {" "}
-                                  <i className="bi bi-trash3-fill"></i>
+                                  <i className="bi bi-eye"></i>
                                 </span>
                                 <button
                                   type="button"
                                   className="btn btn-outlined-secondary fs_13"
                                   onClick={() => {
-                                    tableData.splice(index, 1);
-                                    setTableData([...tableData]);
+                                    localStorage.setItem("key", "Edit Job");
+                                    dispatch(Edit_Data(data, index));
+                                    navigate("/edit-job");
                                   }}
                                 >
-                                  Delete
+                                  Edit
                                 </button>
                               </div>
                             </li>
-                          </ul>
-                        </div>
-                      </td>
-                      <td>{data?.Jobtitle || data?.jobtitle}</td>
-                      <td>
-                        {data?.description && subString(data.description, 20)}
-                      </td>
-                      <td>
-                        {data?.functions && subString(data?.functions, 20)}
-                      </td>
-                      <td>{data?.requirment[0].value}</td>
-                      <td>
-                        {" "}
-                        {data?.benefits[0].value &&
-                          subString(data.benefits[0].value, 20)}
-                      </td>
-                      <td>
-                        {" "}
-                        {
-                          data?.responsibility[0].value &&
-                            subString(
-                              data.responsibility[0].value,
-                              20
-                            ) /*data?.responsibility?.map((data1) => <ul>
+                          )}
+                          <li className="dropdownList">
+                            <div className="actionBtns  context-menu1">
+                              <span
+                                className="deleteAction"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deletebtn"
+                              >
+                                {" "}
+                                <i className="bi bi-trash3-fill"></i>
+                              </span>
+                              <button
+                                type="button"
+                                className="btn btn-outlined-secondary fs_13"
+                                onClick={() => {
+                                  tableData.splice(index, 1);
+                                  setTableData([...tableData]);
+                                }}
+                              >
+                                Delete
+                              </button>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                    <td>
+                    <Form>
+                      <Form.Check
+                        type="switch"
+                        id="custom-switch1"
+                        checked={data.active === "active" ? true : false}
+                        label=""
+                        onChange={(e) => {
+                          setShowalert(true);
+                          setRowtext(
+                            e.target.checked
+                              ? {
+                                  id: 1,
+                                  text: "Are you sure to  show the job ?",
+                                }
+                              : {
+                                  id: 0,
+                                  text: "Are you sure to hide the job ?",
+                                }
+                          );
+                          if (data.active === "active") {
+                            setDeleteObj({
+                              index,
+                              rowStatus: e.target.checked,
+                            });
+                          } else {
+                            setDeleteObj({
+                              index,
+                              rowStatus: e.target.checked,
+                            });
+                          }
+                        }}
+                      />
+                    </Form>
+                  </td>
+                    <td>{data?.Jobtitle || data?.jobtitle}</td>
+                    <td>
+                      {data?.description && subString(data.description, 20)}
+                    </td>
+                    <td>{data?.functions && subString(data?.functions, 20)}</td>
+                    <td>{data?.requirment[0].value}</td>
+                    <td>
+                      {" "}
+                      {data?.benefits[0].value &&
+                        subString(data.benefits[0].value, 20)}
+                    </td>
+                    <td>
+                      {" "}
+                      {
+                        data?.responsibility[0].value &&
+                          subString(
+                            data.responsibility[0].value,
+                            20
+                          ) /*data?.responsibility?.map((data1) => <ul>
                                                 <li>{data1?.value&& subString(data1.value, 30)}</li>
                                                 </ul>)*/
-                        }{" "}
-                      </td>
-                      <td>{data?.industry}</td>
-                      <td>{data?.level}</td>
-                      <td>{data?.type}</td>
-                      <td>
-                        <Form>
-                          <Form.Check
-                            type="switch"
-                            id="custom-switch1"
-                            checked={data.active === "active" ? true : false}
-                            label=""
-                            onChange={(e) => {
-                              setShowalert(true);
-                              setRowtext(
-                                e.target.checked
-                                  ? {
-                                      id: 1,
-                                      text: "Are you sure to  show the job ?",
-                                    }
-                                  : {
-                                      id: 0,
-                                      text: "Are you sure to hide the job ?",
-                                    }
-                              );
-                              if (data.active === "active") {
-                                setDeleteObj({
-                                  index,
-                                  rowStatus: e.target.checked,
-                                });
-                              } else {
-                                setDeleteObj({
-                                  index,
-                                  rowStatus: e.target.checked,
-                                });
-                              }
-                            }}
-                          />
-                        </Form>
-                      </td>
-                      <td>30</td>
-                    </tr>
-                  ))}
+                      }{" "}
+                    </td>
+                    <td>{data?.industry}</td>
+                    <td>{data?.level}</td>
+                    <td>{data?.type}</td>
+                   
+                    <td>30</td>
+                  </tr>
+                ))}
                 </tbody>
-              ) : (
-                <h3 className="table_no_records">No Record Found</h3>
-              )}
-            </Table>
-          </div>
+                </Table>
+                {tableData.length === 0 && (
+                  <div className="table_no_records">No Record Found</div>
+                )}
+           
         </div>
       </div>
+
       {/*<Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
                         <Modal.Title>Edit Post Job</Modal.Title>

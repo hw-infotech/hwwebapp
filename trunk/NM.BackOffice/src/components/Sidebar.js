@@ -133,7 +133,7 @@ const Sidebar = ({ sidebarShow }) => {
                   }}
                 >
                   <span className="d-none d-sm-inline navbar-submenu ">
-                    Subscribe/Unsubscribe
+                    Subscribe-Unsubscribe
                   </span>
                 </a>
               </li>
@@ -147,7 +147,7 @@ const Sidebar = ({ sidebarShow }) => {
             >
               <GoQuestion size={26} />{" "}
               <span className="ms-1 d-none d-sm-inline gap-icon-text">
-                Enquery
+            Enquiry
               </span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
@@ -170,7 +170,7 @@ const Sidebar = ({ sidebarShow }) => {
                   }}
                 >
                   <span className="d-none d-sm-inline navbar-submenu ">
-                    All Enquries
+                  All Enquiry
                   </span>
                 </a>
               </li>
@@ -218,7 +218,7 @@ const Sidebar = ({ sidebarShow }) => {
                   }}
                 >
                   <span className="d-none d-sm-inline navbar-submenu">
-                    Subscribe/Unsubscribe
+                    Subscribe-Unsubscribe
                   </span>
                 </a>
               </li>

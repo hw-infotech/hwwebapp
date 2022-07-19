@@ -12,6 +12,7 @@ export const Input = ({
   options,
   onChange,
   value,
+  rows
 }) => {
   return (
     <div className="input_field ">
@@ -28,6 +29,8 @@ export const Input = ({
             name={name}
             placeholder={placeholder}
             onChange={onChange}
+            rows={rows}
+           
           />
         )}
         {as == "select" && (
@@ -40,6 +43,7 @@ export const Input = ({
             id={id}
             onChange={onChange}
             name={name}
+            rows={rows}
           >
             {options?.map((_, __) => (
               <option key={__} value={_.value}>

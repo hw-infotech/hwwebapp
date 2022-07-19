@@ -20,10 +20,6 @@ import {
   News_letter_Subscribe,
 } from "../../Services/redux/action/action";
 import { Formik } from "formik";
-import {
-  initialValues,
-  validationschemeaa,
-} from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
 import { BiAddToQueue } from "react-icons/bi";
 import { BsArrowUp } from "react-icons/bs";
@@ -37,6 +33,8 @@ import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 import { Filters } from "../../components/header-filter";
+import { object } from "yup";
+import * as yup from "yup";
 
 const SubScriber = () => {
   const [disable, setSdisabled] = useState(false);
@@ -107,7 +105,14 @@ const SubScriber = () => {
       comment: "Reason Behind",
     },
   ];
-
+  const initialValues = {
+    title: "",
+    content_story: "",
+  };
+  const validationschemeaa = yup.object({
+    title: yup.string().label("Title").required(),
+    content_story: yup.string().label("Content").required(),
+  });
   const [tableData, setTableData] = useState(subscribers);
   function sortt() {
     const response = subscribers.sort((a, b) =>
@@ -117,7 +122,7 @@ const SubScriber = () => {
         ? -1
         : 0
     );
-    console.log(response);
+
     setTableData([...response]);
     console.log(selector, "this the selector");
   }
@@ -129,7 +134,7 @@ const SubScriber = () => {
         ? -1
         : 0
     );
-    console.log(response);
+
     setTableData([...response]);
   }
   const requestSearch = (searchedVal) => {
@@ -141,7 +146,7 @@ const SubScriber = () => {
   };
   const [title, setTitle] = useState(false);
   useEffect(() => {
-    document.title = "Newsletter Subscribe-Unsubscribe";
+    document.title = "Subscribe-Unsubscribe";
   }, []);
   let titl = "Subscribe-Unsubscribe";
   let placeholder = "Search by email";
@@ -196,7 +201,7 @@ const SubScriber = () => {
                           onChange={(e) => {
                             if (e.target.checked == true) {
                             }
-                            console.log(e.target.checked);
+
                             setTableData((_) => {
                               _[index].active = e.target.checked;
                               return [..._];
@@ -207,24 +212,30 @@ const SubScriber = () => {
                     </tr>
                   ))}
             </tbody>
-            
           </Table>
-          {!subscribers && 
+          {!subscribers && (
             <div className="table_no_records">No Record Found</div>
-          }
+          )}
         </div>
       </div>
-
       <Modal show={show} onHide={handleClose} size="md">
-        <Modal.Header className=" text-white" closeButton>
+        <Modal.Header className=" text-white">
           <Modal.Title className="modal-titlee">Send Newsletter</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Formik
             initialValues={initialValues}
             validationSchema={validationschemeaa}
+            onSubmit={() => {}}
           >
-            {() => (
+            {({
+              values,
+              handleSubmit,
+              handleChange,
+              setFieldValue,
+              errors,
+              touched,
+            }) => (
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -236,16 +247,33 @@ const SubScriber = () => {
                   className="form-control"
                   name="title"
                   placeholder=""
+                  onChange={handleChange}
                 />
+                {errors?.title && touched?.title ? (
+                  <label className="text-danger label-size">
+                    {errors.title}
+                  </label>
+                ) : (
+                  ""
+                )}
+
                 <Input
                   as={"textarea"}
                   className="form-control"
                   placeholder={""}
                   name="content_story"
+                  onChange={handleChange}
                   id="exampleFormControlTextarea1"
-                  rows="3"
+                  rows={3}
                   label={"Enter the Content"}
                 />
+                {errors?.content_story && touched?.content_story ? (
+                  <label className="text-danger label-size">
+                    {errors.content_story}
+                  </label>
+                ) : (
+                  ""
+                )}
               </form>
             )}
           </Formik>
@@ -253,12 +281,14 @@ const SubScriber = () => {
         <Modal.Footer>
           <Button
             variant="secondary"
-            className=" btn-sm fs_13"
+            className=" btn-sm fs-13"
             onClick={handleClose}
           >
             Close
           </Button>
-          <Button className="btn-sm fs_13">Send</Button>
+          <Button className="btn-sm fs-13" type="submit">
+            Send
+          </Button>
         </Modal.Footer>
       </Modal>
       {tableData.length > 0 ? (

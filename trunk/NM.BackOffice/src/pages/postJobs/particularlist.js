@@ -57,8 +57,8 @@ const Particularjob = () => {
     {
       Jobtitle: "UI/UX",
       name: "amit Sharma",
-      email: "ganesharma5073@gmail.com",
-      phone: "9803836866",
+      email: "goldygoldy33@gmail.com",
+      phone: "9801551856",
       active: "accepted",
     },
     {
@@ -71,8 +71,8 @@ const Particularjob = () => {
     {
       Jobtitle: "UI/UX",
       name: "Ganesh Sharma",
-      email: "ganesharma5073@gmail.com",
-      phone: "9803836866",
+      email: "amanpreet@gmail.com",
+      phone: "8146945394",
       active: "accepted",
     },
   ];
@@ -120,11 +120,11 @@ const Particularjob = () => {
     { name: "Dashboard", route: "/" },
     { name: "Job Management", route: "" },
     { name: "Job", route: "/all-jobs" },
-    { name: "Detail-Applied", route: "/particularjob" },
+    { name: "View", route: "/particularjob" },
   ];
   var selector = useSelector((state) => state.data?.apidata?.edit_data?.data);
   useEffect(() => {
-    document.title = "Detail-Applied";
+    document.title = "View";
   }, []);
   return (
     <div className="box__content">
@@ -133,7 +133,7 @@ const Particularjob = () => {
         <div className="panle_body">
           <div className="panle_header">
             <div className="left-panle-title">
-              <h4>Detail-Applied</h4>
+              <h4>View</h4>
             </div>
             <div className="right_panle_container">
               <TooltipComp
@@ -150,19 +150,6 @@ const Particularjob = () => {
                 }
                 tooltip="Back"
               />
-              <TooltipComp
-                component={
-                  <Button
-                    variant=""
-                    className="btn-sm remove_button_padding"
-                    onClick={() => setSdisabled((p) => !p)}
-                  >
-                    {" "}
-                    <BsFilter size={25} color="#ff6b01" />
-                  </Button>
-                }
-                tooltip="Filter"
-              />
             </div>
           </div>
         </div>
@@ -174,14 +161,14 @@ const Particularjob = () => {
         >
           <Tab
             eventKey="Description"
-            title="Detail"
+            title="General Detail"
             onSelect={() => {
               setKey("Description");
             }}
           >
             <Modal show={showalert} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title className="modal-titleenpm">Alert</Modal.Title>
+              <Modal.Header>
+                <Modal.Title className="modal-titlee ">Alert</Modal.Title>
               </Modal.Header>
               <Modal.Body className="label-size">
                 <p>{"Are You Really want to change the status"}</p>
@@ -246,10 +233,7 @@ const Particularjob = () => {
                         )}
                       </div>
                       <span className="job_heading">Description: </span>
-                      <p className="job_description">
-                        {" "}
-                        {selector?.description}
-                      </p>
+                      <p className="job_description">{selector?.description}</p>
                     </div>
                   </div>
                   <div className="content-box">
@@ -310,14 +294,12 @@ const Particularjob = () => {
                             Job function
                           </h5>
                           <span className="level_content">
-                            {" "}
                             {selector?.functions}
                           </span>
                         </li>
                         <li className="jobes_inner_li">
                           <h5 className="job_description_level">Industries</h5>
                           <span className="level_content">
-                            {" "}
                             {selector?.industry}
                           </span>
                         </li>
@@ -357,9 +339,45 @@ const Particularjob = () => {
               </div>
             </div>
           </Tab>
-          <Tab eventKey="Aplied" title="Applied">
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Row className="main-applied-contaier">
+          <Tab eventKey="Aplied" title=" Applied  Candidates">
+            <div className="main-applied-contaier">
+              <div className="gapbetween w-100">
+                <Collapse in={disabled}>
+                  <div className="select_box">
+                    <Form.Select
+                      aria-label="Default select example"
+                      className="fs_13"
+                    >
+                      <option disabled hidden>
+                        Status
+                      </option>
+                      <option defaultValue={"ALL"}>All</option>
+                      <option value="1">Reject</option>
+                      <option value="1">Select</option>
+                    </Form.Select>
+                  </div>
+                </Collapse>
+                <Collapse in={disabled} className="">
+                  <div className="w-100">
+                    <InputGroup className="mb-3 w-25">
+                      <FormControl
+                        className="fs_13 w-25"
+                        placeholder="Search by  name"
+                        aria-label="Recipient's username"
+                        aria-describedby="basic-addon2"
+                        onChange={(e) => {
+                          requestSearch(e.target.value);
+                        }}
+                      />
+                      {/*<Button variant="outline-secondary" id="button-addon2">
+                                <BsSearch />
+                                </Button>*/}
+                    </InputGroup>
+                  </div>
+                </Collapse>
+              </div>
+              <div>
+              <Row className=" align-items-center">
                 <Col md={6} sm={12} lg={2} xl={2}>
                   <div className="card2">
                     <div className="card-header2">
@@ -393,160 +411,136 @@ const Particularjob = () => {
                     {/*<div className="card-footer1"> <span className="text-decoration-green">+9% </span>than yesterday</div>*/}
                   </div>
                 </Col>
-                <Col md={6} sm={12} lg={6} xl={6}>
-                  <div className="d-flex justify-content-between gap-2 m-auto">
-                    <Collapse in={disabled}>
-                      <div className="w-25">
-                        <Form.Select
-                          aria-label="Default select example"
-                          className="fs_13"
+                <Col md={6} sm={1} lg={6} xl={6}>
+                  <div className="d-flex justify-content-end align-items-end mt-5">
+                    <TooltipComp
+                      component={
+                        <Button
+                          variant=""
+                          className="btn-sm remove_button_padding"
+                          onClick={() => setSdisabled((p) => !p)}
                         >
-                          <option disabled hidden>
-                            Status
-                          </option>
-                          <option defaultValue={"ALL"}>All</option>
-                          <option value="1">Reject</option>
-                          <option value="1">Select</option>
-                        </Form.Select>
-                      </div>
-                    </Collapse>
-                    <Collapse in={disabled}>
-                      <div className="w-100">
-                        <InputGroup className="mb-3">
-                          <FormControl
-                            className="fs_13"
-                            placeholder="Search by title and name"
-                            aria-label="Recipient's username"
-                            aria-describedby="basic-addon2"
-                            onChange={(e) => {
-                              requestSearch(e.target.value);
-                            }}
-                          />
-                          {/*<Button variant="outline-secondary" id="button-addon2">
-                                        <BsSearch />
-                                        </Button>*/}
-                        </InputGroup>
-                      </div>
-                    </Collapse>
+                          <BsFilter size={25} color="#ff6b01" />
+                        </Button>
+                      }
+                      tooltip="Filter"
+                    />
                   </div>
                 </Col>
               </Row>
+              
+              </div>
             </div>
-            <div className="boxshadow">
-              <Table striped bordered hover>
-                <thead>
-                  <tr>
-                    <th>Action</th>
-                    <th>Title</th>
-                    <th
-                      onClick={() => {
-                        setTitle(!title);
-                        {
-                          title ? sortt() : sortt1();
-                        }
-                      }}
-                    >
-                      Name{title ? <BsArrowDown /> : <BsArrowUp />}
-                    </th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Resume</th>
-                    <th className="action-col">Status</th>
-                  </tr>
-                </thead>
-                {tableData.length > 0 ? (
-                  <tbody>
-                    {tableData.map((data, index) => (
-                      <tr>
-                        <td className="action">
-                          <div className="userDetail ">
-                            <button
-                              type="button"
-                              className="btn "
-                              id="dropdownIconMenu"
-                              data-bs-toggle="dropdown"
-                              aria-expanded="false"
+            <div className="content_box">
+              <div className="data-table">
+                <Table striped bordered hover>
+                  <thead>
+                    <tr>
+                      <th className="action_colwidth">Action</th>
+                      <th className="action_colwidth">Resume</th>
+                      <th className="action_colwidth">Status</th>
+                      <th>Title</th>
+                      <th
+                        onClick={() => {
+                          setTitle(!title);
+                          {
+                            title ? sortt() : sortt1();
+                          }
+                        }}
+                      >
+                        Name{title ? <BsArrowDown /> : <BsArrowUp />}
+                      </th>
+                      <th>Email</th>
+                      <th>Phone Number</th>
+                    </tr>
+                  </thead>
+                  {tableData.length > 0 ? (
+                    <tbody>
+                      {tableData.map((data, index) => (
+                        <tr>
+                          <td className="action">
+                            <div className="userDetail ">
+                              <button
+                                type="button"
+                                className="btn "
+                                id="dropdownIconMenu"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                <span className="actionIcon">
+                                  <i className="bi bi-three-dots-vertical"></i>
+                                </span>
+                              </button>
+                              <ul
+                                className="IconDropdown dropdown-menu context-menu11 "
+                                aria-labelledby="dropdownIconMenu"
+                              >
+                                <li className="dropdownList ">
+                                  {data?.active === "rejected" ? (
+                                    <div className="actionBtns context-menu1">
+                                      <span
+                                        className="editAction"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#editbtn"
+                                      >
+                                        <AiOutlineCheck />
+                                      </span>
+                                      <button
+                                        type="button"
+                                        className="btn btn-outlined-secondary fs_13 "
+                                        onClick={() => {
+                                          setShowalert(true);
+                                          setIndex(index);
+                                          settr(true);
+                                        }}
+                                      >
+                                        Accept
+                                      </button>
+                                    </div>
+                                  ) : (
+                                    ""
+                                  )}
+                                </li>
+                                <li className="dropdownList">
+                                  {data.active == "accepted" ? (
+                                    <div className="actionBtns context-menu1">
+                                      <span
+                                        className="deleteAction"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deletebtn"
+                                      >
+                                        <AiOutlineCloseCircle />
+                                      </span>
+                                      <button
+                                        type="button"
+                                        key={index}
+                                        className="btn btn-outlined-secondary fs_13"
+                                        onClick={() => {
+                                          setShowalert(true);
+                                          setIndex(index);
+                                          settr(false);
+                                        }}
+                                      >
+                                        Reject
+                                      </button>
+                                    </div>
+                                  ) : (
+                                    ""
+                                  )}
+                                </li>
+                              </ul>
+                            </div>
+                          </td>
+                          <td className="content_cente_td">
+                            <a
+                              target="_blank"
+                              href="http://www.africau.edu/images/default/sample.pdf"
                             >
-                              <span className="actionIcon">
-                                {" "}
-                                <i className="bi bi-three-dots-vertical"></i>{" "}
-                              </span>
-                            </button>
-                            <ul
-                              className="IconDropdown dropdown-menu context-menu11 "
-                              aria-labelledby="dropdownIconMenu"
-                            >
-                              <li className="dropdownList ">
-                                {data?.active === "rejected" ? (
-                                  <div className="actionBtns context-menu1">
-                                    <span
-                                      className="editAction"
-                                      data-bs-toggle="modal"
-                                      data-bs-target="#editbtn"
-                                    >
-                                      <AiOutlineCheck />
-                                    </span>
-                                    <button
-                                      type="button"
-                                      className="btn btn-outlined-secondary fs_13 "
-                                      onClick={() => {
-                                        setShowalert(true);
-                                        setIndex(index);
-                                        settr(true);
-                                      }}
-                                    >
-                                      Accept
-                                    </button>
-                                  </div>
-                                ) : (
-                                  ""
-                                )}
-                              </li>
-                              <li className="dropdownList">
-                                {data.active == "accepted" ? (
-                                  <div className="actionBtns context-menu1">
-                                    <span
-                                      className="deleteAction"
-                                      data-bs-toggle="modal"
-                                      data-bs-target="#deletebtn"
-                                    >
-                                      {" "}
-                                      <AiOutlineCloseCircle />
-                                    </span>
-                                    <button
-                                      type="button"
-                                      key={index}
-                                      className="btn btn-outlined-secondary fs_13"
-                                      onClick={() => {
-                                        setShowalert(true);
-                                        setIndex(index);
-                                        settr(false);
-                                      }}
-                                    >
-                                      Reject
-                                    </button>
-                                  </div>
-                                ) : (
-                                  ""
-                                )}
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                        <td>{data.Jobtitle}</td>
-                        <td>{CapitalizeFirstLetter(data.name)}</td>
-                        <td>{CapitalizeFirstLetter(data.email)}</td>
-                        <td>{data.phone}</td>
-                        <td className="content_cente_td">
-                          <a
-                            target="_blank"
-                            href="http://www.africau.edu/images/default/sample.pdf"
-                          >
-                            <GoCloudDownload size={20} color="green" />
-                          </a>
-                        </td>
-                        <td>
-                          {/*<Form>
+                              <GoCloudDownload size={20} color="green" />
+                            </a>
+                          </td>
+                          <td>
+                            {/*<Form>
                                                     <Form.Check className="switch_padding1"
                                                         type="switch"
                                                         key={index}
@@ -559,23 +553,28 @@ const Particularjob = () => {
                                                         }}
                                                         label="" />
                                                     </Form>*/}
-                          {data?.active == "accepted" ? (
-                            <Badge bg="success" size={30}>
-                              Accepted
-                            </Badge>
-                          ) : (
-                            <Badge bg="danger" size={30}>
-                              Rejected
-                            </Badge>
-                          )}{" "}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                ) : (
-                  <h3 className="table_no_records">No Record Found</h3>
-                )}
-              </Table>
+                            {data?.active == "accepted" ? (
+                              <Badge bg="success" size={30}>
+                                Accepted
+                              </Badge>
+                            ) : (
+                              <Badge bg="danger" size={30}>
+                                Rejected
+                              </Badge>
+                            )}
+                          </td>
+                          <td>{data.Jobtitle}</td>
+                          <td>{CapitalizeFirstLetter(data.name)}</td>
+                          <td>{CapitalizeFirstLetter(data.email)}</td>
+                          <td>{data.phone}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  ) : (
+                    <h3 className="table_no_records">No Record Found</h3>
+                  )}
+                </Table>
+              </div>
             </div>
             {tableData.length > 0 ? (
               <CustomPagination
@@ -589,52 +588,50 @@ const Particularjob = () => {
           </Tab>
         </Tabs>
         <Modal show={show} onHide={handleClose} size="sm">
-          <Modal.Header closeButton>
+          <Modal.Header className="fs_13">
             <Modal.Title className="modal-titlee">Project</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {
-              <div className="">
-                <div className="userdetails">
-                  <h3></h3>
-                  <Formik
-                    initialValues={initialValues}
-                    validationSchema={validationschemeaa}
-                  >
-                    {() => (
-                      <form
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                        }}
-                      >
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Input
-                            type="text"
-                            label="Name"
-                            className="form-control"
-                            name="storytitle"
-                          />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Input
-                            type="text"
-                            label="Email"
-                            className="form-control"
-                            name="Email"
-                          />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Input
-                            type="text"
-                            label="Phone Number"
-                            className="form-control"
-                            name="Email"
-                          />
-                        </Form.Group>
-                      </form>
-                    )}
-                  </Formik>
-                </div>
+              <div className="userdetails">
+                <h3></h3>
+                <Formik
+                  initialValues={initialValues}
+                  validationSchema={validationschemeaa}
+                >
+                  {() => (
+                    <form
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                      }}
+                    >
+                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Input
+                          type="text"
+                          label="Name"
+                          className="form-control"
+                          name="storytitle"
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Input
+                          type="text"
+                          label="Email"
+                          className="form-control"
+                          name="Email"
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Input
+                          type="text"
+                          label="Phone Number"
+                          className="form-control"
+                          name="Email"
+                        />
+                      </Form.Group>
+                    </form>
+                  )}
+                </Formik>
               </div>
             }
           </Modal.Body>

@@ -20,16 +20,16 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
   const getTitle = () => (
     <span>
       Welcome,
-      <strong className="user_content" style={{ color: "black" }}>
-{" "}
-        { userName?.name}
-      </strong>
+      <strong className="user_content"> {userName?.name}</strong>
     </span>
   );
   return (
     <div className="main-header-box">
-      <Navbar className="navbarBox" style={{ height: "70px" }}>
-        <Navbar.Brand style={{ display: "flex", alignItems: "center" }}>
+      <Navbar className="navbarBox navbar_style">
+        <Navbar.Brand
+          className="navbar_inner_style"
+          
+        >
           <Button
             variant=""
             className="move-sidebar"
@@ -49,7 +49,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
             <NavDropdown
               title={getTitle()}
               id="basic-nav-dropdown"
-              className="fs-19"
+              className=""
             >
               <NavDropdown.Item
                 className="dropdown-item12"

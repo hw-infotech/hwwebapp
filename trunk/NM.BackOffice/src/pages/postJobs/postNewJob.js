@@ -71,7 +71,7 @@ const Post_New_Job = () => {
                                                     </Form.Group>
                                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                                         <Form.Label>Enter Descritption</Form.Label>
-                                                        <Form.Control as="textarea" style={{ height: "120px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                        <Form.Control as="textarea"  rows={3} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
@@ -279,7 +279,7 @@ const Post_New_Job = () => {
                                                     </Form.Group>
                                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                                         <Form.Label>Enter Descritption</Form.Label>
-                                                        <Form.Control as="textarea" style={{ height: "122px" }} />
+                                                        <Form.Control as="textarea" rows={3} />
                                                     </Form.Group>
                                                     <Form.Group>
                                                         <Input type='text' className="form-control" placeholder='Job Function' name='jobfunction' label={"Job Function"} id="name" />

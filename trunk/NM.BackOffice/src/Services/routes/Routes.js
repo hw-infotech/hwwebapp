@@ -27,7 +27,7 @@ const route = [
     routes('*', <NotFound />),
   
     routes('/jobpreview', <Job_Preview />),
-    routes('/post-new-job', <Post_Job />),
+    routes('/add-job', <Post_Job />),
     routes("/addNewPost", <AddNewPost />),
     routes('/particularjob', <Particularjob />),
     routes('/all-jobs', <Edit_postJob />),

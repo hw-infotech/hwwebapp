@@ -15,14 +15,14 @@ export const Filters = ({ requestSearch, showalert, setShowalert, handleShow, ti
             <div className="panle_header" >
                 <div className="left-panle-title"><h4>{titl}</h4></div>
                 <div className="right_panle_container"  >
-                <TooltipComp component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>} tooltip="Filter" />
+                <TooltipComp className="tooltip" component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>} tooltip="Filter" />
                 <TooltipComp component={<Button variant="" aria-controls="example-collapse-text"
                 aria-expanded={disable} className="btn-sm remove_button_padding" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01" /></Button>} tooltip="Add" />
                     
                 </div>
             </div>
-            <div className="fs_13 pt-1">
-                <div className="gapbetween">
+          
+                <div className="gapbetween fs_13 pt-1">
                     <Collapse in={disable}>
                         <div id="example-collapse-text">
                             <Form.Select className="fs_13" aria-label="Default select example" id="example-collapse-text" >
@@ -50,7 +50,7 @@ export const Filters = ({ requestSearch, showalert, setShowalert, handleShow, ti
                     </Collapse>
                 </div>
             </div>
-        </div>
+        
 
     )
 }

@@ -35,7 +35,7 @@ const initialstate = {
             ],
             benefits: [{ value: 'Insurance', label: 'Insurance' }],
             requirment: [
-                { value: 'Graduate', label: 'Graduate' },
+                { value: 'Post Graduate', label: ' Post Graduate' },
 
             ],
             industry: "Technology",
@@ -49,16 +49,16 @@ const initialstate = {
             description: "Develop methods for motivating and inspiring stakeholders.",
             functions: "Provide support and training to team members",
             responsibility: [
-                { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
+                { value: ' Identify job duties relevant to the position', label: ' Identify job duties relevant to the position' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
             ],
             benefits: [{ value: 'Insurance', label: 'Insurance' }],
             requirment: [
-                { value: 'Graduate', label: 'Graduate' },
+                { value: 'B.tech', label: 'B.tech' },
 
             ],
-            industry: "Technology",
+            industry: "Business",
             level: "Senior",
             type: "Full time",
             active: "deactive"
@@ -72,7 +72,7 @@ const initialstate = {
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
                 { value: 'Create detailed budgeting and forecasting quarterly reports', label: 'Create detailed budgeting and forecasting quarterly reports' },
             ],
-            benefits: [{ value: 'Insurance', label: 'Insurance' }],
+            benefits: [{ value: 'Let you enjoy some extra perks', label: 'Let you enjoy some extra perks' }],
             requirment: [
                 { value: 'Graduate', label: 'Graduate' },
 

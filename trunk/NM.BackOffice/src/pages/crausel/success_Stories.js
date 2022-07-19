@@ -26,6 +26,7 @@ import { confirm } from "react-bootstrap-confirmation";
 import { subString } from "../../Services/commonFunctions";
 import { Filters } from "../../components/header-filter";
 import * as yup from "yup";
+import { tab } from "@testing-library/user-event/dist/tab";
 
 const route = [
   { name: "Dashboard", route: "/" },
@@ -36,14 +37,14 @@ const records = [
   {
     title: "Birthday Post",
     content:
-      "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
+      " The passage is attributed to an unknown, oday, the flowers are bloomier, the sun is sunnier, and life is awesomer – all because it’s your birthday!",
     active: false,
     image: "",
   },
   {
     title: "Christmas Post",
     content:
-      "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
+      "Glory to God in the highest, and on earth peace, goodwill toward men. Jesus is the reason for the season,Joy to the world, the Lord has come!",
     active: true,
     image: "",
   },
@@ -61,6 +62,8 @@ const validationSchema = yup.object({
   image: yup.string().required().label("image"),
 });
 const Success_Stories = () => {
+  const [upload, setUpload] = useState();
+  const [img, setImge] = useState();
   const [open, setOpen] = useState(false);
   const [values, setValues] = useState();
   const [index, setindex] = useState();
@@ -93,6 +96,9 @@ const Success_Stories = () => {
     });
     // alert(JSON.stringify(state))
   };
+  useEffect(() => {
+    document.title = "Success Stories";
+  }, []);
   const handleShow = () => setShow(true);
 
   const [tableData, setTableData] = useState(records);
@@ -169,10 +175,12 @@ const Success_Stories = () => {
 
   const getBase64 = (e, setFieldValue) => {
     var file = e.target.files[0];
+    console.log(file, "file");
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
       setFieldValue("image", reader.result);
+      setImge(file.name);
     };
     reader.onerror = function (error) {
       console.log("Error: ", error);
@@ -192,7 +200,7 @@ const Success_Stories = () => {
           titl={titl}
         />
         <Modal show={showalert} onHide={handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title className="modal-titlee">Alert</Modal.Title>
           </Modal.Header>
           <Modal.Body className="label-size">
@@ -225,9 +233,10 @@ const Success_Stories = () => {
             <Table striped bordered hover className="table-content">
               <thead>
                 <tr>
-                  <th colSpan={1}>Action</th>
+                  <th>Action</th>
+                  <th className="action_colwidth">Status</th>
                   <th
-                    className="action_titlewidth"
+                    className=""
                     onClick={() => {
                       setTitle(!title);
                       {
@@ -237,13 +246,14 @@ const Success_Stories = () => {
                   >
                     Title {title ? <BsArrowDown /> : <BsArrowUp />}
                   </th>
+
                   <th>Content</th>
-                  <th colSpan={1}>Status</th>
                 </tr>
               </thead>
-              {tableData.length > 0 ? (
-                <tbody>
-                  {tableData?.map((data, index) => (
+
+              <tbody>
+                {tableData?.length > 0 &&
+                  tableData?.map((data, index) => (
                     <tr key={index}>
                       <td className="action">
                         <div className="userDetail ">
@@ -273,6 +283,7 @@ const Success_Stories = () => {
                                 >
                                   <i className="bi bi-pencil-square"></i>
                                 </span>
+
                                 <button
                                   type="button"
                                   key={index}
@@ -316,8 +327,6 @@ const Success_Stories = () => {
                           </ul>
                         </div>
                       </td>
-                      <td>{data.title}</td>
-                      {<td>{data.content && subString(data.content, 115)}</td>}
                       <td>
                         <Form>
                           {/*console.log(data?.active)*/}
@@ -356,13 +365,15 @@ const Success_Stories = () => {
                           />
                         </Form>
                       </td>
+                      <td>{data.title}</td>
+                      {<td>{data.content && subString(data.content, 115)}</td>}
                     </tr>
                   ))}
-                </tbody>
-              ) : (
-                <h3 className="table_no_records">No Record Found</h3>
-              )}
+              </tbody>
             </Table>
+            {tableData.length === 0 && (
+              <div className="table_no_records">No Record Found</div>
+            )}
           </div>
           {tableData.length > 0 ? (
             <CustomPagination
@@ -375,7 +386,7 @@ const Success_Stories = () => {
           )}
         </div>
         <Modal show={show} onHide={handleClose} size="md">
-          <Modal.Header closeButton className="modal-header text-white ">
+          <Modal.Header className="modal-header text-white ">
             <Modal.Title className="modal-titlee  ">
               {edit ? "Edit Project" : "Add Project"}
             </Modal.Title>
@@ -432,7 +443,7 @@ const Success_Stories = () => {
                           className="form-control"
                           name="content"
                           id="exampleFormControlTextarea1"
-                          rows="3"
+                          rows={3}
                           label={"Description"}
                           onChange={handleChange}
                           value={values.content}
@@ -445,20 +456,56 @@ const Success_Stories = () => {
                           ""
                         )}
                       </Form.Group>
-
-                      <Form.Label className="label-size">
-                        Choose Image
-                      </Form.Label>
-                      <Form.Control
+                      <Form.Label className="label-size">Active</Form.Label>
+                      <Form.Check
+                        className=""
+                        type="switch"
+                        id="Active"
+                        label=""
+                        name="active"
+                        value={true}
+                        checked={values?.active}
+                        onChange={handleChange}
+                        color="#eb7823"
+                      />
+                        <Form.Label className="label-size " >Upload Image</Form.Label>
+                      <div className="story_image_selector">
+                        <div className="d-flex w-100">
+                          <input
+                            type="file"
+                            className="uploadButton"
+                            name="image"
+                            onChange={(e) => {
+                              getBase64(e, setFieldValue);
+                            }}
+                          />
+                          <label className=" image_filld_text" htmlFor="image">
+                            {img ? "Upload Image" : "Choose Image"}
+                          </label>
+                          <Form.Group className="image_selector_design">
+                            {img}
+                          </Form.Group>
+                        </div>
+                        <i
+                          className="fs-4 bi-x remove-img closeIcon"
+                          onClick={() => {
+                            setFieldValue("image", "");
+                            setImge("");
+                          }}
+                        ></i>
+                        <Form.Label />
+                      </div>
+                      {/*<Form.Control
                         className="label-size"
                         type="file"
                         accept=".png,.jpg"
+                        aria-label="Upload Images"
                         name="image"
                         onChange={(e) => {
                           getBase64(e, setFieldValue);
                         }}
-                        //value={values.image}
-                      />
+                        value={values.image}
+                      />*/}
                       {errors?.image && touched.image ? (
                         <label className="text-danger label-size">
                           {errors.image}
@@ -466,20 +513,19 @@ const Success_Stories = () => {
                       ) : (
                         ""
                       )}
-                      <div className="m-2">
-                        <img src={values.image} width={50} height={50}></img>
-                      </div>
-                      <Form.Check
-                        className="custom1-switch label-size"
-                        type="switch"
-                        id="Active"
-                        label="Active"
-                        name="active"
-                        value={true}
-                        checked={values?.active}
-                        onChange={handleChange}
-                        color="#eb7823"
-                      />
+                      {values.image ? (
+                        <div className="imageCard  mt-2">
+                         
+                          <img
+                            src={values.image}
+                            className="icon"
+                            width={80}
+                            height={80}
+                          ></img>
+                        </div>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   }
                 </Modal.Body>

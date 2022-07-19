@@ -2,14 +2,14 @@ import React from "react"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
 
 const TooltipComp = ({ placement, component, tooltip }) => {
-    return <OverlayTrigger
-        delay={{ hide: 450, show: 50 }}
+    return <OverlayTrigger className="tooltip"
+        delay={{ hide: 10, show: 50 }}
         overlay={(props) => (
-            <Tooltip {...props}>
+            <Tooltip {...props} className="tooltip">
                 {tooltip}
             </Tooltip>
         )}
-        placement={placement}
+        placement={"top"}
     >
         {component}
     </OverlayTrigger>

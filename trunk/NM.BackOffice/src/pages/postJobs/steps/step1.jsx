@@ -27,7 +27,7 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                     <Form.Label className="label-size">Descritption</Form.Label>
-                    <Form.Control as="textarea" style={{ height: "120px" }} name="description" value={values?.description} onChange={handleChange} />
+                    <Form.Control as="textarea" rows={3} name="description" value={values?.description} onChange={handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Input type='text' className="form-control" value={values?.jobfunction} name='functions' label={"Function"} id="name" onChange={handleChange} />
