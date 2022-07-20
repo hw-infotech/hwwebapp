@@ -34,7 +34,7 @@ const Update_Step2 = ({ setGoSteps, state, setState, handleFieldchange, values }
                         onChange={(e) => { handleFieldchange(e) }}
                     />
                     <Form.Label className="label-size">Benefits</Form.Label>
-                    <div style={{ marginBottom: "1rem" }}>
+                    <div className="mt-2">
                         <CreatableSelectField
                             name="benefits"
                             formState={state}

@@ -436,7 +436,7 @@ const All_Enquiry = () => {
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
-                        <div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
+                        <div className="pt-3 gallery_add_button d-flex justify-content-end" >
                             <Button variant="outline-secondary" type="button" className="gallery_add_button">Submit</Button>
                         </div>
                     </Modal.Footer>

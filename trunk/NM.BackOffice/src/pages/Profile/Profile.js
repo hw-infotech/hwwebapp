@@ -195,11 +195,12 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div className="prfille-back-btn">
+              <div className="
+              ">
                 <Button
                   variant="secondary"
-                  className="btn-sm"
-                  style={{ float: "right" }}
+                  className="btn-sm position_right"
+                  
                   onClick={() => {
                     history(-1);
                   }}

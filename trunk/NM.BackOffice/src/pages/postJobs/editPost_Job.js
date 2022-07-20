@@ -41,6 +41,8 @@ const Edit_postJob = (value1) => {
   useEffect(() => {
     document.title = "Job";
   }, []);
+  const [openmodal, setmodal] = useState(false);
+  const [indexx, setIndex] = useState();
   const [jobpost, setjobpost] = useState();
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
@@ -277,44 +279,79 @@ const Edit_postJob = (value1) => {
           </Collapse>
         </div>
       </div>
-      
-        {/*<h4>List Number of Job Posts</h4>*/}
-        <Modal
-          show={showalert}
-          onHide={handleClose}
-          backdrop="static"
-          keyboard={false}
-          className="fs-13"
-        >
-          <Modal.Header className="modal-titlee ">
-            <Modal.Title className="modal-titlee">Alert</Modal.Title>
-          </Modal.Header>
-          <Modal.Body className="label-size">
-            <p>{rowtext?.text}</p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button
-              className="btn-sm fs_13"
-              variant="secondary"
-              onClick={() => {
-                setShowalert(false);
-              }}
-            >
-              No
-            </Button>
-            <Button
-              className="btn-sm fs_13"
-              variant="primary"
-              onClick={() => {
-                display();
-                setShowalert(false);
-              }}
-            >
-              Yes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-  
+      <Modal
+        show={openmodal}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+        className="fs-13"
+      >
+        <Modal.Header className="modal-titlee ">
+          <Modal.Title className="modal-titlee">Alert</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="label-size">
+          <p>{"Are you sure want to delete"}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="btn-sm fs_13"
+            variant="secondary"
+            onClick={() => {
+              setmodal(false);
+            }}
+          >
+            No
+          </Button>
+          <Button
+            className="btn-sm fs_13"
+            variant="primary"
+            onClick={() => {
+              tableData.splice(indexx, 1);
+              setTableData([...tableData]);
+              setmodal(false);
+            }}
+          >
+            Yes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      {/*<h4>List Number of Job Posts</h4>*/}
+      <Modal
+        show={showalert}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+        className="fs-13"
+      >
+        <Modal.Header className="modal-titlee ">
+          <Modal.Title className="modal-titlee">Alert</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="label-size">
+          <p>{rowtext?.text}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="btn-sm fs_13"
+            variant="secondary"
+            onClick={() => {
+              setShowalert(false);
+            }}
+          >
+            No
+          </Button>
+          <Button
+            className="btn-sm fs_13"
+            variant="primary"
+            onClick={() => {
+              display();
+              setShowalert(false);
+            }}
+          >
+            Yes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       <div className="content_box">
         <div className="data-table">
           <Table striped bordered hover responsive>
@@ -342,13 +379,13 @@ const Edit_postJob = (value1) => {
                 <th>Industry</th>
                 <th>Level</th>
                 <th>Employement</th>
-                
+
                 <th className="action_colwidth">Candidates</th>
               </tr>
             </thead>
             <tbody>
-            {tableData?.length > 0  &&
-              tableData?.map((data, index) => (
+              {tableData?.length > 0 &&
+                tableData?.map((data, index) => (
                   <tr key={index}>
                     <td className="action">
                       <div className="userDetail ">
@@ -430,8 +467,8 @@ const Edit_postJob = (value1) => {
                                 type="button"
                                 className="btn btn-outlined-secondary fs_13"
                                 onClick={() => {
-                                  tableData.splice(index, 1);
-                                  setTableData([...tableData]);
+                                  setIndex(index)
+                                  setmodal(true)
                                 }}
                               >
                                 Delete
@@ -442,40 +479,40 @@ const Edit_postJob = (value1) => {
                       </div>
                     </td>
                     <td>
-                    <Form>
-                      <Form.Check
-                        type="switch"
-                        id="custom-switch1"
-                        checked={data.active === "active" ? true : false}
-                        label=""
-                        onChange={(e) => {
-                          setShowalert(true);
-                          setRowtext(
-                            e.target.checked
-                              ? {
-                                  id: 1,
-                                  text: "Are you sure to  show the job ?",
-                                }
-                              : {
-                                  id: 0,
-                                  text: "Are you sure to hide the job ?",
-                                }
-                          );
-                          if (data.active === "active") {
-                            setDeleteObj({
-                              index,
-                              rowStatus: e.target.checked,
-                            });
-                          } else {
-                            setDeleteObj({
-                              index,
-                              rowStatus: e.target.checked,
-                            });
-                          }
-                        }}
-                      />
-                    </Form>
-                  </td>
+                      <Form>
+                        <Form.Check
+                          type="switch"
+                          id="custom-switch1"
+                          checked={data.active === "active" ? true : false}
+                          label=""
+                          onChange={(e) => {
+                            setShowalert(true);
+                            setRowtext(
+                              e.target.checked
+                                ? {
+                                    id: 1,
+                                    text: "Are you sure to  show the job ?",
+                                  }
+                                : {
+                                    id: 0,
+                                    text: "Are you sure to hide the job ?",
+                                  }
+                            );
+                            if (data.active === "active") {
+                              setDeleteObj({
+                                index,
+                                rowStatus: e.target.checked,
+                              });
+                            } else {
+                              setDeleteObj({
+                                index,
+                                rowStatus: e.target.checked,
+                              });
+                            }
+                          }}
+                        />
+                      </Form>
+                    </td>
                     <td>{data?.Jobtitle || data?.jobtitle}</td>
                     <td>
                       {data?.description && subString(data.description, 20)}
@@ -502,16 +539,15 @@ const Edit_postJob = (value1) => {
                     <td>{data?.industry}</td>
                     <td>{data?.level}</td>
                     <td>{data?.type}</td>
-                   
+
                     <td>30</td>
                   </tr>
                 ))}
-                </tbody>
-                </Table>
-                {tableData.length === 0 && (
-                  <div className="table_no_records">No Record Found</div>
-                )}
-           
+            </tbody>
+          </Table>
+          {tableData.length === 0 && (
+            <div className="table_no_records">No Record Found</div>
+          )}
         </div>
       </div>
 
@@ -541,7 +577,7 @@ const Edit_postJob = (value1) => {
                                                         </Form.Group>
                                                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                                             <Form.Label>Enter Descritption</Form.Label>
-                                                            <Form.Control as="textarea" style={{ height: "123px" }} name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
+                                                            <Form.Control as="textarea"  name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
@@ -555,7 +591,7 @@ const Edit_postJob = (value1) => {
                                                     <div className="add_new_post_padding_between_field w-100" >
                                                         <Form.Group className="">
                                                             <Form.Label>Requirments</Form.Label>
-                                                            <div style={{ marginBottom: "1rem" }}>
+                                                            <div >
                                                                 <CreatableSelectField placeholder="Type requirenments and press tab button..." formState={formState} setFormState={setFormState} onChange={onhandlechange} />
                                                             </div>
                                                         </Form.Group>
@@ -564,7 +600,7 @@ const Edit_postJob = (value1) => {
                                                         </Form.Group>
                                                         <Form.Group>
                                                             <Form.Label>Benefits</Form.Label>
-                                                            <div style={{ marginBottom: "1rem" }}>
+                                                            <div>
                                                                 <CreatableSelectField placeholder="Type benefits and press tab button..." formState={formState} setFormState={setFormState} onChange={onhandlechange} />
                                                             </div>
                                                         </Form.Group>
@@ -587,7 +623,6 @@ const Edit_postJob = (value1) => {
                                                         </Form.Group>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </form>
                                     )}

@@ -4,82 +4,101 @@ import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
 const Edit_Job_Preview = (values, state) => {
-    const nevigate = useNavigate()
-    console.log(values)
-    let tiitle = localStorage?.getItem("key")
-    return (
-        <div className="edit-preview-box">
-            <div className="view_main_box">
-                <div className="main-pannle">
-                    <div className="leftt_pannel">
-                        <div className="jobes_card">
-                            <div className="jobes_marginbottom">
-                                <img src="assets/images/nestor.jfif" height={80} width={80} />
-                            </div>
-                            <div className="box-inner-content">
-                                <div className="titlejob">
-                                    <span>{values.state?.jobtitle || state.jobtitle} - Mohali</span>
-                                </div>
-                                <div className="job_location">
-                                    <span className="job_heading" >Description: </span>
-                                    <p className="job_description">{values?.state?.description}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="content-box">
-                            <div className="job_heading">
-                                <span className="" style={{ textDecoration: "unerlined" }}>Job Responsibility</span>
-                            </div>
-                            <ul className="job__list">
-                                {values?.state?.responsibility?.map((data, index) =>
-                                    <li className=""> {data.value}</li>
+  const nevigate = useNavigate();
+  console.log(values);
+  let tiitle = localStorage?.getItem("key");
+  return (
+    <div className="edit-preview-box">
+      <div className="view_main_box">
+        <div className="main-pannle">
+          <div className="leftt_pannel">
+            <div className="jobes_card">
+              <div className="jobes_marginbottom">
+                <img src="assets/images/nestor.jfif" height={80} width={80} />
+              </div>
+                <div className="titlejob">
+                  <span>
+                    {values.state?.jobtitle || state.jobtitle} - Mohali
+                  </span>
+                </div>
+                <div className="job_location d-flex">
+              <span >Nestormind </span>
+              <span> - Mohali</span>
+          </div>
+          <div className="job_date">
+              <span>2 months ago</span>
+          </div>
+              
+            </div>
+            <div className="content-box">
+              <div className="job_heading">
+                <span className="">Job Description</span>
+              </div>
+              <p className="job_description"> {values?.state?.description}</p>
+              <div className="job_heading">
+                <span className="" >
+                  Job Responsibility
+                </span>
+              </div>
+              <ul className="job__list">
+                {values?.state?.responsibility?.map((data, index) => (
+                  <li className=""> {data?.value}</li>
+                ))}
+              </ul>
 
-                                )}
-                            </ul>
-
-                            <div className="job_heading">
-                                <span className="" style={{ textDecoration: "unerlined" }}>Requirement</span>
-
-                            </div>
-                            <ul className="job__list">
-                                {values.state?.requirment?.map((data, index) =>
-                                    <li className=""> {data.value}</li>
-                                )}
-                            </ul>
-                            <div className="job_heading">
-                                <span className="" style={{ textDecoration: "unerlined" }}>Nestormind Full Time Employee Benefits</span>
-                            </div>
-                            <div className="">
-                                <ul className="job__list">
-                                    {values.state?.benefits?.map((data, index) =>
-                                        <li className=""> {data.value}</li>
-                                    )}
-                                </ul>
-                            </div>
-                            <div className="main_information_list">
-                                <ul className="job_description_level_list">
-                                    <li className="jobes_inner_li">
-                                        <h3 className="job_description_level">Seniority level</h3>
-                                        <span className="level_contentl">{values.state?.level}</span>
-                                    </li>
-                                    <li className="jobes_inner_li">
-                                        <h3 className="job_description_level">Employment type</h3>
-                                        <span className="level_content">{values.state?.type}</span>
-                                    </li>
-                                    <li className="jobes_inner_li">
-                                        <h3 className="job_description_level">Job function</h3>
-                                        <span className="level_content"> {values.state?.functions}</span>
-                                    </li>
-                                    <li className="jobes_inner_li">
-                                        <h3 className="job_description_level" >Industries</h3>
-                                        <span className="level_content">{values.state?.industry}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            { /*<div style={{ float: "right" }}> <Button variant="secondary" onClick={()=>  nevigate(-1)}>Back</Button></div>*/}
-                        </div>
-                    </div>
-                    { /*<div className="mediaqueiry" style={{ paddingLeft: 30 }}>
+              <div className="job_heading">
+                <span className="" >
+                  Requirement
+                </span>
+              </div>
+              <ul className="job__list">
+                {values?.state?.requirment?.map((data, index) => (
+                  <li className=""> {data?.value}</li>
+                ))}
+              </ul>
+              <div className="job_heading">
+                <span className="">
+                  Nestormind Full Time Employee Benefits
+                </span>
+              </div>
+              <div className="">
+                <ul className="job__list">
+                  {values.state?.benefits?.map((data, index) => (
+                    <li className=""> {data?.value}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="main_information_list">
+                <ul className="job_description_level_list">
+                  <li className="jobes_inner_li">
+                    <h3 className="job_description_level">Seniority level</h3>
+                    <span className="level_contentl">
+                      {values.state?.level}
+                    </span>
+                  </li>
+                  <li className="jobes_inner_li">
+                    <h3 className="job_description_level">Employment type</h3>
+                    <span className="level_content">{values.state?.type}</span>
+                  </li>
+                  <li className="jobes_inner_li">
+                    <h3 className="job_description_level">Job function</h3>
+                    <span className="level_content">
+                      {" "}
+                      {values.state?.functions}
+                    </span>
+                  </li>
+                  <li className="jobes_inner_li">
+                    <h3 className="job_description_level">Industries</h3>
+                    <span className="level_content">
+                      {values.state?.industry}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              {/*<div style={{ float: "right" }}> <Button variant="secondary" onClick={()=>  nevigate(-1)}>Back</Button></div>*/}
+            </div>
+          </div>
+          {/*<div className="mediaqueiry" style={{ paddingLeft: 30 }}>
                     <h4 className="right_pannle_main_heading">Nestormind Other Jobs</h4>
                     <ul className="right_pannle_list">
                         <li className="right_pannle_list_itmes">
@@ -110,11 +129,9 @@ const Edit_Job_Preview = (values, state) => {
                         </li>
                     </ul>
                  </div>*/}
-                </div>
-
-            </div>
         </div>
-
-    )
-}
-export default Edit_Job_Preview
+      </div>
+    </div>
+  );
+};
+export default Edit_Job_Preview;

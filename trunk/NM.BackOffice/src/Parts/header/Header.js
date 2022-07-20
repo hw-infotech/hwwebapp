@@ -26,10 +26,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
   return (
     <div className="main-header-box">
       <Navbar className="navbarBox navbar_style">
-        <Navbar.Brand
-          className="navbar_inner_style"
-          
-        >
+        <Navbar.Brand className="navbar_inner_style">
           <Button
             variant=""
             className="move-sidebar"
@@ -41,10 +38,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
           </Button>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          style={{ justifyContent: "end" }}
-        >
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
             <NavDropdown
               title={getTitle()}
@@ -58,7 +52,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                 }}
               >
                 <span>
-                  <AiOutlineUser size={16} style={{ marginRight: 5 }} />{" "}
+                  <AiOutlineUser size={16} className="icon-gap"  />{" "}
                 </span>{" "}
                 My Profile
               </NavDropdown.Item>
@@ -73,7 +67,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                 }}
               >
                 <span>
-                  <AiOutlineLogout size={16} style={{ marginRight: 5 }} />{" "}
+                  <AiOutlineLogout size={16} className="icon-gap" />{" "}
                 </span>
                 Log out
               </NavDropdown.Item>

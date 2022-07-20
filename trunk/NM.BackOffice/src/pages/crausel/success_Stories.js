@@ -62,6 +62,7 @@ const validationSchema = yup.object({
   image: yup.string().required().label("image"),
 });
 const Success_Stories = () => {
+  const [indexx, setIndexx] = useState();
   const [upload, setUpload] = useState();
   const [img, setImge] = useState();
   const [open, setOpen] = useState(false);
@@ -73,7 +74,7 @@ const Success_Stories = () => {
     active: false,
     image: "",
   });
-
+  const [openmodal, setmodal] = useState(false);
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
   const [disable, setSdisabled] = useState(false);
@@ -186,6 +187,10 @@ const Success_Stories = () => {
       console.log("Error: ", error);
     };
   };
+  const delete_confomtation = () => {
+    tableData.splice(indexx, 1);
+    setTableData([...tableData]);
+  };
   return (
     <>
       <div className="Main-story-box">
@@ -199,6 +204,35 @@ const Success_Stories = () => {
           setShowalert={setShowalert}
           titl={titl}
         />
+        <Modal show={openmodal} onHide={handleClose}>
+          <Modal.Header>
+            <Modal.Title className="modal-titlee">Alert</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="label-size">
+            <p>Are you sure want to delete</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              className="btn btn-sm"
+              onClick={() => {
+                setmodal(false);
+              }}
+            >
+              No
+            </Button>
+            <Button
+              variant="primary"
+              className="btn btn-sm"
+              onClick={() => {
+                delete_confomtation();
+                setmodal(false);
+              }}
+            >
+              Yes
+            </Button>
+          </Modal.Footer>
+        </Modal>
         <Modal show={showalert} onHide={handleClose}>
           <Modal.Header>
             <Modal.Title className="modal-titlee">Alert</Modal.Title>
@@ -230,7 +264,7 @@ const Success_Stories = () => {
         </Modal>
         <div className="content_box">
           <div className="data-table">
-            <Table striped bordered hover className="table-content">
+            <Table striped bordered hover responsive className="table-content">
               <thead>
                 <tr>
                   <th>Action</th>
@@ -316,8 +350,8 @@ const Success_Stories = () => {
                                   key={index}
                                   className="btn btn-outlined-secondary fs_13"
                                   onClick={() => {
-                                    tableData.splice(index, 1);
-                                    setTableData([...tableData]);
+                                    setmodal(true);
+                                    setIndexx(index);
                                   }}
                                 >
                                   Delete
@@ -468,7 +502,9 @@ const Success_Stories = () => {
                         onChange={handleChange}
                         color="#eb7823"
                       />
-                        <Form.Label className="label-size " >Upload Image</Form.Label>
+                      <Form.Label className="label-size ">
+                        Upload Image
+                      </Form.Label>
                       <div className="story_image_selector">
                         <div className="d-flex w-100">
                           <input
@@ -515,7 +551,6 @@ const Success_Stories = () => {
                       )}
                       {values.image ? (
                         <div className="imageCard  mt-2">
-                         
                           <img
                             src={values.image}
                             className="icon"

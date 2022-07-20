@@ -82,20 +82,19 @@ const Job_newsletter = () => {
       Email: "Ganeshsharma5073@gmail.com",
       phone: "9803836866",
       Name: "mark",
-      active: "false",
-      
+      active: false,
     },
     {
       Email: "Amanpreet23@gmail.com",
       phone: "8146945394",
       Name: "Aman",
-      active: "false",
+      active: false,
     },
     {
       Email: "goldygoldy33@gmail.com",
       phone: "8146945394",
       Name: "Aman",
-      active: "false",
+      active: false,
     },
   ];
   const [tableData, setTableData] = useState(records);
@@ -197,7 +196,17 @@ const Job_newsletter = () => {
                     className="fs_13"
                     onClick={() => setChecked((p) => !p)}
                     label=""
+                    onChange={(e) => {
+                      setTableData((oldState) => {
+                        const newState = oldState.map((_) => {
+                          _.active = e.target.checked;
+                          return _;
+                        });
+                        return newState;
+                      });
+                    }}
                   />
+                  {console.log(tableData)}
                 </th>
                 <th className="action_colwidth">Status</th>
                 <th
@@ -212,24 +221,32 @@ const Job_newsletter = () => {
                 </th>
                 <th>Phone</th>
                 <th>Email</th>
-                
               </tr>
             </thead>
             {tableData.length > 0 ? (
               <tbody>
                 {tableData.map((data, index) => (
                   <tr>
-                    {" "}
                     <td className="content_cente_td">
-                      <Form.Check className="fs_13 " checked={checked} />
+                      <Form.Check
+                        className="fs_13 "
+                        name="active"
+                        checked={data.active}
+                        onChange={(e) => {
+                          tableData[index].active = e.target.checked;
+                          setTableData([...tableData]);
+                        }}
+                      />
                     </td>
                     <td>
-                    {
-                      <Badge bg="success" size={30}>
-                        Subscribe
+                      { tableData[index].active==true ?
+                         <Badge bg="success" size={30}>
+                          Subscribe
+                        </Badge>: <Badge bg="danger" size={30}>
+                        Unsubscribe
                       </Badge>
-                    }
-                    {/*<Form.Check className="switch_padding"
+                      }
+                      {/*<Form.Check className="switch_padding"
                                               type="switch"
                                               id="custom-switch1"
                                               value={data.active}
@@ -242,11 +259,10 @@ const Job_newsletter = () => {
                                                   })
                                               }}
                                           />*/}
-                  </td>
+                    </td>
                     <td>{CapitalizeFirstLetter(data.Name)}</td>
                     <td>{data.phone}</td>
                     <td>{CapitalizeFirstLetter(data.Email)}</td>
-                   
                   </tr>
                 ))}
               </tbody>

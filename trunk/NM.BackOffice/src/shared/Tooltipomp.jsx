@@ -1,18 +1,44 @@
-import React from "react"
-import { OverlayTrigger, Tooltip } from "react-bootstrap"
+import { FastField } from "formik";
+import React from "react";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
-const TooltipComp = ({ placement, component, tooltip }) => {
-    return <OverlayTrigger className="tooltip"
-        delay={{ hide: 10, show: 50 }}
-        overlay={(props) => (
-            <Tooltip {...props} className="tooltip">
-                {tooltip}
-            </Tooltip>
-        )}
-        placement={"top"}
+const TooltipComp = ({ component, tooltip, placement = "top" }) => {
+  return (
+    <OverlayTrigger
+      popperConfig={{
+        modifiers: {
+          preventOverflow: {
+            enabled: false,
+          },
+        },
+      }}
+      className="tooltip"
+      delay={{ hide: 10, show: 50 }}
+      overlay={(props) => (
+        <Tooltip {...props} className="tooltip">
+          {tooltip}
+        </Tooltip>
+      )}
+      placement={placement}
     >
-        {component}
-    </OverlayTrigger>
-}
+      {({ placement, arrowProps, show: _show, popper, ...props }) => (
+        <div
+          {...props}
+          style={{
+            position: "relative",
+            overflow: "hidden",
+            padding: "0px",
+            color: "white",
+            margin: "0px",
 
-export default TooltipComp
+            ...props.style,
+          }}
+        >
+          {component}
+        </div>
+      )}
+    </OverlayTrigger>
+  );
+};
+
+export default TooltipComp;

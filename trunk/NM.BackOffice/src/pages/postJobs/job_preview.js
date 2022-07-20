@@ -18,26 +18,25 @@ const Job_Preview = (values, state) => {
             <div className="job_icon">
               <img src="assets/images/nestor.jfif" height={80} width={80} />
             </div>
-            <div className="box-inner-content">
-              <div className="titlejob">
-                <span>
-                  {values.values?.jobtitle || state.jobtitle} - Mohali
-                </span>
-              </div>
-              <div className="job_location  ">
-                <span className="job_heading">Description: </span>
-                <p className="job_description">
-                  {" "}
-                  {values?.values?.description}
-                </p>
-              </div>
+
+            <div className="titlejob">
+              <span>{values.values?.jobtitle || state.jobtitle} - Mohali</span>
+            </div>
+            <div className="job_location d-flex">
+              <span>Nestormind </span>
+              <span> - Mohali</span>
+            </div>
+            <div className="job_date">
+              <span>2 months ago</span>
             </div>
           </div>
           <div className="content-box">
             <div className="job_heading">
-              <span className="" style={{ textDecoration: "unerlined" }}>
-                Job Responsibility
-              </span>
+              <span className="">Job Description</span>
+            </div>
+            <p className="job_description"> {values?.values?.description}</p>
+            <div className="job_heading">
+              <span className="">Job Responsibility</span>
             </div>
             <ul className="job__list">
               {values?.values?.responsibility?.map((data, index) => (
@@ -45,9 +44,7 @@ const Job_Preview = (values, state) => {
               ))}
             </ul>
             <div className="job_heading">
-              <span className="" style={{ textDecoration: "unerlined" }}>
-                Requirement
-              </span>
+              <span className="">Requirement</span>
             </div>
             <ul className="job__list">
               {values.values?.requirment?.map((data, index) => (
@@ -56,9 +53,7 @@ const Job_Preview = (values, state) => {
             </ul>
 
             <div className="job_heading">
-              <span className="" style={{ textDecoration: "unerlined" }}>
-                Nestormind Full Time Employee Benefits
-              </span>
+              <span className="">Nestormind Full Time Employee Benefits</span>
             </div>
 
             <ul className="job__list">

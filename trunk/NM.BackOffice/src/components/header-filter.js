@@ -15,7 +15,13 @@ export const Filters = ({ requestSearch, showalert, setShowalert, handleShow, ti
             <div className="panle_header" >
                 <div className="left-panle-title"><h4>{titl}</h4></div>
                 <div className="right_panle_container"  >
-                <TooltipComp className="tooltip" component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>} tooltip="Filter" />
+                <TooltipComp popperConfig={{
+                    modifiers: {
+                      preventOverflow: {
+                        enabled: false,
+                      },
+                    },
+                  }} className="tooltip" component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>} tooltip="Filter" />
                 <TooltipComp component={<Button variant="" aria-controls="example-collapse-text"
                 aria-expanded={disable} className="btn-sm remove_button_padding" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01" /></Button>} tooltip="Add" />
                     

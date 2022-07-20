@@ -208,15 +208,12 @@ const Particularjob = () => {
                 <div className="leftt_pannel">
                   <div className="jobes_card">
                     <div className="job_icon">
-                      <img
-                        src="assets/images/nestor.jfif"
-                        height={80}
-                        width={80}
-                      />
-                    </div>
-                    <div className="box-inner-content">
-                      <div className="titlejob">
-                        <span>{selector?.jobtitle} - Mohali</span>
+                      <div className="box-inner-content">
+                        <img
+                          src="assets/images/nestor.jfif"
+                          height={80}
+                          width={80}
+                        />
                         {selector?.active == "deactive" ? (
                           <Button
                             variant="primary"
@@ -232,79 +229,77 @@ const Particularjob = () => {
                           ""
                         )}
                       </div>
-                      <span className="job_heading">Description: </span>
-                      <p className="job_description">{selector?.description}</p>
+
+                      <div className="titlejob">
+                        <span>{selector?.jobtitle} - Mohali</span>
+                      </div>
+                    </div>
+                    <div className="job_location d-flex">
+                      <span>Nestormind </span>
+                      <span> - Mohali</span>
+                    </div>
+                    <div className="job_date">
+                      <span>2 months ago</span>
                     </div>
                   </div>
-                  <div className="content-box">
-                    <div className="job_heading">Job Responsibility</div>
+
+                  <div className="job_heading">
+                    <span className="">Job Description</span>
+                  </div>
+                  <p className="job_description"> {selector?.description}</p>
+                  <div className="job_heading">Job Responsibility</div>
+                  <ul className="job__list">
+                    {selector?.responsibility?.map((data, index) => (
+                      <li>{data.value}</li>
+                    ))}
+                  </ul>
+                  <div className="job_heading">
+                    <span className="">Requirement</span>
+                  </div>
+                  <ul className="job__list">
+                    {selector?.requirment?.map((data, index) => (
+                      <li>{data.value}</li>
+                    ))}
+                  </ul>
+                  <div className="job_heading">
+                    <span className="">
+                      Nestormind Full Time Employee Benefits
+                    </span>
+                  </div>
+                  <div className="main-description-box">
                     <ul className="job__list">
-                      {selector?.responsibility?.map((data, index) => (
+                      {selector?.benefits?.map((data, index) => (
                         <li>{data.value}</li>
                       ))}
                     </ul>
-                    <div className="job_heading">
-                      <span
-                        className=""
-                        style={{ textDecoration: "unerlined" }}
-                      >
-                        Requirement
-                      </span>
-                    </div>
-                    <ul className="job__list">
-                      {selector?.requirment?.map((data, index) => (
-                        <li>{data.value}</li>
-                      ))}
+                  </div>
+                  <div className="main_information_list">
+                    <ul className="job_description_level_list">
+                      <li className="jobes_inner_li">
+                        <h3 className="job_description_level">
+                          Seniority level
+                        </h3>
+                        <span className="level_content">{selector?.level}</span>
+                      </li>
+                      <li className="jobes_inner_li">
+                        <h5 className="job_description_level">
+                          Employment type
+                        </h5>
+                        <span className="level_content">{selector?.type}</span>
+                      </li>
+                      <li className="jobes_inner_li">
+                        <h5 className="job_description_level">Job function</h5>
+                        <span className="level_content">
+                          {selector?.functions}
+                        </span>
+                      </li>
+                      <li className="jobes_inner_li">
+                        <h5 className="job_description_level">Industries</h5>
+                        <span className="level_content">
+                          {selector?.industry}
+                        </span>
+                      </li>
                     </ul>
-                    <div className="job_heading">
-                      <span
-                        className=""
-                        style={{ textDecoration: "unerlined" }}
-                      >
-                        Nestormind Full Time Employee Benefits
-                      </span>
-                    </div>
-                    <div className="main-description-box">
-                      <ul className="job__list">
-                        {selector?.benefits?.map((data, index) => (
-                          <li>{data.value}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="main_information_list">
-                      <ul className="job_description_level_list">
-                        <li className="jobes_inner_li">
-                          <h3 className="job_description_level">
-                            Seniority level
-                          </h3>
-                          <span className="level_content">
-                            {selector?.level}
-                          </span>
-                        </li>
-                        <li className="jobes_inner_li">
-                          <h5 className="job_description_level">
-                            Employment type
-                          </h5>
-                          <span className="level_content">
-                            {selector?.type}
-                          </span>
-                        </li>
-                        <li className="jobes_inner_li">
-                          <h5 className="job_description_level">
-                            Job function
-                          </h5>
-                          <span className="level_content">
-                            {selector?.functions}
-                          </span>
-                        </li>
-                        <li className="jobes_inner_li">
-                          <h5 className="job_description_level">Industries</h5>
-                          <span className="level_content">
-                            {selector?.industry}
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
                 {/*<div className="mediaqueiry" style={{ paddingLeft: 30 }}>
@@ -377,58 +372,57 @@ const Particularjob = () => {
                 </Collapse>
               </div>
               <div>
-              <Row className=" align-items-center">
-                <Col md={6} sm={12} lg={2} xl={2}>
-                  <div className="card2">
-                    <div className="card-header2">
-                      <div className="innerCard1">
-                        <span>Total Candidates</span>
-                        <h4 style={{ fontWeight: "400" }}>56</h4>
+                <Row className=" align-items-center">
+                  <Col md={6} sm={12} lg={2} xl={2}>
+                    <div className="card2">
+                      <div className="card-header2">
+                        <div className="innerCard1">
+                          <span>Total Candidates</span>
+                          <h4 className="font-weight-bold">56</h4>
+                        </div>
                       </div>
+                      {/*<div className="card-footer1"> <span className="text-decoration-green">+5% </span>than yesterday</div>*/}
                     </div>
-                    {/*<div className="card-footer1"> <span className="text-decoration-green">+5% </span>than yesterday</div>*/}
-                  </div>
-                </Col>
-                <Col md={6} sm={12} lg={2} xl={2}>
-                  <div className="card2">
-                    <div className="card-header2">
-                      <div className="innerCard1">
-                        <span>Selected</span>
-                        <h4 style={{ fontWeight: "400" }}>53</h4>
+                  </Col>
+                  <Col md={6} sm={12} lg={2} xl={2}>
+                    <div className="card2">
+                      <div className="card-header2">
+                        <div className="innerCard1">
+                          <span>Selected</span>
+                          <h4 className="font-weight-bold">53</h4>
+                        </div>
                       </div>
+                      {/*<div className="card-footer1"> <span className="text-decoration-red">-3%</span> than yesterday</div>*/}
                     </div>
-                    {/*<div className="card-footer1"> <span className="text-decoration-red">-3%</span> than yesterday</div>*/}
-                  </div>
-                </Col>
-                <Col md={6} sm={12} lg={2} xl={2}>
-                  <div className="card2">
-                    <div className="card-header2">
-                      <div className="innerCard1">
-                        <span>Rejected</span>
-                        <h4 style={{ fontWeight: "400" }}>10</h4>
+                  </Col>
+                  <Col md={6} sm={12} lg={2} xl={2}>
+                    <div className="card2">
+                      <div className="card-header2">
+                        <div className="innerCard1">
+                          <span>Rejected</span>
+                          <h4 className="font-weight-bold">10</h4>
+                        </div>
                       </div>
+                      {/*<div className="card-footer1"> <span className="text-decoration-green">+9% </span>than yesterday</div>*/}
                     </div>
-                    {/*<div className="card-footer1"> <span className="text-decoration-green">+9% </span>than yesterday</div>*/}
-                  </div>
-                </Col>
-                <Col md={6} sm={1} lg={6} xl={6}>
-                  <div className="d-flex justify-content-end align-items-end mt-5">
-                    <TooltipComp
-                      component={
-                        <Button
-                          variant=""
-                          className="btn-sm remove_button_padding"
-                          onClick={() => setSdisabled((p) => !p)}
-                        >
-                          <BsFilter size={25} color="#ff6b01" />
-                        </Button>
-                      }
-                      tooltip="Filter"
-                    />
-                  </div>
-                </Col>
-              </Row>
-              
+                  </Col>
+                  <Col md={6} sm={1} lg={6} xl={6}>
+                    <div className="d-flex justify-content-end align-items-end mt-5">
+                      <TooltipComp
+                        component={
+                          <Button
+                            variant=""
+                            className="btn-sm remove_button_padding"
+                            onClick={() => setSdisabled((p) => !p)}
+                          >
+                            <BsFilter size={25} color="#ff6b01" />
+                          </Button>
+                        }
+                        tooltip="Filter"
+                      />
+                    </div>
+                  </Col>
+                </Row>
               </div>
             </div>
             <div className="content_box">
