@@ -351,10 +351,9 @@ const Edit_postJob = (value1) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
       <div className="content_box">
         <div className="data-table">
-          <Table striped bordered hover responsive>
+          <Table striped bordered hover>
             <thead>
               <tr>
                 <th className="action_colwidth">Action</th>
@@ -379,7 +378,6 @@ const Edit_postJob = (value1) => {
                 <th>Industry</th>
                 <th>Level</th>
                 <th>Employement</th>
-
                 <th className="action_colwidth">Candidates</th>
               </tr>
             </thead>
@@ -467,8 +465,8 @@ const Edit_postJob = (value1) => {
                                 type="button"
                                 className="btn btn-outlined-secondary fs_13"
                                 onClick={() => {
-                                  setIndex(index)
-                                  setmodal(true)
+                                  setIndex(index);
+                                  setmodal(true);
                                 }}
                               >
                                 Delete
@@ -515,14 +513,14 @@ const Edit_postJob = (value1) => {
                     </td>
                     <td>{data?.Jobtitle || data?.jobtitle}</td>
                     <td>
-                      {data?.description && subString(data.description, 20)}
+                      {data?.description && subString(data.description, 10)}
                     </td>
-                    <td>{data?.functions && subString(data?.functions, 20)}</td>
+                    <td>{data?.functions && subString(data?.functions, 10)}</td>
                     <td>{data?.requirment[0].value}</td>
                     <td>
                       {" "}
                       {data?.benefits[0].value &&
-                        subString(data.benefits[0].value, 20)}
+                        subString(data.benefits[0].value, 10)}
                     </td>
                     <td>
                       {" "}
@@ -530,9 +528,9 @@ const Edit_postJob = (value1) => {
                         data?.responsibility[0].value &&
                           subString(
                             data.responsibility[0].value,
-                            20
+                            10
                           ) /*data?.responsibility?.map((data1) => <ul>
-                                                <li>{data1?.value&& subString(data1.value, 30)}</li>
+                                                <li>{data1?.value&& subString(data1.value, 10)}</li>
                                                 </ul>)*/
                       }{" "}
                     </td>

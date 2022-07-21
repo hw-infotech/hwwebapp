@@ -82,7 +82,7 @@ const Job_newsletter = () => {
       Email: "Ganeshsharma5073@gmail.com",
       phone: "9803836866",
       Name: "mark",
-      active: false,
+      active: true,
     },
     {
       Email: "Amanpreet23@gmail.com",
@@ -191,7 +191,7 @@ const Job_newsletter = () => {
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th className="action_colwidth">
+                <th className="action_colwidth " align="center">
                   <Form.Check
                     className="fs_13"
                     onClick={() => setChecked((p) => !p)}
@@ -210,6 +210,7 @@ const Job_newsletter = () => {
                 </th>
                 <th className="action_colwidth">Status</th>
                 <th
+                  className="text-align-center"
                   onClick={() => {
                     setTitle(!title);
                     {
@@ -239,13 +240,15 @@ const Job_newsletter = () => {
                       />
                     </td>
                     <td>
-                      { tableData[index].active==true ?
-                         <Badge bg="success" size={30}>
+                      {tableData[index].active == true ? (
+                        <Badge bg="success" size={30}>
                           Subscribe
-                        </Badge>: <Badge bg="danger" size={30}>
-                        Unsubscribe
-                      </Badge>
-                      }
+                        </Badge>
+                      ) : (
+                        <Badge bg="danger" size={30}>
+                          Unsubscribe
+                        </Badge>
+                      )}
                       {/*<Form.Check className="switch_padding"
                                               type="switch"
                                               id="custom-switch1"

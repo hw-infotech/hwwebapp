@@ -11,8 +11,6 @@ body {
 
 .tooltip {
   pointer-events: none !important;
-  position: none !important;
-  overflow: hidden !important;
 }
 
 .label-size {
@@ -340,7 +338,7 @@ body {
 
 .main-header-box .navbar_style {
   height: 70px !important;
-  padding-left: 18px;
+  padding-left: 17px;
 }
 
 .main-header-box .navbar_style .navbar_inner_style {
@@ -366,8 +364,9 @@ body {
   font-size: 13px;
 }
 
-.main-header-box .dropdown-item12 tooltip {
+.main-header-box .dropdown-item12 .tooltip {
   margin-right: 5px;
+  pointer-events: none !important;
 }
 
 .main-header-box .move-sidebar {
@@ -863,6 +862,10 @@ body {
 
 .box-shadow-container .main-wrap-box {
   margin: 0px 30px;
+}
+
+.box-shadow-container .main-wrap-box label {
+  font-size: 14px !important;
 }
 
 .box-shadow-container .main-wrap-box .wrap-fields {

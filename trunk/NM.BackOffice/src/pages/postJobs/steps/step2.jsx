@@ -8,8 +8,8 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
     const { setFieldValue } = useFormikContext()
     // const selector = useSelector(state => state.data.apidata.edit_data)
     useEffect(() => {
-        document.title = "Requirment "
-      }, [])
+        document.title = "Add Job"
+    }, [])
     return <div className="w-100 m-auto">
 
         <Row>

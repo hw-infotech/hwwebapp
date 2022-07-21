@@ -19,7 +19,7 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
             <Button variant="secondary" className="btn-sm" onClick={() => {
                 setGoSteps(2)
             }}>Back</Button>
-            <Button variant="warning" className="btn-sm" onClick={() => setGoSteps(3)}>Save as Draft</Button>
+            <Button variant="primary" className="btn-sm" onClick={() => setGoSteps(3)}>Save as Draft</Button>
             <Button variant="primary" type="submit" className="btn-sm" onClick={() => {
                 setGoSteps(3)
                 console.log(values, "Values");

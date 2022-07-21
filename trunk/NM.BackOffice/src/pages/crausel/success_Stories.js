@@ -267,10 +267,10 @@ const Success_Stories = () => {
             <Table striped bordered hover responsive className="table-content">
               <thead>
                 <tr>
-                  <th>Action</th>
+                  <th className="action_colwidth">Action</th>
                   <th className="action_colwidth">Status</th>
                   <th
-                    className=""
+                    className="action_titlewidth"
                     onClick={() => {
                       setTitle(!title);
                       {

@@ -10,7 +10,7 @@ const Step3 = ({ setGoSteps, state, setState, onhandlechange, handleChange, valu
     //const nevigate=useNavigate()
     //  const selector = useSelector(state => state.data.apidata.edit_data)
     useEffect(() => {
-        document.title = "Type"
+        document.title = "Add Job"
     }, [])
     const dispatch = useDispatch()
     return <div className="m-auto w-100">

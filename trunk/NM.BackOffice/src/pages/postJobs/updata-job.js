@@ -37,9 +37,10 @@ const Update_Job = ({ stat }) => {
   console.log("Edit Details ", selector.data?.apidata?.edit_data?.data);
   const DataContext = createContext();
   const route = [
-    { name: "Home", route: "/" },
-    { name: "Job" },
-    { name: "Edit job" },
+    { name: "Dashboard", route: "/" },
+        { name: "Job Management", route: "" },
+        { name: "Job", route: "/all-jobs" },
+        { name: "Edit Job", route: "/edit-job" },
   ];
 
   const handlechange = (e) => {

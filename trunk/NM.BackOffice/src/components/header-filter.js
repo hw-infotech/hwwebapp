@@ -22,7 +22,7 @@ export const Filters = ({ requestSearch, showalert, setShowalert, handleShow, ti
                       },
                     },
                   }} className="tooltip" component={<Button variant="" className="btn-sm remove_button_padding" onClick={() => setSdisabled(p => !p)}> <BsFilter size={25} color="#ff6b01" /></Button>} tooltip="Filter" />
-                <TooltipComp component={<Button variant="" aria-controls="example-collapse-text"
+                <TooltipComp component={<Button variant="" 
                 aria-expanded={disable} className="btn-sm remove_button_padding" onClick={handleShow} ><AiOutlinePlusCircle size={25} color="#ff6b01" /></Button>} tooltip="Add" />
                     
                 </div>

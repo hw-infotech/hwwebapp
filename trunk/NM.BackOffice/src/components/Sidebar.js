@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { NavLink } from "react-bootstrap";
@@ -7,20 +7,43 @@ import { BsBuilding } from "react-icons/bs";
 import { BiNews } from "react-icons/bi";
 import { RiHome2Line } from "react-icons/ri";
 import { GoQuestion } from "react-icons/go";
+
 const Sidebar = ({ sidebarShow }) => {
+  const [localData, setLoaclData] = useState(
+    JSON.parse(localStorage.getItem("hrefId"))
+  );
+  useEffect(() => {
+    document.querySelectorAll("a").forEach((item) => {
+      if (item.getAttribute("href") == localData) {
+        item.setAttribute(
+          "class",
+          "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text"
+        );
+        item.setAttribute("aria-expanded", true);
+      }
+    });
+    document.querySelectorAll("ul").forEach((item) => {
+      if (item.getAttribute("id") == localData?.slice(1, localData.length)) {
+        item.setAttribute("class", "nav flex-column collapse show");
+      }
+    });
+  }, [localData]);
+
   const classname = "activeMenu";
   let classes = "reverse";
   const [show, setshow] = useState(false);
   const navigtion = useNavigate();
 
-  function jqry() {}
-  // $(makeTogglable: function(element) {
-  //     $element = $(element);
+  const setLocalStorage = (id) => {
+    localStorage.setItem("hrefId", JSON.stringify(id));
+  };
 
-  //     this.toggle = function() {
-  //       $element.slideToggle();
-  //     };
-  //   },)
+  const handleAnchorClick = (e) => {
+    e.preventDefault();
+    setLocalStorage(e.currentTarget.getAttribute("href"));
+    setLoaclData(JSON.parse(localStorage.getItem("hrefId")));
+  };
+
   return (
     <div
       className="sidebar"
@@ -57,25 +80,36 @@ const Sidebar = ({ sidebarShow }) => {
       <div className="align-items-sm-start px-3 pt-2">
         <ul className="nav nav-pills sidebar-ul align-items-center" id="menu">
           <li className={`nav-item sidebar_hover`}>
-            <div
-              className={`nav-link sidebar_hover align-middle px-0 text-color-white gap-icon-text ${
+            <a
+           
+             
+              className={`nav-link sidebar_hover align-middle px-0 text-color-white gap-icon-text  ${
                 localStorage.getItem("className") == "Dashboard" && classname
               }`}
-              onClick={() => {
-                navigtion("/dashboard");
+              data-bs-toggle="collapsed"
+              onClick={(e) => {
+                handleAnchorClick(e)
+                localStorage.setItem("hrefId", JSON.stringify(""));
                 localStorage.setItem("className", "Dashboard");
+                return navigtion("/dashboard");
+
+                
               }}
             >
               <RiHome2Line size={20} />
-              <span className="ms-1 d-none d-sm-inline">Dashboard</span>
-            </div>
+              <span className="ms-1 d-none d-sm-inline " >Dashboard</span>
+            </a>
           </li>
-
           <li className="sidebar_list">
             <a
               href="#submenu2"
               data-bs-toggle="collapse"
               className="nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text collapsed"
+              onClick={(e) => {
+                handleAnchorClick(e);
+                localStorage.setItem("className", "success");
+                return navigtion("/success-stories");
+              }}
             >
               <RiGalleryLine size={20} />
               {/*<img src="./assets/images/car.png" style={{background:"white"}} width={25} height={25}/>*/}
@@ -106,6 +140,11 @@ const Sidebar = ({ sidebarShow }) => {
           </li>
           <li className="sidebar_list">
             <a
+              onClick={(e) => {
+                handleAnchorClick(e);
+                localStorage.setItem("className", "subscirber");
+                return navigtion("/subscribers-unsubscribers");
+              }}
               href="#submenu8"
               data-bs-toggle="collapse"
               className="nav-link sidebar_focus px-0 align-middle text-color-white gap-icon-text collapsed"
@@ -127,7 +166,7 @@ const Sidebar = ({ sidebarShow }) => {
                     localStorage.getItem("className") == "subscirber" &&
                     classname
                   }`}
-                  onClick={() => {
+                  onClick={(e) => {
                     localStorage.setItem("className", "subscirber");
                     navigtion("/subscribers-unsubscribers");
                   }}
@@ -144,10 +183,15 @@ const Sidebar = ({ sidebarShow }) => {
               href="#submenu9"
               data-bs-toggle="collapse"
               className="nav-link sidebar_focus px-0 align-middle text-color-white gap-icon-text collapsed"
+              onClick={(e) => {
+                handleAnchorClick(e);
+                localStorage.setItem("className", "allenquiry");
+                return navigtion("/all-Enquiry");
+              }}
             >
               <GoQuestion size={26} />{" "}
               <span className="ms-1 d-none d-sm-inline gap-icon-text">
-            Enquiry
+                Enquiry
               </span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
@@ -170,7 +214,7 @@ const Sidebar = ({ sidebarShow }) => {
                   }}
                 >
                   <span className="d-none d-sm-inline navbar-submenu ">
-                  All Enquiry
+                    All Enquiry
                   </span>
                 </a>
               </li>
@@ -181,6 +225,11 @@ const Sidebar = ({ sidebarShow }) => {
               href="#submenu10"
               data-bs-toggle="collapse"
               className="nav-link px-0  sidebar_focus align-middle text-color-white gap-icon-text collapsed"
+              onClick={(e) => {
+                handleAnchorClick(e);
+                localStorage.setItem("className", "joblist");
+                return navigtion("/all-jobs");
+              }}
             >
               <BsBuilding size={20} />{" "}
               <span className=" d-none d-sm-inline">Job Management</span>
@@ -193,13 +242,12 @@ const Sidebar = ({ sidebarShow }) => {
               id="submenu10"
               data-bs-parent="#menu"
             >
-           
               <li className="sidebar_list">
                 <a
                   className={`nav-link  text-color-white gap-icon-text sidebar_focus ${
                     localStorage.getItem("className") == "joblist" && classname
                   }`}
-                  onClick={() => {
+                  onClick={(e) => {
                     localStorage.setItem("className", "joblist");
                     navigtion("/all-jobs");
                   }}
@@ -212,7 +260,7 @@ const Sidebar = ({ sidebarShow }) => {
                   className={`nav-link  text-color-white gap-icon-text sidebar_focus ${
                     localStorage.getItem("className") == "jobsub" && classname
                   }`}
-                  onClick={() => {
+                  onClick={(e) => {
                     localStorage.setItem("className", "jobsub");
                     navigtion("/job-subscriber-unsubscriber");
                   }}
