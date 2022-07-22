@@ -9,10 +9,6 @@ body {
   }
 }
 
-.tooltip {
-  pointer-events: none !important;
-}
-
 .label-size {
   font-size: 14px !important;
 }
@@ -362,11 +358,6 @@ body {
   background-color: transparent;
   border: 0;
   font-size: 13px;
-}
-
-.main-header-box .dropdown-item12 .tooltip {
-  margin-right: 5px;
-  pointer-events: none !important;
 }
 
 .main-header-box .move-sidebar {

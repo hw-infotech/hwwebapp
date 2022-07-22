@@ -10,24 +10,11 @@ import { GoQuestion } from "react-icons/go";
 
 const Sidebar = ({ sidebarShow }) => {
   const [localData, setLoaclData] = useState(
-    JSON.parse(localStorage.getItem("hrefId"))
+    JSON.parse(localStorage.getItem("activeId"))
   );
-  useEffect(() => {
-    document.querySelectorAll("a").forEach((item) => {
-      if (item.getAttribute("href") == localData) {
-        item.setAttribute(
-          "class",
-          "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text"
-        );
-        item.setAttribute("aria-expanded", true);
-      }
-    });
-    document.querySelectorAll("ul").forEach((item) => {
-      if (item.getAttribute("id") == localData?.slice(1, localData.length)) {
-        item.setAttribute("class", "nav flex-column collapse show");
-      }
-    });
-  }, [localData]);
+  const [parentId, setParentId] = useState(
+    JSON.parse(localStorage.getItem("activeId"))?.split("_")[0]
+  );
 
   const classname = "activeMenu";
   let classes = "reverse";
@@ -35,13 +22,14 @@ const Sidebar = ({ sidebarShow }) => {
   const navigtion = useNavigate();
 
   const setLocalStorage = (id) => {
-    localStorage.setItem("hrefId", JSON.stringify(id));
+    localStorage.setItem("activeId", JSON.stringify(id));
+    setLoaclData(JSON.parse(localStorage.getItem("activeId")));
+    setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
   };
 
   const handleAnchorClick = (e) => {
     e.preventDefault();
-    setLocalStorage(e.currentTarget.getAttribute("href"));
-    setLoaclData(JSON.parse(localStorage.getItem("hrefId")));
+    setLocalStorage(e.currentTarget.getAttribute("id"));
   };
 
   return (
@@ -71,7 +59,6 @@ const Sidebar = ({ sidebarShow }) => {
       >
         <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" />
         <div>
-          {" "}
           <span className="fs_13 header_text">
             <b>Back</b>Office
           </span>
@@ -81,33 +68,33 @@ const Sidebar = ({ sidebarShow }) => {
         <ul className="nav nav-pills sidebar-ul align-items-center" id="menu">
           <li className={`nav-item sidebar_hover`}>
             <a
-           
-             
               className={`nav-link sidebar_hover align-middle px-0 text-color-white gap-icon-text  ${
                 localStorage.getItem("className") == "Dashboard" && classname
               }`}
+              id="dashboard"
               data-bs-toggle="collapsed"
               onClick={(e) => {
-                handleAnchorClick(e)
-                localStorage.setItem("hrefId", JSON.stringify(""));
                 localStorage.setItem("className", "Dashboard");
+                setLocalStorage(" ");
                 return navigtion("/dashboard");
-
-                
               }}
             >
               <RiHome2Line size={20} />
-              <span className="ms-1 d-none d-sm-inline " >Dashboard</span>
+              <span className="ms-1 d-none d-sm-inline ">Dashboard</span>
             </a>
           </li>
           <li className="sidebar_list">
             <a
               href="#submenu2"
               data-bs-toggle="collapse"
-              className="nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text collapsed"
+              className={
+                parentId == "submenu2"
+                  ? "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text"
+                  : "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text collapsed"
+              }
               onClick={(e) => {
-                handleAnchorClick(e);
                 localStorage.setItem("className", "success");
+                setLocalStorage("submenu2_1");
                 return navigtion("/success-stories");
               }}
             >
@@ -119,16 +106,22 @@ const Sidebar = ({ sidebarShow }) => {
               </span>
             </a>
             <ul
-              className="collapse nav flex-column "
+              className={
+                parentId == "submenu2"
+                  ? "collapse nav flex-column show"
+                  : "collapse nav flex-column "
+              }
               id="submenu2"
               data-bs-parent="#menu"
             >
               <li className={`w-100 sidebar_list`}>
                 <a
-                  className={`nav-link  text-color-white gap-icon-text sidebar_focus ${
+                  id="submenu2_1"
+                  className={`nav-link text-color-white gap-icon-text sidebar_focus ${
                     localStorage.getItem("className") == "success" && classname
                   }`}
-                  onClick={() => {
+                  onClick={(e) => {
+                    handleAnchorClick(e);
                     localStorage.setItem("className", "success");
                     navigtion("/success-stories");
                   }}
@@ -141,33 +134,43 @@ const Sidebar = ({ sidebarShow }) => {
           <li className="sidebar_list">
             <a
               onClick={(e) => {
-                handleAnchorClick(e);
                 localStorage.setItem("className", "subscirber");
+                setLocalStorage("submenu8_1");
                 return navigtion("/subscribers-unsubscribers");
               }}
               href="#submenu8"
               data-bs-toggle="collapse"
-              className="nav-link sidebar_focus px-0 align-middle text-color-white gap-icon-text collapsed"
+              className={
+                parentId == "submenu8"
+                  ? "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text"
+                  : "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text collapsed"
+              }
             >
-              <BiNews size={20} />{" "}
+              <BiNews size={20} />
               <span className="ms-1 d-none d-sm-inline">Newsletter</span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
               </span>
             </a>
             <ul
-              className="collapse nav flex-column"
+              className={
+                parentId == "submenu8"
+                  ? "collapse nav flex-column show"
+                  : "collapse nav flex-column "
+              }
               id="submenu8"
               data-bs-parent="#menu"
             >
               <li className="w-100 sidebar_inline">
                 <a
+                  id="submenu8_1"
                   className={`nav-link  text-color-white gap-icon-text sidebar_focus ${
                     localStorage.getItem("className") == "subscirber" &&
                     classname
                   }`}
                   onClick={(e) => {
                     localStorage.setItem("className", "subscirber");
+                    handleAnchorClick(e);
                     navigtion("/subscribers-unsubscribers");
                   }}
                 >
@@ -182,33 +185,43 @@ const Sidebar = ({ sidebarShow }) => {
             <a
               href="#submenu9"
               data-bs-toggle="collapse"
-              className="nav-link sidebar_focus px-0 align-middle text-color-white gap-icon-text collapsed"
+              className={
+                parentId == "submenu9"
+                  ? "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text"
+                  : "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text collapsed"
+              }
               onClick={(e) => {
-                handleAnchorClick(e);
                 localStorage.setItem("className", "allenquiry");
+                setLocalStorage("submenu9_1");
                 return navigtion("/all-Enquiry");
               }}
             >
-              <GoQuestion size={26} />{" "}
+              <GoQuestion size={26} />
               <span className="ms-1 d-none d-sm-inline gap-icon-text">
                 Enquiry
               </span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
-              </span>{" "}
+              </span>
             </a>
             <ul
-              className="collapse nav flex-column "
+              className={
+                parentId == "submenu9"
+                  ? "collapse nav flex-column show"
+                  : "collapse nav flex-column "
+              }
               id="submenu9"
               data-bs-parent="#menu"
             >
               <li className="w-100 ">
                 <a
+                  id="submenu9_1"
                   className={`nav-link  text-color-white gap-icon-text sidebar_focus ${
                     localStorage.getItem("className") == "allenquiry" &&
                     classname
                   }`}
-                  onClick={() => {
+                  onClick={(e) => {
+                    handleAnchorClick(e);
                     localStorage.setItem("className", "allenquiry");
                     navigtion("/all-Enquiry");
                   }}
@@ -224,30 +237,40 @@ const Sidebar = ({ sidebarShow }) => {
             <a
               href="#submenu10"
               data-bs-toggle="collapse"
-              className="nav-link px-0  sidebar_focus align-middle text-color-white gap-icon-text collapsed"
+              className={
+                parentId == "submenu10"
+                  ? "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text"
+                  : "nav-link px-0 sidebar_focus align-middle text-color-white gap-icon-text collapsed"
+              }
               onClick={(e) => {
-                handleAnchorClick(e);
                 localStorage.setItem("className", "joblist");
+                setLocalStorage("submenu10_1");
                 return navigtion("/all-jobs");
               }}
             >
-              <BsBuilding size={20} />{" "}
+              <BsBuilding size={20} />
               <span className=" d-none d-sm-inline">Job Management</span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
-              </span>{" "}
+              </span>
             </a>
             <ul
-              className="collapse nav flex-column "
+              className={
+                parentId == "submenu10"
+                  ? "collapse nav flex-column show"
+                  : "collapse nav flex-column "
+              }
               id="submenu10"
               data-bs-parent="#menu"
             >
               <li className="sidebar_list">
                 <a
+                  id="submenu10_1"
                   className={`nav-link  text-color-white gap-icon-text sidebar_focus ${
                     localStorage.getItem("className") == "joblist" && classname
                   }`}
                   onClick={(e) => {
+                    handleAnchorClick(e);
                     localStorage.setItem("className", "joblist");
                     navigtion("/all-jobs");
                   }}
@@ -257,10 +280,12 @@ const Sidebar = ({ sidebarShow }) => {
               </li>
               <li>
                 <a
+                  id="submenu10_2"
                   className={`nav-link  text-color-white gap-icon-text sidebar_focus ${
                     localStorage.getItem("className") == "jobsub" && classname
                   }`}
                   onClick={(e) => {
+                    handleAnchorClick(e);
                     localStorage.setItem("className", "jobsub");
                     navigtion("/job-subscriber-unsubscriber");
                   }}

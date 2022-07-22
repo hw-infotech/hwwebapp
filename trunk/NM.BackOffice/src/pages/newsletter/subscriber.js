@@ -70,23 +70,6 @@ const SubScriber = () => {
     //setpagination({ start: start, end: showPerPage })
   }, [selector]);
 
-  // const handlechange = (event, value) => {
-  //     var value1;
-  //     setNext(value)
-  //     if (next <= value) {
-  //         value1 = row * value
-  //         setShowPerPage(value1)
-  //         console.log("this is the if conditon", value, showPerPage, state.row_value)
-  //         setStart(value1 - row)
-  //         setpagination({ start: start, end: showPerPage })
-  //     }
-  //     else {
-  //         console.log("else", start, showPerPage)
-  //         setStart(start - row)
-  //         setShowPerPage(showPerPage - row)
-  //         setpagination({ start: start - row, end: showPerPage - row })
-  //     }
-  // }
   const records = [
     {
       Email: "ggoldygoldy33@gmail.com",

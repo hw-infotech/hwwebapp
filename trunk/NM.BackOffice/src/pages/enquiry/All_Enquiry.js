@@ -12,24 +12,14 @@ import {
 } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import BasicBreadcrumbs from "../../components/breadcumbs";
-import { News_letter_Subscribe } from "../../Services/redux/action/action";
-import { useDispatch, useSelector } from "react-redux";
-import { Formik } from "formik";
-import { VscFilterFilled } from "react-icons/vsc";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { BsSearch } from "react-icons/bs";
-import { RiChatDeleteLine } from "react-icons/ri";
-import { FcCheckmark, FcDeleteColumn } from "react-icons/fc";
-// import { alert } from 'react-bootstrap-confirmation';
-import { confirm } from "react-bootstrap-confirmation";
-import Paginationn from "../../components/pagination";
 import CustomPagination from "../../shared/pagination";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { BsFilter } from "react-icons/bs";
 import capitalizeFirstLetter from "../../components/first_letter_capital";
-import TooltipComp from "../../shared/Tooltipomp";
 import { subString } from "../../Services/commonFunctions";
+import ReactTooltip from "react-tooltip";
 
 const All_Enquiry = () => {
   const [rowtext, setRowtext] = useState();
@@ -183,19 +173,18 @@ const All_Enquiry = () => {
             <h4>All Enquiry</h4>
           </div>
           <div className="right_panle_container">
-            <TooltipComp
-              component={
-                <Button
-                  variant=""
-                  className="btn-sm remove_button_padding"
-                  onClick={() => setSdisabled((p) => !p)}
-                >
-                  <BsFilter size={25} color="#ff6b01" />
-                </Button>
-              }
-              tooltip={"Filter"}
-              placement="top"
-            />
+            <Button
+              variant=""
+              data-tip
+              data-for="filterIcon1"
+              className="btn-sm remove_button_padding"
+              onClick={() => setSdisabled((p) => !p)}
+            >
+              <BsFilter size={25} color="#ff6b01" />
+            </Button>
+            <ReactTooltip id="filterIcon1" place="top" effect="solid">
+              Filter
+            </ReactTooltip>
           </div>
         </div>
         <div className="gapbetween pt-1">
