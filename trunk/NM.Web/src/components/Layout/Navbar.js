@@ -40,7 +40,7 @@ const NavBar = ({ NavbarStyle }) => {
       }
       onScroll={_handleScroll}
     >
-      <div className="container">
+      <div className="">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="/">
             <img src="assets/img/nestormind_logo_250.png" alt="" />
@@ -61,10 +61,11 @@ const NavBar = ({ NavbarStyle }) => {
             className="collapse navbar-collapse menuLinksBar "
             id="navbarNav"
           >
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav mr-auto w-100 align-items-center pl-5">
               <li className="nav-item">
                 <Link to="/our-works">Our Work</Link>
               </li>
+
               <li className="nav-item dropdown position-static">
                 <a
                   href="/services"
@@ -76,46 +77,89 @@ const NavBar = ({ NavbarStyle }) => {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Services <span className="dropIcon"></span>
+                  Industries <span className="dropIcon"></span>
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <div className="dropdownmenus">
-                    <Link className="dropdown-item" to="/app-development">
+                  <div className="dropdownmenus two-col">
+                    <Link className="dropdown-item" to="/entertainment">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/appNavIcon.png" alt="" />
-                        App Development
+                        Entertainment
                         <span></span>
                       </div>
                     </Link>
-                    <Link className="dropdown-item" to="/web-development">
+                    <Link className="dropdown-item" to="/sports">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/webNavIcon.png" alt="" /> Web
-                        Development
+                        Sports
+                        <span></span>
                       </div>
                     </Link>
-                    <Link className="dropdown-item" to="/ui-ux-design">
+                    <Link className="dropdown-item" to="/retail-ecommerce">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/uiUxNavIcon.png" alt="" /> UI UX
-                        Design
+                        Retails & eCommerce
+                        <span></span>
                       </div>
                     </Link>
-                    <Link className="dropdown-item" to="/seo">
+                    <Link className="dropdown-item" to="/finance">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/seoNavIcon.png" alt="" />
-                        Seo
+                        Finance
+                        <span></span>
                       </div>
                     </Link>
-                    <Link className="dropdown-item" to="/graphic-design">
+                    <Link className="dropdown-item" to="/healthcare">
                       <div className="servicesLinksBox">
-                        <img src="assets/img/graphicsNavIcon.png" alt="" />
-                        Graphics Design
+                        Healthcare
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/restaurant">
+                      <div className="servicesLinksBox">
+                        Restaurant
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/real-estate">
+                      <div className="servicesLinksBox">
+                        Real estate
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link
+                      className="dropdown-item"
+                      to="/travel-and-hospitality"
+                    >
+                      <div className="servicesLinksBox">
+                        Travel & hospitality
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/education">
+                      <div className="servicesLinksBox">
+                        Education
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/transport">
+                      <div className="servicesLinksBox">
+                        Transport
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/insurance">
+                      <div className="servicesLinksBox">
+                        Insurance
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/grocery">
+                      <div className="servicesLinksBox">
+                        Grocery
+                        <span></span>
                       </div>
                     </Link>
                   </div>
-
                   <div className="integratedLinks">
                     <div className="webformsBottom">
-                      <p>Follow Us</p>
+                      <p>Our Socials</p>
                       <div className="socialintegratedLinks">
                         <a
                           className="webformsIntegration"
@@ -227,17 +271,189 @@ const NavBar = ({ NavbarStyle }) => {
                   </div>
                 </div>
               </li>
-              <li className="nav-item">
-                <Link to="/about-us">About Us</Link>
-              </li>
+              <li className="nav-item dropdown position-static">
+                <a
+                  href="/services"
+                  onClick={() => {
+                    onClickGoTo("/services");
+                  }}
+                  id="navbarDropdown"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Services <span className="dropIcon"></span>
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div className="dropdownmenus">
+                    <Link className="dropdown-item" to="/app-development">
+                      <div className="servicesLinksBox">
+                        App Development
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/web-development">
+                      <div className="servicesLinksBox">Web Development</div>
+                    </Link>
+                    <Link className="dropdown-item" to="/ui-ux-design">
+                      <div className="servicesLinksBox">UI UX Design</div>
+                    </Link>
+                    <Link className="dropdown-item" to="/seo">
+                      <div className="servicesLinksBox">Seo</div>
+                    </Link>
+                    <Link className="dropdown-item" to="/graphic-design">
+                      <div className="servicesLinksBox">Graphics Design</div>
+                    </Link>
+                  </div>
 
+                  <div className="integratedLinks">
+                    <div className="webformsBottom">
+                      <p>Our Socials</p>
+                      <div className="socialintegratedLinks">
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.facebook.com/nestormindpvtltd"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/facebookNavIcon.png"
+                            alt="Facebook"
+                            title="Facebook"
+                            loading="lazy"
+                          />
+                          Facebook
+                        </a>
+
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.instagram.com/nestormindpvtltd/"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/instagramNavIcon.png"
+                            alt="Google Workspace"
+                            title="Google Workspace"
+                            loading="lazy"
+                          />
+                          Instagram
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.linkedin.com/company/nestormind/"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/linkedinNavIcon.png"
+                            alt="LinkedIn"
+                            title="LinkedIn"
+                            loading="lazy"
+                          />
+                          LinkedIn
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://twitter.com/nestormindpvtld"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/twitterNestormind.svg"
+                            alt="LinkedIn"
+                            title="LinkedIn"
+                            loading="lazy"
+                          />
+                          Twitter
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://dribbble.com/nestormindpvtltd"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/dribbbleNestormind.svg"
+                            alt="LinkedIn"
+                            title="Dribbble"
+                            loading="lazy"
+                          />
+                          Dribbble
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://www.behance.net/nestormindpvtltd"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/behanceNestormind.svg"
+                            alt="LinkedIn"
+                            title="Dribbble"
+                            loading="lazy"
+                          />
+                          Behance
+                        </a>
+                        <a
+                          className="webformsIntegration"
+                          href="https://join.skype.com/invite/hTYrZnJuUsHE"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/skypeNestormind.svg"
+                            alt="LinkedIn"
+                            title="Skype"
+                            loading="lazy"
+                          />
+                          Skype
+                        </a>
+                        {/* <a
+                          className="webformsIntegration"
+                          href="https://www.upwork.com/o/companies/~011aa54aaad2a9bad3/"
+                          target="_blank"
+                        >
+                          <img
+                            src="assets/img/upworkNestormind.svg"
+                            alt="LinkedIn"
+                            title="Skype"
+                            loading="lazy"
+                          />
+                          upwork
+                        </a> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li className="nav-item dropdown ">
+                <a
+                  href="/services"
+                  id="navbarDropdown"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Company <span className="dropIcon"></span>
+                </a>
+                <div
+                  className="dropdown-menu smallDrop"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <div className="dropdownmenus two-col">
+                    <Link className="dropdown-item" to="/about-us">
+                      <div className="servicesLinksBox">
+                        About Us
+                        <span></span>
+                      </div>
+                    </Link>
+                    <Link className="dropdown-item" to="/Career">
+                      <div className="servicesLinksBox">
+                        Career
+                        <span></span>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </li>
               {/* <li className="nav-item">
                 <Link to="/under-mantainence">Blog</Link>
               </li> */}
 
-              <li className="nav-item">
-                <Link to="/Career">Career</Link>
-              </li>
               <li className="nav-item">
                 <Link to="/contact-us">Contact Us</Link>
               </li>
@@ -246,8 +462,16 @@ const NavBar = ({ NavbarStyle }) => {
                   Get free consultation
                 </Link>
               </li> */}
-              <li className="nav-item w-o-btn">
-                <Link to="/meeting"> Schedule time with me!</Link>
+              <li className="nav-item w-o-btn ml-auto">
+                <Link to="/meeting"> Free Consultation</Link>
+              </li>
+              <li className="nav-item p-0 ml-2">
+                <a
+                  href="https://join.skype.com/invite/hTYrZnJuUsHE"
+                  className="circleIcon"
+                >
+                  <i class="bx bxl-skype"></i>
+                </a>
               </li>
             </ul>
           </div>
