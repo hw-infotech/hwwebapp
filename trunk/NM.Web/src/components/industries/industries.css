@@ -1,0 +1,672 @@
+.industriesHeroSection {
+  margin-top: 71px;
+  padding: 100px 0;
+  position: relative;
+}
+.industriesHeroSection:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/img/lines.svg");
+  top: 0;
+  z-index: -1;
+  filter: contrast(0);
+  opacity: 0.3;
+}
+.industriesHeroSection h1 {
+  font-size: 60px;
+  max-width: 80%;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+.letsTalk {
+  height: 50px;
+  line-height: 50px;
+  background: black;
+  display: inline-block;
+  padding: 0 25px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.letsTalk:hover {
+  height: 50px;
+  line-height: 50px;
+  background: #2e2e2e;
+  display: inline-block;
+  padding: 0 25px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.secondSection {
+  position: relative;
+  padding: 80px 0;
+}
+.secondSection .indGraphicBox {
+  background: #44b349;
+  padding: 50px;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.secondSection .indGraphicBox .leftSection {
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+}
+.secondSection .indGraphicBox .leftSection h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+}
+.secondSection .indGraphicBox .leftSection p {
+  font-size: 14px;
+  color: #fff;
+  line-height: 26px;
+}
+.rightSection {
+  width: 50%;
+}
+.rightSection .graphicsImage {
+  position: relative;
+  width: 100%;
+}
+.rightSection .graphicsImage img {
+  width: 100%;
+  filter: drop-shadow(5px 21px 49px #22222222);
+}
+.solutionBox {
+  position: relative;
+  padding-bottom: 50px;
+}
+.solutionBox h2 {
+  font-size: 54px;
+  font-weight: 800;
+  max-width: 90%;
+  margin-bottom: 0;
+}
+.solutionBox .tabInfo {
+  position: relative;
+  margin-left: 350px;
+  padding-top: 80px;
+}
+.solutionBox .tabInfo .nav-tabs {
+  position: absolute;
+  left: -350px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  border: 0;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item {
+  margin-bottom: 0px;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item {
+  margin-bottom: 0px;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link.active {
+  width: 100%;
+  color: #ef661e;
+  font-weight: 600;
+  position: relative;
+  padding-left: 40px;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link.active:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 3px;
+  background: #ef661e;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all ease-in 0.3s;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link {
+  width: 100% !important;
+  padding: 0 20px;
+  height: 70px;
+  text-align: left;
+  border: 0;
+  border: 0;
+  color: #222;
+  font-size: 18px;
+  transition: all ease-in 0.4s;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link:hover {
+  color: #ef661e;
+  padding-left: 35px;
+  transition: all ease-in 0.3s;
+}
+.solutionBox .tabInfo .tab-content {
+  padding: 40px;
+  background: #f8f8f8;
+  position: relative;
+}
+.solutionBox .tabInfo .tab-content::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/img/lines.svg");
+  top: 0;
+  z-index: 0;
+  filter: contrast(0);
+  opacity: 0.3;
+}
+
+.solutionBox .tabInfo .tabContent .ContentSection {
+  position: relative;
+}
+.solutionBox .tabInfo .tabContent .ContentSection h4 {
+  font-size: 42px;
+  font-weight: 800;
+}
+.solutionBox .tabInfo .tabContent .ContentSection p {
+  font-size: 16px;
+  line-height: 30px;
+}
+.solutionBox .tabInfo .tabContent .ContentSection .tabGraphics {
+  position: relative;
+      width: 100%;
+    height: 400px;
+  overflow: hidden;
+  left: 0px;
+  top: 66px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px 0px #00000017;
+}
+.solutionBox .tabInfo .tabContent .ContentSection .tabGraphics img {
+  width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.projectInMind {
+  position: relative;
+  padding: 70px 0;
+}
+.projectInMind .readyToDiscuss {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.projectInMind .readyToDiscuss h2 {
+  font-size: 46px;
+  font-weight: 200;
+}
+.projectInMind .readyToDiscuss .lets-talk-btn {
+  height: 50px;
+  background: #ef661e;
+  line-height: 50px;
+  color: #fff;
+  display: inline-block;
+  margin: auto;
+  padding: 0 50px;
+}
+
+.solutionBox .tabInfo .accordion {
+    display: none;
+}
+
+.solutionBox .tabInfo .accordion-item {
+    border: 0px solid rgb(0 0 0 / 4%);
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 15px 0px #d5d5d559;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.solutionBox .tabInfo .accordion-item .accordion-button{
+  font-size: 14px;
+   transition: all ease .5s;
+
+}
+.solutionBox .tabInfo .accordion-item .ContentSection .tabGraphics {
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 66px;
+}
+.solutionBox .tabInfo .accordion-item .ContentSection h4 {
+    font-size: 24px;
+    font-weight: 800;
+}
+.solutionBox .tabInfo .accordion-item .ContentSection p {
+    font-size: 14px;
+    line-height: 30px;
+}
+.solutionBox .tabInfo .accordion-item .accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background-color: #ef661e;
+    box-shadow: none;
+    font-weight: 600;
+    padding: 24px 20px;
+    transition: all ease .5s;
+}
+.solutionBox .tabInfo .accordion-item .accordion-button:not(.collapsed)::after {
+    filter: invert(1) brightness(1);
+}
+.solutionBox .tabInfo .accordion-item .accordion-button {
+    font-size: 14px;
+    box-shadow: none;
+    outline: none;
+}
+.healthcareSolution .accordion-item:last-child {
+    display: none;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .industriesHeroSection h1 {
+    font-size: 30px;
+    max-width: 100%;
+  }
+  .secondSection .indGraphicBox {
+    padding: 20px;
+    flex-direction: column-reverse;
+    
+}
+.rightSection .graphicsImage {
+    margin-bottom: 30px;
+}
+.secondSection .indGraphicBox .rightSection {
+    width: 100%;
+}
+.secondSection .indGraphicBox .leftSection {
+    width: 100%;
+    padding-left: 0px;
+}
+.secondSection .indGraphicBox .leftSection h2 {
+    font-size: 24px;
+}
+.solutionBox h2 {
+    font-size: 30px;
+    max-width: 100%;
+}
+.solutionBox .tabInfo {
+    position: relative;
+    margin-left: 0px;
+    padding-top: 50px;
+}
+.solutionBox .tabInfo .accordion {
+    display: block;
+}
+
+.solutionBox .tabInfo .nav-tabs {
+    display: none;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link {
+    width: 100% !important;
+    padding: 0 20px;
+    height: 49px;
+    text-align: left;
+    border: 0;
+    border: 0;
+    color: #222;
+    font-size: 14px;
+    transition: all ease-in 0.4s;
+}
+.solutionBox .tabInfo .tab-content .ContentSection h4 {
+    font-size: 24px;
+    font-weight: 800;
+}
+.solutionBox .tabInfo .tab-content {
+    display: none;
+}
+
+.projectInMind .readyToDiscuss h2 {
+    font-size: 30px;
+    font-weight: 200;
+}
+.solutionBox .tabInfo .tab-content .ContentSection .tabGraphics {
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 66px;
+}
+.solutionBox .tabInfo .accordion-item .ContentSection .tabGraphics {
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 0px;
+}
+.navbar .navbar-nav .nav-item .dropdown-item:hover .servicesLinksBox::before {
+    content: "";
+    width: 13px;
+    transition: all ease 0.2s;
+    height: 2px;
+    background-color: #ed651f;
+    position: absolute;
+    left: -19px;
+    top: 24px;
+}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .industriesHeroSection h1 {
+    font-size: 42px;
+    max-width: 100%;
+  }
+  .secondSection .indGraphicBox {
+    padding: 20px;
+    flex-direction: column-reverse;
+}
+.secondSection .indGraphicBox .rightSection {
+    width: 100%;
+}
+.secondSection .indGraphicBox .rightSection .graphicsImage {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.secondSection .indGraphicBox .leftSection {
+    width: 100%;
+    padding-left: 0px;
+}
+.secondSection .indGraphicBox .leftSection h2 {
+    font-size: 30px;
+}
+.solutionBox h2 {
+    font-size: 36px;
+    max-width: 100%;
+}
+.solutionBox .tabInfo {
+    position: relative;
+    margin-left: 0px;
+    padding-top: 50px;
+}
+.solutionBox .tabInfo .accordion {
+    display: block;
+}
+
+.solutionBox .tabInfo .nav-tabs {
+    display: none;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link {
+    width: 100% !important;
+    padding: 0 20px;
+    height: 49px;
+    text-align: left;
+    border: 0;
+    border: 0;
+    color: #222;
+    font-size: 14px;
+    transition: all ease-in 0.4s;
+}
+.solutionBox .tabInfo .tab-content .ContentSection h4 {
+    font-size: 30px;
+    font-weight: 800;
+}
+.solutionBox .tabInfo .accordion-item .ContentSection h4 {
+    font-size: 30px;
+    font-weight: 800;
+}
+.solutionBox .tabInfo .accordion-item .accordion-button {
+    font-size: 16px;
+}
+
+.solutionBox .tabInfo .tab-content {
+    display: none;
+}
+
+.projectInMind .readyToDiscuss h2 {
+    font-size: 30px;
+    font-weight: 200;
+}
+.solutionBox .tabInfo .tab-content .ContentSection .tabGraphics {
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 66px;
+}
+.solutionBox .tabInfo .accordion-item .ContentSection .tabGraphics {
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 0px;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .industriesHeroSection {
+    margin-top: 71px;
+    padding: 70px 0 15px;
+    position: relative;
+}
+  .industriesHeroSection h1 {
+    font-size: 48px;
+    max-width: 100%;
+  }
+  .secondSection .indGraphicBox {
+    padding: 20px;
+    flex-direction: column-reverse;
+}
+.secondSection .indGraphicBox .rightSection {
+    width: 100%;
+}
+.secondSection .indGraphicBox .rightSection .graphicsImage {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.secondSection .indGraphicBox .leftSection {
+    width: 100%;
+    padding-left: 0px;
+}
+.secondSection .indGraphicBox .leftSection h2 {
+    font-size: 36px;
+}
+.solutionBox h2 {
+    font-size: 42px;
+    max-width: 100%;
+}
+.solutionBox .tabInfo {
+    position: relative;
+    margin-left: 0px;
+    padding-top: 50px;
+}
+.solutionBox .tabInfo .accordion {
+    display: block;
+}
+
+.solutionBox .tabInfo .nav-tabs {
+    display: none;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link {
+    width: 100% !important;
+    padding: 0 20px;
+    height: 49px;
+    text-align: left;
+    border: 0;
+    border: 0;
+    color: #222;
+    font-size: 14px;
+    transition: all ease-in 0.4s;
+}
+.solutionBox .tabInfo .tab-content .ContentSection h4 {
+    font-size: 30px;
+    font-weight: 800;
+}
+.solutionBox .tabInfo .accordion-item .ContentSection h4 {
+    font-size: 30px;
+    font-weight: 800;
+}
+.solutionBox .tabInfo .accordion-item .accordion-button {
+    font-size: 16px;
+}
+
+.solutionBox .tabInfo .tab-content {
+    display: none;
+}
+
+.projectInMind .readyToDiscuss h2 {
+    font-size: 42px;
+    font-weight: 200;
+}
+.solutionBox .tabInfo .tab-content .ContentSection .tabGraphics {
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 66px;
+}
+.solutionBox .tabInfo .accordion-item .ContentSection .tabGraphics {
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 0px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .industriesHeroSection {
+    margin-top: 71px;
+    padding: 70px 0 15px;
+    position: relative;
+}
+  .industriesHeroSection h1 {
+    font-size: 48px;
+    max-width: 100%;
+  }
+ .secondSection .indGraphicBox {
+    padding: 40px;
+    flex-direction: row;
+}
+.secondSection .indGraphicBox .rightSection {
+    width: 100%;
+}
+.secondSection .indGraphicBox .rightSection .graphicsImage {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.secondSection .indGraphicBox .leftSection {
+    width: 100%;
+    padding-left: 0px;
+}
+.secondSection .indGraphicBox .leftSection h2 {
+    font-size: 36px;
+}
+.solutionBox h2 {
+    font-size: 42px;
+    max-width: 100%;
+}
+
+.solutionBox .tabInfo .accordion {
+    display: none;
+}
+
+.solutionBox .tabInfo .nav-tabs {
+    display: block;
+    width: 300px;
+    left: -300px;
+}
+.solutionBox .tabInfo {
+    position: relative;
+    margin-left: 300px;
+    padding-top: 80px;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link {
+    width: 100% !important;
+    padding: 0 20px;
+    height: 60px;
+    font-size: 15px;
+}
+
+.solutionBox .tabInfo .tab-content .ContentSection h4 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.projectInMind .readyToDiscuss h2 {
+    font-size: 42px;
+    font-weight: 200;
+}
+.solutionBox .tabInfo .tab-content .ContentSection .tabGraphics {
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+}
+
+@media (min-width:1200px) and (max-width: 1440px) {
+  .industriesHeroSection {
+    margin-top: 71px;
+    padding: 70px 0 15px;
+    position: relative;
+}
+  .industriesHeroSection h1 {
+    font-size: 48px;
+    max-width: 70%;
+  }
+ .secondSection .indGraphicBox {
+    padding: 40px;
+    flex-direction: row;
+}
+.secondSection .indGraphicBox .rightSection {
+    width: 100%;
+}
+.secondSection .indGraphicBox .rightSection .graphicsImage {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.secondSection .indGraphicBox .leftSection {
+    width: 100%;
+    padding-left: 0px;
+}
+.secondSection .indGraphicBox .leftSection h2 {
+    font-size: 36px;
+}
+.solutionBox h2 {
+    font-size: 42px;
+    max-width: 100%;
+}
+
+.solutionBox .tabInfo .accordion {
+    display: none;
+}
+
+.solutionBox .tabInfo .nav-tabs {
+    display: block;
+    width: 300px;
+    left: -300px;
+}
+.solutionBox .tabInfo {
+    position: relative;
+    margin-left: 300px;
+    padding-top: 80px;
+}
+.solutionBox .tabInfo .nav-tabs .nav-item .nav-link {
+    width: 100% !important;
+    padding: 0 20px;
+    height: 60px;
+    font-size: 15px;
+}
+
+.solutionBox .tabInfo .tab-content .ContentSection h4 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.projectInMind .readyToDiscuss h2 {
+    font-size: 42px;
+    font-weight: 200;
+}
+.solutionBox .tabInfo .tab-content .ContentSection .tabGraphics {
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+}
+
+
+
