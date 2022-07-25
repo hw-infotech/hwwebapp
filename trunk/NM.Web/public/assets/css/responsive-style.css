@@ -3,6 +3,7 @@
   #header.header-inner-pages {
     background: white !important;
     border-bottom: 1px solid transparent;
+    padding: 15px 15px;
   }
   .navbar .navbar-nav .nav-item a {
     color: #ffffff !important;
@@ -21,6 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
+    border-right: 0;
   }
 
   .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
@@ -46,6 +48,10 @@
     align-items: center;
     transition: all ease 0.8s;
     box-shadow: inset 0px 0px 18px 0px #0160fd00 !important;
+  }
+  .menuLinksBar.show .navbar-nav {
+    padding-left: 10px !important;
+    padding-right: 10px;
   }
 
   .menuLinksBar {
@@ -78,8 +84,34 @@
   .navbar .navbar-nav .nav-item {
     padding: 10px 10px !important;
     width: 100%;
+    flex-direction: column;
     float: left;
   }
+  .navbar .navbar-nav .nav-item .dropdown-menu {
+    box-shadow: 0 10px 25px rgb(0 66 118 / 15%);
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #f06a23 !important;
+    min-width: 100%;
+    border: 0;
+    border-radius: 0px;
+    background: #f3f6fa;
+    max-width: 100%;
+    margin: 0 auto;
+    left: 50%;
+    right: auto;
+    transform: translateX(0%)!important;
+}
+.navbar .navbar-nav .nav-item .dropdown-item:hover .servicesLinksBox::before {
+    content: "";
+    width: 13px;
+    transition: all ease 0.2s;
+    height: 2px;
+    background-color: #ed651f;
+    position: absolute;
+    left: -19px;
+    top: 24px;
+}
   .servicesArea .serviceBox h2 {
     font-size: 24px !important;
     line-height: 30px !important;
@@ -163,10 +195,16 @@
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
+   .menuLinksBar.show .navbar-nav {
+    padding-left: 10px !important;
+    padding-right: 10px;
+  }
+
   #header.header-scrolled,
   #header.header-inner-pages {
     background: white !important;
     border-bottom: 1px solid transparent;
+    padding: 15px 15px;
   }
   .navbar .navbar-nav .nav-item a {
     color: #ffffff !important;
@@ -187,6 +225,22 @@
     padding: 10px;
   }
 
+  .navbar .navbar-nav .nav-item .dropdown-menu {
+    box-shadow: 0 10px 25px rgb(0 66 118 / 15%);
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #f06a23 !important;
+    min-width: 100%;
+    border: 0;
+    border-radius: 0px;
+    background: #f3f6fa;
+    max-width: 100%;
+    margin: 0 auto;
+    left: 50%;
+    right: auto;
+    transform: translateX(0%)!important;
+}
+
   .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
     width: 100%;
     float: left;
@@ -196,6 +250,16 @@
     left: 0;
     display: none;
   }
+  .navbar .navbar-nav .nav-item .dropdown-item:hover .servicesLinksBox::before {
+    content: "";
+    width: 13px;
+    transition: all ease 0.2s;
+    height: 2px;
+    background-color: #ed651f;
+    position: absolute;
+    left: -19px;
+    top: 24px;
+}
   .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox img {
     display: none;
   }
@@ -243,6 +307,7 @@
     padding: 10px 10px !important;
     width: 100%;
     float: left;
+    flex-direction: column;
   }
   .servicesArea .serviceBox h2 {
     font-size: 30px !important;
@@ -315,10 +380,16 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+   .menuLinksBar.show .navbar-nav {
+    padding-left: 10px !important;
+    padding-right: 10px;
+  }
+
   #header.header-scrolled,
   #header.header-inner-pages {
     background: white !important;
     border-bottom: 1px solid transparent;
+    padding: 15px 15px;
   }
   .navbar .navbar-nav .nav-item a {
     color: #ffffff !important;
@@ -339,6 +410,21 @@
     flex-wrap: wrap;
     padding: 10px;
   }
+  .navbar .navbar-nav .nav-item .dropdown-menu {
+    box-shadow: 0 10px 25px rgb(0 66 118 / 15%);
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #f06a23 !important;
+    min-width: 100%;
+    border: 0;
+    border-radius: 0px;
+    background: #f3f6fa;
+    max-width: 100%;
+    margin: 0 auto;
+    left: 50%;
+    right: auto;
+    transform: translateX(0%)!important;
+}
   .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
     width: 100%;
     float: left;
@@ -351,6 +437,16 @@
   .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox img {
     display: none;
   }
+  .navbar .navbar-nav .nav-item .dropdown-item:hover .servicesLinksBox::before {
+    content: "";
+    width: 13px;
+    transition: all ease 0.2s;
+    height: 2px;
+    background-color: #ed651f;
+    position: absolute;
+    left: -19px;
+    top: 24px;
+}
   .navbar .navbar-nav .nav-item .dropdown-item .servicesLinksBox {
     width: 100%;
     position: relative;
@@ -364,8 +460,6 @@
     box-shadow: inset 0px 0px 18px 0px #0160fd00 !important;
   }
 
-
- 
   .menuLinksBar {
     position: fixed;
     height: calc(100% - 72px);
@@ -397,6 +491,7 @@
     padding: 10px 10px !important;
     width: 100%;
     float: left;
+    flex-direction: column;
   }
 
   .list-addon-home li {
@@ -420,11 +515,21 @@
   .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks {
     width: 100% !important;
   }
-   .fixed-top.header-scrolled .navbar .navbar-brand:before {
+  .fixed-top.header-scrolled .navbar .navbar-brand:before {
     width: 126%;
     height: 211%;
     left: -34px;
     top: -46px;
+  }
+    .navbar .navbar-nav{
+      padding-left: 10px!important;
+    }
+  .navbar .navbar-nav .nav-item {
+    padding: 25px 13px;
+}
+.navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks .webformsIntegration{
+    width:50px;
+    overflow: hidden;
   }
 }
 @media (min-width: 1200px) and (max-width: 1440px) {
@@ -433,5 +538,15 @@
     height: 211%;
     left: -34px;
     top: -46px;
+  }
+  .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks .webformsIntegration{
+    width:50px;
+    overflow: hidden;
+  }
+}
+@media (min-width:1441px){
+  .navbar .navbar-nav .nav-item .dropdown-menu .integratedLinks .webformsIntegration{
+    width:50px;
+    overflow: hidden;
   }
 }
