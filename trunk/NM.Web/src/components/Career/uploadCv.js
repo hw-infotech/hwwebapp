@@ -4,10 +4,12 @@ import { useEffect } from "react";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 import { useDispatch } from "react-redux";
 import { createResume } from "../../Redux/Action/Actionfunction";
+import { useHistory } from "react-router-dom";
 
 const UploadCv = () => {
   const dispatch = useDispatch();
-  
+  const history = useHistory();
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -20,15 +22,23 @@ const UploadCv = () => {
         <div className="container">
           <div className="up-gra">
             <div className="upload-Graphics">
-              <img className="uploadGra" src="assets/img/upload-file.png" alt="" />
+              <img
+                className="uploadGra"
+                src="assets/img/upload-file.png"
+                alt=""
+              />
             </div>
             <div className="uploadBox">
               <div className="titleBox">Upload Your Resume</div>
               <form className="form">
                 <div className="input-form mh-100">
                   <div className="upload Cv">
-                    <img className="outbox" src="assets/img/outbox.svg" alt=""/> Add
-                    Docs
+                    <img
+                      className="outbox"
+                      src="assets/img/outbox.svg"
+                      alt=""
+                    />{" "}
+                    Add Docs
                   </div>
                   <input
                     type="file"
@@ -56,7 +66,7 @@ const UploadCv = () => {
                     value="Send"
                     onClick={async (e) => {
                       try {
-                        await dispatch(createResume(p));
+                        await dispatch(createResume(p, history));
                         setstate("");
                         setP("");
                       } catch (error) {

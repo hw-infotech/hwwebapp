@@ -14,19 +14,20 @@ import Telemedician from "../components/caseStudies/Telemedician_case"
 import ContactUsContent from "../components/ContactUs/ContactUs"
 import Gallery from "../components/Gallery"
 import HomeContent from "../components/Home/Home"
-import education from "../components/industries/education"
-import entertainment from "../components/industries/entertainment"
-import finance from "../components/industries/finance"
-import grocery from "../components/industries/grocery"
-import healthcare from "../components/industries/healthcare"
-import insurance from "../components/industries/insurance"
-import realestate from "../components/industries/realestate"
-import restaurant from "../components/industries/restaurant"
-import retailEcommerce from "../components/industries/retail-ecommerce"
-import sports from "../components/industries/sports"
-import tourTravel from "../components/industries/tourTravel"
-import transport from "../components/industries/transport"
-import meeting from "../components/Meeting/meeting"
+import Education from "../components/industries/education"
+import Entertainment from "../components/industries/entertainment"
+import Finance from "../components/industries/finance"
+import Grocery from "../components/industries/grocery"
+import Healthcare from "../components/industries/healthcare"
+import Insurance from "../components/industries/insurance"
+import Realestate from "../components/industries/realestate"
+import Restaurant from "../components/industries/restaurant"
+import RetailEcommerce from "../components/industries/retail-ecommerce"
+import Sports from "../components/industries/sports"
+import TourTravel from "../components/industries/tourTravel"
+import Transport from "../components/industries/transport"
+import Meeting from "../components/Meeting/meeting"
+import InternalServerError from "../components/Not-Found/internalServerError"
 
 import NotFound from "../components/Not-Found/NotFound"
 import PrivacyPolicy from "../components/privacy-terms/privacyPolicy"
@@ -64,18 +65,19 @@ const routes = [
   route("/under-mantainence", NotFound),
   route("/gallery", Gallery),
   route("/blog/:name", BlogListComp),
-  route("/meeting", meeting),
-  route("/healthcare", healthcare),
-  route("/restaurant", restaurant),
-  route("/real-estate", realestate),
-  route("/travel-and-hospitality", tourTravel),
-  route("/education" , education),
-  route("/transport", transport),
-  route("/finance", finance),
-  route("/entertainment", entertainment),
-  route("/sports",sports),
-  route("/retail-ecommerce",retailEcommerce),
-  route("/insurance", insurance),
-  route("/grocery",grocery)
+  route("/meeting", Meeting),
+  route("/healthcare", Healthcare),
+  route("/restaurant", Restaurant),
+  route("/real-estate", Realestate),
+  route("/travel-and-hospitality", TourTravel),
+  route("/education" , Education),
+  route("/transport", Transport),
+  route("/finance", Finance),
+  route("/entertainment", Entertainment),
+  route("/sports", Sports),
+  route("/retail-ecommerce",RetailEcommerce),
+  route("/insurance", Insurance),
+  route("/grocery",Grocery),
+  route("/500",InternalServerError)
 ];
 export default routes

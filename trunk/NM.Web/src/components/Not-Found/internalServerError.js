@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import withNewsletterAddress from "../../Shared/HOC/newsletterAddress";
 
-const NotFound = () => {
+const SomethingWrong = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -17,7 +17,7 @@ const NotFound = () => {
             <Link to="#">
               <img
                 className="underCont"
-                src="assets/img/404.png"
+                src="assets/img/500.png"
                 alt=""
               />
             </Link>
@@ -28,4 +28,4 @@ const NotFound = () => {
   );
 };
 
-export default withNewsletterAddress(NotFound);
+export default withNewsletterAddress(SomethingWrong);
