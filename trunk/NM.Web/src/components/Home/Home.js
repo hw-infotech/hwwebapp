@@ -214,7 +214,7 @@ const HomeContent = (props) => {
               >
                 <div className="industry-workfor hoshd">
                   <img src="assets/img/mobile-app.svg" alt="img" />
-                  <h6>On-Demand</h6>
+                  <h6>Entertainment</h6>
                 </div>
               </div>
               <div
@@ -223,7 +223,7 @@ const HomeContent = (props) => {
               >
                 <div className="industry-workfor hoshd">
                   <img src="assets/img/joystick.svg" alt="img" />
-                  <h6>Game</h6>
+                  <h6>Sports</h6>
                 </div>
               </div>
               <div
@@ -277,7 +277,7 @@ const HomeContent = (props) => {
               >
                 <div className="industry-workfor hoshd">
                   <img src="assets/img/travel-case.svg" alt="img" />
-                  <h6>Tour &amp; Travels</h6>
+                  <h6> Travel & hospitality</h6>
                 </div>
               </div>
               <div
@@ -304,7 +304,7 @@ const HomeContent = (props) => {
               >
                 <div className="industry-workfor hoshd">
                   <img src="assets/img/event.svg" alt="img" />
-                  <h6>Event</h6>
+                  <h6>Insurance</h6>
                 </div>
               </div>
 
@@ -504,9 +504,8 @@ const HomeContent = (props) => {
                 data-height="45"
                 data-clutchcompany-id="1883044"
               ></div>
-             
+
               <div className="hm_awcnt">
-                
                 <p>
                   Certified app development company, acknowledged by Clutch.
                 </p>

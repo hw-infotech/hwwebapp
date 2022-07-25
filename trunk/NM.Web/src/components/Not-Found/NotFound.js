@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import withNewsletterAddress from '../../Shared/HOC/newsletterAddress';
 
 const NotFound = () => {
 
@@ -20,4 +21,4 @@ const NotFound = () => {
   </div>
 }
 
-export default NotFound
+export default withNewsletterAddress(NotFound);

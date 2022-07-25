@@ -1,5 +1,6 @@
 .commonSocialIcons{
     position: relative;
+    display: none;
 }
 .commonSocialIcons .clb-social-holder{
     display: flex;
