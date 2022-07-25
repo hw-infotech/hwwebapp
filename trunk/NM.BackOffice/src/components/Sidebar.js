@@ -68,6 +68,7 @@ const Sidebar = ({ sidebarShow }) => {
         <ul className="nav nav-pills sidebar-ul align-items-center" id="menu">
           <li className={`nav-item sidebar_hover`}>
             <a
+          
               className={`nav-link sidebar_hover align-middle px-0 text-color-white gap-icon-text  ${
                 localStorage.getItem("className") == "Dashboard" && classname
               }`}
@@ -84,8 +85,8 @@ const Sidebar = ({ sidebarShow }) => {
             </a>
           </li>
           <li className="sidebar_list">
-            {console.log(parentId)}
             <a
+           
               href="#submenu2"
               data-bs-toggle="collapse"
               className={
@@ -198,9 +199,7 @@ const Sidebar = ({ sidebarShow }) => {
               }}
             >
               <GoQuestion size={20} />
-              <span className="ms-1 d-none d-sm-inline ">
-                Enquiry
-              </span>
+              <span className="ms-1 d-none d-sm-inline ">Enquiry</span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
               </span>
@@ -288,7 +287,7 @@ const Sidebar = ({ sidebarShow }) => {
                   onClick={(e) => {
                     handleAnchorClick(e);
                     localStorage.setItem("className", "jobsub");
-                    navigtion("/job-subscriber-unsubscriber");
+                    navigtion("/job-subscribe-unsubscribe");
                   }}
                 >
                   <span className="d-none d-sm-inline navbar-submenu">

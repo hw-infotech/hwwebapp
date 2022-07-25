@@ -19,12 +19,15 @@ import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
 import { BsFilter } from "react-icons/bs";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
+import ReactTooltip from "react-tooltip";
+import { tab } from "@testing-library/user-event/dist/tab";
 
 const Job_newsletter = () => {
   const [checked, setChecked] = useState();
+  const [selected, setSelected] = useState([]);
   const [disable, setSdisabled] = useState(false);
   const [showPerPage, setShowPerPage] = useState();
-  const [row, setRow] = useState(10);
+  const [row, setRow] = useState();
   const [state, setState] = useState({
     row_value: "",
   });
@@ -34,10 +37,8 @@ const Job_newsletter = () => {
     end: showPerPage,
   });
   const [dataArray, setDataArray] = useState([]);
-  
-  const selector = useSelector((state) => state);
 
-  useEffect(() => {}, []);
+  const selector = useSelector((state) => state);
 
   const route = [
     { name: "Dashboard", route: "/" },
@@ -49,22 +50,22 @@ const Job_newsletter = () => {
       Email: "Ganeshsharma5073@gmail.com",
       phone: "9803836866",
       Name: "mark",
-      active: true,
-      subscribed:false
+      active: false,
+      subscribed: false,
     },
     {
       Email: "Amanpreet23@gmail.com",
       phone: "8146945394",
       Name: "Aman",
       active: false,
-      subscribed:false
+      subscribed: false,
     },
     {
       Email: "goldygoldy33@gmail.com",
       phone: "8146945394",
       Name: "Aman",
       active: false,
-      subscribed:true
+      subscribed: false,
     },
   ];
 
@@ -90,6 +91,14 @@ const Job_newsletter = () => {
     );
     setTableData([...response]);
   }
+
+  useEffect(() => {
+    const res = tableData.map((data, index) => {
+      return data.subscribed;
+    });
+    res.indexOf(false) != -1 ? setChecked(false) : setChecked(true);
+  }, [tableData]);
+
   const requestSearch = (searchedVal) => {
     const filteredRows = records.filter((row) => {
       return (
@@ -104,7 +113,6 @@ const Job_newsletter = () => {
   useEffect(() => {
     document.title = "Subscribe-Unsubscribe";
   }, []);
-
   return (
     <div className="main-jobsubscriber-content">
       <BasicBreadcrumbs route={route} />
@@ -115,12 +123,17 @@ const Job_newsletter = () => {
           </div>
           <div className="right_panle_container">
             <Button
+              data-tip
+              data-for="filterIcon"
               variant=""
               className="btn-sm remove_button_padding"
               onClick={() => setSdisabled((p) => !p)}
             >
               <BsFilter size={25} color="#ff6b01" />
             </Button>
+            <ReactTooltip id="filterIcon" place="top" effect="solid">
+              Filter
+            </ReactTooltip>
           </div>
         </div>
         <div className="w-100 setupcontent pt-1">
@@ -157,10 +170,32 @@ const Job_newsletter = () => {
           </Collapse>
         </div>
         <div className="status_button_container gap-2 d-flex pb-2">
-          <Button variant="primary" size="sm">
+          <Button
+            variant="primary"
+            size="sm"
+            onClick={() => {
+              tableData.map((a, index) => {
+                let v = selected.map(
+                  (b, index) => (tableData[b].active = true)
+                );
+              });
+              setTableData([...tableData]);
+            }}
+          >
             Subscribe
           </Button>
-          <Button variant="secondary" size="sm">
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => {
+              tableData.map((a, index) => {
+                let v = selected.map(
+                  (b, index) => (tableData[b].active = false)
+                );
+              });
+              setTableData([...tableData]);
+            }}
+          >
             Unsubscribe
           </Button>
         </div>
@@ -173,15 +208,25 @@ const Job_newsletter = () => {
                 <th className="action_colwidth " align="center">
                   <Form.Check
                     className="fs_13"
-                    onClick={() => setChecked((p) => !p)}
+                    onClick={(e) => setChecked(e.target.checked)}
+                    checked={checked}
                     label=""
                     onChange={(e) => {
-                      setTableData((oldState) => {
-                        const newState = oldState.map((_) => {
-                          _.active = e.target.checked;
-                          return _;
-                        });
-                        return newState;
+                      // setTableData((oldState) => {
+                      //   const newState = oldState.map((_) => {
+                      //     _.su = e.target.checked;
+                      //     return _;
+                      //   });
+                      //   return newState;
+                      // });
+                      tableData.map((data, index) => {
+                        tableData[index].subscribed = e.target.checked;
+                        setTableData([...tableData]);
+                        {
+                          e.target.checked
+                            ? setSelected((old) => [...old, index])
+                            : setSelected([]);
+                        }
                       });
                     }}
                   />
@@ -202,23 +247,32 @@ const Job_newsletter = () => {
                 <th>Email</th>
               </tr>
             </thead>
+            {console.log(selected)}
             {tableData.length > 0 ? (
               <tbody>
                 {tableData.map((data, index) => (
                   <tr>
                     <td className="content_cente_td">
                       <Form.Check
-                        className="fs_13 "
+                        className="fs_13"
                         name="active"
                         checked={data.subscribed}
+                        value={data.subscribed}
                         onChange={(e) => {
-                          tableData[index].active = e.target.checked;
+                          tableData[index].subscribed = e.target.checked;
                           setTableData([...tableData]);
+                          const sel = selected.filter((r) => r == index);
+                          if (sel.length > 0) {
+                            const res = selected.filter((r) => r != index);
+                            setSelected(res);
+                          } else {
+                            setSelected((oldState) => [...oldState, index]);
+                          }
                         }}
                       />
                     </td>
                     <td>
-                      {data.subscribed ? (
+                      {data.active ? (
                         <Badge bg="success" size={30}>
                           Subscribe
                         </Badge>

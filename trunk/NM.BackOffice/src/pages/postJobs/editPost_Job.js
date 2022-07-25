@@ -36,6 +36,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import TooltipComp from "../../shared/Tooltipomp";
+import ReactTooltip from "react-tooltip";
 
 const Edit_postJob = (value1) => {
   useEffect(() => {
@@ -212,9 +213,11 @@ const Edit_postJob = (value1) => {
             <h4>Job</h4>
           </div>
           <div className="right_panle_container">
-            <TooltipComp
-              component={
+           
                 <Button
+                data-tip
+                data-for="job-filter"
+              
                   variant=""
                   className="btn-sm remove_button_padding"
                   onClick={() => setSdisabled((p) => !p)}
@@ -222,24 +225,25 @@ const Edit_postJob = (value1) => {
                   {" "}
                   <BsFilter size={24} color="#ff6b01" />
                 </Button>
-              }
-              tooltip="filter"
-            />
-            <TooltipComp
-              component={
+                <ReactTooltip id="job-filter" place="top" effect="solid">
+                Filter
+              </ReactTooltip>
+            
                 <Button
                   variant=""
+                  data-tip
+                  data-for="plusIcon"
                   className="btn-sm remove_button_padding"
                   onClick={() => {
                     navigate("/add-job");
                   }}
                 >
-                  {" "}
+                
                   <AiOutlinePlusCircle size={24} color="#ff6b01" />
                 </Button>
-              }
-              tooltip="Add"
-            />
+                <ReactTooltip id="plusIcon" place="top" effect="solid">
+                Add
+              </ReactTooltip>
           </div>
         </div>
         <div className="gapbetween pt-1">

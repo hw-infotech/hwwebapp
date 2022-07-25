@@ -34,6 +34,7 @@ import { tab } from "@testing-library/user-event/dist/tab";
 import { useDispatch, useSelector } from "react-redux";
 import { Edit_Data } from "../../Services/redux/action/action";
 import TooltipComp from "../../shared/Tooltipomp";
+import ReactTooltip from "react-tooltip";
 
 const Particularjob = () => {
   const data = useParams();
@@ -136,20 +137,20 @@ const Particularjob = () => {
               <h4>View</h4>
             </div>
             <div className="right_panle_container">
-              <TooltipComp
-                component={
-                  <Button
-                    variant=""
-                    className="btn-sm remove_button_padding"
-                    onClick={() => {
-                      nevigate(-1);
-                    }}
-                  >
-                    <FiArrowLeftCircle size={21} color="#ff6b01" />
-                  </Button>
-                }
-                tooltip="Back"
-              />
+              <Button
+                data-tip
+                data-for="filterIcon"
+                variant=""
+                className="btn-sm remove_button_padding"
+                onClick={() => {
+                  nevigate(-1);
+                }}
+              >
+                <FiArrowLeftCircle size={21} color="#ff6b01" />
+              </Button>
+              <ReactTooltip id="filterIcon" place="top" effect="solid">
+                Back
+              </ReactTooltip>
             </div>
           </div>
         </div>
@@ -408,18 +409,19 @@ const Particularjob = () => {
                   </Col>
                   <Col md={6} sm={1} lg={6} xl={6}>
                     <div className="d-flex justify-content-end align-items-end mt-5">
-                      <TooltipComp
-                        component={
+                    
                           <Button
+                          data-tip
+                          data-for="job-filter"
                             variant=""
                             className="btn-sm remove_button_padding"
                             onClick={() => setSdisabled((p) => !p)}
                           >
                             <BsFilter size={25} color="#ff6b01" />
                           </Button>
-                        }
-                        tooltip="Filter"
-                      />
+                          <ReactTooltip id="job-filter" place="top" effect="solid">
+                          Filter
+                        </ReactTooltip>
                     </div>
                   </Col>
                 </Row>

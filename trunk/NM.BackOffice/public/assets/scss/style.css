@@ -362,8 +362,11 @@ body {
 }
 
 .main-header-box .dropdown-item12 {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
+  gap: 8px !important;
   clear: both;
   font-weight: 400;
   color: #212529;

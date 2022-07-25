@@ -35,7 +35,7 @@ const route = [
   routes("/all-Enquiry", <All_Enquiry />),
   routes("/edit-job", <Update_Job />),
   routes("/appliedjobs", <Applied_Job />),
-  routes("/job-subscriber-unsubscriber", <Job_Subscriber />),
+  routes("/job-subscribe-unsubscribe", <Job_Subscriber />),
   routes("/addgalleryevent", <Add_Gallery_Event />),
   routes("/listofblogs", <List_Of_Blogs />),
   routes("/changegalleryevent", <Change_Gallery_Events />),
