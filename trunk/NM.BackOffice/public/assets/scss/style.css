@@ -56,6 +56,21 @@ body {
   width: 60px !important;
 }
 
+.action_colwidth .form-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+  margin-bottom: 0.125rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .action_titlewidth {
   width: 150px !important;
 }
@@ -473,8 +488,13 @@ body {
   color: #ff6b01 !important;
 }
 
-.sidebar .sidebar_focus:focus {
-  color: #c29644;
+.sidebar .activeMenu svg {
+  color: #ff6b01 !important;
+}
+
+.sidebar .nav-link:focus,
+.sidebar .nav-link:hover {
+  color: #fff;
 }
 
 .sidebar ul#menu {
@@ -526,7 +546,7 @@ body {
 }
 
 .sidebar .gap-icon-text:hover {
-  color: #ff912a;
+  color: #ff6b01;
 }
 
 .sidebar .sidebar_list .collapsed .dropdownarrowicon {

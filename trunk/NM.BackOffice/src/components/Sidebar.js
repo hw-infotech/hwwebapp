@@ -84,6 +84,7 @@ const Sidebar = ({ sidebarShow }) => {
             </a>
           </li>
           <li className="sidebar_list">
+            {console.log(parentId)}
             <a
               href="#submenu2"
               data-bs-toggle="collapse"
@@ -196,8 +197,8 @@ const Sidebar = ({ sidebarShow }) => {
                 return navigtion("/all-Enquiry");
               }}
             >
-              <GoQuestion size={26} />
-              <span className="ms-1 d-none d-sm-inline gap-icon-text">
+              <GoQuestion size={20} />
+              <span className="ms-1 d-none d-sm-inline ">
                 Enquiry
               </span>
               <span className="dropdownarrowicon">

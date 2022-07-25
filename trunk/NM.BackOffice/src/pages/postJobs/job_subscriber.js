@@ -15,13 +15,11 @@ import {
   Table,
   Tooltip,
 } from "react-bootstrap";
-import { VscFilterFilled } from "react-icons/vsc";
-import Paginationn from "../../components/pagination";
 import { useSelector } from "react-redux";
 import CustomPagination from "../../shared/pagination";
-import { FaFilter } from "react-icons/fa";
 import { BsFilter } from "react-icons/bs";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
+
 const Job_newsletter = () => {
   const [checked, setChecked] = useState();
   const [disable, setSdisabled] = useState(false);
@@ -35,43 +33,12 @@ const Job_newsletter = () => {
     start: start,
     end: showPerPage,
   });
-
+  const [dataArray, setDataArray] = useState([]);
+  
   const selector = useSelector((state) => state);
-  console.log(selector);
 
-  // const [next, setNext] = useState(0)
-  // const [start, setStart] = useState(1);
-  // const [pagination1, setpagination] = useState(
-  //     {
-  //         start: start,
-  //         end: showPerPage
-  //     })
-  useEffect(() => {
-    //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
-    //setpagination({ start: start, end: showPerPage })
-  }, []);
-  // const Chnage = (e) => {
-  //     const { name, value } = e.target
-  //     setRow(value)
-  //     console.log("this is the select field value", value)
-  // }
-  // const handlechange = (event, value) => {
-  //     var value1;
-  //     setNext(value)
-  //     if (next <= value) {
-  //         value1 = row * value
-  //         setShowPerPage(value1)
-  //         console.log("this is the if conditon", value, showPerPage, state.row_value)
-  //         setStart(value1 - row)
-  //         setpagination({ start: start, end: showPerPage })
-  //     }
-  //     else {
-  //         console.log("else", start, showPerPage)
-  //         setStart(start - row)
-  //         setShowPerPage(showPerPage - row)
-  //         setpagination({ start: start - row, end: showPerPage - row })
-  //     }
-  // }
+  useEffect(() => {}, []);
+
   const route = [
     { name: "Dashboard", route: "/" },
     { name: "Job Management" },
@@ -83,20 +50,24 @@ const Job_newsletter = () => {
       phone: "9803836866",
       Name: "mark",
       active: true,
+      subscribed:false
     },
     {
       Email: "Amanpreet23@gmail.com",
       phone: "8146945394",
       Name: "Aman",
       active: false,
+      subscribed:false
     },
     {
       Email: "goldygoldy33@gmail.com",
       phone: "8146945394",
       Name: "Aman",
       active: false,
+      subscribed:true
     },
   ];
+
   const [tableData, setTableData] = useState(records);
   function sortt() {
     const response = tableData.sort((a, b) =>
@@ -148,7 +119,6 @@ const Job_newsletter = () => {
               className="btn-sm remove_button_padding"
               onClick={() => setSdisabled((p) => !p)}
             >
-              {" "}
               <BsFilter size={25} color="#ff6b01" />
             </Button>
           </div>
@@ -156,13 +126,17 @@ const Job_newsletter = () => {
         <div className="w-100 setupcontent pt-1">
           <Collapse in={disable}>
             <div className="">
-              <Form.Select aria-label="row" className="wreap-content fs_13">
+              <Form.Select
+                aria-label="row"
+                className="wreap-content fs_13"
+                defaultValue={"ALL"}
+              >
                 <option disabled hidden>
                   Status
                 </option>
-                <option defaultValue={"ALL"}>All</option>
-                <option value="2">Subscribe</option>
-                <option value="3">Unsubscribe</option>
+                <option value="all">All</option>
+                <option value="subscribe">Subscribe</option>
+                <option value="unsubscribe">Unsubscribe</option>
               </Form.Select>
             </div>
           </Collapse>
@@ -178,12 +152,17 @@ const Job_newsletter = () => {
                     requestSearch(e.target.value);
                   }}
                 />
-                {/*<Button variant="outline-secondary" id="button-addon2">
-                                                <BsSearch />
-                                            </Button>*/}
               </InputGroup>
             </div>
           </Collapse>
+        </div>
+        <div className="status_button_container gap-2 d-flex pb-2">
+          <Button variant="primary" size="sm">
+            Subscribe
+          </Button>
+          <Button variant="secondary" size="sm">
+            Unsubscribe
+          </Button>
         </div>
       </div>
       <div className="content_box">
@@ -206,7 +185,6 @@ const Job_newsletter = () => {
                       });
                     }}
                   />
-                  {console.log(tableData)}
                 </th>
                 <th className="action_colwidth">Status</th>
                 <th
@@ -232,7 +210,7 @@ const Job_newsletter = () => {
                       <Form.Check
                         className="fs_13 "
                         name="active"
-                        checked={data.active}
+                        checked={data.subscribed}
                         onChange={(e) => {
                           tableData[index].active = e.target.checked;
                           setTableData([...tableData]);
@@ -240,7 +218,7 @@ const Job_newsletter = () => {
                       />
                     </td>
                     <td>
-                      {tableData[index].active == true ? (
+                      {data.subscribed ? (
                         <Badge bg="success" size={30}>
                           Subscribe
                         </Badge>

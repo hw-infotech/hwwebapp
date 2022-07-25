@@ -45,6 +45,14 @@ body {
 }
 .action_colwidth {
   width: 60px !important;
+  .form-check {
+    display: flex;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    margin-bottom: 0.125rem;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .action_titlewidth {
@@ -398,11 +406,17 @@ body {
     span {
       color: #ff6b01 !important;
     }
+    svg {
+      color: #ff6b01 !important;
+    }
   }
-  .sidebar_focus:focus {
-    color: rgb(194, 150, 68);
+  // .sidebar_focus:focus {
+  //   color: rgb(194, 150, 68);
+  // }
+  .nav-link:focus,
+  .nav-link:hover {
+    color: #fff;
   }
-
   ul#menu {
     width: 100%;
     gap: 6px;
@@ -446,7 +460,7 @@ body {
     cursor: pointer;
 
     &:hover {
-      color: #ff912a;
+      color: #ff6b01;
     }
   }
   .sidebar_list {

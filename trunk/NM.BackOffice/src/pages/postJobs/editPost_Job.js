@@ -359,7 +359,7 @@ const Edit_postJob = (value1) => {
                 <th className="action_colwidth">Action</th>
                 <th className="action_colwidth">Status</th>
                 <th
-                  className="action_titlewidth"
+                  className=""
                   onClick={() => {
                     setTitle(!title);
                     {
