@@ -139,7 +139,7 @@ const Home = () => {
           <Row>
             <Col md={7} sm={12} lg={6} xl={4}>
               <div className="card1">
-                <div className="card-graphheader" >
+                <div className="card-graphheader">
                   <div className="chart-card">
                     <div className="userDetail1">
                       <button

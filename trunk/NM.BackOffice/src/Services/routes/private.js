@@ -23,9 +23,7 @@ const PrivateRoute = () => {
           );
         } else {
           console.log("else");
-          return (
-            <Route path={`/`} exact element={<Admin_Login />} />
-          );
+          return <Route path={`/`} exact element={<Admin_Login />} />;
         }
       })}
     </Routes>

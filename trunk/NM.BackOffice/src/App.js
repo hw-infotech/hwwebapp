@@ -9,11 +9,19 @@ import Admin_Login from "./pages/authnication/admin_login";
 import Todo from "./components/todo";
 import NotFound from "./components/Not-found";
 import Home from "./pages/Home";
+import Protected from "./Services/routes/protected";
 
 const localUser = JSON.parse(localStorage.getItem("nestor.user"));
 
 function App() {
   const path1 = useLocation();
+  const [isLoggedIn, setisLoggedIn] = useState(null);
+  const logIn = () => {
+    setisLoggedIn(true);
+  };
+  const logOut = () => {
+    setisLoggedIn(false);
+  };
   const [sidebarShow, setSidebarShow] = useState(true);
   const [found, setFound] = useState(false);
 
@@ -33,38 +41,44 @@ function App() {
   }, [a]);
   return (
     <>
-      {localUser ? (
-        <>
-          {
-            <div className="dashboard" hidden={found}>
-              <Sidebar sidebarShow={sidebarShow} />
-              <div className="mainDashboard">
-                <Header
-                  setSidebarShow={setSidebarShow}
-                  sidebarShow={sidebarShow}
-                />
-                <div className="content-Wrapper">
-                  <Routes>
-                    {routes?.map((_) => {
-                      if (path1.pathname === _.path) {
-                        return <Route {..._} />;
+      {
+        <div className="dashboard" hidden={found}>
+          {localUser ? <Sidebar sidebarShow={sidebarShow} /> : ""}
+          <div className="mainDashboard">
+            {localUser ? (
+              <Header
+                setSidebarShow={setSidebarShow}
+                sidebarShow={sidebarShow}
+              />
+            ) : (
+              ""
+            )}
+            <div className="content-Wrapper">
+              <Routes>
+                {routes?.map((route, index) => {
+                  return (
+                    <Route
+                      key={index}
+                      path={route.path}
+                      element={
+                        <Protected>
+                          <route.element />
+                        </Protected>
                       }
-                    })}
-                  </Routes>
-                </div>
-                <Footer sidebarShow={sidebarShow} />
-              </div>
+                    />
+                  );
+                })}
+                // <Route path="/admin-login" element={<Admin_Login />} exact />
+                <Route path="*" element={<Admin_Login />} exact />
+              </Routes>
             </div>
-          }
-          {found && (
-            <Routes>
-              <Route path="*" element={<NotFound />} exact />
-            </Routes>
-          )}
-        </>
-      ) : (
+            <Footer sidebarShow={sidebarShow} />
+          </div>
+        </div>
+      }
+      {found && (
         <Routes>
-          <Route path="/" element={<Admin_Login />} exact />
+          <Route path="*" element={<NotFound />} exact />
         </Routes>
       )}
     </>

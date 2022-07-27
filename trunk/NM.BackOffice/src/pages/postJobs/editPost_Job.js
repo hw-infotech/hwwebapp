@@ -44,15 +44,10 @@ const Edit_postJob = (value1) => {
   }, []);
   const [openmodal, setmodal] = useState(false);
   const [indexx, setIndex] = useState();
-  const [jobpost, setjobpost] = useState();
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
   const [disable, setSdisabled] = useState(false);
-  const [requirment2, setRequirments] = useState([]);
   const [row, setRow] = useState(10);
-  const [state, setState] = useState({
-    row_value: "",
-  });
   const [showPerPage, setShowPerPage] = useState();
   const [next, setNext] = useState();
   const [start, setStart] = useState();
@@ -145,7 +140,6 @@ const Edit_postJob = (value1) => {
   }, []);
 
   const [tableData, setTableData] = useState(selector);
-  const [filterrow, setFilterrow] = useState(tableData);
 
   function sortt() {
     const response = selector.sort((a, b) =>
@@ -213,37 +207,34 @@ const Edit_postJob = (value1) => {
             <h4>Job</h4>
           </div>
           <div className="right_panle_container">
-           
-                <Button
-                data-tip
-                data-for="job-filter"
-              
-                  variant=""
-                  className="btn-sm remove_button_padding"
-                  onClick={() => setSdisabled((p) => !p)}
-                >
-                  {" "}
-                  <BsFilter size={24} color="#ff6b01" />
-                </Button>
-                <ReactTooltip id="job-filter" place="top" effect="solid">
-                Filter
-              </ReactTooltip>
-            
-                <Button
-                  variant=""
-                  data-tip
-                  data-for="plusIcon"
-                  className="btn-sm remove_button_padding"
-                  onClick={() => {
-                    navigate("/add-job");
-                  }}
-                >
-                
-                  <AiOutlinePlusCircle size={24} color="#ff6b01" />
-                </Button>
-                <ReactTooltip id="plusIcon" place="top" effect="solid">
-                Add
-              </ReactTooltip>
+            <Button
+              data-tip
+              data-for="job-filter"
+              variant=""
+              className="btn-sm remove_button_padding"
+              onClick={() => setSdisabled((p) => !p)}
+            >
+              {" "}
+              <BsFilter size={24} color="#ff6b01" />
+            </Button>
+            <ReactTooltip id="job-filter" place="top" effect="solid">
+              Filter
+            </ReactTooltip>
+
+            <Button
+              variant=""
+              data-tip
+              data-for="plusIcon"
+              className="btn-sm remove_button_padding"
+              onClick={() => {
+                navigate("/add-job");
+              }}
+            >
+              <AiOutlinePlusCircle size={24} color="#ff6b01" />
+            </Button>
+            <ReactTooltip id="plusIcon" place="top" effect="solid">
+              Add
+            </ReactTooltip>
           </div>
         </div>
         <div className="gapbetween pt-1">

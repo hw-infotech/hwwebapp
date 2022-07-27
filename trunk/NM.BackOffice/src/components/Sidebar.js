@@ -68,7 +68,6 @@ const Sidebar = ({ sidebarShow }) => {
         <ul className="nav nav-pills sidebar-ul align-items-center" id="menu">
           <li className={`nav-item sidebar_hover`}>
             <a
-          
               className={`nav-link sidebar_hover align-middle px-0 text-color-white gap-icon-text  ${
                 localStorage.getItem("className") == "Dashboard" && classname
               }`}
@@ -86,7 +85,6 @@ const Sidebar = ({ sidebarShow }) => {
           </li>
           <li className="sidebar_list">
             <a
-           
               href="#submenu2"
               data-bs-toggle="collapse"
               className={

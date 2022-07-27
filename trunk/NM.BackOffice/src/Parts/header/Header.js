@@ -9,6 +9,8 @@ import { GoThreeBars } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 
 const Header = ({ title, sidebarShow, setSidebarShow }) => {
+  var a=null;
+  console.log(a)
   const [userName, setUsername] = useState();
   const [state, setState] = useState("Ganesh");
   let selector = useSelector((state) => state);
@@ -62,8 +64,8 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                 className="dropdown-item12"
                 onClick={() => {
                   localStorage.removeItem("nestor.user");
-                  history("/", { replace: true });
-                  window.location.reload();
+                 // history("/", { replace: true });
+                  window.location.href='/admin-login';
                 }}
               >
                 <span>
