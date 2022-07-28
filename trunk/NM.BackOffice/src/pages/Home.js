@@ -397,7 +397,7 @@ const Home = () => {
                     </thead>
                     <tbody>
                       <tr>
-                       
+                          
                       </tr>
                     </tbody>
                   </Table>

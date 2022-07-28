@@ -40,25 +40,24 @@ const Job_Preview = (values, state) => {
             </div>
             <ul className="job__list">
               {values?.values?.responsibility?.map((data, index) => (
-                <li className=""> {data?.value}</li>
+                <li> {data?.value}</li>
               ))}
             </ul>
             <div className="job_heading">
-              <span className="">Requirement</span>
+              <span>Requirement</span>
             </div>
             <ul className="job__list">
               {values.values?.requirment?.map((data, index) => (
-                <li className=""> {data?.value}</li>
+                <li> {data?.value}</li>
               ))}
             </ul>
 
             <div className="job_heading">
-              <span className="">Nestormind Full Time Employee Benefits</span>
+              <span>Nestormind Full Time Employee Benefits</span>
             </div>
-
             <ul className="job__list">
-              {values.values?.benefits?.map((data, index) => (
-                <li className=""> {data?.value}</li>
+              {values.values?.benefits?.map((data1, index) => (
+                <li >{data1?.value}</li>
               ))}
             </ul>
 
@@ -66,28 +65,19 @@ const Job_Preview = (values, state) => {
               <ul className="job_description_level_list">
                 <li className="jobes_inner_li">
                   <h6 className="job_description_level">Seniority level</h6>
-                  <span className="">
-                    {values.values?.level}
-                  </span>
+                  <span className="">{values.values?.level}</span>
                 </li>
                 <li className="jobes_inner_li">
                   <h6 className="job_description_level">Employment type</h6>
-                  <span className="">
-                    {values.values?.type}
-                  </span>
+                  <span className="">{values.values?.type}</span>
                 </li>
                 <li className="jobes_inner_li">
                   <h6 className="job_description_level">Job function</h6>
-                  <span className="">
-                    {" "}
-                    {values.values?.functions}
-                  </span>
+                  <span className=""> {values.values?.functions}</span>
                 </li>
                 <li className="jobes_inner_li">
                   <h6 className="job_description_level">Industries</h6>
-                  <span className="">
-                    {values.values?.industry}
-                  </span>
+                  <span className="">{values.values?.industry}</span>
                 </li>
               </ul>
             </div>

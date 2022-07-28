@@ -16,21 +16,21 @@ const Step3 = ({ setGoSteps, state, setState, onhandlechange, handleChange, valu
     return <div className="m-auto w-100">
 
         <Form.Group>
-            <Input as='select' placeholder="Level" value={values.seneritylevel} className="form-control" name='level'
+            <Input as='select' placeholder="Level" value={values.seneritylevel} className="form-control label-size" name='level'
                 onChange={handleChange} label={"Level"} id="seneritylevel" options={[
                     { value: "Senior", label: "Senior" },
                     { value: "Junior", label: "Junior" },
 
                 ]} />
 
-            <Input as='select' className="form-control" onChange={handleChange} placeholder="Type" value={values.employement} name='type' label={"Type"} id="name" options={[
+            <Input as='select' className="form-control label-size" onChange={handleChange} placeholder="Type" value={values.employement} name='type' label={"Type"} id="name" options={[
                 { value: "Full time" },
                 { value: "Part time" },
 
             ]} ></Input>
         </Form.Group>
         <Form.Group>
-            <Input type='text' className="form-control" onChange={handleChange} placeholder='Industries' name='industry' value={values.industries} label={"Industries"} id="name" />
+            <Input type='text' className="form-control label-size" onChange={handleChange} placeholder='Industries' name='industry' value={values.industries} label={"Industries"} id="name" />
         </Form.Group>
         <div className="d-flex justify-content-end gap-2">
             <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(1)}>Back</Button>
