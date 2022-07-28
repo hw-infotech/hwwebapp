@@ -11,7 +11,8 @@ const CreatableSelectField = ({
     inputValue: "",
     value: formState[name],
   });
-  console.log(state.value);
+  const [state1, setState1] = useState([]);
+  //console.log(state.value);
   const handleChange = (value) => {
     setState({ ...state, value });
   };
@@ -23,11 +24,15 @@ const CreatableSelectField = ({
   useEffect(() => {
     setFormState({ ...formState, [name]: [...state.value] });
   }, [state]);
-  console.log("this is the form state", state);
+
+  useEffect(() => {
+    setState({ ...state, value: [...state.value, state1.value] });
+  }, [state1]);
+
+  //console.log("this is the form state", state);
   const components = {
     DropdownIndicator: null,
   };
-
   const handleKeyDown = (event) => {
     const { inputValue, value } = state;
     if (!inputValue) return;
@@ -38,14 +43,22 @@ const CreatableSelectField = ({
           inputValue: "",
           value: [...state.value, createOption(inputValue)],
         });
-        // setFormState({ ...formState, [name]: [...state.value] })
         event.preventDefault();
     }
   };
-  const createOption = (label) => ({
-    label,
-    value: label,
-  });
+  const handleBlur = (e) => {
+    const { inputValue, value } = state;
+    if (!inputValue) return;
+    setState1({ value: createOption(inputValue) });
+    e.preventDefault();
+  };
+
+  const createOption = (label) => {
+    return {
+      label,
+      value: label,
+    };
+  };
 
   return (
     <div>
@@ -59,11 +72,12 @@ const CreatableSelectField = ({
         onChange={handleChange}
         onInputChange={handleInputChange}
         onKeyDown={handleKeyDown}
+        onBlur={handleBlur}
+        // onFocus={handleBlur}
         placeholder={placeholder}
         value={state.value}
       />
     </div>
   );
 };
-
 export default CreatableSelectField;

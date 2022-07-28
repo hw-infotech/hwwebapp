@@ -39,15 +39,15 @@ const Sidebar = ({ sidebarShow }) => {
         sidebarShow
           ? {
               transform: "translate3d(0%, 0px,0px)",
-              transition: "all 0.3s ease-in-out",
-              maxWidth: "250px",
-              minWidth: "250px",
+              transition: "all 0.4s ease-in-out",
+              marginLeft:"0px"
             }
           : {
               transform: "translate3d(-100%, 0px, 0px)",
-              transition: "all 0.3s ease-in-out",
-              minWidth: "0px",
-              maxWidth: "0px",
+              transition: "all 0.4s ease-in-out",
+              marginLeft:"-250px",
+
+              
             }
       }
     >
@@ -136,7 +136,7 @@ const Sidebar = ({ sidebarShow }) => {
               onClick={(e) => {
                 localStorage.setItem("className", "subscirber");
                 setLocalStorage("submenu8_1");
-                return navigtion("/subscribers-unsubscribers");
+                return navigtion("/subscribe-unsubscribe");
               }}
               href="#submenu8"
               data-bs-toggle="collapse"
@@ -171,7 +171,7 @@ const Sidebar = ({ sidebarShow }) => {
                   onClick={(e) => {
                     localStorage.setItem("className", "subscirber");
                     handleAnchorClick(e);
-                    navigtion("/subscribers-unsubscribers");
+                    navigtion("/subscribe-unsubscribe");
                   }}
                 >
                   <span className="d-none d-sm-inline navbar-submenu ">

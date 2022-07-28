@@ -99,6 +99,7 @@ body {
   height: calc(100vh - 115px);
   overflow: auto;
   background: #817a7a08;
+  //transition: "all 0.1s ease-in-out" !important;
   // margin-bottom: 20px;
 }
 
@@ -237,8 +238,6 @@ body {
       color: #808080a3;
       word-wrap: break-word;
       font-size: 13px !important;
-      .font_weight700 {
-      }
     }
   }
   .card-footer1 {
@@ -438,8 +437,7 @@ body {
     gap: 10px;
     border-bottom: 1px solid #ffffff17;
     cursor: pointer;
-    .sidebar-ul {
-    }
+
     .Sidebar-logo {
       width: 46px;
       height: 47px;
@@ -595,8 +593,6 @@ body {
   width: 25%;
 }
 .modal-dialog {
-  .modal-content {
-  }
   .modal-header {
     background-color: #eb7823;
     color: white;
@@ -871,12 +867,8 @@ body {
       }
     }
 
-    .job_icon {
-    }
     .job_description {
       padding-left: 30px;
-      .job_description_content {
-      }
     }
     .job_heading {
       font-size: 16px;
@@ -904,8 +896,9 @@ body {
 
       .jobes_inner_li {
         .job_description_level {
-          color: black !important;
+          color: gray !important;
           font-size: 16px;
+          font-weight: 300;
         }
         .level_content {
           font-size: 16px;
@@ -1155,9 +1148,6 @@ body {
 
 //-------------IMAGE UPLOADER--------------//
 .dropzone {
-  .innerContainer {
-  }
-
   .uploadButton {
     display: flex;
     width: 40%;
@@ -1272,10 +1262,6 @@ body {
 
     .job_description {
       padding-left: 30px;
-      .job_description_content {
-      }
-    }
-    .job_icon {
     }
 
     .job_heading {
@@ -1304,7 +1290,7 @@ body {
 
       .jobes_inner_li {
         .job_description_level {
-          color: grey;
+          color: grey !important;
           font-size: 16px;
           font-weight: 300;
         }
@@ -1381,7 +1367,7 @@ body {
 .main-content-holder {
   .main-Profile-card {
     box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
-    padding: 1.5rem;
+    padding: 16px;
     width: 100%;
 
     .buttonContainer {
@@ -1488,7 +1474,7 @@ body {
     .main-Profile-card1 {
       margin-top: 20px;
       box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
-      padding: 1rem;
+      padding: 16px;
 
       .prfile-card11 {
         width: 100%;
@@ -1500,12 +1486,13 @@ body {
           justify-content: space-between;
           width: 100%;
           margin-bottom: 30px;
-          padding: 10px;
+          padding: 0px;
           border-bottom: 1px solid #8080803b;
 
           .changeable_btn {
             display: flex;
             gap: 10px;
+            margin-bottom: 5px;
           }
         }
       }
@@ -1647,15 +1634,10 @@ img.underCont {
     justify-content: end;
   }
 
-  .job_icon {
-  }
   .job_description {
     padding-left: 30px;
-    .job_description_content {
-    }
   }
-  .content-box {
-  }
+
   .job_heading {
     font-size: 16px;
     font-weight: 700;
@@ -1680,7 +1662,7 @@ img.underCont {
 
     .jobes_inner_li {
       .job_description_level {
-        color: grey;
+        color: grey !important;
         font-size: 16px;
         font-weight: 300;
       }

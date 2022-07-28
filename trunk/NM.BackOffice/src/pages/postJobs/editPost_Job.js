@@ -41,103 +41,35 @@ import ReactTooltip from "react-tooltip";
 const Edit_postJob = (value1) => {
   useEffect(() => {
     document.title = "Job";
+    dispatch(getAllEnquries());
   }, []);
+
+  const selector = useSelector((state) => state.data.apidata?.allEnquries);
   const [openmodal, setmodal] = useState(false);
   const [indexx, setIndex] = useState();
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
   const [disable, setSdisabled] = useState(false);
-  const [row, setRow] = useState(10);
   const [showPerPage, setShowPerPage] = useState();
-  const [next, setNext] = useState();
   const [start, setStart] = useState();
   const [pagination1, setpagination] = useState({
     start: start,
     end: showPerPage,
   });
   const navigate = useNavigate();
-  const [paginaion2, setpagination2] = useState({
-    start: 0,
-    end: showPerPage,
-  });
   const onPageChange = (start, end) => {
     setpagination({ start: start, end: end });
   };
+
   useEffect(() => {
-    //setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
     setpagination({ start: start, end: showPerPage });
   }, [pagination1]);
-  const Chnage = (e) => {
-    const { name, value } = e.target;
-    setRow(value);
-  };
-  const handlechange1 = (event, value) => {
-    var value1;
-    setNext(value);
-    if (next <= value) {
-      value1 = row * value;
-      setShowPerPage(value1);
-      setStart(value1 - row);
-      setpagination({ start: start, end: showPerPage });
-    } else {
-      setStart(start - row);
-      setShowPerPage(showPerPage - row);
-      setpagination({ start: start - row, end: showPerPage - row });
-    }
-  };
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
   const route = [
     { name: "Dashboard", route: "/" },
     { name: "Job Management", route: "" },
     { name: "Job", route: "" },
   ];
-  const [formState, setFormState] = useState();
-  const records = [
-    {
-      jobtitle: "UI/UX",
-      description: "We are looking for an experienced Strategy Manager. ",
-      functions: "Supervise and manage department team ",
-      responsibility: [],
-      benfits: [],
-      requirment: [],
-      industry: "",
-      level: "Junior",
-      type: "Part time",
-      active: "deactive",
-    },
-    {
-      jobtitle: "Project Manager",
-      description: "Develop methods for motivating and inspiring stakeholders.",
-      functions: "Provide support and training to team members",
-      responsibility: [],
-      benfits: [],
-      requirment: [],
-      industry: "",
-      level: "Senior",
-      type: "Full time",
-      active: "deactive",
-    },
-    {
-      Jobtitle: "Project Manager",
-      description: "Develop methods for motivating and inspiring stakeholders.",
-      functions: "Report to directors and executive staff",
-      responsibility: [],
-      benfits: [],
-      requirment: [],
-      industry: "",
-      level: "Senior",
-      type: "Full time",
-      active: "active",
-    },
-  ];
-  const selector = useSelector((state) => state.data.apidata?.allEnquries);
-  useEffect(() => {
-    dispatch(getAllEnquries());
-    console.log(tableData);
-    // setTableData(old=>[...old,selector])
-  }, []);
 
   const [tableData, setTableData] = useState(selector);
 
@@ -149,9 +81,9 @@ const Edit_postJob = (value1) => {
         ? -1
         : 0
     );
-
     setTableData([...response]);
   }
+
   function sortt1() {
     const response = selector.sort((a, b) =>
       a.jobtitle.toLowerCase() < b.jobtitle.toLowerCase()
@@ -160,26 +92,22 @@ const Edit_postJob = (value1) => {
         ? -1
         : 0
     );
-
     setTableData([...response]);
   }
+
   const [title, setTitle] = useState(false);
+
   const requestSearch = (searchedVal) => {
     const filteredRows = selector.filter((row) => {
       return row.jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
     });
     setTableData(filteredRows);
   };
-  const onhandlechange = (e) => {
-    //const { name, value } = e.target
-    // setState({ ...state, [name]: value })
-    //console.log(state);
-  };
+
   const dispatch = useDispatch();
+
   const display = () => {
     setShowalert(true);
-    //const result = await confirm(rowtext.text);
-    // console.log(rowText);
     if (deleteObj.rowStatus) {
       setTableData((oldState) => {
         oldState[deleteObj.index].active = "active";
@@ -193,10 +121,15 @@ const Edit_postJob = (value1) => {
       });
     }
   };
+
   const [deleteObj, setDeleteObj] = useState({
     index: 0,
     rowStatus: false,
   });
+
+  const onhandlechange = (e) => {
+    const { name, value } = e.target;
+  };
 
   return (
     <div className="joblist-main-box">
@@ -214,7 +147,6 @@ const Edit_postJob = (value1) => {
               className="btn-sm remove_button_padding"
               onClick={() => setSdisabled((p) => !p)}
             >
-              {" "}
               <BsFilter size={24} color="#ff6b01" />
             </Button>
             <ReactTooltip id="job-filter" place="top" effect="solid">
@@ -240,18 +172,16 @@ const Edit_postJob = (value1) => {
         <div className="gapbetween pt-1">
           <Collapse in={disable}>
             <div>
-              {
-                <Form.Select
-                  aria-label="Default select example"
-                  className="fs_13"
-                  defaultValue={"status"}
-                >
-                  <option hidden>Status </option>
-                  <option value="1">All</option>
-                  <option value="1">Subscribe</option>
-                  <option value="1">Unsubscribe</option>
-                </Form.Select>
-              }
+              <Form.Select
+                aria-label="Default select example"
+                className="fs_13"
+                defaultValue={"status"}
+              >
+                <option hidden>Status </option>
+                <option value="1">All</option>
+                <option value="1">Subscribe</option>
+                <option value="1">Unsubscribe</option>
+              </Form.Select>
             </div>
           </Collapse>
           <Collapse in={disable}>
@@ -266,9 +196,6 @@ const Edit_postJob = (value1) => {
                     requestSearch(e.target.value);
                   }}
                 />
-                {/*<Button variant="outline-secondary" id="button-addon2">
-                                                <BsSearch />
-                                            </Button>*/}
               </InputGroup>
             </div>
           </Collapse>
@@ -276,7 +203,9 @@ const Edit_postJob = (value1) => {
       </div>
       <Modal
         show={openmodal}
-        onHide={handleClose}
+        onHide={() => {
+          setmodal(false);
+        }}
         backdrop="static"
         keyboard={false}
         className="fs-13"
@@ -313,7 +242,9 @@ const Edit_postJob = (value1) => {
       {/*<h4>List Number of Job Posts</h4>*/}
       <Modal
         show={showalert}
-        onHide={handleClose}
+        onHide={() => {
+          setShowalert(false);
+        }}
         backdrop="static"
         keyboard={false}
         className="fs-13"
@@ -362,7 +293,6 @@ const Edit_postJob = (value1) => {
                     }
                   }}
                 >
-                  {" "}
                   Title {title ? <BsArrowDown /> : <BsArrowUp />}
                 </th>
                 <th>Description</th>
@@ -390,8 +320,7 @@ const Edit_postJob = (value1) => {
                           aria-expanded="false"
                         >
                           <span className="actionIcon">
-                            {" "}
-                            <i className="bi bi-three-dots-vertical"></i>{" "}
+                            <i className="bi bi-three-dots-vertical"></i>
                           </span>
                         </button>
                         <ul
@@ -429,7 +358,6 @@ const Edit_postJob = (value1) => {
                                   data-bs-toggle="modal"
                                   data-bs-target="#viewbtn"
                                 >
-                                  {" "}
                                   <i className="bi bi-eye"></i>
                                 </span>
                                 <button
@@ -453,7 +381,6 @@ const Edit_postJob = (value1) => {
                                 data-bs-toggle="modal"
                                 data-bs-target="#deletebtn"
                               >
-                                {" "}
                                 <i className="bi bi-trash3-fill"></i>
                               </span>
                               <button
@@ -472,39 +399,32 @@ const Edit_postJob = (value1) => {
                       </div>
                     </td>
                     <td>
-                      <Form>
-                        <Form.Check
-                          type="switch"
-                          id="custom-switch1"
-                          checked={data.active === "active" ? true : false}
-                          label=""
-                          onChange={(e) => {
-                            setShowalert(true);
-                            setRowtext(
-                              e.target.checked
-                                ? {
-                                    id: 1,
-                                    text: "Are you sure to  show the job ?",
-                                  }
-                                : {
-                                    id: 0,
-                                    text: "Are you sure to hide the job ?",
-                                  }
-                            );
-                            if (data.active === "active") {
-                              setDeleteObj({
-                                index,
-                                rowStatus: e.target.checked,
-                              });
-                            } else {
-                              setDeleteObj({
-                                index,
-                                rowStatus: e.target.checked,
-                              });
-                            }
-                          }}
-                        />
-                      </Form>
+                      <Form.Check
+                        type="switch"
+                        id="custom-switch1"
+                        checked={data.active == "active" ? true : false}
+                        label=""
+                        onChange={(e) => {
+                          const { value, name, checked } = e.target;
+                          setShowalert(true);
+                          setRowtext((oldState) => {
+                            const newState = checked
+                              ? {
+                                  id: 1,
+                                  text: "Are you sure to  show the job ?",
+                                }
+                              : {
+                                  id: 0,
+                                  text: "Are you sure to hide the job ?",
+                                };
+                            return newState;
+                          });
+                          setDeleteObj({
+                            index,
+                            rowStatus: checked,
+                          });
+                        }}
+                      />
                     </td>
                     <td>{data?.Jobtitle || data?.jobtitle}</td>
                     <td>
@@ -513,122 +433,26 @@ const Edit_postJob = (value1) => {
                     <td>{data?.functions && subString(data?.functions, 10)}</td>
                     <td>{data?.requirment[0].value}</td>
                     <td>
-                      {" "}
                       {data?.benefits[0].value &&
                         subString(data.benefits[0].value, 10)}
                     </td>
                     <td>
-                      {" "}
-                      {
-                        data?.responsibility[0].value &&
-                          subString(
-                            data.responsibility[0].value,
-                            10
-                          ) /*data?.responsibility?.map((data1) => <ul>
-                                                <li>{data1?.value&& subString(data1.value, 10)}</li>
-                                                </ul>)*/
-                      }{" "}
+                      {data?.responsibility[0].value &&
+                        subString(data.responsibility[0].value, 10)}
                     </td>
                     <td>{data?.industry}</td>
                     <td>{data?.level}</td>
                     <td>{data?.type}</td>
-
                     <td>30</td>
                   </tr>
                 ))}
             </tbody>
           </Table>
-          {tableData.length === 0 && (
+          {tableData.length == 0 && (
             <div className="table_no_records">No Record Found</div>
           )}
         </div>
       </div>
-
-      {/*<Modal show={show} onHide={handleClose} size="lg">
-                    <Modal.Header closeButton>
-                        <Modal.Title>Edit Post Job</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <div className="content_center">
-                            <div className="topPadding-10 p-3 w-100">
-                                <Formik initialValues={initialValues} validationSchema={validationschemeaa}>
-                                    {() => (
-                                        <form onSubmit={(e) => {
-                                            e.preventDefault()
-                                        }}>
-                                            <div className="">
-                                                <div className="content_center">
-                                                    <div className="add_new_post_padding_between_field w-100">
-                                                        <Form.Group className="mb-3">
-                                                            <Input as='select' name='jobtitle' onChange={onhandlechange} label={"Job title"} id="jobtitle" className="form-control" options={[
-                                                                { value: "..." },
-                                                                { value: "UI/UX" },
-                                                                { value: "Project Manager" },
-                                                                { value: "Web Development" },
-                                                            ]} >
-                                                            </Input>
-                                                        </Form.Group>
-                                                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
-                                                            <Form.Label>Enter Descritption</Form.Label>
-                                                            <Form.Control as="textarea"  name="jobdescription" value={state.jobdescription} onChange={onhandlechange} />
-                                                        </Form.Group>
-                                                        <Form.Group>
-                                                            <Input type='text' placeholder='Job Function' className="form-control" name='jobfunction' label={"Job Function"} id="name" onChange={onhandlechange} />
-                                                        </Form.Group>
-                                                        <Form.Group>
-                                                            <Form.Label>Responsibility</Form.Label>
-                                                            <CreatableSelectField placeholder="Type Reponsibility and press tab button..." onChange={onhandlechange} formState={formState} setFormState={setFormState}
-                                                                label={"type the text and press tab button..."} />
-                                                        </Form.Group>
-                                                    </div>
-                                                    <div className="add_new_post_padding_between_field w-100" >
-                                                        <Form.Group className="">
-                                                            <Form.Label>Requirments</Form.Label>
-                                                            <div >
-                                                                <CreatableSelectField placeholder="Type requirenments and press tab button..." formState={formState} setFormState={setFormState} onChange={onhandlechange} />
-                                                            </div>
-                                                        </Form.Group>
-                                                        <Form.Group>
-                                                            <Input type='text' placeholder='Industry' className="form-control" name='industry' label={"Industry"} id="name" onChange={onhandlechange} />
-                                                        </Form.Group>
-                                                        <Form.Group>
-                                                            <Form.Label>Benefits</Form.Label>
-                                                            <div>
-                                                                <CreatableSelectField placeholder="Type benefits and press tab button..." formState={formState} setFormState={setFormState} onChange={onhandlechange} />
-                                                            </div>
-                                                        </Form.Group>
-                                                        <Form.Group>
-                                                            <Input as='select' placeholder="Senority Level" className="form-control" name='seneritylevel'
-                                                                onChange={onhandlechange} label={"Senority Level"} id="seneritylevel" options={[
-                                                                    { value: "", label: "" },
-                                                                    { value: "Senior", label: "Senior" },
-                                                                    { value: "Junior", label: "Junior" },
-
-                                                                ]} ></Input>
-                                                        </Form.Group>
-                                                        <Form.Group>
-                                                            <Input as='select' className="form-control" onChange={onhandlechange} placeholder="Employement type" name='employement' label={"Employement type"} id="name" options={[
-                                                                { value: "...." },
-                                                                { value: "Full time" },
-                                                                { value: "Part time" },
-
-                                                            ]} ></Input>
-                                                        </Form.Group>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    )}
-                                </Formik>
-                            </div>
-                        </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <div className="pt-3 gallery_add_button" style={{ display: "flex", justifyContent: "end" }}>
-                            <Button type="button" className="gallery_add_button">Submit</Button>
-                        </div>
-                    </Modal.Footer>
-                                                        </Modal>*/}
 
       {tableData?.length > 0 ? (
         <CustomPagination

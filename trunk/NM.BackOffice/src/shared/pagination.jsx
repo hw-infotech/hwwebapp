@@ -3,8 +3,7 @@ import { Form } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
 
 
-const CustomPagination = ({ total, start, setStart }) => {
-    const [currentItems, setCurrentItems] = useState(null);
+const CustomPagination = ({ total, start, setStart }) => {;
     const [showPerPage, setShowPerPage] = useState(10)
     const [pageCount, setPageCount] = useState(0);
     // Here we use item offsets; we could also use page offsets
@@ -22,6 +21,7 @@ const CustomPagination = ({ total, start, setStart }) => {
             end: endOffset
         })
     }, [itemOffset, showPerPage]);
+    
     const [counter, setCounter] = useState(1);
     const [onChangeButton, setOnChangeButton] = useState(
         Math.ceil(total / showPerPage)

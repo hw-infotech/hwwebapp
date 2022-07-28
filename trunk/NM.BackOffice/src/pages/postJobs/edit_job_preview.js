@@ -71,24 +71,24 @@ const Edit_Job_Preview = (values, state) => {
               <div className="main_information_list">
                 <ul className="job_description_level_list">
                   <li className="jobes_inner_li">
-                    <h3 className="job_description_level">Seniority level</h3>
+                    <h6 className="job_description_level">Seniority level</h6>
                     <span className="level_contentl">
                       {values.state?.level}
                     </span>
                   </li>
                   <li className="jobes_inner_li">
-                    <h3 className="job_description_level">Employment type</h3>
+                    <h6 className="job_description_level">Employment type</h6>
                     <span className="level_content">{values.state?.type}</span>
                   </li>
                   <li className="jobes_inner_li">
-                    <h3 className="job_description_level">Job function</h3>
+                    <h6 className="job_description_level">Job function</h6>
                     <span className="level_content">
                       {" "}
                       {values.state?.functions}
                     </span>
                   </li>
                   <li className="jobes_inner_li">
-                    <h3 className="job_description_level">Industries</h3>
+                    <h6 className="job_description_level">Industries</h6>
                     <span className="level_content">
                       {values.state?.industry}
                     </span>

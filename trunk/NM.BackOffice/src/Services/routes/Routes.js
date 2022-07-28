@@ -29,7 +29,7 @@ const route = [
   routes("/particularjob", Particularjob),
   routes("/all-jobs", Edit_postJob),
   routes("/success-stories", Success_Stories),
-  routes("/subscribers-unsubscribers", SubScriber),
+  routes("/subscribe-unsubscribe", SubScriber),
   routes("/Profile", Profile),
   routes("/all-Enquiry", All_Enquiry),
   routes("/edit-job", Update_Job),

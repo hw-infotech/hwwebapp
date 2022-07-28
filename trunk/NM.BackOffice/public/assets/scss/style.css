@@ -1011,8 +1011,9 @@ body {
 }
 
 .box__content .view_main_box .job_description_level_list .jobes_inner_li .job_description_level {
-  color: black !important;
+  color: gray !important;
   font-size: 16px;
+  font-weight: 300;
 }
 
 .box__content .view_main_box .job_description_level_list .jobes_inner_li .level_content {
@@ -1461,7 +1462,7 @@ body {
 }
 
 .edit-preview-box .view_main_box .job_description_level_list .jobes_inner_li .job_description_level {
-  color: grey;
+  color: grey !important;
   font-size: 16px;
   font-weight: 300;
 }
@@ -1543,7 +1544,7 @@ body {
 .main-content-holder .main-Profile-card {
   -webkit-box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
           box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
-  padding: 1.5rem;
+  padding: 16px;
   width: 100%;
 }
 
@@ -1666,7 +1667,7 @@ body {
   margin-top: 20px;
   -webkit-box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
           box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
-  padding: 1rem;
+  padding: 16px;
 }
 
 .main-content-holder .profile_form .main-Profile-card1 .prfile-card11 {
@@ -1686,7 +1687,7 @@ body {
           justify-content: space-between;
   width: 100%;
   margin-bottom: 30px;
-  padding: 10px;
+  padding: 0px;
   border-bottom: 1px solid #8080803b;
 }
 
@@ -1695,6 +1696,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  margin-bottom: 5px;
 }
 
 .main-content-holder .profile_form .main-Profile-card1 .mainform {
@@ -1890,7 +1892,7 @@ img.underCont {
 }
 
 .preview-content .job_description_level_list .jobes_inner_li .job_description_level {
-  color: grey;
+  color: grey !important;
   font-size: 16px;
   font-weight: 300;
 }

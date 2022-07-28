@@ -10,7 +10,7 @@ import {
   Tabs,
 } from "react-bootstrap";
 import BasicBreadcrumbs from "../../components/breadcumbs";
-import { AiOutlineUser } from "react-icons/ai";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { FiMail, FiUser } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
 import {
@@ -32,32 +32,8 @@ import {
 
 //export const context=createContext()
 const Profile = () => {
-  const [data, setData] = useState();
-  const [data1, getdata] = useState("");
-  const dispatch = useDispatch();
-  const [editData, setEditData] = useState({
-    name: "",
-    phone: 0,
-    email: "",
-    location: "",
-    image: "",
-    username: "",
-    profile_password: "",
-  });
-
-  useEffect(() => {
-    dispatch(GET_profile_data());
-  }, []);
-
-  const selector = useSelector((state) => state);
-  useEffect(() => {
-    getdata(selector?.data?.apidata?.profile_data);
-    //console.log("this is the profile page", data1)
-  }, [selector]);
-  //const [array,setArray]=useState([])
-  const [formErrors, setFormErrors] = useState();
-  const [valuee, setValues] = useState();
-  const [show, setShow] = useState(false);
+  const [show_password, setShowpassword] = useState(false);
+  const [showpas, setShowpas] = useState("text");
   const [state, setState] = useState({
     name: "",
     phone: "",
@@ -71,6 +47,31 @@ const Profile = () => {
     confirm: "",
     profile_password: "",
   });
+  const [data, setData] = useState();
+  const [data1, getdata] = useState("");
+  const dispatch = useDispatch();
+  const [editData, setEditData] = useState({
+    name: "",
+    phone: 0,
+    email: "",
+    location: "",
+    image: "",
+    username: "",
+    profile_password: "",
+  });
+  useEffect(() => {
+    document.title = "Profile";
+  }, []);
+  useEffect(() => {
+    dispatch(GET_profile_data());
+  }, []);
+
+  const selector = useSelector((state) => state);
+  useEffect(() => {
+    getdata(selector?.data?.apidata?.profile_data);
+    //console.log("this is the profile page", data1)
+  }, [selector]);
+
   useEffect(() => {
     setData(selector?.data?.apidata?.profile_data);
     setState(selector?.data?.apidata?.profile_data);
@@ -82,9 +83,9 @@ const Profile = () => {
   const [edit, setEdit] = useState(false);
   const history = useNavigate();
   const route = [
-    { name: "Home", route: "/" },
-    { name: "User", route: "/" },
-    { name: "Profile", route: "/" },
+    { name: "Dashboard", route: "/" },
+    { name: "User" },
+    { name: "Profile", route: "/profile" },
   ];
   const handleFormSubmit = (values) => {
     // const { name, value } = values
@@ -131,6 +132,17 @@ const Profile = () => {
     //     location: ""
     // })
     // resetForm()
+  };
+
+  const getStar = (len) => {
+    let star = [];
+
+    if (len) {
+      for (let i = 0; i < len; i++) {
+        star.push("*");
+      }
+      return star.toString().split(",");
+    }
   };
   return (
     <div className="main-content-holder">
@@ -195,12 +207,13 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div className="
-              ">
+              <div
+                className="
+              "
+              >
                 <Button
                   variant="secondary"
                   className="btn-sm position_right"
-                  
                   onClick={() => {
                     history(-1);
                   }}
@@ -247,11 +260,10 @@ const Profile = () => {
                       <div className="main-Profile-card1">
                         <div className="prfile-card11">
                           <div className="inner-profile1">
-                            <div className="">
-                              <h6>
-                                {!edit ? "Profile Details" : "Edit Profile"}
-                              </h6>
-                            </div>
+                            <span>
+                              {!edit ? "Profile Details" : "Edit Profile"}
+                            </span>
+
                             <div className="changeable_btn">
                               {!edit ? (
                                 <Button
@@ -494,8 +506,20 @@ const Profile = () => {
                             </div>
                             <div className="formData">
                               <div className="innerform">Password</div>
-                              <div className="innerform1">
-                                {data1?.profile_password}
+                              <div className="innerform1" typeof="password">
+                                {!show_password
+                                  ? getStar(data1?.profile_password?.length)
+                                  : data1?.profile_password}
+                                &nbsp; &nbsp;
+                                {!show_password ? (
+                                  <span onClick={() => setShowpassword(true)}>
+                                    <BsEyeSlash />
+                                  </span>
+                                ) : (
+                                  <span onClick={() => setShowpassword(false)}>
+                                    <BsEye />
+                                  </span>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -507,10 +531,22 @@ const Profile = () => {
                                 <Form.Group controlId="formBasicEmail">
                                   <Field
                                     className="forms_input input_error"
-                                    type="password"
+                                    type={showpas}
                                     name="oldpassword"
                                     onChange={handleChange}
-                                  />
+                                  />{" "}
+                                  &nbsp; &nbsp;
+                                  {showpas == "text" ? (
+                                    <span
+                                      onClick={() => setShowpas("password")}
+                                    >
+                                      <BsEye />
+                                    </span>
+                                  ) : (
+                                    <span onClick={() => setShowpas("text")}>
+                                      <BsEyeSlash />
+                                    </span>
+                                  )}
                                 </Form.Group>
                                 <ErrorMessage
                                   name={"oldpassword"}

@@ -38,9 +38,9 @@ const Update_Job = ({ stat }) => {
   const DataContext = createContext();
   const route = [
     { name: "Dashboard", route: "/" },
-        { name: "Job Management", route: "" },
-        { name: "Job", route: "/all-jobs" },
-        { name: "Edit Job", route: "/edit-job" },
+    { name: "Job Management", route: "" },
+    { name: "Job", route: "/all-jobs" },
+    { name: "Edit Job", route: "/edit-job" },
   ];
 
   const handlechange = (e) => {
