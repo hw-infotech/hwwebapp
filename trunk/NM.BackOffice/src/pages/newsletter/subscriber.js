@@ -37,11 +37,6 @@ import { object } from "yup";
 import * as yup from "yup";
 
 const SubScriber = () => {
-  const [disable, setSdisabled] = useState(false);
-  const [row, setRow] = useState(10);
-  const [state, setState] = useState({
-    row_value: "",
-  });
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -227,9 +222,9 @@ const SubScriber = () => {
                 <Input
                   type="text"
                   label="Title"
-                  className="form-control"
+                  className="form-control label-size"
                   name="title"
-                  placeholder=""
+                  placeholder="Enter the title"
                   onChange={handleChange}
                 />
                 {errors?.title && touched?.title ? (
@@ -242,13 +237,13 @@ const SubScriber = () => {
 
                 <Input
                   as={"textarea"}
-                  className="form-control"
-                  placeholder={""}
+                  className="form-control label-size"
+                  placeholder={"Enter the description"}
                   name="content_story"
                   onChange={handleChange}
                   id="exampleFormControlTextarea1"
                   rows={3}
-                  label={"Enter the Content"}
+                  label={"Descirption"}
                 />
                 {errors?.content_story && touched?.content_story ? (
                   <label className="text-danger label-size">
@@ -264,19 +259,18 @@ const SubScriber = () => {
         <Modal.Footer>
           <Button
             variant="secondary"
-            className=" btn-sm fs-13"
+            className=" btn-sm fs_13"
             onClick={handleClose}
           >
-            Close
+            Cancel
           </Button>
-          <Button className="btn-sm fs-13" type="submit">
+          <Button className="btn-sm fs_13" type="submit">
             Send
           </Button>
         </Modal.Footer>
       </Modal>
       {tableData.length > 0 ? (
         <CustomPagination
-          // showPerPage={showPerPage}
           start={pagination1}
           setStart={setpagination}
           total={subscribers?.length}

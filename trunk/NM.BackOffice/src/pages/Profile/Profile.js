@@ -59,10 +59,9 @@ const Profile = () => {
     username: "",
     profile_password: "",
   });
+
   useEffect(() => {
     document.title = "Profile";
-  }, []);
-  useEffect(() => {
     dispatch(GET_profile_data());
   }, []);
 
@@ -85,24 +84,9 @@ const Profile = () => {
   const route = [
     { name: "Dashboard", route: "/" },
     { name: "User" },
-    { name: "Profile", route: "/profile" },
+    { name: "My Profile", route: "/profile" },
   ];
-  const handleFormSubmit = (values) => {
-    // const { name, value } = values
-    // setState({ ...state, [name]: value })
-    state.name = values.name;
-    state.email = values.email;
-    state.location = values.location;
-    state.phone = values.phone;
-    setState({ ...state });
-    // setState({
-    //     name: "",
-    //     phone: "",
-    //     email: "",
-    //     location: ""
-    // })
-    // resetForm()
-  };
+
   const validationSchema = yup.object({
     oldpassword: yup.string().required().max(64).label("Old Password"),
     profile_password: yup.string().required().max(64).label("New Password"),
@@ -119,20 +103,6 @@ const Profile = () => {
     email: yup.string().required().max(64).label("Email"),
     location: yup.string().required(),
   });
-  const handleFormSubmit1 = (values) => {
-    // const { name, value } = values
-    // setState({ ...state, [name]: value })
-    state.User = values.User;
-    state.pass = values.pass;
-    setState1({ ...state });
-    // setState({
-    //     name: "",
-    //     phone: "",
-    //     email: "",
-    //     location: ""
-    // })
-    // resetForm()
-  };
 
   const getStar = (len) => {
     let star = [];
@@ -147,7 +117,7 @@ const Profile = () => {
   return (
     <div className="main-content-holder">
       <BasicBreadcrumbs route={route} />
-      <h4>Profile</h4>
+      <h4> My Profile</h4>
       <Row>
         <Col md={12} xl={12}>
           <div className="main-Profile-card">
@@ -212,8 +182,8 @@ const Profile = () => {
               "
               >
                 <Button
-                  variant="secondary"
-                  className="btn-sm position_right"
+                  variant=""
+                  className="prfille-back-btn btn-sm"
                   onClick={() => {
                     history(-1);
                   }}
@@ -232,7 +202,7 @@ const Profile = () => {
           onSelect={(k) => setKey(k)}
           className="mb-3  tab_border_zero"
         >
-          <Tab eventKey="Overview" title="Profle" className="">
+          <Tab eventKey="Overview" title="My Profile" className="">
             <Row>
               <Col>
                 <Formik
@@ -260,9 +230,7 @@ const Profile = () => {
                       <div className="main-Profile-card1">
                         <div className="prfile-card11">
                           <div className="inner-profile1">
-                            <span>
-                              {!edit ? "Profile Details" : "Edit Profile"}
-                            </span>
+                            <span>{!edit ? "" : "Edit Profile"}</span>
 
                             <div className="changeable_btn">
                               {!edit ? (
@@ -297,7 +265,7 @@ const Profile = () => {
                                 onClick={() => {
                                   alert("Data Update successful");
                                 }}
-                                disabled={visible}
+                                hidden={visible}
                               >
                                 Save
                               </Button>
@@ -475,7 +443,7 @@ const Profile = () => {
                               ) : (
                                 <Button
                                   variant="secondary"
-                                  className="btn-sm"
+                                  className="btn-sm "
                                   onClick={() => {
                                     setEdit((p) => !p);
                                     setVisible(true);
@@ -489,7 +457,7 @@ const Profile = () => {
                                 type="submit"
                                 className="btn-sm"
                                 onClick={() => {}}
-                                disabled={visible}
+                                hidden={visible}
                               >
                                 Save
                               </Button>

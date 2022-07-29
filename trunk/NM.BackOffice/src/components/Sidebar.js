@@ -9,9 +9,6 @@ import { RiHome2Line } from "react-icons/ri";
 import { GoQuestion } from "react-icons/go";
 
 const Sidebar = ({ sidebarShow }) => {
-  const [localData, setLoaclData] = useState(
-    JSON.parse(localStorage.getItem("activeId"))
-  );
   const [parentId, setParentId] = useState(
     JSON.parse(localStorage.getItem("activeId"))?.split("_")[0]
   );
@@ -21,9 +18,12 @@ const Sidebar = ({ sidebarShow }) => {
   const [show, setshow] = useState(false);
   const navigtion = useNavigate();
 
+  useEffect(() => {
+    setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
+  }, [JSON.parse(localStorage.getItem("activeId"))]);
+
   const setLocalStorage = (id) => {
     localStorage.setItem("activeId", JSON.stringify(id));
-    setLoaclData(JSON.parse(localStorage.getItem("activeId")));
     setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
   };
 
@@ -40,14 +40,12 @@ const Sidebar = ({ sidebarShow }) => {
           ? {
               transform: "translate3d(0%, 0px,0px)",
               transition: "all 0.4s ease-in-out",
-              marginLeft:"0px"
+              marginLeft: "0px",
             }
           : {
               transform: "translate3d(-100%, 0px, 0px)",
               transition: "all 0.4s ease-in-out",
-              marginLeft:"-250px",
-
-              
+              marginLeft: "-250px",
             }
       }
     >
@@ -80,7 +78,9 @@ const Sidebar = ({ sidebarShow }) => {
               }}
             >
               <RiHome2Line size={20} />
-              <span className="ms-1 d-none d-sm-inline ">Dashboard</span>
+              <span className="ms-1 d-none d-sm-inline sidebar_li_text  ">
+                Dashboard
+              </span>
             </a>
           </li>
           <li className="sidebar_list">
@@ -94,13 +94,15 @@ const Sidebar = ({ sidebarShow }) => {
               }
               onClick={(e) => {
                 localStorage.setItem("className", "success");
-                setLocalStorage("submenu2_1");
-                return navigtion("/success-stories");
+                // setLocalStorage("submenu2_1");
+                // return navigtion("/success-stories");
               }}
             >
               <RiGalleryLine size={20} />
               {/*<img src="./assets/images/car.png" style={{background:"white"}} width={25} height={25}/>*/}
-              <span className="ms-1 d-none d-sm-inline">Sliders/Carousels</span>
+              <span className="ms-1 d-none d-sm-inline sidebar_li_text ">
+                Sliders/Carousels
+              </span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down"></i>
               </span>
@@ -135,8 +137,8 @@ const Sidebar = ({ sidebarShow }) => {
             <a
               onClick={(e) => {
                 localStorage.setItem("className", "subscirber");
-                setLocalStorage("submenu8_1");
-                return navigtion("/subscribe-unsubscribe");
+                // setLocalStorage("submenu8_1");
+                // return navigtion("/subscribe-unsubscribe");
               }}
               href="#submenu8"
               data-bs-toggle="collapse"
@@ -192,8 +194,8 @@ const Sidebar = ({ sidebarShow }) => {
               }
               onClick={(e) => {
                 localStorage.setItem("className", "allenquiry");
-                setLocalStorage("submenu9_1");
-                return navigtion("/all-Enquiry");
+                // setLocalStorage("submenu9_1");
+                // return navigtion("/all-Enquiry");
               }}
             >
               <GoQuestion size={20} />
@@ -242,8 +244,8 @@ const Sidebar = ({ sidebarShow }) => {
               }
               onClick={(e) => {
                 localStorage.setItem("className", "joblist");
-                setLocalStorage("submenu10_1");
-                return navigtion("/all-jobs");
+                // setLocalStorage("submenu10_1");
+                // return navigtion("/all-jobs");
               }}
             >
               <BsBuilding size={20} />

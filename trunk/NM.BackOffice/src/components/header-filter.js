@@ -65,7 +65,7 @@ export const Filters = ({
               aria-label="Default select example"
               id="example-collapse-text"
             >
-              <option hidden>Select</option>
+              <option hidden>Status</option>
               <option value={"ALL"}>All</option>
               <option value="1">Active</option>
               <option value="1">Deactive</option>

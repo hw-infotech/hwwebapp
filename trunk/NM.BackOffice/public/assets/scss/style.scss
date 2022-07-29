@@ -9,6 +9,15 @@ body {
     margin-top: 40px !important;
   }
 }
+.back-buttonn {
+  background-color: #ff6b01 !important;
+  color: white !important;
+  border-color: #ff6b01 !important;
+  &:hover {
+    color: white !important;
+    background-color: #ff6b01 !important;
+  }
+}
 
 .label-size {
   font-size: 14px !important;
@@ -390,15 +399,42 @@ body {
     font-weight: 600;
   }
 }
-/////-------------- sidebar ---------------/////
+/////-------------- sidebar ---------------///////
+
+@media only screen and (min-width: 300px) and (max-width: 830px) {
+  .sidebar {
+    .sidebar_list {
+      .dropdownarrowicon {
+        visibility: hidden !important;
+      }
+    }
+
+    .sidebar_header {
+      .header_text {
+        max-height: 70px;
+        height: 100%;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-width: 960px)  {
+
+}
+
+
 .sidebar {
-  width: 250px;
-  min-width: 250px;
+  width: 100%;
+  min-width: 90px;
   max-width: 250px;
   min-height: 100vh;
   height: 100vh;
   overflow: auto;
   background-color: #212529 !important;
+  .sidebar_li_text {
+  }
   .activeMenu {
     i {
       color: #ff6b01 !important;
@@ -832,6 +868,29 @@ body {
       }
     }
   }
+  .back-buttonn {
+    background-color: #ff6b01;
+    color: white;
+    border-color: #ff6b01;
+    &:hover {
+      color: white !important;
+      background-color: #ff6b01 !important;
+    }
+  }
+  .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: gray !important;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
+    color: #ff6b01 !important ;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+  }
+
   .view_main_box {
     margin-bottom: 0px;
     .buton_positin {
@@ -998,7 +1057,7 @@ body {
   }
   .main-applied-contaier {
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     .card-header2 {
       position: relative;
       background: white;
@@ -1054,7 +1113,6 @@ body {
     width: 100%;
   }
 }
-
 /////////Applied Jobs////////////
 ///
 
@@ -1415,10 +1473,18 @@ body {
       }
 
       .prfille-back-btn {
+        background-color: #ff6b01;
+        color: white;
+        border-color: #ff6b01;
+
         width: 100%;
         float: right;
         .position_right {
           float: right;
+        }
+        &:hover {
+          color: white !important;
+          background-color: #ff6b01 !important;
         }
       }
 
@@ -1467,6 +1533,14 @@ body {
   }
 
   .profile_form {
+    .nav-link {
+      color: gray !important;
+    }
+    .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active {
+      color: #eb7823 !important ;
+    }
+
     .tab_border_zero {
       border: 0px !important;
     }

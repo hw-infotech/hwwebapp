@@ -27,8 +27,11 @@ import { subString } from "../../Services/commonFunctions";
 import { Filters } from "../../components/header-filter";
 import * as yup from "yup";
 import { tab } from "@testing-library/user-event/dist/tab";
+import Customhook from "../../components/customhook";
 
 const route = [
+   
+
   { name: "Dashboard", route: "/" },
   { name: "Sliders/Carousels", route: "/success-stories" },
   { name: "Success Stories", route: "/success-stories" },
@@ -62,7 +65,9 @@ const validationSchema = yup.object({
   image: yup.string().required().label("image"),
 });
 const Success_Stories = () => {
-  const [indexx, setIndexx] = useState();
+
+
+  const [indexx, setIndexx] = useState()
   const [upload, setUpload] = useState();
   const [img, setImge] = useState();
   const [open, setOpen] = useState(false);
@@ -194,8 +199,11 @@ const Success_Stories = () => {
   return (
     <>
       <div className="Main-story-box">
+
         <title>Success_Stories</title>
+
         {<BasicBreadcrumbs route={route} />}
+      
         <Filters
           placeholder={placeholder}
           requestSearch={requestSearch}
@@ -456,9 +464,9 @@ const Success_Stories = () => {
                         <Input
                           type="text"
                           label="Title"
-                          className="form-control"
+                          className="form-control label-size"
                           name="title"
-                          placeholder=""
+                          placeholder="Enter the title"
                           onChange={handleChange}
                           id="title"
                           value={values.title}
@@ -474,8 +482,9 @@ const Success_Stories = () => {
                         )}
                         <Input
                           as={"textarea"}
-                          className="form-control"
+                          className="form-control label-size"
                           name="content"
+                          placeholder={"Enter the Description"}
                           id="exampleFormControlTextarea1"
                           rows={3}
                           label={"Description"}
@@ -570,7 +579,7 @@ const Success_Stories = () => {
                     className="btn-sm fs_13"
                     onClick={handleClose}
                   >
-                    Close
+                    Cancel
                   </Button>
 
                   {edit ? (

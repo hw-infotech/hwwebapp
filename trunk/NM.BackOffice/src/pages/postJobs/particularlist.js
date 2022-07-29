@@ -138,19 +138,15 @@ const Particularjob = () => {
             </div>
             <div className="right_panle_container">
               <Button
-                data-tip
-                data-for="filterIcon"
                 variant=""
-                className="btn-sm remove_button_padding"
+                className="back-buttonn btn-sm "
                 onClick={() => {
                   nevigate(-1);
                 }}
               >
-                <FiArrowLeftCircle size={21} color="#ff6b01" />
+              Back
               </Button>
-              <ReactTooltip id="filterIcon" place="top" effect="solid">
-                Back
-              </ReactTooltip>
+             
             </div>
           </div>
         </div>
@@ -337,41 +333,6 @@ const Particularjob = () => {
           </Tab>
           <Tab eventKey="Aplied" title=" Applied  Candidates">
             <div className="main-applied-contaier">
-              <div className="gapbetween w-100">
-                <Collapse in={disabled}>
-                  <div className="select_box">
-                    <Form.Select
-                      aria-label="Default select example"
-                      className="fs_13"
-                    >
-                      <option disabled hidden>
-                        Status
-                      </option>
-                      <option defaultValue={"ALL"}>All</option>
-                      <option value="1">Reject</option>
-                      <option value="1">Select</option>
-                    </Form.Select>
-                  </div>
-                </Collapse>
-                <Collapse in={disabled} className="">
-                  <div className="w-100">
-                    <InputGroup className="mb-3 w-25">
-                      <FormControl
-                        className="fs_13 w-25"
-                        placeholder="Search by  name"
-                        aria-label="Recipient's username"
-                        aria-describedby="basic-addon2"
-                        onChange={(e) => {
-                          requestSearch(e.target.value);
-                        }}
-                      />
-                      {/*<Button variant="outline-secondary" id="button-addon2">
-                                <BsSearch />
-                                </Button>*/}
-                    </InputGroup>
-                  </div>
-                </Collapse>
-              </div>
               <div>
                 <Row className=" align-items-center">
                   <Col md={6} sm={12} lg={2} xl={2}>
@@ -409,22 +370,54 @@ const Particularjob = () => {
                   </Col>
                   <Col md={6} sm={1} lg={6} xl={6}>
                     <div className="d-flex justify-content-end align-items-end mt-5">
-                    
-                          <Button
-                          data-tip
-                          data-for="job-filter"
-                            variant=""
-                            className="btn-sm remove_button_padding"
-                            onClick={() => setSdisabled((p) => !p)}
-                          >
-                            <BsFilter size={25} color="#ff6b01" />
-                          </Button>
-                          <ReactTooltip id="job-filter" place="top" effect="solid">
-                          Filter
-                        </ReactTooltip>
+                      <Button
+                        data-tip
+                        data-for="job-filter"
+                        variant=""
+                        className="btn-sm remove_button_padding"
+                        onClick={() => setSdisabled((p) => !p)}
+                      >
+                        <BsFilter size={25} color="#ff6b01" />
+                      </Button>
+                      <ReactTooltip id="job-filter" place="top" effect="solid">
+                        Filter
+                      </ReactTooltip>
                     </div>
                   </Col>
                 </Row>
+              </div> 
+              <div className="gapbetween mt-3 w-100" >
+                <Collapse in={disabled}>
+                  <div className="status_filter">
+                    <Form.Select
+                      aria-label="Default select example"
+                      className="fs_13 wreap-content"
+                    >
+                      <option hidden>Status</option>
+                      <option defaultValue={"ALL"}>All</option>
+                      <option value="1">Reject</option>
+                      <option value="1">Select</option>
+                    </Form.Select>
+                  </div>
+                </Collapse>
+                <Collapse in={disabled} className="">
+                  <div className="w-100">
+                    <InputGroup className="mb-3 w-25">
+                      <FormControl
+                        className="fs_13 w-25"
+                        placeholder="Search by  name"
+                        aria-label="Recipient's username"
+                        aria-describedby="basic-addon2"
+                        onChange={(e) => {
+                          requestSearch(e.target.value);
+                        }}
+                      />
+                      {/*<Button variant="outline-secondary" id="button-addon2">
+                                <BsSearch />
+                                </Button>*/}
+                    </InputGroup>
+                  </div>
+                </Collapse>
               </div>
             </div>
             <div className="content_box">

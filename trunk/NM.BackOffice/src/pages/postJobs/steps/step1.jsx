@@ -27,13 +27,13 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
 
                 </Form.Group>
                 <Form.Group className="w-100">
-                <Input type='text' className="form-control w-100 label-size" value={values?.jobfunction} name='functions' label={"Function"} id="name" onChange={handleChange} />
+                <Input type='text' className="form-control w-100 label-size" placeholder={"Enter the functions"} value={values?.jobfunction} name='functions' label={"Function"} id="name" onChange={handleChange} />
             </Form.Group>
 
                 </div>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                     <Form.Label className="label-size">Descritption</Form.Label>
-                    <Form.Control as="textarea" className="label-size" rows={3} name="description" value={values?.description} onChange={handleChange} />
+                    <Form.Control as="textarea" className="label-size" placeholder={"Enter the description"} rows={3} name="description" value={values?.description} onChange={handleChange} />
                 </Form.Group>
                
             </Col>

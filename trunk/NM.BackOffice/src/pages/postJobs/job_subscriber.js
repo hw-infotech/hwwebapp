@@ -144,9 +144,7 @@ const Job_newsletter = () => {
                 className="wreap-content fs_13"
                 defaultValue={"ALL"}
               >
-                <option disabled hidden>
-                  Status
-                </option>
+                <option hidden>Status</option>
                 <option value="all">All</option>
                 <option value="subscribe">Subscribe</option>
                 <option value="unsubscribe">Unsubscribe</option>

@@ -50,20 +50,22 @@ const Edit_postJob = (value1) => {
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
   const [disable, setSdisabled] = useState(false);
-  const [showPerPage, setShowPerPage] = useState();
-  const [start, setStart] = useState();
+  // const [showPerPage, setShowPerPage] = useState(5);
+  // const [start, setStart] = useState(1);
   const [pagination1, setpagination] = useState({
-    start: start,
-    end: showPerPage,
+    start: 1,
+    end: 10,
   });
   const navigate = useNavigate();
-  const onPageChange = (start, end) => {
-    setpagination({ start: start, end: end });
-  };
+  // const onPageChange = (start, end) => {
+  //   setpagination({ start: start, end: end });
+  //   console.log("called pagination");
+  // };
 
-  useEffect(() => {
-    setpagination({ start: start, end: showPerPage });
-  }, [pagination1]);
+  // useEffect(() => {
+  //   console.log("called",pagination1);
+  //   setpagination({ start: start, end: showPerPage });
+  // }, [pagination1]);
 
   const route = [
     { name: "Dashboard", route: "/" },
@@ -308,144 +310,148 @@ const Edit_postJob = (value1) => {
             </thead>
             <tbody>
               {tableData?.length > 0 &&
-                tableData?.map((data, index) => (
-                  <tr key={index}>
-                    <td className="action">
-                      <div className="userDetail ">
-                        <button
-                          type="button"
-                          className="btn "
-                          id="dropdownIconMenu"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <span className="actionIcon">
-                            <i className="bi bi-three-dots-vertical"></i>
-                          </span>
-                        </button>
-                        <ul
-                          className="IconDropdown dropdown-menu context-menu11"
-                          aria-labelledby="dropdownIconMenu"
-                        >
-                          <li className="dropdownList">
-                            <div className="actionBtns  context-menu1">
-                              <span
-                                className="editAction"
-                                data-bs-toggle="modal"
-                                data-bs-target="#editbtn"
-                              >
-                                <i className="bi bi-pencil-square"></i>
-                              </span>
-                              <button
-                                type="button"
-                                className="btn btn-outlined-secondary fs_13"
-                                onClick={() => {
-                                  dispatch(Edit_Data(data, index));
-                                  navigate("/particularjob");
-                                }}
-                              >
-                                View
-                              </button>
-                            </div>
-                          </li>
-                          {data.active == "active" ? (
-                            <div></div>
-                          ) : (
+                tableData
+                  ?.slice(pagination1.start, pagination1.end)
+                  ?.map((data, index) => (
+                    <tr key={index}>
+                      <td className="action">
+                        <div className="userDetail ">
+                          <button
+                            type="button"
+                            className="btn "
+                            id="dropdownIconMenu"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <span className="actionIcon">
+                              <i className="bi bi-three-dots-vertical"></i>
+                            </span>
+                          </button>
+                          <ul
+                            className="IconDropdown dropdown-menu context-menu11"
+                            aria-labelledby="dropdownIconMenu"
+                          >
                             <li className="dropdownList">
                               <div className="actionBtns  context-menu1">
                                 <span
-                                  className="viewIcon"
+                                  className="editAction"
                                   data-bs-toggle="modal"
-                                  data-bs-target="#viewbtn"
+                                  data-bs-target="#editbtn"
                                 >
-                                  <i className="bi bi-eye"></i>
+                                  <i className="bi bi-pencil-square"></i>
                                 </span>
                                 <button
                                   type="button"
                                   className="btn btn-outlined-secondary fs_13"
                                   onClick={() => {
-                                    localStorage.setItem("key", "Edit Job");
                                     dispatch(Edit_Data(data, index));
-                                    navigate("/edit-job");
+                                    navigate("/particularjob");
                                   }}
                                 >
-                                  Edit
+                                  View
                                 </button>
                               </div>
                             </li>
-                          )}
-                          <li className="dropdownList">
-                            <div className="actionBtns  context-menu1">
-                              <span
-                                className="deleteAction"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deletebtn"
-                              >
-                                <i className="bi bi-trash3-fill"></i>
-                              </span>
-                              <button
-                                type="button"
-                                className="btn btn-outlined-secondary fs_13"
-                                onClick={() => {
-                                  setIndex(index);
-                                  setmodal(true);
-                                }}
-                              >
-                                Delete
-                              </button>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                    <td>
-                      <Form.Check
-                        type="switch"
-                        id="custom-switch1"
-                        checked={data.active == "active" ? true : false}
-                        label=""
-                        onChange={(e) => {
-                          const { value, name, checked } = e.target;
-                          setShowalert(true);
-                          setRowtext((oldState) => {
-                            const newState = checked
-                              ? {
-                                  id: 1,
-                                  text: "Are you sure to  show the job ?",
-                                }
-                              : {
-                                  id: 0,
-                                  text: "Are you sure to hide the job ?",
-                                };
-                            return newState;
-                          });
-                          setDeleteObj({
-                            index,
-                            rowStatus: checked,
-                          });
-                        }}
-                      />
-                    </td>
-                    <td>{data?.Jobtitle || data?.jobtitle}</td>
-                    <td>
-                      {data?.description && subString(data.description, 10)}
-                    </td>
-                    <td>{data?.functions && subString(data?.functions, 10)}</td>
-                    <td>{data?.requirment[0].value}</td>
-                    <td>
-                      {data?.benefits[0].value &&
-                        subString(data.benefits[0].value, 10)}
-                    </td>
-                    <td>
-                      {data?.responsibility[0].value &&
-                        subString(data.responsibility[0].value, 10)}
-                    </td>
-                    <td>{data?.industry}</td>
-                    <td>{data?.level}</td>
-                    <td>{data?.type}</td>
-                    <td>30</td>
-                  </tr>
-                ))}
+                            {data.active == "active" ? (
+                              <div></div>
+                            ) : (
+                              <li className="dropdownList">
+                                <div className="actionBtns  context-menu1">
+                                  <span
+                                    className="viewIcon"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewbtn"
+                                  >
+                                    <i className="bi bi-eye"></i>
+                                  </span>
+                                  <button
+                                    type="button"
+                                    className="btn btn-outlined-secondary fs_13"
+                                    onClick={() => {
+                                      localStorage.setItem("key", "Edit Job");
+                                      dispatch(Edit_Data(data, index));
+                                      navigate("/edit-job");
+                                    }}
+                                  >
+                                    Edit
+                                  </button>
+                                </div>
+                              </li>
+                            )}
+                            <li className="dropdownList">
+                              <div className="actionBtns  context-menu1">
+                                <span
+                                  className="deleteAction"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deletebtn"
+                                >
+                                  <i className="bi bi-trash3-fill"></i>
+                                </span>
+                                <button
+                                  type="button"
+                                  className="btn btn-outlined-secondary fs_13"
+                                  onClick={() => {
+                                    setIndex(index);
+                                    setmodal(true);
+                                  }}
+                                >
+                                  Delete
+                                </button>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>
+                        <Form.Check
+                          type="switch"
+                          id="custom-switch1"
+                          checked={data.active == "active" ? true : false}
+                          label=""
+                          onChange={(e) => {
+                            const { value, name, checked } = e.target;
+                            setShowalert(true);
+                            setRowtext((oldState) => {
+                              const newState = checked
+                                ? {
+                                    id: 1,
+                                    text: "Are you sure to  show the job ?",
+                                  }
+                                : {
+                                    id: 0,
+                                    text: "Are you sure to hide the job ?",
+                                  };
+                              return newState;
+                            });
+                            setDeleteObj({
+                              index,
+                              rowStatus: checked,
+                            });
+                          }}
+                        />
+                      </td>
+                      <td>{data?.Jobtitle || data?.jobtitle}</td>
+                      <td>
+                        {data?.description && subString(data.description, 10)}
+                      </td>
+                      <td>
+                        {data?.functions && subString(data?.functions, 10)}
+                      </td>
+                      <td>{data?.requirment[0].value}</td>
+                      <td>
+                        {data?.benefits[0].value &&
+                          subString(data.benefits[0].value, 10)}
+                      </td>
+                      <td>
+                        {data?.responsibility[0].value &&
+                          subString(data.responsibility[0].value, 10)}
+                      </td>
+                      <td>{data?.industry}</td>
+                      <td>{data?.level}</td>
+                      <td>{data?.type}</td>
+                      <td>30</td>
+                    </tr>
+                  ))}
             </tbody>
           </Table>
           {tableData.length == 0 && (
@@ -456,8 +462,6 @@ const Edit_postJob = (value1) => {
 
       {tableData?.length > 0 ? (
         <CustomPagination
-          showPerPage={showPerPage}
-          onPageChange={onPageChange}
           setStart={setpagination}
           total={tableData.length}
         />

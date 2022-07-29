@@ -9,6 +9,17 @@ body {
   }
 }
 
+.back-buttonn {
+  background-color: #ff6b01 !important;
+  color: white !important;
+  border-color: #ff6b01 !important;
+}
+
+.back-buttonn:hover {
+  color: white !important;
+  background-color: #ff6b01 !important;
+}
+
 .label-size {
   font-size: 14px !important;
 }
@@ -473,9 +484,20 @@ body {
   font-weight: 600;
 }
 
+@media only screen and (min-width: 300px) and (max-width: 830px) {
+  .sidebar .sidebar_list .dropdownarrowicon {
+    visibility: hidden !important;
+  }
+  .sidebar .sidebar_header .header_text {
+    max-height: 70px;
+    height: 100%;
+    visibility: hidden;
+  }
+}
+
 .sidebar {
-  width: 250px;
-  min-width: 250px;
+  width: 100%;
+  min-width: 90px;
   max-width: 250px;
   min-height: 100vh;
   height: 100vh;
@@ -925,6 +947,33 @@ body {
   font-size: 13px;
 }
 
+.box__content .back-buttonn {
+  background-color: #ff6b01;
+  color: white;
+  border-color: #ff6b01;
+}
+
+.box__content .back-buttonn:hover {
+  color: white !important;
+  background-color: #ff6b01 !important;
+}
+
+.box__content .nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: gray !important;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.box__content .nav-tabs .nav-item.show .nav-link,
+.box__content .nav-tabs .nav-link.active {
+  color: #ff6b01 !important;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
 .box__content .view_main_box {
   margin-bottom: 0px;
 }
@@ -1139,7 +1188,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .box__content .main-applied-contaier .card-header2 {
@@ -1597,12 +1646,20 @@ body {
 }
 
 .main-content-holder .main-Profile-card .Profile-card .prfille-back-btn {
+  background-color: #ff6b01;
+  color: white;
+  border-color: #ff6b01;
   width: 100%;
   float: right;
 }
 
 .main-content-holder .main-Profile-card .Profile-card .prfille-back-btn .position_right {
   float: right;
+}
+
+.main-content-holder .main-Profile-card .Profile-card .prfille-back-btn:hover {
+  color: white !important;
+  background-color: #ff6b01 !important;
 }
 
 .main-content-holder .main-Profile-card .Profile-card .card-heading4 {
@@ -1657,6 +1714,15 @@ body {
   padding-left: 25px;
   padding-right: 25px;
   text-align: center;
+}
+
+.main-content-holder .profile_form .nav-link {
+  color: gray !important;
+}
+
+.main-content-holder .profile_form .nav-tabs .nav-item.show .nav-link,
+.main-content-holder .profile_form .nav-tabs .nav-link.active {
+  color: #eb7823 !important;
 }
 
 .main-content-holder .profile_form .tab_border_zero {
