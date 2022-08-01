@@ -149,7 +149,7 @@ const Sidebar = ({ sidebarShow }) => {
               }
             >
               <BiNews size={20} />
-              <span className="ms-1 d-none d-sm-inline">Newsletter</span>
+              <span className="ms-1 d-none d-sm-inline  sidebar_li_text">Newsletter</span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
               </span>
@@ -176,7 +176,7 @@ const Sidebar = ({ sidebarShow }) => {
                     navigtion("/subscribe-unsubscribe");
                   }}
                 >
-                  <span className="d-none d-sm-inline navbar-submenu ">
+                  <span className=" navbar-submenu d-sm-inline ">
                     Subscribe-Unsubscribe
                   </span>
                 </a>
@@ -226,7 +226,7 @@ const Sidebar = ({ sidebarShow }) => {
                     navigtion("/all-Enquiry");
                   }}
                 >
-                  <span className="d-none d-sm-inline navbar-submenu ">
+                  <span className=" d-sm-inline navbar-submenu ">
                     All Enquiry
                   </span>
                 </a>
@@ -275,7 +275,7 @@ const Sidebar = ({ sidebarShow }) => {
                     navigtion("/all-jobs");
                   }}
                 >
-                  <span className="d-none d-sm-inline navbar-submenu">Job</span>
+                  <span className=" d-sm-inline navbar-submenu">Job</span>
                 </a>
               </li>
               <li>
@@ -290,7 +290,7 @@ const Sidebar = ({ sidebarShow }) => {
                     navigtion("/job-subscribe-unsubscribe");
                   }}
                 >
-                  <span className="d-none d-sm-inline navbar-submenu">
+                  <span className=" d-sm-inline navbar-submenu">
                     Subscribe-Unsubscribe
                   </span>
                 </a>

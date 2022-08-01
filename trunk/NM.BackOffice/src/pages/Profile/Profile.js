@@ -159,7 +159,6 @@ const Profile = () => {
                 </h4>
                 <div className="inner_heading">
                   <div className="inner-heading-icon1">
-                    {" "}
                     <FiUser size={10} />
                     <span>
                       <b>Admin</b>
@@ -307,7 +306,7 @@ const Profile = () => {
                               <div className="innerform1">
                                 <Form.Group controlId="formBasicEmail">
                                   <Form.Control
-                                    className="forms_input"
+                                    className="fs_13"
                                     name="name"
                                     type="text"
                                     onChange={handleChange}
@@ -329,7 +328,7 @@ const Profile = () => {
                                   <Form.Control
                                     type="number"
                                     name="phone"
-                                    className="forms_input"
+                                    className="fs_13"
                                     onChange={handleChange}
                                     value={values.phone}
                                   />
@@ -348,7 +347,7 @@ const Profile = () => {
                                   <Form.Control
                                     type="email"
                                     name="email"
-                                    className="forms_input"
+                                    className="fs_13"
                                     onChange={handleChange}
                                     value={values.email}
                                   />
@@ -367,7 +366,7 @@ const Profile = () => {
                                   <Form.Control
                                     type="text"
                                     name="location"
-                                    className="forms_input"
+                                    className="fs_13"
                                     onChange={handleChange}
                                     value={values.location}
                                   />
@@ -426,7 +425,7 @@ const Profile = () => {
                         <div className="prfile-card11">
                           <div className="inner-profile1">
                             <div className="">
-                              <h6>{!edit ? "Security" : "Change Password"}</h6>
+                              <h6>{!edit ? "" : "Change Password"}</h6>
                             </div>
                             <div className="changeable_btn">
                               {!edit ? (
@@ -495,42 +494,50 @@ const Profile = () => {
                           <div className="mainform">
                             <div className="formData">
                               <div className="innerform">Old Password</div>
-                              <div className="innerform1">
-                                <Form.Group controlId="formBasicEmail">
-                                  <Field
-                                    className="forms_input input_error"
-                                    type={showpas}
-                                    name="oldpassword"
-                                    onChange={handleChange}
-                                  />{" "}
-                                  &nbsp; &nbsp;
-                                  {showpas == "text" ? (
-                                    <span
-                                      onClick={() => setShowpas("password")}
-                                    >
-                                      <BsEye />
-                                    </span>
-                                  ) : (
-                                    <span onClick={() => setShowpas("text")}>
-                                      <BsEyeSlash />
-                                    </span>
-                                  )}
-                                </Form.Group>
-                                <ErrorMessage
-                                  name={"oldpassword"}
-                                  component="div"
-                                  className="text-danger"
-                                />
+                              <div className="innerform1 d-flex gap-2">
+                                <div className="w-100">
+                                  <div className="input-group">
+                                    <Field
+                                      className="fs_13 input_error form-control"
+                                      type={showpas}
+                                      name="oldpassword"
+                                      onChange={handleChange}
+                                    />
+                                    <div className="input-group-append">
+                                      {showpas == "text" ? (
+                                        <span
+                                          className="input-group-text h-100"
+                                          onClick={() => setShowpas("password")}
+                                        >
+                                          <BsEye />
+                                        </span>
+                                      ) : (
+                                        <span
+                                          className="input-group-text h-100"
+                                          onClick={() => setShowpas("text")}
+                                        >
+                                          <BsEyeSlash />
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                  <Form.Group controlId="oldpassword"></Form.Group>
+                                  <ErrorMessage
+                                    name={"oldpassword"}
+                                    component="div"
+                                    className="text-danger"
+                                  />
+                                </div>
                               </div>
                             </div>
                             <div className="formData">
                               <div className="innerform">New Password</div>
                               <div className="innerform1">
-                                <Form.Group controlId="formBasicEmail">
+                                <Form.Group controlId="Newpassword">
                                   <Field
                                     type="password"
                                     name="profile_password"
-                                    className="forms_input input_error"
+                                    className="fs_13 input_error form-control"
                                     onChange={handleChange}
                                   />
                                 </Form.Group>
@@ -539,11 +546,11 @@ const Profile = () => {
                             <div className="formData">
                               <div className="innerform">Confirm Password</div>
                               <div className="innerform1">
-                                <Form.Group controlId="formBasicEmail">
+                                <Form.Group controlId="confirmpassword">
                                   <Field
                                     type="password"
                                     name="confirm"
-                                    className={"input_error forms_input"}
+                                    className={"input_error fs_13 form-control"}
                                     onChange={handleChange}
                                   />
                                   <ErrorMessage

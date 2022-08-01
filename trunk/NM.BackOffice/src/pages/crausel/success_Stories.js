@@ -30,8 +30,6 @@ import { tab } from "@testing-library/user-event/dist/tab";
 import Customhook from "../../components/customhook";
 
 const route = [
-   
-
   { name: "Dashboard", route: "/" },
   { name: "Sliders/Carousels", route: "/success-stories" },
   { name: "Success Stories", route: "/success-stories" },
@@ -65,9 +63,13 @@ const validationSchema = yup.object({
   image: yup.string().required().label("image"),
 });
 const Success_Stories = () => {
-
-
-  const [indexx, setIndexx] = useState()
+  const [tableData, setTableData] = useState(records);
+  const [title, setTitle] = useState(false);
+  const [deleteObj, setDeleteObj] = useState({
+    index: 0,
+    rowStatus: false,
+  });
+  const [indexx, setIndexx] = useState();
   const [upload, setUpload] = useState();
   const [img, setImge] = useState();
   const [open, setOpen] = useState(false);
@@ -82,7 +84,6 @@ const Success_Stories = () => {
   const [openmodal, setmodal] = useState(false);
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
-  const [disable, setSdisabled] = useState(false);
   const [edit, setEdit] = useState();
   const [show, setShow] = useState(false);
   const [showPerPage, setShowPerPage] = useState();
@@ -107,13 +108,13 @@ const Success_Stories = () => {
   }, []);
   const handleShow = () => setShow(true);
 
-  const [tableData, setTableData] = useState(records);
   const requestSearch = (searchedVal) => {
     const filteredRows = records.filter((row) => {
       return row.title.toLowerCase().includes(searchedVal.toLowerCase());
     });
     setTableData(filteredRows);
   };
+
   function sortt() {
     const response = tableData.sort((a, b) =>
       a.title.toLowerCase() > b.title.toLowerCase()
@@ -125,6 +126,7 @@ const Success_Stories = () => {
 
     setTableData([...response]);
   }
+
   function sortt1() {
     const response = tableData.sort((a, b) =>
       a.title.toLowerCase() < b.title.toLowerCase()
@@ -136,11 +138,6 @@ const Success_Stories = () => {
 
     setTableData([...response]);
   }
-  const [title, setTitle] = useState(false);
-  const [deleteObj, setDeleteObj] = useState({
-    index: 0,
-    rowStatus: false,
-  });
 
   const display = () => {
     setShowalert(true);
@@ -178,7 +175,6 @@ const Success_Stories = () => {
   };
   let titl = "Success Stories";
   let placeholder = "Search by title";
-
   const getBase64 = (e, setFieldValue) => {
     var file = e.target.files[0];
     console.log(file, "file");
@@ -199,11 +195,8 @@ const Success_Stories = () => {
   return (
     <>
       <div className="Main-story-box">
-
         <title>Success_Stories</title>
-
         {<BasicBreadcrumbs route={route} />}
-      
         <Filters
           placeholder={placeholder}
           requestSearch={requestSearch}
@@ -408,7 +401,7 @@ const Success_Stories = () => {
                         </Form>
                       </td>
                       <td>{data.title}</td>
-                      {<td>{data.content && subString(data.content, 115)}</td>}
+                      {<td>{data.content && subString(data.content, 135)}</td>}
                     </tr>
                   ))}
               </tbody>

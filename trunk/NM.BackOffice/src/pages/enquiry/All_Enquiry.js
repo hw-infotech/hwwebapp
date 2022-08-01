@@ -63,21 +63,24 @@ const All_Enquiry = () => {
       Name: "Mark",
       Phone: "9803836866",
       Email: "goldygoldy33@gmail.com",
-      message: "We look forward to seeing you",
+      message:
+        "We look forward to seeing you, We would like to thank you for your letter inquiring about our product.",
       status: "pending",
     },
     {
       Name: "adfark",
       Phone: "8146945394",
       Email: "Amanpreet33@gmail.com",
-      message: " We hope the information provided",
+      message:
+        " We hope the information provided ,We would like to thank you for your letter inquiring about our product.",
       status: "pending",
     },
     {
       Name: "yark",
       Phone: "9803836866",
       Email: "ganeshsharma5073@gmail.com",
-      message: " our hopes that the situation is resolved soonest.",
+      message:
+        " our hopes that the situation is resolved soonest. We would like to thank you for your letter inquiring about our product.",
       status: "pending",
     },
   ];
@@ -175,27 +178,28 @@ const All_Enquiry = () => {
           <div className="right_panle_container">
             <Button
               variant=""
-              data-tip
-              data-for="filterIcon1"
+              title="Filter"
               className="btn-sm remove_button_padding"
               onClick={() => setSdisabled((p) => !p)}
             >
               <BsFilter size={25} color="#ff6b01" />
             </Button>
-            <ReactTooltip id="filterIcon1" place="top" effect="solid">
-              Filter
-            </ReactTooltip>
           </div>
         </div>
         <div className="gapbetween pt-1">
           <Collapse in={disable}>
             <div className="status_filter">
-              <Form.Select aria-label="row" className="wreap-content fs_13">
-                <option hidden>Status</option>
-                <option value="1">All</option>
-                <option value="2">Pending</option>
-                <option value="3">Resolved</option>
-              </Form.Select>
+            <Form.Select
+            className="fs_13"
+            aria-label="Default select example"
+            id="example-collapse-text"
+            defaultValue={"all"}
+          >
+            <option hidden>Status</option>
+            <option  value={"ALL"}>All</option>
+            <option value="1">Pending</option>
+            <option value="1">Resolved</option>
+          </Form.Select>
             </div>
           </Collapse>
           <Collapse in={disable}>
@@ -312,7 +316,7 @@ const All_Enquiry = () => {
                                     setwait(true);
                                     setRowtext({
                                       id: 0,
-                                      text: "Are you sure to update status as Resolved ?",
+                                      text: "Are you sure to mark  as enquiry Resolved ?",
                                     });
                                     setShowalert(true);
                                     setDeleteObj({
@@ -353,7 +357,7 @@ const All_Enquiry = () => {
                                     });
                                     setRowtext({
                                       id: 1,
-                                      text: "Are you sure to update status as Panding ?",
+                                      text: "Are you sure to mark as enquiry Panding ?",
                                     });
                                   }}
                                 >
@@ -385,7 +389,7 @@ const All_Enquiry = () => {
                     <td>{capitalizeFirstLetter(data.Name)}</td>
                     <td>{data.Phone}</td>
                     <td>{capitalizeFirstLetter(data.Email)}</td>
-                    <td>{data.message && subString(data.message, 100)}</td>
+                    <td>{data.message && subString(data.message, 95)}</td>
                   </tr>
                 ))}
             </tbody>

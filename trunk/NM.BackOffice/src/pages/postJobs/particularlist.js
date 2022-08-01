@@ -144,9 +144,8 @@ const Particularjob = () => {
                   nevigate(-1);
                 }}
               >
-              Back
+                Back
               </Button>
-             
             </div>
           </div>
         </div>
@@ -371,40 +370,37 @@ const Particularjob = () => {
                   <Col md={6} sm={1} lg={6} xl={6}>
                     <div className="d-flex justify-content-end align-items-end mt-5">
                       <Button
-                        data-tip
-                        data-for="job-filter"
+                        title="Filter"
                         variant=""
                         className="btn-sm remove_button_padding"
                         onClick={() => setSdisabled((p) => !p)}
                       >
                         <BsFilter size={25} color="#ff6b01" />
                       </Button>
-                      <ReactTooltip id="job-filter" place="top" effect="solid">
-                        Filter
-                      </ReactTooltip>
                     </div>
                   </Col>
                 </Row>
-              </div> 
-              <div className="gapbetween mt-3 w-100" >
+              </div>
+              <div className="setupcontent mt-3 w-100 ">
                 <Collapse in={disabled}>
-                  <div className="status_filter">
+                  <div className="">
                     <Form.Select
-                      aria-label="Default select example"
-                      className="fs_13 wreap-content"
+                      aria-label="row"
+                      className="fs_13 "
+                      defaultValue={"All"}
                     >
                       <option hidden>Status</option>
-                      <option defaultValue={"ALL"}>All</option>
-                      <option value="1">Reject</option>
-                      <option value="1">Select</option>
+                      <option value={"all"}>All</option>
+                      <option value="reject">Reject</option>
+                      <option value="select">Select</option>
                     </Form.Select>
                   </div>
                 </Collapse>
                 <Collapse in={disabled} className="">
-                  <div className="w-100">
-                    <InputGroup className="mb-3 w-25">
+                  <div className="searchbar w-25 ">
+                    <InputGroup className="mb-3 ">
                       <FormControl
-                        className="fs_13 w-25"
+                        className="fs_13 "
                         placeholder="Search by  name"
                         aria-label="Recipient's username"
                         aria-describedby="basic-addon2"

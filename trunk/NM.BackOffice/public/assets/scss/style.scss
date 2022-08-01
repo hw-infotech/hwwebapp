@@ -9,6 +9,7 @@ body {
     margin-top: 40px !important;
   }
 }
+///////////////------------------------------shared classes------------------------/////////////
 .back-buttonn {
   background-color: #ff6b01 !important;
   color: white !important;
@@ -87,7 +88,8 @@ body {
 .remove_button_padding {
   padding: 0px !important;
 }
-//--------------Dashboard------------//
+
+///////////////////-------------------------Dashboard----------------------/////////////////////
 
 .dashboard {
   width: 100%;
@@ -265,7 +267,8 @@ body {
     }
   }
 }
-////header////
+
+//////-----------------------------header---------------------------//////
 .dropdown-menu {
   position: absolute;
   z-index: 992;
@@ -364,7 +367,8 @@ body {
   margin-top: 0.125rem;
   top: 60px !important;
 }
-//----------------------------footer page//-------------------//
+
+/////----------------------------footer-----------------------------/////
 .mainfooter {
   display: flex;
   align-items: center;
@@ -399,13 +403,16 @@ body {
     font-weight: 600;
   }
 }
-/////-------------- sidebar ---------------///////
 
-@media only screen and (min-width: 300px) and (max-width: 830px) {
+/////-------------------- sidebar --------------------------///////
+
+@media only screen and (min-width: 300px) and (max-width: 500px) {
   .sidebar {
+   width: 90px !important;
     .sidebar_list {
       .dropdownarrowicon {
         visibility: hidden !important;
+        
       }
     }
 
@@ -417,11 +424,6 @@ body {
       }
     }
   }
-}
-
-
-@media only screen and (min-width: 960px)  {
-
 }
 
 
@@ -532,8 +534,31 @@ body {
   }
 }
 
-//////=================================success stories page=======================/////
-///
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .sidebar {
+     
+    //min-width: 90px !important;
+  //  width: 90px !important;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: auto;
+    .sidebar_header{
+      .header_text{
+        font-size: 8px !important;
+       
+      }
+    }
+    .sidebar_list {
+      .dropdownarrowicon {
+        visibility: hidden !important;
+        
+      }
+   
+    }
+   
+  }
+}
+//////=================================success stories page=======================//////
 
 .story_image_selector {
   border: 1px solid #cdc8c8 !important;
@@ -665,7 +690,7 @@ body {
   box-shadow: none !important;
 }
 
-/////======================newsletter subscriber=====================///////`
+/////======================newsletter subscriber=====================///////
 .main-newsletter-panle {
   .content_box {
     .data-table {
@@ -808,7 +833,7 @@ body {
   }
 }
 
-//////////////post new Job/////////////
+//////////////-----------------post new Job-------------------/////////////
 
 .joblist-main-box {
   .content_box {
@@ -858,7 +883,7 @@ body {
   }
 }
 
-//////---------particular list of jobs------------//////////
+//////---------------------particular list of jobs-----------------------//////////
 
 .box__content {
   .joblist-main-box {
@@ -899,7 +924,7 @@ body {
     }
 
     .jobes_card {
-      box-shadow: 0px 0px 15px 0px #d6d6dd9c;
+      // box-shadow: 0px 0px 15px 0px #d6d6dd9c;
       padding: 30px;
       display: flex;
       flex-direction: column;
@@ -1095,7 +1120,7 @@ body {
   }
 }
 
-//-----------jobsubscriber/unsubscriber--------------------////////////////////
+/////-------------------------jobsubscriber/unsubscriber--------------------////////////////////
 
 .main-jobsubscriber-content {
   .content_box {
@@ -1199,11 +1224,6 @@ body {
   }
 }
 
-.margin_bottom_ {
-  //!Warrning-------Shared Class(Use multiple pages )-------//
-  margin-bottom: 50px;
-}
-
 //-------------IMAGE UPLOADER--------------//
 .dropzone {
   .uploadButton {
@@ -1261,7 +1281,7 @@ body {
   }
 }
 
-//----------------enquiry-----------------//
+///////////////////----------------enquiry-----------------///////////////
 .main-enquiry-box {
   .content_box {
     .data-table {
@@ -1292,7 +1312,7 @@ body {
     }
 
     .jobes_card {
-      box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
+      //box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
       padding: 30px;
       display: flex;
       flex-direction: column;
@@ -1424,7 +1444,8 @@ body {
 //----------------------------Profile Page----------------------------------//
 .main-content-holder {
   .main-Profile-card {
-    box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
+    border: 0.5px solid #8080802d;
+    // box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
     padding: 16px;
     width: 100%;
 
@@ -1547,7 +1568,8 @@ body {
 
     .main-Profile-card1 {
       margin-top: 20px;
-      box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
+      //border: 0.5px solid #8080802d;
+      // box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
       padding: 16px;
 
       .prfile-card11 {
@@ -1589,9 +1611,9 @@ body {
         }
 
         .innerform1 {
-          width: 25%;
+          width: 35%;
           color: black;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 600;
 
           .forms_input {
@@ -1676,7 +1698,7 @@ img.underCont {
     .leftt_pannel {
       width: 100%;
       .jobes_card {
-        box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
+        //box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
         padding: 30px;
         display: flex;
         flex-direction: column;

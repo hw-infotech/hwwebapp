@@ -30,30 +30,24 @@ export const Filters = ({
         </div>
         <div className="right_panle_container">
           <Button
+          title="Filter"
             variant=""
-            data-tip
-            data-for="filterIcon"
             className="btn-sm remove_button_padding"
             onClick={() => setSdisabled((p) => !p)}
           >
             <BsFilter size={25} color="#ff6b01" />
           </Button>
-          <ReactTooltip id="filterIcon" place="top" effect="solid">
-            Filter
-          </ReactTooltip>
+        
           <Button
             variant=""
-            data-tip
-            data-for="plusIcon"
+            title="Add"
             aria-expanded={disable}
             className="btn-sm remove_button_padding"
             onClick={handleShow}
           >
             <AiOutlinePlusCircle size={25} color="#ff6b01" />
           </Button>
-          <ReactTooltip id="plusIcon" place="top" effect="solid">
-            Add
-          </ReactTooltip>
+      
         </div>
       </div>
 
@@ -64,9 +58,10 @@ export const Filters = ({
               className="fs_13"
               aria-label="Default select example"
               id="example-collapse-text"
+              defaultValue={"all"}
             >
               <option hidden>Status</option>
-              <option value={"ALL"}>All</option>
+              <option  value={"ALL"}>All</option>
               <option value="1">Active</option>
               <option value="1">Deactive</option>
             </Form.Select>

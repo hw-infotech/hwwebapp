@@ -123,17 +123,13 @@ const Job_newsletter = () => {
           </div>
           <div className="right_panle_container">
             <Button
-              data-tip
-              data-for="filterIcon"
+              title="Filter"
               variant=""
               className="btn-sm remove_button_padding"
               onClick={() => setSdisabled((p) => !p)}
             >
               <BsFilter size={25} color="#ff6b01" />
             </Button>
-            <ReactTooltip id="filterIcon" place="top" effect="solid">
-              Filter
-            </ReactTooltip>
           </div>
         </div>
         <div className="w-100 setupcontent pt-1">
@@ -141,7 +137,7 @@ const Job_newsletter = () => {
             <div className="">
               <Form.Select
                 aria-label="row"
-                className="wreap-content fs_13"
+                className="fs_13"
                 defaultValue={"ALL"}
               >
                 <option hidden>Status</option>
@@ -170,6 +166,7 @@ const Job_newsletter = () => {
         <div className="status_button_container gap-2 d-flex pb-2">
           <Button
             variant="primary"
+            hidden={true}
             size="sm"
             onClick={() => {
               tableData.map((a, index) => {
@@ -183,7 +180,8 @@ const Job_newsletter = () => {
             Subscribe
           </Button>
           <Button
-            variant="secondary"
+            hidden={true}
+            variant="primary"
             size="sm"
             onClick={() => {
               tableData.map((a, index) => {

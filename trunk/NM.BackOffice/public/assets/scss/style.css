@@ -484,7 +484,10 @@ body {
   font-weight: 600;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 830px) {
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+  .sidebar {
+    width: 90px !important;
+  }
   .sidebar .sidebar_list .dropdownarrowicon {
     visibility: hidden !important;
   }
@@ -611,6 +614,20 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .sidebar {
+    min-height: 100vh;
+    height: 100vh;
+    overflow: auto;
+  }
+  .sidebar .sidebar_header .header_text {
+    font-size: 8px !important;
+  }
+  .sidebar .sidebar_list .dropdownarrowicon {
+    visibility: hidden !important;
+  }
 }
 
 .story_image_selector {
@@ -986,8 +1003,6 @@ body {
 }
 
 .box__content .view_main_box .jobes_card {
-  -webkit-box-shadow: 0px 0px 15px 0px #d6d6dd9c;
-          box-shadow: 0px 0px 15px 0px #d6d6dd9c;
   padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1345,10 +1360,6 @@ body {
   gap: 5px;
 }
 
-.margin_bottom_ {
-  margin-bottom: 50px;
-}
-
 .dropzone .uploadButton {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1440,8 +1451,6 @@ body {
 }
 
 .edit-preview-box .view_main_box .jobes_card {
-  -webkit-box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
-          box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
   padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1591,8 +1600,7 @@ body {
 
 /* Handle on hover */
 .main-content-holder .main-Profile-card {
-  -webkit-box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
-          box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
+  border: 0.5px solid #8080802d;
   padding: 16px;
   width: 100%;
 }
@@ -1731,8 +1739,6 @@ body {
 
 .main-content-holder .profile_form .main-Profile-card1 {
   margin-top: 20px;
-  -webkit-box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
-          box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
   padding: 16px;
 }
 
@@ -1793,9 +1799,9 @@ body {
 }
 
 .main-content-holder .profile_form .main-Profile-card1 .formData .innerform1 {
-  width: 25%;
+  width: 35%;
   color: black;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -1881,8 +1887,6 @@ img.underCont {
 }
 
 .preview-content .main-pannle .leftt_pannel .jobes_card {
-  -webkit-box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
-          box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
   padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;

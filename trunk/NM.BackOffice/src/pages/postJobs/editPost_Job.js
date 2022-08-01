@@ -143,22 +143,17 @@ const Edit_postJob = (value1) => {
           </div>
           <div className="right_panle_container">
             <Button
-              data-tip
-              data-for="job-filter"
+              title="Filter"
               variant=""
               className="btn-sm remove_button_padding"
               onClick={() => setSdisabled((p) => !p)}
             >
               <BsFilter size={24} color="#ff6b01" />
             </Button>
-            <ReactTooltip id="job-filter" place="top" effect="solid">
-              Filter
-            </ReactTooltip>
 
             <Button
               variant=""
-              data-tip
-              data-for="plusIcon"
+              title="Add"
               className="btn-sm remove_button_padding"
               onClick={() => {
                 navigate("/add-job");
@@ -166,9 +161,6 @@ const Edit_postJob = (value1) => {
             >
               <AiOutlinePlusCircle size={24} color="#ff6b01" />
             </Button>
-            <ReactTooltip id="plusIcon" place="top" effect="solid">
-              Add
-            </ReactTooltip>
           </div>
         </div>
         <div className="gapbetween pt-1">
@@ -177,10 +169,11 @@ const Edit_postJob = (value1) => {
               <Form.Select
                 aria-label="Default select example"
                 className="fs_13"
-                defaultValue={"status"}
+                defaultValue={"all"}
+
               >
                 <option hidden>Status </option>
-                <option value="1">All</option>
+                <option value="all">All</option>
                 <option value="1">Subscribe</option>
                 <option value="1">Unsubscribe</option>
               </Form.Select>
@@ -461,10 +454,7 @@ const Edit_postJob = (value1) => {
       </div>
 
       {tableData?.length > 0 ? (
-        <CustomPagination
-          setStart={setpagination}
-          total={tableData.length}
-        />
+        <CustomPagination setStart={setpagination} total={tableData.length} />
       ) : (
         ""
       )}

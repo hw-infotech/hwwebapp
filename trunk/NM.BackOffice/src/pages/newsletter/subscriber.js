@@ -234,7 +234,6 @@ const SubScriber = () => {
                 ) : (
                   ""
                 )}
-
                 <Input
                   as={"textarea"}
                   className="form-control label-size"
