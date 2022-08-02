@@ -9,15 +9,16 @@ body {
     margin-top: 40px !important;
   }
 }
+@media only screen and (min-width: 368px) and (max-width: 468px) {
+  .card1 {
+    margin-top: 40px !important;
+  }
+}
 ///////////////------------------------------shared classes------------------------/////////////
 .back-buttonn {
-  background-color: #ff6b01 !important;
+  border: 1px solid #eb7823 !important;
+  background: #eb7823 !important;
   color: white !important;
-  border-color: #ff6b01 !important;
-  &:hover {
-    color: white !important;
-    background-color: #ff6b01 !important;
-  }
 }
 
 .label-size {
@@ -39,12 +40,13 @@ body {
     width: 100%;
     align-items: center;
   }
-
+  .margin_zero {
+    margin: 0px !important;
+  }
   .left-panle-title {
     //------shared class---------------//
     width: 100%;
   }
-
   .right_panle_container {
     width: 100%; //------shared class---------------//
     display: flex;
@@ -64,7 +66,6 @@ body {
     justify-content: center;
   }
 }
-
 .action_titlewidth {
   width: 150px !important;
 }
@@ -95,7 +96,7 @@ body {
   width: 100%;
   display: flex;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 
   .mainDashboard {
     width: calc(100% - 0px);
@@ -406,16 +407,20 @@ body {
 
 /////-------------------- sidebar --------------------------///////
 
-@media only screen and (min-width: 300px) and (max-width: 500px) {
+@media only screen and (min-width: 320px) and (max-width: 367px) {
   .sidebar {
-   width: 90px !important;
+    // width: 90px !important;
+    // min-width: 50px !important;
+
     .sidebar_list {
       .dropdownarrowicon {
         visibility: hidden !important;
-        
       }
     }
-
+    .card1 {
+      margin-top: 40px !important;
+      background-color: #0000000d !important;
+    }
     .sidebar_header {
       .header_text {
         max-height: 70px;
@@ -426,10 +431,9 @@ body {
   }
 }
 
-
 .sidebar {
   width: 100%;
-  min-width: 90px;
+  min-width: 250px;
   max-width: 250px;
   min-height: 100vh;
   height: 100vh;
@@ -536,39 +540,31 @@ body {
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
   .sidebar {
-     
     //min-width: 90px !important;
-  //  width: 90px !important;
+    //  width: 90px !important;
     min-height: 100vh;
     height: 100vh;
     overflow: auto;
-    .sidebar_header{
-      .header_text{
+    .sidebar_header {
+      .header_text {
         font-size: 8px !important;
-       
       }
     }
     .sidebar_list {
       .dropdownarrowicon {
         visibility: hidden !important;
-        
       }
-   
     }
-   
   }
 }
 //////=================================success stories page=======================//////
-
 .story_image_selector {
   border: 1px solid #cdc8c8 !important;
   display: flex;
   width: 100%;
   align-items: center;
   position: relative;
-
   // background: #000000;
-
   .uploadButton {
     position: absolute;
     opacity: 0;
@@ -577,8 +573,8 @@ body {
     width: 100%;
   }
   .image_filld_text {
-    padding: 0px 5px;
     width: 40%;
+    background-color: #8080802d;
   }
   label {
     font-size: 14px;
@@ -596,13 +592,18 @@ body {
     }
   }
 }
-
+.remove_img {
+  position: absolute !important;
+  left: 89px !important;
+  bottom: 75px !important;
+}
 .Main-story-box {
   .content_box {
     .data-table {
       font-size: 13px;
     }
   }
+
   // div[role="dialog"] {
   //     background-color: #000000 !important;
   // }
@@ -614,20 +615,13 @@ body {
   //         .modal-body {
   .cardBoard {
     background-color: #000000 !important;
-    .imageCard {
-      margin: 10px;
-      position: relative;
-      .remove-img {
-        position: absolute !important;
-        bottom: -25px !important;
-        left: 63px !important;
-      }
-    }
-
     padding: 0px 0px;
     background: white;
     box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
-
+    .imageCard {
+      margin: 10px;
+      position: relative;
+    }
     .btnserachbar {
       //global class
       height: 40px;
@@ -894,13 +888,9 @@ body {
     }
   }
   .back-buttonn {
-    background-color: #ff6b01;
-    color: white;
-    border-color: #ff6b01;
-    &:hover {
-      color: white !important;
-      background-color: #ff6b01 !important;
-    }
+    border: 1px solid #eb7823 !important;
+    background: #eb7823 !important;
+    color: white !important;
   }
   .nav-link {
     display: block;
@@ -1648,11 +1638,11 @@ body {
   background-color: #bcbbb5 !important;
   border-color: #bcbbb5 !important;
 
-  &:hover {
-    background-color: gray !important;
-    border-color: gray !important;
-    color: #ffffff !important;
-  }
+  // &:hover {
+  //   background-color: gray !important;
+  //   border-color: gray !important;
+  //   color: #ffffff !important;
+  // }
 }
 
 .underConstruction .ConstructionContent h1 {

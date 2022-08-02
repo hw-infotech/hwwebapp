@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MdFilterAlt, MdAdd } from "react-icons/md";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import BasicBreadcrumbs from "../../components/breadcumbs";
@@ -92,6 +92,9 @@ const Success_Stories = () => {
     start: start,
     end: showPerPage,
   });
+
+  const inputFileRef = useRef(null);
+
   const handleClose = () => {
     setShow(false);
     setEdit(false);
@@ -281,11 +284,9 @@ const Success_Stories = () => {
                   >
                     Title {title ? <BsArrowDown /> : <BsArrowUp />}
                   </th>
-
                   <th>Content</th>
                 </tr>
               </thead>
-
               <tbody>
                 {tableData?.length > 0 &&
                   tableData?.map((data, index) => (
@@ -511,43 +512,59 @@ const Success_Stories = () => {
                         <div className="d-flex w-100">
                           <input
                             type="file"
-                            className="uploadButton"
+                            ref={inputFileRef}
+                            className="uploadButton "
                             name="image"
                             onChange={(e) => {
                               getBase64(e, setFieldValue);
+                              // e.target.__reactFiber$te5pkx1j4bn._valueTracker = "";
+                              e.target.files[0].name = "v.png";
+                              console.log(
+                                e.target.files[0].name,
+                                "Value Tracker"
+                              );
                             }}
                           />
-                          <label className=" image_filld_text" htmlFor="image">
+                          <label
+                            className="image_filld_text form-control"
+                            htmlFor="image"
+                          >
                             {img ? "Upload Image" : "Choose Image"}
                           </label>
-                          <Form.Group className="image_selector_design">
-                            {img}
-                          </Form.Group>
+                          <Form.Group className="image_selector_design"></Form.Group>
                         </div>
-                        <i
-                          className="fs-4 bi-x remove-img closeIcon"
-                          onClick={() => {
-                            setFieldValue("image", "");
-                            setImge("");
-                          }}
-                        ></i>
+
                         <Form.Label />
                       </div>
                       {/*<Form.Control
-                        className="label-size"
-                        type="file"
-                        accept=".png,.jpg"
-                        aria-label="Upload Images"
-                        name="image"
-                        onChange={(e) => {
-                          getBase64(e, setFieldValue);
-                        }}
-                        value={values.image}
-                      />*/}
+                  className="label-size"
+                  type="file"
+                  accept=".png,.jpg"
+                  aria-label="Upload Images"
+                  name="image"
+                  onChange={(e) => {
+                    getBase64(e, setFieldValue);
+                  }}
+                  value={values.image}
+                />*/}
                       {errors?.image && touched.image ? (
                         <label className="text-danger label-size">
                           {errors.image}
                         </label>
+                      ) : (
+                        ""
+                      )}
+                      {values.image ? (
+                        <div className="remove_img">
+                          <i
+                            className="fs-6 bi-x closeIcon"
+                            onClick={() => {
+                              inputFileRef.current.value = "";
+                              setFieldValue("image", "");
+                              setImge("");
+                            }}
+                          ></i>
+                        </div>
                       ) : (
                         ""
                       )}

@@ -9,15 +9,16 @@ body {
   }
 }
 
-.back-buttonn {
-  background-color: #ff6b01 !important;
-  color: white !important;
-  border-color: #ff6b01 !important;
+@media only screen and (min-width: 368px) and (max-width: 468px) {
+  .card1 {
+    margin-top: 40px !important;
+  }
 }
 
-.back-buttonn:hover {
+.back-buttonn {
+  border: 1px solid #eb7823 !important;
+  background: #eb7823 !important;
   color: white !important;
-  background-color: #ff6b01 !important;
 }
 
 .label-size {
@@ -43,6 +44,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.panle_body .margin_zero {
+  margin: 0px !important;
 }
 
 .panle_body .left-panle-title {
@@ -121,7 +126,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .dashboard .mainDashboard {
@@ -484,12 +489,13 @@ body {
   font-weight: 600;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 500px) {
-  .sidebar {
-    width: 90px !important;
-  }
+@media only screen and (min-width: 320px) and (max-width: 367px) {
   .sidebar .sidebar_list .dropdownarrowicon {
     visibility: hidden !important;
+  }
+  .sidebar .card1 {
+    margin-top: 40px !important;
+    background-color: #0000000d !important;
   }
   .sidebar .sidebar_header .header_text {
     max-height: 70px;
@@ -500,7 +506,7 @@ body {
 
 .sidebar {
   width: 100%;
-  min-width: 90px;
+  min-width: 250px;
   max-width: 250px;
   min-height: 100vh;
   height: 100vh;
@@ -651,8 +657,8 @@ body {
 }
 
 .story_image_selector .image_filld_text {
-  padding: 0px 5px;
   width: 40%;
+  background-color: #8080802d;
 }
 
 .story_image_selector label {
@@ -674,6 +680,12 @@ body {
   font-size: 12px !important;
 }
 
+.remove_img {
+  position: absolute !important;
+  left: 89px !important;
+  bottom: 75px !important;
+}
+
 .Main-story-box .content_box .data-table {
   font-size: 13px;
 }
@@ -689,12 +701,6 @@ body {
 .Main-story-box .cardBoard .imageCard {
   margin: 10px;
   position: relative;
-}
-
-.Main-story-box .cardBoard .imageCard .remove-img {
-  position: absolute !important;
-  bottom: -25px !important;
-  left: 63px !important;
 }
 
 .Main-story-box .cardBoard .btnserachbar {
@@ -965,14 +971,9 @@ body {
 }
 
 .box__content .back-buttonn {
-  background-color: #ff6b01;
-  color: white;
-  border-color: #ff6b01;
-}
-
-.box__content .back-buttonn:hover {
+  border: 1px solid #eb7823 !important;
+  background: #eb7823 !important;
   color: white !important;
-  background-color: #ff6b01 !important;
 }
 
 .box__content .nav-link {
@@ -1830,12 +1831,6 @@ body {
   color: #ffffff !important;
   background-color: #bcbbb5 !important;
   border-color: #bcbbb5 !important;
-}
-
-.btn-secondary:hover {
-  background-color: gray !important;
-  border-color: gray !important;
-  color: #ffffff !important;
 }
 
 .underConstruction .ConstructionContent h1 {

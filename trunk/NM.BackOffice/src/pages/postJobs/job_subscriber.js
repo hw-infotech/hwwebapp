@@ -24,6 +24,9 @@ import { tab } from "@testing-library/user-event/dist/tab";
 
 const Job_newsletter = () => {
   const [checked, setChecked] = useState();
+  const [indexx, setindex] = useState();
+  const [subscribed1, setsubscribed] = useState(true);
+  const [unsubscribed, setUnsubscribed] = useState(true);
   const [selected, setSelected] = useState([]);
   const [disable, setSdisabled] = useState(false);
   const [showPerPage, setShowPerPage] = useState();
@@ -50,8 +53,9 @@ const Job_newsletter = () => {
       Email: "Ganeshsharma5073@gmail.com",
       phone: "9803836866",
       Name: "mark",
-      active: false,
+      active: true,
       subscribed: false,
+      status: "subscribed",
     },
     {
       Email: "Amanpreet23@gmail.com",
@@ -59,6 +63,7 @@ const Job_newsletter = () => {
       Name: "Aman",
       active: false,
       subscribed: false,
+      status: "unsubscribed",
     },
     {
       Email: "goldygoldy33@gmail.com",
@@ -66,6 +71,7 @@ const Job_newsletter = () => {
       Name: "Aman",
       active: false,
       subscribed: false,
+      status: "unsubscribed",
     },
   ];
 
@@ -91,6 +97,14 @@ const Job_newsletter = () => {
     );
     setTableData([...response]);
   }
+
+  useEffect(() => {
+    const data = tableData.map((data, index) => {
+      return data.active;
+    });
+    data.indexOf(false) != -1 ? setsubscribed(false) : setsubscribed(true);
+    data.indexOf(true) != -1 ? setUnsubscribed(false) : setUnsubscribed(true);
+  }, [tableData]);
 
   useEffect(() => {
     const res = tableData.map((data, index) => {
@@ -119,7 +133,7 @@ const Job_newsletter = () => {
       <div className="panle_body">
         <div className="panle_header">
           <div className="left-panle-title">
-            <h4>Subscribe-Unsubscribe</h4>
+            <h4 className="margin_zero">Subscribe-Unsubscribe</h4>
           </div>
           <div className="right_panle_container">
             <Button
@@ -132,6 +146,7 @@ const Job_newsletter = () => {
             </Button>
           </div>
         </div>
+        <small>Use checkbox for mark as selected</small>&nbsp;
         <div className="w-100 setupcontent pt-1">
           <Collapse in={disable}>
             <div className="">
@@ -164,36 +179,46 @@ const Job_newsletter = () => {
           </Collapse>
         </div>
         <div className="status_button_container gap-2 d-flex pb-2">
-          <Button
-            variant="primary"
-            hidden={true}
-            size="sm"
-            onClick={() => {
-              tableData.map((a, index) => {
-                let v = selected.map(
-                  (b, index) => (tableData[b].active = true)
-                );
-              });
-              setTableData([...tableData]);
-            }}
-          >
-            Subscribe
-          </Button>
-          <Button
-            hidden={true}
-            variant="primary"
-            size="sm"
-            onClick={() => {
-              tableData.map((a, index) => {
-                let v = selected.map(
-                  (b, index) => (tableData[b].active = false)
-                );
-              });
-              setTableData([...tableData]);
-            }}
-          >
-            Unsubscribe
-          </Button>
+          {tableData[indexx]?.subscribed == true &&
+          tableData[indexx]?.active == false ? (
+            <Button
+              variant="primary"
+              hidden={subscribed1}
+              size="sm"
+              onClick={() => {
+                tableData.map((a, index) => {
+                  let v = selected.map(
+                    (b, index) => (tableData[b].active = true)
+                  );
+                });
+                setTableData([...tableData]);
+              }}
+            >
+              Subscribe
+            </Button>
+          ) : (
+            ""
+          )}
+          {tableData[indexx]?.subscribed == true &&
+          tableData[indexx].active == true ? (
+            <Button
+              hidden={unsubscribed}
+              variant="primary"
+              size="sm"
+              onClick={() => {
+                tableData.map((a, index) => {
+                  let v = selected.map(
+                    (b, index) => (tableData[b].active = false)
+                  );
+                });
+                setTableData([...tableData]);
+              }}
+            >
+              Unsubscribe
+            </Button>
+          ) : (
+            ""
+          )}
         </div>
       </div>
       <div className="content_box">
@@ -208,6 +233,9 @@ const Job_newsletter = () => {
                     checked={checked}
                     label=""
                     onChange={(e) => {
+                      setsubscribed((p) => !p);
+                      setUnsubscribed((p) => !p);
+
                       // setTableData((oldState) => {
                       //   const newState = oldState.map((_) => {
                       //     _.su = e.target.checked;
@@ -243,7 +271,6 @@ const Job_newsletter = () => {
                 <th>Email</th>
               </tr>
             </thead>
-            {console.log(selected)}
             {tableData.length > 0 ? (
               <tbody>
                 {tableData.map((data, index) => (
@@ -252,9 +279,18 @@ const Job_newsletter = () => {
                       <Form.Check
                         className="fs_13"
                         name="active"
-                        checked={data.subscribed}
-                        value={data.subscribed}
+                        checked={data.subscribed && row}
+                        value={data.active}
                         onChange={(e) => {
+                          if (data.subscribed != tableData[0].active) {
+                            setRow(false)
+                            alert("not ejskds")
+                            tableData[index].subscribed = false;
+                          }
+                          else{
+                            tableData[index].subscribed = true;
+                          }
+                          setindex(index);
                           tableData[index].subscribed = e.target.checked;
                           setTableData([...tableData]);
                           const sel = selected.filter((r) => r == index);
@@ -263,6 +299,13 @@ const Job_newsletter = () => {
                             setSelected(res);
                           } else {
                             setSelected((oldState) => [...oldState, index]);
+                          }
+                          if (data.active == true) {
+                            setsubscribed(false);
+                            setUnsubscribed(true);
+                          } else {
+                            setsubscribed(true);
+                            setUnsubscribed(false);
                           }
                         }}
                       />

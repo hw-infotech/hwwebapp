@@ -14,7 +14,7 @@ const Update_Step4 = ({ setGoSteps, state, setState, handleFieldchange, values }
     <Edit_Job_Preview  state={state}/>
         <div className="justify-content-end d-flex mt-4 gap-2" >
             {/*<Button variant="secondary" onClick={() => setGoSteps(2)}>Back</Button>*/}
-            <Button variant="secondary" className="btn-sm" onClick={() => {
+            <Button variant="" className="btn-sm back-buttonn" onClick={() => {
                 setGoSteps(2)
             }}>Back</Button>
            { /*Button variant="warning" className="btn-sm" onClick={() => setGoSteps(3)}></Button>*/}

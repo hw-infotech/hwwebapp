@@ -72,8 +72,8 @@ const Update_Step3 = ({
       </Form.Group>
       <div className="d-flex justify-content-end gap-2">
         <Button
-          variant="secondary"
-          className="btn-sm"
+          variant=""
+          className="btn-sm back-buttonn"
           onClick={() => setGoSteps(1)}
         >
           Back

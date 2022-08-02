@@ -100,7 +100,7 @@ const Sidebar = ({ sidebarShow }) => {
             >
               <RiGalleryLine size={20} />
               {/*<img src="./assets/images/car.png" style={{background:"white"}} width={25} height={25}/>*/}
-              <span className="ms-1 d-none d-sm-inline sidebar_li_text ">
+              <span className="ms-1 d-none d-sm-inline sidebar_li_text  ripple-surface " tabindex="1">
                 Sliders/Carousels
               </span>
               <span className="dropdownarrowicon">
@@ -149,7 +149,9 @@ const Sidebar = ({ sidebarShow }) => {
               }
             >
               <BiNews size={20} />
-              <span className="ms-1 d-none d-sm-inline  sidebar_li_text">Newsletter</span>
+              <span className="ms-1 d-none d-sm-inline  sidebar_li_text">
+                Newsletter
+              </span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
               </span>

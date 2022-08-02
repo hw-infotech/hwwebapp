@@ -33,7 +33,7 @@ const Step3 = ({ setGoSteps, state, setState, onhandlechange, handleChange, valu
             <Input type='text' className="form-control label-size" onChange={handleChange} placeholder='Industries' name='industry' value={values.industries} label={"Industries"} id="name" />
         </Form.Group>
         <div className="d-flex justify-content-end gap-2">
-            <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(1)}>Back</Button>
+            <Button variant="" className="btn-sm back-buttonn" onClick={() => setGoSteps(1)}>Back</Button>
             <Button variant="primary" className="btn-sm" onClick={() => { setGoSteps(3) }}>Next</Button>
         </div>
     </div>

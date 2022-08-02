@@ -18,8 +18,8 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
       <div className="justify-content-end d-flex mt-4 gap-2">
         {/*<Button variant="secondary" onClick={() => setGoSteps(2)}>Back</Button>*/}
         <Button
-          variant="secondary"
-          className="btn-sm"
+          variant=""
+          className="btn-sm back-buttonn"
           onClick={() => {
             setGoSteps(2);
           }}

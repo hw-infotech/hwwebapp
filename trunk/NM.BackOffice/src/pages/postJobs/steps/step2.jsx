@@ -53,7 +53,7 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
             </Col>
         </Row>
         <div className="d-flex w-100 justify-content-end gap-2">
-            <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(0)} >Back</Button>
+            <Button variant="" className="btn-sm back-buttonn" onClick={() => setGoSteps(0)} >Back</Button>
             <Button variant="primary" className="btn-sm" onClick={() => {
                 setFieldValue('responsibility', state.responsibility.map((_) => (_)))
                 setFieldValue("requirment", state.requirment.map((_) => (_)))

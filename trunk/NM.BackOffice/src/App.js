@@ -22,7 +22,14 @@ function App() {
   const logOut = () => {
     setisLoggedIn(false);
   };
-  const [sidebarShow, setSidebarShow] = useState(true);
+  const [dimension, setDimensions] = useState(window.screen.width);
+  console.log(dimension, "dddd");
+  const [sidebarShow, setSidebarShow] = useState(() => {
+    if (dimension > 320 && dimension < 768) {
+      return false;
+    }
+    return true;
+  });
   const [found, setFound] = useState(false);
 
   // useMemo(() => {
@@ -39,6 +46,7 @@ function App() {
   useEffect(() => {
     setFound(a);
   }, [a]);
+
   return (
     <>
       {
