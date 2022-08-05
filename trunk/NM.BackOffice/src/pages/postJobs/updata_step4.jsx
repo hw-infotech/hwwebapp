@@ -12,7 +12,7 @@ const Update_Step4 = ({ setGoSteps, state, setState, handleFieldchange, values }
     const nevigate = useNavigate()
     return <div className="w-100 m-auto ">
     <Edit_Job_Preview  state={state}/>
-        <div className="justify-content-end d-flex mt-4 gap-2" >
+        <div className="justify-content-end d-flex mt-3 gap-2 " >
             {/*<Button variant="secondary" onClick={() => setGoSteps(2)}>Back</Button>*/}
             <Button variant="" className="btn-sm back-buttonn" onClick={() => {
                 setGoSteps(2)

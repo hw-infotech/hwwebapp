@@ -35,7 +35,7 @@ const Update_Step1 = ({ setGoSteps, state, setState, handleFieldchange }) => {
             </Form.Group>
             </Col>
         </Row>
-        <div className="d-flex justify-content-end mt-2">
+        <div className="d-flex justify-content-end ">
         <Button variant="primary" className="btn-sm" type="button" onClick={() => setGoSteps(1)}>Next</Button>
     </div>
     </div>

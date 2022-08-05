@@ -47,7 +47,7 @@ const Update_Step2 = ({ setGoSteps, state, setState, handleFieldchange, values }
                 </Form.Group>
             </Col>
         </Row>
-        <div className="d-flex w-100 justify-content-end gap-2">
+        <div className="d-flex w-100 justify-content-end gap-2 mt-3">
             <Button variant="" className="btn-sm back-buttonn" onClick={() => setGoSteps(0)} >Back</Button>
             <Button variant="primary" className="btn-sm" type="button" onClick={() => {
                 setGoSteps(2)

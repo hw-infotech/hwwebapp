@@ -70,7 +70,7 @@ const Update_Step3 = ({
           className="label-size"
         />
       </Form.Group>
-      <div className="d-flex justify-content-end gap-2">
+      <div className="d-flex justify-content-end gap-2 mt-3">
         <Button
           variant=""
           className="btn-sm back-buttonn"
