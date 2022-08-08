@@ -45,14 +45,14 @@ const records = [
   {
     title: "Christmas Post",
     content:
-      "Glory to God in the highest, and on earth peace, goodwill toward men. Jesus is the reason for the season,Joy to the world, the Lord has come!",
+      "Glory to God in the highest, and on earth peace, goodwill toward men. Jesus is the reason for the season,Joy to the world, the Lord has come or not",
     active: true,
     image: "",
   },
   {
     title: "New Year Post",
     content:
-      "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown",
+      "it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown or not to know",
     active: false,
     image: "",
   },
@@ -402,7 +402,7 @@ const Success_Stories = () => {
                         </Form>
                       </td>
                       <td>{data.title}</td>
-                      {<td>{data.content && subString(data.content, 135)}</td>}
+                      {<td>{data.content && subString(data.content, 132)}</td>}
                     </tr>
                   ))}
               </tbody>

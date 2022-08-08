@@ -10,6 +10,7 @@ import {
   Form,
   FormControl,
   InputGroup,
+  Modal,
   Table,
 } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -18,8 +19,13 @@ import { BsFilter } from "react-icons/bs";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
 
 const Job_newsletter = () => {
+  const [isdisable, setDisabled] = useState(false);
   const [checked, setChecked] = useState();
   const [indexx, setindex] = useState();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const [subscribed1, setsubscribed] = useState(false);
   const [unsubscribed, setUnsubscribed] = useState(false);
@@ -49,7 +55,8 @@ const Job_newsletter = () => {
       Name: "mark",
       active: true,
       subscribed: false,
-      status: "subscribed",
+      status: false,
+      isdisable: false,
     },
     {
       Email: "Amanpreet23@gmail.com",
@@ -57,7 +64,8 @@ const Job_newsletter = () => {
       Name: "Aman",
       active: false,
       subscribed: false,
-      status: "unsubscribed",
+      status: false,
+      isdisable: false,
     },
     {
       Email: "goldygoldy33@gmail.com",
@@ -65,7 +73,8 @@ const Job_newsletter = () => {
       Name: "Aman",
       active: false,
       subscribed: false,
-      status: "unsubscribed",
+      status: false,
+      isdisable: false,
     },
   ];
 
@@ -78,7 +87,7 @@ const Job_newsletter = () => {
         ? -1
         : 0
     );
-    console.log(response);
+
     setTableData([...response]);
   }
   function sortt1() {
@@ -132,14 +141,13 @@ const Job_newsletter = () => {
         row.Email.toLowerCase().includes(searchedVal.toLowerCase())
       );
     });
-    console.log(filteredRows);
+
     setTableData([...filteredRows]);
   };
   const [title, setTitle] = useState(false);
   useEffect(() => {
     document.title = "Subscribe-Unsubscribe";
   }, []);
-
   return (
     <div className="main-jobsubscriber-content">
       <BasicBreadcrumbs route={route} />
@@ -191,7 +199,7 @@ const Job_newsletter = () => {
             </div>
           </Collapse>
         </div>
-        <div className="status_button_container gap-2 d-flex pb-2">
+        <div className="status_button_container gap-2 d-flex ">
           {
             <Button
               variant="primary"
@@ -200,7 +208,7 @@ const Job_newsletter = () => {
               onClick={() => {
                 tableData.map((a, indexa) => {
                   let v = selected.map(
-                    (b, index) => (tableData[b].active = true)
+                    (b, index) => (tableData[b.index].active = true)
                   );
                 });
                 setTableData([...tableData]);
@@ -217,7 +225,7 @@ const Job_newsletter = () => {
               onClick={() => {
                 tableData.map((a, index) => {
                   let v = selected.map(
-                    (b, index) => (tableData[b].active = false)
+                    (b, index) => (tableData[b.index].active = false)
                   );
                 });
                 setTableData([...tableData]);
@@ -226,6 +234,7 @@ const Job_newsletter = () => {
               Unsubscribe
             </Button>
           }
+          {console.log(selected, "this is the select value")}
         </div>
       </div>
       <div className="content_box">
@@ -233,6 +242,73 @@ const Job_newsletter = () => {
           <Table striped bordered hover>
             <thead>
               <tr>
+                {
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title className="label-size">Alert</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body className="fs_13">
+                      Which status you want to select
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button
+                        variant="secondary"
+                        className="btn-sm"
+                        onClick={handleClose}
+                      >
+                        Close
+                      </Button>
+                      <Button
+                        variant="primary"
+                        className="btn-sm"
+                        onClick={(e) => {
+                          tableData.map((data, index) => {
+                            setUnsubscribed(true);
+                            if (tableData[index].active == true) {
+                              tableData[index].subscribed = row;
+                              setTableData([...tableData]);
+                              {
+                                row
+                                  ? setSelected((old) => [
+                                      ...old,
+                                      { item: tableData[index], index },
+                                    ])
+                                  : setSelected([]);
+                              }
+                            }
+                          });
+                          setShow(false);
+                        }}
+                      >
+                        Subscribe
+                      </Button>
+                      <Button
+                        variant="primary"
+                        className="btn-sm"
+                        onClick={(e) => {
+                          setsubscribed(true);
+                          tableData.map((data, index) => {
+                            if (tableData[index].active == false) {
+                              tableData[index].subscribed = row;
+                              setTableData([...tableData]);
+                              {
+                                row
+                                  ? setSelected((old) => [
+                                      ...old,
+                                      { item: tableData[index], index },
+                                    ])
+                                  : setSelected([]);
+                              }
+                            }
+                          });
+                          setShow(false);
+                        }}
+                      >
+                        Unsubscribe
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
+                }
                 <th className="action_colwidth" align="center">
                   <Form.Check
                     className="fs_13"
@@ -241,8 +317,16 @@ const Job_newsletter = () => {
                     }}
                     label=""
                     onChange={(e) => {
-                      setsubscribed((p) => !p);
-                      setUnsubscribed((p) => !p);
+                      setsubscribed(false);
+                      setUnsubscribed(false);
+                      setShow(e.target.checked);
+                      setRow(e.target.checked);
+                      if (e.target.checked == false) {
+                        tableData.map((data, index) => {
+                          tableData[index].subscribed = false;
+                          setTableData([...tableData]);
+                        });
+                      }
                       // setUnsubscribed(e.target.checked);
                       //  setTableData((oldState) => {
                       // const newState = oldState.map((_) => {
@@ -251,15 +335,6 @@ const Job_newsletter = () => {
                       //    });
                       //    return newState;
                       //  });
-                      tableData.map((data, index) => {
-                        tableData[index].subscribed = e.target.checked;
-                        setTableData([...tableData]);
-                        {
-                          e.target.checked
-                            ? setSelected((old) => [...old, index])
-                            : setSelected([]);
-                        }
-                      });
                     }}
                   />
                 </th>
@@ -279,6 +354,7 @@ const Job_newsletter = () => {
                 <th>Email</th>
               </tr>
             </thead>
+
             {tableData.length > 0 ? (
               <tbody>
                 {tableData.map((data, index) => (
@@ -288,17 +364,69 @@ const Job_newsletter = () => {
                         className="fs_13"
                         name="active"
                         checked={data?.subscribed}
+                        disabled={data.isdisable}
                         value={data.active}
                         key={index}
                         onChange={(e) => {
-                          if (
-                            tableData[index+1].subscribed ==
-                            tableData[index].active
-                          ) {
-                            //alert("Please Choose same status")
-                            tableData[index].subscribed = false;
-                            setTableData([...tableData]);
+                          tableData.map((tab) => {
+                            if (e.target.checked) {
+                              if (data.active) {
+                                // if subscribed
+                                if (!tab.active) {
+                                  tab.isdisable = true;
+                                } else {
+                                  tab.isdisable = false;
+                                }
+                              }
+                              if (!data.active) {
+                                if (tab.active) {
+                                  tab.isdisable = false;
+                                } else {
+                                  tab.isdisable = true;
+                                }
+                              }
+                            } else {
+                              tab.isdisable = false;
+                            }
+                            return tab;
+                          });
+                          tableData[index].subscribed = e.target.checked;
+                          setTableData([...tableData]);
+
+                          const response = selected.filter(
+                            (old) => old.index == index
+                          );
+
+                          if (response.length > 0) {
+                            setSelected((_) => {
+                              return selected.filter((__) => __.index != index);
+                            });
+                          } else {
+                            setSelected((_) => [..._, { item: data, index }]);
                           }
+                          // const sel = selected.filter((r) => r == data);
+                          // if (sel.length > 0) {
+                          //   const res = selected.filter((r) => r != data);
+                          //   setSelected(res);
+                          // } else {
+                          //   setSelected((oldState) => [...oldState, data]);
+                          // }
+                          if (data?.subscribed == false) {
+                            setsubscribed(false);
+                            setUnsubscribed(false);
+                          }
+
+                          // let previous_value = selected[0]?.active;
+                          // console.log(previous_value, "previous_value");
+                          // for (var i = 0; i < tableData.length; i++) {
+                          //   var current_value = tableData[i]?.active;
+
+                          //   if (previous_value != current_value) {
+                          //     tableData[i].status = true;
+                          //   } else {
+                          //     tableData[i].status = false;
+                          //   }
+                          // }
                           // setRow(e.target.checked);
                           // if (data.subscribed != tableData[index].active) {
                           //   setRow(false);
@@ -306,20 +434,8 @@ const Job_newsletter = () => {
                           // } else {
                           //   tableData[index].subscribed = true;
                           // }
+
                           setindex(index);
-                          tableData[index].subscribed = e.target.checked;
-                          setTableData([...tableData]);
-                          const sel = selected.filter((r) => r == index);
-                          if (sel.length > 0) {
-                            const res = selected.filter((r) => r != index);
-                            setSelected(res);
-                          } else {
-                            setSelected((oldState) => [...oldState, index]);
-                          }
-                          if (data?.subscribed == false) {
-                            setsubscribed(false);
-                            setUnsubscribed(false);
-                          }
                         }}
                       />
                     </td>
