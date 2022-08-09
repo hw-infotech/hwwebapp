@@ -1427,7 +1427,7 @@
 }
 
 .awards_accolades_parts .awa_rds .img {
-  min-height: 239px;
+  min-height: 290px;
   background-repeat: no-repeat;
   background-size: 20rem;
   width: 100%;
@@ -1435,6 +1435,9 @@
   padding: 20px;
   max-width: 238px;
   margin: auto;
+      align-items: center;
+    display: flex;
+
 }
 .awards_accolades_parts .awa_rds .img img {
   width: 100%;
@@ -1798,7 +1801,7 @@ section.stories .owl-theme .owl-dots .owl-dot.active span {
   }
 
     .awa_rds .clutch-widget {
-    min-height: 250px;
+    min-height: 270px;
     display: flex;
     align-items: center!important;
     justify-content: center;
@@ -3348,7 +3351,7 @@ video.globeVideo {
 }
 
 .awa_rds .clutch-widget {
-    min-height: 239px;
+    min-height: 270px;
     display: flex;
     align-items: center;
     justify-content: center;

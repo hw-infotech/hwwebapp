@@ -495,6 +495,26 @@ const HomeContent = (props) => {
             </div>
 
             <div className="awa_rds awa_rds_one">
+              <a
+                href="https://www.designrush.com/agency/mobile-app-design-development/in"
+                target="_blank"
+                aria-label="Awards"
+                rel="noopener noreferrer"
+              >
+                <div className="img">
+                  <img src="../../assets/img/design-rush-badge.svg" />
+                </div>
+              </a>
+
+              <div className="hm_awcnt">
+                <p>
+                  Certified Mobile App & Web development company, acknowledged
+                  by Designrush.
+                </p>
+              </div>
+            </div>
+
+            <div className="awa_rds awa_rds_one">
               <div
                 className="clutch-widget"
                 data-nofollow="true"
@@ -512,29 +532,6 @@ const HomeContent = (props) => {
               </div>
             </div>
 
-            <div className="awa_rds awa_rds_two">
-              <a
-                href="https://www.goodfirms.co/company/nestormind-pvt-ltd"
-                target="_blank"
-                aria-label="Awards"
-                rel="noopener noreferrer"
-              >
-                <div className="img">
-                  <img src="https://assets.goodfirms.co/badges/normal-badge/top-software-development-companies.svg" />
-                </div>
-              </a>
-              <div className="hm_awcnt">
-                <h3>
-                  5.0
-                  <img src="../../assets/img/stars.svg" />
-                </h3>
-                <p>
-                  Certified by GoodFirms as one of the best app development
-                  company
-                </p>
-              </div>
-            </div>
-            
             <div className="awa_rds awa_rds_two">
               <a
                 href="https://www.goodfirms.co/company/nestormind-pvt-ltd"
