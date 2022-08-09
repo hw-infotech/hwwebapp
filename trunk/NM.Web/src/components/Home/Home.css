@@ -3282,44 +3282,7 @@ video.globeVideo {
   flex-wrap: wrap;
   grid-template-columns: 25% 25% 25% 25%;
 }
-@media (min-width: 786px) and (max-width: 1000px) {
-  .dddl-inner .right-process ul {
-    padding: 13px;
-    padding-left: 0;
-    display: grid;
-    grid-gap: 3px;
-    gap: 14px;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    grid-template-columns: 50% 50%;
-  }
-}
-@media (min-width: 396px) and (max-width: 786px) {
-  .dddl-inner .right-process ul {
-    padding: 13px;
-    padding-left: 0;
-    display: flex;
-    grid-gap: 3px;
-    gap: 14px;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-}
-@media (min-width: 991px) and (max-width: 1200px) {
-  .dddl-inner .right-process ul {
-    padding: 13px;
-    padding-left: 0;
-    display: grid;
-    grid-gap: 3px;
-    gap: 14px;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    grid-template-columns: 33% 33% 33%;
-  }
-}
+
 .dddl-inner .right-process ul li {
   display: block;
   align-items: flex-start;
@@ -3408,4 +3371,83 @@ video.globeVideo {
   align-items: center;
   justify-content: center;
   height: 167px;
+}
+
+
+@media (min-width: 786px) and (max-width: 1000px) {
+  .dddl-inner .right-process ul {
+    padding: 13px;
+    padding-left: 0;
+    display: grid;
+    grid-gap: 3px;
+    gap: 14px;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 786px) {
+  .dddl-inner .right-process .workProcess {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  .dddl-inner .right-process ul {
+    padding: 13px;
+    padding-left: 0;
+    display: flex;
+    grid-gap: 3px;
+    gap: 14px;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .dddl-inner .right-process {
+    padding: 40px 30px 20px;
+}
+.dddl-inner .right-process ul li .text h4 {
+    font-size: 24px;
+}
+.dddl-inner .right-process ul li .text p {
+    font-size: 18px;
+}
+}
+@media (min-width: 320px) and (max-width: 575px) {
+  .dddl-inner .right-process .workProcess {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  .dddl-inner .right-process ul {
+    padding: 13px;
+    padding-left: 0;
+    display: flex;
+    grid-gap: 3px;
+    gap: 14px;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .dddl-inner .right-process {
+    padding: 40px 20px 20px;
+}
+.dddl-inner .right-process ul li .text h4 {
+    font-size: 18px;
+}
+.dddl-inner .right-process ul li .text p {
+    font-size: 15px;
+}
+}
+@media (min-width: 991px) and (max-width: 1200px) {
+  .dddl-inner .right-process ul {
+    padding: 13px;
+    padding-left: 0;
+    display: grid;
+    grid-gap: 3px;
+    gap: 14px;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    grid-template-columns: 33% 33% 33%;
+  }
 }

@@ -18,7 +18,49 @@
             "Achieving the fitness results you want can sometimes   feel overwhelming with so many experts giving advice  on diet, exercise, and even sleep. Joining a gym can  be equally perplexing. From navigating the exercise machines to developing a routine that achieves your personal goals can be daunting tasks."
         ],
         "founder": "Robbie Anderson",
-        "place": " Founder & CEO of Planet Fitness, NY, USA"
+        "place": " Founder & CEO of Planet Fitness, NY, USA",
+        "themeColor":"#000",
+        "textColor":"#fff",
+        "logo":"../assets/img/caseStudies/planetFitness.png",
+        "graphics": "../assets/img/caseStudies/planetFitnessGraphic.png",
+        "overView":"Planet Fitness is a small business opportunity centering on opening a fitness center in Palmer, PF in order to capitalize on a growing demand for health and wellness in the Mat-Su Borough and open a profitable business with plans to expand in the future. This project will focus on creating a business plan and the research necessary to plan and predict the finances involved in running a fitness center.",
+        "techLogoIcon":[
+            "assets/img/brandLogo/adobe-xd.svg",
+            "assets/img/brandLogo/wordpress-icon.svg",
+            "assets/img/brandLogo/elementor.svg"
+        ],
+        "approach":[
+            "1. Discovery and definition. This is a preparation stage of the project. During this phase, we framed the project idea, identified the main project triggers, and work on competitor analysis. Our research aimed to find out major user pain points and frustrations while using fitness apps. So we could improve the user experience and the logic of such apps. Conducting the interviews with the targeted audience we found out potential users’ needs and wishes. As a result, it helped us incorporate our findings into the product development strategy. The final element at this stage is the framing of User Research. In other words, constructing the portrait of the targeted users based on market research and our findings. User Research slowly flows into the next phase of the project.",
+            "2. Design and testing. After we know the portrait of the potential users we start Wireframing and Prototyping. Wireframes help to show the general application scheme. We placed the main data based on user research to make the user experience a meaningful one. Then to test how the app works and how users will interact with it we created prototypes. In fact, from low-fidelity to fully-interactive models, prototypes are great to show design ideas.",
+            "3. Delivery. The Agile software development implies the app got tested at every stage of the process to make the product better. So, this phase is particularly about testing and improving the existing product based on the feedback from the first users."
+        ],
+        "timlineImage": "../assets/img/caseStudies/Fitness-App-Project-Timeline.jpg",
+        "appChallange":[
+            "Do you have a fitness app on your mobile phone? If yes, we are not surprised. After the fitness boom of the Apple Watch in 2015, more and more people have become more aware of their health and body shape. Because of this, the industry of fitness applications continues to grow. There are many apps aimed at different aspects of our everyday life from eating healthier food to working out.",
+            "While there are many competitors, the niche of fitness applications remains prospective. Do you want to develop a fitness app and get your market share? Then, you are on the right path to success.",
+            "Problem - The lack of motivation is the no.1 reason why a lot of people don’t work out. Even if a person is motivated to start his journey to a healthy lifestyle, it's hard to find an effective online personal trainer.",
+            "That is why the idea was to create a unique app for workout routines and fitness training programs. After revealing all the pain points that exist on the market we decided to implement the social feature to make a more meaningful impact on the fitness app. So, besides regular training programs, we added different types of challenges like charity workouts, marathons. The idea was to create charity events that came from social issues around the world. Our goal was not only to make people healthier but to help organizations to hold their charity events and eventually combine business and user goals.",
+            "Using the design-thinking approach we found the balance between business goals, user needs, and modern technological solutions to achieve the best results in product development. The most important thing was to frame precise goals that we wanted to achieve during the research phase."
+        ],
+        "appWork":[
+            "To make your own fitness app, you need to think about its features. When building digital products from scratch, it makes sense to build an MVP first. MVP stands for a minimum viable product. Its features will help you understand whether your product is useful for clients and how you can improve it in the future.",
+            "In this section, we’ll go through all MVP features for a fitness app."
+        ],
+        "userFlow":[
+            "User flow describes the steps that users take to access a function or perform a task in your app. Each click, swipe, and drag-hold is part of user flow. Even in simple apps, flow is an important part of the UX — in fact, it can hold the key to the app’s appeal. That is why one of the main tasks was to analyze and organize all the incoming information to visualize content blocks and features.",
+            "Mobile app development is often a complex balancing act between functionality and usability. On the one hand, you want users to be able to easily access the most important functions of your app without a lot of extra steps. That means big, easy-to-tap buttons available from the main screen. On the other hand, there’s probably far more depth to your app than you can squeeze into a few buttons. We tried our best to make the app as user-friendly as possible."
+        ],
+        "reaserchForApp":"../assets/img/caseStudies/Research-for-the-app.jpg",
+        "userflow": "../assets/img/caseStudies/User-flow.jpg",
+        "productImg": [
+            "/assets/img/caseStudies/PlanetFitness1.png ",
+            "/assets/img/caseStudies/PlanetFitnessMobile.png "
+        ],
+        "conclusion": [
+            "Fitness application development can be quite a challenging task. But now that you know how to build a fitness app, we hope it will be easier for you to estimate the cost of your idea.",
+            "Thus, your solution should have the best fitness app features such as personal account, setting goals, actual activity tracking, and social elements. The app can offer a custom workout plans creation feature. Also, it's an excellent idea to collaborate with as many wearable producers as possible (and cost-efficient).",
+            "Looking for a designer to visualize your idea? Our creative team will bring your idea to full-fledged responsive design and create eye-catching website design and development. If you have any questions, we’ll be more than happy to help you build top wellness, fitness, or eHealth brands."
+        ]
     },
     {
         "id": "1",
@@ -41,6 +83,7 @@
         ],
         "founder": "Dr. Mark Anthony",
         "place": " Founder & CEO of Madibox, NY, USA"
+        
     },
     {
         "id": "2",

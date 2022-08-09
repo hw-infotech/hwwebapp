@@ -51,6 +51,30 @@
   color: #fff;
   display: flex;
   flex-direction: row-reverse;
+  position: relative;
+    overflow: hidden;
+}
+.secondSection .indGraphicBox:before {
+   position: absolute;
+    content: "";
+    height: 700px;
+    width: 700px;
+    background: #0000001f;
+    border-radius: 44%;
+    left: -14%;
+    top: -61px;
+}
+.secondSection .indGraphicBox:after {
+     position: absolute;
+    content: "";
+    height: 250px;
+    width: 250px;
+    background: #0000001f;
+    border-radius: 50%;
+    right: -7%;
+    top: -25px;
+    z-index: 0;
+    filter: blur(10px);
 }
 .secondSection .indGraphicBox .leftSection {
   width: 50%;

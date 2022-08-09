@@ -534,6 +534,29 @@ const HomeContent = (props) => {
                 </p>
               </div>
             </div>
+            
+            <div className="awa_rds awa_rds_two">
+              <a
+                href="https://www.goodfirms.co/company/nestormind-pvt-ltd"
+                target="_blank"
+                aria-label="Awards"
+                rel="noopener noreferrer"
+              >
+                <div className="img">
+                  <img src="https://assets.goodfirms.co/badges/normal-badge/top-software-development-companies.svg" />
+                </div>
+              </a>
+              <div className="hm_awcnt">
+                <h3>
+                  5.0
+                  <img src="../../assets/img/stars.svg" />
+                </h3>
+                <p>
+                  Certified by GoodFirms as one of the best app development
+                  company
+                </p>
+              </div>
+            </div>
 
             {/* <div className="awa_rds awa_rds_five">
               <a
