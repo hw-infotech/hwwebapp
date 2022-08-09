@@ -109,8 +109,8 @@ const Applied_Job = () => {
             <div className="w-100 setupcontent">
                 <div className="">
                     <Form.Select aria-label="row" className="wreap-content">
-                        <option disabled hidden selected>Select</option>
-                        <option value="1">All</option>
+                        <option disabled hidden >Select</option>
+                        <option  defaultValue={"All"}>All</option>
                         <option value="2">newsletter-subscribers</option>
                         <option value="3">Unnewsletter-subscribers</option>
                     </Form.Select>

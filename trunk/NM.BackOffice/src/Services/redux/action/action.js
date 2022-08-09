@@ -1,8 +1,8 @@
 import React from "react";
-import { ADD_GALLERY_EVENT, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_RESOLVED_ENQUIRY, POST_DATA, STACK, UPDATE } from "../../store/type";
-import apidata from "../../store/api";
+import { ADD_GALLERY_EVENT, ADD_NEW_BLOG, ADD_SUCCESS_STORIES, CONDITIONS, EDIT_DATA, GET_ALL_BlOG, GET_ALL_ENQUIRY, GET_NEWSLEETER_SUBSCRIBER, GET_NEWSLEETER_UNSUBSCRIBER, GET_PENDING_ENQUIRY, GET_PROFILE_DATA, GET_PROFILE_PASSWORD, GET_RESOLVED_ENQUIRY, POST_DATA, STACK, UPDATE, UPDATE_PROFILE, UPDATE_PROFILE_PASSWORD } from "../../redux/store/type";
+import apidata from "../../redux/store/api";
 import { ToastContainer, toast } from 'react-toastify';
-import Store from "../../store/store";
+
 
 
 export const Add_Gallery_Eventt = (user) => dispatch => {
@@ -62,5 +62,34 @@ export const Update_Data = (data, index) => dispath => {
     dispath({
         type: UPDATE,
         payload: data
+    })
+}
+export const Update_Profile_Data = (data) => dispath => {
+    dispath({
+        type: UPDATE_PROFILE,
+        payload: data
+    })
+}
+export const GET_profile_data = () => dispatch => {
+    dispatch({
+        type: GET_PROFILE_DATA,
+    })
+}
+export const Edit_profile_data = () => dispatch => {
+    dispatch({
+        type: GET_PROFILE_DATA,
+    })
+}
+export const GET_profile_password = () => dispatch => {
+    dispatch({
+        type: GET_PROFILE_PASSWORD,
+    })
+}
+
+export const Update_Profile_Password = (data) => dispath => {
+    dispath({
+        type: UPDATE_PROFILE_PASSWORD,
+        payload: data,
+
     })
 }

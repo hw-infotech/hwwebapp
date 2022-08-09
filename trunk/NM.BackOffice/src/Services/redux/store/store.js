@@ -1,5 +1,5 @@
 import React from "react";
-import rootReducer from '../redux/reducer/index'
+import rootReducer from '../reducer/index'
 
 import { configureStore } from '@reduxjs/toolkit'
 import thunk from "redux-thunk";

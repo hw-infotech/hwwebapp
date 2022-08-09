@@ -9,15 +9,16 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
 }) => {
     //const { handleChange } = useFormikContext()
     useEffect(() => {
-        document.title = "Basic Detail"
+        document.title = "Add Job"
     }, [])
     console.log(values, "this is s the values in first ");
     return <div className="main-wrap-box w-100 m-auto">
 
         <Row>
             <Col md={12}>
-                <Form.Group className="mb-3">
-                    <Input as='select' name='jobtitle' onChange={handleChange} label={"Title"} value={values?.jobtitle} id="jobtitle" className="form-control" options={[
+            <div className="d-flex w-100 gap-1">
+                <Form.Group className="mb-3 w-100">
+                    <Input as='select' cla name='jobtitle' onChange={handleChange} label={"Title"} value={values?.jobtitle} id="jobtitle" className="form-control label-size" options={[
                         { value: "UI/UX", label: "UI/UX" },
                         { value: "Project Manager", label: "Project Manager" },
                         { value: "Web Development", label: "Web Development" },
@@ -25,14 +26,16 @@ const Step1 = ({ setGoSteps, state, setState, handleChange, values
                     </Input>
 
                 </Form.Group>
+                <Form.Group className="w-100">
+                <Input type='text' className="form-control w-100 label-size" placeholder={"Enter the functions"} value={values?.jobfunction} name='functions' label={"Function"} id="name" onChange={handleChange} />
+            </Form.Group>
+
+                </div>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                     <Form.Label className="label-size">Descritption</Form.Label>
-                    <Form.Control as="textarea" style={{ height: "120px" }} name="description" value={values?.description} onChange={handleChange} />
+                    <Form.Control as="textarea" className="label-size" placeholder={"Enter the description"} rows={3} name="description" value={values?.description} onChange={handleChange} />
                 </Form.Group>
-                <Form.Group>
-                    <Input type='text' className="form-control" value={values?.jobfunction} name='functions' label={"Function"} id="name" onChange={handleChange} />
-                </Form.Group>
-
+               
             </Col>
         </Row>
         <div className="d-flex justify-content-end mt-2">

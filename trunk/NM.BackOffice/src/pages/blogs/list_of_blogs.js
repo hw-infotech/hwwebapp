@@ -56,10 +56,10 @@ const List_Of_Blogs = () => {
     return (
         <div>
             <BasicBreadcrumbs route={route} />
-            <div className="topPadding-10">
-                <div className="boxshadow">
+            <div classNameName="topPadding-10">
+                <div classNameName="boxshadow">
                     <h4>List of Blogs</h4>
-                    <table class="table">
+                    <table classNameName="table">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -75,41 +75,41 @@ const List_Of_Blogs = () => {
                                 <td>Otto</td>
                                 <td>@mdo</td>
                                 <td>@mdo.jpg</td>
-                                <td class="action "><div class="userDetail ">
+                                <td className="action "><div className="userDetail ">
 
-                                    <button type="button" class="btn "
+                                    <button type="button" className="btn "
                                         id="dropdownIconMenu" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        <span class="actionIcon"> <i
-                                            class="bi bi-three-dots-vertical"></i> </span>
+                                        <span className="actionIcon"> <i
+                                            className="bi bi-three-dots-vertical"></i> </span>
                                     </button>
-                                    <ul class="IconDropdown dropdown-menu context-menu1"
+                                    <ul className="IconDropdown dropdown-menu context-menu1"
                                         aria-labelledby="dropdownIconMenu">
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="editAction" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="editAction" data-bs-toggle="modal"
                                                     data-bs-target="#editbtn"><i
-                                                        class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fa_13">Edit</button>
+                                                        className="bi bi-pencil-square"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fa_13">Edit</button>
                                             </div>
                                         </li>
 
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="viewIcon" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="viewIcon" data-bs-toggle="modal"
                                                     data-bs-target="#viewbtn"> <i
-                                                        class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
+                                                        className="bi bi-eye"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13" >Update</button>
 
                                             </div>
                                         </li>
 
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="deleteAction" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
-                                                        class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
+                                                        className="bi bi-trash3-fill"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13">Deletes</button>
 
                                             </div>
                                         </li>
@@ -121,41 +121,41 @@ const List_Of_Blogs = () => {
                                 <td>Thornton</td>
                                 <td>@fat</td>
                                 <td>@fat</td>
-                                <td class="action "><div class="userDetail ">
+                                <td className="action "><div className="userDetail ">
 
-                                    <button type="button" class="btn "
+                                    <button type="button" className="btn "
                                         id="dropdownIconMenu" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        <span class="actionIcon"> <i
-                                            class="bi bi-three-dots-vertical"></i> </span>
+                                        <span className="actionIcon"> <i
+                                            className="bi bi-three-dots-vertical"></i> </span>
                                     </button>
-                                    <ul className="IconDropdown dropdown-menu context-menu1"
+                                    <ul classNameName="IconDropdown dropdown-menu context-menu1"
                                         aria-labelledby="dropdownIconMenu">
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="editAction" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="editAction" data-bs-toggle="modal"
                                                     data-bs-target="#editbtn"><i
-                                                        class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13">Edit</button>
+                                                        className="bi bi-pencil-square"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13">Edit</button>
                                             </div>
                                         </li>
 
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="viewIcon" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="viewIcon" data-bs-toggle="modal"
                                                     data-bs-target="#viewbtn"> <i
-                                                        class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
+                                                        className="bi bi-eye"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13" >Update</button>
 
                                             </div>
                                         </li>
 
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="deleteAction" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
-                                                        class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13">Deletes</button>
+                                                        className="bi bi-trash3-fill"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13">Deletes</button>
 
                                             </div>
                                         </li>
@@ -167,41 +167,41 @@ const List_Of_Blogs = () => {
                                 <td>the Bird</td>
                                 <td>@twitter</td>
                                 <td>@twitter</td>
-                                <td class="action "><div class="userDetail ">
+                                <td className="action "><div className="userDetail ">
 
-                                    <button type="button" class="btn "
+                                    <button type="button" className="btn "
                                         id="dropdownIconMenu" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        <span class="actionIcon"> <i
-                                            class="bi bi-three-dots-vertical"></i> </span>
+                                        <span className="actionIcon"> <i
+                                            className="bi bi-three-dots-vertical"></i> </span>
                                     </button>
-                                    <ul class="IconDropdown dropdown-menu context-menu1"
+                                    <ul className="IconDropdown dropdown-menu context-menu1"
                                         aria-labelledby="dropdownIconMenu">
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="editAction" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="editAction" data-bs-toggle="modal"
                                                     data-bs-target="#editbtn"><i
-                                                        class="bi bi-pencil-square"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13">Edit</button>
+                                                        className="bi bi-pencil-square"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13">Edit</button>
                                             </div>
                                         </li>
 
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="viewIcon" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="viewIcon" data-bs-toggle="modal"
                                                     data-bs-target="#viewbtn"> <i
-                                                        class="bi bi-eye"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13" >Update</button>
+                                                        className="bi bi-eye"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13" >Update</button>
 
                                             </div>
                                         </li>
 
-                                        <li class="dropdownList">
-                                            <div class="actionBtns">
-                                                <span class="deleteAction" data-bs-toggle="modal"
+                                        <li className="dropdownList">
+                                            <div className="actionBtns">
+                                                <span className="deleteAction" data-bs-toggle="modal"
                                                     data-bs-target="#deletebtn"> <i
-                                                        class="bi bi-trash3-fill"></i></span>
-                                                <button type="button" className="btn btn-outlined-secondary fs_13">Delete</button>
+                                                        className="bi bi-trash3-fill"></i></span>
+                                                <button type="button" classNameName="btn btn-outlined-secondary fs_13">Delete</button>
                                             </div>
                                         </li>
                                     </ul>
@@ -210,10 +210,10 @@ const List_Of_Blogs = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className="row padd_bottm">
-                <div className="col-sm-6 col-lg-6 col-md-6">
-                    <div className="padding-30">
-                        <select class="form-select w-25 " name={state.row_value} onChange={Chnage}>
+                <div classNameName="row padd_bottm">
+                <div classNameName="col-sm-6 col-lg-6 col-md-6">
+                    <div classNameName="padding-30">
+                        <select className="form-select w-25 " name={state.row_value} onChange={Chnage}>
                             <option disabled selected>Rows</option>
                             <option value="10">10</option>
                             <option value="25">25</option>
@@ -221,10 +221,10 @@ const List_Of_Blogs = () => {
                         </select>
                     </div>
                 </div>
-                <div className="col-sm-6 col-lg-6 col-md-6 ">
-                    <div className="padding-30 pagination_justify_end ">
+                <div classNameName="col-sm-6 col-lg-6 col-md-6 ">
+                    <div classNameName="padding-30 pagination_justify_end ">
                         {/*<Pagination
-                            className="paginationDiv"
+                            classNameName="paginationDiv"
                             count={5}
                             onChange={handlechange}
     color="primary" />*/}

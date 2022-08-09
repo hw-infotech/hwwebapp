@@ -44,15 +44,15 @@ const Add_Gallery_Event = () => {
                                                     <Field type="date" className="form-control" name="eventdate" />
                                                     <ErrorMessage component="div" className="text-danger" name="eventdate" />
                                                 </div>
-                                                <div class="custom-file form-group">
-                                                    <label class="form-label" for="customFile">Chose Audio for Event</label>
-                                                    <input type="file" class="form-control" id="customFile" />
+                                                <div className="custom-file form-group">
+                                                    <label className="form-label" for="customFile">Chose Audio for Event</label>
+                                                    <input type="file" className="form-control" id="customFile" />
                                                 </div>
                                             </div>
                                         </div>
                                         <Imageuploader />
                                         <div className="pt-3 " style={{ display: "flex", justifyContent: "end", marginTop: "20px" }}>
-                                            <button type="button" class="btn btn-outline-secondary ">Submit</button>
+                                            <button type="button" className="btn btn-outline-secondary ">Submit</button>
                                         </div>
                                     </div>
                                 </form>

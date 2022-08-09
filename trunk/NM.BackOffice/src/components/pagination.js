@@ -25,7 +25,7 @@ const Paginationn = () => {
             setpagination({ start: start, end: showPerPage })
         }
         else {
-            console.log("else", start, showPerPage)
+    
             setStart(start - row)
             setShowPerPage(showPerPage - row)
             setpagination({ start: start - row, end: showPerPage - row })

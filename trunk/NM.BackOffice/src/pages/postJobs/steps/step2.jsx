@@ -8,8 +8,8 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
     const { setFieldValue } = useFormikContext()
     // const selector = useSelector(state => state.data.apidata.edit_data)
     useEffect(() => {
-        document.title = "Requirment "
-      }, [])
+        document.title = "Add Job"
+    }, [])
     return <div className="w-100 m-auto">
 
         <Row>
@@ -38,7 +38,7 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
 
                     />
                     <Form.Label className="label-size">Benefits</Form.Label>
-                    <div style={{ marginBottom: "1rem" }}>
+                    <div className="mb-2">
                         <CreatableSelectField
                             name="benefits"
                             formState={state}
@@ -53,7 +53,7 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
             </Col>
         </Row>
         <div className="d-flex w-100 justify-content-end gap-2">
-            <Button variant="secondary" className="btn-sm" onClick={() => setGoSteps(0)} >Back</Button>
+            <Button variant="" className="btn-sm back-buttonn" onClick={() => setGoSteps(0)} >Back</Button>
             <Button variant="primary" className="btn-sm" onClick={() => {
                 setFieldValue('responsibility', state.responsibility.map((_) => (_)))
                 setFieldValue("requirment", state.requirment.map((_) => (_)))

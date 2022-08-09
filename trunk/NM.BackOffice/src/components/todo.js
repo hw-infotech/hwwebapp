@@ -16,7 +16,6 @@ const Todo = () => {
   function dropIt(ev) {
     ev.preventDefault();  // default is not to allow drop
     let sourceId = ev.dataTransfer.getData("text/plain");
-
     let sourceIdEl = document.getElementById(sourceId);
     let sourceIdParentEl = sourceIdEl.parentElement;
     console.log(sourceIdEl, "this is the dropit ")
@@ -28,9 +27,9 @@ const Todo = () => {
     // or within the same list
     if (targetParentEl.id !== sourceIdParentEl.id) {
       // If the source and destination have the same 
-      // className (card), then we risk dropping a Card in to a Card
+      // classNameName (card), then we risk dropping a Card in to a Card
       // That may be a cool feature, but not for us!
-      if (targetEl.className === sourceIdEl.className) {
+      if (targetEl.classNameName === sourceIdEl.classNameName) {
         // Append to parent Object (list), not to a 
         // Card in the list
         // This is in case you drag and drop a Card on top 
@@ -61,49 +60,41 @@ const Todo = () => {
 
   }
   return (
-    <div className="rop">
-      <div class="board-layout">
-
-        <div class="left">
-          <div class="board-text">Today Board</div>
-
+    <div classNameName="rop">
+      <div className="board-layout">
+        <div className="left">
+          <div className="board-text">Today Board</div>
         </div>
-
-        <div id='boardlists' class="board-lists">
-          <div id='list1' class="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
-            <div class="list-title">
+        <div id='boardlists' className="board-lists">
+          <div id='list1' className="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
+            <div className="list-title">
               To Do
             </div>
-
-            <div id='card1' class="card" draggable="true" onDragStart={(event) => dragStart(event)}>
+            <div id='card1' className="card" draggable={true} onDragStart={(event) => dragStart(event)}>
               Work on article
             </div>
-            <div id='card2' class="card" draggable="true" onDragStart={(event) => dragStart(event)}>
+            <div id='card2' className="card" draggable="true" onDragStart={(event) => dragStart(event)}>
               Back up database
             </div>
-            <div id='card3' class="card" draggable="true" onDragStart={(event) => dragStart(event)}>
+            <div id='card3' className="card" draggable="true" onDragStart={(event) => dragStart(event)}>
               Build Lambda function
             </div>
-            <div id='card4' class="card" draggable="true" onDragStart={(event) => dragStart(event)}>
+            <div id='card4' className="card" draggable="true" onDragStart={(event) => dragStart(event)}>
               Work on course content
             </div>
-            <div id='card5' class="card" draggable="true" onDragStart={(event) => dragStart(event)}>
+            <div id='card5' className="card" draggable="true" onDragStart={(event) => dragStart(event)}>
               Debug SQL code
             </div>
-
           </div>
-          <div id='list2' class="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
-            <div class="list-title">
+          <div id='list2' className="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
+            <div className="list-title">
               In Progress
             </div>
-
-
           </div>
-          <div id='list3' class="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
-            <div class="list-title">
+          <div id='list3' className="board-list" onDropCapture={(event) => dropIt(event)} onDragOver={(event) => allowDrop(event)}>
+            <div className="list-title">
               Done
             </div>
-
           </div>
         </div>
       </div>
