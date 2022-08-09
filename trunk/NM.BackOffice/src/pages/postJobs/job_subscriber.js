@@ -167,7 +167,7 @@ const Job_newsletter = () => {
             </Button>
           </div>
         </div>
-        <small>Use checkbox for mark as selected</small>&nbsp;
+        <small className="text-muted" >Use checkbox for mark as selected</small>&nbsp;
         <div className="w-100 setupcontent pt-1">
           <Collapse in={disable}>
             <div className="">
@@ -254,11 +254,12 @@ const Job_newsletter = () => {
                       <Button
                         variant="secondary"
                         className="btn-sm"
-                        onClick={()=>{
-                          setChecked(false)
-                          handleClose()}}
+                        onClick={() => {
+                          setChecked(false);
+                          handleClose();
+                        }}
                       >
-                        Close
+                        Cancel
                       </Button>
                       <Button
                         variant="primary"
@@ -357,7 +358,6 @@ const Job_newsletter = () => {
                 <th>Email</th>
               </tr>
             </thead>
-
             {tableData.length > 0 ? (
               <tbody>
                 {tableData.map((data, index) => (

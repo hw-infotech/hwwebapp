@@ -19,7 +19,6 @@ import { MdOutlinePendingActions } from "react-icons/md";
 import { BsFilter } from "react-icons/bs";
 import capitalizeFirstLetter from "../../components/first_letter_capital";
 import { subString } from "../../Services/commonFunctions";
-import ReactTooltip from "react-tooltip";
 
 const All_Enquiry = () => {
   const [rowtext, setRowtext] = useState();
@@ -189,17 +188,17 @@ const All_Enquiry = () => {
         <div className="gapbetween pt-1">
           <Collapse in={disable}>
             <div className="status_filter">
-            <Form.Select
-            className="fs_13"
-            aria-label="Default select example"
-            id="example-collapse-text"
-            defaultValue={"all"}
-          >
-            <option hidden>Status</option>
-            <option  value={"ALL"}>All</option>
-            <option value="1">Pending</option>
-            <option value="1">Resolved</option>
-          </Form.Select>
+              <Form.Select
+                className="fs_13"
+                aria-label="Default select example"
+                id="example-collapse-text"
+                defaultValue={"all"}
+              >
+                <option disabled>Status</option>
+                <option selected value={"ALL"}>All</option>
+                <option value="1">Pending</option>
+                <option value="1">Resolved</option>
+              </Form.Select>
             </div>
           </Collapse>
           <Collapse in={disable}>
@@ -226,7 +225,7 @@ const All_Enquiry = () => {
         <Modal.Header className="label-size">
           <Modal.Title className="modal-titlee">Alert</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="label-size">
           <p>{rowtext?.text}</p>
         </Modal.Body>
         <Modal.Footer>
@@ -316,7 +315,7 @@ const All_Enquiry = () => {
                                     setwait(true);
                                     setRowtext({
                                       id: 0,
-                                      text: "Are you sure to mark  as enquiry Resolved ?",
+                                      text: "Are you sure to mark  as enquiry Resolved?",
                                     });
                                     setShowalert(true);
                                     setDeleteObj({
@@ -357,7 +356,7 @@ const All_Enquiry = () => {
                                     });
                                     setRowtext({
                                       id: 1,
-                                      text: "Are you sure to mark as enquiry Panding ?",
+                                      text: "Are you sure to mark as enquiry Panding?",
                                     });
                                   }}
                                 >

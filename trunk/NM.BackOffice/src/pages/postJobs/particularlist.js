@@ -34,7 +34,6 @@ import { tab } from "@testing-library/user-event/dist/tab";
 import { useDispatch, useSelector } from "react-redux";
 import { Edit_Data } from "../../Services/redux/action/action";
 import TooltipComp from "../../shared/Tooltipomp";
-import ReactTooltip from "react-tooltip";
 
 const Particularjob = () => {
   const data = useParams();
@@ -389,8 +388,8 @@ const Particularjob = () => {
                       className="fs_13 "
                       defaultValue={"All"}
                     >
-                      <option hidden>Status</option>
-                      <option value={"all"}>All</option>
+                      <option disabled>Status</option>
+                      <option selected value={"all"}>All</option>
                       <option value="reject">Reject</option>
                       <option value="select">Select</option>
                     </Form.Select>

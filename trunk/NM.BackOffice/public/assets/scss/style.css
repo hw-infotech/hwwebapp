@@ -665,12 +665,6 @@ body {
   font-size: 14px;
 }
 
-.story_image_selector .closeIcon {
-  z-index: 999;
-  border: 1px solid #cdc8c8;
-  cursor: pointer;
-}
-
 .story_image_selector .image_selector_design {
   width: 100%;
 }
@@ -682,8 +676,16 @@ body {
 
 .remove_img {
   position: absolute !important;
-  left: 89px !important;
-  bottom: 75px !important;
+  left: 93px !important;
+  bottom: 81px !important;
+  border-radius: 50% !important;
+  background-color: #eb7823 !important;
+}
+
+.remove_img .closeIcon {
+  padding: 3px !important;
+  cursor: pointer !important;
+  color: white !important;
 }
 
 .Main-story-box .content_box .data-table {
@@ -915,7 +917,6 @@ body {
 }
 
 .box-shadow-container {
-  border: 0.5px solid #8080802d;
   padding: 20px !important;
 }
 
@@ -987,9 +988,9 @@ body {
 
 .box__content .nav-tabs .nav-item.show .nav-link,
 .box__content .nav-tabs .nav-link.active {
-  color: #ff6b01 !important;
-  background-color: #fff;
-  border-color: #dee2e6 #dee2e6 #fff;
+  color: white !important;
+  background-color: #eb7823 !important;
+  border-color: #eb7823 !important;
 }
 
 .box__content .view_main_box {
@@ -1148,8 +1149,6 @@ body {
 }
 
 .box__content .box-shadow-container {
-  -webkit-box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
-          box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
   padding: 20px !important;
 }
 
@@ -1255,7 +1254,7 @@ body {
 
 .main-jobsubscriber-content .searchbar {
   max-width: 250px;
-  width: 100%;
+  width: 25%;
 }
 
 .formGroup {
@@ -1601,7 +1600,6 @@ body {
 
 /* Handle on hover */
 .main-content-holder .main-Profile-card {
-  border: 0.5px solid #8080802d;
   padding: 16px;
   width: 100%;
 }
@@ -1655,9 +1653,9 @@ body {
 }
 
 .main-content-holder .main-Profile-card .Profile-card .prfille-back-btn {
-  background-color: #ff6b01;
+  background-color: #eb7823;
   color: white;
-  border-color: #ff6b01;
+  border-color: #eb7823;
   width: 100%;
   float: right;
 }
@@ -1668,7 +1666,7 @@ body {
 
 .main-content-holder .main-Profile-card .Profile-card .prfille-back-btn:hover {
   color: white !important;
-  background-color: #ff6b01 !important;
+  background-color: #eb7823 !important;
 }
 
 .main-content-holder .main-Profile-card .Profile-card .card-heading4 {
@@ -1731,11 +1729,9 @@ body {
 
 .main-content-holder .profile_form .nav-tabs .nav-item.show .nav-link,
 .main-content-holder .profile_form .nav-tabs .nav-link.active {
-  color: #eb7823 !important;
-}
-
-.main-content-holder .profile_form .tab_border_zero {
-  border: 0px !important;
+  color: white !important;
+  background-color: #eb7823 !important;
+  border-color: #eb7823 !important;
 }
 
 .main-content-holder .profile_form .main-Profile-card1 {
@@ -1831,6 +1827,12 @@ body {
   color: #ffffff !important;
   background-color: #bcbbb5 !important;
   border-color: #bcbbb5 !important;
+}
+
+.btn-secondary:hover {
+  background-color: gray !important;
+  border-color: gray !important;
+  color: #ffffff !important;
 }
 
 .underConstruction .ConstructionContent h1 {

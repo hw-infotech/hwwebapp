@@ -225,7 +225,7 @@ const Sidebar = ({ sidebarShow }) => {
                   onClick={(e) => {
                     handleAnchorClick(e);
                     localStorage.setItem("className", "allenquiry");
-                    navigtion("/all-Enquiry");
+                    navigtion("/all-enquiry");
                   }}
                 >
                   <span className=" d-sm-inline navbar-submenu ">

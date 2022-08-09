@@ -61,7 +61,7 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    document.title = "Profile";
+    document.title = "My Profile";
     dispatch(GET_profile_data());
   }, []);
 

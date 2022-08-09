@@ -24,13 +24,13 @@ const Update_Step1 = ({ setGoSteps, state, setState, handleFieldchange }) => {
                 </div>
                 <Form.Group className="mb-3 w-100" controlId="formBasicEmail"  >
                     <Form.Label>Functions</Form.Label>
-                    <Form.Control type="text" placeholder="Enter the functions" value={state?.functions} name='functions' id="name" className="label-size"
+                    <Form.Control type="text" placeholder="Functions" value={state?.functions} name='functions' id="name" className="label-size"
                         onChange={(e) => handleFieldchange(e)} />
                 </Form.Group>
                 </div>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" rows={3} placeholder="Enter the description" value={state?.description} name="description" className="label-size"
+                <Form.Control as="textarea" rows={3} placeholder="Description" value={state?.description} name="description" className="label-size"
                     onChange={(e) => handleFieldchange(e)} />
             </Form.Group>
             </Col>

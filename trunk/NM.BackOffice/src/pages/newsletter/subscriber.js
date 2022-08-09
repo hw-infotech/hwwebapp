@@ -224,7 +224,7 @@ const SubScriber = () => {
                   label="Title"
                   className="form-control label-size"
                   name="title"
-                  placeholder="Enter the title"
+                  placeholder="Title"
                   onChange={handleChange}
                 />
                 {errors?.title && touched?.title ? (
@@ -237,7 +237,7 @@ const SubScriber = () => {
                 <Input
                   as={"textarea"}
                   className="form-control label-size"
-                  placeholder={"Enter the description"}
+                  placeholder={"Description"}
                   name="content_story"
                   onChange={handleChange}
                   id="exampleFormControlTextarea1"

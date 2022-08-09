@@ -460,7 +460,7 @@ const Success_Stories = () => {
                           label="Title"
                           className="form-control label-size"
                           name="title"
-                          placeholder="Enter the title"
+                          placeholder="Title"
                           onChange={handleChange}
                           id="title"
                           value={values.title}
@@ -478,7 +478,7 @@ const Success_Stories = () => {
                           as={"textarea"}
                           className="form-control label-size"
                           name="content"
-                          placeholder={"Enter the Description"}
+                          placeholder={"Description"}
                           id="exampleFormControlTextarea1"
                           rows={3}
                           label={"Description"}
@@ -569,7 +569,7 @@ const Success_Stories = () => {
                         ""
                       )}
                       {values.image ? (
-                        <div className="imageCard  mt-2">
+                        <div className="imageCard  mt-3">
                           <img
                             src={values.image}
                             className="icon"

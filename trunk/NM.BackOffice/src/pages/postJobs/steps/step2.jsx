@@ -38,7 +38,7 @@ const Step2 = ({ setGoSteps, state, setState, handleChange, values }) => {
 
                     />
                     <Form.Label className="label-size">Benefits</Form.Label>
-                    <div className="mb-2">
+                    <div className="mb-3">
                         <CreatableSelectField
                             name="benefits"
                             formState={state}

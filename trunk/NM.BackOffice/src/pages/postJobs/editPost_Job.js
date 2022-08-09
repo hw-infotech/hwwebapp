@@ -13,7 +13,6 @@ import {
 } from "react-bootstrap";
 import { Field, Formik, FormikProvider } from "formik";
 import { Input } from "../../components/commoninputfield";
-import { BsSearch } from "react-icons/bs";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 //import { Pagination } from "@material-ui/lab";
 import { initialValues, validationschemeaa } from "./validation-schema";
@@ -36,7 +35,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import TooltipComp from "../../shared/Tooltipomp";
-import ReactTooltip from "react-tooltip";
 
 const Edit_postJob = (value1) => {
   useEffect(() => {
@@ -165,15 +163,15 @@ const Edit_postJob = (value1) => {
         </div>
         <div className="gapbetween pt-1">
           <Collapse in={disable}>
-            <div>
+            <div id="example-collapse-text">
               <Form.Select
                 aria-label="Default select example"
                 className="fs_13"
                 defaultValue={"all"}
-
+                id="example-collapse-text"
               >
-                <option hidden>Status </option>
-                <option value="all">All</option>
+                <option disabled>Status</option>
+                <option selected value={"all"}>All</option>
                 <option value="1">Subscribe</option>
                 <option value="1">Unsubscribe</option>
               </Form.Select>

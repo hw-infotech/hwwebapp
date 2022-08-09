@@ -10,7 +10,6 @@ import {
   Modal,
   Table,
 } from "react-bootstrap";
-import ReactTooltip from "react-tooltip";
 
 export const Filters = ({
   requestSearch,
@@ -60,8 +59,8 @@ export const Filters = ({
               id="example-collapse-text"
               defaultValue={"all"}
             >
-              <option hidden>Status</option>
-              <option  value={"ALL"}>All</option>
+              <option disabled>Status</option>
+              <option selected value={"ALL"}>All</option>
               <option value="1">Active</option>
               <option value="1">Deactive</option>
             </Form.Select>
