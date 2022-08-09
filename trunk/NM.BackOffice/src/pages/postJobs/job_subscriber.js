@@ -254,7 +254,9 @@ const Job_newsletter = () => {
                       <Button
                         variant="secondary"
                         className="btn-sm"
-                        onClick={handleClose}
+                        onClick={()=>{
+                          setChecked(false)
+                          handleClose()}}
                       >
                         Close
                       </Button>
@@ -312,6 +314,7 @@ const Job_newsletter = () => {
                 <th className="action_colwidth" align="center">
                   <Form.Check
                     className="fs_13"
+                    checked={checked}
                     onClick={(e) => {
                       setChecked(e.target.checked);
                     }}
