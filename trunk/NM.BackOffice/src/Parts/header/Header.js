@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import {
+  Badge,
+  Button,
+  Container,
+  Nav,
+  Navbar,
+  NavDropdown,
+} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
 import { GoThreeBars } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
+//import { IoNotificationsOutline } from "react-icons/lo";
 
 const Header = ({ title, sidebarShow, setSidebarShow }) => {
   const [userName, setUsername] = useState();
@@ -16,7 +24,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
 
   return (
     <div className="main-header-box">
-      <Navbar className="navbarBox navbar_style">
+      <Navbar className="navbarBox navbar_style" bg="light" expand="lg">
         <Navbar.Brand className="navbar_inner_style">
           <Button
             variant=""
@@ -29,8 +37,56 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
           </Button>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav>
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ">
+          <Nav className="">
+            <NavDropdown
+              className="navbar_designs"
+              title={
+                <span>
+                  <i class="fs-5 bi-bell"></i>
+                  <Badge
+                    size={20}
+                    className="notificaton_badge"
+                    pill
+                    bg="danger"
+                  >
+                    9
+                  </Badge>
+                </span>
+              }
+              id="basic-navbar-nav"
+            >
+              <NavDropdown.Item
+                className=""
+                onClick={() => {
+                  history("/profile");
+                }}
+              >
+                Notification 1
+              </NavDropdown.Item>
+              <NavDropdown.Item className="" onClick={() => {}}>
+                Notification 2
+              </NavDropdown.Item>
+
+              <NavDropdown.Item className="" onClick={() => {}}>
+                Notification 3
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <div className="dropdownn">
+                <NavDropdown.Item
+                  className="notification-li-padding"
+                  onClick={() => {}}
+                >
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="notification-showall btn-sm class"
+                  >
+                    Show all
+                  </Button>
+                </NavDropdown.Item>
+              </div>
+            </NavDropdown>
             <NavDropdown
               title={
                 <span>
@@ -68,10 +124,10 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                 Log out
               </NavDropdown.Item>
             </NavDropdown>
-              <Nav.Link
-                href="#link"
-                className="nav-link a navbarDropdown"
-              ></Nav.Link>
+            <Nav.Link
+              href="#link"
+              className="nav-link a navbarDropdown"
+            ></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

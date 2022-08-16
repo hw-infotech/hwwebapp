@@ -153,6 +153,7 @@ const Particularjob = () => {
           id="uncontrolled-tab-example"
           onSelect={(k) => setKey(k)}
           className="mb-3"
+       
         >
           <Tab
             eventKey="Description"
@@ -367,20 +368,21 @@ const Particularjob = () => {
                     </div>
                   </Col>
                   <Col md={6} sm={1} lg={6} xl={6}>
-                    <div className="d-flex justify-content-end align-items-end mt-5">
-                      <Button
-                        title="Filter"
-                        variant=""
-                        className="btn-sm remove_button_padding"
-                        onClick={() => setSdisabled((p) => !p)}
-                      >
-                        <BsFilter size={25} color="#ff6b01" />
-                      </Button>
-                    </div>
+                   
                   </Col>
                 </Row>
               </div>
-              <div className="setupcontent mt-3 w-100 ">
+              <div className="d-flex justify-content-end align-items-end ">
+              <Button
+                title="Filter"
+                variant=""
+                className="btn-sm remove_button_padding"
+                onClick={() => setSdisabled((p) => !p)}
+              >
+                <BsFilter size={25} color="#ff6b01" />
+              </Button>
+            </div>
+              <div className="setupcontent mt-1 w-100 ">
                 <Collapse in={disabled}>
                   <div className="">
                     <Form.Select
@@ -389,7 +391,9 @@ const Particularjob = () => {
                       defaultValue={"All"}
                     >
                       <option disabled>Status</option>
-                      <option selected value={"all"}>All</option>
+                      <option selected value={"all"}>
+                        All
+                      </option>
                       <option value="reject">Reject</option>
                       <option value="select">Select</option>
                     </Form.Select>

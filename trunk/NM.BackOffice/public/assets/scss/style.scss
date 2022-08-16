@@ -288,10 +288,59 @@ body {
   background-color: #e9ecef !important;
 }
 .main-header-box {
-  background-color: #ffffff !important;
+  //background-color: #ffffff !important;
   height: 70px;
   // padding: 0px 20px !important;
   box-shadow: 0px 0px 26px 5px #0000000d;
+
+  .navbar_designs {
+    .dropdown-toggle::after {
+      border: 0px !important;
+    }
+
+    .dropdownn {
+      .notification-showall {
+        padding: 0px;
+        color: #0d6efd;
+      }
+      .notification-li-padding {
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+      }
+      .dropdown-item:focus,
+      .dropdown-item:hover {
+        background-color: transparent !important;
+      }
+    }
+    .dropdown-menu[data-bs-popper] {
+      top: 100%;
+      position: absolute;
+      left: -40px !important;
+      margin-top: 0.125rem;
+      top: 60px !important;
+    }
+    .dropdownList:hover {
+      background-color: white !important;
+    }
+  }
+  .navbar-nav {
+    flex-direction: row;
+
+    align-items: center !important;
+  }
+  .navbar-expand-lg {
+    .navbar-collapse {
+      gap: 15px;
+    }
+  }
+
+  .notificaton_badge {
+    position: absolute;
+    top: 3px;
+    left: 18px !important;
+    font-size: 10px !important;
+  }
   .dropdown-menu[data-bs-popper] {
     top: 100%;
     left: 18px !important;
@@ -594,11 +643,12 @@ body {
   left: 93px !important;
   bottom: 81px !important;
   border-radius: 50% !important;
-  background-color: #eb7823 !important;
+  background-color: #9d9590 !important;
   //border: 2px solid #6256566b !important;
   .closeIcon {
     // border: 1px solid #cdc8c8 !important ;
-    padding: 3px !important;
+    padding: 4px !important;
+    font-size: 14px !important;
     cursor: pointer !important;
     color: white !important;
   }
@@ -609,7 +659,8 @@ body {
       font-size: 13px;
     }
   }
-
+  .remove_label::after {
+  }
   // div[role="dialog"] {
   //     background-color: #000000 !important;
   // }
@@ -1116,7 +1167,7 @@ body {
   }
 }
 
-/////-------------------------jobsubscriber/unsubscriber--------------------////////////////////
+/////-------------------------job subscriber/unsubscriber--------------------////////////////////
 
 .main-jobsubscriber-content {
   .content_box {
@@ -1132,6 +1183,15 @@ body {
     //global class
     max-width: 250px;
     width: 25%;
+  }
+  .nav-link {
+    color: gray !important;
+  }
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
+    color: white !important ;
+    background-color: #eb7823 !important;
+    border-color: #eb7823 !important;
   }
 }
 /////////Applied Jobs////////////
@@ -1435,15 +1495,15 @@ body {
 
 //----Userdetails-----//
 
-/* Handle on hover */
-
 //----------------------------Profile Page----------------------------------//
 .main-content-holder {
   .main-Profile-card {
-    //border: 0.5px solid #8080802d;
+    // border: 0.5px solid #8080802d;
     // box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
-    padding: 16px;
+    padding: 16px 0px 0px 0px;
     width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #80808036;
 
     .buttonContainer {
       width: 120px;
@@ -1475,7 +1535,6 @@ body {
       border-radius: 20px;
       width: 100%;
       gap: 15px;
-      margin-bottom: 10px;
 
       .profile-image {
         border-radius: 5px;
@@ -1550,6 +1609,7 @@ body {
   }
 
   .profile_form {
+    margin-top: 1rem;
     .nav-link {
       color: gray !important;
     }
@@ -1565,10 +1625,9 @@ body {
     }
 
     .main-Profile-card1 {
-      margin-top: 20px;
+      //margin-top: 20px;
       //border: 0.5px solid #8080802d;
       // box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
-      padding: 16px;
 
       .prfile-card11 {
         width: 100%;
@@ -1579,9 +1638,10 @@ body {
           display: flex;
           justify-content: space-between;
           width: 100%;
-          margin-bottom: 30px;
-          padding: 0px;
-          border-bottom: 1px solid #8080803b;
+          //margin-bottom: 15px;
+          // padding-bottom: 1rem;
+          // border-bottom: 1px solid #8080803b;
+          align-items: center;
 
           .changeable_btn {
             display: flex;

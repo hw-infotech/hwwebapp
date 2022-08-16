@@ -176,10 +176,7 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className="
-              "
-              >
+              <div className="">
                 <Button
                   variant=""
                   className="prfille-back-btn btn-sm"
@@ -229,7 +226,7 @@ const Profile = () => {
                       <div className="main-Profile-card1">
                         <div className="prfile-card11">
                           <div className="inner-profile1">
-                            <span>{!edit ? "" : "Edit Profile"}</span>
+                            <h6>{!edit ? "" : "Edit Profile"}</h6>
 
                             <div className="changeable_btn">
                               {!edit ? (

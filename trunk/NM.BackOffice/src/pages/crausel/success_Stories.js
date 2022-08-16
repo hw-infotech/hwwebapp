@@ -185,7 +185,7 @@ const Success_Stories = () => {
     reader.readAsDataURL(file);
     reader.onload = () => {
       setFieldValue("image", reader.result);
-      setImge(file.name);
+      //setImge(file.name);
     };
     reader.onerror = function (error) {
       console.log("Error: ", error);
@@ -505,10 +505,10 @@ const Success_Stories = () => {
                         onChange={handleChange}
                         color="#eb7823"
                       />
-                      <Form.Label className="label-size ">
+                      <Form.Label className="label-size">
                         Upload Image
                       </Form.Label>
-                      <div className="story_image_selector">
+                      {/*  <div className="story_image_selector">
                         <div className="d-flex w-100">
                           <input
                             type="file"
@@ -529,24 +529,25 @@ const Success_Stories = () => {
                             className="image_filld_text form-control"
                             htmlFor="image"
                           >
-                            {img ? "Upload Image" : "Choose Image"}
+                            Upload image
                           </label>
                           <Form.Group className="image_selector_design"></Form.Group>
                         </div>
+                    
+                      </div>*/}
+                      <Form.Control
+                        className="label-size remove_label"
+                        type="file"
+                        ref={inputFileRef}
+                        accept=".png,.jpg"
+                        aria-label="Upload Images"
+                        name="image"
+                        onChange={(e) => {
+                          getBase64(e, setFieldValue);
+                        }}
+                        //value={values?.image}
+                      />
 
-                        <Form.Label />
-                      </div>
-                      {/*<Form.Control
-                  className="label-size"
-                  type="file"
-                  accept=".png,.jpg"
-                  aria-label="Upload Images"
-                  name="image"
-                  onChange={(e) => {
-                    getBase64(e, setFieldValue);
-                  }}
-                  value={values.image}
-                />*/}
                       {errors?.image && touched.image ? (
                         <label className="text-danger label-size">
                           {errors.image}
@@ -557,11 +558,10 @@ const Success_Stories = () => {
                       {values.image ? (
                         <div className="remove_img">
                           <i
-                            className="fs-6 bi-x closeIcon"
+                            className=" bi-x closeIcon"
                             onClick={() => {
                               inputFileRef.current.value = "";
                               setFieldValue("image", "");
-                              setImge("");
                             }}
                           ></i>
                         </div>
