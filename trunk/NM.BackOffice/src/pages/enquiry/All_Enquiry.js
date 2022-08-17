@@ -18,126 +18,82 @@ import CustomPagination from "../../shared/pagination";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { BsFilter } from "react-icons/bs";
 import capitalizeFirstLetter from "../../components/first_letter_capital";
-import { subString } from "../../Services/commonFunctions";
+import { sortData, subString } from "../../Services/commonFunctions";
+import withHeader from "../../HOC/withHeader";
 
-const All_Enquiry = () => {
+const records = [
+  {
+    Name: "Mark",
+    Phone: "9803836866",
+    Email: "goldygoldy33@gmail.com",
+    message:
+      "We look forward to seeing you, We would like to thank you for your letter inquiring about our product.",
+    status: "pending",
+  },
+  {
+    Name: "adfark",
+    Phone: "8146945394",
+    Email: "Amanpreet33@gmail.com",
+    message:
+      " We hope the information provided ,We would like to thank you for your letter inquiring about our product.",
+    status: "pending",
+  },
+  {
+    Name: "yark",
+    Phone: "9803836866",
+    Email: "ganeshsharma5073@gmail.com",
+    message:
+      " our hopes that the situation is resolved soonest. We would like to thank you for your letter inquiring about our product.",
+    status: "pending",
+  },
+];
+const route = [
+  { name: "Dashboard", route: "/" },
+  { name: "Enquiry" },
+  { name: "All Enquiry", route: "/all-Enquiry" },
+];
+const options = [
+  { value: "Pending", label: "Pending" },
+  { value: "Resolved", label: "Resolved" },
+];
+const All_Enquiry = ({
+  tableData,
+  setTableData,
+  setRoute,
+  settitle,
+  setPlaceholder,
+  setShow,
+  show,
+  setSearchwith,
+  setOptions
+}) => {
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState();
-  const [disable, setSdisabled] = useState(false);
-  const [status, setStatus] = useState();
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const route = [
-    { name: "Dashboard", route: "/" },
-    { name: "Enquiry" },
-    { name: "All Enquiry", route: "/all-Enquiry" },
-  ];
-  const [row, setRow] = useState(10);
-  const [state, setState] = useState({
-    row_value: "",
-  });
   const [showPerPage, setShowPerPage] = useState(10);
-  const [next, setNext] = useState(0);
   const [start, setStart] = useState(1);
   const [pagination1, setpagination] = useState({
     start: start,
     end: showPerPage,
   });
-  // const selector = useSelector(state => state),
-  //     dispatch = useDispatch(),
-  //     [subscribers, setnewsletter-subscriberss] = useState([])
-  // console.log("hellow", subscribers);
-  // useEffect(() => {
-  //     dispatch(News_letter_Subscribe())
-  // }, [])
-
-  // useEffect(() => {
-  //     // setnewsletter-subscriberss(selector?.data?.apidata?.getnewsletterunsubscriber?.data)
-  //     setpagination({ start: start, end: showPerPage })
-  // }, [selector, pagination1])
-
-  const records = [
-    {
-      Name: "Mark",
-      Phone: "9803836866",
-      Email: "goldygoldy33@gmail.com",
-      message:
-        "We look forward to seeing you, We would like to thank you for your letter inquiring about our product.",
-      status: "pending",
-    },
-    {
-      Name: "adfark",
-      Phone: "8146945394",
-      Email: "Amanpreet33@gmail.com",
-      message:
-        " We hope the information provided ,We would like to thank you for your letter inquiring about our product.",
-      status: "pending",
-    },
-    {
-      Name: "yark",
-      Phone: "9803836866",
-      Email: "ganeshsharma5073@gmail.com",
-      message:
-        " our hopes that the situation is resolved soonest. We would like to thank you for your letter inquiring about our product.",
-      status: "pending",
-    },
-  ];
-  // const Chnage = (e) => {
-  //     const { name, value } = e.target
-  //     setRow(value)
-  //     console.log("this is the select field value", value)
-  // }
-
-  // const handlechange = (event, value) => {
-  //     var value1;
-  //     setNext(value)
-  //     if (next <= value) {
-  //         value1 = row * value
-  //         setShowPerPage(value1)
-  //         console.log("this is the if conditon", value, showPerPage, state.row_value)
-  //         setStart(value1 - row)
-  //         setpagination({ start: start, end: showPerPage })
-  //     }
-  //     else {
-  //         console.log("else", start, showPerPage)
-  //         setStart(start - row)
-  //         setShowPerPage(showPerPage - row)
-  //         setpagination({ start: start - row, end: showPerPage - row })
-  //     }
-  // }
-  const [tableData, setTableData] = useState(records);
-  function sortt() {
-    const response = tableData.sort((a, b) =>
-      a.Name.toLowerCase() > b.Name.toLowerCase()
-        ? 1
-        : b.Name.toLowerCase() > a.Name.toLowerCase()
-        ? -1
-        : 0
-    );
-    setTableData([...response]);
-  }
-  function sortt1() {
-    const response = tableData.sort((a, b) =>
-      a.Name.toLowerCase() < b.Name.toLowerCase()
-        ? 1
-        : b.Name.toLowerCase() < a.Name.toLowerCase()
-        ? -1
-        : 0
-    );
-    setTableData([...response]);
-  }
+  setPlaceholder("Search by name");
+  settitle("All Enquiry");
+  setRoute(route);
+  setSearchwith("Name");
+  setOptions(options)
+  //const [tableData, setTableData] = useState(records);
   const [title, setTitle] = useState(false);
-
-  const requestSearch = (searchedVal) => {
-    const filteredRows = records.filter((row) => {
-      return (
-        row.Name.toLowerCase().includes(searchedVal.toLowerCase()) ||
-        row.Email.toLowerCase().includes(searchedVal.toLowerCase())
-      );
-    });
-    setTableData(filteredRows);
-  };
+  // const requestSearch = (searchedVal) => {
+  //   const filteredRows = records.filter((row) => {
+  //     return (
+  //       row.Name.toLowerCase().includes(searchedVal.toLowerCase()) ||
+  //       row.Email.toLowerCase().includes(searchedVal.toLowerCase())
+  //     );
+  //   });
+  //   setTableData(filteredRows);
+  // };
   const [deleteObj, setDeleteObj] = useState({
     index: 0,
     rowStatus: false,
@@ -145,9 +101,6 @@ const All_Enquiry = () => {
   const [wait, setwait] = useState(false);
   const display = () => {
     console.log(deleteObj);
-
-    //const result = await confirm(rowtext.text);
-    // console.log(rowText);
     if (deleteObj.rowStatus) {
       setTableData((oldState) => {
         oldState[deleteObj.index].status = "resolved";
@@ -168,59 +121,57 @@ const All_Enquiry = () => {
   }, []);
   return (
     <div className="main-enquiry-box">
-      <BasicBreadcrumbs route={route} />
-      <div className="panle_body">
-        <div className="panle_header">
-          <div className="left-panle-title">
-            <h4>All Enquiry</h4>
-          </div>
-          <div className="right_panle_container">
-            <Button
-              variant=""
-              title="Filter"
-              className="btn-sm remove_button_padding"
-              onClick={() => setSdisabled((p) => !p)}
-            >
-              <BsFilter size={25} color="#ff6b01" />
-            </Button>
-          </div>
-        </div>
-        <div className="gapbetween pt-1">
-          <Collapse in={disable}>
-            <div className="status_filter">
-              <Form.Select
-                className="fs_13"
-                aria-label="Default select example"
-                id="example-collapse-text"
-                defaultValue={"all"}
-              >
-                <option disabled>Status</option>
-                <option selected value={"ALL"}>All</option>
-                <option value="1">Pending</option>
-                <option value="1">Resolved</option>
-              </Form.Select>
-            </div>
-          </Collapse>
-          <Collapse in={disable}>
-            <div className="serachbar">
-              <InputGroup className="mb-3">
-                <FormControl
-                  className="fs_13"
-                  placeholder="Serach by Name"
-                  aria-label="Recipient's username"
-                  aria-describedby="basic-addon2"
-                  onChange={(e) => {
-                    requestSearch(e.target.value);
-                  }}
-                />
-                {/*<Button variant="outline-secondary" id="button-addon2">
-                                                <BsSearch />
-                                            </Button>*/}
-              </InputGroup>
-            </div>
-          </Collapse>
-        </div>
+      {/*<div className="panle_body">
+    <div className="panle_header">
+      <div className="left-panle-title">
+        <h4>All Enquiry</h4>
       </div>
+      <div className="right_panle_container">
+        <Button
+          variant=""
+          title="Filter"
+          className="btn-sm remove_button_padding"
+          onClick={() => setSdisabled((p) => !p)}
+        >
+          <BsFilter size={25} color="#ff6b01" />
+        </Button>
+      </div>
+    </div>
+    <div className="gapbetween pt-1">
+      <Collapse in={disable}>
+        <div className="status_filter">
+          <Form.Select
+            className="fs_13"
+            aria-label="Default select example"
+            id="example-collapse-text"
+            defaultValue={"all"}
+          >
+            <option disabled>Status</option>
+            <option selected value={"ALL"}>
+              All
+            </option>
+            <option value="1">Pending</option>
+            <option value="1">Resolved</option>
+          </Form.Select>
+        </div>
+      </Collapse>
+      <Collapse in={disable}>
+        <div className="serachbar">
+          <InputGroup className="mb-3">
+            <FormControl
+              className="fs_13"
+              placeholder="Serach by Name"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+              onChange={(e) => {
+                requestSearch(e.target.value);
+              }}
+            />
+          </InputGroup>
+        </div>
+      </Collapse>
+    </div>
+            </div>*/}
       <Modal show={showalert} onHide={handleClose}>
         <Modal.Header className="label-size">
           <Modal.Title className="modal-titlee">Alert</Modal.Title>
@@ -262,7 +213,9 @@ const All_Enquiry = () => {
                   onClick={() => {
                     setTitle(!title);
                     {
-                      title ? sortt() : sortt1();
+                      title
+                        ? setTableData(sortData(tableData, "Name", "asc"))
+                        : setTableData(sortData(tableData, "Name", "desc"));
                     }
                   }}
                 >
@@ -378,12 +331,6 @@ const All_Enquiry = () => {
                       ) : (
                         <Badge bg="danger">Pending</Badge>
                       )}
-                      {/*<Form.Check className="switch_pad_enquiry"
-                                        type="switch"
-                                        key={index}
-                                        label=""
-                                        checked={data.status === "resolved" ? true : false}
-                                                />*/}
                     </td>
                     <td>{capitalizeFirstLetter(data.Name)}</td>
                     <td>{data.Phone}</td>
@@ -436,29 +383,4 @@ const All_Enquiry = () => {
     </div>
   );
 };
-export default All_Enquiry;
-
-// <Button
-// variant=""
-// key={index}
-// style={{ padding: "0px" }}
-// onClick={(e) => {
-//     display(index)
-//     console.log(status)
-//     if (status == true) {
-//         // setTableData(oldState => {
-//         //     oldState[index].status = "resolved"
-//         //     return [...oldState]
-//         // })
-//     }
-//     else {
-
-//     }
-// }}>
-// <FcCheckmark size={20} />
-// </Button>
-
-// <Button variant="" key={index} style={{ padding: "0px" }} onClick={() => setTableData(oldState => {
-//     oldState[index].status = "pending"
-//     return [...oldState]
-// })}><FcDeleteColumn size={22} /></Button>
+export default withHeader(All_Enquiry, records, false);

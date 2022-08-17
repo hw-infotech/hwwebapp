@@ -35,6 +35,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import TooltipComp from "../../shared/Tooltipomp";
+import withHeader from "../../HOC/withHeader";
+const route = [
+  { name: "Dashboard", route: "/" },
+  { name: "Job Management", route: "" },
+  { name: "Job", route: "" },
+];
+const options = [
+  { value: "Subscribe", label: "Subscribe" },
+  { value: "Unsubscribe", label: "Unsubscribe" },
+];
 
 const Edit_postJob = (value1) => {
   useEffect(() => {
@@ -48,31 +58,13 @@ const Edit_postJob = (value1) => {
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
   const [disable, setSdisabled] = useState(false);
-  // const [showPerPage, setShowPerPage] = useState(5);
-  // const [start, setStart] = useState(1);
   const [pagination1, setpagination] = useState({
     start: 1,
     end: 10,
   });
+
   const navigate = useNavigate();
-  // const onPageChange = (start, end) => {
-  //   setpagination({ start: start, end: end });
-  //   console.log("called pagination");
-  // };
-
-  // useEffect(() => {
-  //   console.log("called",pagination1);
-  //   setpagination({ start: start, end: showPerPage });
-  // }, [pagination1]);
-
-  const route = [
-    { name: "Dashboard", route: "/" },
-    { name: "Job Management", route: "" },
-    { name: "Job", route: "" },
-  ];
-
   const [tableData, setTableData] = useState(selector);
-
   function sortt() {
     const response = selector.sort((a, b) =>
       a.jobtitle.toLowerCase() > b.jobtitle.toLowerCase()
@@ -171,7 +163,9 @@ const Edit_postJob = (value1) => {
                 id="example-collapse-text"
               >
                 <option disabled>Status</option>
-                <option selected value={"all"}>All</option>
+                <option selected value={"all"}>
+                  All
+                </option>
                 <option value="1">Subscribe</option>
                 <option value="1">Unsubscribe</option>
               </Form.Select>

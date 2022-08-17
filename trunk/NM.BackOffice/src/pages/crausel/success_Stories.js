@@ -23,11 +23,15 @@ import { BsFilter } from "react-icons/bs";
 import { BsFilterLeft } from "react-icons/bs";
 import CustomPagination from "../../shared/pagination";
 import { confirm } from "react-bootstrap-confirmation";
-import { subString } from "../../Services/commonFunctions";
+import {
+  requestSearch,
+  sortData,
+  subString,
+} from "../../Services/commonFunctions";
 import { Filters } from "../../components/header-filter";
 import * as yup from "yup";
-import { tab } from "@testing-library/user-event/dist/tab";
 import Customhook from "../../components/customhook";
+import withHeader from "../../HOC/withHeader";
 
 const route = [
   { name: "Dashboard", route: "/" },
@@ -62,17 +66,26 @@ const validationSchema = yup.object({
   content: yup.string().required().label("Content"),
   image: yup.string().required().label("image"),
 });
-const Success_Stories = () => {
-  const [tableData, setTableData] = useState(records);
+const options = [
+  { value: "Active", label: "Active" },
+  { value: "Deactive", label: "Deactive" },
+];
+const Success_Stories = ({
+  tableData,
+  setTableData,
+  setRoute,
+  settitle,
+  setPlaceholder,
+  setShow,
+  show,
+  setOptions,
+}) => {
   const [title, setTitle] = useState(false);
   const [deleteObj, setDeleteObj] = useState({
     index: 0,
     rowStatus: false,
   });
   const [indexx, setIndexx] = useState();
-  const [upload, setUpload] = useState();
-  const [img, setImge] = useState();
-  const [open, setOpen] = useState(false);
   const [values, setValues] = useState();
   const [index, setindex] = useState();
   const [state, setState] = useState({
@@ -85,16 +98,21 @@ const Success_Stories = () => {
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
   const [edit, setEdit] = useState();
-  const [show, setShow] = useState(false);
   const [showPerPage, setShowPerPage] = useState();
   const [start, setStart] = useState();
   const [pagination1, setpagination] = useState({
     start: start,
     end: showPerPage,
   });
-
+  useEffect(() => {
+    document.title = "Success Stories";
+  }, []);
+  setPlaceholder("Search by title");
+  settitle("Success Stories");
+  setRoute(route);
+  setOptions(options);
   const inputFileRef = useRef(null);
-
+  const handleShow = () => setShow(true);
   const handleClose = () => {
     setShow(false);
     setEdit(false);
@@ -104,48 +122,10 @@ const Success_Stories = () => {
       active: null,
       image: "",
     });
-    // alert(JSON.stringify(state))
   };
-  useEffect(() => {
-    document.title = "Success Stories";
-  }, []);
-  const handleShow = () => setShow(true);
-
-  const requestSearch = (searchedVal) => {
-    const filteredRows = records.filter((row) => {
-      return row.title.toLowerCase().includes(searchedVal.toLowerCase());
-    });
-    setTableData(filteredRows);
-  };
-
-  function sortt() {
-    const response = tableData.sort((a, b) =>
-      a.title.toLowerCase() > b.title.toLowerCase()
-        ? 1
-        : b.title.toLowerCase() > a.title.toLowerCase()
-        ? -1
-        : 0
-    );
-
-    setTableData([...response]);
-  }
-
-  function sortt1() {
-    const response = tableData.sort((a, b) =>
-      a.title.toLowerCase() < b.title.toLowerCase()
-        ? 1
-        : b.title.toLowerCase() < a.title.toLowerCase()
-        ? -1
-        : 0
-    );
-
-    setTableData([...response]);
-  }
 
   const display = () => {
     setShowalert(true);
-    //const result = await confirm(rowtext.text);
-    // console.log(rowText);
     if (deleteObj.rowStatus) {
       setTableData((oldState) => {
         oldState[deleteObj.index].active = true;
@@ -159,10 +139,6 @@ const Success_Stories = () => {
       });
     }
   };
-  const onhandlechange = (e) => {
-    const { name, value } = e.target;
-    setState({ ...state, [name]: value });
-  };
 
   const handleFormSubmit = (values, { resetForm }) => {
     const { name, value } = values;
@@ -174,10 +150,8 @@ const Success_Stories = () => {
       active: "",
       image: "",
     });
-    // resetForm()
   };
-  let titl = "Success Stories";
-  let placeholder = "Search by title";
+
   const getBase64 = (e, setFieldValue) => {
     var file = e.target.files[0];
     console.log(file, "file");
@@ -185,7 +159,6 @@ const Success_Stories = () => {
     reader.readAsDataURL(file);
     reader.onload = () => {
       setFieldValue("image", reader.result);
-      //setImge(file.name);
     };
     reader.onerror = function (error) {
       console.log("Error: ", error);
@@ -198,16 +171,6 @@ const Success_Stories = () => {
   return (
     <>
       <div className="Main-story-box">
-        <title>Success_Stories</title>
-        {<BasicBreadcrumbs route={route} />}
-        <Filters
-          placeholder={placeholder}
-          requestSearch={requestSearch}
-          showalert={showalert}
-          handleShow={handleShow}
-          setShowalert={setShowalert}
-          titl={titl}
-        />
         <Modal show={openmodal} onHide={handleClose}>
           <Modal.Header>
             <Modal.Title className="modal-titlee">Alert</Modal.Title>
@@ -278,7 +241,9 @@ const Success_Stories = () => {
                     onClick={() => {
                       setTitle(!title);
                       {
-                        title ? sortt() : sortt1();
+                        title
+                          ? setTableData(sortData(tableData, "title", "asc"))
+                          : setTableData(sortData(tableData, "title", "desc"));
                       }
                     }}
                   >
@@ -627,4 +592,4 @@ const Success_Stories = () => {
     </>
   );
 };
-export default Success_Stories;
+export default withHeader(Success_Stories, records, true);

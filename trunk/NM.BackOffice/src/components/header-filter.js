@@ -13,11 +13,13 @@ import {
 
 export const Filters = ({
   requestSearch,
-  showalert,
   setShowalert,
   handleShow,
   titl,
   placeholder,
+  add,
+  setAddshow,
+  options,
 }) => {
   const [disable, setSdisabled] = useState(false);
 
@@ -29,24 +31,24 @@ export const Filters = ({
         </div>
         <div className="right_panle_container">
           <Button
-          title="Filter"
+            title="Filter"
             variant=""
             className="btn-sm remove_button_padding"
             onClick={() => setSdisabled((p) => !p)}
           >
             <BsFilter size={25} color="#ff6b01" />
           </Button>
-        
-          <Button
-            variant=""
-            title="Add"
-            aria-expanded={disable}
-            className="btn-sm remove_button_padding"
-            onClick={handleShow}
-          >
-            <AiOutlinePlusCircle size={25} color="#ff6b01" />
-          </Button>
-      
+          {add && (
+            <Button
+              variant=""
+              title="Add"
+              aria-expanded={disable}
+              className="btn-sm remove_button_padding"
+              onClick={handleShow}
+            >
+              <AiOutlinePlusCircle size={25} color="#ff6b01" />
+            </Button>
+          )}
         </div>
       </div>
 
@@ -60,9 +62,12 @@ export const Filters = ({
               defaultValue={"all"}
             >
               <option disabled>Status</option>
-              <option selected value={"ALL"}>All</option>
-              <option value="1">Active</option>
-              <option value="1">Deactive</option>
+              <option selected value={"ALL"}>
+                All
+              </option>
+              {options?.map((data,index)=> <option value={data.value}>{data.label}</option>)}
+             
+             
             </Form.Select>
           </div>
         </Collapse>

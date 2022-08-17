@@ -35,7 +35,26 @@ import CapitalizeFirstLetter from "../../components/first_letter_capital";
 import { Filters } from "../../components/header-filter";
 import { object } from "yup";
 import * as yup from "yup";
+import withHeader from "../../HOC/withHeader";
 
+const records = [
+  {
+    Email: "ggoldygoldy33@gmail.com",
+    date: "2-03-2020",
+    comment: "Reason Behind",
+    active: "",
+  },
+  {
+    Email: "agoldygoldy33@gmail.com",
+    date: "26-08-2022",
+    comment: "Reason Behind",
+  },
+  {
+    Email: "goldygoldy33@gmail.com",
+    date: "23-02-2022",
+    comment: "Reason Behind",
+  },
+];
 const SubScriber = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -65,24 +84,6 @@ const SubScriber = () => {
     //setpagination({ start: start, end: showPerPage })
   }, [selector]);
 
-  const records = [
-    {
-      Email: "ggoldygoldy33@gmail.com",
-      date: "2-03-2020",
-      comment: "Reason Behind",
-      active: "",
-    },
-    {
-      Email: "agoldygoldy33@gmail.com",
-      date: "26-08-2022",
-      comment: "Reason Behind",
-    },
-    {
-      Email: "goldygoldy33@gmail.com",
-      date: "23-02-2022",
-      comment: "Reason Behind",
-    },
-  ];
   const initialValues = {
     title: "",
     content_story: "",
@@ -280,4 +281,4 @@ const SubScriber = () => {
     </div>
   );
 };
-export default SubScriber;
+export default withHeader(SubScriber, records, true);

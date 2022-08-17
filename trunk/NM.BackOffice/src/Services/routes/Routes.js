@@ -18,11 +18,13 @@ import Post_Job from "../../pages/postJobs/post_job";
 import Job_Preview from "../../pages/postJobs/job_preview";
 import Update_Job from "../../pages/postJobs/updata-job";
 import NotFound from "../../components/Not-found";
+import Notification from "../../pages/Notification/notification";
 
 const routes = (path, element, exact = true) => {
   return { path, element, exact };
 };
 const route = [
+  routes("/notification",Notification),
   routes("/jobpreview", Job_Preview),
   routes("/add-job", Post_Job),
   routes("/addNewPost", AddNewPost),
