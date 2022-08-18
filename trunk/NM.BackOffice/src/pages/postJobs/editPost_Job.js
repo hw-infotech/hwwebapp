@@ -47,13 +47,9 @@ const options = [
 ];
 
 const Edit_postJob = (value1) => {
-  useEffect(() => {
-    document.title = "Job";
-    dispatch(getAllEnquries());
-  }, []);
-
   const selector = useSelector((state) => state.data.apidata?.allEnquries);
   const [openmodal, setmodal] = useState(false);
+  const [title, setTitle] = useState(false);
   const [indexx, setIndex] = useState();
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
@@ -62,9 +58,20 @@ const Edit_postJob = (value1) => {
     start: 1,
     end: 10,
   });
-
+  const [deleteObj, setDeleteObj] = useState({
+    index: 0,
+    rowStatus: false,
+  });
   const navigate = useNavigate();
   const [tableData, setTableData] = useState(selector);
+  useEffect(() => {
+    document.title = "Job";
+    dispatch(getAllEnquries());
+  }, []);
+
+  /**
+   * this sortt function for sorting the data in table in ascending order
+   */
   function sortt() {
     const response = selector.sort((a, b) =>
       a.jobtitle.toLowerCase() > b.jobtitle.toLowerCase()
@@ -75,7 +82,9 @@ const Edit_postJob = (value1) => {
     );
     setTableData([...response]);
   }
-
+  /**
+   * this sortt1 function for sorting the data in descending order
+   */
   function sortt1() {
     const response = selector.sort((a, b) =>
       a.jobtitle.toLowerCase() < b.jobtitle.toLowerCase()
@@ -86,9 +95,10 @@ const Edit_postJob = (value1) => {
     );
     setTableData([...response]);
   }
-
-  const [title, setTitle] = useState(false);
-
+  /**
+   *this function for seraching the value of particular column in table data
+   * @param {this argument get the serach field value} searchedVal
+   */
   const requestSearch = (searchedVal) => {
     const filteredRows = selector.filter((row) => {
       return row.jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
@@ -97,7 +107,9 @@ const Edit_postJob = (value1) => {
   };
 
   const dispatch = useDispatch();
-
+  /**
+   * display function change the status according the condition, when we click status switch, if active then deactive after clikcing, opposite as well
+   */
   const display = () => {
     setShowalert(true);
     if (deleteObj.rowStatus) {
@@ -112,15 +124,6 @@ const Edit_postJob = (value1) => {
         return [...oldState];
       });
     }
-  };
-
-  const [deleteObj, setDeleteObj] = useState({
-    index: 0,
-    rowStatus: false,
-  });
-
-  const onhandlechange = (e) => {
-    const { name, value } = e.target;
   };
 
   return (

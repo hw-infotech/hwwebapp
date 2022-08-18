@@ -17,16 +17,24 @@ const Sidebar = ({ sidebarShow }) => {
   let classes = "reverse";
   const [show, setshow] = useState(false);
   const navigtion = useNavigate();
-
+/**
+ * this useEffect for set the state value that getting from localStorage
+ */
   useEffect(() => {
     setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
   }, [JSON.parse(localStorage.getItem("activeId"))]);
-
+/**
+ * setlocalstorage function is for store the particular id in localstorage
+ * @param {we get the unique id for active particular li} id 
+ */
   const setLocalStorage = (id) => {
     localStorage.setItem("activeId", JSON.stringify(id));
     setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
   };
-
+/**
+ * handleAnchorClick function set the id of attribute in in state 
+ * @param {get the props} e 
+ */
   const handleAnchorClick = (e) => {
     e.preventDefault();
     setLocalStorage(e.currentTarget.getAttribute("id"));

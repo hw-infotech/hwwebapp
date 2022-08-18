@@ -4,11 +4,9 @@ import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
 const Job_Preview = (values, state) => {
-  const nevigate = useNavigate();
   useEffect(() => {
     document.title = "Preview";
   }, []);
-  console.log(values);
   let tiitle = localStorage?.getItem("key");
   return (
     <div className="preview-content">

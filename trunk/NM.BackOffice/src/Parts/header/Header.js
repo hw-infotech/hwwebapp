@@ -11,11 +11,13 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
 import { GoThreeBars } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
-//import { IoNotificationsOutline } from "react-icons/lo";
 
 const Header = ({ title, sidebarShow, setSidebarShow }) => {
   const [userName, setUsername] = useState();
   let selector = useSelector((state) => state);
+  /**
+   * this useEffect used for get username that we print in header
+   */
   useEffect(() => {
     setUsername(selector?.data?.apidata?.profile_data);
   }, [selector]);
@@ -50,7 +52,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                     pill
                     bg="danger"
                   >
-                    9
+                    3
                   </Badge>
                 </span>
               }
@@ -62,41 +64,92 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                   history("/profile");
                 }}
               >
-                <div className="notification_panel mt-4">
+                <div className="notification_panel">
                   <div className="notification_inner_part">
-                    <img
-                      src="./assets/images/NM-ICON.png"
+                  <img
+                      src="./assets/images/ava3.png"
                       className="img-decorate"
-                      height="48px"
-                      width="48px"
-                    />
+                      width={"35px"}
+                      height={"40px"}
+              />
                     <div>
-                      <p>John doe React your post</p>
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Unde, dolorem.
-                      </p>
+                      <p><b>John doe</b> React your post</p>
+                      <div className="text-muted wrap-text">
+                        Lorem ipsum dolor sit amet consectetur.
+                      </div>
                       <p className="text-muted">
                         <small>10 minutes ago</small>
                       </p>
                     </div>
                   </div>
                   <div>
-                    <img
+                    {/*<img
                       src="./assets/images/ava3.png"
                       className="img-decorate"
                       width={"48px"}
                       height={"48px"}
-                    />
+              />*/}
                   </div>
                 </div>
               </NavDropdown.Item>
               <NavDropdown.Item className="fs_13" onClick={() => {}}>
-                Notification 2
+              <div className="notification_panel">
+              <div className="notification_inner_part">
+              <img
+                  src="./assets/images/team_nestormind.png"
+                  className="img-decorate"
+                  width={"35px"}
+                  height={"40px"}
+          />
+                <div>
+                  <p><b>John doe</b> React your post</p>
+                  <div className="text-muted wrap-text">
+                    Lorem ipsum dolor sit amet consectetur.
+                  </div>
+                  <p className="text-muted">
+                    <small>5 minutes ago</small>
+                  </p>
+                </div>
+              </div>
+              <div>
+                {/*<img
+                  src="./assets/images/ava3.png"
+                  className="img-decorate"
+                  width={"48px"}
+                  height={"48px"}
+          />*/}
+              </div>
+            </div>
               </NavDropdown.Item>
 
               <NavDropdown.Item className="fs_13" onClick={() => {}}>
-                Notification 3
+              <div className="notification_panel">
+              <div className="notification_inner_part">
+              <img
+                  src="./assets/images/ava3.png"
+                  className="img-decorate"
+                  width={"35px"}
+                  height={"40px"}
+          />
+                <div>
+                  <p><b>John doe</b> React your post</p>
+                  <div className="text-muted wrap-text">
+                    Lorem ipsum dolor sit amet consectetur.
+                  </div>
+                  <p className="text-muted">
+                    <small>50 minutes ago</small>
+                  </p>
+                </div>
+              </div>
+              <div>
+                {/*<img
+                  src="./assets/images/ava3.png"
+                  className="img-decorate"
+                  width={"48px"}
+                  height={"48px"}
+          />*/}
+              </div>
+            </div>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <div className="dropdownn">

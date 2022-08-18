@@ -113,6 +113,9 @@ const Success_Stories = ({
   setOptions(options);
   const inputFileRef = useRef(null);
   const handleShow = () => setShow(true);
+  /**
+   * handle close function  for empty the state, when we add the projet after we need to empty the input fields
+   */
   const handleClose = () => {
     setShow(false);
     setEdit(false);
@@ -123,7 +126,9 @@ const Success_Stories = ({
       image: "",
     });
   };
-
+  /**
+   * display function is for open modal accroding to status in this function, if status is active alet box will show oposite status when we click on switch to deactive the status
+   */
   const display = () => {
     setShowalert(true);
     if (deleteObj.rowStatus) {
@@ -139,8 +144,11 @@ const Success_Stories = ({
       });
     }
   };
-
-  const handleFormSubmit = (values, { resetForm }) => {
+  /**
+   * handlesubmit function for submit the from the data  and sumbit the data in store using redux
+   * @param1 {it is the formik or form data that we will fill in input fields} values
+   */
+  const handleFormSubmit = (values) => {
     const { name, value } = values;
     setState({ ...state, [name]: value });
     handleClose();
@@ -151,10 +159,15 @@ const Success_Stories = ({
       image: "",
     });
   };
-
+  /**
+   *getBase64 function used for uploading the image
+   * @param {* in this we get props of  input field} e
+   * @param {* set fieldvalue is the formik props that used to store the particular value of the field into formik values} setFieldValue
+   */
   const getBase64 = (e, setFieldValue) => {
     var file = e.target.files[0];
     console.log(file, "file");
+    
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
@@ -164,6 +177,9 @@ const Success_Stories = ({
       console.log("Error: ", error);
     };
   };
+  /**
+   * delete_conformation function for delete the table data of particular index
+   */
   const delete_confomtation = () => {
     tableData.splice(indexx, 1);
     setTableData([...tableData]);

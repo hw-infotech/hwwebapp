@@ -4,8 +4,6 @@ import { useSelector } from "react-redux"
 import CreatableSelectField from "../../components/selectfield"
 
 const Update_Step2 = ({ setGoSteps, state, setState, handleFieldchange, values }) => {
-
-  
     // const selector = useSelector(state => state.data.apidata.edit_data)
     useEffect(() => {
         document.title = "Edit Requirement"

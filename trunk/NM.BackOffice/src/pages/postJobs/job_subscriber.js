@@ -123,6 +123,10 @@ const Job_newsletter = ({
   //   );
   //   setTableData([...response]);
   // }
+
+  /**
+   * this useEffect for check the condition because when click on checkbox we need to change the state , this is the only way change the state using useEffect and also pass dependencies in useEffect
+   */
   useEffect(() => {
     const data = tableData.map((data, index) => {
       return data.subscribed;
@@ -141,7 +145,9 @@ const Job_newsletter = ({
       setsubscribed(true);
     }
   }, [tableData]);
-
+/**
+ * this useEffect for checking condition in whole tableData 
+ */
   useEffect(() => {
     const data = tableData.map((data, index) => {
       return data.subscribed;
@@ -152,16 +158,16 @@ const Job_newsletter = ({
     }
   }, [tableData]);
 
-  const requestSearch = (searchedVal) => {
-    const filteredRows = records.filter((row) => {
-      return (
-        row.Name.toLowerCase().includes(searchedVal.toLowerCase()) ||
-        row.Email.toLowerCase().includes(searchedVal.toLowerCase())
-      );
-    });
+  // const requestSearch = (searchedVal) => {
+  //   const filteredRows = records.filter((row) => {
+  //     return (
+  //       row.Name.toLowerCase().includes(searchedVal.toLowerCase()) ||
+  //       row.Email.toLowerCase().includes(searchedVal.toLowerCase())
+  //     );
+  //   });
 
-    setTableData([...filteredRows]);
-  };
+  //   setTableData([...filteredRows]);
+  // };
 
   useEffect(() => {
     document.title = "Subscribe-Unsubscribe";

@@ -34,15 +34,16 @@ const Update_Job = ({ stat }) => {
     setState(selector.data?.apidata?.edit_data?.data);
   }, [selector]);
 
-  console.log("Edit Details ", selector.data?.apidata?.edit_data?.data);
-  const DataContext = createContext();
   const route = [
     { name: "Dashboard", route: "/" },
     { name: "Job Management", route: "" },
     { name: "Job", route: "/all-jobs" },
     { name: "Edit Job", route: "/edit-job" },
   ];
-
+/** 
+ * handlechange function used onChange method,onchange event occurs when the value of an element has been changed.we use handlechange for storing the input field values in state 
+ * @param {this argument get the input field value } e 
+ */
   const handlechange = (e) => {
     const { name, value } = e.target;
     setState({ ...state, [name]: value });

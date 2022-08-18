@@ -86,7 +86,9 @@ const Profile = () => {
     { name: "User" },
     { name: "My Profile", route: "/profile" },
   ];
-
+/**
+ * used the yup third party library for validation as well as formik
+ */
   const validationSchema = yup.object({
     oldpassword: yup.string().required().max(64).label("Old Password"),
     profile_password: yup.string().required().max(64).label("New Password"),
@@ -104,6 +106,11 @@ const Profile = () => {
     location: yup.string().required(),
   });
 
+  /**
+   * this function created for hide the password and the show the stars when we click on eye icon
+   * @param {this argument return length of password that we type} len 
+   * @returns return star after split 
+   */
   const getStar = (len) => {
     let star = [];
 

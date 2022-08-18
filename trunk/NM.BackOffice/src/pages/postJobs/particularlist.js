@@ -14,7 +14,6 @@ import {
   Table,
   Tabs,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { useNavigate, useParams } from "react-router";
@@ -25,18 +24,44 @@ import { AiOutlineCheck, AiOutlineCloseCircle } from "react-icons/ai";
 import CustomPagination from "../../shared/pagination";
 import { GoCloudDownload } from "react-icons/go";
 import CapitalizeFirstLetter from "../../components/first_letter_capital";
-import BasicBreadcrumbs from "../../components/breadcumbs";
-import { BiEdit } from "react-icons/bi";
 import { BsFilter } from "react-icons/bs";
-
-import { FiArrowLeftCircle } from "react-icons/fi";
-import { tab } from "@testing-library/user-event/dist/tab";
 import { useDispatch, useSelector } from "react-redux";
 import { Edit_Data } from "../../Services/redux/action/action";
-import TooltipComp from "../../shared/Tooltipomp";
+import BasicBreadcrumbs from "../../components/breadcumbs";
 
+const records = [
+  {
+    Jobtitle: "UI/UX",
+    name: "amit Sharma",
+    email: "goldygoldy33@gmail.com",
+    phone: "9801551856",
+    active: "accepted",
+  },
+  {
+    Jobtitle: "UI/UX",
+    name: "Vikas Sharma",
+    email: "ganesharma5073@gmail.com",
+    phone: "9803836866",
+    active: "rejected",
+  },
+  {
+    Jobtitle: "UI/UX",
+    name: "Ganesh Sharma",
+    email: "amanpreet@gmail.com",
+    phone: "8146945394",
+    active: "accepted",
+  },
+];
+const route = [
+  { name: "Dashboard", route: "/" },
+  { name: "Job Management", route: "" },
+  { name: "Job", route: "/all-jobs" },
+  { name: "View", route: "/particularjob" },
+];
 const Particularjob = () => {
-  const data = useParams();
+  const [tr, settr] = useState(false);
+  const [tableData, setTableData] = useState(records);
+  const [title, setTitle] = useState(false);
   const [showalert, setShowalert] = useState(false);
   const [index, setIndex] = useState();
   const [disabled, setSdisabled] = useState(false);
@@ -50,33 +75,10 @@ const Particularjob = () => {
     start: start,
     end: showPerPage,
   });
-  const [tr, settr] = useState(false);
   const nevigate = useNavigate();
-  const dispatch = useDispatch();
-  const records = [
-    {
-      Jobtitle: "UI/UX",
-      name: "amit Sharma",
-      email: "goldygoldy33@gmail.com",
-      phone: "9801551856",
-      active: "accepted",
-    },
-    {
-      Jobtitle: "UI/UX",
-      name: "Vikas Sharma",
-      email: "ganesharma5073@gmail.com",
-      phone: "9803836866",
-      active: "rejected",
-    },
-    {
-      Jobtitle: "UI/UX",
-      name: "Ganesh Sharma",
-      email: "amanpreet@gmail.com",
-      phone: "8146945394",
-      active: "accepted",
-    },
-  ];
-  const [tableData, setTableData] = useState(records);
+  /**
+   * this sortt function for sorting the data in ascending order
+   */
   function sortt() {
     const response = tableData.sort((a, b) =>
       a.name.toLowerCase() > b.name.toLowerCase()
@@ -88,6 +90,9 @@ const Particularjob = () => {
     console.log(response);
     setTableData([...response]);
   }
+  /**
+   * this sortt1 function for sorting the data in descending order
+   */
   function sortt1() {
     const response = tableData.sort((a, b) =>
       a.name.toLowerCase() < b.name.toLowerCase()
@@ -99,7 +104,10 @@ const Particularjob = () => {
     console.log(response);
     setTableData([...response]);
   }
-  const [title, setTitle] = useState(false);
+  /**
+   * requestSearch function is used for serach tableData of particular column
+   * @param {this arugment return the search input field value} searchedVal
+   */
   const requestSearch = (searchedVal) => {
     const filteredRows = records.filter((row) => {
       return (
@@ -109,19 +117,6 @@ const Particularjob = () => {
     });
     setTableData(filteredRows);
   };
-  const display = (e) => {
-    if (e) {
-      setShowalert(true);
-    } else {
-      setShowalert(true);
-    }
-  };
-  const route = [
-    { name: "Dashboard", route: "/" },
-    { name: "Job Management", route: "" },
-    { name: "Job", route: "/all-jobs" },
-    { name: "View", route: "/particularjob" },
-  ];
   var selector = useSelector((state) => state.data?.apidata?.edit_data?.data);
   useEffect(() => {
     document.title = "View";
@@ -153,7 +148,6 @@ const Particularjob = () => {
           id="uncontrolled-tab-example"
           onSelect={(k) => setKey(k)}
           className="mb-3"
-       
         >
           <Tab
             eventKey="Description"
@@ -367,21 +361,19 @@ const Particularjob = () => {
                       {/*<div className="card-footer1"> <span className="text-decoration-green">+9% </span>than yesterday</div>*/}
                     </div>
                   </Col>
-                  <Col md={6} sm={1} lg={6} xl={6}>
-                   
-                  </Col>
+                  <Col md={6} sm={1} lg={6} xl={6}></Col>
                 </Row>
               </div>
               <div className="d-flex justify-content-end align-items-end ">
-              <Button
-                title="Filter"
-                variant=""
-                className="btn-sm remove_button_padding"
-                onClick={() => setSdisabled((p) => !p)}
-              >
-                <BsFilter size={25} color="#ff6b01" />
-              </Button>
-            </div>
+                <Button
+                  title="Filter"
+                  variant=""
+                  className="btn-sm remove_button_padding"
+                  onClick={() => setSdisabled((p) => !p)}
+                >
+                  <BsFilter size={25} color="#ff6b01" />
+                </Button>
+              </div>
               <div className="setupcontent mt-1 w-100 ">
                 <Collapse in={disabled}>
                   <div className="">

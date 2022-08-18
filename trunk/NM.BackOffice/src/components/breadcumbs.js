@@ -1,6 +1,9 @@
 import * as React from "react";
 import { useNavigate } from "react-router";
-
+/**
+ * handleClick function for prevent the black value
+ * @param {all prototypes values} event 
+ */
 function handleClick(event) {
   event.preventDefault();
 }

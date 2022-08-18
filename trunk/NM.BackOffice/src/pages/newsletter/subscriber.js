@@ -71,14 +71,22 @@ const SubScriber = () => {
     { name: "Newsletter", route: "" },
     { name: "Subscribe-Unsubscribe", route: "" },
   ];
+  /**
+   *  selector variable used to get the store data .
+   */
   const selector = useSelector((state) => state),
     dispatch = useDispatch(),
     [subscribers, setSubscribers] = useState([]);
+  /**
+   * useEffect used here becaure we need only dispath one time, if we dont used useEffect then dispatch all again ,that will create rendering issue.
+   */
   useEffect(() => {
     dispatch(News_letter_Subscribe());
     dispatch(NewsLetter_Unsubscriber());
   }, []);
-
+  /**
+   * this is used for set the selector the data into subscriber state and pass the dependencies to the useEffect when selector change the value then useEffect call
+   */
   useEffect(() => {
     setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data);
     //setpagination({ start: start, end: showPerPage })
@@ -93,6 +101,9 @@ const SubScriber = () => {
     content_story: yup.string().label("Content").required(),
   });
   const [tableData, setTableData] = useState(subscribers);
+  /**
+   * sortt function created for sorting the data of particular column, this function sort in assending order
+   */
   function sortt() {
     const response = subscribers.sort((a, b) =>
       a.email.toLowerCase() > b.email.toLowerCase()
@@ -105,6 +116,9 @@ const SubScriber = () => {
     setTableData([...response]);
     console.log(selector, "this the selector");
   }
+  /**
+   * sortt1 function created for sorting the data of particular column, this function sort in descending order
+   */
   function sortt1() {
     const response = subscribers?.sort((a, b) =>
       a.email.toLowerCase() < b.email.toLowerCase()
@@ -116,6 +130,10 @@ const SubScriber = () => {
 
     setTableData([...response]);
   }
+  /**
+   *requestSearch function created for seraching the table data using the value of particular column
+   * @param {in this argument we get input filed value that we type} searchedVal
+   */
   const requestSearch = (searchedVal) => {
     const filteredRows =
       selector?.data?.apidata?.getnewsletterunsubscriber?.data.filter((row) => {
@@ -124,6 +142,9 @@ const SubScriber = () => {
     setSubscribers(filteredRows);
   };
   const [title, setTitle] = useState(false);
+  /**
+   * this useeffect for show the title of this page
+   */
   useEffect(() => {
     document.title = "Subscribe-Unsubscribe";
   }, []);

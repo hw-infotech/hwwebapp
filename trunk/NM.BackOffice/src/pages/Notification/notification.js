@@ -1,8 +1,15 @@
 import React from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Notification = () => {
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
+  function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
   return (
-    <div className="notification_content mt-2">
+    <div className="notification_content mt-2" id="demo-form">
       <h3>
         Notification <i class="fs-3 bi-bell"></i>
       </h3>
@@ -62,7 +69,7 @@ const Notification = () => {
           />
         </div>
       </div>
-      <div className="notification_panel mt-4">
+      <div className="notification_panel mt-4 mb-4">
         <div className="notification_inner_part">
           <img
             src="./assets/images/NM-ICON.png"
@@ -90,6 +97,19 @@ const Notification = () => {
           />
         </div>
       </div>
+  
+  <ReCAPTCHA
+    sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
+    onChange={onChange}
+   
+    
+  />
+<div
+data-sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
+ 
+        data-callback='onSubmit' 
+        data-action='submit'>dsd</div>
+ 
     </div>
   );
 };

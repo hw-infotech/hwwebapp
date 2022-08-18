@@ -4,6 +4,12 @@ body {
 }
 
 @media only screen and (min-width: 468px) and (max-width: 992px) {
+  .main-header-box .notificaton_badge {
+    position: absolute;
+    top: 3px;
+    left: 10px !important;
+    font-size: 10px !important;
+  }
   .card1 {
     margin-top: 40px !important;
   }
@@ -355,6 +361,38 @@ body {
           box-shadow: 0px 0px 26px 5px #0000000d;
 }
 
+.main-header-box .notification_panel {
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-header-box .notification_panel .img-decorate {
+  border-radius: 50%;
+  background-size: cover;
+  -webkit-box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
+          box-shadow: 0 4px 20px 1px RGB(0 0 0/6%), 0 1px 4px RGB(0 0 0/8%);
+}
+
+.main-header-box .notification_panel .wrap-text {
+  white-space: break-spaces !important;
+}
+
+.main-header-box .notification_panel .notification_inner_part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+.main-header-box .notification_panel .notification_inner_part p {
+  margin-bottom: 1px !important;
+}
+
 .main-header-box .navbar_designs .dropdown-toggle::after {
   border: 0px !important;
 }
@@ -382,7 +420,7 @@ body {
 .main-header-box .navbar_designs .dropdown-menu[data-bs-popper] {
   top: 100%;
   position: absolute;
-  left: -40px !important;
+  left: -60px !important;
   margin-top: 0.125rem;
   top: 60px !important;
 }
@@ -408,7 +446,7 @@ body {
 .main-header-box .notificaton_badge {
   position: absolute;
   top: 3px;
-  left: 18px !important;
+  left: 18px;
   font-size: 10px !important;
 }
 
@@ -679,6 +717,12 @@ body {
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
+  .main-header-box .notificaton_badge {
+    position: absolute;
+    top: 3px;
+    left: 10px !important;
+    font-size: 10px !important;
+  }
   .sidebar {
     min-height: 100vh;
     height: 100vh;
@@ -2091,7 +2135,7 @@ img.underCont {
           justify-content: space-between;
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-  border-left: 2px solid #29B6F6;
+  border-left: 2px solid #29b6f6;
 }
 
 .notification_content .notification_panel .img-decorate {

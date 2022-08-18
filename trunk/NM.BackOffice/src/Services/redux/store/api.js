@@ -1,21 +1,23 @@
-import axios from 'axios';
+import axios from "axios";
 
 const apidata = axios.create({
-    baseURL: process.env.REACT_APP_API_URL
-})
-apidata.interceptors.request.use((config) => {
+  baseURL: process.env.REACT_APP_API_URL,
+});
+apidata.interceptors.request.use(
+  (config) => {
     return config;
-
-}, (error) => {
-    return Promise.reject(error)
-}
-)
-apidata.interceptors.response.use((response) => {
-        console.log("hlo",response)
-    return response
-
-}, (error) => {
-    return Promise.reject(error)
-}
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
 );
-export default apidata
+apidata.interceptors.response.use(
+  (response) => {
+    console.log("hlo", response);
+    return response;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+export default apidata;
