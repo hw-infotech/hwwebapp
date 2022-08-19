@@ -750,7 +750,12 @@ input.SubmitCv.add {
     font-size: 13px;
   }
 }
+.recaptcha{
+display: flex;
+justify-content: center !important;
 
+margin-bottom: 20px;
+}
 @media (min-width: 768px) and (max-width: 991px) {
   .careerPanle .careerBanner_Content .careerContent h1 {
     font-size: 48px;
