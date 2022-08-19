@@ -114,7 +114,8 @@ const Success_Stories = ({
   const inputFileRef = useRef(null);
   const handleShow = () => setShow(true);
   /**
-   * handle close function  for empty the state, when we add the projet after we need to empty the input fields
+   * @method handleClose
+   * @description handle close function  for empty the state, when we add the projet after we need to empty the input fields
    */
   const handleClose = () => {
     setShow(false);
@@ -127,7 +128,8 @@ const Success_Stories = ({
     });
   };
   /**
-   * display function is for open modal accroding to status in this function, if status is active alet box will show oposite status when we click on switch to deactive the status
+   * @method display
+   * @handleClose display function is for open modal accroding to status in this function, if status is active alet box will show oposite status when we click on switch to deactive the status
    */
   const display = () => {
     setShowalert(true);
@@ -145,8 +147,9 @@ const Success_Stories = ({
     }
   };
   /**
-   * handlesubmit function for submit the from the data  and sumbit the data in store using redux
-   * @param1 {it is the formik or form data that we will fill in input fields} values
+   * @method handleformSubmit
+   * @description handlesubmit function for submit the from the data  and sumbit the data in store using redux
+   * @param  values it is the formik or form data that we will fill in input fields
    */
   const handleFormSubmit = (values) => {
     const { name, value } = values;
@@ -160,14 +163,14 @@ const Success_Stories = ({
     });
   };
   /**
-   *getBase64 function used for uploading the image
-   * @param {* in this we get props of  input field} e
-   * @param {* set fieldvalue is the formik props that used to store the particular value of the field into formik values} setFieldValue
+   *@description getBase64 function used for uploading the image
+   * @param {*} e  in this we get props of  input field
+   * @param {* } setFieldValue set fieldvalue is the formik props that used to store the particular value of the field into formik values
    */
   const getBase64 = (e, setFieldValue) => {
     var file = e.target.files[0];
     console.log(file, "file");
-    
+
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
@@ -178,7 +181,8 @@ const Success_Stories = ({
     };
   };
   /**
-   * delete_conformation function for delete the table data of particular index
+   * @method delete_confomtation
+   *@description delete_conformation function for delete the table data of particular index
    */
   const delete_confomtation = () => {
     tableData.splice(indexx, 1);

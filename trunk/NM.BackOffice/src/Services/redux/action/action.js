@@ -32,7 +32,8 @@ export const Add_Gallery_Eventt = (user) => (dispatch) => {
   //     })
 };
 /**
- * in This function we hit the newsleeter api and get the data of all newsletter subscriber/unsubscriber
+ * @method News_letter_Subscribe
+ * @description in This function we hit the newsleeter api and get the data of all newsletter subscriber/unsubscriber
  * @returns
  */
 export const News_letter_Subscribe = () => (dispatch) => {
@@ -52,7 +53,8 @@ export const News_letter_Subscribe = () => (dispatch) => {
     });
 };
 /**
- * in This function we hit the newsleeter unsubscriber api and get the data of all newsletter unsubscriber
+ * @method Newsletter_Unsubscriber
+ *  @description in This function we hit the newsleeter unsubscriber api and get the data of all newsletter unsubscriber
  * @returns
  */
 export const NewsLetter_Unsubscriber = (data1) => (dispatch) => {
@@ -69,8 +71,9 @@ export const NewsLetter_Unsubscriber = (data1) => (dispatch) => {
     });
 };
 /**
- * In this function we submit the data into store
- * @param {this is the data that we submit the job post} data1
+ * @method Send_data
+ * @description In this function we submit the data into store
+ * @param {*} data1 this is the data that we submit the job post
  * @returns
  */
 export const Send_data = (data1) => (dispatch) => {
@@ -80,7 +83,8 @@ export const Send_data = (data1) => (dispatch) => {
   });
 };
 /**
- * In this function we get all data of enquries
+ * @method getAllEnquries
+ *  @description In this function we get all data of enquries
  * @returns
  */
 export const getAllEnquries = () => (dispatch) => {
@@ -89,10 +93,11 @@ export const getAllEnquries = () => (dispatch) => {
   });
 };
 /**
- * this function for edit the job post
- * @param {data of particular index for editing purpose} data
- * @param {index of table that we want to edit } index
- * @returns  it return data, and index
+ * @method Edit_Data
+ *  @description this function for edit the job post
+ * @param {*} data data of particular index for editing purpose
+ * @param {*} index index of table that we want to edit 
+ * @returns 
  */
 
 export const Edit_Data = (data, index) => (dispath) => {
@@ -102,10 +107,11 @@ export const Edit_Data = (data, index) => (dispath) => {
   });
 };
 /**
- * this function for update the job post
- * @param {data of particular index for update purpose} data
- * @param {index of table that we want to update } index
- * @returns  it return data, and index
+ * @method Updata_Data 
+ * @description this function for update the job post
+ * @param {*} data data of particular index for update purpose
+ * @param {*} index index of table that we want to update
+ * @returns  
  */
 export const Update_Data = (data, index) => (dispath) => {
   dispath({
@@ -114,8 +120,9 @@ export const Update_Data = (data, index) => (dispath) => {
   });
 };
 /**
- * this function for update the profile data
- * @param {data of profile that we want to update} data
+ * @method Update_Data
+ *  @descriptionthis function for update the profile data
+ * @param {*} data data of profile that we want to update
  * @returns
  */
 export const Update_Profile_Data = (data) => (dispath) => {
@@ -125,7 +132,8 @@ export const Update_Profile_Data = (data) => (dispath) => {
   });
 };
 /**
- * this function for get the profile data
+ * @method Updata_Profile_Data
+ * @description this function for get the profile data
  * @returns
  */
 export const GET_profile_data = () => (dispatch) => {
@@ -134,7 +142,8 @@ export const GET_profile_data = () => (dispatch) => {
   });
 };
 /**
- * this function for edit the profile data
+ * @method GET_profile_data
+ *  @description this function for edit the profile data
  * @returns
  */
 export const Edit_profile_data = () => (dispatch) => {
@@ -143,7 +152,8 @@ export const Edit_profile_data = () => (dispatch) => {
   });
 };
 /**
- * this function for get the profile password for show
+ * @method GET_profile_password
+ * @description this function for get the profile password for show
  * @returns
  */
 export const GET_profile_password = () => (dispatch) => {
@@ -152,7 +162,8 @@ export const GET_profile_password = () => (dispatch) => {
   });
 };
 /**
- * this function for updating the profile password
+ * @method Update_Profile_Password
+ * @description this function for updating the profile password
  * @returnsk
  */
 export const Update_Profile_Password = (data) => (dispath) => {

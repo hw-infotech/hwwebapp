@@ -16,7 +16,8 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
   const [userName, setUsername] = useState();
   let selector = useSelector((state) => state);
   /**
-   * this useEffect used for get username that we print in header
+   * @method useEffect
+   * @description this useEffect used for get username that we print in header
    */
   useEffect(() => {
     setUsername(selector?.data?.apidata?.profile_data);
@@ -92,6 +93,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                   </div>
                 </div>
               </NavDropdown.Item>
+         
               <NavDropdown.Item className="fs_13" onClick={() => {}}>
               <div className="notification_panel">
               <div className="notification_inner_part">
@@ -121,7 +123,6 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
               </div>
             </div>
               </NavDropdown.Item>
-
               <NavDropdown.Item className="fs_13" onClick={() => {}}>
               <div className="notification_panel">
               <div className="notification_inner_part">

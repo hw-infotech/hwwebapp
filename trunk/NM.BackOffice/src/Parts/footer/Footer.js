@@ -3,9 +3,6 @@ import moment from "moment"
 
 const Footer = ({ sidebarShow }) => {
     const d = new Date();
-    /**
-     * in getfullyear return the current year
-     */
     let year = d.getFullYear();
     return (
         <div className="mainfooter " style={sidebarShow ? {

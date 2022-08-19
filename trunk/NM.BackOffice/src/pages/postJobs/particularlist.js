@@ -77,7 +77,8 @@ const Particularjob = () => {
   });
   const nevigate = useNavigate();
   /**
-   * this sortt function for sorting the data in ascending order
+   * @method sortt
+   * @description this sortt function for sorting the data in ascending order
    */
   function sortt() {
     const response = tableData.sort((a, b) =>
@@ -91,7 +92,8 @@ const Particularjob = () => {
     setTableData([...response]);
   }
   /**
-   * this sortt1 function for sorting the data in descending order
+   * @method sortt1
+   * @description this sortt1 function for sorting the data in descending order
    */
   function sortt1() {
     const response = tableData.sort((a, b) =>
@@ -105,8 +107,9 @@ const Particularjob = () => {
     setTableData([...response]);
   }
   /**
-   * requestSearch function is used for serach tableData of particular column
-   * @param {this arugment return the search input field value} searchedVal
+   * @method requestSearch
+   *  @description requestSearch function is used for serach tableData of particular column
+   * @param {*} searchedVal this arugment return the search input field value
    */
   const requestSearch = (searchedVal) => {
     const filteredRows = records.filter((row) => {

@@ -126,6 +126,13 @@ const initialstate = {
     },
   ],
 };
+/**
+ * @method Reducer_function
+ * @description Reducer function accept the previous state and action and return the new state as well as object
+ * @param {*} state 
+ * @param {*} action 
+ * @returns 
+ */
 const Reducer_Function = (state = initialstate, action) => {
   const { payload, type } = action;
   switch (type) {

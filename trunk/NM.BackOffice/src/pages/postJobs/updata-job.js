@@ -41,8 +41,9 @@ const Update_Job = ({ stat }) => {
     { name: "Edit Job", route: "/edit-job" },
   ];
 /** 
- * handlechange function used onChange method,onchange event occurs when the value of an element has been changed.we use handlechange for storing the input field values in state 
- * @param {this argument get the input field value } e 
+ * @method handlechange
+ *  @description handlechange function used onChange method,onchange event occurs when the value of an element has been changed.we use handlechange for storing the input field values in state 
+ * @param {*} e this argument get the input field value
  */
   const handlechange = (e) => {
     const { name, value } = e.target;

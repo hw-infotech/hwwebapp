@@ -65,9 +65,9 @@ export const Filters = ({
               <option selected value={"ALL"}>
                 All
               </option>
-              {options?.map((data,index)=> <option value={data.value}>{data.label}</option>)}
-             
-             
+              {options?.map((data, index) => (
+                <option value={data.value}>{data.label}</option>
+              ))}
             </Form.Select>
           </div>
         </Collapse>

@@ -18,20 +18,24 @@ const CustomPagination = ({ total, setStart }) => {
     });
   }, [itemOffset, showPerPage]);
 
-//   const [counter, setCounter] = useState(1);
-//   const [onChangeButton, setOnChangeButton] = useState(
-//     Math.ceil(total / showPerPage)
-//   );
-//   useEffect(() => {
-//     let value = showPerPage * counter;
-//     // onPageChange(value - showPerPage, value);
-//   }, [counter]);
-
+  //   const [counter, setCounter] = useState(1);
+  //   const [onChangeButton, setOnChangeButton] = useState(
+  //     Math.ceil(total / showPerPage)
+  //   );
+  //   useEffect(() => {
+  //     let value = showPerPage * counter;
+  //     // onPageChange(value - showPerPage, value);
+  //   }, [counter]);
+/**
+ * @method handlePageClick
+ * @description 
+ * @param {*} event 
+ */
   const handlePageClick = (event) => {
     const newOffset = (event.selected * showPerPage) % total;
     setItemOffset(newOffset);
   };
-  
+
   return (
     <div className="w-100 customPagination">
       <ReactPaginate

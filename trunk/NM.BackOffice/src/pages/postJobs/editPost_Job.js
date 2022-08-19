@@ -70,7 +70,8 @@ const Edit_postJob = (value1) => {
   }, []);
 
   /**
-   * this sortt function for sorting the data in table in ascending order
+   * @method sortt
+   * @description this sortt function for sorting the data in table in ascending order
    */
   function sortt() {
     const response = selector.sort((a, b) =>
@@ -83,7 +84,8 @@ const Edit_postJob = (value1) => {
     setTableData([...response]);
   }
   /**
-   * this sortt1 function for sorting the data in descending order
+   * @method sortt1
+   * @description this sortt1 function for sorting the data in descending order
    */
   function sortt1() {
     const response = selector.sort((a, b) =>
@@ -96,8 +98,9 @@ const Edit_postJob = (value1) => {
     setTableData([...response]);
   }
   /**
-   *this function for seraching the value of particular column in table data
-   * @param {this argument get the serach field value} searchedVal
+   * @method requestSearch
+   * @description this function for seraching the value of particular column in table data
+   * @param {*} searchedVal this argument get the serach field value
    */
   const requestSearch = (searchedVal) => {
     const filteredRows = selector.filter((row) => {
@@ -108,7 +111,8 @@ const Edit_postJob = (value1) => {
 
   const dispatch = useDispatch();
   /**
-   * display function change the status according the condition, when we click status switch, if active then deactive after clikcing, opposite as well
+   * @method display
+   * @description display function change the status according the condition, when we click status switch, if active then deactive after clikcing, opposite as well
    */
   const display = () => {
     setShowalert(true);

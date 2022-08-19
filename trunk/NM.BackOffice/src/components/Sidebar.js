@@ -12,29 +12,31 @@ const Sidebar = ({ sidebarShow }) => {
   const [parentId, setParentId] = useState(
     JSON.parse(localStorage.getItem("activeId"))?.split("_")[0]
   );
-
   const classname = "activeMenu";
   let classes = "reverse";
   const [show, setshow] = useState(false);
   const navigtion = useNavigate();
-/**
- * this useEffect for set the state value that getting from localStorage
- */
+  /**
+   * @method useEffect
+   * @description this useEffect for set the state value that getting from localStorage
+   */
   useEffect(() => {
     setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
   }, [JSON.parse(localStorage.getItem("activeId"))]);
-/**
- * setlocalstorage function is for store the particular id in localstorage
- * @param {we get the unique id for active particular li} id 
- */
+  /**
+   * @method setLocalStroage
+   *  @description setlocalstorage function is for store the particular id in localstorage
+   * @param {we get the unique id for active particular li} id
+   */
   const setLocalStorage = (id) => {
     localStorage.setItem("activeId", JSON.stringify(id));
     setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
   };
-/**
- * handleAnchorClick function set the id of attribute in in state 
- * @param {get the props} e 
- */
+  /**
+   * @method handleAnchorClick
+   *  @description handleAnchorClick function set the id of attribute in state
+   * @param {get the props} e
+   */
   const handleAnchorClick = (e) => {
     e.preventDefault();
     setLocalStorage(e.currentTarget.getAttribute("id"));
@@ -108,7 +110,10 @@ const Sidebar = ({ sidebarShow }) => {
             >
               <RiGalleryLine size={20} />
               {/*<img src="./assets/images/car.png" style={{background:"white"}} width={25} height={25}/>*/}
-              <span className="ms-1 d-none d-sm-inline sidebar_li_text  ripple-surface " tabindex="1">
+              <span
+                className="ms-1 d-none d-sm-inline sidebar_li_text  ripple-surface "
+                tabindex="1"
+              >
                 Sliders/Carousels
               </span>
               <span className="dropdownarrowicon">

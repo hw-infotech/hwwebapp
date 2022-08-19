@@ -8,11 +8,16 @@ const Notification = () => {
   function onSubmit(token) {
     document.getElementById("demo-form").submit();
   }
+  // let a = [1, 2, 1, 5, 6, 4, 5, 5];
+  // var filteredArray = a.filter(function (item, pos) {
+  //   return a.indexOf(item) == pos;
+  // });
   return (
     <div className="notification_content mt-2" id="demo-form">
       <h3>
         Notification <i class="fs-3 bi-bell"></i>
       </h3>
+
       <div className="notification_panel mt-4">
         <div className="notification_inner_part">
           <img
@@ -97,19 +102,18 @@ const Notification = () => {
           />
         </div>
       </div>
-  
-  <ReCAPTCHA
-    sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
-    onChange={onChange}
-   
-    
-  />
-<div
-data-sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
- 
-        data-callback='onSubmit' 
-        data-action='submit'>dsd</div>
- 
+      <ReCAPTCHA
+        sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
+        onChange={onChange}
+      />
+      <div
+        class="g-recaptcha"
+        data-sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
+        data-callback="onSubmit"
+        data-action="submit"
+      >
+        dsd
+      </div>
     </div>
   );
 };

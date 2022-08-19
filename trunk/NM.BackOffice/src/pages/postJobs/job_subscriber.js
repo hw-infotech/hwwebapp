@@ -125,7 +125,8 @@ const Job_newsletter = ({
   // }
 
   /**
-   * this useEffect for check the condition because when click on checkbox we need to change the state , this is the only way change the state using useEffect and also pass dependencies in useEffect
+   * @method useEffect
+   * @description this useEffect for check the condition because when click on checkbox we need to change the state , this is the only way change the state using useEffect and also pass dependencies in useEffect
    */
   useEffect(() => {
     const data = tableData.map((data, index) => {
@@ -146,7 +147,8 @@ const Job_newsletter = ({
     }
   }, [tableData]);
 /**
- * this useEffect for checking condition in whole tableData 
+ * @method useEffect
+ *  @description this useEffect for checking condition in whole tableData 
  */
   useEffect(() => {
     const data = tableData.map((data, index) => {

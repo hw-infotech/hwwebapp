@@ -72,20 +72,23 @@ const SubScriber = () => {
     { name: "Subscribe-Unsubscribe", route: "" },
   ];
   /**
-   *  selector variable used to get the store data .
+   * @constant selector
+   * @description selector variable used to get the store data .
    */
   const selector = useSelector((state) => state),
     dispatch = useDispatch(),
     [subscribers, setSubscribers] = useState([]);
   /**
-   * useEffect used here becaure we need only dispath one time, if we dont used useEffect then dispatch all again ,that will create rendering issue.
+   * @method useEffect
+   * @description useEffect used here becaure we need only dispath one time, if we dont used useEffect then dispatch all again ,that will create rendering issue.
    */
   useEffect(() => {
     dispatch(News_letter_Subscribe());
     dispatch(NewsLetter_Unsubscriber());
   }, []);
   /**
-   * this is used for set the selector the data into subscriber state and pass the dependencies to the useEffect when selector change the value then useEffect call
+   * @method useEffect
+   * @description this is used for set the selector the data into subscriber state and pass the dependencies to the useEffect when selector change the value then useEffect call
    */
   useEffect(() => {
     setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data);
@@ -102,7 +105,8 @@ const SubScriber = () => {
   });
   const [tableData, setTableData] = useState(subscribers);
   /**
-   * sortt function created for sorting the data of particular column, this function sort in assending order
+   * @method sorrt
+   * @description sortt function created for sorting the data of particular column, this function sort in assending order
    */
   function sortt() {
     const response = subscribers.sort((a, b) =>
@@ -117,7 +121,8 @@ const SubScriber = () => {
     console.log(selector, "this the selector");
   }
   /**
-   * sortt1 function created for sorting the data of particular column, this function sort in descending order
+   * @method sortt1
+   * @description sortt1 function created for sorting the data of particular column, this function sort in descending order
    */
   function sortt1() {
     const response = subscribers?.sort((a, b) =>
@@ -131,8 +136,9 @@ const SubScriber = () => {
     setTableData([...response]);
   }
   /**
-   *requestSearch function created for seraching the table data using the value of particular column
-   * @param {in this argument we get input filed value that we type} searchedVal
+   * @method requestSearch
+   * @description requestSearch function created for seraching the table data using the value of particular column
+   * @param {*} searchedVal in this argument we get input filed value that we type
    */
   const requestSearch = (searchedVal) => {
     const filteredRows =
@@ -143,7 +149,8 @@ const SubScriber = () => {
   };
   const [title, setTitle] = useState(false);
   /**
-   * this useeffect for show the title of this page
+   * @method useEffect
+   * @description this useeffect for show the title of this page
    */
   useEffect(() => {
     document.title = "Subscribe-Unsubscribe";

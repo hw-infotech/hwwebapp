@@ -69,13 +69,14 @@ const All_Enquiry = ({
 }) => {
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState();
-  // const [show, setShow] = useState(false);
+
   /**
-   * 
-   * @returns it is for close the modal when we click on close button on modal,it will be hide
+   * @method handleClose
+   *@description it is for close the modal when we click on close button on modal,it will be hide
+   * @returns
    */
   const handleClose = () => setShow(false);
-//  const handleShow = () => setShow(true);
+  //  const handleShow = () => setShow(true);
   const [showPerPage, setShowPerPage] = useState(10);
   const [start, setStart] = useState(1);
   const [pagination1, setpagination] = useState({
@@ -104,7 +105,8 @@ const All_Enquiry = ({
   });
   const [wait, setwait] = useState(false);
   /**
-   *it is for change  the status, when we click status pending, status change to resolved oppotiste as well
+   * @method display
+   * @description it is for change  the status, when we click status pending, status change to resolved, oppotiste as well
    */
   const display = () => {
     console.log(deleteObj);
@@ -124,8 +126,9 @@ const All_Enquiry = ({
     }
   };
   /**
-   * it is used for show document title
-   * 
+   *@method useEffect
+   *@description it is used for show the document title
+   *
    */
   useEffect(() => {
     document.title = "All Enquiry";
