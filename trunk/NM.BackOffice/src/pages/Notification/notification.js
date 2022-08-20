@@ -102,18 +102,7 @@ const Notification = () => {
           />
         </div>
       </div>
-      <ReCAPTCHA
-        sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
-        onChange={onChange}
-      />
-      <div
-        class="g-recaptcha"
-        data-sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
-        data-callback="onSubmit"
-        data-action="submit"
-      >
-        dsd
-      </div>
+    
     </div>
   );
 };
