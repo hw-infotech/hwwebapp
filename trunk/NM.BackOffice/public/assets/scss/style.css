@@ -827,6 +827,14 @@ body {
   width: 25%;
 }
 
+.modal-dialog .hiddenAttr input[type="file"] {
+  color: transparent;
+}
+
+.modal-dialog .hiddenAttr1 input[type="file"] {
+  color: gray;
+}
+
 .modal-dialog .modal-header {
   background-color: #eb7823;
   color: white;

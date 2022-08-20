@@ -643,13 +643,16 @@ body {
     }
   }
 }
+
 //////=================================success stories page=======================//////
+
 .story_image_selector {
   border: 1px solid #cdc8c8 !important;
   display: flex;
   width: 100%;
   align-items: center;
   position: relative;
+
   // background: #000000;
   .uploadButton {
     position: absolute;
@@ -696,6 +699,8 @@ body {
       font-size: 13px;
     }
   }
+
+
   .remove_label::after {
   }
   // div[role="dialog"] {
@@ -712,6 +717,7 @@ body {
     padding: 0px 0px;
     background: white;
     box-shadow: 0 4px 20px 1px RGB(0 0 0 / 6%), 0 1px 4px RGB(0 0 0 / 8%);
+
     .imageCard {
       margin: 10px;
       position: relative;
@@ -742,6 +748,17 @@ body {
   width: 25%;
 }
 .modal-dialog {
+  .hiddenAttr {
+    input[type="file"] {
+      color: transparent;
+    }
+  }
+  .hiddenAttr1 {
+    input[type="file"] {
+      
+      color: gray;
+    }
+  }
   .modal-header {
     background-color: #eb7823;
     color: white;

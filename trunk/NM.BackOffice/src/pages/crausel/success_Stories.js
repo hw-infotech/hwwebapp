@@ -80,6 +80,7 @@ const Success_Stories = ({
   show,
   setOptions,
 }) => {
+  const [img, setImg] = useState();
   const [title, setTitle] = useState(false);
   const [deleteObj, setDeleteObj] = useState({
     index: 0,
@@ -127,6 +128,7 @@ const Success_Stories = ({
       image: "",
     });
   };
+
   /**
    * @method display
    * @handleClose display function is for open modal accroding to status in this function, if status is active alet box will show oposite status when we click on switch to deactive the status
@@ -175,6 +177,7 @@ const Success_Stories = ({
     reader.readAsDataURL(file);
     reader.onload = () => {
       setFieldValue("image", reader.result);
+      setImg(true);
     };
     reader.onerror = function (error) {
       console.log("Error: ", error);
@@ -188,6 +191,7 @@ const Success_Stories = ({
     tableData.splice(indexx, 1);
     setTableData([...tableData]);
   };
+ 
   return (
     <>
       <div className="Main-story-box">
@@ -520,26 +524,29 @@ const Success_Stories = ({
                         </div>
                     
                       </div>*/}
-                      <Form.Control
-                        className="label-size remove_label"
-                        type="file"
-                        ref={inputFileRef}
-                        accept=".png,.jpg"
-                        aria-label="Upload Images"
-                        name="image"
-                        onChange={(e) => {
-                          getBase64(e, setFieldValue);
-                        }}
-                        //value={values?.image}
-                      />
+                      <div className={img ? "hiddenAttr1":"hiddenAttr"}>
+                        <Form.Control
+                          id="input_file"
+                          className="label-size remove_label"
+                          type="file"
+                          ref={inputFileRef}
+                          accept=".png,.jpg"
+                          aria-label="Upload Images"
+                          name="image"
+                          onChange={(e) => {
+                            getBase64(e, setFieldValue);
+                          }}
+                          //value={values?.image}
+                        />
 
-                      {errors?.image && touched.image ? (
-                        <label className="text-danger label-size">
-                          {errors.image}
-                        </label>
-                      ) : (
-                        ""
-                      )}
+                        {errors?.image && touched.image ? (
+                          <label className="text-danger label-size">
+                            {errors.image}
+                          </label>
+                        ) : (
+                          ""
+                        )}
+                      </div>
                       {values.image ? (
                         <div className="remove_img">
                           <i
@@ -547,6 +554,7 @@ const Success_Stories = ({
                             onClick={() => {
                               inputFileRef.current.value = "";
                               setFieldValue("image", "");
+                              setImg(false);
                             }}
                           ></i>
                         </div>
