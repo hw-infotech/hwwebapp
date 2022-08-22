@@ -191,7 +191,7 @@ const Success_Stories = ({
     tableData.splice(indexx, 1);
     setTableData([...tableData]);
   };
- 
+
   return (
     <>
       <div className="Main-story-box">
@@ -524,14 +524,14 @@ const Success_Stories = ({
                         </div>
                     
                       </div>*/}
-                      <div className={img ? "hiddenAttr1":"hiddenAttr"}>
+                      <div className={img ? "hiddenAttr1" : "hiddenAttr"}>
                         <Form.Control
                           id="input_file"
                           className="label-size remove_label"
                           type="file"
                           ref={inputFileRef}
                           accept=".png,.jpg"
-                          aria-label="Upload Images"
+                          aria-label="Image"
                           name="image"
                           onChange={(e) => {
                             getBase64(e, setFieldValue);
@@ -608,7 +608,7 @@ const Success_Stories = ({
                         setShowalert(false);
                       }}
                     >
-                      Add
+                      Save
                     </Button>
                   )}
                 </Modal.Footer>

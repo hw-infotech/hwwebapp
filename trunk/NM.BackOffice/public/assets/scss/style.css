@@ -5,7 +5,7 @@ body {
 
 @media only screen and (min-width: 468px) and (max-width: 992px) {
   .main-header-box .notificaton_badge {
-    position: absolute;
+    position: absolute !important;
     top: 3px;
     left: 10px !important;
     font-size: 10px !important;
@@ -15,7 +15,20 @@ body {
   }
 }
 
-@media only screen and (min-width: 368px) and (max-width: 468px) {
+@media only screen and (min-width: 368px) and (max-width: 467px) {
+  .main-header-box .notificaton_badge {
+    position: absolute !important;
+    top: 3px !important;
+    left: 10px !important;
+    font-size: 10px !important;
+  }
+  .main-header-box .navbar_designs .dropdown-menu[data-bs-popper] {
+    top: 100%;
+    position: absolute;
+    left: 0px !important;
+    margin-top: 0.125rem;
+    top: 60px !important;
+  }
   .card1 {
     margin-top: 40px !important;
   }
@@ -420,9 +433,10 @@ body {
 .main-header-box .navbar_designs .dropdown-menu[data-bs-popper] {
   top: 100%;
   position: absolute;
-  left: -100px !important;
+  left: -83px !important;
   margin-top: 0.125rem;
   top: 60px !important;
+  width: 278px !important;
 }
 
 .main-header-box .navbar_designs .dropdownList:hover {
