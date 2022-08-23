@@ -1020,7 +1020,8 @@ body {
   .nav-link {
     display: block;
     padding: 0.5rem 1rem;
-    color: gray !important;
+    color:white !important;
+    background-color: gray  !important;
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   }
@@ -1253,7 +1254,8 @@ body {
     width: 25%;
   }
   .nav-link {
-    color: gray !important;
+    color:white !important;
+    background-color: gray  !important;
   }
   .nav-tabs .nav-item.show .nav-link,
   .nav-tabs .nav-link.active {
@@ -1679,13 +1681,14 @@ body {
   .profile_form {
     margin-top: 1rem;
     .nav-link {
-      color: gray !important;
+      color:white !important;
+      background-color: gray  !important;
     }
     .nav-tabs .nav-item.show .nav-link,
     .nav-tabs .nav-link.active {
       color: white !important ;
       background-color: #eb7823 !important;
-      border-color: #eb7823 !important;
+      //border-color: #eb7823 !important;
     }
 
     .tab_border_zero {
@@ -1932,6 +1935,16 @@ img.underCont {
 }
 //---------------notification panel--------------------//
 .notification_content {
+  .gapbetween{
+    display: inline ;
+  .custom-date-box{
+   
+    .custom-date-filter{
+      width: 25%;
+      font-size: 13px;
+      border: 1px solid #80808030;
+    }
+  }}
   .notification_panel {
     padding: 10px;
     display: flex;
@@ -1945,10 +1958,11 @@ img.underCont {
     }
     .notification_inner_part {
       display: flex;
-      gap: 15px;
+      gap: 10px;
 
       p {
-        margin-bottom: 4px !important;
+        margin-bottom: 0px !important;
+        font-size: 13px;
       }
     }
   }

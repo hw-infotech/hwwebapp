@@ -1103,7 +1103,8 @@ body {
 .box__content .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: gray !important;
+  color: white !important;
+  background-color: gray  !important;
   text-decoration: none;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
@@ -1381,7 +1382,8 @@ body {
 }
 
 .main-jobsubscriber-content .nav-link {
-  color: gray !important;
+  color: white !important;
+  background-color: gray  !important;
 }
 
 .main-jobsubscriber-content .nav-tabs .nav-item.show .nav-link,
@@ -1862,14 +1864,14 @@ body {
 }
 
 .main-content-holder .profile_form .nav-link {
-  color: gray !important;
+  color: white !important;
+  background-color: gray  !important;
 }
 
 .main-content-holder .profile_form .nav-tabs .nav-item.show .nav-link,
 .main-content-holder .profile_form .nav-tabs .nav-link.active {
   color: white !important;
   background-color: #eb7823 !important;
-  border-color: #eb7823 !important;
 }
 
 .main-content-holder .profile_form .main-Profile-card1 .prfile-card11 {
@@ -2147,6 +2149,16 @@ img.underCont {
   font-weight: 400;
 }
 
+.notification_content .gapbetween {
+  display: inline;
+}
+
+.notification_content .gapbetween .custom-date-box .custom-date-filter {
+  width: 25%;
+  font-size: 13px;
+  border: 1px solid #80808030;
+}
+
 .notification_content .notification_panel {
   padding: 10px;
   display: -webkit-box;
@@ -2171,10 +2183,11 @@ img.underCont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .notification_content .notification_panel .notification_inner_part p {
-  margin-bottom: 4px !important;
+  margin-bottom: 0px !important;
+  font-size: 13px;
 }
 /*# sourceMappingURL=style.css.map */
