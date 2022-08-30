@@ -1,3 +1,4 @@
+import { useFormikContext } from "formik";
 import React, { useEffect, useState } from "react";
 import CreatableSelect from "react-select/creatable";
 
@@ -6,6 +7,9 @@ const CreatableSelectField = ({
   setFormState,
   placeholder,
   name,
+  onFocus,
+  className,
+  id,
 }) => {
   const [state, setState] = useState({
     inputValue: "",
@@ -16,9 +20,11 @@ const CreatableSelectField = ({
   const handleChange = (value) => {
     setState({ ...state, value });
   };
-
+const setfiledvalue=useFormikContext()
+console.log(setfiledvalue,"this is the formik data")
   const handleInputChange = (inputValue) => {
     setState({ ...state, inputValue });
+  
   };
 
   useEffect(() => {
@@ -28,7 +34,9 @@ const CreatableSelectField = ({
   useEffect(() => {
     setState({ ...state, value: [...state.value, state1.value] });
   }, [state1]);
-
+  const handlefocus = () => {
+    console.log("jlkdfsjkldfsjklsdf");
+  };
   //console.log("this is the form state", state);
   const components = {
     DropdownIndicator: null,
@@ -49,25 +57,28 @@ const CreatableSelectField = ({
   const handleBlur = (e) => {
     const { inputValue, value } = state;
     if (!inputValue) return;
+    console.log("this is the handleblur function");
     setState1({ value: createOption(inputValue) });
     e.preventDefault();
   };
-
   const createOption = (label) => {
     return {
       label,
       value: label,
     };
   };
-
   return (
     <div>
       <CreatableSelect
+        
         components={components}
         inputValue={state.inputValue}
         isClearable
+        classNamePrefix={className}
         isMulti
-        className="label-size"
+        on
+        onFocus={onFocus}
+        className={className}
         menuIsOpen={false}
         onChange={handleChange}
         onInputChange={handleInputChange}
@@ -76,6 +87,7 @@ const CreatableSelectField = ({
         // onFocus={handleBlur}
         placeholder={placeholder}
         value={state.value}
+        id={id}
       />
     </div>
   );

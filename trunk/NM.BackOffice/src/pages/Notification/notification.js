@@ -21,9 +21,6 @@ const route = [
   { name: "View all", route: "" },
 ];
 const Notification = () => {
-  function onChange(value) {
-    console.log("Captcha value:", value);
-  }
   const [disable, setSdisabled] = useState(false);
   function onSubmit(token) {
     document.getElementById("demo-form").submit();
@@ -101,7 +98,7 @@ const Notification = () => {
             width="30px"
           />
           <div>
-            <p>Richard Miles liked your post</p>
+            <p style={{color:"#004a87"}}>Richard Miles liked your post</p>
             <p className="text-muted">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde,
               dolorem.

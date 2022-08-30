@@ -443,6 +443,7 @@ const Success_Stories = ({
                 <Modal.Body>
                   {
                     <div className="cardBoard">
+                      {}
                       <Form.Group className="" controlId="formBasicEmail">
                         <Input
                           type="text"
@@ -451,36 +452,38 @@ const Success_Stories = ({
                           name="title"
                           placeholder="Title"
                           onChange={handleChange}
-                          id="title"
+                          id={touched.title && errors.title ? "invalid" : ""}
                           value={values.title}
                         />
                       </Form.Group>
                       <Form.Group>
-                        {touched.title && errors.title ? (
+                        {/*touched.title && errors.title ? (
                           <label className="text-danger  label-size">
                             {errors.title}
                           </label>
                         ) : (
                           ""
-                        )}
+                        )*/}
                         <Input
                           as={"textarea"}
                           className="form-control label-size"
                           name="content"
                           placeholder={"Description"}
-                          id="exampleFormControlTextarea1"
+                          id={
+                            touched.content && errors.content ? "invalid" : ""
+                          }
                           rows={3}
                           label={"Description"}
                           onChange={handleChange}
                           value={values.content}
                         />
-                        {errors?.content && touched.content ? (
+                        {/*errors?.content && touched.content ? (
                           <label className="text-danger label-size">
                             {errors.content}
                           </label>
                         ) : (
                           ""
-                        )}
+                        )*/}
                       </Form.Group>
                       <Form.Label className="label-size">Active</Form.Label>
                       <Form.Check
@@ -526,9 +529,9 @@ const Success_Stories = ({
                       </div>*/}
                       <div className={img ? "hiddenAttr1" : "hiddenAttr"}>
                         <Form.Control
-                          id="input_file"
                           className="label-size remove_label"
                           type="file"
+                          id={touched.image && errors.image ? "invalid" : ""}
                           ref={inputFileRef}
                           accept=".png,.jpg"
                           aria-label="Image"
@@ -539,13 +542,13 @@ const Success_Stories = ({
                           //value={values?.image}
                         />
 
-                        {errors?.image && touched.image ? (
+                        {/*errors?.image && touched.image ? (
                           <label className="text-danger label-size">
                             {errors.image}
                           </label>
                         ) : (
                           ""
-                        )}
+                        )*/}
                       </div>
                       {values.image ? (
                         <div className="remove_img">

@@ -24,6 +24,7 @@ import Step4 from "./steps/step4";
 import { useSelector } from "react-redux";
 import { Send_data } from "../../Services/redux/action/action";
 import { useDispatch } from "react-redux";
+import * as yup from "yup";
 
 const Post_Job = ({ stat }) => {
   const [goSteps, setGoSteps] = useState(0);
@@ -56,6 +57,14 @@ const Post_Job = ({ stat }) => {
     { name: "Job", route: "/all-jobs" },
     { name: "Add Job", route: "/add-job" },
   ];
+  const validationschemeaa = yup.object({
+    functions: yup.string().label("functions").required(),
+    industry: yup.string().label("industry").required(),
+    description: yup.string().label("description").required(),
+    requirment: yup.array().min(1).required(),
+    responsibility: yup.array().min(1).required(),
+    benefits: yup.array().min(1).required(),
+  });
   useEffect(() => {
     document.title = "Add Job";
   }, []);
@@ -90,12 +99,20 @@ const Post_Job = ({ stat }) => {
 
         <Formik
           initialValues={state}
+          validationSchema={validationschemeaa}
           onSubmit={(values, { resetForm }) => {
             dispatch(Send_data(values));
             resetForm();
           }}
         >
-          {({ values, handleChange, handleSubmit, handleReset }) => (
+          {({
+            values,
+            handleChange,
+            handleSubmit,
+            handleReset,
+            touched,
+            errors,
+          }) => (
             <Form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -109,6 +126,8 @@ const Post_Job = ({ stat }) => {
                   setGoSteps={setGoSteps}
                   state={state1}
                   setState={setState1}
+                  touched={touched}
+                  errors={errors}
                 />
               )}
 
@@ -119,6 +138,8 @@ const Post_Job = ({ stat }) => {
                   setGoSteps={setGoSteps}
                   state={state1}
                   setState={setState1}
+                  touched={touched}
+                  errors={errors}
                 />
               )}
               {goSteps === 2 && (
@@ -128,6 +149,8 @@ const Post_Job = ({ stat }) => {
                   setGoSteps={setGoSteps}
                   state={state1}
                   setState={setState1}
+                  touched={touched}
+                  errors={errors}
                 />
               )}
               {goSteps === 3 && (
@@ -137,6 +160,8 @@ const Post_Job = ({ stat }) => {
                   setGoSteps={setGoSteps}
                   state={state1}
                   setState={setState1}
+                  touched={touched}
+                  errors={errors}
                 />
               )}
             </Form>

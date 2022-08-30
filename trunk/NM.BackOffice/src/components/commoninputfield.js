@@ -31,6 +31,7 @@ export const Input = ({
             onChange={onChange}
             rows={rows}
            
+           
           />
         )}
         {as == "select" && (
@@ -44,6 +45,7 @@ export const Input = ({
             onChange={onChange}
             name={name}
             rows={rows}
+          
           >
             {options?.map((_, __) => (
               <option key={__} value={_.value}>

@@ -314,33 +314,38 @@ const SubScriber = () => {
                   label="Title"
                   className="form-control label-size"
                   name="title"
+                  id={
+                    touched.title && errors.title ? "invalid" : ""
+                  }
                   placeholder="Title"
                   onChange={handleChange}
                 />
-                {errors?.title && touched?.title ? (
+                {/*errors?.title && touched?.title ? (
                   <label className="text-danger label-size">
-                    {errors.title}
+                {errors.title}
                   </label>
                 ) : (
                   ""
-                )}
+                )*/}
                 <Input
                   as={"textarea"}
                   className="form-control label-size"
+                  id={
+                    touched.content_story && errors.content_story ? "invalid" : ""
+                  }
                   placeholder={"Description"}
                   name="content_story"
                   onChange={handleChange}
-                  id="exampleFormControlTextarea1"
                   rows={3}
                   label={"Descirption"}
                 />
-                {errors?.content_story && touched?.content_story ? (
+                {/*errors?.content_story && touched?.content_story ? (
                   <label className="text-danger label-size">
                     {errors.content_story}
                   </label>
                 ) : (
                   ""
-                )}
+                )*/}
               </form>
             )}
           </Formik>

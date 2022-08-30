@@ -3,6 +3,18 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
+input#invalid {
+  border: 1px #e77676 solid !important;
+}
+
+textarea#invalid {
+  border: 1px #e77676 solid !important;
+}
+
+.invalid {
+  border: 1px #e77676 solid !important;
+}
+
 @media only screen and (min-width: 468px) and (max-width: 992px) {
   .main-header-box .notificaton_badge {
     position: absolute !important;
@@ -1104,7 +1116,7 @@ body {
   display: block;
   padding: 0.5rem 1rem;
   color: white !important;
-  background-color: gray  !important;
+  background-color: gray !important;
   text-decoration: none;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
@@ -1383,7 +1395,7 @@ body {
 
 .main-jobsubscriber-content .nav-link {
   color: white !important;
-  background-color: gray  !important;
+  background-color: gray !important;
 }
 
 .main-jobsubscriber-content .nav-tabs .nav-item.show .nav-link,
@@ -1865,7 +1877,7 @@ body {
 
 .main-content-holder .profile_form .nav-link {
   color: white !important;
-  background-color: gray  !important;
+  background-color: gray !important;
 }
 
 .main-content-holder .profile_form .nav-tabs .nav-item.show .nav-link,
