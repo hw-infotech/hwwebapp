@@ -54,8 +54,8 @@ const Job_Preview = (values, state) => {
               <span>Nestormind Full Time Employee Benefits</span>
             </div>
             <ul className="job__list">
-              {values.values?.benefits?.map((data1, index) => (
-                <li >{data1?.value}</li>
+              {values.values?.benefit?.map((data, index) => (
+                <li key={index}>{data?.value}</li>
               ))}
             </ul>
 

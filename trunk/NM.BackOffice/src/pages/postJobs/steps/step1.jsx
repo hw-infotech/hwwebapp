@@ -20,7 +20,6 @@ const Step1 = ({
   useEffect(() => {
     document.title = "Add Job";
   }, []);
-  console.log(errors, "this is s the values in first ");
   return (
     <div className="main-wrap-box w-100 m-auto">
       <Row>

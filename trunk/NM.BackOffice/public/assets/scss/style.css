@@ -239,7 +239,7 @@ textarea#invalid {
       -ms-flex-pack: end;
           justify-content: end;
   position: relative;
-  right: -24px;
+  right: 0px;
 }
 
 .main_dashboard_content .main_graphcard_box .chart-footer {

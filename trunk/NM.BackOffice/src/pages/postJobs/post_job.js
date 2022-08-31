@@ -33,7 +33,7 @@ const Post_Job = ({ stat }) => {
     functions: "",
     responsibility: [],
     requirment: [],
-    benefits: [],
+    benefit: [],
     industry: "",
     type: "Full time",
     level: "Senior",
@@ -44,8 +44,8 @@ const Post_Job = ({ stat }) => {
     jobtitle: "",
     functions: "",
     responsibility: [],
+    benefit: [],
     requirment: [],
-    benefits: [],
     industry: "",
     type: "Full time",
     level: "Senior",
@@ -63,7 +63,7 @@ const Post_Job = ({ stat }) => {
     description: yup.string().label("description").required(),
     requirment: yup.array().min(1).required(),
     responsibility: yup.array().min(1).required(),
-    benefits: yup.array().min(1).required(),
+    benefit: yup.array().min(1).required(),
   });
   useEffect(() => {
     document.title = "Add Job";

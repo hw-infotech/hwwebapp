@@ -160,7 +160,7 @@ const Success_Stories = ({
     setState({
       title: "",
       content: "",
-      active: "",
+      active: false,
       image: "",
     });
   };
@@ -419,9 +419,9 @@ const Success_Stories = ({
           <Formik
             validationSchema={validationSchema}
             initialValues={state}
-            onSubmit={() => {
-              setTableData((old) => [...old, values]);
-              handleFormSubmit();
+            onSubmit={(values) => {
+              setTableData((old) => [...old, values]);   
+              handleFormSubmit(values);
             }}
           >
             {({
@@ -453,7 +453,7 @@ const Success_Stories = ({
                           placeholder="Title"
                           onChange={handleChange}
                           id={touched.title && errors.title ? "invalid" : ""}
-                          value={values.title}
+                          value={values?.title}
                         />
                       </Form.Group>
                       <Form.Group>
@@ -475,7 +475,7 @@ const Success_Stories = ({
                           rows={3}
                           label={"Description"}
                           onChange={handleChange}
-                          value={values.content}
+                          value={values?.content}
                         />
                         {/*errors?.content && touched.content ? (
                           <label className="text-danger label-size">
@@ -591,14 +591,16 @@ const Success_Stories = ({
                   {edit ? (
                     <Button
                       className="btn-sm fs_13"
-                      type="submit"
+                      type="button"
                       onClick={() => {
+                            
                         tableData[index].title = values.title;
                         tableData[index].content = values.content;
                         tableData[index].image = values.image;
                         tableData[index].active = values.active;
+                        setShow(false);
                         setTableData([...tableData]);
-                        setShowalert(false);
+                        
                       }}
                     >
                       Update
@@ -608,7 +610,7 @@ const Success_Stories = ({
                       className=" btn-sm fs_13"
                       type="submit"
                       onClick={() => {
-                        setShowalert(false);
+                        setShow(false);
                       }}
                     >
                       Save

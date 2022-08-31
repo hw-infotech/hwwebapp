@@ -294,7 +294,15 @@ const SubScriber = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationschemeaa}
-            onSubmit={() => {}}
+            onSubmit={(values,actions) => {actions.resetForm({
+              values:{
+                title:"",
+                content:"",
+
+              }
+              
+
+            })}}
           >
             {({
               values,
@@ -307,6 +315,7 @@ const SubScriber = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  handleSubmit();
                 }}
               >
                 <Input
@@ -314,9 +323,7 @@ const SubScriber = () => {
                   label="Title"
                   className="form-control label-size"
                   name="title"
-                  id={
-                    touched.title && errors.title ? "invalid" : ""
-                  }
+                  id={touched.title && errors.title ? "invalid" : ""}
                   placeholder="Title"
                   onChange={handleChange}
                 />
@@ -331,7 +338,9 @@ const SubScriber = () => {
                   as={"textarea"}
                   className="form-control label-size"
                   id={
-                    touched.content_story && errors.content_story ? "invalid" : ""
+                    touched.content_story && errors.content_story
+                      ? "invalid"
+                      : ""
                   }
                   placeholder={"Description"}
                   name="content_story"
@@ -358,7 +367,7 @@ const SubScriber = () => {
           >
             Cancel
           </Button>
-          <Button className="btn-sm fs_13" type="submit">
+          <Button type="submit" className="btn-sm fs_13">
             Send
           </Button>
         </Modal.Footer>

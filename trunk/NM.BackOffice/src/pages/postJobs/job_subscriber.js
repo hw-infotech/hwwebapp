@@ -1,4 +1,3 @@
-//import { Pagination } from "@material-ui/lab";
 import React, { useEffect, useRef, useState } from "react";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BsArrowUp } from "react-icons/bs";
@@ -178,7 +177,6 @@ const Job_newsletter = ({}) => {
         className=""
       >
         <Tab eventKey="subscribe" title="Subscribe">
-         
           <div className="panle_body">
             <div className="panle_header">
               <div className="right_panle_container">
@@ -226,7 +224,7 @@ const Job_newsletter = ({}) => {
           </div>
           {
             <Button
-            className="mb-2"
+              className="mb-2"
               hidden={!unsubscribed}
               variant="primary"
               size="sm"
@@ -236,7 +234,15 @@ const Job_newsletter = ({}) => {
                     (b, indexx) => (tableData[b.index].active = false)
                   );
                 });
+                tableData.map((a, index) => {
+                  let v = selected.map(
+                    (b, indexx) => (tableData[b.index].subscribed = false)
+                  );
+                });
+                selected.splice(0, selected.length)
                 setTableData([...tableData]);
+                setsubscribed(false);
+                setUnsubscribed(false)
               }}
             >
               Unsubscribe
@@ -364,7 +370,6 @@ const Job_newsletter = ({}) => {
           </div>
         </Tab>
         <Tab eventKey="UnSubscribe" title="Unsubscribe">
-          
           <div className="panle_body">
             <div className="panle_header">
               <div className="right_panle_container">
@@ -416,18 +421,26 @@ const Job_newsletter = ({}) => {
               variant="primary"
               hidden={!subscribed1}
               size="sm"
-              onClick={() => {
+              onClick={(e) => {
                 tableData.map((a, indexa) => {
                   let v = selected.map(
                     (b, index) => (tableData[b.index].active = true)
                   );
                 });
+                tableData.map((a, index) => {
+                  let v = selected.map(
+                    (b, indexx) => (tableData[b.index].subscribed = false)
+                  );
+                });
+                selected.splice(0, selected.length)
                 setTableData([...tableData]);
+                setUnsubscribed(false)
+                setsubscribed(false)
               }}
             >
               Subscribe
             </Button>
-            </div>
+          </div>
           <div className="content_box">
             <div className="data-table">
               <Table striped bordered hover>

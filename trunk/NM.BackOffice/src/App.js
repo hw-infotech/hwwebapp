@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Header from "./Parts/header/Header";
 import Footer from "./Parts/footer/Footer";

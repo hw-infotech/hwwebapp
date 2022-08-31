@@ -1,4 +1,4 @@
-import { useFormikContext } from "formik";
+import { useFormikContext,Formik } from "formik";
 import { useEffect } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -16,13 +16,17 @@ const Step2 = ({
   className,
 }) => {
   const { setFieldValue } = useFormikContext();
-  const first = useFormikContext();
   // const selector = useSelector(state => state.data.apidata.edit_data)
-
   useEffect(() => {
     document.title = "Add Job";
   }, []);
 
+  // let mDate = new Date("09-01-2022 13:25:00");
+  // const SecondsDif = Math.abs((new Date().getTime() - mDate.getTime()) / 1000);
+  // const result = new Date(SecondsDif * 1000).toISOString().slice(11, 19);
+  //console.log(result); // 👉️ "00:10:00" (hh:mm:ss)
+  const first = useFormikContext();
+  //Formik.setTouched({ responsibility: true });
   return (
     <div className="w-100 m-auto">
       <Row>
@@ -35,39 +39,39 @@ const Step2 = ({
               placeholder="Type and press tab/enter button"
               formState={state}
               setFormState={setState}
-              className={
-                touched.responsibility || errors.responsibility ? "invalid" : ""
-              }
+              touched={touched.requirment}
+              errors={errors}
               value={values.requirment}
               onChange={handleChange}
             />
             <Form.Label className="label-size">Responsibility</Form.Label>
-            {console.log(
-              touched.responsibility,
-              errors.responsibility,
-              "dskldfkld"
-            )}
+
             <CreatableSelectField
               name="responsibility"
               placeholder="Type and press tab/enter button"
               formState={state}
+              touched={touched.responsibility}
+              errors={errors.responsibility}
               id={"res"}
               setFormState={setState}
               className={
-                touched.responsibility || errors.responsibility ? "invalid" : ""
+                touched.responsibility && errors.responsibility ? "invalid" : ""
               }
-              value={values.responsibility}
+              //value={values.responsibility}
               onChange={handleChange}
             />
             <Form.Label className="label-size">Benefits</Form.Label>
             <div className="mb-3">
               <CreatableSelectField
-                name="benefits"
-                formState={state}
-                className=""
-                setFormState={setState}
+                name="benefit"
                 placeholder="Type and press tab/enter button"
-                value={values.benefits}
+                formState={state}
+                id="benefit"
+                touched={touched.responsibility}
+                errors={errors.responsibility}
+                setFormState={setState}
+                className={touched.benefit && errors.benefit ? "invalid" : ""}
+                value={values.benefit}
                 onChange={handleChange}
               />
             </div>
@@ -87,6 +91,10 @@ const Step2 = ({
           className="btn-sm"
           onClick={() => {
             setFieldValue(
+              "benefit",
+              state?.benefit?.map((f) => f)
+            );
+            setFieldValue(
               "responsibility",
               state.responsibility.map((_) => _)
             );
@@ -94,10 +102,7 @@ const Step2 = ({
               "requirment",
               state.requirment.map((_) => _)
             );
-            setFieldValue(
-              "benefits",
-              state.benefits.map((_) => _)
-            );
+
             setGoSteps(2);
           }}
         >
