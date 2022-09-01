@@ -26,7 +26,7 @@ const Admin_Login = () => {
               password: Yup.string().required(),
             })}
           >
-            {({ handleChange, handleSubmit, errors, values }) => (
+            {({ handleChange, handleSubmit, errors, values, touched }) => (
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -36,7 +36,12 @@ const Admin_Login = () => {
                 <div className="form-group">
                   <Input
                     type="text"
-                    className="form-control form-control-lg styleinput fs_13"
+                    className={
+                      "form-control form-control-lg styleinput fs_13" +
+                        touched.email && errors.email
+                        ? "invalid"
+                        : ""
+                    }
                     placeholder="Email Address"
                     name="email"
                     label={"Email address"}
@@ -47,7 +52,12 @@ const Admin_Login = () => {
                 <div className="form-group">
                   <Input
                     type="password"
-                    className="form-control form-control-lg styleinput fs_13"
+                    className={
+                      "form-control form-control-lg styleinput fs_13" +
+                        touched.password && errors.password
+                        ? "invalid"
+                        : ""
+                    }
                     placeholder="Password"
                     name="password"
                     label={"Password"}

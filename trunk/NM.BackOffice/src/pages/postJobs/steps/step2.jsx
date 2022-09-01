@@ -1,4 +1,4 @@
-import { useFormikContext,Formik } from "formik";
+import { useFormikContext, Formik } from "formik";
 import { useEffect } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -14,6 +14,7 @@ const Step2 = ({
   errors,
   onFocus,
   className,
+  setTouched,
 }) => {
   const { setFieldValue } = useFormikContext();
   // const selector = useSelector(state => state.data.apidata.edit_data)
@@ -25,8 +26,9 @@ const Step2 = ({
   // const SecondsDif = Math.abs((new Date().getTime() - mDate.getTime()) / 1000);
   // const result = new Date(SecondsDif * 1000).toISOString().slice(11, 19);
   //console.log(result); // 👉️ "00:10:00" (hh:mm:ss)
-  const first = useFormikContext();
+  const f_context = useFormikContext();
   //Formik.setTouched({ responsibility: true });
+  console.log(state)
   return (
     <div className="w-100 m-auto">
       <Row>
@@ -38,20 +40,24 @@ const Step2 = ({
               id={"requ"}
               placeholder="Type and press tab/enter button"
               formState={state}
+              errors={errors.requirment}
               setFormState={setState}
               touched={touched.requirment}
-              errors={errors}
               value={values.requirment}
               onChange={handleChange}
+              setTouched={true}
+              className={
+                touched.requirment && errors.requirment ? "invalid" : ""
+              }
             />
             <Form.Label className="label-size">Responsibility</Form.Label>
-
             <CreatableSelectField
               name="responsibility"
-              placeholder="Type and press tab/enter button"
-              formState={state}
               touched={touched.responsibility}
               errors={errors.responsibility}
+              placeholder="Type and press tab/enter button"
+              formState={state}
+              setTouched={true}
               id={"res"}
               setFormState={setState}
               className={
@@ -60,17 +66,18 @@ const Step2 = ({
               //value={values.responsibility}
               onChange={handleChange}
             />
-            <Form.Label className="label-size">Benefits</Form.Label>
             <div className="mb-3">
+              <Form.Label className="label-size">Benefits</Form.Label>
               <CreatableSelectField
                 name="benefit"
                 placeholder="Type and press tab/enter button"
                 formState={state}
-                id="benefit"
-                touched={touched.responsibility}
-                errors={errors.responsibility}
+                id={"benefit"}
+                setTouched={true}
+                touched={touched.benefit}
+                errors={errors.benefit}
                 setFormState={setState}
-                className={touched.benefit && errors.benefit ? "invalid" : ""}
+                className={touched.errors && errors.benefit ? "invalid" : ""}
                 value={values.benefit}
                 onChange={handleChange}
               />
@@ -86,28 +93,34 @@ const Step2 = ({
         >
           Back
         </Button>
-        <Button
-          variant="primary"
-          className="btn-sm"
-          onClick={() => {
-            setFieldValue(
-              "benefit",
-              state?.benefit?.map((f) => f)
-            );
-            setFieldValue(
-              "responsibility",
-              state.responsibility.map((_) => _)
-            );
-            setFieldValue(
-              "requirment",
-              state.requirment.map((_) => _)
-            );
+        {state.requirment.length > 0 &&
+        state.responsibility.length > 0 &&
+        state.benefit.length > 0 ? 
+          <Button
+            variant="primary"
+            className="btn-sm"
+            onClick={() => {
+              setFieldValue(
+                "benefit",
+                state?.benefit?.map((f) => f)
+              );
+              setFieldValue(
+                "responsibility",
+                state.responsibility.map((_) => _)
+              );
+              setFieldValue(
+                "requirment",
+                state.requirment.map((_) => _)
+              );
 
-            setGoSteps(2);
-          }}
-        >
-          Next
-        </Button>
+              setGoSteps(2);
+            }}
+          >
+            Next
+          </Button>
+         : (
+          ""
+        )}
       </div>
     </div>
   );

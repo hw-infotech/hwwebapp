@@ -5,6 +5,7 @@ import CreatableSelectField from "../../../components/selectfield";
 import { useDispatch, useSelector } from "react-redux";
 import { Send_data } from "../../../Services/redux/action/action";
 import { useEffect } from "react";
+import { useFormikContext } from "formik";
 
 const Step3 = ({
   setGoSteps,
@@ -21,6 +22,7 @@ const Step3 = ({
   useEffect(() => {
     document.title = "Add Job";
   }, []);
+  const f_context = useFormikContext();
   const dispatch = useDispatch();
   return (
     <div className="m-auto w-100">
@@ -71,15 +73,17 @@ const Step3 = ({
         >
           Back
         </Button>
-        <Button
-          variant="primary"
-          className="btn-sm"
-          onClick={() => {
-            setGoSteps(3);
-          }}
-        >
-          Next
-        </Button>
+        { f_context?.values.industry ?
+          <Button
+            variant="primary"
+            className="btn-sm"
+            onClick={() => {
+              setGoSteps(3);
+            }}
+          >
+            Next
+          </Button>
+       :"" }
       </div>
     </div>
   );

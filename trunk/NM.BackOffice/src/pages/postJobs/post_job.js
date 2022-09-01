@@ -112,6 +112,7 @@ const Post_Job = ({ stat }) => {
             handleReset,
             touched,
             errors,
+            setTouched
           }) => (
             <Form
               onSubmit={(e) => {
@@ -128,6 +129,7 @@ const Post_Job = ({ stat }) => {
                   setState={setState1}
                   touched={touched}
                   errors={errors}
+                  setTouched={setTouched}
                 />
               )}
 

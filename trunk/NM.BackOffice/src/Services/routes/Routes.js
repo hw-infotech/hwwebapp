@@ -1,16 +1,13 @@
 import { Navigate } from "react-router-dom";
 import Home from "../../pages/Home";
-import AddNewPost from "../../pages/blogs/addNewPost";
 import Success_Stories from "../../pages/crausel/success_Stories";
 import SubScriber from "../../pages/newsletter/subscriber";
 import All_Enquiry from "../../pages/enquiry/All_Enquiry";
 import Admin_Login from "../../pages/authnication/admin_login";
-import Post_New_Job from "../../pages/postJobs/postNewJob";
 import Applied_Job from "../../pages/postJobs/applied_Jobs";
 import Job_Subscriber from "../../pages/postJobs/job_subscriber";
 import Add_Gallery_Event from "../../pages/crausel/add_gallery_event";
 import Change_Gallery_Events from "../../pages/crausel/change_gallery_events";
-import List_Of_Blogs from "../../pages/blogs/list_of_blogs";
 import Edit_postJob from "../../pages/postJobs/editPost_Job";
 import Particularjob from "../../pages/postJobs/particularlist";
 import Profile from "../../pages/Profile/Profile";
@@ -27,7 +24,6 @@ const route = [
   routes("/notification",Notification),
   routes("/jobpreview", Job_Preview),
   routes("/add-job", Post_Job),
-  routes("/addNewPost", AddNewPost),
   routes("/particularjob", Particularjob),
   routes("/all-jobs", Edit_postJob),
   routes("/success-stories", Success_Stories),
@@ -38,7 +34,6 @@ const route = [
   routes("/appliedjobs", Applied_Job),
   routes("/job-subscribe-unsubscribe", Job_Subscriber),
   routes("/addgalleryevent", Add_Gallery_Event),
-  routes("/listofblogs", List_Of_Blogs),
   routes("/changegalleryevent", Change_Gallery_Events),
   routes("/dashboard", Home),
   routes("/", Home),

@@ -16,7 +16,7 @@ const Step1 = ({
   errors,
 }) => {
   const v = useFormikContext();
-
+console.log(v,"formikcontext")
   useEffect(() => {
     document.title = "Add Job";
   }, []);
@@ -55,9 +55,11 @@ const Step1 = ({
             </Form.Group>
           </div>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label className="label-size">Descritption</Form.Label>
+           
+
             <Input
               as="textarea"
+              label={"Descritption"}
               className={"label-size form-control w-100"}
               placeholder={"Descritption"}
               id={touched.description && errors.description ? "invalid" : ""}
@@ -67,16 +69,20 @@ const Step1 = ({
               onChange={handleChange}
             />
           </Form.Group>
+        
         </Col>
       </Row>
       <div className="d-flex justify-content-end ">
+      {
         <Button
           variant="primary"
+         // disabled={v.dirty ? false:true}
           className="btn-sm"
           onClick={() => setGoSteps(1)}
         >
           Next
         </Button>
+      }
       </div>
     </div>
   );

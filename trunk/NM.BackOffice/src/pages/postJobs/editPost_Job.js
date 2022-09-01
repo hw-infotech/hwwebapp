@@ -424,19 +424,19 @@ const Edit_postJob = (value1) => {
                       </td>
                       <td>{data?.Jobtitle || data?.jobtitle}</td>
                       <td>
-                        {data?.description && subString(data.description, 10)}
+                        {data?.description && subString(data?.description, 10)}
                       </td>
                       <td>
                         {data?.functions && subString(data?.functions, 10)}
                       </td>
-                      <td>{data?.requirment[0].value}</td>
+                      <td>{data?.requirment[0]?.value}</td>
                       <td>
-                        {data?.benefits[0].value &&
-                          subString(data.benefits[0].value, 10)}
+                        {data?.benefit[0]?.value &&
+                          subString(data.benefit[0]?.value, 10)}
                       </td>
                       <td>
-                        {data?.responsibility[0].value &&
-                          subString(data.responsibility[0].value, 10)}
+                        {data?.responsibility[0]?.value &&
+                          subString(data.responsibility[0]?.value, 10)}
                       </td>
                       <td>{data?.industry}</td>
                       <td>{data?.level}</td>
@@ -446,14 +446,14 @@ const Edit_postJob = (value1) => {
                   ))}
             </tbody>
           </Table>
-          {tableData.length == 0 && (
+          {tableData?.length == 0 && (
             <div className="table_no_records">No Record Found</div>
           )}
         </div>
       </div>
 
       {tableData?.length > 0 ? (
-        <CustomPagination setStart={setpagination} total={tableData.length} />
+        <CustomPagination setStart={setpagination} total={tableData?.length} />
       ) : (
         ""
       )}
