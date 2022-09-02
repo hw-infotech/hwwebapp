@@ -26,6 +26,10 @@ textarea#invalid {
     margin-top: 0.125rem;
     top: 35px !important;
   }
+  .main-header-box .navbar-nav .nav-link {
+    background-color: white !important;
+    padding: 5px 0px 0px 0px;
+  }
   .sidebar {
     width: 100%;
     min-width: 250px;
@@ -98,6 +102,18 @@ textarea#invalid {
   .sidebar .card1 {
     margin-top: 40px !important;
     background-color: #0000000d !important;
+  }
+  .main-header-box .navbar_designs .nav-item {
+    background: #f9f9f9 !important;
+    z-index: 116 !important;
+    position: absolute !important;
+    padding: 0px 41px !important;
+  }
+  .main-header-box .navbar_designs .dropdown {
+    background: #f9f9f9 !important;
+    z-index: 116 !important;
+    position: absolute !important;
+    padding: 0px 41px !important;
   }
   .main-header-box .dropdown-menu[data-bs-popper] {
     position: absolute !important;
