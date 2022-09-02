@@ -52,7 +52,7 @@ function App() {
     <>
       {
         <div className="dashboard" hidden={found}>
-          {localUser ? <Sidebar sidebarShow={sidebarShow} /> : ""}
+          {localUser ? <Sidebar sidebarShow={sidebarShow} setSidebarShow={setSidebarShow} /> : ""}
           <div className="mainDashboard">
             {localUser ? (
               <Header

@@ -31,7 +31,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
         <Navbar.Brand className="navbar_inner_style">
           <Button
             variant=""
-            className="move-sidebar"
+            className="move-sidebar positioning"
             onClick={() => {
               setSidebarShow((p) => !p);
             }}
@@ -45,7 +45,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
             <NavDropdown
               className="navbar_designs"
               title={
-                <span>
+                <span className="notificaton-content">
                   <i class="fs-5 bi-bell"></i>
                   <Badge
                     size={20}
@@ -158,7 +158,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                   </div>
                 </div>
               </NavDropdown.Item>
-             
+
               <div className="dropdownn">
                 <NavDropdown.Item
                   className="notification-li-padding"
@@ -212,6 +212,18 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                   <AiOutlineLogout size={16} className="icon-gap" />{" "}
                 </span>
                 Log out
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item
+                className="dropdown-item12"
+                onClick={() => {
+                  history("/notification");
+                }}
+              >
+                <span>
+                  <AiOutlineLogout size={16} className="icon-gap" />{" "}
+                </span>
+                Notification
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link

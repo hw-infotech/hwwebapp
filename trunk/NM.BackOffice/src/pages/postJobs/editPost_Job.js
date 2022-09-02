@@ -432,11 +432,11 @@ const Edit_postJob = (value1) => {
                       <td>{data?.requirment[0]?.value}</td>
                       <td>
                         {data?.benefit[0]?.value &&
-                          subString(data.benefit[0]?.value, 10)}
+                          subString(data?.benefit[0]?.value, 10)}
                       </td>
                       <td>
                         {data?.responsibility[0]?.value &&
-                          subString(data.responsibility[0]?.value, 10)}
+                          subString(data?.responsibility[0]?.value, 10)}
                       </td>
                       <td>{data?.industry}</td>
                       <td>{data?.level}</td>

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
-import { NavLink } from "react-bootstrap";
+import { Button, NavLink } from "react-bootstrap";
 import { RiGalleryLine } from "react-icons/ri";
 import { BsBuilding } from "react-icons/bs";
 import { BiNews } from "react-icons/bi";
 import { RiHome2Line } from "react-icons/ri";
 import { GoQuestion } from "react-icons/go";
+import { GoThreeBars } from "react-icons/go";
 
-const Sidebar = ({ sidebarShow }) => {
+const Sidebar = ({ sidebarShow,setSidebarShow }) => {
   const [parentId, setParentId] = useState(
     JSON.parse(localStorage.getItem("activeId"))?.split("_")[0]
   );
@@ -61,9 +62,7 @@ const Sidebar = ({ sidebarShow }) => {
     >
       <div
         className="sidebar_header"
-        onClick={() => {
-          navigtion("/");
-        }}
+        
       >
         <img src="./assets/images/NM-ICON.png" className="Sidebar-logo" />
         <div>
@@ -71,6 +70,15 @@ const Sidebar = ({ sidebarShow }) => {
             <b>Back</b>Office
           </span>
         </div>
+        <Button
+        variant=""
+        className="move-sidebar positioning-header"
+        onClick={() => {
+          setSidebarShow((p) => !p);
+        }}
+      >
+        <GoThreeBars color={sidebarShow ? "#707070" : "black"} size={30} />
+      </Button>
       </div>
       <div className="align-items-sm-start px-3 pt-2">
         <ul className="nav nav-pills sidebar-ul align-items-center" id="menu">
@@ -88,7 +96,7 @@ const Sidebar = ({ sidebarShow }) => {
               }}
             >
               <RiHome2Line size={20} />
-              <span className="ms-1 d-none d-sm-inline sidebar_li_text  ">
+              <span className="ms-1  d-sm-inline sidebar_li_text  ">
                 Dashboard
               </span>
             </a>
@@ -111,7 +119,7 @@ const Sidebar = ({ sidebarShow }) => {
               <RiGalleryLine size={20} />
               {/*<img src="./assets/images/car.png" style={{background:"white"}} width={25} height={25}/>*/}
               <span
-                className="ms-1 d-none d-sm-inline sidebar_li_text  ripple-surface "
+                className="ms-1 d-sm-inline sidebar_li_text  ripple-surface "
                 tabindex="1"
               >
                 Sliders/Carousels
@@ -162,7 +170,7 @@ const Sidebar = ({ sidebarShow }) => {
               }
             >
               <BiNews size={20} />
-              <span className="ms-1 d-none d-sm-inline  sidebar_li_text">
+              <span className="ms-1 d-sm-inline  sidebar_li_text">
                 Newsletter
               </span>
               <span className="dropdownarrowicon">
@@ -214,7 +222,7 @@ const Sidebar = ({ sidebarShow }) => {
               }}
             >
               <GoQuestion size={20} />
-              <span className="ms-1 d-none d-sm-inline ">Enquiry</span>
+              <span className="ms-1  d-sm-inline ">Enquiry</span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
               </span>
@@ -241,7 +249,7 @@ const Sidebar = ({ sidebarShow }) => {
                     navigtion("/all-enquiry");
                   }}
                 >
-                  <span className=" d-sm-inline navbar-submenu ">
+                  <span className=" navbar-submenu ">
                     All Enquiry
                   </span>
                 </a>
@@ -264,7 +272,7 @@ const Sidebar = ({ sidebarShow }) => {
               }}
             >
               <BsBuilding size={20} />
-              <span className=" d-none d-sm-inline">Job Management</span>
+              <span className="  d-sm-inline">Job Management</span>
               <span className="dropdownarrowicon">
                 <i className="fs-6 bi-caret-down "></i>
               </span>

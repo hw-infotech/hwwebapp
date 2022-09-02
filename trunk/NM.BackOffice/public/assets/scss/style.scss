@@ -15,31 +15,123 @@ textarea#invalid {
   border: 1px #e77676 solid !important;
 }
 
-@media only screen and (min-width: 468px) and (max-width: 992px) {
-  .main-header-box .notificaton_badge {
-    position: absolute !important;
-    top: 3px;
-    left: 10px !important;
-    font-size: 10px !important;
+@media only screen and (min-width: 368px) and (max-width: 480px) {
+ 
+}
+@media only screen and (min-width: 320px) and (max-width: 367px) {
+  .card1 {
+    margin-top: 40px !important;
+  }
+  .main-header-box {
+    .dropdown-menu[data-bs-popper] {
+      position: absolute !important;
+      z-index: 999 !important;
+      left: 0px !important;
+      margin-top: 0.125rem;
+      top: 35px !important;
+    }
+  }
+  .sidebar {
+    width: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    height: 100vh;
+    width: 250px !important;
+    position: absolute;
+    z-index: 999;
+    overflow: auto;
+    background-color: #212529 !important;
+
+    .positioning-header {
+      visibility: visible !important;
+    }
+
+    .card1 {
+      margin-top: 40px !important;
+      background-color: #0000000d !important;
+    }
+  }
+  .main-header-box {
+    .navbar_designs {
+      .notificaton-content {
+        visibility: hidden !important;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 468px) and (max-width: 768px) {
+  .main-header-box .notificaton-content {
+    visibility: hidden !important;
   }
   .card1 {
     margin-top: 40px !important;
   }
+
+  .main-header-box {
+    .dropdown-menu[data-bs-popper] {
+      position: absolute !important;
+      z-index: 999 !important;
+      left: 0px !important;
+      margin-top: 0.125rem;
+      top: 40px !important;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .main-header-box {
+    .dropdown-menu[data-bs-popper] {
+      position: absolute !important;
+      z-index: 999 !important;
+      left: 0px !important;
+      margin-top: 0.125rem;
+      top: 35px !important;
+    }
+    .notificaton-content {
+      visibility: hidden !important;
+    }
+  }
 }
 @media only screen and (min-width: 368px) and (max-width: 467px) {
-  .main-header-box .notificaton_badge {
-    position: absolute !important;
-    top: 3px !important;
-    left: 10px !important;
-    font-size: 10px !important;
-  }
-
-  .main-header-box .navbar_designs .dropdown-menu[data-bs-popper] {
-    top: 100%;
+  .sidebar {
+    width: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    height: 100vh;
+    width: 250px !important;
     position: absolute;
-    left: 0px !important;
-    margin-top: 0.125rem;
-    top: 60px !important;
+    z-index: 999;
+    overflow: auto;
+    background-color: #212529 !important;
+
+    .positioning-header {
+      visibility: visible !important;
+    }
+
+    .card1 {
+      margin-top: 40px !important;
+      background-color: #0000000d !important;
+    }
+  }
+  .main-header-box {
+    .dropdown-menu[data-bs-popper] {
+      position: absolute !important;
+      z-index: 999 !important;
+      left: 0px !important;
+      margin-top: 0.125rem;
+      top: 35px !important;
+    }
+    .notificaton-content {
+      visibility: hidden !important;
+    }
+    .dropdown-menu[data-bs-popper] {
+      position: absolute !important;
+      z-index: 999 !important;
+      left: 0px !important;
+      margin-top: 0.125rem;
+      top: 40px !important;
+    }
   }
   .card1 {
     margin-top: 40px !important;
@@ -372,7 +464,7 @@ textarea#invalid {
       position: absolute;
       left: -83px !important;
       margin-top: 0.125rem;
-      top: 60px !important;
+      top: 60px;
       width: 278px !important;
     }
     .dropdownList:hover {
@@ -400,7 +492,7 @@ textarea#invalid {
     top: 100%;
     left: 18px !important;
     margin-top: 0.125rem;
-    top: 60px !important;
+    top: 60px;
   }
   .navbar_style {
     height: 70px !important;
@@ -511,30 +603,6 @@ textarea#invalid {
 
 /////-------------------- sidebar --------------------------///////
 
-@media only screen and (min-width: 320px) and (max-width: 367px) {
-  .sidebar {
-    // width: 90px !important;
-    // min-width: 50px !important;
-
-    .sidebar_list {
-      .dropdownarrowicon {
-        visibility: hidden !important;
-      }
-    }
-    .card1 {
-      margin-top: 40px !important;
-      background-color: #0000000d !important;
-    }
-    .sidebar_header {
-      .header_text {
-        max-height: 70px;
-        height: 100%;
-        visibility: hidden;
-      }
-    }
-  }
-}
-
 .sidebar {
   width: 100%;
   min-width: 250px;
@@ -556,9 +624,6 @@ textarea#invalid {
       color: #ff6b01 !important;
     }
   }
-  // .sidebar_focus:focus {
-  //   color: rgb(194, 150, 68);
-  // }
   .nav-link:focus,
   .nav-link:hover {
     color: #fff;
@@ -583,7 +648,9 @@ textarea#invalid {
     gap: 10px;
     border-bottom: 1px solid #ffffff17;
     cursor: pointer;
-
+    .positioning-header {
+      visibility: hidden;
+    }
     .Sidebar-logo {
       width: 46px;
       height: 47px;
@@ -643,30 +710,29 @@ textarea#invalid {
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    height: 100vh;
+    width: 250px !important;
+    position: absolute;
+    z-index: 999;
+    overflow: auto;
+    background-color: #212529 !important;
+
+    .positioning-header {
+      visibility: visible !important;
+    }
+  }
+
   .main-header-box {
     .notificaton_badge {
       position: absolute;
       top: 3px;
       left: 10px !important;
       font-size: 10px !important;
-    }
-  }
-
-  .sidebar {
-    //min-width: 90px !important;
-    //  width: 90px !important;
-    min-height: 100vh;
-    height: 100vh;
-    overflow: auto;
-    .sidebar_header {
-      .header_text {
-        font-size: 8px !important;
-      }
-    }
-    .sidebar_list {
-      .dropdownarrowicon {
-        visibility: hidden !important;
-      }
     }
   }
 }
