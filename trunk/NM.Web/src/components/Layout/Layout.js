@@ -6,6 +6,7 @@ import NotFound from "../Not-Found/NotFound";
 
 const Layout = () => {
   return (
+    
     <Router>
       <Switch>
         {routes.map((route, index) => (

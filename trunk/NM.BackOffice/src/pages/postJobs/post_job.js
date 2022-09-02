@@ -25,8 +25,10 @@ import { useSelector } from "react-redux";
 import { Send_data } from "../../Services/redux/action/action";
 import { useDispatch } from "react-redux";
 import * as yup from "yup";
+import { useNavigate } from "react-router";
 
 const Post_Job = ({ stat }) => {
+  const navigtion = useNavigate();
   const [goSteps, setGoSteps] = useState(0);
   const [state, setState] = useState({
     jobtitle: "UI/UX",
@@ -103,6 +105,7 @@ const Post_Job = ({ stat }) => {
           onSubmit={(values, { resetForm }) => {
             dispatch(Send_data(values));
             resetForm();
+            navigtion("/all-jobs")
           }}
         >
           {({
@@ -112,7 +115,9 @@ const Post_Job = ({ stat }) => {
             handleReset,
             touched,
             errors,
-            setTouched
+            setTouched,
+            isValid,
+            dirty
           }) => (
             <Form
               onSubmit={(e) => {
@@ -130,6 +135,8 @@ const Post_Job = ({ stat }) => {
                   touched={touched}
                   errors={errors}
                   setTouched={setTouched}
+                  dirty={dirty}
+                  isValid={isValid}
                 />
               )}
 
@@ -142,6 +149,8 @@ const Post_Job = ({ stat }) => {
                   setState={setState1}
                   touched={touched}
                   errors={errors}
+                  dirty={dirty}
+                  isValid={isValid}
                 />
               )}
               {goSteps === 2 && (
@@ -153,6 +162,8 @@ const Post_Job = ({ stat }) => {
                   setState={setState1}
                   touched={touched}
                   errors={errors}
+                  dirty={dirty}
+                  isValid={isValid}
                 />
               )}
               {goSteps === 3 && (
@@ -164,6 +175,8 @@ const Post_Job = ({ stat }) => {
                   setState={setState1}
                   touched={touched}
                   errors={errors}
+                  dirty={dirty}
+                  isValid={isValid}
                 />
               )}
             </Form>

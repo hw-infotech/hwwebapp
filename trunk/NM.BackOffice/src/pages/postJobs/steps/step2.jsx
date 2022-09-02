@@ -28,7 +28,7 @@ const Step2 = ({
   //console.log(result); // 👉️ "00:10:00" (hh:mm:ss)
   const f_context = useFormikContext();
   //Formik.setTouched({ responsibility: true });
-  console.log(state)
+  console.log(state);
   return (
     <div className="w-100 m-auto">
       <Row>
@@ -93,34 +93,36 @@ const Step2 = ({
         >
           Back
         </Button>
-        {state.requirment.length > 0 &&
-        state.responsibility.length > 0 &&
-        state.benefit.length > 0 ? 
-          <Button
-            variant="primary"
-            className="btn-sm"
-            onClick={() => {
-              setFieldValue(
-                "benefit",
-                state?.benefit?.map((f) => f)
-              );
-              setFieldValue(
-                "responsibility",
-                state.responsibility.map((_) => _)
-              );
-              setFieldValue(
-                "requirment",
-                state.requirment.map((_) => _)
-              );
 
-              setGoSteps(2);
-            }}
-          >
-            Next
-          </Button>
-         : (
-          ""
-        )}
+        <Button
+          variant="primary"
+          className="btn-sm"
+          disabled={
+            state.requirment.length > 0 &&
+            state.responsibility.length > 0 &&
+            state.benefit.length > 0
+              ? false
+              : true
+          }
+          onClick={() => {
+            setFieldValue(
+              "benefit",
+              state?.benefit?.map((f) => f)
+            );
+            setFieldValue(
+              "responsibility",
+              state.responsibility.map((_) => _)
+            );
+            setFieldValue(
+              "requirment",
+              state.requirment.map((_) => _)
+            );
+
+            setGoSteps(2);
+          }}
+        >
+          Next
+        </Button>
       </div>
     </div>
   );

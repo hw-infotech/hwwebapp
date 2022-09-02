@@ -14,9 +14,11 @@ const Step1 = ({
   values,
   touched,
   errors,
+  dirty,
+  isValid
 }) => {
-  const v = useFormikContext();
-console.log(v,"formikcontext")
+  const formik_context = useFormikContext();
+console.log(formik_context,"formikcontext")
   useEffect(() => {
     document.title = "Add Job";
   }, []);
@@ -55,8 +57,6 @@ console.log(v,"formikcontext")
             </Form.Group>
           </div>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-           
-
             <Input
               as="textarea"
               label={"Descritption"}
@@ -76,7 +76,7 @@ console.log(v,"formikcontext")
       {
         <Button
           variant="primary"
-         // disabled={v.dirty ? false:true}
+          disabled={formik_context.values.functions && formik_context.values.description ? false:true}
           className="btn-sm"
           onClick={() => setGoSteps(1)}
         >

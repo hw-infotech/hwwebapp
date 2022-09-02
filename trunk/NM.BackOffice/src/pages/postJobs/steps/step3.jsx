@@ -73,17 +73,18 @@ const Step3 = ({
         >
           Back
         </Button>
-        { f_context?.values.industry ?
+       
           <Button
             variant="primary"
             className="btn-sm"
+            disabled= { f_context?.values.industry ? false:true}
             onClick={() => {
               setGoSteps(3);
             }}
           >
             Next
           </Button>
-       :"" }
+     
       </div>
     </div>
   );
