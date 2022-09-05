@@ -69,6 +69,7 @@ const options = [
   { value: "Unsubscribe", label: "Unsubscribe" },
 ];
 const Job_newsletter = ({}) => {
+  const [allcheck, setAllcheck] = useState();
   const [key, setKey] = useState("subscribe");
   const [checked, setChecked] = useState();
   const [indexx, setindex] = useState();
@@ -239,10 +240,11 @@ const Job_newsletter = ({}) => {
                     (b, indexx) => (tableData[b.index].subscribed = false)
                   );
                 });
-                selected.splice(0, selected.length)
+                selected.splice(0, selected.length);
                 setTableData([...tableData]);
                 setsubscribed(false);
-                setUnsubscribed(false)
+                setUnsubscribed(false);
+                setAllcheck(false);
               }}
             >
               Unsubscribe
@@ -255,9 +257,11 @@ const Job_newsletter = ({}) => {
                   <tr>
                     <th className="action_colwidth" align="center">
                       <Form.Check
+                        checked={allcheck}
                         className="fs_13"
                         label=""
                         onChange={(e) => {
+                          setAllcheck(e.target.checked);
                           setUnsubscribed(e.target.checked);
                           tableData.map((data, index) => {
                             if (tableData[index].active == true) {
@@ -432,10 +436,11 @@ const Job_newsletter = ({}) => {
                     (b, indexx) => (tableData[b.index].subscribed = false)
                   );
                 });
-                selected.splice(0, selected.length)
+                selected.splice(0, selected.length);
                 setTableData([...tableData]);
-                setUnsubscribed(false)
-                setsubscribed(false)
+                setUnsubscribed(false);
+                setsubscribed(false);
+                setAllcheck(false);
               }}
             >
               Subscribe
@@ -449,9 +454,11 @@ const Job_newsletter = ({}) => {
                     <th className="action_colwidth" align="center">
                       <Form.Check
                         className="fs_13"
+                        checked={allcheck}
                         label=""
                         onChange={(e) => {
                           // setUnsubscribed(false);
+                          setAllcheck(e.target.checked);
                           setsubscribed(e.target.checked);
                           tableData.map((data, index) => {
                             if (tableData[index].active == false) {

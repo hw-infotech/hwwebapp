@@ -1,12 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { MdFilterAlt, MdAdd } from "react-icons/md";
-import { AiOutlinePlusCircle } from "react-icons/ai";
-import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
-import {
-  initialValues,
-  validationschemeaa,
-} from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
 import {
   Button,
@@ -19,10 +12,7 @@ import {
 } from "react-bootstrap";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { BsFilter } from "react-icons/bs";
-import { BsFilterLeft } from "react-icons/bs";
 import CustomPagination from "../../shared/pagination";
-import { confirm } from "react-bootstrap-confirmation";
 import {
   requestSearch,
   sortData,
@@ -119,14 +109,14 @@ const Success_Stories = ({
    * @description handle close function  for empty the state, when we add the projet after we need to empty the input fields
    */
   const handleClose = () => {
-    setShow(false);
-    setEdit(false);
     setState({
       title: "",
       content: "",
       active: null,
       image: "",
     });
+    setShow(false);
+    setEdit(false);
   };
 
   /**
@@ -420,7 +410,7 @@ const Success_Stories = ({
             validationSchema={validationSchema}
             initialValues={state}
             onSubmit={(values) => {
-              setTableData((old) => [...old, values]);   
+              setTableData((old) => [...old, values]);
               handleFormSubmit(values);
             }}
           >
@@ -593,14 +583,12 @@ const Success_Stories = ({
                       className="btn-sm fs_13"
                       type="button"
                       onClick={() => {
-                            
                         tableData[index].title = values.title;
                         tableData[index].content = values.content;
                         tableData[index].image = values.image;
                         tableData[index].active = values.active;
                         setShow(false);
                         setTableData([...tableData]);
-                        
                       }}
                     >
                       Update
