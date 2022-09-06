@@ -274,6 +274,7 @@ const Success_Stories = ({
                         <div className="userDetail ">
                           <button
                             type="button"
+                         
                             className="btn actionIcon "
                             key={index}
                             id="dropdownIconMenu"
@@ -301,6 +302,7 @@ const Success_Stories = ({
 
                                 <button
                                   type="button"
+                                  data-testid="butoon1"
                                   key={index}
                                   className="btn btn-outlined-secondary fs_13"
                                   onClick={() => {

@@ -1,10 +1,20 @@
-import { getAllByRole, render, screen, within } from "@testing-library/react";
+import {
+  fireEvent,
+  getAllByRole,
+  getByTestId,
+  getByText,
+  render,
+  screen,
+  within,
+} from "@testing-library/react";
 import Success_Stories from "./success_Stories";
+import userEvent from "@testing-library/user-event";
 
-describe("This is the success story component", () => {
-  test("Checkinput field", () => {
-   render(<Success_Stories/>);
-    const testfield = "ganeshsharma";
-    expect(screen.getByPlaceholderText("Title")).toBeInTheDocument();
+describe("Expand body button", () => {
+  it("should render OrderModuleBody when clicked", () => {
+    render(<Success_Stories />);
+    const button = screen.getByTestId("butoon1");
+    userEvent.click(button);
+    expect(screen.getByText("Edit")).toBeInTheDocument();
   });
 });

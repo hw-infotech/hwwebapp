@@ -135,6 +135,7 @@ const All_Enquiry = ({
   }, []);
   return (
     <div className="main-enquiry-box">
+   
       {/*<div className="panle_body">
     <div className="panle_header">
       <div className="left-panle-title">
@@ -186,15 +187,17 @@ const All_Enquiry = ({
       </Collapse>
     </div>
             </div>*/}
-      <Modal show={showalert} onHide={handleClose}>
-        <Modal.Header className="label-size">
+      <Modal  data-testid="modal" show={showalert} onHide={handleClose}>
+        <Modal.Header className="label-size" >
           <Modal.Title className="modal-titlee">Alert</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="label-size">
+        <Modal.Body className="label-size"  data-testid="modal">
           <p>{rowtext?.text}</p>
+          <div> tell me</div>
         </Modal.Body>
         <Modal.Footer>
           <Button
+          data-testid="input-field"
             className="btn-sm fs_13"
             variant="secondary"
             onClick={() => {
@@ -206,6 +209,7 @@ const All_Enquiry = ({
           <Button
             className="btn-sm fs_13"
             variant="primary"
+            data-testid="dropdown12"
             onClick={() => {
               display();
               setShowalert(false);
@@ -249,6 +253,7 @@ const All_Enquiry = ({
                         <button
                           type="button"
                           className="btn "
+                         
                           id="dropdownIconMenu"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"

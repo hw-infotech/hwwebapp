@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test success stories component button 1`] = `
+<div
+  class="breadecumbs_box "
+>
+  <ul
+    class="breadcumbs_style"
+  >
+    <li>
+      Dashboard
+       
+      &gt;
+    </li>
+    <li>
+      Sliders/Carousels
+       
+      &gt;
+    </li>
+    <li
+      style="color: rgb(115, 126, 210);"
+    >
+      Success Stories
+    </li>
+  </ul>
+</div>
+`;

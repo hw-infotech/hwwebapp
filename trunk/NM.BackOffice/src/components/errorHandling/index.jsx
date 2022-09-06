@@ -19,5 +19,4 @@ class ErrorHandling extends Component {
     return children;
   }
 }
-
 export default ErrorHandling;
