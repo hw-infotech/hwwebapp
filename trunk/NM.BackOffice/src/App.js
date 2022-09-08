@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./Parts/header/Header";
 import Footer from "./Parts/footer/Footer";
 import Sidebar from "./components/Sidebar";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import routes from "./Services/routes/Routes";
 import { useEffect, useMemo, useState } from "react";
 import Admin_Login from "./pages/authnication/admin_login";
@@ -52,7 +52,16 @@ function App() {
     <>
       {
         <div className="dashboard" hidden={found}>
-          {localUser ? <Sidebar sidebarShow={sidebarShow} setSidebarShow={setSidebarShow} /> : ""}
+   
+          {localUser ? (
+            <Sidebar
+              sidebarShow={sidebarShow}
+              setSidebarShow={setSidebarShow}
+            />
+          ) : (
+            ""
+          )}
+       
           <div className="mainDashboard">
             {localUser ? (
               <Header
@@ -63,23 +72,29 @@ function App() {
               ""
             )}
             <div className="content-Wrapper">
-              <Routes>
-                {routes?.map((route, index) => {
-                  return (
-                    <Route
-                      key={index}
-                      path={route.path}
-                      element={
-                        <Protected>
-                          <route.element />
-                        </Protected>
-                      }
-                    />
-                  );
-                })}
-                // <Route path="/admin-login" element={<Admin_Login />} exact />
-                <Route path="*" element={<Admin_Login />} exact />
-              </Routes>
+                <Routes>
+                  {routes?.map((route, index) => {
+                    return (
+                    
+                      <Route
+                        key={index}
+                        path={route.path}
+                        element={
+                          <Protected>
+                            <route.element />
+                          </Protected>
+                          
+                        }
+                        
+                      />
+                      
+                    );
+                  })}
+                  //{" "}
+                  <Route path="/admin-login" element={<Admin_Login />} exact />
+                  <Route path="*" element={<Admin_Login />} exact />
+                </Routes>
+             
             </div>
             <Footer sidebarShow={sidebarShow} />
           </div>

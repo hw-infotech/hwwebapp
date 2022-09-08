@@ -70,7 +70,7 @@ const Success_Stories = ({
   show,
   setOptions,
 }) => {
-  const [img, setImg] = useState();
+  const [img, setImg] = useState("sunil");
   const [title, setTitle] = useState(false);
   const [deleteObj, setDeleteObj] = useState({
     index: 0,
@@ -214,7 +214,7 @@ const Success_Stories = ({
             </Button>
           </Modal.Footer>
         </Modal>
-        <Modal show={showalert} onHide={handleClose}>
+        <Modal show={showalert} onHide={handleClose} data-testid="my-modal-window">
           <Modal.Header>
             <Modal.Title className="modal-titlee">Alert</Modal.Title>
           </Modal.Header>
@@ -274,7 +274,6 @@ const Success_Stories = ({
                         <div className="userDetail ">
                           <button
                             type="button"
-                         
                             className="btn actionIcon "
                             key={index}
                             id="dropdownIconMenu"
@@ -302,8 +301,9 @@ const Success_Stories = ({
 
                                 <button
                                   type="button"
-                                  data-testid="butoon1"
                                   key={index}
+                                  data-testid="butoon1"
+                               
                                   className="btn btn-outlined-secondary fs_13"
                                   onClick={() => {
                                     setState(data);

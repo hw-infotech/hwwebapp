@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { Button, NavLink } from "react-bootstrap";
 import { RiGalleryLine } from "react-icons/ri";
@@ -10,13 +10,14 @@ import { GoQuestion } from "react-icons/go";
 import { GoThreeBars } from "react-icons/go";
 
 const Sidebar = ({ sidebarShow,setSidebarShow }) => {
+  const navigtion = useNavigate();
   const [parentId, setParentId] = useState(
     JSON.parse(localStorage.getItem("activeId"))?.split("_")[0]
   );
   const classname = "activeMenu";
   let classes = "reverse";
   const [show, setshow] = useState(false);
-  const navigtion = useNavigate();
+  
   /**
    * @method useEffect
    * @description this useEffect for set the state value that getting from localStorage
@@ -60,6 +61,7 @@ const Sidebar = ({ sidebarShow,setSidebarShow }) => {
             }
       }
     >
+   
       <div
         className="sidebar_header"
         
@@ -323,6 +325,7 @@ const Sidebar = ({ sidebarShow,setSidebarShow }) => {
         </ul>
         <hr />
       </div>
+     
     </div>
   );
 };

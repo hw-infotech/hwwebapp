@@ -22,6 +22,26 @@ textarea#invalid {
     margin-top: 40px !important;
   }
   .main-header-box {
+    .dropdown-item13 {
+      display: flex;
+      width: 100%;
+      //padding: 0.3rem 0.7rem !important;
+      gap: 8px !important;
+      clear: both;
+      font-weight: 400;
+      color: #212529;
+      text-align: inherit;
+      text-decoration: none;
+      white-space: nowrap;
+      background-color: transparent;
+      border: 0;
+      display: inline-flex !important;
+      font-size: 13px;
+      // .tooltip {
+      //   margin-right: 5px;
+      //   pointer-events: none !important;
+      // }
+    }
     .dropdown-menu[data-bs-popper] {
       position: absolute !important;
       z-index: 999 !important;
@@ -29,7 +49,7 @@ textarea#invalid {
       margin-top: 0.125rem;
       top: 35px !important;
     }
-    .navbar-nav .nav-link{
+    .navbar-nav .nav-link {
       background-color: white !important;
       padding: 5px 0px 0px 0px;
     }
@@ -119,13 +139,13 @@ textarea#invalid {
   }
   .main-header-box {
     .navbar_designs {
-      .nav-item{
+      .nav-item {
         background: #f9f9f9 !important;
         z-index: 116 !important;
         position: absolute !important;
         padding: 0px 41px !important;
       }
-      .dropdown{
+      .dropdown {
         background: #f9f9f9 !important;
         z-index: 116 !important;
         position: absolute !important;
@@ -138,7 +158,6 @@ textarea#invalid {
       left: 0px !important;
       margin-top: 0.125rem;
       top: 35px !important;
-     
     }
     .notificaton-content {
       visibility: hidden !important;
@@ -533,6 +552,26 @@ textarea#invalid {
     white-space: nowrap;
     background-color: transparent;
     border: 0;
+    font-size: 13px;
+    // .tooltip {
+    //   margin-right: 5px;
+    //   pointer-events: none !important;
+    // }
+  }
+  .dropdown-item13 {
+    display: flex;
+    width: 100%;
+    //padding: 0.3rem 0.7rem !important;
+    gap: 8px !important;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    display: none;
     font-size: 13px;
     // .tooltip {
     //   margin-right: 5px;

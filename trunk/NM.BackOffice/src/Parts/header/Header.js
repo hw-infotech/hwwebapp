@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
-import {MdNotificationsNone} from "react-icons/md";
+import { MdNotificationsNone } from "react-icons/md";
 import { GoThreeBars } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -214,9 +214,9 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                 </span>
                 Log out
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+            
               <NavDropdown.Item
-                className="dropdown-item12"
+                className="dropdown-item13"
                 onClick={() => {
                   history("/notification");
                 }}

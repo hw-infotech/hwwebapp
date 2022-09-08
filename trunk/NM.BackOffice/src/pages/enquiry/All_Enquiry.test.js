@@ -7,9 +7,7 @@ import {
   screen,
   within,
 } from "@testing-library/react";
-import { Modal } from "react-bootstrap";
-import { Input } from "../../components/commoninputfield";
-import All_Enquiry from "./All_Enquiry";
+import All_Enquiry from './All_Enquiry'
 
 describe("All enquiry", () => {
   //  it("Check button",()=>{

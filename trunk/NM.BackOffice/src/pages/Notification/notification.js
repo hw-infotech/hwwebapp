@@ -40,6 +40,7 @@ const Notification = () => {
           <div className="right_panle_container">
             <Button
               title="Filter"
+              data-testid="notifi"
               variant=""
               className="btn-sm remove_button_padding"
               onClick={() => setSdisabled((p) => !p)}
@@ -98,7 +99,7 @@ const Notification = () => {
             width="30px"
           />
           <div>
-            <p style={{color:"#004a87"}}>Richard Miles liked your post</p>
+            <p style={{ color: "#004a87" }}>Richard Miles liked your post</p>
             <p className="text-muted">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde,
               dolorem.
