@@ -1,0 +1,645 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test success stories component button 1`] = `
+<div
+  class="breadecumbs_box "
+>
+  <ul
+    class="breadcumbs_style"
+  >
+    <li>
+      Dashboard
+       
+      &gt;
+    </li>
+    <li>
+      Sliders/Carousels
+       
+      &gt;
+    </li>
+    <li
+      style="color: rgb(115, 126, 210);"
+    >
+      Success Stories
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`render the success story render all 1`] = `
+Array [
+  <div
+    className="breadecumbs_box "
+    onClick={[Function]}
+  >
+    <ul
+      className="breadcumbs_style"
+    >
+      <li
+        onClick={[Function]}
+      >
+        Dashboard
+         
+        &gt;
+      </li>
+      <li
+        onClick={[Function]}
+      >
+        Sliders/Carousels
+         
+        &gt;
+      </li>
+      <li
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#737ed2",
+          }
+        }
+      >
+        Success Stories
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="panle_body"
+  >
+    <div
+      className="panle_header"
+    >
+      <div
+        className="left-panle-title"
+      >
+        <h4>
+          Success Stories
+        </h4>
+      </div>
+      <div
+        className="right_panle_container"
+      >
+        <button
+          className="btn-sm remove_button_padding btn"
+          disabled={false}
+          onClick={[Function]}
+          title="Filter"
+          type="button"
+        >
+          <svg
+            color="#ff6b01"
+            fill="currentColor"
+            height={25}
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": "#ff6b01",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={25}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+        <button
+          aria-expanded={false}
+          className="btn-sm remove_button_padding btn"
+          disabled={false}
+          onClick={[Function]}
+          title="Add"
+          type="button"
+        >
+          <svg
+            color="#ff6b01"
+            fill="currentColor"
+            height={25}
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": "#ff6b01",
+              }
+            }
+            viewBox="0 0 1024 1024"
+            width={25}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z"
+            />
+            <path
+              d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className="gapbetween fs_13 pt-1"
+    >
+      <div
+        aria-expanded={null}
+        className="collapse"
+        id="example-collapse-text"
+      >
+        <select
+          aria-label="Default select example"
+          className="fs_13 form-select"
+          defaultValue="all"
+          id="example-collapse-text"
+        >
+          <option
+            disabled={true}
+          >
+            Status
+          </option>
+          <option
+            selected={true}
+            value="ALL"
+          >
+            All
+          </option>
+          <option
+            value="Active"
+          >
+            Active
+          </option>
+          <option
+            value="Deactive"
+          >
+            Deactive
+          </option>
+        </select>
+      </div>
+      <div
+        aria-expanded={null}
+        className="serachbar collapse"
+      >
+        <div
+          className="mb-3 input-group"
+        >
+          <input
+            aria-describedby="basic-addon2"
+            aria-label="Recipient's username"
+            className="fs_13 form-control"
+            onChange={[Function]}
+            placeholder="Search by title"
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="Main-story-box"
+  >
+    <div
+      className="content_box"
+    >
+      <div
+        className="data-table"
+      >
+        <div
+          className="table-responsive"
+        >
+          <table
+            className="table-content table table-striped table-bordered table-hover"
+          >
+            <thead>
+              <tr>
+                <th
+                  className="action_colwidth"
+                >
+                  Action
+                </th>
+                <th
+                  className="action_colwidth"
+                >
+                  Status
+                </th>
+                <th
+                  className="action_titlewidth"
+                  onClick={[Function]}
+                >
+                  Title 
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </th>
+                <th>
+                  Content
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  className="action"
+                >
+                  <div
+                    className="userDetail "
+                  >
+                    <button
+                      aria-expanded="false"
+                      className="btn actionIcon "
+                      data-bs-toggle="dropdown"
+                      id="dropdownIconMenu"
+                      type="button"
+                    >
+                      <span
+                        className="actionIcon"
+                      >
+                         
+                        <i
+                          className="bi bi-three-dots-vertical"
+                        />
+                      </span>
+                    </button>
+                    <ul
+                      aria-labelledby="dropdownIconMenu"
+                      className="IconDropdown dropdown-menu context-menu11"
+                    >
+                      <li
+                        className="dropdownList "
+                      >
+                        <div
+                          className="actionBtns  context-menu1 "
+                        >
+                          <span
+                            className="editAction"
+                            data-bs-target="#editbtn"
+                            data-bs-toggle="modal"
+                          >
+                            <i
+                              className="bi bi-pencil-square"
+                            />
+                          </span>
+                          <button
+                            className="btn btn-outlined-secondary fs_13"
+                            data-testid="butoon1"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            Edit
+                          </button>
+                        </div>
+                      </li>
+                      <li
+                        className="dropdownList"
+                      >
+                        <div
+                          className="actionBtns context-menu1"
+                        >
+                          <span
+                            className="deleteAction"
+                            data-bs-target="#deletebtn"
+                            data-bs-toggle="modal"
+                          >
+                             
+                            <i
+                              className="bi bi-trash3-fill"
+                            />
+                          </span>
+                          <button
+                            className="btn btn-outlined-secondary fs_13"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <form
+                    className=""
+                  >
+                    <div
+                      className="switch_padding form-check form-switch"
+                    >
+                      <input
+                        checked={false}
+                        className="form-check-input"
+                        disabled={false}
+                        id="custom-switch1"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="custom-switch1"
+                        title=""
+                      />
+                    </div>
+                  </form>
+                </td>
+                <td>
+                  Birthday Post
+                </td>
+                <td>
+                   The passage is attributed to an unknown, oday, the flowers are bloomier, the sun is sunnier, and life is awesomer – all because it’ ...
+                </td>
+              </tr>
+              <tr>
+                <td
+                  className="action"
+                >
+                  <div
+                    className="userDetail "
+                  >
+                    <button
+                      aria-expanded="false"
+                      className="btn actionIcon "
+                      data-bs-toggle="dropdown"
+                      id="dropdownIconMenu"
+                      type="button"
+                    >
+                      <span
+                        className="actionIcon"
+                      >
+                         
+                        <i
+                          className="bi bi-three-dots-vertical"
+                        />
+                      </span>
+                    </button>
+                    <ul
+                      aria-labelledby="dropdownIconMenu"
+                      className="IconDropdown dropdown-menu context-menu11"
+                    >
+                      <li
+                        className="dropdownList "
+                      >
+                        <div
+                          className="actionBtns  context-menu1 "
+                        >
+                          <span
+                            className="editAction"
+                            data-bs-target="#editbtn"
+                            data-bs-toggle="modal"
+                          >
+                            <i
+                              className="bi bi-pencil-square"
+                            />
+                          </span>
+                          <button
+                            className="btn btn-outlined-secondary fs_13"
+                            data-testid="butoon1"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            Edit
+                          </button>
+                        </div>
+                      </li>
+                      <li
+                        className="dropdownList"
+                      >
+                        <div
+                          className="actionBtns context-menu1"
+                        >
+                          <span
+                            className="deleteAction"
+                            data-bs-target="#deletebtn"
+                            data-bs-toggle="modal"
+                          >
+                             
+                            <i
+                              className="bi bi-trash3-fill"
+                            />
+                          </span>
+                          <button
+                            className="btn btn-outlined-secondary fs_13"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <form
+                    className=""
+                  >
+                    <div
+                      className="switch_padding form-check form-switch"
+                    >
+                      <input
+                        checked={true}
+                        className="form-check-input"
+                        disabled={false}
+                        id="custom-switch1"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="custom-switch1"
+                        title=""
+                      />
+                    </div>
+                  </form>
+                </td>
+                <td>
+                  Christmas Post
+                </td>
+                <td>
+                  Glory to God in the highest, and on earth peace, goodwill toward men. Jesus is the reason for the season,Joy to the world, the Lord  ...
+                </td>
+              </tr>
+              <tr>
+                <td
+                  className="action"
+                >
+                  <div
+                    className="userDetail "
+                  >
+                    <button
+                      aria-expanded="false"
+                      className="btn actionIcon "
+                      data-bs-toggle="dropdown"
+                      id="dropdownIconMenu"
+                      type="button"
+                    >
+                      <span
+                        className="actionIcon"
+                      >
+                         
+                        <i
+                          className="bi bi-three-dots-vertical"
+                        />
+                      </span>
+                    </button>
+                    <ul
+                      aria-labelledby="dropdownIconMenu"
+                      className="IconDropdown dropdown-menu context-menu11"
+                    >
+                      <li
+                        className="dropdownList "
+                      >
+                        <div
+                          className="actionBtns  context-menu1 "
+                        >
+                          <span
+                            className="editAction"
+                            data-bs-target="#editbtn"
+                            data-bs-toggle="modal"
+                          >
+                            <i
+                              className="bi bi-pencil-square"
+                            />
+                          </span>
+                          <button
+                            className="btn btn-outlined-secondary fs_13"
+                            data-testid="butoon1"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            Edit
+                          </button>
+                        </div>
+                      </li>
+                      <li
+                        className="dropdownList"
+                      >
+                        <div
+                          className="actionBtns context-menu1"
+                        >
+                          <span
+                            className="deleteAction"
+                            data-bs-target="#deletebtn"
+                            data-bs-toggle="modal"
+                          >
+                             
+                            <i
+                              className="bi bi-trash3-fill"
+                            />
+                          </span>
+                          <button
+                            className="btn btn-outlined-secondary fs_13"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <form
+                    className=""
+                  >
+                    <div
+                      className="switch_padding form-check form-switch"
+                    >
+                      <input
+                        checked={false}
+                        className="form-check-input"
+                        disabled={false}
+                        id="custom-switch1"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="custom-switch1"
+                        title=""
+                      />
+                    </div>
+                  </form>
+                </td>
+                <td>
+                  New Year Post
+                </td>
+                <td>
+                  it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown or no ...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        className="w-100 customPagination"
+      >
+        <ul
+          className="pagination "
+        >
+          <li
+            className="previousList disabled"
+          >
+            <a
+              aria-disabled="true"
+              aria-label="Previous page"
+              className=" "
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              rel="prev"
+              role="button"
+              tabIndex="-1"
+            >
+              &lt;&lt;
+            </a>
+          </li>
+          <li
+            className="active"
+          >
+            <a
+              aria-current="page"
+              aria-label="Page 1 is your current page"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              rel="canonical"
+              role="button"
+              tabIndex="-1"
+            >
+              1
+            </a>
+          </li>
+          <li
+            className="nextList disabled"
+          >
+            <a
+              aria-disabled="true"
+              aria-label="Next page"
+              className=" "
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              rel="next"
+              role="button"
+              tabIndex="-1"
+            >
+              &gt;&gt;
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+]
+`;

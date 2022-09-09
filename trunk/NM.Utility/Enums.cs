@@ -7,9 +7,7 @@ namespace NM.Utility
 {
     public class Enums
     {
-        public const string ExistMsg = "{0} exists";
-        public const string ResetPasswordEmail = "An email has been sent. Please check your email";
-        public const string EmailError = "Something went wrong while sending an email. Please try again after some time";
+       
         public enum StatusCode
         {
             [Description("OK")]

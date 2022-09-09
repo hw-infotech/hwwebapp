@@ -1,12 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { MdFilterAlt, MdAdd } from "react-icons/md";
-import { AiOutlinePlusCircle } from "react-icons/ai";
-import BasicBreadcrumbs from "../../components/breadcumbs";
 import { ErrorMessage, Formik } from "formik";
-import {
-  initialValues,
-  validationschemeaa,
-} from "../postJobs/validation-schema";
 import { Input } from "../../components/commoninputfield";
 import {
   Button,
@@ -19,10 +12,7 @@ import {
 } from "react-bootstrap";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { BsFilter } from "react-icons/bs";
-import { BsFilterLeft } from "react-icons/bs";
 import CustomPagination from "../../shared/pagination";
-import { confirm } from "react-bootstrap-confirmation";
 import {
   requestSearch,
   sortData,
@@ -80,6 +70,7 @@ const Success_Stories = ({
   show,
   setOptions,
 }) => {
+  const [img, setImg] = useState("sunil");
   const [title, setTitle] = useState(false);
   const [deleteObj, setDeleteObj] = useState({
     index: 0,
@@ -94,6 +85,8 @@ const Success_Stories = ({
     active: false,
     image: "",
   });
+
+  useEffect(() => {}, [state]);
   const [openmodal, setmodal] = useState(false);
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
@@ -104,9 +97,11 @@ const Success_Stories = ({
     start: start,
     end: showPerPage,
   });
+
   useEffect(() => {
     document.title = "Success Stories";
   }, []);
+ 
   setPlaceholder("Search by title");
   settitle("Success Stories");
   setRoute(route);
@@ -118,15 +113,18 @@ const Success_Stories = ({
    * @description handle close function  for empty the state, when we add the projet after we need to empty the input fields
    */
   const handleClose = () => {
-    setShow(false);
-    setEdit(false);
     setState({
       title: "",
       content: "",
       active: null,
       image: "",
     });
+    setShow(false);
+    setEdit(false);
   };
+
+  
+  
   /**
    * @method display
    * @handleClose display function is for open modal accroding to status in this function, if status is active alet box will show oposite status when we click on switch to deactive the status
@@ -158,7 +156,7 @@ const Success_Stories = ({
     setState({
       title: "",
       content: "",
-      active: "",
+      active: false,
       image: "",
     });
   };
@@ -175,6 +173,7 @@ const Success_Stories = ({
     reader.readAsDataURL(file);
     reader.onload = () => {
       setFieldValue("image", reader.result);
+      setImg(true);
     };
     reader.onerror = function (error) {
       console.log("Error: ", error);
@@ -188,6 +187,7 @@ const Success_Stories = ({
     tableData.splice(indexx, 1);
     setTableData([...tableData]);
   };
+
   return (
     <>
       <div className="Main-story-box">
@@ -220,7 +220,11 @@ const Success_Stories = ({
             </Button>
           </Modal.Footer>
         </Modal>
-        <Modal show={showalert} onHide={handleClose}>
+        <Modal
+          show={showalert}
+          onHide={handleClose}
+          data-testid="my-modal-window"
+        >
           <Modal.Header>
             <Modal.Title className="modal-titlee">Alert</Modal.Title>
           </Modal.Header>
@@ -308,6 +312,7 @@ const Success_Stories = ({
                                 <button
                                   type="button"
                                   key={index}
+                                  data-testid="butoon1"
                                   className="btn btn-outlined-secondary fs_13"
                                   onClick={() => {
                                     setState(data);
@@ -415,9 +420,9 @@ const Success_Stories = ({
           <Formik
             validationSchema={validationSchema}
             initialValues={state}
-            onSubmit={() => {
+            onSubmit={(values) => {
               setTableData((old) => [...old, values]);
-              handleFormSubmit();
+              handleFormSubmit(values);
             }}
           >
             {({
@@ -439,6 +444,7 @@ const Success_Stories = ({
                 <Modal.Body>
                   {
                     <div className="cardBoard">
+                      {}
                       <Form.Group className="" controlId="formBasicEmail">
                         <Input
                           type="text"
@@ -447,36 +453,38 @@ const Success_Stories = ({
                           name="title"
                           placeholder="Title"
                           onChange={handleChange}
-                          id="title"
-                          value={values.title}
+                          id={touched.title && errors.title ? "invalid" : ""}
+                          value={values?.title}
                         />
                       </Form.Group>
                       <Form.Group>
-                        {touched.title && errors.title ? (
+                        {/*touched.title && errors.title ? (
                           <label className="text-danger  label-size">
                             {errors.title}
                           </label>
                         ) : (
                           ""
-                        )}
+                        )*/}
                         <Input
                           as={"textarea"}
                           className="form-control label-size"
                           name="content"
                           placeholder={"Description"}
-                          id="exampleFormControlTextarea1"
+                          id={
+                            touched.content && errors.content ? "invalid" : ""
+                          }
                           rows={3}
                           label={"Description"}
                           onChange={handleChange}
-                          value={values.content}
+                          value={values?.content}
                         />
-                        {errors?.content && touched.content ? (
+                        {/*errors?.content && touched.content ? (
                           <label className="text-danger label-size">
                             {errors.content}
                           </label>
                         ) : (
                           ""
-                        )}
+                        )*/}
                       </Form.Group>
                       <Form.Label className="label-size">Active</Form.Label>
                       <Form.Check
@@ -520,26 +528,29 @@ const Success_Stories = ({
                         </div>
                     
                       </div>*/}
-                      <Form.Control
-                        className="label-size remove_label"
-                        type="file"
-                        ref={inputFileRef}
-                        accept=".png,.jpg"
-                        aria-label="Upload Images"
-                        name="image"
-                        onChange={(e) => {
-                          getBase64(e, setFieldValue);
-                        }}
-                        //value={values?.image}
-                      />
+                      <div className={img ? "hiddenAttr1" : "hiddenAttr"}>
+                        <Form.Control
+                          className="label-size remove_label"
+                          type="file"
+                          id={touched.image && errors.image ? "invalid" : ""}
+                          ref={inputFileRef}
+                          accept=".png,.jpg"
+                          aria-label="Image"
+                          name="image"
+                          onChange={(e) => {
+                            getBase64(e, setFieldValue);
+                          }}
+                          //value={values?.image}
+                        />
 
-                      {errors?.image && touched.image ? (
-                        <label className="text-danger label-size">
-                          {errors.image}
-                        </label>
-                      ) : (
-                        ""
-                      )}
+                        {/*errors?.image && touched.image ? (
+                          <label className="text-danger label-size">
+                            {errors.image}
+                          </label>
+                        ) : (
+                          ""
+                        )*/}
+                      </div>
                       {values.image ? (
                         <div className="remove_img">
                           <i
@@ -547,6 +558,7 @@ const Success_Stories = ({
                             onClick={() => {
                               inputFileRef.current.value = "";
                               setFieldValue("image", "");
+                              setImg(false);
                             }}
                           ></i>
                         </div>
@@ -580,14 +592,14 @@ const Success_Stories = ({
                   {edit ? (
                     <Button
                       className="btn-sm fs_13"
-                      type="submit"
+                      type="button"
                       onClick={() => {
                         tableData[index].title = values.title;
                         tableData[index].content = values.content;
                         tableData[index].image = values.image;
                         tableData[index].active = values.active;
+                        setShow(false);
                         setTableData([...tableData]);
-                        setShowalert(false);
                       }}
                     >
                       Update
@@ -597,10 +609,10 @@ const Success_Stories = ({
                       className=" btn-sm fs_13"
                       type="submit"
                       onClick={() => {
-                        setShowalert(false);
+                        setShow(false);
                       }}
                     >
-                      Add
+                      Save
                     </Button>
                   )}
                 </Modal.Footer>

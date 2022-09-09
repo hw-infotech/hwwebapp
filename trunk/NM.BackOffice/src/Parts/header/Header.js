@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
+import { MdNotificationsNone } from "react-icons/md";
 import { GoThreeBars } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -31,7 +32,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
         <Navbar.Brand className="navbar_inner_style">
           <Button
             variant=""
-            className="move-sidebar"
+            className="move-sidebar positioning"
             onClick={() => {
               setSidebarShow((p) => !p);
             }}
@@ -45,7 +46,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
             <NavDropdown
               className="navbar_designs"
               title={
-                <span>
+                <span className="notificaton-content">
                   <i class="fs-5 bi-bell"></i>
                   <Badge
                     size={20}
@@ -67,16 +68,18 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
               >
                 <div className="notification_panel">
                   <div className="notification_inner_part">
-                  <img
+                    <img
                       src="./assets/images/ava3.png"
                       className="img-decorate"
                       width={"35px"}
                       height={"40px"}
-              />
+                    />
                     <div>
-                      <p><b>John doe</b> React your post</p>
+                      <p>
+                        <b>John doe</b> React your post
+                      </p>
                       <div className="text-muted wrap-text">
-                        Lorem ipsum dolor sit amet consectetur.
+                        Lorem ipsum dolor sit amet the.
                       </div>
                       <p className="text-muted">
                         <small>10 minutes ago</small>
@@ -93,66 +96,70 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                   </div>
                 </div>
               </NavDropdown.Item>
-         
+
               <NavDropdown.Item className="fs_13" onClick={() => {}}>
-              <div className="notification_panel">
-              <div className="notification_inner_part">
-              <img
-                  src="./assets/images/team_nestormind.png"
-                  className="img-decorate"
-                  width={"35px"}
-                  height={"40px"}
-          />
-                <div>
-                  <p><b>John doe</b> React your post</p>
-                  <div className="text-muted wrap-text">
-                    Lorem ipsum dolor sit amet consectetur.
+                <div className="notification_panel">
+                  <div className="notification_inner_part">
+                    <img
+                      src="./assets/images/team_nestormind.png"
+                      className="img-decorate"
+                      width={"35px"}
+                      height={"40px"}
+                    />
+                    <div>
+                      <p>
+                        <b>John doe</b> React your post
+                      </p>
+                      <div className="text-muted wrap-text">
+                        Lorem ipsum dolor sit amet consectetur.
+                      </div>
+                      <p className="text-muted">
+                        <small>5 minutes ago</small>
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-muted">
-                    <small>5 minutes ago</small>
-                  </p>
-                </div>
-              </div>
-              <div>
-                {/*<img
+                  <div>
+                    {/*<img
                   src="./assets/images/ava3.png"
                   className="img-decorate"
                   width={"48px"}
                   height={"48px"}
           />*/}
-              </div>
-            </div>
+                  </div>
+                </div>
               </NavDropdown.Item>
               <NavDropdown.Item className="fs_13" onClick={() => {}}>
-              <div className="notification_panel">
-              <div className="notification_inner_part">
-              <img
-                  src="./assets/images/ava3.png"
-                  className="img-decorate"
-                  width={"35px"}
-                  height={"40px"}
-          />
-                <div>
-                  <p><b>John doe</b> React your post</p>
-                  <div className="text-muted wrap-text">
-                    Lorem ipsum dolor sit amet consectetur.
+                <div className="notification_panel">
+                  <div className="notification_inner_part">
+                    <img
+                      src="./assets/images/ava3.png"
+                      className="img-decorate"
+                      width={"35px"}
+                      height={"40px"}
+                    />
+                    <div>
+                      <p>
+                        <b>John doe</b> React your post
+                      </p>
+                      <div className="text-muted wrap-text">
+                        Lorem ipsum dolor sit amet consectetur.
+                      </div>
+                      <p className="text-muted">
+                        <small>50 minutes ago</small>
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-muted">
-                    <small>50 minutes ago</small>
-                  </p>
-                </div>
-              </div>
-              <div>
-                {/*<img
+                  <div>
+                    {/*<img
                   src="./assets/images/ava3.png"
                   className="img-decorate"
                   width={"48px"}
                   height={"48px"}
           />*/}
-              </div>
-            </div>
+                  </div>
+                </div>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+
               <div className="dropdownn">
                 <NavDropdown.Item
                   className="notification-li-padding"
@@ -166,7 +173,7 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                       history("/notification");
                     }}
                   >
-                    Show all
+                    View all
                   </Button>
                 </NavDropdown.Item>
               </div>
@@ -206,6 +213,18 @@ const Header = ({ title, sidebarShow, setSidebarShow }) => {
                   <AiOutlineLogout size={16} className="icon-gap" />{" "}
                 </span>
                 Log out
+              </NavDropdown.Item>
+            
+              <NavDropdown.Item
+                className="dropdown-item13"
+                onClick={() => {
+                  history("/notification");
+                }}
+              >
+                <span>
+                  <MdNotificationsNone size={16} className="icon-gap" />{" "}
+                </span>
+                Notification
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link

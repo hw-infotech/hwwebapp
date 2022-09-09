@@ -1,3 +1,5 @@
+import { useFormikContext, Formik } from "formik";
+import { invalid } from "moment";
 import React, { useEffect, useState } from "react";
 import CreatableSelect from "react-select/creatable";
 
@@ -6,30 +8,35 @@ const CreatableSelectField = ({
   setFormState,
   placeholder,
   name,
+  onFocus,
+  className,
+  id,
+  touched,
+  errors,
+  setTouched,
 }) => {
   const [state, setState] = useState({
     inputValue: "",
     value: formState[name],
   });
   const [state1, setState1] = useState([]);
-  //console.log(state.value);
   const handleChange = (value) => {
     setState({ ...state, value });
   };
-
   const handleInputChange = (inputValue) => {
     setState({ ...state, inputValue });
   };
-
   useEffect(() => {
     setFormState({ ...formState, [name]: [...state.value] });
   }, [state]);
-
   useEffect(() => {
-    setState({ ...state, value: [...state.value, state1.value] });
+    const { inputValue, value } = state;
+    if (state1?.value?.value) {
+      setState({ ...state, value: [...state.value, state1.value] });
+    } else {
+      console.log(state1, "testing purpuse");
+    }
   }, [state1]);
-
-  //console.log("this is the form state", state);
   const components = {
     DropdownIndicator: null,
   };
@@ -48,11 +55,20 @@ const CreatableSelectField = ({
   };
   const handleBlur = (e) => {
     const { inputValue, value } = state;
-    if (!inputValue) return;
-    setState1({ value: createOption(inputValue) });
-    e.preventDefault();
-  };
+    console.log(state.inputValue, "dskkjjkf", state1);
+    if (state.value.length < 1 && state?.inputValue=="") {
+      var f = document.getElementById(id);
+      f.style.border = " 1px solid red";
+    } else {
+      var f = document.getElementById(id);
+      f.style.border = "white";
+    }
 
+    if (!inputValue) return;
+
+    e.preventDefault();
+    setState1({ value: createOption(inputValue) });
+  };
   const createOption = (label) => {
     return {
       label,
@@ -64,10 +80,13 @@ const CreatableSelectField = ({
     <div>
       <CreatableSelect
         components={components}
+        id={id}
         inputValue={state.inputValue}
         isClearable
+        setTouched={setTouched}
         isMulti
-        className="label-size"
+        onFocus={onFocus}
+        className={className}
         menuIsOpen={false}
         onChange={handleChange}
         onInputChange={handleInputChange}

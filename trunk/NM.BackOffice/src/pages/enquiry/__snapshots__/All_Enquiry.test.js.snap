@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All enquiry Test the Modal 1`] = `
+<div
+  class="breadecumbs_box "
+>
+  <ul
+    class="breadcumbs_style"
+  >
+    <li>
+      Dashboard
+       
+      &gt;
+    </li>
+    <li>
+      Enquiry
+       
+      &gt;
+    </li>
+    <li
+      style="color: rgb(115, 126, 210);"
+    >
+      All Enquiry
+    </li>
+  </ul>
+</div>
+`;

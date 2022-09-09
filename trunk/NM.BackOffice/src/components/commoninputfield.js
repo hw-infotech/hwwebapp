@@ -12,7 +12,7 @@ export const Input = ({
   options,
   onChange,
   value,
-  rows
+  rows,
 }) => {
   return (
     <div className="input_field ">
@@ -23,14 +23,14 @@ export const Input = ({
           <Field
             as={as}
             type={type}
+            data-testid="input_field"
             value={value}
             className={className}
-            id={id}
+            id={"input-field"}
             name={name}
             placeholder={placeholder}
             onChange={onChange}
             rows={rows}
-           
           />
         )}
         {as == "select" && (

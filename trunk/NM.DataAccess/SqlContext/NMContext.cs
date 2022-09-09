@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using NM.DataAccess.EntityConfiguration;
-using NM.DataAccess.AggregatesModel;  
+using NM.DataAccess.AggregatesModel;
 namespace NM.DataAccess.SqlContext
 {
     public class NMContext : DbContext
@@ -19,12 +19,14 @@ namespace NM.DataAccess.SqlContext
         public DbSet<ApplyJob> ApplyJobs { get; set; }
         public DbSet<Department> Departments { get; set; }//master entity
         public DbSet<Role> Role { get; set; }//master entity
-        public DbSet<AppUser> AppUsers { get; set; } 
+        public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Testimonials> Testimonials { get; set; }
         public DbSet<Resume> Resume { get; set; }
-
+        public DbSet<EnquiryType> EnquiryTypes { get; set; } //master entity
+        public DbSet<UserEnquiry> UserEnquiries { get; set; }
+        public DbSet<UserEnquiryType> UserEnquiryTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -43,9 +45,10 @@ namespace NM.DataAccess.SqlContext
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new TestimonialsConfiguration());
             builder.ApplyConfiguration(new ResumeConfiguration());
-            
+            builder.ApplyConfiguration(new UserEnquiryConfiguration());
+            builder.ApplyConfiguration(new EnquiryTypeConfiguration());
+            builder.ApplyConfiguration(new UserEnquiryTypeConfiguration(builder));// I passed here builder for manage relation between tables: Aman 09/08/2022
         }
-
         private IDbContextTransaction _currentTransaction;
         public IDbContextTransaction GetCurrentTransaction => _currentTransaction;
         private readonly IMediator _mediator;

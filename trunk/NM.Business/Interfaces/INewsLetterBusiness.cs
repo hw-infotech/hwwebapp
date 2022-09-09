@@ -10,5 +10,6 @@ namespace NM.Business.Interfaces
         ResultModel<bool> SubscribeNewsLetter(NewsLetterModel newsLetterModel);
         ResultModel<bool> UnSubscribeByBsonId(string bsonId);
         ResultModel<List<NewsLetterModel>> GetAllNewsLetter();
+        ResultModel<bool> SendNewsLetter(NewsLetterTemplateModel  newsLetterTemplateModel);
     }
 }

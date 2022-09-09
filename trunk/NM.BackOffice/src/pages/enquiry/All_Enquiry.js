@@ -186,15 +186,22 @@ const All_Enquiry = ({
       </Collapse>
     </div>
             </div>*/}
-      <Modal show={showalert} onHide={handleClose}>
+      <Modal data-testid="modal" show={showalert} onHide={handleClose}>
         <Modal.Header className="label-size">
           <Modal.Title className="modal-titlee">Alert</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="label-size">
+        <Modal.Body className="label-size" data-testid="modal">
           <p>{rowtext?.text}</p>
+          {rowtext?.id == 0 && (
+            <Form.Group className="mb-3" controlId="message">
+              <Form.Label>Message</Form.Label>
+              <Form.Control as="textarea" rows={3} name="message" />
+            </Form.Group>
+          )}
         </Modal.Body>
         <Modal.Footer>
           <Button
+            data-testid="input-field"
             className="btn-sm fs_13"
             variant="secondary"
             onClick={() => {
@@ -206,6 +213,7 @@ const All_Enquiry = ({
           <Button
             className="btn-sm fs_13"
             variant="primary"
+            data-testid="dropdown12"
             onClick={() => {
               display();
               setShowalert(false);

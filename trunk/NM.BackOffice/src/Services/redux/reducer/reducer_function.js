@@ -62,8 +62,10 @@ const initialstate = {
           label: "Create detailed budgeting and forecasting quarterly reports",
         },
       ],
-      benefits: [{ value: "Insurance", label: "Insurance" }],
-      requirment: [{ value: "Post Graduate", label: " Post Graduate" }],
+      benefit: [{ value: "Insurance", label: "Insurance" }
+      ,{ value: "Insurance", label: "Insurance" }],
+      requirment: [{ value: "Post Graduate", label: " Post Graduate" }
+    ,{ value: "Post Graduate", label: " Post Graduate" }],
       industry: "Technology",
       level: "Junior",
       type: "Part time",
@@ -87,8 +89,10 @@ const initialstate = {
           label: "Create detailed budgeting and forecasting quarterly reports",
         },
       ],
-      benefits: [{ value: "Insurance", label: "Insurance" }],
-      requirment: [{ value: "B.tech", label: "B.tech" }],
+      benefit: [{ value: "Insurance", label: "Insurance" },
+      { value: "Insurance", label: "Insurance" }],
+      requirment: [{ value: "B.tech", label: "B.tech" }
+    ,{ value: "B.tech", label: "B.tech" }],
       industry: "Business",
       level: "Senior",
       type: "Full time",
@@ -112,13 +116,25 @@ const initialstate = {
           label: "Create detailed budgeting and forecasting quarterly reports",
         },
       ],
-      benefits: [
+      benefit: [
+        {
+          value: "Let you enjoy some extra perks",
+          label: "Let you enjoy some extra perks",
+        },
+        {
+          value: "Let you enjoy some extra perks",
+          label: "Let you enjoy some extra perks",
+        },
         {
           value: "Let you enjoy some extra perks",
           label: "Let you enjoy some extra perks",
         },
       ],
-      requirment: [{ value: "Graduate", label: "Graduate" }],
+      requirment: [
+        { value: "Graduate", label: "Graduate" },
+        { value: "Graduate", label: "Graduate" },
+        { value: "Graduate", label: "Graduate" },
+      ],
       industry: "Technology",
       level: "Senior",
       type: "Full time",
@@ -129,9 +145,9 @@ const initialstate = {
 /**
  * @method Reducer_function
  * @description Reducer function accept the previous state and action and return the new state as well as object
- * @param {*} state 
- * @param {*} action 
- * @returns 
+ * @param {*} state
+ * @param {*} action
+ * @returns
  */
 const Reducer_Function = (state = initialstate, action) => {
   const { payload, type } = action;

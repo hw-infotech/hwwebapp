@@ -55,22 +55,23 @@ const records = [
     comment: "Reason Behind",
   },
 ];
+const route = [
+  { name: "Dashboard", route: "/" },
+  { name: "Newsletter", route: "" },
+  { name: "Subscribe-Unsubscribe", route: "" },
+];
 const SubScriber = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [showPerPage, setShowPerPage] = useState();
-  const [next, setNext] = useState(0);
+  const [disable, setSdisabled] = useState(false);
   const [start, setStart] = useState(1);
   const [pagination1, setpagination] = useState({
     start: start,
     end: showPerPage,
   });
-  const route = [
-    { name: "Dashboard", route: "/" },
-    { name: "Newsletter", route: "" },
-    { name: "Subscribe-Unsubscribe", route: "" },
-  ];
+
   /**
    * @constant selector
    * @description selector variable used to get the store data .
@@ -160,12 +161,72 @@ const SubScriber = () => {
   return (
     <div className="main-newsletter-panle">
       <BasicBreadcrumbs route={route} />
-      <Filters
-        placeholder={placeholder}
-        requestSearch={requestSearch}
-        handleShow={handleShow}
-        titl={titl}
-      />
+      <div className="panle_body">
+        <div className="panle_header">
+          <div className="left-panle-title">
+            <h4>{titl}</h4>
+          </div>
+          <div className="right_panle_container">
+            <Button
+              title="Filter"
+              variant=""
+              className="btn-sm remove_button_padding"
+              onClick={() => setSdisabled((p) => !p)}
+            >
+              <BsFilter size={25} color="#ff6b01" />
+            </Button>
+            <Button
+              variant=""
+              title="Add"
+              aria-expanded={disable}
+              className="btn-sm remove_button_padding"
+              onClick={handleShow}
+            >
+              <AiOutlinePlusCircle size={25} color="#ff6b01" />
+            </Button>
+          </div>
+        </div>
+
+        <div className="gapbetween fs_13 pt-1">
+          <Collapse in={disable}>
+            <div id="example-collapse-text">
+              <Form.Select
+                className="fs_13"
+                aria-label="Default select example"
+                id="example-collapse-text"
+                defaultValue={"all"}
+              >
+                <option disabled>Status</option>
+                <option selected value={"ALL"}>
+                  All
+                </option>
+                <option selected value={"ALL"}>
+                  Subscribe
+                </option>
+                <option selected value={"ALL"}>
+                  Unsubscribe
+                </option>
+              </Form.Select>
+            </div>
+          </Collapse>
+          <Collapse in={disable}>
+            <div className="serachbar">
+              <InputGroup className="mb-3">
+                <FormControl
+                  className="fs_13"
+                  placeholder={placeholder}
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                  onChange={(e) => {
+                    console.log(e);
+                    requestSearch(e.target.value);
+                  }}
+                />
+              </InputGroup>
+            </div>
+          </Collapse>
+        </div>
+      </div>
       <div className="content_box">
         <div className="data-table">
           <Table striped bordered hover>
@@ -233,7 +294,15 @@ const SubScriber = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationschemeaa}
-            onSubmit={() => {}}
+            onSubmit={(values,actions) => {actions.resetForm({
+              values:{
+                title:"",
+                content:"",
+
+              }
+              
+
+            })}}
           >
             {({
               values,
@@ -246,6 +315,7 @@ const SubScriber = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  handleSubmit();
                 }}
               >
                 <Input
@@ -253,33 +323,38 @@ const SubScriber = () => {
                   label="Title"
                   className="form-control label-size"
                   name="title"
+                  id={touched.title && errors.title ? "invalid" : ""}
                   placeholder="Title"
                   onChange={handleChange}
                 />
-                {errors?.title && touched?.title ? (
+                {/*errors?.title && touched?.title ? (
                   <label className="text-danger label-size">
-                    {errors.title}
+                {errors.title}
                   </label>
                 ) : (
                   ""
-                )}
+                )*/}
                 <Input
                   as={"textarea"}
                   className="form-control label-size"
+                  id={
+                    touched.content_story && errors.content_story
+                      ? "invalid"
+                      : ""
+                  }
                   placeholder={"Description"}
                   name="content_story"
                   onChange={handleChange}
-                  id="exampleFormControlTextarea1"
                   rows={3}
                   label={"Descirption"}
                 />
-                {errors?.content_story && touched?.content_story ? (
+                {/*errors?.content_story && touched?.content_story ? (
                   <label className="text-danger label-size">
                     {errors.content_story}
                   </label>
                 ) : (
                   ""
-                )}
+                )*/}
               </form>
             )}
           </Formik>
@@ -292,7 +367,7 @@ const SubScriber = () => {
           >
             Cancel
           </Button>
-          <Button className="btn-sm fs_13" type="submit">
+          <Button type="submit" className="btn-sm fs_13">
             Send
           </Button>
         </Modal.Footer>
@@ -309,4 +384,4 @@ const SubScriber = () => {
     </div>
   );
 };
-export default withHeader(SubScriber, records, true);
+export default SubScriber;

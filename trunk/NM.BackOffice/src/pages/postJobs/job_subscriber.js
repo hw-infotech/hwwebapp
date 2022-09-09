@@ -1,4 +1,3 @@
-//import { Pagination } from "@material-ui/lab";
 import React, { useEffect, useRef, useState } from "react";
 import BasicBreadcrumbs from "../../components/breadcumbs";
 import { BsArrowUp } from "react-icons/bs";
@@ -69,20 +68,12 @@ const options = [
   { value: "Subscribe", label: "Subscribe" },
   { value: "Unsubscribe", label: "Unsubscribe" },
 ];
-const Job_newsletter = ({
-  tableData,
-  setTableData,
-  setRoute,
-  settitle,
-  setPlaceholder,
-  setShow,
-  show,
-  setOptions,
-  setSearchwith,
-}) => {
+const Job_newsletter = ({}) => {
+  const [allcheck, setAllcheck] = useState();
   const [key, setKey] = useState("subscribe");
   const [checked, setChecked] = useState();
   const [indexx, setindex] = useState();
+  const [disable, setSdisabled] = useState();
   const [title, setTitle] = useState(false);
   const [subscribed1, setsubscribed] = useState(false);
   const [unsubscribed, setUnsubscribed] = useState(false);
@@ -95,34 +86,34 @@ const Job_newsletter = ({
   });
 
   const selector = useSelector((state) => state);
-  setPlaceholder("Search by name");
-  settitle("Subscribe-Unsubscribe");
-  setRoute(route);
-  setOptions(options);
-  setSearchwith("Name");
-  //const [tableData, setTableData] = useState(records);
+  // setPlaceholder("Search by name");
+  // settitle("Subscribe-Unsubscribe");
+  // setRoute(route);
+  // setOptions(options);
+  // setSearchwith("Name");
+  const [tableData, setTableData] = useState(records);
 
-  // function sortt() {
-  //   const response = tableData.sort((a, b) =>
-  //     a.Name.toLowerCase() > b.Name.toLowerCase()
-  //       ? 1
-  //       : b.Name.toLowerCase() > a.Name.toLowerCase()
-  //       ? -1
-  //       : 0
-  //   );
+  function sortt() {
+    const response = tableData.sort((a, b) =>
+      a.Name.toLowerCase() > b.Name.toLowerCase()
+        ? 1
+        : b.Name.toLowerCase() > a.Name.toLowerCase()
+        ? -1
+        : 0
+    );
 
-  //   setTableData([...response]);
-  // }
-  // function sortt1() {
-  //   const response = tableData.sort((a, b) =>
-  //     a.Name.toLowerCase() < b.Name.toLowerCase()
-  //       ? 1
-  //       : b.Name.toLowerCase() < a.Name.toLowerCase()
-  //       ? -1
-  //       : 0
-  //   );
-  //   setTableData([...response]);
-  // }
+    setTableData([...response]);
+  }
+  function sortt1() {
+    const response = tableData.sort((a, b) =>
+      a.Name.toLowerCase() < b.Name.toLowerCase()
+        ? 1
+        : b.Name.toLowerCase() < a.Name.toLowerCase()
+        ? -1
+        : 0
+    );
+    setTableData([...response]);
+  }
 
   /**
    * @method useEffect
@@ -146,10 +137,10 @@ const Job_newsletter = ({
       setsubscribed(true);
     }
   }, [tableData]);
-/**
- * @method useEffect
- *  @description this useEffect for checking condition in whole tableData 
- */
+  /**
+   * @method useEffect
+   *  @description this useEffect for checking condition in whole tableData
+   */
   useEffect(() => {
     const data = tableData.map((data, index) => {
       return data.subscribed;
@@ -160,81 +151,81 @@ const Job_newsletter = ({
     }
   }, [tableData]);
 
-  // const requestSearch = (searchedVal) => {
-  //   const filteredRows = records.filter((row) => {
-  //     return (
-  //       row.Name.toLowerCase().includes(searchedVal.toLowerCase()) ||
-  //       row.Email.toLowerCase().includes(searchedVal.toLowerCase())
-  //     );
-  //   });
+  const requestSearch = (searchedVal) => {
+    const filteredRows = records.filter((row) => {
+      return (
+        row.Name.toLowerCase().includes(searchedVal.toLowerCase()) ||
+        row.Email.toLowerCase().includes(searchedVal.toLowerCase())
+      );
+    });
 
-  //   setTableData([...filteredRows]);
-  // };
+    setTableData([...filteredRows]);
+  };
 
   useEffect(() => {
     document.title = "Subscribe-Unsubscribe";
   }, []);
   return (
     <div className="main-jobsubscriber-content">
-      {/* <BasicBreadcrumbs route={route} />
-      <div className="panle_body">
-        <div className="panle_header">
-          <div className="left-panle-title">
-            <h4 className="">Subscribe-Unsubscribe</h4>
-          </div>
-
-          <div className="right_panle_container">
-            <Button
-              title="Filter"
-              variant=""
-              className="btn-sm remove_button_padding"
-              onClick={() => setSdisabled((p) => !p)}
-            >
-              <BsFilter size={25} color="#ff6b01" />
-            </Button>
-          </div>
-        </div>
-        
-        <div className="w-100 setupcontent pt-1">
-          <Collapse in={disable}>
-            <div className="">
-              <Form.Select
-                aria-label="row"
-                className="fs_13"
-                defaultValue={"ALL"}
-              >
-                <option hidden>Status</option>
-                <option value="all">All</option>
-                <option value="subscribe">Subscribe</option>
-                <option value="unsubscribe">Unsubscribe</option>
-              </Form.Select>
-            </div>
-          </Collapse>
-          <Collapse in={disable}>
-            <div className="searchbar">
-              <InputGroup className="mb-3">
-                <FormControl
-                  className="fs_13"
-                  placeholder="Search by name"
-                  aria-label="Search By Email"
-                  aria-describedby="basic-addon2"
-                  onChange={(e) => {
-                    requestSearch(e.target.value);
-                  }}
-                />
-              </InputGroup>
-            </div>
-          </Collapse>
-                </div>*/}
+      <BasicBreadcrumbs route={route} />
+      <div className="left-panle-title">
+        <h4 className="">Subscribe-Unsubscribe</h4>
+      </div>
       <Tabs
         id="controlled-tab-example"
         activeKey={key}
         onSelect={(k) => setKey(k)}
-        className="mb-3"
+        className=""
       >
         <Tab eventKey="subscribe" title="Subscribe">
+          <div className="panle_body">
+            <div className="panle_header">
+              <div className="right_panle_container">
+                <Button
+                  title="Filter"
+                  variant=""
+                  className="btn-sm remove_button_padding"
+                  onClick={() => setSdisabled((p) => !p)}
+                >
+                  <BsFilter size={25} color="#ff6b01" />
+                </Button>
+              </div>
+            </div>
+            <div className="w-100 setupcontent pt-1">
+              <Collapse in={disable}>
+                <div className="">
+                  <Form.Select
+                    aria-label="row"
+                    className="fs_13"
+                    defaultValue={"ALL"}
+                  >
+                    <option hidden>Status</option>
+                    <option value="all">All</option>
+                    <option value="subscribe">Subscribe</option>
+                    <option value="unsubscribe">Unsubscribe</option>
+                  </Form.Select>
+                </div>
+              </Collapse>
+              <Collapse in={disable}>
+                <div className="searchbar">
+                  <InputGroup className="mb-3">
+                    <FormControl
+                      className="fs_13"
+                      placeholder="Search by name"
+                      aria-label="Search By Email"
+                      aria-describedby="basic-addon2"
+                      onChange={(e) => {
+                        requestSearch(e.target.value);
+                      }}
+                    />
+                  </InputGroup>
+                </div>
+              </Collapse>
+            </div>
+          </div>
           {
             <Button
+              className="mb-2"
               hidden={!unsubscribed}
               variant="primary"
               size="sm"
@@ -244,7 +235,16 @@ const Job_newsletter = ({
                     (b, indexx) => (tableData[b.index].active = false)
                   );
                 });
+                tableData.map((a, index) => {
+                  let v = selected.map(
+                    (b, indexx) => (tableData[b.index].subscribed = false)
+                  );
+                });
+                selected.splice(0, selected.length);
                 setTableData([...tableData]);
+                setsubscribed(false);
+                setUnsubscribed(false);
+                setAllcheck(false);
               }}
             >
               Unsubscribe
@@ -257,9 +257,11 @@ const Job_newsletter = ({
                   <tr>
                     <th className="action_colwidth" align="center">
                       <Form.Check
+                        checked={allcheck}
                         className="fs_13"
                         label=""
                         onChange={(e) => {
+                          setAllcheck(e.target.checked);
                           setUnsubscribed(e.target.checked);
                           tableData.map((data, index) => {
                             if (tableData[index].active == true) {
@@ -372,23 +374,78 @@ const Job_newsletter = ({
           </div>
         </Tab>
         <Tab eventKey="UnSubscribe" title="Unsubscribe">
-          {
+          <div className="panle_body">
+            <div className="panle_header">
+              <div className="right_panle_container">
+                <Button
+                  title="Filter"
+                  variant=""
+                  className="btn-sm remove_button_padding"
+                  onClick={() => setSdisabled((p) => !p)}
+                >
+                  <BsFilter size={25} color="#ff6b01" />
+                </Button>
+              </div>
+            </div>
+
+            <div className="w-100 setupcontent pt-1">
+              <Collapse in={disable}>
+                <div className="">
+                  <Form.Select
+                    aria-label="row"
+                    className="fs_13"
+                    defaultValue={"ALL"}
+                  >
+                    <option hidden>Status</option>
+                    <option value="all">All</option>
+                    <option value="subscribe">Subscribe</option>
+                    <option value="unsubscribe">Unsubscribe</option>
+                  </Form.Select>
+                </div>
+              </Collapse>
+              <Collapse in={disable}>
+                <div className="searchbar">
+                  <InputGroup className="mb-3">
+                    <FormControl
+                      className="fs_13"
+                      placeholder="Search by name"
+                      aria-label="Search By Email"
+                      aria-describedby="basic-addon2"
+                      onChange={(e) => {
+                        requestSearch(e.target.value);
+                      }}
+                    />
+                  </InputGroup>
+                </div>
+              </Collapse>
+            </div>
+          </div>
+          <div className="change_status_btn mb-2">
             <Button
               variant="primary"
               hidden={!subscribed1}
               size="sm"
-              onClick={() => {
+              onClick={(e) => {
                 tableData.map((a, indexa) => {
                   let v = selected.map(
                     (b, index) => (tableData[b.index].active = true)
                   );
                 });
+                tableData.map((a, index) => {
+                  let v = selected.map(
+                    (b, indexx) => (tableData[b.index].subscribed = false)
+                  );
+                });
+                selected.splice(0, selected.length);
                 setTableData([...tableData]);
+                setUnsubscribed(false);
+                setsubscribed(false);
+                setAllcheck(false);
               }}
             >
               Subscribe
             </Button>
-          }
+          </div>
           <div className="content_box">
             <div className="data-table">
               <Table striped bordered hover>
@@ -397,9 +454,11 @@ const Job_newsletter = ({
                     <th className="action_colwidth" align="center">
                       <Form.Check
                         className="fs_13"
+                        checked={allcheck}
                         label=""
                         onChange={(e) => {
                           // setUnsubscribed(false);
+                          setAllcheck(e.target.checked);
                           setsubscribed(e.target.checked);
                           tableData.map((data, index) => {
                             if (tableData[index].active == false) {
@@ -571,4 +630,4 @@ const Job_newsletter = ({
     </div>
   );
 };
-export default withHeader(Job_newsletter, records, false);
+export default Job_newsletter;

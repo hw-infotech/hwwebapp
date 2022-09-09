@@ -74,6 +74,19 @@ namespace NM.DataAccess.Repositories
             get { return new BaseRepository<Resume>(GetContext()); }
         }
 
+        public IRepository<UserEnquiry> UserEnquiryRepository
+        {
+            get { return new BaseRepository<UserEnquiry>(GetContext()); }
+        }
 
+        public IRepository<EnquiryType> EnquiryTypeRepository
+        {
+            get { return new BaseRepository<EnquiryType>(GetContext()); }
+        }
+
+        public IRepository<UserEnquiryType> UserEnquiryTypeRepository
+        {
+            get { return new BaseRepository<UserEnquiryType>(GetContext()); }
+        }
     }
 }
