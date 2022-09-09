@@ -97,13 +97,8 @@ const Success_Stories = ({
     start: start,
     end: showPerPage,
   });
-  function sum(a, b){
-    
-    return a+b
-  }
+
   useEffect(() => {
-  console.log("dskfjdkjdskf",sum(5,4))
-    
     document.title = "Success Stories";
   }, []);
  
