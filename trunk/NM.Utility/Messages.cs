@@ -17,5 +17,6 @@ namespace NM.Utility
 
         public const string EnquiryStatusPannding = "Pannding";
         public const string EnquiryStatusResolved = "Resolved";
+        public const string EnquiryReply= "Enquiry Reply";
     }
 }

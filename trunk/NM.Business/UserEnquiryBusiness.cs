@@ -77,15 +77,23 @@ namespace NM.Business
         ResultModel<bool> IUserEnquiryBusiness.UpdateUserEnquiry(UserEnquiryModel userEnquiryModel)
         {
             ResultModel<bool> result = new ResultModel<bool>();
-            var userEnquiry = unitOfWork.UserEnquiryRepository.Get(x => x.BsonId == userEnquiryModel.BsonId).FirstOrDefault();
+            var userEnquiry = unitOfWork.UserEnquiryRepository.Get(x => x.BsonId == userEnquiryModel.BsonId && !string.IsNullOrWhiteSpace(x.Email)).FirstOrDefault();
             if (userEnquiry != null)
             {
-                mapper.Map(userEnquiry, userEnquiryModel);
-                userEnquiryModel.Status = Messages.EnquiryStatusResolved;
-                mapper.Map(userEnquiryModel, userEnquiry);
-                unitOfWork.UserEnquiryRepository.Update(userEnquiry);
-                result.StatusCode = Convert.ToInt32(Enums.StatusCode.OK);
+                var newUserEnquiry = mapper.Map<UserEnquiryModel>(userEnquiry);
+                newUserEnquiry.Status = Messages.EnquiryStatusResolved;
+                newUserEnquiry.Message = string.Empty;
+                mapper.Map(newUserEnquiry, userEnquiry);
+                bool isSent = new Mailer()
+                          .Subject(Messages.EnquiryReply)
+                          .Body(userEnquiryModel.Message)
+                          .To(userEnquiry.Email)
+                          .Send();
+                if (isSent)
+                    unitOfWork.UserEnquiryRepository.Update(userEnquiry);
+                result.StatusCode = (int)Enums.StatusCode.OK;
                 result.Data = true;
+                result.Message = "";
                 result.Success = true;
             }
             return result;

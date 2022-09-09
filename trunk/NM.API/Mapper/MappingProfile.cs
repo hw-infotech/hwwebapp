@@ -51,6 +51,7 @@ namespace NM.API.Mapper
             CreateMap<ContactModel, ContactVM>().ReverseMap();
             CreateMap<ResumeModel, ResumeVM>().ReverseMap();
             CreateMap<UserEnquiryModel, UserEnquiryVM>().ReverseMap();
+            CreateMap<NewsLetterTemplateModel, NewsLetterTemplateVM>().ReverseMap();
             #endregion
 
             #region Model to Entity ReverseMap
