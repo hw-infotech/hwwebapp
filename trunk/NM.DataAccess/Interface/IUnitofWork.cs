@@ -23,6 +23,9 @@ namespace NM.DataAccess.Interface
         IRepository<Testimonials> TestimonialsRepository { get; }
         IRepository<Contact> ContactRepository { get; }
         IRepository<Resume> ResumeRepository { get; }
+        IRepository<UserEnquiry> UserEnquiryRepository { get; }
+        IRepository<EnquiryType> EnquiryTypeRepository { get; }
+        IRepository<UserEnquiryType> UserEnquiryTypeRepository { get; }
         void Save();
         void Dispose();
 

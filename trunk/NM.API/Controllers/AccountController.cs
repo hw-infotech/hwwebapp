@@ -9,6 +9,7 @@ using NM.Utility;
 using System.Linq;
 using NM.Business.Interfaces;
 using AutoMapper;
+using NM.API.Application.Models;
 
 namespace NM.API.Controllers
 {
@@ -26,7 +27,7 @@ namespace NM.API.Controllers
 
         [Route("login")]
         [HttpPost]
-        public ActionResult<ResultVM<AppUserVM>> LogIn(AppUserVM login)
+        public ActionResult<ResultVM<AppUserVM>> LogIn(LoginUserVM login)
         {
             var result = new ResultVM<AppUserVM>();
             string Token = string.Empty;
@@ -84,7 +85,7 @@ namespace NM.API.Controllers
                                 .To(EmailId)
                                 .Send();
                 resultVM.Success = isSent;
-                resultVM.Message = isSent ? Enums.ResetPasswordEmail : Enums.EmailError;
+                resultVM.Message = isSent ? Messages.ResetPasswordEmail : Messages.EmailError;
             }
             else
                 resultVM.Message = result.Message;

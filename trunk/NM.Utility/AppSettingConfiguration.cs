@@ -21,6 +21,7 @@ namespace NM.Utility
             AppSettingsModel.MailFromName = configuration["EmailConfiguration:MailFromName"];
             AppSettingsModel.ResumeRequest = configuration["EmailConfiguration:ResumeRequest"];
             AppSettingsModel.ResumeTemplate = configuration["EmailTemplate:ResumeTemplate"];
+            AppSettingsModel.NewsLetterTemplate = configuration["EmailTemplate:NewsLetterTemplate"];
             #endregion
         }
 

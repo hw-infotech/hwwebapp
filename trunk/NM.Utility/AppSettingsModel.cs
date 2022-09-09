@@ -16,6 +16,7 @@ namespace NM.Utility
 
         //For Email Template
         public static string ResumeTemplate { get; set; }
+        public static string NewsLetterTemplate { get; set; }
         public string EncryptionKey { get; set; }
         public string DefaultConnection { get; set; }
         #region JWT Properties

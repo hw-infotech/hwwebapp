@@ -24,20 +24,17 @@ namespace NM.Business
             ResultModel<AppUserModel> result = new ResultModel<AppUserModel>();
             var hashPassword = Common.Hash(password);
             var user = unitOfWork.UserRepository.SingleOrDefault(x => x.EmailId.ToLower() == email.ToLower() && x.Password == hashPassword);
-            if (user != null)
-            {
-                    result.Data = new AppUserModel();
-                    mapper.Map(user, result.Data);
-                    result.Success = true;
-                    result.Message = Messages.Login;
-                    result.StatusCode = Convert.ToInt32(Enums.StatusCode.OK);
-                
-            }
-            else
+            if (user == null)
             {
                 result.Message = Messages.LoginFail;
                 result.StatusCode = Convert.ToInt32(Enums.StatusCode.NotFound);
+                return result;
             }
+            result.Data = new AppUserModel();
+            mapper.Map(user, result.Data);
+            result.Success = true;
+            result.Message = Messages.Login;
+            result.StatusCode = Convert.ToInt32(Enums.StatusCode.OK);
             return result;
         }
         public ResultModel<AppUserModel> GetUserByEmailId(string EmailId)
@@ -51,7 +48,7 @@ namespace NM.Business
                 result.Success = true;
             }
             else
-                result.Message = string.Format(Enums.ExistMsg, "No account with the email entered");
+                result.Message = string.Format(Messages.ExistMsg, "No account with the email entered");
             return result;
         }
 

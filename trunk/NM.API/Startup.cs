@@ -53,6 +53,7 @@ namespace NM.API
             services.AddTransient<ITestimonialsBusiness, TestimonialsBusiness>();
             services.AddTransient<IContactBusiness, ContactBusiness>();
             services.AddTransient<IResumeBusiness, ResumeBusiness>();
+            services.AddTransient<IUserEnquiryBusiness, UserEnquiryBusiness>();
 
             //add changes
             services.Configure<AppSettingsModel>(options => Configuration.GetSection("Jwt").Bind(options));

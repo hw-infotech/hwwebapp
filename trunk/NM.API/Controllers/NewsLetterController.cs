@@ -90,5 +90,33 @@ namespace NM.API.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, new { Result = resultVM, Codes = new string[] { "ServerError" } });
             }
         }
+
+        [HttpPost]
+        [Route("SendNewsLetter")]
+        public ActionResult<ResultVM<bool>> SendNewsLetter(NewsLetterTemplateVM  newsLetterTemplateVM)
+        {
+            var resultVM = new ResultVM<bool>();
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    resultVM.Message = ModelState.Values.SelectMany(s => s.Errors).FirstOrDefault().ErrorMessage;
+                    resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                    return BadRequest(resultVM);
+                }
+                var newsLetterTemplateModel = new NewsLetterTemplateModel();
+                mapper.Map(newsLetterTemplateVM, newsLetterTemplateModel);
+                var result= newsLetterBusiness.SendNewsLetter(newsLetterTemplateModel);
+                mapper.Map(result, resultVM);
+                return resultVM;
+            }
+            catch(Exception ex)
+            {
+                Common.LogMessage(ex.Message);
+                resultVM.Message = ex.Message;
+                resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Result = resultVM, Codes = new string[] { "ServerError" } });
+            }
+        }
     }
 }
