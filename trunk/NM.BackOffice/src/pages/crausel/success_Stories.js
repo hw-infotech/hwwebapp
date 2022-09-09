@@ -85,6 +85,8 @@ const Success_Stories = ({
     active: false,
     image: "",
   });
+
+  useEffect(() => {}, [state]);
   const [openmodal, setmodal] = useState(false);
   const [rowtext, setRowtext] = useState();
   const [showalert, setShowalert] = useState(false);
@@ -95,9 +97,16 @@ const Success_Stories = ({
     start: start,
     end: showPerPage,
   });
+  function sum(a, b){
+    
+    return a+b
+  }
   useEffect(() => {
+  console.log("dskfjdkjdskf",sum(5,4))
+    
     document.title = "Success Stories";
   }, []);
+ 
   setPlaceholder("Search by title");
   settitle("Success Stories");
   setRoute(route);
@@ -119,6 +128,8 @@ const Success_Stories = ({
     setEdit(false);
   };
 
+  
+  
   /**
    * @method display
    * @handleClose display function is for open modal accroding to status in this function, if status is active alet box will show oposite status when we click on switch to deactive the status
@@ -214,7 +225,11 @@ const Success_Stories = ({
             </Button>
           </Modal.Footer>
         </Modal>
-        <Modal show={showalert} onHide={handleClose} data-testid="my-modal-window">
+        <Modal
+          show={showalert}
+          onHide={handleClose}
+          data-testid="my-modal-window"
+        >
           <Modal.Header>
             <Modal.Title className="modal-titlee">Alert</Modal.Title>
           </Modal.Header>
@@ -303,7 +318,6 @@ const Success_Stories = ({
                                   type="button"
                                   key={index}
                                   data-testid="butoon1"
-                               
                                   className="btn btn-outlined-secondary fs_13"
                                   onClick={() => {
                                     setState(data);
