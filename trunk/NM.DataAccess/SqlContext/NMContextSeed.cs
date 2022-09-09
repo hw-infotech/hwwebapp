@@ -106,7 +106,7 @@ namespace NM.DataAccess.SqlContext
 
                         await context.SaveChangesAsync();
                     }
-                   
+
                     if (!context.Contacts.Any())
                     {
                         await context.Contacts.AddRangeAsync(GetContact());
@@ -122,6 +122,12 @@ namespace NM.DataAccess.SqlContext
                     if (!context.Resume.Any())
                     {
                         await context.Resume.AddRangeAsync(GetResume());
+
+                        await context.SaveChangesAsync();
+                    }
+                    if (!context.EnquiryTypes.Any())
+                    {
+                        await context.EnquiryTypes.AddRangeAsync(GetEnquiryType());
 
                         await context.SaveChangesAsync();
                     }
@@ -275,6 +281,23 @@ namespace NM.DataAccess.SqlContext
           {
                 new Resume("Document",".pdf",200)
           };
-      }
+        }
+        private IEnumerable<EnquiryType> GetEnquiryType()
+        {
+            return new List<EnquiryType>()
+          {
+                new EnquiryType("App Development"),
+                new EnquiryType("Web Development"),
+                new EnquiryType("UI UX Design"),
+                new EnquiryType("SEO"),
+                new EnquiryType("Graphics Design"),
+                new EnquiryType("Website"),
+                new EnquiryType("Mobile"),
+                new EnquiryType("Illustrations"),
+                new EnquiryType("Front-end"),
+                new EnquiryType("Content"),
+                new EnquiryType("Animation"),
+          };
+        }
     }
 }

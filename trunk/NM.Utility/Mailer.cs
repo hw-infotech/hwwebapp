@@ -113,7 +113,6 @@ namespace NM.Utility
             }
             catch (Exception ex)
             {
-
             }
             return mailSent;
         }
