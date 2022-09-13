@@ -27,6 +27,9 @@ namespace NM.DataAccess.SqlContext
         public DbSet<EnquiryType> EnquiryTypes { get; set; } //master entity
         public DbSet<UserEnquiry> UserEnquiries { get; set; }
         public DbSet<UserEnquiryType> UserEnquiryTypes { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Requirment> Requirments { get; set; }
+        public DbSet<JobRequirments> JobRequirments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -48,6 +51,10 @@ namespace NM.DataAccess.SqlContext
             builder.ApplyConfiguration(new UserEnquiryConfiguration());
             builder.ApplyConfiguration(new EnquiryTypeConfiguration());
             builder.ApplyConfiguration(new UserEnquiryTypeConfiguration(builder));// I passed here builder for manage relation between tables: Aman 09/08/2022
+            builder.ApplyConfiguration(new JobConfiguration());
+            builder.ApplyConfiguration(new RequirmentConfiguration());
+            builder.ApplyConfiguration(new JobRequirmentsConfiguration(builder));
+
         }
         private IDbContextTransaction _currentTransaction;
         public IDbContextTransaction GetCurrentTransaction => _currentTransaction;

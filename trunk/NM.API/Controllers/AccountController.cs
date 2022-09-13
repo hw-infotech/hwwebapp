@@ -45,7 +45,7 @@ namespace NM.API.Controllers
                     mapper.Map(resultModel, result);
                     if (resultModel.Data != null)
                     {
-                        Token = GenerateJSONWebToken();
+                        Token = GenerateJSONWebToken(resultModel.Data.Id);
                     }
                 }
             }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NM.DataAccess.SqlContext;
 
 namespace NM.DataAccess.Migrations
 {
     [DbContext(typeof(NMContext))]
-    partial class NMContextModelSnapshot : ModelSnapshot
+    [Migration("20220913042410_ChangeForeignKeyInJob_Requirments")]
+    partial class ChangeForeignKeyInJob_Requirments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -502,7 +504,7 @@ namespace NM.DataAccess.Migrations
                     b.ToTable("Jobs");
                 });
 
-            modelBuilder.Entity("NM.DataAccess.AggregatesModel.JobRequirments", b =>
+            modelBuilder.Entity("NM.DataAccess.AggregatesModel.Job_Requirments", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -521,10 +523,10 @@ namespace NM.DataAccess.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("JobId")
+                    b.Property<int>("Job_Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("RequirmentId")
+                    b.Property<int>("Requirment_Id")
                         .HasColumnType("int");
 
                     b.Property<int>("UpdatedBy")
@@ -535,11 +537,11 @@ namespace NM.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("JobId");
+                    b.HasIndex("Job_Id");
 
-                    b.HasIndex("RequirmentId");
+                    b.HasIndex("Requirment_Id");
 
-                    b.ToTable("JobRequirments");
+                    b.ToTable("Job_Requirments");
                 });
 
             modelBuilder.Entity("NM.DataAccess.AggregatesModel.NewsLetter", b =>
@@ -980,17 +982,17 @@ namespace NM.DataAccess.Migrations
                     b.ToTable("UserEnquiryType");
                 });
 
-            modelBuilder.Entity("NM.DataAccess.AggregatesModel.JobRequirments", b =>
+            modelBuilder.Entity("NM.DataAccess.AggregatesModel.Job_Requirments", b =>
                 {
                     b.HasOne("NM.DataAccess.AggregatesModel.Job", "Job")
-                        .WithMany("JobRequirments")
-                        .HasForeignKey("JobId")
+                        .WithMany("Job_Requirments")
+                        .HasForeignKey("Job_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("NM.DataAccess.AggregatesModel.Requirment", "Requirment")
-                        .WithMany("JobRequirments")
-                        .HasForeignKey("RequirmentId")
+                        .WithMany("Job_Requirments")
+                        .HasForeignKey("Requirment_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1025,12 +1027,12 @@ namespace NM.DataAccess.Migrations
 
             modelBuilder.Entity("NM.DataAccess.AggregatesModel.Job", b =>
                 {
-                    b.Navigation("JobRequirments");
+                    b.Navigation("Job_Requirments");
                 });
 
             modelBuilder.Entity("NM.DataAccess.AggregatesModel.Requirment", b =>
                 {
-                    b.Navigation("JobRequirments");
+                    b.Navigation("Job_Requirments");
                 });
 
             modelBuilder.Entity("NM.DataAccess.AggregatesModel.UserEnquiry", b =>

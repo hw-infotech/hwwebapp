@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 
 namespace NM.DataAccess.Interface
 {
@@ -26,6 +26,10 @@ namespace NM.DataAccess.Interface
         IRepository<UserEnquiry> UserEnquiryRepository { get; }
         IRepository<EnquiryType> EnquiryTypeRepository { get; }
         IRepository<UserEnquiryType> UserEnquiryTypeRepository { get; }
+        IRepository<Job> JobRepository { get; }
+        IRepository<JobRequirments> JobRequirmentsRepository { get; }
+        IRepository<Requirment> RequirmentRepository { get; }
+
         void Save();
         void Dispose();
 

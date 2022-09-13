@@ -46,5 +46,7 @@ namespace NM.DataAccess.Interface
         IQueryable<TEntity> GetAllAsQueryable();
         IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> whereCondition);
         IQueryable<TEntity> GetAllAsQueryable(Expression<Func<TEntity, bool>> whereCondition);
+        List<TEntity> FilterExpressionRange(Expression<Func<TEntity, bool>> filter = null, params string[] includes);
+
     }
 }
