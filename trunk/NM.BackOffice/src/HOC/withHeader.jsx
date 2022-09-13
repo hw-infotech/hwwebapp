@@ -5,9 +5,9 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../Parts/footer/Footer";
 import Header from "../Parts/header/Header";
 
-const withHeader = (Component, data, add = false) => {
+const withHeader = (Component) => {
   const NewComp = () => {
-    const [tableData, setTableData] = useState(data);
+    const [tableData, setTableData] = useState();
     const [showalert, setShowalert] = useState(false);
     const [title, settitle] = useState();
     const [placeholder, setPlaceholder] = useState();
@@ -17,40 +17,40 @@ const withHeader = (Component, data, add = false) => {
     const handleShow = () => setShow(true);
     const [options, setOptions] = useState();
     //const[add,setAddshow]=useState()
-    const requestSearch = (searchedVal) => {
-      const filteredRows = data.filter((row) => {
-        return row[serarchwith]
-          .toLowerCase()
-          .includes(searchedVal.toLowerCase());
-      });
-      setTableData(filteredRows);
-    };
+    // const requestSearch = (searchedVal) => {
+    //   const filteredRows = data.filter((row) => {
+    //     return row[serarchwith]
+    //       .toLowerCase()
+    //       .includes(searchedVal.toLowerCase());
+    //   });
+    //   setTableData(filteredRows);
+    // };
     return (
       <>
         <BasicBreadcrumbs route={route} />
         {
-          <Filters
-            placeholder={placeholder}
-            requestSearch={requestSearch}
-            showalert={showalert}
-            handleShow={handleShow}
-            setShowalert={setShowalert}
-            titl={title}
-            add={add}
-            options={options}
-          />
+          // <Filters
+          //   placeholder={placeholder}
+          //   requestSearch={requestSearch}
+          //   showalert={showalert}
+          //   handleShow={handleShow}
+          //   setShowalert={setShowalert}
+          //   titl={title}
+          //   add={add}
+          //   options={options}
+          // />
         }
         <Component
-          tableData={tableData}
-          setTableData={setTableData}
-          settitle={settitle}
+          //tableData={tableData}
+         // setTableData={setTableData}
+          //settitle={settitle}
           setRoute={setRoute}
-          setPlaceholder={setPlaceholder}
-          handleShow={handleShow}
-          show={show}
-          setShow={setShow}
-          setSearchwith={setSearchwith}
-          setOptions={setOptions}
+          //setPlaceholder={setPlaceholder}
+         // handleShow={handleShow}
+         // show={show}
+         // setShow={setShow}
+         // setSearchwith={setSearchwith}
+        //  setOptions={setOptions}
         />
       </>
     );

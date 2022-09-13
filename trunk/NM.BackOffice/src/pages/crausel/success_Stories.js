@@ -101,7 +101,7 @@ const Success_Stories = ({
   useEffect(() => {
     document.title = "Success Stories";
   }, []);
- 
+
   setPlaceholder("Search by title");
   settitle("Success Stories");
   setRoute(route);
@@ -123,8 +123,6 @@ const Success_Stories = ({
     setEdit(false);
   };
 
-  
-  
   /**
    * @method display
    * @handleClose display function is for open modal accroding to status in this function, if status is active alet box will show oposite status when we click on switch to deactive the status

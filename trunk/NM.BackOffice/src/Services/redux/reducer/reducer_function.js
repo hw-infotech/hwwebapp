@@ -19,20 +19,26 @@ import {
   UPDATE_PROFILE_PASSWORD,
   GET_PROFILE_PASSWORD,
   EDIT_PROFILE_DATA,
+  GET_ENQUIRY,
+  ADD_ENQUIRY,
+  UPDATE_ENQUIRY,
+  EDIT_ENQUIRY,
 } from "../store/type";
 
 const initialstate = {
+  getenquiry: "",
   addgalleryevent: "",
   addnewblog: "",
   addSuccessStories: "",
   getallblog: "",
   getallenquiry: "",
   getnewsletter: "",
-  getnewsletterunsubscriber: [],
+  getnewsletterall: [],
   getpendingenquiry: "",
   getresolvedenquiry: "",
   edit_profile_data: "",
   edit_data: [],
+  edit_enquiry: [],
   profile_data: {
     name: "Ganesh",
     phone: 9803836866,
@@ -62,10 +68,14 @@ const initialstate = {
           label: "Create detailed budgeting and forecasting quarterly reports",
         },
       ],
-      benefit: [{ value: "Insurance", label: "Insurance" }
-      ,{ value: "Insurance", label: "Insurance" }],
-      requirment: [{ value: "Post Graduate", label: " Post Graduate" }
-    ,{ value: "Post Graduate", label: " Post Graduate" }],
+      benefit: [
+        { value: "Insurance", label: "Insurance" },
+        { value: "Insurance", label: "Insurance" },
+      ],
+      requirment: [
+        { value: "Post Graduate", label: " Post Graduate" },
+        { value: "Post Graduate", label: " Post Graduate" },
+      ],
       industry: "Technology",
       level: "Junior",
       type: "Part time",
@@ -89,10 +99,14 @@ const initialstate = {
           label: "Create detailed budgeting and forecasting quarterly reports",
         },
       ],
-      benefit: [{ value: "Insurance", label: "Insurance" },
-      { value: "Insurance", label: "Insurance" }],
-      requirment: [{ value: "B.tech", label: "B.tech" }
-    ,{ value: "B.tech", label: "B.tech" }],
+      benefit: [
+        { value: "Insurance", label: "Insurance" },
+        { value: "Insurance", label: "Insurance" },
+      ],
+      requirment: [
+        { value: "B.tech", label: "B.tech" },
+        { value: "B.tech", label: "B.tech" },
+      ],
       industry: "Business",
       level: "Senior",
       type: "Full time",
@@ -158,10 +172,35 @@ const Reducer_Function = (state = initialstate, action) => {
         addgalleryevent: payload,
       };
     }
-    case ADD_NEW_BLOG: {
+    case GET_ENQUIRY: {
       return {
         ...state,
-        addnewblog: payload,
+        getenquiry: payload,
+      };
+    }
+    case ADD_ENQUIRY: {
+      return {
+        ...state,
+        getenquiry: payload,
+      };
+    }
+    case EDIT_ENQUIRY: {
+      return {
+        ...state,
+        edit_enquiry: payload,
+      };
+    }
+    case UPDATE_ENQUIRY: {
+      // console.log(payload, "payload");
+      //state.getenquiry.data.message = state.edit_enquiry.data.message;
+      // const temp= state.getenquiry.data?.map(function (item) {
+      //   return item.bsonId == payload.data.bsonId
+      //     ? payload
+      //     : item;
+      // });
+      // state.getenquiry=temp
+      return {
+        ...state,
       };
     }
     case ADD_SUCCESS_STORIES: {
@@ -179,7 +218,7 @@ const Reducer_Function = (state = initialstate, action) => {
     case GET_NEWSLEETER_SUBSCRIBER: {
       return {
         ...state,
-        getnewsletterunsubscriber: payload,
+        getnewsletterall: payload,
       };
     }
     case GET_NEWSLEETER_UNSUBSCRIBER: {
