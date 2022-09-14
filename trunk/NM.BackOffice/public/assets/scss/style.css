@@ -3,19 +3,154 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
-@media only screen and (min-width: 468px) and (max-width: 992px) {
-  .main-header-box .notificaton_badge {
+input#invalid {
+  border: 1px #e77676 solid !important;
+}
+
+textarea#invalid {
+  border: 1px #e77676 solid !important;
+}
+
+.invalid {
+  border: 1px #e77676 solid !important;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 367px) {
+  .card1 {
+    margin-top: 40px !important;
+  }
+  .main-header-box .dropdown-item13 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    gap: 8px !important;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+    font-size: 13px;
+  }
+  .main-header-box .dropdown-menu[data-bs-popper] {
+    position: absolute !important;
+    z-index: 999 !important;
+    left: 0px !important;
+    margin-top: 0.125rem;
+    top: 35px !important;
+  }
+  .main-header-box .navbar-nav .nav-link {
+    background-color: white !important;
+    padding: 5px 0px 0px 0px;
+  }
+  .sidebar {
+    width: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    height: 100vh;
+    width: 250px !important;
     position: absolute;
-    top: 3px;
-    left: 10px !important;
-    font-size: 10px !important;
+    z-index: 999;
+    overflow: auto;
+    background-color: #212529 !important;
+  }
+  .sidebar .positioning-header {
+    visibility: visible !important;
+  }
+  .sidebar .card1 {
+    margin-top: 40px !important;
+    background-color: #0000000d !important;
+  }
+  .main-header-box .navbar_designs .notificaton-content {
+    visibility: hidden !important;
+  }
+}
+
+@media only screen and (min-width: 468px) and (max-width: 768px) {
+  .main-header-box .notificaton-content {
+    visibility: hidden !important;
   }
   .card1 {
     margin-top: 40px !important;
   }
+  .main-header-box .dropdown-menu[data-bs-popper] {
+    position: absolute !important;
+    z-index: 999 !important;
+    left: 0px !important;
+    margin-top: 0.125rem;
+    top: 40px !important;
+  }
 }
 
-@media only screen and (min-width: 368px) and (max-width: 468px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .main-header-box .dropdown-menu[data-bs-popper] {
+    position: absolute !important;
+    z-index: 999 !important;
+    left: 0px !important;
+    margin-top: 0.125rem;
+    top: 35px !important;
+  }
+  .main-header-box .notificaton-content {
+    visibility: hidden !important;
+  }
+}
+
+@media only screen and (min-width: 368px) and (max-width: 467px) {
+  .sidebar {
+    width: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    height: 100vh;
+    width: 250px !important;
+    position: absolute;
+    z-index: 999;
+    overflow: auto;
+    background-color: #212529 !important;
+  }
+  .sidebar .positioning-header {
+    visibility: visible !important;
+  }
+  .sidebar .card1 {
+    margin-top: 40px !important;
+    background-color: #0000000d !important;
+  }
+  .main-header-box .navbar_designs .nav-item {
+    background: #f9f9f9 !important;
+    z-index: 116 !important;
+    position: absolute !important;
+    padding: 0px 41px !important;
+  }
+  .main-header-box .navbar_designs .dropdown {
+    background: #f9f9f9 !important;
+    z-index: 116 !important;
+    position: absolute !important;
+    padding: 0px 41px !important;
+  }
+  .main-header-box .dropdown-menu[data-bs-popper] {
+    position: absolute !important;
+    z-index: 999 !important;
+    left: 0px !important;
+    margin-top: 0.125rem;
+    top: 35px !important;
+  }
+  .main-header-box .notificaton-content {
+    visibility: hidden !important;
+  }
+  .main-header-box .dropdown-menu[data-bs-popper] {
+    position: absolute !important;
+    z-index: 999 !important;
+    left: 0px !important;
+    margin-top: 0.125rem;
+    top: 40px !important;
+  }
   .card1 {
     margin-top: 40px !important;
   }
@@ -214,7 +349,7 @@ body {
       -ms-flex-pack: end;
           justify-content: end;
   position: relative;
-  right: -24px;
+  right: 0px;
 }
 
 .main_dashboard_content .main_graphcard_box .chart-footer {
@@ -420,9 +555,10 @@ body {
 .main-header-box .navbar_designs .dropdown-menu[data-bs-popper] {
   top: 100%;
   position: absolute;
-  left: -100px !important;
+  left: -83px !important;
   margin-top: 0.125rem;
-  top: 60px !important;
+  top: 60px;
+  width: 278px !important;
 }
 
 .main-header-box .navbar_designs .dropdownList:hover {
@@ -454,7 +590,7 @@ body {
   top: 100%;
   left: 18px !important;
   margin-top: 0.125rem;
-  top: 60px !important;
+  top: 60px;
 }
 
 .main-header-box .navbar_style {
@@ -485,6 +621,24 @@ body {
   white-space: nowrap;
   background-color: transparent;
   border: 0;
+  font-size: 13px;
+}
+
+.main-header-box .dropdown-item13 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 8px !important;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  display: none;
   font-size: 13px;
 }
 
@@ -583,21 +737,6 @@ body {
   font-weight: 600;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 367px) {
-  .sidebar .sidebar_list .dropdownarrowicon {
-    visibility: hidden !important;
-  }
-  .sidebar .card1 {
-    margin-top: 40px !important;
-    background-color: #0000000d !important;
-  }
-  .sidebar .sidebar_header .header_text {
-    max-height: 70px;
-    height: 100%;
-    visibility: hidden;
-  }
-}
-
 .sidebar {
   width: 100%;
   min-width: 250px;
@@ -650,6 +789,10 @@ body {
   gap: 10px;
   border-bottom: 1px solid #ffffff17;
   cursor: pointer;
+}
+
+.sidebar .sidebar_header .positioning-header {
+  visibility: hidden;
 }
 
 .sidebar .sidebar_header .Sidebar-logo {
@@ -717,22 +860,26 @@ body {
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    height: 100vh;
+    width: 250px !important;
+    position: absolute;
+    z-index: 999;
+    overflow: auto;
+    background-color: #212529 !important;
+  }
+  .sidebar .positioning-header {
+    visibility: visible !important;
+  }
   .main-header-box .notificaton_badge {
     position: absolute;
     top: 3px;
     left: 10px !important;
     font-size: 10px !important;
-  }
-  .sidebar {
-    min-height: 100vh;
-    height: 100vh;
-    overflow: auto;
-  }
-  .sidebar .sidebar_header .header_text {
-    font-size: 8px !important;
-  }
-  .sidebar .sidebar_list .dropdownarrowicon {
-    visibility: hidden !important;
   }
 }
 
@@ -825,6 +972,14 @@ body {
 
 .serachbar {
   width: 25%;
+}
+
+.modal-dialog .hiddenAttr input[type="file"] {
+  color: transparent;
+}
+
+.modal-dialog .hiddenAttr1 input[type="file"] {
+  color: gray;
 }
 
 .modal-dialog .modal-header {
@@ -1081,7 +1236,8 @@ body {
 .box__content .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: gray !important;
+  color: white !important;
+  background-color: gray !important;
   text-decoration: none;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
@@ -1359,7 +1515,8 @@ body {
 }
 
 .main-jobsubscriber-content .nav-link {
-  color: gray !important;
+  color: white !important;
+  background-color: gray !important;
 }
 
 .main-jobsubscriber-content .nav-tabs .nav-item.show .nav-link,
@@ -1840,14 +1997,14 @@ body {
 }
 
 .main-content-holder .profile_form .nav-link {
-  color: gray !important;
+  color: white !important;
+  background-color: gray !important;
 }
 
 .main-content-holder .profile_form .nav-tabs .nav-item.show .nav-link,
 .main-content-holder .profile_form .nav-tabs .nav-link.active {
   color: white !important;
   background-color: #eb7823 !important;
-  border-color: #eb7823 !important;
 }
 
 .main-content-holder .profile_form .main-Profile-card1 .prfile-card11 {
@@ -2125,6 +2282,16 @@ img.underCont {
   font-weight: 400;
 }
 
+.notification_content .gapbetween {
+  display: inline;
+}
+
+.notification_content .gapbetween .custom-date-box .custom-date-filter {
+  width: 25%;
+  font-size: 13px;
+  border: 1px solid #80808030;
+}
+
 .notification_content .notification_panel {
   padding: 10px;
   display: -webkit-box;
@@ -2149,10 +2316,11 @@ img.underCont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .notification_content .notification_panel .notification_inner_part p {
-  margin-bottom: 4px !important;
+  margin-bottom: 0px !important;
+  font-size: 13px;
 }
 /*# sourceMappingURL=style.css.map */

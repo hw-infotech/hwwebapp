@@ -37,10 +37,7 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
           variant="primary"
           type="submit"
           className="btn-sm"
-          onClick={() => {
-            setGoSteps(3);
-            console.log(values, "Values");
-          }}
+        
         >
           Save & Publish
         </Button>

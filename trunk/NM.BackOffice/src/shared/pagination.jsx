@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
-const CustomPagination = ({ total, setStart }) => {
+const CustomPagination = ({ total, setStart, firstpage }) => {
   const [showPerPage, setShowPerPage] = useState(10);
   const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
@@ -10,6 +10,7 @@ const CustomPagination = ({ total, setStart }) => {
 
   useEffect(() => {
     // Fetch items from another resources.
+    setPageCount(firstpage);
     const endOffset = parseInt(itemOffset) + parseInt(showPerPage);
     setPageCount(Math.ceil(total / showPerPage));
     setStart({
@@ -26,11 +27,11 @@ const CustomPagination = ({ total, setStart }) => {
   //     let value = showPerPage * counter;
   //     // onPageChange(value - showPerPage, value);
   //   }, [counter]);
-/**
- * @method handlePageClick
- * @description 
- * @param {*} event 
- */
+  /**
+   * @method handlePageClick
+   * @description
+   * @param {*} event
+   */
   const handlePageClick = (event) => {
     const newOffset = (event.selected * showPerPage) % total;
     setItemOffset(newOffset);
@@ -50,6 +51,7 @@ const CustomPagination = ({ total, setStart }) => {
         activeClassName="active"
         previousClassName="previousList"
         nextClassName="nextList"
+        start={setStart}
       />
     </div>
   );

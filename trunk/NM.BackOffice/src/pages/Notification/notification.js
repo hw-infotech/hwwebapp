@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { BsFilter } from "react-icons/bs";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import BasicBreadcrumbs from "../../components/breadcumbs";
+import {
+  Button,
+  Col,
+  Collapse,
+  Form,
+  FormCheck,
+  FormControl,
+  InputGroup,
+  Modal,
+  Row,
+  Table,
+} from "react-bootstrap";
+const route = [
+  { name: "Dashboard", route: "/" },
+  { name: "Notification", route: "" },
+  { name: "View all", route: "" },
+];
 const Notification = () => {
-  function onChange(value) {
-    console.log("Captcha value:", value);
-  }
+  const [disable, setSdisabled] = useState(false);
   function onSubmit(token) {
     document.getElementById("demo-form").submit();
   }
@@ -13,18 +30,45 @@ const Notification = () => {
   //   return a.indexOf(item) == pos;
   // });
   return (
-    <div className="notification_content mt-2" id="demo-form">
-      <h3>
-        Notification <i class="fs-3 bi-bell"></i>
-      </h3>
+    <div className="notification_content " id="demo-form">
+      <BasicBreadcrumbs route={route} />
+      <div className="panle_body">
+        <div className="panle_header">
+          <div className="left-panle-title">
+            <h4>Notification</h4>
+          </div>
+          <div className="right_panle_container">
+            <Button
+              title="Filter"
+              data-testid="notifi"
+              variant=""
+              className="btn-sm remove_button_padding"
+              onClick={() => setSdisabled((p) => !p)}
+            >
+              <BsFilter size={24} color="#ff6b01" />
+            </Button>
+          </div>
+        </div>
+        <div className="gapbetween pt-1">
+          <Collapse in={disable}>
+            <div className="custom-date-box mb-3">
+              <input
+                type={"date"}
+                name="date"
+                className="form-control custom-date-filter"
+              />
+            </div>
+          </Collapse>
+        </div>
+      </div>
 
-      <div className="notification_panel mt-4">
+      <div className="notification_panel ">
         <div className="notification_inner_part">
           <img
             src="./assets/images/NM-ICON.png"
             className="img-decorate"
-            height="48px"
-            width="48px"
+            height="30px"
+            width="30px"
           />
           <div>
             <p>John doe React your post</p>
@@ -41,8 +85,8 @@ const Notification = () => {
           <img
             src="./assets/images/ava3.png"
             className="img-decorate"
-            width={"48px"}
-            height={"48px"}
+            width={"30px"}
+            height={"30px"}
           />
         </div>
       </div>
@@ -51,11 +95,11 @@ const Notification = () => {
           <img
             src="./assets/images/team_nestormind.png"
             className="img-decorate"
-            height="48px"
-            width="48px"
+            height="30px"
+            width="30px"
           />
           <div>
-            <p>Richard Miles liked your post</p>
+            <p style={{ color: "#004a87" }}>Richard Miles liked your post</p>
             <p className="text-muted">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde,
               dolorem.
@@ -69,8 +113,8 @@ const Notification = () => {
           <img
             src="./assets/images/ava3.png"
             className="img-decorate"
-            width={"48px"}
-            height={"48px"}
+            width={"30px"}
+            height={"30px"}
           />
         </div>
       </div>
@@ -79,8 +123,8 @@ const Notification = () => {
           <img
             src="./assets/images/NM-ICON.png"
             className="img-decorate"
-            height="48px"
-            width="48px"
+            height="30px"
+            width="30px"
           />
           <div>
             <p>John doe React your post</p>
@@ -97,22 +141,10 @@ const Notification = () => {
           <img
             src="./assets/images/diwaliCel.jpg"
             className="img-decorate"
-            width={"48px"}
-            height={"48px"}
+            width={"30px"}
+            height={"30px"}
           />
         </div>
-      </div>
-      <ReCAPTCHA
-        sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
-        onChange={onChange}
-      />
-      <div
-        class="g-recaptcha"
-        data-sitekey="6LckuYchAAAAAAwZOplPvCfxH2XXNRu9NsUXaaQ4"
-        data-callback="onSubmit"
-        data-action="submit"
-      >
-        dsd
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
+import React from "react";
 import "./App.css";
 import Header from "./Parts/header/Header";
 import Footer from "./Parts/footer/Footer";
 import Sidebar from "./components/Sidebar";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import routes from "./Services/routes/Routes";
 import { useEffect, useMemo, useState } from "react";
 import Admin_Login from "./pages/authnication/admin_login";
@@ -16,14 +17,8 @@ const localUser = JSON.parse(localStorage.getItem("nestor.user"));
 function App() {
   const path1 = useLocation();
   const [isLoggedIn, setisLoggedIn] = useState(null);
-  const logIn = () => {
-    setisLoggedIn(true);
-  };
-  const logOut = () => {
-    setisLoggedIn(false);
-  };
+
   const [dimension, setDimensions] = useState(window.screen.width);
-  console.log(dimension, "dddd");
   const [sidebarShow, setSidebarShow] = useState(() => {
     if (dimension > 320 && dimension < 768) {
       return false;
@@ -32,35 +27,31 @@ function App() {
   });
   const [found, setFound] = useState(false);
 
-  // useMemo(() => {
-  //   getRoute()
-  // }, [])
-  let a;
-  const getRoute = (path) => {
-    if (path1.pathname === path) {
-      a = false;
-    } else {
-      a = true;
-    }
-  };
   useEffect(() => {
-    setFound(a);
-  }, [a]);
+    setisLoggedIn(JSON.parse(localStorage.getItem("nestor.user")));
+  }, [ JSON.parse(localStorage.getItem("nestor.user"))]);
 
   return (
     <>
       {
         <div className="dashboard" hidden={found}>
-          {localUser ? <Sidebar sidebarShow={sidebarShow} /> : ""}
+          {isLoggedIn && 
+            <Sidebar
+              sidebarShow={sidebarShow}
+              setSidebarShow={setSidebarShow}
+            />
+          
+            
+          }
+
           <div className="mainDashboard">
-            {localUser ? (
+            {isLoggedIn  &&
               <Header
                 setSidebarShow={setSidebarShow}
                 sidebarShow={sidebarShow}
               />
-            ) : (
-              ""
-            )}
+        
+            }
             <div className="content-Wrapper">
               <Routes>
                 {routes?.map((route, index) => {

@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the Notification render all 1`] = `
+<div
+  className="notification_content "
+  id="demo-form"
+>
+  <div
+    className="breadecumbs_box "
+    onClick={[Function]}
+  >
+    <ul
+      className="breadcumbs_style"
+    >
+      <li
+        onClick={[Function]}
+      >
+        Dashboard
+         
+        &gt;
+      </li>
+      <li
+        onClick={[Function]}
+      >
+        Notification
+         
+        &gt;
+      </li>
+      <li
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#737ed2",
+          }
+        }
+      >
+        View all
+      </li>
+    </ul>
+  </div>
+  <div
+    className="panle_body"
+  >
+    <div
+      className="panle_header"
+    >
+      <div
+        className="left-panle-title"
+      >
+        <h4>
+          Notification
+        </h4>
+      </div>
+      <div
+        className="right_panle_container"
+      >
+        <button
+          className="btn-sm remove_button_padding btn"
+          data-testid="notifi"
+          disabled={false}
+          onClick={[Function]}
+          title="Filter"
+          type="button"
+        >
+          <svg
+            color="#ff6b01"
+            fill="currentColor"
+            height={24}
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": "#ff6b01",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className="gapbetween pt-1"
+    >
+      <div
+        aria-expanded={null}
+        className="custom-date-box mb-3 collapse"
+      >
+        <input
+          className="form-control custom-date-filter"
+          name="date"
+          type="date"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="notification_panel "
+  >
+    <div
+      className="notification_inner_part"
+    >
+      <img
+        className="img-decorate"
+        height="30px"
+        src="./assets/images/NM-ICON.png"
+        width="30px"
+      />
+      <div>
+        <p>
+          John doe React your post
+        </p>
+        <p
+          className="text-muted"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.
+        </p>
+        <p
+          className="text-muted"
+        >
+          <small>
+            10 minutes ago
+          </small>
+        </p>
+      </div>
+    </div>
+    <div>
+      <img
+        className="img-decorate"
+        height="30px"
+        src="./assets/images/ava3.png"
+        width="30px"
+      />
+    </div>
+  </div>
+  <div
+    className="notification_panel mt-4"
+  >
+    <div
+      className="notification_inner_part"
+    >
+      <img
+        className="img-decorate"
+        height="30px"
+        src="./assets/images/team_nestormind.png"
+        width="30px"
+      />
+      <div>
+        <p
+          style={
+            Object {
+              "color": "#004a87",
+            }
+          }
+        >
+          Richard Miles liked your post
+        </p>
+        <p
+          className="text-muted"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.
+        </p>
+        <p
+          className="text-muted"
+        >
+          <small>
+            10 minutes ago
+          </small>
+        </p>
+      </div>
+    </div>
+    <div>
+      <img
+        className="img-decorate"
+        height="30px"
+        src="./assets/images/ava3.png"
+        width="30px"
+      />
+    </div>
+  </div>
+  <div
+    className="notification_panel mt-4 mb-4"
+  >
+    <div
+      className="notification_inner_part"
+    >
+      <img
+        className="img-decorate"
+        height="30px"
+        src="./assets/images/NM-ICON.png"
+        width="30px"
+      />
+      <div>
+        <p>
+          John doe React your post
+        </p>
+        <p
+          className="text-muted"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.
+        </p>
+        <p
+          className="text-muted"
+        >
+          <small>
+            10 minutes ago
+          </small>
+        </p>
+      </div>
+    </div>
+    <div>
+      <img
+        className="img-decorate"
+        height="30px"
+        src="./assets/images/diwaliCel.jpg"
+        width="30px"
+      />
+    </div>
+  </div>
+</div>
+`;

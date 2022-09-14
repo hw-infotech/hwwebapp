@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing preview job Testing on Job preview 1`] = `
+<div
+  className="preview-content"
+>
+  <div
+    className="main-pannle"
+  >
+    <div
+      className="leftt_pannel"
+    >
+      <div
+        className="jobes_card"
+      >
+        <div
+          className="job_icon"
+        >
+          <img
+            height={80}
+            src="assets/images/nestor.jfif"
+            width={80}
+          />
+        </div>
+        <div
+          className="titlejob"
+        >
+          <span>
+             - Mohali
+          </span>
+        </div>
+        <div
+          className="job_location d-flex"
+        >
+          <span>
+            Nestormind 
+          </span>
+          <span>
+             - Mohali
+          </span>
+        </div>
+        <div
+          className="job_date"
+        >
+          <span>
+            2 months ago
+          </span>
+        </div>
+      </div>
+      <div
+        className="content-box"
+      >
+        <div
+          className="job_heading"
+        >
+          <span
+            className=""
+          >
+            Job Description
+          </span>
+        </div>
+        <p
+          className="job_description"
+        >
+           
+        </p>
+        <div
+          className="job_heading"
+        >
+          <span
+            className=""
+          >
+            Job Responsibility
+          </span>
+        </div>
+        <ul
+          className="job__list"
+        />
+        <div
+          className="job_heading"
+        >
+          <span>
+            Requirement
+          </span>
+        </div>
+        <ul
+          className="job__list"
+        />
+        <div
+          className="job_heading"
+        >
+          <span>
+            Nestormind Full Time Employee Benefits
+          </span>
+        </div>
+        <ul
+          className="job__list"
+        />
+        <div
+          className="main_information_list"
+        >
+          <ul
+            className="job_description_level_list"
+          >
+            <li
+              className="jobes_inner_li"
+            >
+              <h6
+                className="job_description_level"
+              >
+                Seniority level
+              </h6>
+              <span
+                className=""
+              />
+            </li>
+            <li
+              className="jobes_inner_li"
+            >
+              <h6
+                className="job_description_level"
+              >
+                Employment type
+              </h6>
+              <span
+                className=""
+              />
+            </li>
+            <li
+              className="jobes_inner_li"
+            >
+              <h6
+                className="job_description_level"
+              >
+                Job function
+              </h6>
+              <span
+                className=""
+              >
+                 
+              </span>
+            </li>
+            <li
+              className="jobes_inner_li"
+            >
+              <h6
+                className="job_description_level"
+              >
+                Industries
+              </h6>
+              <span
+                className=""
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

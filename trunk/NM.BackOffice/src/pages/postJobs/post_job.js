@@ -24,15 +24,18 @@ import Step4 from "./steps/step4";
 import { useSelector } from "react-redux";
 import { Send_data } from "../../Services/redux/action/action";
 import { useDispatch } from "react-redux";
+import * as yup from "yup";
+import { useNavigate } from "react-router";
 
 const Post_Job = ({ stat }) => {
+  const navigtion = useNavigate();
   const [goSteps, setGoSteps] = useState(0);
   const [state, setState] = useState({
     jobtitle: "UI/UX",
     functions: "",
     responsibility: [],
     requirment: [],
-    benefits: [],
+    benefit: [],
     industry: "",
     type: "Full time",
     level: "Senior",
@@ -43,8 +46,8 @@ const Post_Job = ({ stat }) => {
     jobtitle: "",
     functions: "",
     responsibility: [],
+    benefit: [],
     requirment: [],
-    benefits: [],
     industry: "",
     type: "Full time",
     level: "Senior",
@@ -56,6 +59,14 @@ const Post_Job = ({ stat }) => {
     { name: "Job", route: "/all-jobs" },
     { name: "Add Job", route: "/add-job" },
   ];
+  const validationschemeaa = yup.object({
+    functions: yup.string().label("functions").required(),
+    industry: yup.string().label("industry").required(),
+    description: yup.string().label("description").required(),
+    requirment: yup.array().min(1).required(),
+    responsibility: yup.array().min(1).required(),
+    benefit: yup.array().min(1).required(),
+  });
   useEffect(() => {
     document.title = "Add Job";
   }, []);
@@ -90,12 +101,24 @@ const Post_Job = ({ stat }) => {
 
         <Formik
           initialValues={state}
+          validationSchema={validationschemeaa}
           onSubmit={(values, { resetForm }) => {
             dispatch(Send_data(values));
             resetForm();
+            navigtion("/all-jobs")
           }}
         >
-          {({ values, handleChange, handleSubmit, handleReset }) => (
+          {({
+            values,
+            handleChange,
+            handleSubmit,
+            handleReset,
+            touched,
+            errors,
+            setTouched,
+            isValid,
+            dirty
+          }) => (
             <Form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -109,6 +132,11 @@ const Post_Job = ({ stat }) => {
                   setGoSteps={setGoSteps}
                   state={state1}
                   setState={setState1}
+                  touched={touched}
+                  errors={errors}
+                  setTouched={setTouched}
+                  dirty={dirty}
+                  isValid={isValid}
                 />
               )}
 
@@ -119,6 +147,10 @@ const Post_Job = ({ stat }) => {
                   setGoSteps={setGoSteps}
                   state={state1}
                   setState={setState1}
+                  touched={touched}
+                  errors={errors}
+                  dirty={dirty}
+                  isValid={isValid}
                 />
               )}
               {goSteps === 2 && (
@@ -128,6 +160,10 @@ const Post_Job = ({ stat }) => {
                   setGoSteps={setGoSteps}
                   state={state1}
                   setState={setState1}
+                  touched={touched}
+                  errors={errors}
+                  dirty={dirty}
+                  isValid={isValid}
                 />
               )}
               {goSteps === 3 && (
@@ -137,6 +173,10 @@ const Post_Job = ({ stat }) => {
                   setGoSteps={setGoSteps}
                   state={state1}
                   setState={setState1}
+                  touched={touched}
+                  errors={errors}
+                  dirty={dirty}
+                  isValid={isValid}
                 />
               )}
             </Form>

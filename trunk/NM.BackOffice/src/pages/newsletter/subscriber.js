@@ -18,6 +18,7 @@ import { BsSearch } from "react-icons/bs";
 import {
   NewsLetter_Unsubscriber,
   News_letter_Subscribe,
+  News_letter_Subscribe_Unsubscribe,
 } from "../../Services/redux/action/action";
 import { Formik } from "formik";
 import { Input } from "../../components/commoninputfield";
@@ -55,22 +56,25 @@ const records = [
     comment: "Reason Behind",
   },
 ];
+const route = [
+  { name: "Dashboard", route: "/" },
+  { name: "Newsletter", route: "" },
+  { name: "Subscribe-Unsubscribe", route: "" },
+];
 const SubScriber = () => {
   const [show, setShow] = useState(false);
+  const[firstpage,setFirstPage]=useState()
+  const [data, setData] = useState();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [showPerPage, setShowPerPage] = useState();
-  const [next, setNext] = useState(0);
+  const [disable, setSdisabled] = useState(false);
   const [start, setStart] = useState(1);
   const [pagination1, setpagination] = useState({
     start: start,
     end: showPerPage,
   });
-  const route = [
-    { name: "Dashboard", route: "/" },
-    { name: "Newsletter", route: "" },
-    { name: "Subscribe-Unsubscribe", route: "" },
-  ];
+
   /**
    * @constant selector
    * @description selector variable used to get the store data .
@@ -83,7 +87,7 @@ const SubScriber = () => {
    * @description useEffect used here becaure we need only dispath one time, if we dont used useEffect then dispatch all again ,that will create rendering issue.
    */
   useEffect(() => {
-    dispatch(News_letter_Subscribe());
+    dispatch(News_letter_Subscribe_Unsubscribe());
     dispatch(NewsLetter_Unsubscriber());
   }, []);
   /**
@@ -91,7 +95,8 @@ const SubScriber = () => {
    * @description this is used for set the selector the data into subscriber state and pass the dependencies to the useEffect when selector change the value then useEffect call
    */
   useEffect(() => {
-    setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data);
+    setSubscribers(selector?.data?.apidata?.getnewsletterall?.data);
+    setData(selector?.data?.apidata?.getnewsletterall?.data);
     //setpagination({ start: start, end: showPerPage })
   }, [selector]);
 
@@ -142,11 +147,35 @@ const SubScriber = () => {
    */
   const requestSearch = (searchedVal) => {
     const filteredRows =
-      selector?.data?.apidata?.getnewsletterunsubscriber?.data.filter((row) => {
+      selector?.data?.apidata?.getnewsletterall?.data.filter((row) => {
         return row.email.toLowerCase().includes(searchedVal.toLowerCase());
       });
     setSubscribers(filteredRows);
   };
+  const status = (status) => {
+    if (status == "ALL") {
+      setSubscribers(selector?.data?.apidata?.getnewsletterall?.data);
+    } else if (status == "subscribe") {
+      const filterData = data.filter((row) => row.isSubscribe == true);
+      setSubscribers([...filterData]);
+      // setTableData([...filterData]);
+      //   const filteredRows = data?.filter((row) => {
+      //     // return row?.status.includes(status)
+      //     if (row.isSubscribe === true) {
+      //       console.log(row, "subscibe", status);
+      //       return row;
+      //     } else {
+      //       console.log(row, "unsubscribe", status);
+      //       return row;
+      //     }
+      //   });
+      //   setTableData([...filteredRows]);
+    } else {
+      const filterData = data?.filter((row) => row.isSubscribe == false);
+      setSubscribers([...filterData]);
+    }
+  };
+  console.log(subscribers);
   const [title, setTitle] = useState(false);
   /**
    * @method useEffect
@@ -160,12 +189,75 @@ const SubScriber = () => {
   return (
     <div className="main-newsletter-panle">
       <BasicBreadcrumbs route={route} />
-      <Filters
-        placeholder={placeholder}
-        requestSearch={requestSearch}
-        handleShow={handleShow}
-        titl={titl}
-      />
+      <div className="panle_body">
+        <div className="panle_header">
+          <div className="left-panle-title">
+            <h4>{titl}</h4>
+          </div>
+          <div className="right_panle_container">
+            <Button
+              title="Filter"
+              variant=""
+              className="btn-sm remove_button_padding"
+              onClick={() => setSdisabled((p) => !p)}
+            >
+              <BsFilter size={25} color="#ff6b01" />
+            </Button>
+            <Button
+              variant=""
+              title="Add"
+              aria-expanded={disable}
+              className="btn-sm remove_button_padding"
+              onClick={handleShow}
+            >
+              <AiOutlinePlusCircle size={25} color="#ff6b01" />
+            </Button>
+          </div>
+        </div>
+        <div className="gapbetween fs_13 pt-1">
+          <Collapse in={disable}>
+            <div id="example-collapse-text">
+              <Form.Select
+                className="fs_13"
+                aria-label="Default select example"
+                id="example-collapse-text"
+                defaultValue={"all"}
+                onChange={(e) => {
+                  status(e.target.value);
+                 
+                }}
+              >
+                <option disabled>Status</option>
+                <option selected value={"ALL"}>
+                  All
+                </option>
+                <option selected value={"subscribe"}>
+                  Subscribe
+                </option>
+                <option selected value={"unsubscribe"}>
+                  Unsubscribe
+                </option>
+              </Form.Select>
+            </div>
+          </Collapse>
+          <Collapse in={disable}>
+            <div className="serachbar">
+              <InputGroup className="mb-3">
+                <FormControl
+                  className="fs_13"
+                  placeholder={placeholder}
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                  onChange={(e) => {
+                    console.log(e);
+                    requestSearch(e.target.value);
+                  }}
+                />
+              </InputGroup>
+            </div>
+          </Collapse>
+        </div>
+      </div>
       <div className="content_box">
         <div className="data-table">
           <Table striped bordered hover>
@@ -233,7 +325,14 @@ const SubScriber = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationschemeaa}
-            onSubmit={() => {}}
+            onSubmit={(values, actions) => {
+              actions.resetForm({
+                values: {
+                  title: "",
+                  content: "",
+                },
+              });
+            }}
           >
             {({
               values,
@@ -246,6 +345,7 @@ const SubScriber = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  handleSubmit();
                 }}
               >
                 <Input
@@ -253,33 +353,38 @@ const SubScriber = () => {
                   label="Title"
                   className="form-control label-size"
                   name="title"
+                  id={touched.title && errors.title ? "invalid" : ""}
                   placeholder="Title"
                   onChange={handleChange}
                 />
-                {errors?.title && touched?.title ? (
+                {/*errors?.title && touched?.title ? (
                   <label className="text-danger label-size">
-                    {errors.title}
+                {errors.title}
                   </label>
                 ) : (
                   ""
-                )}
+                )*/}
                 <Input
                   as={"textarea"}
                   className="form-control label-size"
+                  id={
+                    touched.content_story && errors.content_story
+                      ? "invalid"
+                      : ""
+                  }
                   placeholder={"Description"}
                   name="content_story"
                   onChange={handleChange}
-                  id="exampleFormControlTextarea1"
                   rows={3}
                   label={"Descirption"}
                 />
-                {errors?.content_story && touched?.content_story ? (
+                {/*errors?.content_story && touched?.content_story ? (
                   <label className="text-danger label-size">
                     {errors.content_story}
                   </label>
                 ) : (
                   ""
-                )}
+                )*/}
               </form>
             )}
           </Formik>
@@ -292,21 +397,20 @@ const SubScriber = () => {
           >
             Cancel
           </Button>
-          <Button className="btn-sm fs_13" type="submit">
+          <Button type="submit" className="btn-sm fs_13">
             Send
           </Button>
         </Modal.Footer>
       </Modal>
-      {tableData.length > 0 ? (
+      {
         <CustomPagination
           start={pagination1}
           setStart={setpagination}
           total={subscribers?.length}
+          firstpage={10}
         />
-      ) : (
-        ""
-      )}
+      }
     </div>
   );
 };
-export default withHeader(SubScriber, records, true);
+export default SubScriber;
