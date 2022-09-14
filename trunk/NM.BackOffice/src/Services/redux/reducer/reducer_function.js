@@ -23,9 +23,11 @@ import {
   ADD_ENQUIRY,
   UPDATE_ENQUIRY,
   EDIT_ENQUIRY,
+  LOGIN,
 } from "../store/type";
 
 const initialstate = {
+  login:"",
   getenquiry: "",
   addgalleryevent: "",
   addnewblog: "",
@@ -166,6 +168,12 @@ const initialstate = {
 const Reducer_Function = (state = initialstate, action) => {
   const { payload, type } = action;
   switch (type) {
+    case LOGIN: {
+      return {
+        ...state,
+        login: payload,
+      };
+    }
     case ADD_GALLERY_EVENT: {
       return {
         ...state,

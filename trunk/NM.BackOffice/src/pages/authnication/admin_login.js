@@ -1,11 +1,20 @@
-import { Formik } from "formik";
+import { Formik, setNestedObjectValues } from "formik";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/commoninputfield";
 import * as Yup from "yup";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { Login } from "../../Services/redux/action/action";
+import { useState } from "react";
 
 const Admin_Login = () => {
+  const [state, setState] = useState();
+  const dispatch = useDispatch();
   const history = useNavigate();
+  const selector = useSelector((state) => state?.data?.apidata?.login?.token);
+
+  useEffect(() => {}, []);
   return (
     <div className="centeritmes">
       <div className="sign-page-box">
@@ -14,15 +23,13 @@ const Admin_Login = () => {
             <h2>Admin Login</h2>
           </div>
           <Formik
-            initialValues={{ email: "", password: "" }}
+            initialValues={{ emailId: "", password: "" }}
             onSubmit={(values) => {
-              console.log("called", values);
-              localStorage.setItem("nestor.user", JSON.stringify(values));
-              //history("/", { replace: true });
-              window.location.href = "/";
+              dispatch(Login(values, history));
+              //window.location.href = "/";
             }}
             validationSchema={Yup.object().shape({
-              email: Yup.string().email().required(),
+              emailId: Yup.string().email().required(),
               password: Yup.string().required(),
             })}
           >
@@ -37,13 +44,12 @@ const Admin_Login = () => {
                   <Input
                     type="text"
                     className={
-                      "form-control form-control-lg styleinput fs_13" +
-                        touched.email && errors.email
-                        ? "invalid"
-                        : ""
+                      touched.emailId && errors.emailId
+                        ? "invalid form-control styleinput fs_13"
+                        : "form-control styleinput fs_13"
                     }
                     placeholder="Email Address"
-                    name="email"
+                    name="emailId"
                     label={"Email address"}
                     id="email"
                     onChange={handleChange}
@@ -51,12 +57,11 @@ const Admin_Login = () => {
                 </div>
                 <div className="form-group">
                   <Input
-                    type="password"
+                    type="text"
                     className={
-                      "form-control form-control-lg styleinput fs_13" +
-                        touched.password && errors.password
-                        ? "invalid"
-                        : ""
+                      touched.password && errors.password
+                        ? "invalid form-control styleinput fs_13"
+                        : " form-control styleinput fs_13"
                     }
                     placeholder="Password"
                     name="password"
@@ -80,6 +85,9 @@ const Admin_Login = () => {
                   <button
                     type="submit"
                     className="btn btn-primary widthbtn  styleinput"
+                    onClick={() => {
+                      console.log(state, "this is the");
+                    }}
                   >
                     Sign in
                   </button>

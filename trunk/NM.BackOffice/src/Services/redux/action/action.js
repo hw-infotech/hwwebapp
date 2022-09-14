@@ -104,11 +104,13 @@ export const Get_Enquiry = (data) => (dispatch) => {
       });
     });
 };
-export const Login = (data) => (dispatch) => {
+export const Login = (data, history) => (dispatch) => {
   apidata
-    .post(`UserEnquiry/login`, data)
+    .post(`Account/login`, data)
     .then((res) => {
       dispatch({ type: LOGIN, payload: res.data });
+      localStorage.setItem("nestor.user", JSON.stringify(res.data.token));
+      history("/", { replace: true });
     })
     .catch((err) => {
       dispatch({

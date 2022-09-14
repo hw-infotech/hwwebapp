@@ -102,9 +102,9 @@ const Success_Stories = ({
     document.title = "Success Stories";
   }, []);
 
-  setPlaceholder("Search by title");
-  settitle("Success Stories");
-  setRoute(route);
+  //setPlaceholder("Search by title");
+  //settitle("Success Stories");
+  //setRoute(route);
   setOptions(options);
   const inputFileRef = useRef(null);
   const handleShow = () => setShow(true);
@@ -189,6 +189,7 @@ const Success_Stories = ({
   return (
     <>
       <div className="Main-story-box">
+
         <Modal show={openmodal} onHide={handleClose}>
           <Modal.Header>
             <Modal.Title className="modal-titlee">Alert</Modal.Title>
