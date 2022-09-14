@@ -29,32 +29,6 @@ import {
 import { useLayoutEffect } from "react";
 import { Filters } from "../../components/header-filter";
 
-// const records = [
-//   {
-//     Name: "Mark",
-//     Phone: "9803836866",
-//     Email: "goldygoldy33@gmail.com",
-//     message:
-//       "We look forward to seeing you, We would like to thank you for your letter inquiring about our product.",
-//     status: "pending",
-//   },
-//   {
-//     Name: "adfark",
-//     Phone: "8146945394",
-//     Email: "Amanpreet33@gmail.com",
-//     message:
-//       " We hope the information provided ,We would like to thank you for your letter inquiring about our product.",
-//     status: "pending",
-//   },
-//   {
-//     Name: "yark",
-//     Phone: "9803836866",
-//     Email: "ganeshsharma5073@gmail.com",
-//     message:
-//       " our hopes that the situation is resolved soonest. We would like to thank you for your letter inquiring about our product.",
-//     status: "pending",
-//   },
-// ];
 const route = [
   { name: "Dashboard", route: "/" },
   { name: "Enquiry" },
@@ -156,16 +130,15 @@ const All_Enquiry = ({ setRoute }) => {
   const selector = useSelector((state) => state?.data?.apidata);
   useEffect(() => {
     document.title = "All Enquiry";
-  }, []);
-  useEffect(() => {
     dispatch(Get_Enquiry());
   }, []);
+
   useEffect(() => {
     setTableData(selector?.getenquiry?.data);
     setmessage(selector?.edit_enquiry?.data);
     setdata(selector?.getenquiry?.data);
   }, [selector]);
-  console.log("this is the field", message);
+  
   return (
     <div className="main-enquiry-box">
       <div className="panle_body">

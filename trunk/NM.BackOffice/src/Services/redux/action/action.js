@@ -91,10 +91,11 @@ export const NewsLetter_Unsubscriber = (data1) => (dispatch) => {
       });
     });
 };
-export const Get_Enquiry = (data) => (dispatch) => {
+export const Get_Enquiry = () => (dispatch) => {
   apidata
-    .get(`UserEnquiry/getAll`, data)
+    .get(`UserEnquiry/getAll`)
     .then((res) => {
+      console.log(res, "response");
       dispatch({ type: GET_ENQUIRY, payload: res.data });
     })
     .catch((err) => {
