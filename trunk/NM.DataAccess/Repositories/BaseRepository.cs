@@ -233,5 +233,17 @@ namespace NM.DataAccess.Repositories
             return dbSet.Where(whereCondition).AsQueryable<TEntity>();
         }
 
+        public  List<TEntity> FilterExpressionRange(Expression<Func<TEntity, bool>> filter = null, params string[] includes)
+        {
+            var query = context.Set<TEntity>().AsNoTracking().AsQueryable();
+
+            if (includes != null && includes.Length > 0)
+                foreach (var include in includes)
+                    query = query.Include(include);
+
+            if (filter != null)
+                query = query.Where(filter);
+            return query.ToList();
+        }
     }
-} 
+}

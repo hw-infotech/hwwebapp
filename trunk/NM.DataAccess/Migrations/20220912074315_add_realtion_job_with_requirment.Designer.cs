@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NM.DataAccess.SqlContext;
 
 namespace NM.DataAccess.Migrations
 {
     [DbContext(typeof(NMContext))]
-    partial class NMContextModelSnapshot : ModelSnapshot
+    [Migration("20220912074315_add_realtion_job_with_requirment")]
+    partial class add_realtion_job_with_requirment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -443,43 +445,34 @@ namespace NM.DataAccess.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Benefits")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BsonId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CreatedBy")
-                        .HasMaxLength(100)
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Functions")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Industries")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
+                        .HasColumnType("bit");
 
                     b.Property<string>("JobType")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Level")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Responsibility")
                         .HasColumnType("nvarchar(max)");
@@ -488,8 +481,7 @@ namespace NM.DataAccess.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Title")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UpdatedBy")
                         .HasColumnType("int");
@@ -502,7 +494,7 @@ namespace NM.DataAccess.Migrations
                     b.ToTable("Jobs");
                 });
 
-            modelBuilder.Entity("NM.DataAccess.AggregatesModel.JobRequirments", b =>
+            modelBuilder.Entity("NM.DataAccess.AggregatesModel.Job_Requirments", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -521,10 +513,16 @@ namespace NM.DataAccess.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("JobId")
+                    b.Property<int?>("JobId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RequirmentId")
+                    b.Property<int>("Job_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("RequirmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Requirment_Id")
                         .HasColumnType("int");
 
                     b.Property<int>("UpdatedBy")
@@ -539,7 +537,7 @@ namespace NM.DataAccess.Migrations
 
                     b.HasIndex("RequirmentId");
 
-                    b.ToTable("JobRequirments");
+                    b.ToTable("Job_Requirments");
                 });
 
             modelBuilder.Entity("NM.DataAccess.AggregatesModel.NewsLetter", b =>
@@ -651,8 +649,7 @@ namespace NM.DataAccess.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("JobRequirment")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UpdatedBy")
                         .HasColumnType("int");
@@ -980,19 +977,15 @@ namespace NM.DataAccess.Migrations
                     b.ToTable("UserEnquiryType");
                 });
 
-            modelBuilder.Entity("NM.DataAccess.AggregatesModel.JobRequirments", b =>
+            modelBuilder.Entity("NM.DataAccess.AggregatesModel.Job_Requirments", b =>
                 {
                     b.HasOne("NM.DataAccess.AggregatesModel.Job", "Job")
-                        .WithMany("JobRequirments")
-                        .HasForeignKey("JobId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Job_Requirments")
+                        .HasForeignKey("JobId");
 
                     b.HasOne("NM.DataAccess.AggregatesModel.Requirment", "Requirment")
-                        .WithMany("JobRequirments")
-                        .HasForeignKey("RequirmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Job_Requirments")
+                        .HasForeignKey("RequirmentId");
 
                     b.Navigation("Job");
 
@@ -1025,12 +1018,12 @@ namespace NM.DataAccess.Migrations
 
             modelBuilder.Entity("NM.DataAccess.AggregatesModel.Job", b =>
                 {
-                    b.Navigation("JobRequirments");
+                    b.Navigation("Job_Requirments");
                 });
 
             modelBuilder.Entity("NM.DataAccess.AggregatesModel.Requirment", b =>
                 {
-                    b.Navigation("JobRequirments");
+                    b.Navigation("Job_Requirments");
                 });
 
             modelBuilder.Entity("NM.DataAccess.AggregatesModel.UserEnquiry", b =>

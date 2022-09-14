@@ -23,7 +23,7 @@ const Sidebar = ({ sidebarShow,setSidebarShow }) => {
    * @description this useEffect for set the state value that getting from localStorage
    */
   useEffect(() => {
-    setParentId(JSON.parse(localStorage.getItem("activeId"))?.split("_")[0]);
+    setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
   }, [JSON.parse(localStorage.getItem("activeId"))]);
   /**
    * @method setLocalStroage
@@ -32,7 +32,7 @@ const Sidebar = ({ sidebarShow,setSidebarShow }) => {
    */
   const setLocalStorage = (id) => {
     localStorage.setItem("activeId", JSON.stringify(id));
-    setParentId(JSON.parse(localStorage.getItem("activeId"))?.split("_")[0]);
+    setParentId(JSON.parse(localStorage.getItem("activeId")).split("_")[0]);
   };
   /**
    * @method handleAnchorClick

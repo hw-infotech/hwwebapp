@@ -82,7 +82,8 @@ namespace NM.API.Controllers
         }
         [HttpGet]
         [Route("get")]
-        public ActionResult<ResultVM<UserEnquiryVM>> Get(string bsonId) {
+        public ActionResult<ResultVM<UserEnquiryVM>> Get(string bsonId)
+        {
             var resultVM = new ResultVM<UserEnquiryVM>();
             try
             {
@@ -93,7 +94,7 @@ namespace NM.API.Controllers
 
             catch (Exception ex)
             {
-               
+
                 resultVM.Success = false;
                 resultVM.Data = new UserEnquiryVM();
                 resultVM.Message = ex.Message;
@@ -108,6 +109,12 @@ namespace NM.API.Controllers
             ResultVM<bool> resultVM = new ResultVM<bool>();
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    resultVM.Message = ModelState.Values.SelectMany(s => s.Errors).FirstOrDefault().ErrorMessage;
+                    resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                    return resultVM;
+                }
                 UserEnquiryModel userEnquiryModel = mapper.Map<UserEnquiryModel>(userEnquiryVM);
                 var result = userEnquiryBusiness.UpdateUserEnquiry(userEnquiryModel);
                 mapper.Map(result, resultVM);

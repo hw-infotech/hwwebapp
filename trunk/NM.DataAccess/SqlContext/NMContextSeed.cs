@@ -131,6 +131,17 @@ namespace NM.DataAccess.SqlContext
 
                         await context.SaveChangesAsync();
                     }
+                    if (!context.Jobs.Any())
+                    {
+                        context.Jobs.Add((Job)GetJob());
+
+                        await context.SaveChangesAsync();
+                    }
+                    if (!context.Requirments.Any()) {
+                        await context.Requirments.AddRangeAsync(GetRequirments());
+
+                        await context.SaveChangesAsync();
+                    }
 
                 }
                 catch (Exception ex)
@@ -298,6 +309,29 @@ namespace NM.DataAccess.SqlContext
                 new EnquiryType("Content"),
                 new EnquiryType("Animation"),
           };
+        }
+        private Job GetJob()
+        {
+            return new Job("Test job", "Job for devlopers", true, "Functions", "fullTime", "industries", "junior", "project manger", "imporve skils");
+        }
+
+        private IEnumerable<Requirment> GetRequirments()
+        {
+            return new List<Requirment>()
+          {
+                new Requirment("App Development"),
+                new Requirment("Web Development"),
+                new Requirment("UI UX Design"),
+                new Requirment("SEO"),
+                new Requirment("Graphics Design"),
+                new Requirment("Website"),
+                new Requirment("Mobile"),
+                new Requirment("Illustrations"),
+                new Requirment("Front-end"),
+                new Requirment("Content"),
+                new Requirment("Animation"),
+          };
+
         }
     }
 }

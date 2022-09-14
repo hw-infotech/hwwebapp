@@ -1,9 +1,9 @@
 ﻿using NM.DataAccess.AggregatesModel;
-using NM.DataAccess.Interface; 
+using NM.DataAccess.Interface;
 using NM.DataAccess.SqlContext;
 using System;
 using System.Collections.Generic;
-using System.Text; 
+using System.Text;
 
 namespace NM.DataAccess.Repositories
 {
@@ -87,6 +87,19 @@ namespace NM.DataAccess.Repositories
         public IRepository<UserEnquiryType> UserEnquiryTypeRepository
         {
             get { return new BaseRepository<UserEnquiryType>(GetContext()); }
+        }
+        public IRepository<Job> JobRepository
+        {
+            get { return new BaseRepository<Job>(GetContext()); }
+        }
+
+        public IRepository<JobRequirments> JobRequirmentsRepository
+        {
+            get { return new BaseRepository<JobRequirments>(GetContext()); }
+        }
+        public IRepository<Requirment> RequirmentRepository
+        {
+            get { return new BaseRepository<Requirment>(GetContext()); }
         }
     }
 }
