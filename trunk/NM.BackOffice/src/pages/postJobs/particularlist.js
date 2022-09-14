@@ -278,7 +278,9 @@ const Particularjob = () => {
                         <h5 className="job_description_level">
                           Employment type
                         </h5>
-                        <span className="level_content">{selector?.jobType}</span>
+                        <span className="level_content">
+                          {selector?.jobType}
+                        </span>
                       </li>
                       <li className="jobes_inner_li">
                         <h5 className="job_description_level">Job function</h5>

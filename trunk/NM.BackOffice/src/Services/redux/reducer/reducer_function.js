@@ -31,15 +31,9 @@ import {
 const initialstate = {
   login: "",
   getenquiry: "",
-  addgalleryevent: "",
-  addnewblog: "",
-  addSuccessStories: "",
-  getallblog: "",
   job_list: "",
   getnewsletter: "",
   getnewsletterall: [],
-  getpendingenquiry: "",
-  getresolvedenquiry: "",
   edit_profile_data: "",
   edit_data: [],
   edit_enquiry: [],
@@ -53,9 +47,7 @@ const initialstate = {
     profile_password: "6464564",
   },
 
-  allEnquries: [
-   
-  ],
+  allEnquries: [],
 };
 /**
  * @method Reducer_function
