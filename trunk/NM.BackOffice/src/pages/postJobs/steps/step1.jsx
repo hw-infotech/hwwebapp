@@ -30,10 +30,10 @@ console.log(formik_context,"formikcontext")
             <Form.Group className="mb-3 w-100">
               <Input
                 as="select"
-                name="jobtitle"
+                name="title"
                 onChange={handleChange}
                 label={"Title"}
-                value={values?.jobtitle}
+                value={values?.title}
                 id="jobtitle"
                 className="form-control label-size"
                 options={[
@@ -48,7 +48,7 @@ console.log(formik_context,"formikcontext")
                 type="text"
                 className="form-control w-100 label-size"
                 placeholder={"Function"}
-                value={values?.jobfunction}
+                value={values?.functions}
                 name="functions"
                 label={"Function"}
                 id={touched.functions && errors.functions ? "invalid" : ""}

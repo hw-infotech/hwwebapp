@@ -22,7 +22,7 @@ import Step2 from "./steps/step2";
 import Step3 from "./steps/step3";
 import Step4 from "./steps/step4";
 import { useSelector } from "react-redux";
-import { Send_data } from "../../Services/redux/action/action";
+import { Send_job } from "../../Services/redux/action/action";
 import { useDispatch } from "react-redux";
 import * as yup from "yup";
 import { useNavigate } from "react-router";
@@ -31,25 +31,25 @@ const Post_Job = ({ stat }) => {
   const navigtion = useNavigate();
   const [goSteps, setGoSteps] = useState(0);
   const [state, setState] = useState({
-    jobtitle: "UI/UX",
+    title: "UI/UX",
     functions: "",
     responsibility: [],
     requirment: [],
     benefit: [],
-    industry: "",
+    industries: "",
     type: "Full time",
     level: "Senior",
     description: "",
   });
   const selector = useSelector((state) => state.data?.apidata?.edit_data?.data);
   const [state1, setState1] = useState({
-    jobtitle: "",
+    title: "",
     functions: "",
     responsibility: [],
     benefit: [],
     requirment: [],
-    industry: "",
-    type: "Full time",
+    industries: "",
+    jobType: "Full time",
     level: "Senior",
     description: "",
   });
@@ -61,7 +61,7 @@ const Post_Job = ({ stat }) => {
   ];
   const validationschemeaa = yup.object({
     functions: yup.string().label("functions").required(),
-    industry: yup.string().label("industry").required(),
+    industries: yup.string().label("industry").required(),
     description: yup.string().label("description").required(),
     requirment: yup.array().min(1).required(),
     responsibility: yup.array().min(1).required(),
@@ -103,9 +103,9 @@ const Post_Job = ({ stat }) => {
           initialValues={state}
           validationSchema={validationschemeaa}
           onSubmit={(values, { resetForm }) => {
-            dispatch(Send_data(values));
+            dispatch(Send_job(values));
             resetForm();
-            navigtion("/all-jobs")
+            navigtion("/all-jobs");
           }}
         >
           {({
@@ -117,7 +117,7 @@ const Post_Job = ({ stat }) => {
             errors,
             setTouched,
             isValid,
-            dirty
+            dirty,
           }) => (
             <Form
               onSubmit={(e) => {

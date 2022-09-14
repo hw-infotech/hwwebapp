@@ -224,7 +224,7 @@ const Particularjob = () => {
                       </div>
 
                       <div className="titlejob">
-                        <span>{selector?.jobtitle} - Mohali</span>
+                        <span>{selector?.title} - Mohali</span>
                       </div>
                     </div>
                     <div className="job_location d-flex">
@@ -242,17 +242,17 @@ const Particularjob = () => {
                   <p className="job_description"> {selector?.description}</p>
                   <div className="job_heading">Job Responsibility</div>
                   <ul className="job__list">
-                    {selector?.responsibility?.map((data, index) => (
+                    {/*selector?.responsibility?.map((data, index) => (
                       <li>{data.value}</li>
-                    ))}
+                    ))*/}
                   </ul>
                   <div className="job_heading">
                     <span className="">Requirement</span>
                   </div>
                   <ul className="job__list">
-                    {selector?.requirment?.map((data, index) => (
+                    {/*selector?.requirment?.map((data, index) => (
                       <li>{data.value}</li>
-                    ))}
+                    ))*/}
                   </ul>
                   <div className="job_heading">
                     <span className="">
@@ -261,9 +261,9 @@ const Particularjob = () => {
                   </div>
                   <div className="main-description-box">
                     <ul className="job__list">
-                      {selector?.benefits?.map((data, index) => (
+                      {/*selector?.benefits?.map((data, index) => (
                         <li>{data.value}</li>
-                      ))}
+                      ))*/}
                     </ul>
                   </div>
                   <div className="main_information_list">
@@ -278,7 +278,7 @@ const Particularjob = () => {
                         <h5 className="job_description_level">
                           Employment type
                         </h5>
-                        <span className="level_content">{selector?.type}</span>
+                        <span className="level_content">{selector?.jobType}</span>
                       </li>
                       <li className="jobes_inner_li">
                         <h5 className="job_description_level">Job function</h5>
@@ -289,7 +289,7 @@ const Particularjob = () => {
                       <li className="jobes_inner_li">
                         <h5 className="job_description_level">Industries</h5>
                         <span className="level_content">
-                          {selector?.industry}
+                          {selector?.industries}
                         </span>
                       </li>
                     </ul>

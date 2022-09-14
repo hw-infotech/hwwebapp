@@ -63,7 +63,7 @@ const route = [
 ];
 const SubScriber = () => {
   const [show, setShow] = useState(false);
-  const[firstpage,setFirstPage]=useState()
+  const [firstpage, setFirstPage] = useState();
   const [data, setData] = useState();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -146,10 +146,11 @@ const SubScriber = () => {
    * @param {*} searchedVal in this argument we get input filed value that we type
    */
   const requestSearch = (searchedVal) => {
-    const filteredRows =
-      selector?.data?.apidata?.getnewsletterall?.data.filter((row) => {
+    const filteredRows = selector?.data?.apidata?.getnewsletterall?.data.filter(
+      (row) => {
         return row.email.toLowerCase().includes(searchedVal.toLowerCase());
-      });
+      }
+    );
     setSubscribers(filteredRows);
   };
   const status = (status) => {
@@ -224,7 +225,6 @@ const SubScriber = () => {
                 defaultValue={"all"}
                 onChange={(e) => {
                   status(e.target.value);
-                 
                 }}
               >
                 <option disabled>Status</option>

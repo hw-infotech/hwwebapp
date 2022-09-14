@@ -8,6 +8,7 @@ const Job_Preview = (values, state) => {
     document.title = "Preview";
   }, []);
   let tiitle = localStorage?.getItem("key");
+  console.log("this is the values of preview",values);
   return (
     <div className="preview-content">
       <div className="main-pannle">
@@ -18,7 +19,7 @@ const Job_Preview = (values, state) => {
             </div>
 
             <div className="titlejob">
-              <span>{values.values?.jobtitle || state.jobtitle} - Mohali</span>
+              <span>{values.values?.title || state.title} - Mohali</span>
             </div>
             <div className="job_location d-flex">
               <span>Nestormind </span>
@@ -37,26 +38,26 @@ const Job_Preview = (values, state) => {
               <span className="">Job Responsibility</span>
             </div>
             <ul className="job__list">
-              {values?.values?.responsibility?.map((data, index) => (
+              {/*values?.values?.responsibility?.map((data, index) => (
                 <li> {data?.value}</li>
-              ))}
+              ))*/}
             </ul>
             <div className="job_heading">
               <span>Requirement</span>
             </div>
             <ul className="job__list">
-              {values.values?.requirment?.map((data, index) => (
+              {/*values.values?.requirment?.map((data, index) => (
                 <li> {data?.value}</li>
-              ))}
+              ))*/}
             </ul>
 
             <div className="job_heading">
               <span>Nestormind Full Time Employee Benefits</span>
             </div>
             <ul className="job__list">
-              {values.values?.benefit?.map((data, index) => (
+              {/*values.values?.benefit?.map((data, index) => (
                 <li key={index}>{data?.value}</li>
-              ))}
+              ))*/}
             </ul>
 
             <div className="main_information_list">
@@ -75,7 +76,7 @@ const Job_Preview = (values, state) => {
                 </li>
                 <li className="jobes_inner_li">
                   <h6 className="job_description_level">Industries</h6>
-                  <span className="">{values.values?.industry}</span>
+                  <span className="">{values.values?.industries}</span>
                 </li>
               </ul>
             </div>

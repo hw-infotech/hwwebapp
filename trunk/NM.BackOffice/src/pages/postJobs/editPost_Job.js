@@ -19,16 +19,12 @@ import { initialValues, validationschemeaa } from "./validation-schema";
 import { useNavigate } from "react-router";
 import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
-import { IoAddOutline } from "react-icons/";
-import CreatableSelectField from "../../components/selectfield";
 import CustomPagination from "../../shared/pagination";
-import { FaFilter } from "react-icons/fa";
-import { VscFilterFilled } from "react-icons/vsc";
-import { MdAdd } from "react-icons/md";
 import { subString } from "../../Services/commonFunctions";
 import {
   Edit_Data,
   getAllEnquries,
+  Get_jobList,
   Send_data,
 } from "../../Services/redux/action/action";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,7 +43,9 @@ const options = [
 ];
 
 const Edit_postJob = (value1) => {
-  const selector = useSelector((state) => state.data.apidata?.allEnquries);
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+  //console.log(selector)
   const [openmodal, setmodal] = useState(false);
   const [title, setTitle] = useState(false);
   const [indexx, setIndex] = useState();
@@ -63,21 +61,24 @@ const Edit_postJob = (value1) => {
     rowStatus: false,
   });
   const navigate = useNavigate();
-  const [tableData, setTableData] = useState(selector);
+  const [tableData, setTableData] = useState([]);
   useEffect(() => {
     document.title = "Job";
-    dispatch(getAllEnquries());
+    dispatch(Get_jobList());
   }, []);
 
+  useEffect(() => {
+    setTableData(selector.data.apidata?.job_list?.data);
+  }, [selector]);
   /**
    * @method sortt
    * @description this sortt function for sorting the data in table in ascending order
    */
   function sortt() {
-    const response = selector.sort((a, b) =>
-      a.jobtitle.toLowerCase() > b.jobtitle.toLowerCase()
+    const response = selector.data.apidata?.job_list?.data.sort((a, b) =>
+      a.title.toLowerCase() > b.title.toLowerCase()
         ? 1
-        : b.jobtitle.toLowerCase() > a.jobtitle.toLowerCase()
+        : b.title.toLowerCase() > a.title.toLowerCase()
         ? -1
         : 0
     );
@@ -88,10 +89,10 @@ const Edit_postJob = (value1) => {
    * @description this sortt1 function for sorting the data in descending order
    */
   function sortt1() {
-    const response = selector.sort((a, b) =>
-      a.jobtitle.toLowerCase() < b.jobtitle.toLowerCase()
+    const response = selector.data.apidata?.job_list?.data.sort((a, b) =>
+      a.title.toLowerCase() < b.title.toLowerCase()
         ? 1
-        : b.jobtitle.toLowerCase() < a.jobtitle.toLowerCase()
+        : b.title.toLowerCase() < a.title.toLowerCase()
         ? -1
         : 0
     );
@@ -103,13 +104,11 @@ const Edit_postJob = (value1) => {
    * @param {*} searchedVal this argument get the serach field value
    */
   const requestSearch = (searchedVal) => {
-    const filteredRows = selector.filter((row) => {
-      return row.jobtitle.toLowerCase().includes(searchedVal.toLowerCase());
+    const filteredRows = selector.data.apidata?.job_list?.data.filter((row) => {
+      return row.title.toLowerCase().includes(searchedVal.toLowerCase());
     });
     setTableData(filteredRows);
   };
-
-  const dispatch = useDispatch();
   /**
    * @method display
    * @description display function change the status according the condition, when we click status switch, if active then deactive after clikcing, opposite as well
@@ -129,7 +128,17 @@ const Edit_postJob = (value1) => {
       });
     }
   };
-
+  const status = (status) => {
+    if (status == "ALL") {
+      setTableData(selector.data.apidata?.job_list?.data);
+    } else if (status == "subscribe") {
+      const filterData = tableData?.filter((row) => row.isSubscribe == true);
+      setTableData([...filterData]);
+    } else {
+      const filterData = tableData?.filter((row) => row.isSubscribe == false);
+      setTableData([...filterData]);
+    }
+  };
   return (
     <div className="joblist-main-box">
       {<BasicBreadcrumbs route={route} />}
@@ -168,13 +177,16 @@ const Edit_postJob = (value1) => {
                 className="fs_13"
                 defaultValue={"all"}
                 id="example-collapse-text"
+                onClick={(e) => {
+                  status(e.target.value);
+                }}
               >
                 <option disabled>Status</option>
-                <option selected value={"all"}>
+                <option selected value={"All"}>
                   All
                 </option>
-                <option value="1">Subscribe</option>
-                <option value="1">Unsubscribe</option>
+                <option value="subscribe">Subscribe</option>
+                <option value="unsubscribe">Unsubscribe</option>
               </Form.Select>
             </div>
           </Collapse>
@@ -398,7 +410,7 @@ const Edit_postJob = (value1) => {
                         <Form.Check
                           type="switch"
                           id="custom-switch1"
-                          checked={data.active == "active" ? true : false}
+                          checked={data?.status == true ? true : false}
                           label=""
                           onChange={(e) => {
                             const { value, name, checked } = e.target;
@@ -422,25 +434,33 @@ const Edit_postJob = (value1) => {
                           }}
                         />
                       </td>
-                      <td>{data?.Jobtitle || data?.jobtitle}</td>
+                      <td>{data?.title || data?.title}</td>
                       <td>
                         {data?.description && subString(data?.description, 10)}
                       </td>
                       <td>
                         {data?.functions && subString(data?.functions, 10)}
                       </td>
-                      <td>{data?.requirment[0]?.value}</td>
                       <td>
-                        {data?.benefit[0]?.value &&
-                          subString(data?.benefit[0]?.value, 10)}
+                        {
+                          //data?.requirment[0]?.value
+                        }
                       </td>
                       <td>
-                        {data?.responsibility[0]?.value &&
-                          subString(data?.responsibility[0]?.value, 10)}
+                        {
+                          // data?.benefit[0]?.value &&
+                          //subString(data?.benefit[0]?.value, 10)
+                        }
                       </td>
-                      <td>{data?.industry}</td>
+                      <td>
+                        {
+                          //data?.responsibility[0]?.value &&
+                          //subString(data?.responsibility[0]?.value, 10)
+                        }
+                      </td>
+                      <td>{data?.industries}</td>
                       <td>{data?.level}</td>
-                      <td>{data?.type}</td>
+                      <td>{data?.jobType}</td>
                       <td>30</td>
                     </tr>
                   ))}

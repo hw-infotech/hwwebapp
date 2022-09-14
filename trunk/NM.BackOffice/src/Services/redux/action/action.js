@@ -23,19 +23,12 @@ import {
   UPDATE_ENQUIRY,
   GET_NEWS_SUBSCRIBE,
   LOGIN,
+  GET_JOB_DATA,
+  DELETE_JOB,
 } from "../../redux/store/type";
 import apidata from "../../redux/store/api";
 import { ToastContainer, toast } from "react-toastify";
 
-export const Add_Gallery_Eventt = (user) => (dispatch) => {
-  // apidata.post(``, user)
-  //     .then(res => {
-  //         dispatch({ type: ADD_GALLERY_EVENT, payload: res.data })
-  //     })
-  //     .catch(err => {
-  //         dispatch({ type: ADD_GALLERY_EVENT, payload: { data: false, err } })
-  //     })
-};
 /**
  * @method News_letter_Subscribe
  * @description in This function we hit the newsleeter api and get the data of all newsletter subscriber/unsubscriber
@@ -167,21 +160,36 @@ export const Update_Enquiry = (data) => (dispatch) => {
  * @param {*} data1 this is the data that we submit the job post
  * @returns
  */
-export const Send_data = (data1) => (dispatch) => {
-  dispatch({
-    type: POST_DATA,
-    payload: data1,
-  });
+export const Send_job = (data) => (dispatch) => {
+  apidata
+    .post(`Job/create`, data)
+    .then((res) => {
+      dispatch({ type: POST_DATA, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: POST_DATA,
+        payload: { data: false, err },
+      });
+    });
 };
 /**
  * @method getAllEnquries
  *  @description In this function we get all data of enquries
  * @returns
  */
-export const getAllEnquries = () => (dispatch) => {
-  dispatch({
-    type: GET_ALL_ENQUIRY,
-  });
+export const Get_jobList = () => (dispatch) => {
+  apidata
+    .get(`Job/getAll`)
+    .then((res) => {
+      dispatch({ type: GET_JOB_DATA, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: GET_JOB_DATA,
+        payload: { data: false, err },
+      });
+    });
 };
 /**
  * @method Edit_Data
@@ -191,11 +199,18 @@ export const getAllEnquries = () => (dispatch) => {
  * @returns
  */
 
-export const Edit_Data = (data, index) => (dispath) => {
-  dispath({
-    type: EDIT_DATA,
-    payload: { data, index },
-  });
+export const Edit_Data = (data, index) => (dispatch) => {
+  apidata
+    .get(`Job/get`, data)
+    .then((res) => {
+      dispatch({ type: EDIT_DATA, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: EDIT_DATA,
+        payload: { data: false, err },
+      });
+    });
 };
 /**
  * @method Updata_Data
@@ -204,11 +219,31 @@ export const Edit_Data = (data, index) => (dispath) => {
  * @param {*} index index of table that we want to update
  * @returns
  */
-export const Update_Data = (data, index) => (dispath) => {
-  dispath({
-    type: UPDATE,
-    payload: data,
-  });
+export const Update_Data = (data, index) => (dispatch) => {
+  apidata
+    .get(`Job/update`, data)
+    .then((res) => {
+      dispatch({ type: UPDATE, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: UPDATE,
+        payload: { data: false, err },
+      });
+    });
+};
+export const Delete_job = (data, index) => (dispatch) => {
+  apidata
+    .get(`Job/delete`, data)
+    .then((res) => {
+      dispatch({ type: DELETE_JOB, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: DELETE_JOB,
+        payload: { data: false, err },
+      });
+    });
 };
 /**
  * @method Update_Data

@@ -16,19 +16,16 @@ const Edit_Job_Preview = (values, state) => {
               <div className="jobes_marginbottom">
                 <img src="assets/images/nestor.jfif" height={80} width={80} />
               </div>
-                <div className="titlejob">
-                  <span>
-                    {values.state?.jobtitle || state.jobtitle} - Mohali
-                  </span>
-                </div>
-                <div className="job_location d-flex">
-              <span >Nestormind </span>
-              <span> - Mohali</span>
-          </div>
-          <div className="job_date">
-              <span>2 months ago</span>
-          </div>
-              
+              <div className="titlejob">
+                <span>{values.state?.title || state.title} - Mohali</span>
+              </div>
+              <div className="job_location d-flex">
+                <span>Nestormind </span>
+                <span> - Mohali</span>
+              </div>
+              <div className="job_date">
+                <span>2 months ago</span>
+              </div>
             </div>
             <div className="content-box">
               <div className="job_heading">
@@ -36,9 +33,7 @@ const Edit_Job_Preview = (values, state) => {
               </div>
               <p className="job_description"> {values?.state?.description}</p>
               <div className="job_heading">
-                <span className="" >
-                  Job Responsibility
-                </span>
+                <span className="">Job Responsibility</span>
               </div>
               <ul className="job__list">
                 {values?.state?.responsibility?.map((data, index) => (
@@ -47,9 +42,7 @@ const Edit_Job_Preview = (values, state) => {
               </ul>
 
               <div className="job_heading">
-                <span className="" >
-                  Requirement
-                </span>
+                <span className="">Requirement</span>
               </div>
               <ul className="job__list">
                 {values?.state?.requirment?.map((data, index) => (
@@ -57,9 +50,7 @@ const Edit_Job_Preview = (values, state) => {
                 ))}
               </ul>
               <div className="job_heading">
-                <span className="">
-                  Nestormind Full Time Employee Benefits
-                </span>
+                <span className="">Nestormind Full Time Employee Benefits</span>
               </div>
               <div className="">
                 <ul className="job__list">
@@ -78,7 +69,9 @@ const Edit_Job_Preview = (values, state) => {
                   </li>
                   <li className="jobes_inner_li">
                     <h6 className="job_description_level">Employment type</h6>
-                    <span className="level_content">{values.state?.type}</span>
+                    <span className="level_content">
+                      {values.state?.jobType}
+                    </span>
                   </li>
                   <li className="jobes_inner_li">
                     <h6 className="job_description_level">Job function</h6>
@@ -90,7 +83,7 @@ const Edit_Job_Preview = (values, state) => {
                   <li className="jobes_inner_li">
                     <h6 className="job_description_level">Industries</h6>
                     <span className="level_content">
-                      {values.state?.industry}
+                      {values.state?.industries}
                     </span>
                   </li>
                 </ul>

@@ -24,16 +24,18 @@ import {
   UPDATE_ENQUIRY,
   EDIT_ENQUIRY,
   LOGIN,
+  DELETE_JOB,
+  GET_JOB_DATA,
 } from "../store/type";
 
 const initialstate = {
-  login:"",
+  login: "",
   getenquiry: "",
   addgalleryevent: "",
   addnewblog: "",
   addSuccessStories: "",
   getallblog: "",
-  getallenquiry: "",
+  job_list: "",
   getnewsletter: "",
   getnewsletterall: [],
   getpendingenquiry: "",
@@ -52,110 +54,7 @@ const initialstate = {
   },
 
   allEnquries: [
-    {
-      jobtitle: "UI/UX",
-      description: "We are looking for an experienced Strategy Manager. ",
-      functions: "Supervise and manage department team ",
-      responsibility: [
-        {
-          value: "Create detailed budgeting and forecasting quarterly reports",
-          label: "Create detailed budgeting and forecasting quarterly reports",
-        },
-        {
-          value: "Create detailed budgeting and forecasting quarterly reports",
-          label: "Create detailed budgeting and forecasting quarterly reports",
-        },
-        {
-          value: "Create detailed budgeting and forecasting quarterly reports",
-          label: "Create detailed budgeting and forecasting quarterly reports",
-        },
-      ],
-      benefit: [
-        { value: "Insurance", label: "Insurance" },
-        { value: "Insurance", label: "Insurance" },
-      ],
-      requirment: [
-        { value: "Post Graduate", label: " Post Graduate" },
-        { value: "Post Graduate", label: " Post Graduate" },
-      ],
-      industry: "Technology",
-      level: "Junior",
-      type: "Part time",
-      active: "active",
-    },
-    {
-      jobtitle: "Project Manager",
-      description: "Develop methods for motivating and inspiring stakeholders.",
-      functions: "Provide support and training to team members",
-      responsibility: [
-        {
-          value: " Identify job duties relevant to the position",
-          label: " Identify job duties relevant to the position",
-        },
-        {
-          value: "Create detailed budgeting and forecasting quarterly reports",
-          label: "Create detailed budgeting and forecasting quarterly reports",
-        },
-        {
-          value: "Create detailed budgeting and forecasting quarterly reports",
-          label: "Create detailed budgeting and forecasting quarterly reports",
-        },
-      ],
-      benefit: [
-        { value: "Insurance", label: "Insurance" },
-        { value: "Insurance", label: "Insurance" },
-      ],
-      requirment: [
-        { value: "B.tech", label: "B.tech" },
-        { value: "B.tech", label: "B.tech" },
-      ],
-      industry: "Business",
-      level: "Senior",
-      type: "Full time",
-      active: "deactive",
-    },
-    {
-      jobtitle: "Project Manager",
-      description: "Develop methods for motivating and inspiring stakeholders.",
-      functions: "Report to directors and executive staff",
-      responsibility: [
-        {
-          value: "Create detailed budgeting and forecasting quarterly reports",
-          label: "Create detailed budgeting and forecasting quarterly reports",
-        },
-        {
-          value: "Create detailed budgeting and forecasting quarterly reports",
-          label: "Create detailed budgeting and forecasting quarterly reports",
-        },
-        {
-          value: "Create detailed budgeting and forecasting quarterly reports",
-          label: "Create detailed budgeting and forecasting quarterly reports",
-        },
-      ],
-      benefit: [
-        {
-          value: "Let you enjoy some extra perks",
-          label: "Let you enjoy some extra perks",
-        },
-        {
-          value: "Let you enjoy some extra perks",
-          label: "Let you enjoy some extra perks",
-        },
-        {
-          value: "Let you enjoy some extra perks",
-          label: "Let you enjoy some extra perks",
-        },
-      ],
-      requirment: [
-        { value: "Graduate", label: "Graduate" },
-        { value: "Graduate", label: "Graduate" },
-        { value: "Graduate", label: "Graduate" },
-      ],
-      industry: "Technology",
-      level: "Senior",
-      type: "Full time",
-      active: "deactive",
-    },
+   
   ],
 };
 /**
@@ -172,12 +71,6 @@ const Reducer_Function = (state = initialstate, action) => {
       return {
         ...state,
         login: payload,
-      };
-    }
-    case ADD_GALLERY_EVENT: {
-      return {
-        ...state,
-        addgalleryevent: payload,
       };
     }
     case GET_ENQUIRY: {
@@ -217,12 +110,7 @@ const Reducer_Function = (state = initialstate, action) => {
         addSuccessStories: payload,
       };
     }
-    case GET_ALL_BlOG: {
-      return {
-        ...state,
-        getallblog: payload,
-      };
-    }
+
     case GET_NEWSLEETER_SUBSCRIBER: {
       return {
         ...state,
@@ -235,31 +123,25 @@ const Reducer_Function = (state = initialstate, action) => {
         getnewsletter: payload,
       };
     }
-    case GET_PENDING_ENQUIRY: {
+
+    case DELETE_JOB: {
       return {
         ...state,
-        getpendingenquiry: payload,
+        job_list: state.allEnquries,
       };
     }
-    case GET_RESOLVED_ENQUIRY: {
+    case GET_JOB_DATA: {
       return {
         ...state,
-        getresolvedenquiry: payload,
-      };
-    }
-    case GET_ALL_ENQUIRY: {
-      return {
-        ...state,
-        getallenquiry: state.allEnquries,
+        job_list: payload,
       };
     }
     case POST_DATA: {
       return {
         ...state,
-        getallenquiry: state.allEnquries.push(payload),
+        job_list: state.allEnquries.push(payload),
       };
     }
-
     case EDIT_DATA: {
       return {
         ...state,

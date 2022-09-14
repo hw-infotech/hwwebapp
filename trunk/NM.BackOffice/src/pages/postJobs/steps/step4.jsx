@@ -33,12 +33,7 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
         >
           Save as Draft
         </Button>
-        <Button
-          variant="primary"
-          type="submit"
-          className="btn-sm"
-        
-        >
+        <Button variant="primary" type="submit" className="btn-sm">
           Save & Publish
         </Button>
       </div>

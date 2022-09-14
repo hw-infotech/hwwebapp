@@ -30,7 +30,7 @@ const Step3 = ({
         <Input
           as="select"
           placeholder="Level"
-          value={values.seneritylevel}
+          value={values.level}
           className="form-control label-size"
           name="level"
           onChange={handleChange}
@@ -46,8 +46,8 @@ const Step3 = ({
           className="form-control label-size"
           onChange={handleChange}
           placeholder="Type"
-          value={values.employement}
-          name="type"
+          value={values.jobType}
+          name="jobType "
           label={"Type"}
           id="name"
           options={[{ value: "Full time" }, { value: "Part time" }]}
@@ -59,10 +59,10 @@ const Step3 = ({
           className="form-control label-size mb-3"
           onChange={handleChange}
           placeholder="Industries"
-          name="industry"
+          name="industries"
           value={values.industries}
           label={"Industries"}
-          id={touched.industry && errors.industry ? "invalid" : ""}
+          id={touched.industries && errors.industries ? "invalid" : ""}
         />
       </Form.Group>
       <div className="d-flex justify-content-end gap-2">
@@ -73,18 +73,17 @@ const Step3 = ({
         >
           Back
         </Button>
-       
-          <Button
-            variant="primary"
-            className="btn-sm"
-            disabled= { f_context?.values.industry ? false:true}
-            onClick={() => {
-              setGoSteps(3);
-            }}
-          >
-            Next
-          </Button>
-     
+
+        <Button
+          variant="primary"
+          className="btn-sm"
+          disabled={f_context?.values.industries ? false : true}
+          onClick={() => {
+            setGoSteps(3);
+          }}
+        >
+          Next
+        </Button>
       </div>
     </div>
   );
