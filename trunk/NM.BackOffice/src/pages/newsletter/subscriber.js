@@ -18,6 +18,7 @@ import { BsSearch } from "react-icons/bs";
 import {
   NewsLetter_Unsubscriber,
   News_letter_Subscribe,
+  News_letter_Subscribe_Unsubscribe,
 } from "../../Services/redux/action/action";
 import { Formik } from "formik";
 import { Input } from "../../components/commoninputfield";
@@ -62,6 +63,8 @@ const route = [
 ];
 const SubScriber = () => {
   const [show, setShow] = useState(false);
+  const[firstpage,setFirstPage]=useState()
+  const [data, setData] = useState();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [showPerPage, setShowPerPage] = useState();
@@ -84,7 +87,7 @@ const SubScriber = () => {
    * @description useEffect used here becaure we need only dispath one time, if we dont used useEffect then dispatch all again ,that will create rendering issue.
    */
   useEffect(() => {
-    dispatch(News_letter_Subscribe());
+    dispatch(News_letter_Subscribe_Unsubscribe());
     dispatch(NewsLetter_Unsubscriber());
   }, []);
   /**
@@ -92,7 +95,8 @@ const SubScriber = () => {
    * @description this is used for set the selector the data into subscriber state and pass the dependencies to the useEffect when selector change the value then useEffect call
    */
   useEffect(() => {
-    setSubscribers(selector?.data?.apidata?.getnewsletterunsubscriber?.data);
+    setSubscribers(selector?.data?.apidata?.getnewsletterall?.data);
+    setData(selector?.data?.apidata?.getnewsletterall?.data);
     //setpagination({ start: start, end: showPerPage })
   }, [selector]);
 
@@ -143,11 +147,35 @@ const SubScriber = () => {
    */
   const requestSearch = (searchedVal) => {
     const filteredRows =
-      selector?.data?.apidata?.getnewsletterunsubscriber?.data.filter((row) => {
+      selector?.data?.apidata?.getnewsletterall?.data.filter((row) => {
         return row.email.toLowerCase().includes(searchedVal.toLowerCase());
       });
     setSubscribers(filteredRows);
   };
+  const status = (status) => {
+    if (status == "ALL") {
+      setSubscribers(selector?.data?.apidata?.getnewsletterall?.data);
+    } else if (status == "subscribe") {
+      const filterData = data.filter((row) => row.isSubscribe == true);
+      setSubscribers([...filterData]);
+      // setTableData([...filterData]);
+      //   const filteredRows = data?.filter((row) => {
+      //     // return row?.status.includes(status)
+      //     if (row.isSubscribe === true) {
+      //       console.log(row, "subscibe", status);
+      //       return row;
+      //     } else {
+      //       console.log(row, "unsubscribe", status);
+      //       return row;
+      //     }
+      //   });
+      //   setTableData([...filteredRows]);
+    } else {
+      const filterData = data?.filter((row) => row.isSubscribe == false);
+      setSubscribers([...filterData]);
+    }
+  };
+  console.log(subscribers);
   const [title, setTitle] = useState(false);
   /**
    * @method useEffect
@@ -186,7 +214,6 @@ const SubScriber = () => {
             </Button>
           </div>
         </div>
-
         <div className="gapbetween fs_13 pt-1">
           <Collapse in={disable}>
             <div id="example-collapse-text">
@@ -195,15 +222,19 @@ const SubScriber = () => {
                 aria-label="Default select example"
                 id="example-collapse-text"
                 defaultValue={"all"}
+                onChange={(e) => {
+                  status(e.target.value);
+                 
+                }}
               >
                 <option disabled>Status</option>
                 <option selected value={"ALL"}>
                   All
                 </option>
-                <option selected value={"ALL"}>
+                <option selected value={"subscribe"}>
                   Subscribe
                 </option>
-                <option selected value={"ALL"}>
+                <option selected value={"unsubscribe"}>
                   Unsubscribe
                 </option>
               </Form.Select>
@@ -294,15 +325,14 @@ const SubScriber = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationschemeaa}
-            onSubmit={(values,actions) => {actions.resetForm({
-              values:{
-                title:"",
-                content:"",
-
-              }
-              
-
-            })}}
+            onSubmit={(values, actions) => {
+              actions.resetForm({
+                values: {
+                  title: "",
+                  content: "",
+                },
+              });
+            }}
           >
             {({
               values,
@@ -372,15 +402,14 @@ const SubScriber = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-      {tableData.length > 0 ? (
+      {
         <CustomPagination
           start={pagination1}
           setStart={setpagination}
           total={subscribers?.length}
+          firstpage={10}
         />
-      ) : (
-        ""
-      )}
+      }
     </div>
   );
 };

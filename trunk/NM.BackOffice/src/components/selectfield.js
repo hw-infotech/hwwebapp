@@ -1,8 +1,14 @@
 import { useFormikContext, Formik } from "formik";
 import { invalid } from "moment";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import CreatableSelect from "react-select/creatable";
 
+export const flavourOptionsFlavourOption = [
+  { value: "vanilla", label: "Vanilla" },
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "salted-caramel", label: "Salted Caramel" },
+];
 const CreatableSelectField = ({
   formState,
   setFormState,
@@ -14,6 +20,7 @@ const CreatableSelectField = ({
   touched,
   errors,
   setTouched,
+  options,
 }) => {
   const [state, setState] = useState({
     inputValue: "",
@@ -56,7 +63,7 @@ const CreatableSelectField = ({
   const handleBlur = (e) => {
     const { inputValue, value } = state;
     console.log(state.inputValue, "dskkjjkf", state1);
-    if (state.value.length < 1 && state?.inputValue=="") {
+    if (state.value.length < 1 && state?.inputValue == "") {
       var f = document.getElementById(id);
       f.style.border = " 1px solid red";
     } else {
@@ -87,14 +94,16 @@ const CreatableSelectField = ({
         isMulti
         onFocus={onFocus}
         className={className}
-        menuIsOpen={false}
         onChange={handleChange}
         onInputChange={handleInputChange}
         onKeyDown={handleKeyDown}
         onBlur={handleBlur}
         // onFocus={handleBlur}
         placeholder={placeholder}
+        isOptionSelected
+        options={flavourOptionsFlavourOption}
         value={state.value}
+        //menuShouldScrollIntoView={true}
       />
     </div>
   );
