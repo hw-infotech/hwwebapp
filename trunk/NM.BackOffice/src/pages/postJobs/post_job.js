@@ -22,7 +22,11 @@ import Step2 from "./steps/step2";
 import Step3 from "./steps/step3";
 import Step4 from "./steps/step4";
 import { useSelector } from "react-redux";
-import { Send_job } from "../../Services/redux/action/action";
+import {
+  Benefits_Create,
+  Requirement_Create,
+  Send_job,
+} from "../../Services/redux/action/action";
 import { useDispatch } from "react-redux";
 import * as yup from "yup";
 import { useNavigate } from "react-router";
@@ -104,6 +108,7 @@ const Post_Job = ({ stat }) => {
           validationSchema={validationschemeaa}
           onSubmit={(values, { resetForm }) => {
             dispatch(Send_job(values));
+            dispatch(Requirement_Create(values?.requirment));
             resetForm();
             navigtion("/all-jobs");
           }}

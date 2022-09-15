@@ -18,7 +18,7 @@ const Step1 = ({
   isValid
 }) => {
   const formik_context = useFormikContext();
-console.log(formik_context,"formikcontext")
+
   useEffect(() => {
     document.title = "Add Job";
   }, []);

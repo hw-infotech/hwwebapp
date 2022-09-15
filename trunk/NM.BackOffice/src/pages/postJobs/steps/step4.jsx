@@ -5,6 +5,7 @@ import { BiEdit } from "react-icons/bi";
 import { Send_data } from "../../../Services/redux/action/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { useFormikContext } from "formik";
 
 const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
   useEffect(() => {
     document.title = "Preview";
   }, []);
+  const formikkk_context=useFormikContext()
+console.log(formikkk_context,"this is the first")
   return (
     <div className="w-100 m-auto ">
       <Job_Preview values={values} />

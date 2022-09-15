@@ -22,6 +22,7 @@ import { BsArrowDown } from "react-icons/bs";
 import CustomPagination from "../../shared/pagination";
 import { subString } from "../../Services/commonFunctions";
 import {
+  Delete_job,
   Edit_Data,
   getAllEnquries,
   Get_jobList,
@@ -132,10 +133,10 @@ const Edit_postJob = (value1) => {
     if (status == "ALL") {
       setTableData(selector.data.apidata?.job_list?.data);
     } else if (status == "subscribe") {
-      const filterData = tableData?.filter((row) => row.isSubscribe == true);
+      const filterData = tableData?.filter((row) => row.status == true);
       setTableData([...filterData]);
     } else {
-      const filterData = tableData?.filter((row) => row.isSubscribe == false);
+      const filterData = tableData?.filter((row) => row.status == false);
       setTableData([...filterData]);
     }
   };
@@ -177,7 +178,7 @@ const Edit_postJob = (value1) => {
                 className="fs_13"
                 defaultValue={"all"}
                 id="example-collapse-text"
-                onClick={(e) => {
+                onChange={(e) => {
                   status(e.target.value);
                 }}
               >
@@ -236,8 +237,9 @@ const Edit_postJob = (value1) => {
             className="btn-sm fs_13"
             variant="primary"
             onClick={() => {
-              tableData.splice(indexx, 1);
-              setTableData([...tableData]);
+              dispatch(Delete_job(indexx));
+              //tableData.splice(indexx, 1);
+              //setTableData([...tableData]);
               setmodal(false);
             }}
           >
@@ -395,7 +397,7 @@ const Edit_postJob = (value1) => {
                                   type="button"
                                   className="btn btn-outlined-secondary fs_13"
                                   onClick={() => {
-                                    setIndex(index);
+                                    setIndex(data);
                                     setmodal(true);
                                   }}
                                 >

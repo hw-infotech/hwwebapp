@@ -26,12 +26,19 @@ import {
   LOGIN,
   DELETE_JOB,
   GET_JOB_DATA,
+  BENEFITS,
+  REQUIRMENT,
+  RESPONSIBILITY,
 } from "../store/type";
 
 const initialstate = {
   login: "",
+  benefits:"",
+  requirment:"",
+  responsibility:"",
+  addjobdata:"",
   getenquiry: "",
-  job_list: "",
+  job_list: [],
   getnewsletter: "",
   getnewsletterall: [],
   edit_profile_data: "",
@@ -116,10 +123,28 @@ const Reducer_Function = (state = initialstate, action) => {
       };
     }
 
+    case BENEFITS: {
+      return {
+        ...state,
+        benefits: payload,
+      };
+    }
+    case REQUIRMENT: {
+      return {
+        ...state,
+        requirment: payload,
+      };
+    }
+    case RESPONSIBILITY: {
+      return {
+        ...state,
+        responsibility: payload,
+      };
+    }
     case DELETE_JOB: {
       return {
         ...state,
-        job_list: state.allEnquries,
+        job_list: payload,
       };
     }
     case GET_JOB_DATA: {
@@ -131,7 +156,7 @@ const Reducer_Function = (state = initialstate, action) => {
     case POST_DATA: {
       return {
         ...state,
-        job_list: state.allEnquries.push(payload),
+        job_list: state.job_list.push(payload),
       };
     }
     case EDIT_DATA: {
@@ -141,7 +166,10 @@ const Reducer_Function = (state = initialstate, action) => {
       };
     }
     case UPDATE: {
-      state.allEnquries[state.edit_data.index] = payload;
+      var temp = state.data.map(function (item) {
+        return item.id == action.payload.id ? action.payload : item;
+      });
+      state.job_list[state.edit_data.index] = payload;
       return {
         ...state,
       };

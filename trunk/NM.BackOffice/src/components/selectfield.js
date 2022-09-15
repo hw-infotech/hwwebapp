@@ -27,10 +27,12 @@ const CreatableSelectField = ({
     value: formState[name],
   });
   const [state1, setState1] = useState([]);
+
   const handleChange = (value) => {
     setState({ ...state, value });
   };
   const handleInputChange = (inputValue) => {
+    //console.log("this is the handleinputvalue", inputValue);
     setState({ ...state, inputValue });
   };
   useEffect(() => {
@@ -38,10 +40,10 @@ const CreatableSelectField = ({
   }, [state]);
   useEffect(() => {
     const { inputValue, value } = state;
+
     if (state1?.value?.value) {
       setState({ ...state, value: [...state.value, state1.value] });
     } else {
-      console.log(state1, "testing purpuse");
     }
   }, [state1]);
   const components = {
@@ -82,7 +84,6 @@ const CreatableSelectField = ({
       value: label,
     };
   };
-
   return (
     <div>
       <CreatableSelect
@@ -101,7 +102,7 @@ const CreatableSelectField = ({
         // onFocus={handleBlur}
         placeholder={placeholder}
         isOptionSelected
-        options={flavourOptionsFlavourOption}
+        options={options}
         value={state.value}
         //menuShouldScrollIntoView={true}
       />

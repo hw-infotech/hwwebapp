@@ -1,8 +1,14 @@
 import { useFormikContext, Formik } from "formik";
+import { useState } from "react";
 import { useEffect } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CreatableSelectField from "../../../components/selectfield";
+import {
+  Benefits_Getall,
+  Requirement_Getall,
+  Responsibility_Getall,
+} from "../../../Services/redux/action/action";
 
 const Step2 = ({
   setGoSteps,
@@ -15,20 +21,41 @@ const Step2 = ({
   onFocus,
   className,
   setTouched,
+  options,
 }) => {
+  const [benefits, setbenefits] = useState();
+  const [requirment, setRequirment] = useState();
+  const [responsibility, setresponsibility] = useState();
   const { setFieldValue } = useFormikContext();
-  // const selector = useSelector(state => state.data.apidata.edit_data)
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state?.data?.apidata);
+  const [requr, setRequr] = useState({
+    req: [],
+  });
   useEffect(() => {
+    dispatch(Benefits_Getall());
+    dispatch(Requirement_Getall());
+    dispatch(Responsibility_Getall());
     document.title = "Add Job";
   }, []);
-
+  useEffect(() => {
+    setbenefits(selector?.benefits.data);
+    setresponsibility(selector?.responsibility.data);
+    setRequirment(selector?.requirment.data);
+  }, [selector]);
+  console.log(requr, "requirnments");
   // let mDate = new Date("09-01-2022 13:25:00");
   // const SecondsDif = Math.abs((new Date().getTime() - mDate.getTime()) / 1000);
   // const result = new Date(SecondsDif * 1000).toISOString().slice(11, 19);
   //console.log(result); // 👉️ "00:10:00" (hh:mm:ss)
   const f_context = useFormikContext();
   //Formik.setTouched({ responsibility: true });
-  console.log(state);
+  const requirmentt = [
+    //{ value: requirment?.id, label:requirment[0]?.jobRequirment },
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "salted-caramel", label: "Salted Caramel" },
+  ];
   return (
     <div className="w-100 m-auto">
       <Row>
@@ -36,14 +63,18 @@ const Step2 = ({
           <Form.Group>
             <Form.Label className="label-size">Requirement</Form.Label>
             <CreatableSelectField
-              name="requirment"
+              name="req"
               id={"requ"}
+              options={requirment?.map((data, index) => ({
+                value: data?.id,
+                label: data?.jobRequirment,
+              }))}
               placeholder="Type and press tab/enter button"
-              formState={state}
+              formState={requr}
+              setFormState={setRequr}
               errors={errors.requirment}
-              setFormState={setState}
               touched={touched.requirment}
-              value={values.requirment}
+              value={requr.req}
               onChange={handleChange}
               setTouched={true}
               className={
@@ -57,6 +88,10 @@ const Step2 = ({
               errors={errors.responsibility}
               placeholder="Type and press tab/enter button"
               formState={state}
+              options={responsibility?.map((data, index) => ({
+                value: data?.id,
+                label: data?.responsibility,
+              }))}
               setTouched={true}
               id={"res"}
               setFormState={setState}
@@ -64,7 +99,6 @@ const Step2 = ({
                 touched.responsibility && errors.responsibility ? "invalid" : ""
               }
               //value={values.responsibility}
-              onChange={handleChange}
             />
             <div className="mb-3">
               <Form.Label className="label-size">Benefits</Form.Label>
@@ -72,14 +106,17 @@ const Step2 = ({
                 name="benefit"
                 placeholder="Type and press tab/enter button"
                 formState={state}
+                options={benefits?.map((data, index) => ({
+                  id: data?.id,
+                  label: data?.benefitType,
+                }))}
                 id={"benefit"}
                 setTouched={true}
                 touched={touched.benefit}
                 errors={errors.benefit}
                 setFormState={setState}
                 className={touched.errors && errors.benefit ? "invalid" : ""}
-                value={values.benefit}
-                onChange={handleChange}
+                // value={values.benefit}
               />
             </div>
           </Form.Group>
@@ -97,13 +134,13 @@ const Step2 = ({
         <Button
           variant="primary"
           className="btn-sm"
-          disabled={
-            state.requirment.length > 0 &&
-            state.responsibility.length > 0 &&
-            state.benefit.length > 0
-              ? false
-              : true
-          }
+          // disabled={
+          //   requr.req.length > 0
+          //   // state.responsibility.length > 0 &&
+          //   // state.benefit.length > 0
+          //     ? false
+          //     : true
+          // }
           onClick={() => {
             setFieldValue(
               "benefit",
@@ -115,10 +152,10 @@ const Step2 = ({
             );
             setFieldValue(
               "requirment",
-              state.requirment.map((_) => _)
+              requr.req.map((_) => _.value)
             );
-
-            setGoSteps(2);
+            console.log(values);
+            // setGoSteps(2);
           }}
         >
           Next

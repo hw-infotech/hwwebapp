@@ -25,6 +25,12 @@ import {
   LOGIN,
   GET_JOB_DATA,
   DELETE_JOB,
+  BENEFITS,
+  RESPONSIBILITY,
+  REQUIRMENT,
+  RESPONSIBILITY_CREATE,
+  REQUIRMENT_CREATE,
+  BENEFITS_CREATE,
 } from "../../redux/store/type";
 import apidata from "../../redux/store/api";
 import { ToastContainer, toast } from "react-toastify";
@@ -178,6 +184,7 @@ export const Send_job = (data) => (dispatch) => {
  *  @description In this function we get all data of enquries
  * @returns
  */
+
 export const Get_jobList = () => (dispatch) => {
   apidata
     .get(`Job/getAll`)
@@ -191,6 +198,84 @@ export const Get_jobList = () => (dispatch) => {
       });
     });
 };
+export const Benefits_Getall = () => (dispatch) => {
+  apidata
+    .get(`Benefits/getAll`)
+    .then((res) => {
+      dispatch({ type: BENEFITS, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: BENEFITS,
+        payload: { data: false, err },
+      });
+    });
+};
+export const Responsibility_Getall = () => (dispatch) => {
+  apidata
+    .get(`ResponsibilityType/getAll`)
+    .then((res) => {
+      dispatch({ type: RESPONSIBILITY, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: RESPONSIBILITY,
+        payload: { data: false, err },
+      });
+    });
+};
+export const Requirement_Getall = () => (dispatch) => {
+  apidata
+    .get(`Requirment/getAll`)
+    .then((res) => {
+      dispatch({ type: REQUIRMENT, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: REQUIRMENT,
+        payload: { data: false, err },
+      });
+    });
+};
+export const Benefits_Create = () => (dispatch) => {
+  apidata
+    .post(`Benefits/create`)
+    .then((res) => {
+      dispatch({ type: BENEFITS_CREATE, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: BENEFITS_CREATE,
+        payload: { data: false, err },
+      });
+    });
+};
+export const Responsibility_Create = () => (dispatch) => {
+  apidata
+    .post(`ResponsibilityType/create`)
+    .then((res) => {
+      dispatch({ type: RESPONSIBILITY_CREATE, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: RESPONSIBILITY_CREATE,
+        payload: { data: false, err },
+      });
+    });
+};
+export const Requirement_Create = () => (dispatch) => {
+  apidata
+    .post(`Requirment/create`)
+    .then((res) => {
+      dispatch({ type: REQUIRMENT_CREATE, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: REQUIRMENT_CREATE,
+        payload: { data: false, err },
+      });
+    });
+};
 /**
  * @method Edit_Data
  *  @description this function for edit the job post
@@ -199,9 +284,10 @@ export const Get_jobList = () => (dispatch) => {
  * @returns
  */
 
-export const Edit_Data = (data, index) => (dispatch) => {
+export const Edit_Data = (data) => (dispatch) => {
+  console.log(data.bsonId, "basonid");
   apidata
-    .get(`Job/get`, data)
+    .get(`Job/get?bsonId=${data.bsonId}`)
     .then((res) => {
       dispatch({ type: EDIT_DATA, payload: res.data });
     })
@@ -232,9 +318,10 @@ export const Update_Data = (data, index) => (dispatch) => {
       });
     });
 };
-export const Delete_job = (data, index) => (dispatch) => {
+export const Delete_job = (data) => (dispatch) => {
+  console.log("this is", data);
   apidata
-    .get(`Job/delete`, data)
+    .delete(`Job/get?bsonId=${data.bsonId}`)
     .then((res) => {
       dispatch({ type: DELETE_JOB, payload: res.data });
     })
