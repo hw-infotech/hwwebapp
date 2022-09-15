@@ -32,15 +32,43 @@ namespace NM.Business
                 Success = true
             };
 
-            Job job = new Job(jobModel.Title, jobModel.Description, jobModel.Status, jobModel.Functions, jobModel.JobType, jobModel.Industries, jobModel.Level, jobModel.Responsibility, jobModel.Benefits);
+            Job job = new Job(jobModel.Title, jobModel.Description, jobModel.Status, jobModel.Functions, jobModel.JobType, jobModel.Industries, jobModel.Level);
             job.CreatedBy = curentUserId;
+
             //List<JobRequirments> jobRequierment = jobModel.JobRequirments.Select(x => new JobRequirments { RequirmentId = x, Job = job }).ToList();
+
+            //Add jobRequierments
             List<JobRequirments> jobRequierment = new List<JobRequirments>();
-            jobModel.JobRequirments.ForEach(id => jobRequierment.Add(new JobRequirments()
+            jobModel.JobRequirment.ForEach(id => jobRequierment.Add(new JobRequirments()
             {
                 RequirmentId = id
             }));
             jobRequierment.ForEach(item => item.Job = job);
+            job.JobRequirments = jobRequierment;
+            //Add job Responsibilites
+            List<JobResponsibilityTypes> jobResponsibilityTypes = new List<JobResponsibilityTypes>();
+            jobModel.JobResponsibility.ForEach(Id =>
+            {
+                jobResponsibilityTypes.Add(new JobResponsibilityTypes()
+                {
+                    ResponsibilityTypeId = Id
+                });
+            });
+            jobResponsibilityTypes.ForEach(x => x.Job = job);
+            job.JobResponsibilityTypes = jobResponsibilityTypes;
+            // Add JobBenefits
+            List<JobBenefits> jobBenefits = new List<JobBenefits>();
+            jobModel.JobBenefit.ForEach(Id =>
+            {
+                jobBenefits.Add(new JobBenefits()
+                {
+                    BenefitTypesId = Id
+                });
+
+            });
+            jobBenefits.ForEach(x => x.Job = job);
+            job.JobBenefits = jobBenefits;
+
             unitOfWork.JobRepository.Insert(job);
             if (job.Id > 0)
             {
@@ -53,11 +81,11 @@ namespace NM.Business
         public ResultModel<List<JobModel>> GetAll()
         {
             ResultModel<List<JobModel>> result = new ResultModel<List<JobModel>>();
-            var Jobs = unitOfWork.JobRepository.FilterExpressionRange(x => !x.IsDeleted, new string[] { "JobRequirments" }).ToList();
+            var Jobs = unitOfWork.JobRepository.FilterExpressionRange(x => !x.IsDeleted, new string[] { "JobRequirments", "JobResponsibilityTypes", "JobBenefits" }).ToList();
             if (Jobs != null)
             {
                 List<JobModel> jobModels = new List<JobModel>();
-                Jobs.ForEach(x => jobModels.Add(new JobModel { Title = x.Title, Description = x.Description, Status = x.Status, Functions = x.Functions, JobType = x.JobType, Industries = x.Industries, Level = x.Level, Responsibility = x.Responsibility, Benefits = x.Benefits, JobRequirments = x.JobRequirments.Count > 0 ? x.JobRequirments.Select(y => y.Id).ToList() : new List<int>() }));
+                Jobs.ForEach(x => jobModels.Add(new JobModel { Title = x.Title, Description = x.Description, Status = x.Status, Functions = x.Functions, JobType = x.JobType, Industries = x.Industries, Level = x.Level, JobRequirment = x.JobRequirments.Count > 0 ? x.JobRequirments.Select(y => y.Id).ToList() : new List<int>(), JobResponsibility = x.JobResponsibilityTypes.Count > 0 ? x.JobResponsibilityTypes.Select(y => y.Id).ToList() : new List<int>(), JobBenefit = x.JobBenefits.Count > 0 ? x.JobBenefits.Select(y => y.Id).ToList() : new List<int>() }));
                 result.Data = jobModels;
                 result.TotalRecords = Jobs.Count();
                 result.Success = true;
@@ -74,12 +102,14 @@ namespace NM.Business
                 Success = false,
                 StatusCode = (int)Enums.StatusCode.NotFound
             };
-            var job = unitOfWork.JobRepository.FilterExpressionRange(x => !x.IsDeleted && x.BsonId == bsonId, new string[] { "JobRequirments" }).FirstOrDefault();
+            var job = unitOfWork.JobRepository.FilterExpressionRange(x => !x.IsDeleted && x.BsonId == bsonId, new string[] { "JobRequirments", "JobResponsibilityTypes", "JobBenefits" }).FirstOrDefault();
             if (job != null)
             {
                 var jobModel = mapper.Map<JobModel>(job);
-                if (job.JobRequirments.Count > 0)
-                    jobModel.JobRequirments = job.JobRequirments.Select(x => x.RequirmentId).ToList();
+                jobModel.JobRequirment = job.JobRequirments.Count > 0 ? job.JobRequirments.Select(x => x.RequirmentId).ToList() : new List<int>();
+                jobModel.JobBenefit = job.JobBenefits.Count > 0 ? job.JobBenefits.Select(x => x.Id).ToList() : new List<int>();
+                jobModel.JobResponsibility = job.JobResponsibilityTypes.Count > 0 ? job.JobResponsibilityTypes.Select(x => x.Id).ToList() : new List<int>();
+
                 result.Data = jobModel;
                 result.Success = true;
                 result.StatusCode = (int)Enums.StatusCode.OK;
@@ -93,27 +123,69 @@ namespace NM.Business
             result.Data = false;
             result.Success = false;
 
-            var JobEntity = unitOfWork.JobRepository.FilterExpressionRange(x => !x.IsDeleted && x.BsonId == jobModel.BsonId, new string[] { "JobRequirments" }).FirstOrDefault();
+            var JobEntity = unitOfWork.JobRepository.FilterExpressionRange(x => !x.IsDeleted && x.BsonId == jobModel.BsonId, new string[] { "JobRequirments", "JobResponsibilityTypes", "JobBenefits" }).FirstOrDefault();
             if (JobEntity != null)
             {
-                Job job = new Job(jobModel.Title, jobModel.Description, jobModel.Status, jobModel.Functions, jobModel.JobType, jobModel.Industries, jobModel.Level, jobModel.Responsibility, jobModel.Benefits);
+                JobEntity = JobEntity.GetUpdatedJob(JobEntity, jobModel.Title, jobModel.Description, jobModel.Status, jobModel.Functions, jobModel.JobType, jobModel.Industries, jobModel.Level);
 
-                job.Id = JobEntity.Id;
-                job.BsonId = jobModel.BsonId;
-                job.UpdatedOn = DateTime.UtcNow;
-                job.CreatedBy = JobEntity.CreatedBy;
-                job.CreatedOn = JobEntity.CreatedOn;
-                job.UpdatedBy = curentUsertId;
-                var jobRequirments = unitOfWork.JobRequirmentsRepository.Get(y => y.JobId == JobEntity.Id);
+                JobEntity.UpdatedOn = DateTime.UtcNow;
+                JobEntity.UpdatedBy = curentUsertId;
 
-                if (jobRequirments != null && jobRequirments.Count > 0)
-                    unitOfWork.JobRequirmentsRepository.DeleteAll(jobRequirments);
+                //Add jobRequierments
+                List<JobRequirments> jobRequierment = new List<JobRequirments>();
+                jobModel.JobRequirment.ForEach(id => jobRequierment.Add(new JobRequirments()
+                {
+                    JobId = JobEntity.Id,
+                    RequirmentId = id
+                }));
+                //  jobRequierment.ForEach(item => item.Job = JobEntity);
 
-                jobRequirments = jobModel.JobRequirments.Select(x => new JobRequirments { RequirmentId = x }).ToList();
-                jobRequirments.ForEach(x => x.Job = job);
-                job.JobRequirments = jobRequirments;
-                //unitOfWork.JobRequirmentsRepository.InsertAll(jobRequirments);
-                unitOfWork.JobRepository.Update(job);
+
+                //Add job Responsibilites
+                List<JobResponsibilityTypes> jobResponsibilityTypes = new List<JobResponsibilityTypes>();
+                jobModel.JobResponsibility.ForEach(Id =>
+                {
+                    jobResponsibilityTypes.Add(new JobResponsibilityTypes()
+                    {
+                        JobId = JobEntity.Id,
+                        ResponsibilityTypeId = Id
+                    });
+                });
+                //jobResponsibilityTypes.ForEach(x => x.Job = JobEntity);
+
+
+                // Add JobBenefits
+                List<JobBenefits> jobBenefits = new List<JobBenefits>();
+                jobModel.JobBenefit.ForEach(Id =>
+                {
+                    jobBenefits.Add(new JobBenefits()
+                    {
+                        JobId = JobEntity.Id,
+                        BenefitTypesId = Id
+                    });
+
+                });
+                // jobBenefits.ForEach(x => x.Job = JobEntity);
+
+                //delete old relational data
+                if (JobEntity.JobRequirments != null && JobEntity.JobRequirments.Count > 0)
+                    unitOfWork.JobRequirmentsRepository.DeleteAll(JobEntity.JobRequirments.ToList());
+
+                if (JobEntity.JobBenefits != null && JobEntity.JobBenefits.Count > 0)
+                    unitOfWork.JobBenefitsRepository.DeleteAll(JobEntity.JobBenefits.ToList());
+
+                if (JobEntity.JobResponsibilityTypes != null && JobEntity.JobResponsibilityTypes.Count > 0)
+                    unitOfWork.JobResponsibilityTypesRepository.DeleteAll(JobEntity.JobResponsibilityTypes.ToList());
+                
+                JobEntity.JobRequirments = null;
+                JobEntity.JobResponsibilityTypes = null;
+                JobEntity.JobBenefits = null;
+
+                unitOfWork.JobRequirmentsRepository.InsertAll(jobRequierment);
+                unitOfWork.JobResponsibilityTypesRepository.InsertAll(jobResponsibilityTypes);
+                unitOfWork.JobBenefitsRepository.InsertAll(jobBenefits);
+
+                unitOfWork.JobRepository.Update(JobEntity);
                 result.Data = true;
                 result.Success = true;
                 result.StatusCode = (int)Enums.StatusCode.OK;

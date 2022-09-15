@@ -23,15 +23,14 @@ namespace NM.API.Application.Models
         public string Industries { get; set; }
         [Required(ErrorMessage = "Level is required")]
         public string Level { get; set; }
-        [Required(ErrorMessage = "Responsibility is required")]
-        public string Responsibility { get; set; }
-        [Required(ErrorMessage = "Benefits is required")]
-        public string Benefits { get; set; }
-
 
         //Relational Table 
         [Required(ErrorMessage = "JobRequirments is required")]
-        public List<int> JobRequirments { get; set; }
+        public List<int> JobRequirment { get; set; }
+        [Required(ErrorMessage = "Responsibility is required")]
+        public List<int> JobResponsibility { get; set; }
+        [Required(ErrorMessage = "Benefits is required")]
+        public List<int> JobBenefit { get; set; }
 
     }
 }

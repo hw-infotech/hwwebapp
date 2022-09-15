@@ -26,9 +26,6 @@ namespace NM.DataAccess.EntityConfiguration
             tableConfiguration.Property(c => c.IsDeleted).HasDefaultValue(false);
             tableConfiguration.Property(c => c.JobType).HasMaxLength(100);
             tableConfiguration.Property(c => c.Level).HasMaxLength(100);
-            tableConfiguration.Property(c => c.Benefits).HasMaxLength(100);
-
-           
         }
     }
 }
