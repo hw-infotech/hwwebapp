@@ -6,17 +6,19 @@ namespace NM.Domain.Models
 {
     public class JobModel : EntityModel
     {
-        public string Title { get;  set; }
-        public string Description { get;  set; }
-        public bool Status { get;  set; }
-        public string Functions { get;  set; }
-        public string JobType { get;   set; }
-        public string Industries { get;   set; }
-        public string Level { get;   set; }
-        public string Responsibility { get;   set; }
-        public string Benefits { get;   set; }
+        public string BsonId { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public bool Status { get; set; }
+        public string Functions { get; set; }
+        public string JobType { get; set; }
+        public string Industries { get; set; }
+        public string Level { get; set; }
+
 
         //Relational Table 
-        public List<int> JobRequirments { get; set; }
+        public List<int> JobRequirment { get; set; }
+        public List<int> JobResponsibility { get; set; }
+        public List<int> JobBenefit { get; set; }
     }
 }

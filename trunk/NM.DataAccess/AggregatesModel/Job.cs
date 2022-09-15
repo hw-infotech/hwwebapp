@@ -13,14 +13,12 @@ namespace NM.DataAccess.AggregatesModel
         public string JobType { get; private set; }
         public string Industries { get; private set; }
         public string Level { get; private set; }
-        public string Responsibility { get; private set; }
-        public string Benefits { get; private set; }
 
         //Relational Table 
         public ICollection<JobRequirments> JobRequirments { get; set; }
-
-
-        public Job(string title, string description, bool status, string functions, string jobType, string industries, string level, string responsibility, string benefits)
+        public ICollection<JobResponsibilityTypes> JobResponsibilityTypes { get; set; }
+        public ICollection<JobBenefits> JobBenefits { get; set; }
+        public Job(string title, string description, bool status, string functions, string jobType, string industries, string level)
         {
             Title = title;
             Description = description;
@@ -29,9 +27,20 @@ namespace NM.DataAccess.AggregatesModel
             JobType = jobType;
             Industries = industries;
             Level = level;
-            Responsibility = responsibility;
-            Benefits = benefits;
         }
+
+        public Job GetUpdatedJob(Job job, string title, string description, bool status, string functions, string jobType, string industries, string level)
+        {
+            job.Title = title;
+            job.Description = description;
+            job.Status = status;
+            job.Functions = functions;
+            job.JobType = jobType;
+            job.Industries = industries;
+            job.Level = level;
+            return job;
+        }
+
     }
 
 }

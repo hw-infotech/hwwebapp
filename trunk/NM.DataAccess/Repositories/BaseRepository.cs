@@ -196,8 +196,8 @@ namespace NM.DataAccess.Repositories
 
         public virtual void Update(TEntity entityToUpdate, bool SaveChanges = true)
         {
-            if (context.Entry(entityToUpdate).State == EntityState.Detached)
-                dbSet.Attach(entityToUpdate);
+            //if (context.Entry(entityToUpdate).State == EntityState.Detached)
+            //    dbSet.Attach(entityToUpdate);
 
             context.Entry(entityToUpdate).State = EntityState.Modified;
             if (SaveChanges == true)

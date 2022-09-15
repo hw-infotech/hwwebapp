@@ -39,8 +39,9 @@ namespace NM.API.Mapper
             CreateMap<ResultModel<List<TestimonialsModel>>, ResultVM<List<TestimonialsVM>>>().ReverseMap();
             CreateMap<ResultModel<List<UserEnquiryModel>>, ResultVM<List<UserEnquiryVM>>>().ReverseMap();
             CreateMap<ResultModel<List<JobModel>>, ResultVM<List<JobVM>>>().ReverseMap();
-            CreateMap<ResultModel<List<Job_RequirmentsModel>>, ResultVM<List<Job_RequirmentsVM>>>().ReverseMap();
-            CreateMap<ResultModel<List<RequirmentModel>>, ResultVM<List<RequirmentVM>>>().ReverseMap();
+            CreateMap<ResultModel<List<JobRequirmentsModel>>, ResultVM<List<JobRequirmentsVM>>>().ReverseMap();
+            CreateMap<ResultModel<List<ResponsibilityTypeModel>>, ResultVM<List<ResponsibilityTypeVM>>>().ReverseMap();
+            CreateMap<ResultModel<List<BenefitTypeModel>>, ResultVM<List<BenefitsTypesVM>>>().ReverseMap();
             #endregion
 
             #region View to Model ReverseMap
@@ -56,8 +57,10 @@ namespace NM.API.Mapper
             CreateMap<UserEnquiryModel, UserEnquiryVM>().ReverseMap();
             CreateMap<NewsLetterTemplateModel, NewsLetterTemplateVM>().ReverseMap();
             CreateMap<JobModel, JobVM>().ReverseMap();
-            CreateMap<Job_RequirmentsModel, Job_RequirmentsVM>().ReverseMap();
+            CreateMap<JobRequirmentsModel, JobRequirmentsVM>().ReverseMap();
             CreateMap<RequirmentModel, RequirmentVM>().ReverseMap();
+            CreateMap<ResponsibilityTypeModel, ResponsibilityTypeVM>().ReverseMap();
+            CreateMap<BenefitTypeModel, BenefitsTypesVM>().ReverseMap();
             #endregion
 
             #region Model to Entity ReverseMap
@@ -73,8 +76,10 @@ namespace NM.API.Mapper
             CreateMap<UserEnquiry, UserEnquiryModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<UserEnquiry, UserEnquiryModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<Job, JobModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
-            CreateMap<JobRequirments, Job_RequirmentsModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
+            CreateMap<JobRequirments, JobRequirmentsModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<Requirment, RequirmentModel>().ReverseMap();
+            CreateMap<ResponsibilityType, ResponsibilityTypeModel>().ReverseMap();
+            CreateMap<BenefitTypes, BenefitTypeModel>().ReverseMap();
             #endregion
 
             #region Result Model
@@ -85,8 +90,10 @@ namespace NM.API.Mapper
             CreateMap<ResultModel<ResumeModel>, ResultVM<ResumeVM>>().ReverseMap();
             CreateMap<ResultModel<UserEnquiryModel>, ResultVM<UserEnquiryVM>>().ReverseMap();
             CreateMap<ResultModel<JobModel>, ResultVM<JobVM>>().ReverseMap();
-            CreateMap<ResultModel<Job_RequirmentsModel>, ResultVM<Job_RequirmentsVM>>().ReverseMap();
+            CreateMap<ResultModel<JobRequirmentsModel>, ResultVM<JobRequirmentsVM>>().ReverseMap();
             CreateMap<ResultModel<RequirmentModel>, ResultVM<RequirmentVM>>().ReverseMap();
+            CreateMap<ResultModel<ResponsibilityTypeModel>, ResultVM<ResponsibilityTypeVM>>().ReverseMap();
+            CreateMap<ResultModel<BenefitTypeModel>, ResultVM<BenefitsTypesVM>>().ReverseMap();
             #endregion
         }
     }

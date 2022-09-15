@@ -30,6 +30,11 @@ namespace NM.DataAccess.SqlContext
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Requirment> Requirments { get; set; }
         public DbSet<JobRequirments> JobRequirments { get; set; }
+        public DbSet<ResponsibilityType> ResponsibilityType { get; set; }
+        public DbSet<JobResponsibilityTypes> JobResponsibilityTypes { get; set; }
+        public DbSet<BenefitTypes> BenefitTypes { get; set; }
+        public DbSet<JobBenefits> JobBenefits { get; set; }
+        public DbSet<JobTitle> JobTitle { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

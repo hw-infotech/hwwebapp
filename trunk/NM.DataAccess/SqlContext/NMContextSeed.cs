@@ -137,8 +137,27 @@ namespace NM.DataAccess.SqlContext
 
                         await context.SaveChangesAsync();
                     }
-                    if (!context.Requirments.Any()) {
+                    if (!context.Requirments.Any())
+                    {
                         await context.Requirments.AddRangeAsync(GetRequirments());
+
+                        await context.SaveChangesAsync();
+                    }
+                    if (!context.ResponsibilityType.Any())
+                    {
+                        await context.ResponsibilityType.AddRangeAsync(GetResponsibilites());
+
+                        await context.SaveChangesAsync();
+                    }
+                    if (!context.BenefitTypes.Any())
+                    {
+                        await context.BenefitTypes.AddRangeAsync(GetBenefitTypes());
+
+                        await context.SaveChangesAsync();
+                    }
+                    if (!context.JobTitle.Any())
+                    {
+                        await context.JobTitle.AddRangeAsync(GetJobTitle());
 
                         await context.SaveChangesAsync();
                     }
@@ -312,7 +331,7 @@ namespace NM.DataAccess.SqlContext
         }
         private Job GetJob()
         {
-            return new Job("Test job", "Job for devlopers", true, "Functions", "fullTime", "industries", "junior", "project manger", "imporve skils");
+            return new Job("Test job", "Job for devlopers", true, "Functions", "fullTime", "industries", "junior");
         }
 
         private IEnumerable<Requirment> GetRequirments()
@@ -331,7 +350,36 @@ namespace NM.DataAccess.SqlContext
                 new Requirment("Content"),
                 new Requirment("Animation"),
           };
+        }
 
+        private IEnumerable<ResponsibilityType> GetResponsibilites()
+        {
+            return new List<ResponsibilityType>()
+          {
+                new ResponsibilityType("Handel Client"),
+                new ResponsibilityType("Handel junior"),
+                new ResponsibilityType("Status Report"),
+          };
+        }
+        private IEnumerable<BenefitTypes> GetBenefitTypes()
+        {
+            return new List<BenefitTypes>()
+          {
+                new BenefitTypes("Good Salary"),
+                new BenefitTypes("Good env"),
+                new BenefitTypes("Skill improvment")
+                
+          };
+        }
+        private IEnumerable<JobTitle> GetJobTitle()
+        {
+            return new List<JobTitle>()
+          {
+                new JobTitle("Softwear Development"),
+                new JobTitle("Web Development"),
+                new JobTitle("UI UX Design"),
+                new JobTitle("SEO")
+          };
         }
     }
 }
