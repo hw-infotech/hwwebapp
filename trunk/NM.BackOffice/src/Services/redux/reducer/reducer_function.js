@@ -144,7 +144,6 @@ const Reducer_Function = (state = initialstate, action) => {
     case DELETE_JOB: {
       return {
         ...state,
-        job_list: payload,
       };
     }
     case GET_JOB_DATA: {
@@ -154,9 +153,10 @@ const Reducer_Function = (state = initialstate, action) => {
       };
     }
     case POST_DATA: {
+      
       return {
         ...state,
-        job_list: state.job_list.push(payload),
+        // job_list: state.job_list.push(payload),
       };
     }
     case EDIT_DATA: {
@@ -166,10 +166,7 @@ const Reducer_Function = (state = initialstate, action) => {
       };
     }
     case UPDATE: {
-      var temp = state.data.map(function (item) {
-        return item.id == action.payload.id ? action.payload : item;
-      });
-      state.job_list[state.edit_data.index] = payload;
+    
       return {
         ...state,
       };

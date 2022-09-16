@@ -2,7 +2,12 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import Job_Preview from "../job_preview";
 import { BiEdit } from "react-icons/bi";
-import { Send_data } from "../../../Services/redux/action/action";
+import {
+  Requirement_Create,
+  Responsibility_Create,
+  Send_data,
+  Send_job,
+} from "../../../Services/redux/action/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useFormikContext } from "formik";
@@ -13,8 +18,8 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
   useEffect(() => {
     document.title = "Preview";
   }, []);
-  const formikkk_context=useFormikContext()
-console.log(formikkk_context,"this is the first")
+  const formikkk_context = useFormikContext();
+  console.log(formikkk_context, "this is the first");
   return (
     <div className="w-100 m-auto ">
       <Job_Preview values={values} />
@@ -36,7 +41,15 @@ console.log(formikkk_context,"this is the first")
         >
           Save as Draft
         </Button>
-        <Button variant="primary" type="submit" className="btn-sm">
+        <Button
+          variant="primary"
+          type="submit"
+          className="btn-sm"
+          onClick={() => {
+            //dispatch(Send_job(values));
+            
+          }}
+        >
           Save & Publish
         </Button>
       </div>

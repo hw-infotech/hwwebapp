@@ -37,11 +37,11 @@ const Post_Job = ({ stat }) => {
   const [state, setState] = useState({
     title: "UI/UX",
     functions: "",
-    responsibility: [],
-    requirment: [],
-    benefit: [],
+    JobResponsibilityTypes: [],
+    JobRequirments: [],
+    JobBenefits: [],
     industries: "",
-    type: "Full time",
+    Jobtype: "Full time",
     level: "Senior",
     description: "",
   });
@@ -49,11 +49,11 @@ const Post_Job = ({ stat }) => {
   const [state1, setState1] = useState({
     title: "",
     functions: "",
-    responsibility: [],
-    benefit: [],
-    requirment: [],
+    JobResponsibilityTypes: [],
+    JobBenefits: [],
+    JobRequirments: [],
     industries: "",
-    jobType: "Full time",
+    Jobtype: "Full time",
     level: "Senior",
     description: "",
   });
@@ -67,9 +67,9 @@ const Post_Job = ({ stat }) => {
     functions: yup.string().label("functions").required(),
     industries: yup.string().label("industry").required(),
     description: yup.string().label("description").required(),
-    requirment: yup.array().min(1).required(),
-    responsibility: yup.array().min(1).required(),
-    benefit: yup.array().min(1).required(),
+    JobRequirments: yup.array().min(1).required(),
+    JobResponsibilityTypes: yup.array().min(1).required(),
+    JobBenefits: yup.array().min(1).required(),
   });
   useEffect(() => {
     document.title = "Add Job";
@@ -108,7 +108,7 @@ const Post_Job = ({ stat }) => {
           validationSchema={validationschemeaa}
           onSubmit={(values, { resetForm }) => {
             dispatch(Send_job(values));
-            dispatch(Requirement_Create(values?.requirment));
+            //dispatch(Requirement_Create(values?.requirment));
             resetForm();
             navigtion("/all-jobs");
           }}

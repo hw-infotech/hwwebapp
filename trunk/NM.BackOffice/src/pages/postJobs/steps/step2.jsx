@@ -22,6 +22,7 @@ const Step2 = ({
   className,
   setTouched,
   options,
+  value,
 }) => {
   const [benefits, setbenefits] = useState();
   const [requirment, setRequirment] = useState();
@@ -33,15 +34,15 @@ const Step2 = ({
     req: [],
   });
   useEffect(() => {
-    dispatch(Benefits_Getall());
-    dispatch(Requirement_Getall());
-    dispatch(Responsibility_Getall());
+    // dispatch(Benefits_Getall());
+    // dispatch(Requirement_Getall());
+    // dispatch(Responsibility_Getall());
     document.title = "Add Job";
   }, []);
   useEffect(() => {
-    setbenefits(selector?.benefits.data);
-    setresponsibility(selector?.responsibility.data);
-    setRequirment(selector?.requirment.data);
+    // setbenefits(selector?.benefits.data);
+    // setresponsibility(selector?.responsibility.data);
+    // setRequirment(selector?.requirment.data);
   }, [selector]);
   console.log(requr, "requirnments");
   // let mDate = new Date("09-01-2022 13:25:00");
@@ -63,60 +64,64 @@ const Step2 = ({
           <Form.Group>
             <Form.Label className="label-size">Requirement</Form.Label>
             <CreatableSelectField
-              name="req"
+              name="JobRequirments"
               id={"requ"}
-              options={requirment?.map((data, index) => ({
-                value: data?.id,
-                label: data?.jobRequirment,
-              }))}
+              //  options={requirment?.map((data, index) => ({
+              //     value: data?.id,
+              //     label: data?.jobRequirment,
+              //   }))}
               placeholder="Type and press tab/enter button"
-              formState={requr}
-              setFormState={setRequr}
-              errors={errors.requirment}
-              touched={touched.requirment}
-              value={requr.req}
+              formState={state}
+              setFormState={setState}
+              errors={errors.JobRequirments}
+              touched={touched.JobRequirments}
+              //value={values.JobRequirments}
               onChange={handleChange}
               setTouched={true}
               className={
-                touched.requirment && errors.requirment ? "invalid" : ""
+                touched.errors && errors.JobRequirments ? "invalid" : ""
               }
             />
             <Form.Label className="label-size">Responsibility</Form.Label>
             <CreatableSelectField
-              name="responsibility"
-              touched={touched.responsibility}
-              errors={errors.responsibility}
+              name="JobResponsibilityTypes"
+              touched={touched.JobResponsibilityTypes}
+              errors={errors.JobResponsibilityTypes}
+              onChange={handleChange}
               placeholder="Type and press tab/enter button"
               formState={state}
-              options={responsibility?.map((data, index) => ({
-                value: data?.id,
-                label: data?.responsibility,
-              }))}
+              // options={responsibility?.map((data, index) => ({
+              //   value: data?.id,
+              //   label: data?.responsibility,
+              // }))}
               setTouched={true}
               id={"res"}
               setFormState={setState}
               className={
-                touched.responsibility && errors.responsibility ? "invalid" : ""
+                touched.errors && errors.JobResponsibilityTypes ? "invalid" : ""
               }
-              //value={values.responsibility}
+              value={values.JobResponsibilityTypes}
             />
             <div className="mb-3">
               <Form.Label className="label-size">Benefits</Form.Label>
               <CreatableSelectField
-                name="benefit"
+                name="JobBenefits"
                 placeholder="Type and press tab/enter button"
                 formState={state}
-                options={benefits?.map((data, index) => ({
-                  id: data?.id,
-                  label: data?.benefitType,
-                }))}
+                // options={benefits?.map((data, index) => ({
+                //   id: data?.id,
+                //   label: data?.benefitType,
+                // }))}
                 id={"benefit"}
+                onChange={handleChange}
                 setTouched={true}
-                touched={touched.benefit}
-                errors={errors.benefit}
+                touched={touched.JobBenefits}
+                errors={errors.JobBenefits}
                 setFormState={setState}
-                className={touched.errors && errors.benefit ? "invalid" : ""}
-                // value={values.benefit}
+                className={
+                  touched.errors && errors.JobBenefits ? "invalid" : ""
+                }
+                //value={values.JobBenefits}
               />
             </div>
           </Form.Group>
@@ -143,19 +148,19 @@ const Step2 = ({
           // }
           onClick={() => {
             setFieldValue(
-              "benefit",
-              state?.benefit?.map((f) => f)
+              "JobBenefits",
+              JSON.stringify(state?.JobBenefits?.map((f) => f))
             );
             setFieldValue(
-              "responsibility",
-              state.responsibility.map((_) => _)
+              "JobResponsibilityTypes",
+              JSON.stringify(state.JobResponsibilityTypes.map((_) => _))
             );
             setFieldValue(
-              "requirment",
-              requr.req.map((_) => _.value)
+              "JobRequirments",
+              JSON.stringify(state.JobRequirments.map((_) => _))
             );
             console.log(values);
-            // setGoSteps(2);
+            setGoSteps(2);
           }}
         >
           Next

@@ -9,7 +9,8 @@ import Update_Step2 from "./update_step2";
 import Update_Step3 from "./update_step3";
 import Update_Step4 from "./updata_step4";
 import { createContext } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Update_Data } from "../../Services/redux/action/action";
 
 const Update_Job = ({ stat }) => {
   useEffect(() => {
@@ -20,18 +21,26 @@ const Update_Job = ({ stat }) => {
   const [state, setState] = useState({
     jobtitle: "",
     functions: "",
-    responsibility: [],
-    requirment: [],
-    benefits: [],
-    industry: "",
-    type: "",
+    jobResponsibilityTypes: [],
+    jobRequirments: [],
+    jobBenefits: [],
+    industries: "",
+    jobType: "",
     level: "",
     description: "",
   });
   const selector = useSelector((state) => state);
-
+  const dispatch=useDispatch()
   useEffect(() => {
-    setState(selector.data?.apidata?.edit_data?.data);
+    setState((old) => {
+      const newState = {
+        ...selector.data?.apidata?.edit_data?.data,
+        jobRequirments: selector.data?.apidata?.edit_data?.data?.jobRequirments
+          ? JSON.parse(selector.data?.apidata?.edit_data?.data?.jobRequirments)
+          : [],
+      };
+      return newState;
+    });
   }, [selector]);
 
   const route = [
@@ -40,11 +49,11 @@ const Update_Job = ({ stat }) => {
     { name: "Job", route: "/all-jobs" },
     { name: "Edit Job", route: "/edit-job" },
   ];
-/** 
- * @method handlechange
- *  @description handlechange function used onChange method,onchange event occurs when the value of an element has been changed.we use handlechange for storing the input field values in state 
- * @param {*} e this argument get the input field value
- */
+  /**
+   * @method handlechange
+   *  @description handlechange function used onChange method,onchange event occurs when the value of an element has been changed.we use handlechange for storing the input field values in state
+   * @param {*} e this argument get the input field value
+   */
   const handlechange = (e) => {
     const { name, value } = e.target;
     setState({ ...state, [name]: value });
@@ -80,6 +89,7 @@ const Update_Job = ({ stat }) => {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
+            dispatch(Update_Data(state));
           }}
         >
           {goSteps === 0 && (

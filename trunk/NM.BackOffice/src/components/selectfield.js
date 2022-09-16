@@ -21,6 +21,7 @@ const CreatableSelectField = ({
   errors,
   setTouched,
   options,
+  value,
 }) => {
   const [state, setState] = useState({
     inputValue: "",
@@ -29,7 +30,7 @@ const CreatableSelectField = ({
   const [state1, setState1] = useState([]);
 
   const handleChange = (value) => {
-    setState({ ...state, value });
+    JSON.parse(setState({ ...state, value }));
   };
   const handleInputChange = (inputValue) => {
     //console.log("this is the handleinputvalue", inputValue);
@@ -64,8 +65,7 @@ const CreatableSelectField = ({
   };
   const handleBlur = (e) => {
     const { inputValue, value } = state;
-    console.log(state.inputValue, "dskkjjkf", state1);
-    if (state.value.length < 1 && state?.inputValue == "") {
+    if (state?.value?.length < 1 && state?.inputValue == "") {
       var f = document.getElementById(id);
       f.style.border = " 1px solid red";
     } else {

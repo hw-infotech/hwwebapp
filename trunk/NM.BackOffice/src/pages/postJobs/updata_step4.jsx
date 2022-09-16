@@ -20,7 +20,7 @@ const Update_Step4 = ({ setGoSteps, state, setState, handleFieldchange, values }
            { /*Button variant="warning" className="btn-sm" onClick={() => setGoSteps(3)}></Button>*/}
             <Button variant="primary" type="button" className="btn-sm" onClick={() => {setGoSteps(3)
             
-            dispatch(Update_Data(state))
+           
            nevigate('/all-jobs')
 
             }}>Update & Publish</Button>

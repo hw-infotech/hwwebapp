@@ -7,6 +7,7 @@ const Update_Step1 = ({ setGoSteps, state, setState, handleFieldchange }) => {
     useEffect(() => {
         document.title="Edit Basic Detail"
       }, [])
+      console.log((state.title));
     return <div className="main-wrap-box w-100 m-auto">
        
         <Row>
@@ -14,8 +15,8 @@ const Update_Step1 = ({ setGoSteps, state, setState, handleFieldchange }) => {
             <div className="d-flex w-100 gap-1">
             <div className="w-100">
                 <Form.Label>Title</Form.Label>
-                <Form.Select aria-label="Default select example" name='jobtitle' className="w-100 label-size" value={state?.jobtitle}
-                    onChange={(e) => handleFieldchange(e)} id="jobtitle">
+                <Form.Select aria-label="Default select example" name='title' className="w-100 label-size" value={state?.title}
+                    onChange={(e) => handleFieldchange(e)} id="title">
                     <option value="">Select any value</option>
                     <option value="UI/UX">UI/UX</option>
                     <option value="Project Manager">Project Manager</option>

@@ -43,8 +43,8 @@ const Update_Step3 = ({
           aria-label="Default select example"
           className="label-size"
           placeholder="Type"
-          value={state?.type}
-          name="type"
+          value={state?.jobType}
+          name="jobType"
           label={"Type"}
           id="name"
           onChange={(e) => {
@@ -64,8 +64,8 @@ const Update_Step3 = ({
         <Form.Label className="label-size">Industries</Form.Label>
         <Form.Control
           type="text"
-          value={state?.industry}
-          name="industry"
+          value={state?.industries}
+          name="industries"
           onChange={(e) => handleFieldchange(e)}
           className="label-size"
         />

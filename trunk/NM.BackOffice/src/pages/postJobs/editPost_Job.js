@@ -118,13 +118,13 @@ const Edit_postJob = (value1) => {
     setShowalert(true);
     if (deleteObj.rowStatus) {
       setTableData((oldState) => {
-        oldState[deleteObj.index].active = "active";
+        oldState[deleteObj.index].status = true;
         return [...oldState];
       });
     }
     if (!deleteObj.rowStatus) {
       setTableData((oldState) => {
-        oldState[deleteObj.index].active = "deactive";
+        oldState[deleteObj.index].status = false;
         return [...oldState];
       });
     }
@@ -358,7 +358,7 @@ const Edit_postJob = (value1) => {
                                 </button>
                               </div>
                             </li>
-                            {data.active == "active" ? (
+                            {data?.status == true ? (
                               <div></div>
                             ) : (
                               <li className="dropdownList">

@@ -307,7 +307,7 @@ export const Edit_Data = (data) => (dispatch) => {
  */
 export const Update_Data = (data, index) => (dispatch) => {
   apidata
-    .get(`Job/update`, data)
+    .post(`Job/update`, data)
     .then((res) => {
       dispatch({ type: UPDATE, payload: res.data });
     })
@@ -319,9 +319,9 @@ export const Update_Data = (data, index) => (dispatch) => {
     });
 };
 export const Delete_job = (data) => (dispatch) => {
-  console.log("this is", data);
+  console.log(data.bsonId, "basonid");
   apidata
-    .delete(`Job/get?bsonId=${data.bsonId}`)
+    .get(`Job/delete?bsonId=${data.bsonId}`)
     .then((res) => {
       dispatch({ type: DELETE_JOB, payload: res.data });
     })

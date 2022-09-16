@@ -5,7 +5,7 @@ import { BiEdit } from "react-icons/bi";
 
 const Edit_Job_Preview = (values, state) => {
   const nevigate = useNavigate();
-  console.log(values);
+  console.log(state);
   let tiitle = localStorage?.getItem("key");
   return (
     <div className="edit-preview-box">
@@ -17,7 +17,7 @@ const Edit_Job_Preview = (values, state) => {
                 <img src="assets/images/nestor.jfif" height={80} width={80} />
               </div>
               <div className="titlejob">
-                <span>{values.state?.title || state.title} - Mohali</span>
+                <span>{values.state?.title} - Mohali</span>
               </div>
               <div className="job_location d-flex">
                 <span>Nestormind </span>

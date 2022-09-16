@@ -20,7 +20,7 @@ const routes = (path, element, exact = true) => {
   return { path, element, exact };
 };
 const route = [
-  routes("/notification",Notification),
+  routes("/notification", Notification),
   routes("/jobpreview", Job_Preview),
   routes("/add-job", Post_Job),
   routes("/particularjob", Particularjob),
@@ -48,4 +48,4 @@ export default route;
 // let mDate = new Date('09-01-2022 13:25:00');
 // const SecondsDif = Math.abs((new Date().getTime() - mDate.getTime()) / 1000);
 // const result = new Date(SecondsDif * 1000).toISOString().slice(11, 19);
-// // console.log(result); // 👉️ "00:10:00" (hh:mm:ss) 
+// // console.log(result); // 👉️ "00:10:00" (hh:mm:ss)
