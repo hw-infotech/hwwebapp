@@ -76,7 +76,6 @@ namespace NM.API.Mapper
             CreateMap<UserEnquiry, UserEnquiryModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<UserEnquiry, UserEnquiryModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<Job, JobModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
-            CreateMap<JobRequirments, JobRequirmentsModel>().ReverseMap().ForMember(x => x.Id, opt => opt.Ignore());
             CreateMap<Requirment, RequirmentModel>().ReverseMap();
             CreateMap<ResponsibilityType, ResponsibilityTypeModel>().ReverseMap();
             CreateMap<BenefitTypes, BenefitTypeModel>().ReverseMap();

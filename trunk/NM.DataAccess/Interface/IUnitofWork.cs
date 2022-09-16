@@ -27,12 +27,9 @@ namespace NM.DataAccess.Interface
         IRepository<EnquiryType> EnquiryTypeRepository { get; }
         IRepository<UserEnquiryType> UserEnquiryTypeRepository { get; }
         IRepository<Job> JobRepository { get; }
-        IRepository<JobRequirments> JobRequirmentsRepository { get; }
         IRepository<Requirment> RequirmentRepository { get; }
         IRepository<ResponsibilityType> ResponsibilityTypeRepository { get; }
-        IRepository<JobResponsibilityTypes> JobResponsibilityTypesRepository { get; }
         IRepository<BenefitTypes> BenefitTypesRepository { get; }
-        IRepository<JobBenefits> JobBenefitsRepository { get; }
         IRepository<JobTitle> JobTitleRepository { get; }
 
         void Save();

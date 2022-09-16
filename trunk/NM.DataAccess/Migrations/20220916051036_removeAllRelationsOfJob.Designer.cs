@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NM.DataAccess.SqlContext;
 
 namespace NM.DataAccess.Migrations
 {
     [DbContext(typeof(NMContext))]
-    partial class NMContextModelSnapshot : ModelSnapshot
+    [Migration("20220916051036_removeAllRelationsOfJob")]
+    partial class removeAllRelationsOfJob
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

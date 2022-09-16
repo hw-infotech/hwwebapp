@@ -29,11 +29,8 @@ namespace NM.DataAccess.SqlContext
         public DbSet<UserEnquiryType> UserEnquiryTypes { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Requirment> Requirments { get; set; }
-        public DbSet<JobRequirments> JobRequirments { get; set; }
         public DbSet<ResponsibilityType> ResponsibilityType { get; set; }
-        public DbSet<JobResponsibilityTypes> JobResponsibilityTypes { get; set; }
         public DbSet<BenefitTypes> BenefitTypes { get; set; }
-        public DbSet<JobBenefits> JobBenefits { get; set; }
         public DbSet<JobTitle> JobTitle { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -58,7 +55,6 @@ namespace NM.DataAccess.SqlContext
             builder.ApplyConfiguration(new UserEnquiryTypeConfiguration(builder));// I passed here builder for manage relation between tables: Aman 09/08/2022
             builder.ApplyConfiguration(new JobConfiguration());
             builder.ApplyConfiguration(new RequirmentConfiguration());
-            builder.ApplyConfiguration(new JobRequirmentsConfiguration(builder));
 
         }
         private IDbContextTransaction _currentTransaction;

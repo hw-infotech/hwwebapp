@@ -1,6 +1,7 @@
 ﻿using NM.DataAccess.SeedWork;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace NM.DataAccess.AggregatesModel
@@ -23,7 +24,7 @@ namespace NM.DataAccess.AggregatesModel
         public AppUser(string firstName, string lastName, string emailId, string phoneNumber, string password, string imagePath, int roleId, bool isActive, DateTime? dateOfBirth, int gender, string roleName, int? departmentId)
         {
             this.FirstName = firstName;
-            this.LastName = lastName ;
+            this.LastName = lastName;
             this.EmailId = emailId;
             this.PhoneNumber = phoneNumber;
             this.Password = password;
@@ -34,6 +35,16 @@ namespace NM.DataAccess.AggregatesModel
             this.Gender = gender;
             this.RoleName = roleName;
             this.DepartmentId = departmentId;
+        }
+        public AppUser UpdateAppUser(AppUser appUser, string firstName, string phoneNumber, string emailId, string address, string password)
+        {
+            appUser.FirstName = firstName.Split(" ").Length > 0 ? firstName.Split(" ")[0] : appUser.FirstName;
+            appUser.LastName = firstName.Split(" ").Length > 1 ? firstName.Split(" ")[1] : appUser.LastName;
+            appUser.PhoneNumber = phoneNumber;
+            appUser.EmailId = emailId;
+            appUser.Address = address;
+            appUser.Password = password;
+            return appUser;
         }
     }
 }

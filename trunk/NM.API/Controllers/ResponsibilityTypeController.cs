@@ -67,7 +67,7 @@ namespace NM.API.Controllers
             try
             {
                 var result = responsibilityTypeBusiness.GetAll();
-                resultVM.Data = mapper.Map<List<ResponsibilityTypeModel>>(result.Data);
+                mapper.Map(result, resultVM); ;
                 return resultVM;
             }
             catch (Exception ex)

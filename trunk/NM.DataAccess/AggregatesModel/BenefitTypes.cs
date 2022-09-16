@@ -8,7 +8,6 @@ namespace NM.DataAccess.AggregatesModel
     public class BenefitTypes : Entity
     {
         public string BenefitType { get; private set; }
-        public ICollection<JobBenefits> JobBenefits { get; set; }
         public BenefitTypes(string benefitType)
         {
             BenefitType = benefitType;

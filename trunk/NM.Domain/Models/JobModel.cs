@@ -14,11 +14,8 @@ namespace NM.Domain.Models
         public string JobType { get; set; }
         public string Industries { get; set; }
         public string Level { get; set; }
-
-
-        //Relational Table 
-        public List<int> JobRequirment { get; set; }
-        public List<int> JobResponsibility { get; set; }
-        public List<int> JobBenefit { get; set; }
+        public string JobRequirments { get; set; }
+        public string JobResponsibilityTypes { get; set; }
+        public string JobBenefits { get; set; }
     }
 }

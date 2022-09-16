@@ -9,11 +9,6 @@ namespace NM.DataAccess.EntityConfiguration
 {
     public class JobTitleConfiguration : IEntityTypeConfiguration<JobTitle>
     {
-        ModelBuilder modelBuilder = null;
-        public JobTitleConfiguration(ModelBuilder _modelBuilder)
-        {
-            modelBuilder = _modelBuilder;
-        }
         public void Configure(EntityTypeBuilder<JobTitle> tableConfiguration)
         {
 
