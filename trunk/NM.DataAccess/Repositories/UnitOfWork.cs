@@ -93,10 +93,6 @@ namespace NM.DataAccess.Repositories
             get { return new BaseRepository<Job>(GetContext()); }
         }
 
-        public IRepository<JobRequirments> JobRequirmentsRepository
-        {
-            get { return new BaseRepository<JobRequirments>(GetContext()); }
-        }
         public IRepository<Requirment> RequirmentRepository
         {
             get { return new BaseRepository<Requirment>(GetContext()); }
@@ -106,27 +102,22 @@ namespace NM.DataAccess.Repositories
             get { return new BaseRepository<ResponsibilityType>(GetContext()); }
         }
 
-        public IRepository<JobResponsibilityTypes> JobResponsibilityTypesRepository
-        {
-            get { return new BaseRepository<JobResponsibilityTypes>(GetContext()); }
-
-        }
         public IRepository<BenefitTypes> BenefitTypesRepository
         {
             get { return new BaseRepository<BenefitTypes>(GetContext()); }
-        }
-        public IRepository<JobBenefits> JobBenefitsRepository
-        {
-            get
-            {
-                return new BaseRepository<JobBenefits>(GetContext());
-            }
         }
         public IRepository<JobTitle> JobTitleRepository
         {
             get
             {
                 return new BaseRepository<JobTitle>(GetContext());
+            }
+        }
+        public IRepository<JobSubscription> JobSubscriptionRepository
+        {
+            get
+            {
+                return new BaseRepository<JobSubscription>(GetContext());
             }
         }
     }

@@ -8,7 +8,6 @@ namespace NM.DataAccess.AggregatesModel
     public class Requirment : Entity
     {
         public string JobRequirment { get; private set; }
-        public ICollection<JobRequirments> JobRequirments { get; set; }
 
         public Requirment(string jobRequirment)
         {

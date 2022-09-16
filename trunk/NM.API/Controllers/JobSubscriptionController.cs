@@ -15,20 +15,20 @@ namespace NM.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ResponsibilityTypeController : ControllerBase
+    public class JobSubscriptionController : ControllerBase
     {
         private readonly IMapper mapper;
-        private readonly IResponsibilityTypeBusiness responsibilityTypeBusiness;
-
-        public ResponsibilityTypeController(IMapper _mapper, IResponsibilityTypeBusiness _responsibilityTypeBusiness)
+        private readonly IJobSubscriptionBusiness jobSubscriptionBusiness;
+        public JobSubscriptionController(IMapper _mapper, IJobSubscriptionBusiness _jobSubscriptionBusiness)
         {
-            responsibilityTypeBusiness = _responsibilityTypeBusiness;
             mapper = _mapper;
+            jobSubscriptionBusiness = _jobSubscriptionBusiness;
         }
+
 
         [HttpPost]
         [Route("create")]
-        public ActionResult<ResultVM<bool>> Create(ResponsibilityTypeVM responsibilityTypeVM)
+        public ActionResult<ResultVM<bool>> Create(JobSubscriptionVM jobSubscriptionVM)
         {
             var resultVM = new ResultVM<bool>()
             {
@@ -43,8 +43,8 @@ namespace NM.API.Controllers
                     resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
                     return resultVM;
                 }
-                var jobModel = mapper.Map<ResponsibilityTypeModel>(responsibilityTypeVM);
-                var result = responsibilityTypeBusiness.Create(jobModel);
+                var jobModel = mapper.Map<JobSubscriptionModel>(jobSubscriptionVM);
+                var result = jobSubscriptionBusiness.CreateJobSubscription(jobModel);
                 mapper.Map(result, resultVM);
                 return resultVM;
             }
@@ -58,32 +58,6 @@ namespace NM.API.Controllers
                 });
             }
         }
-
-        [HttpGet]
-        [Route("getAll")]
-        public ActionResult<ResultVM<List<ResponsibilityTypeModel>>> GetAll()
-        {
-            var resultVM = new ResultVM<List<ResponsibilityTypeModel>>();
-            try
-            {
-                var result = responsibilityTypeBusiness.GetAll();
-                mapper.Map(result, resultVM); ;
-                return resultVM;
-            }
-            catch (Exception ex)
-            {
-                resultVM.Success = false;
-                resultVM.Data = new List<ResponsibilityTypeModel>();
-                resultVM.Message = ex.Message;
-                resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.ServerError);
-                return StatusCode(StatusCodes.Status500InternalServerError, new
-                {
-                    Result = resultVM
-                });
-            }
-        }
-
-
 
     }
 }

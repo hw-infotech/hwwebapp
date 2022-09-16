@@ -331,7 +331,7 @@ namespace NM.DataAccess.SqlContext
         }
         private Job GetJob()
         {
-            return new Job("Test job", "Job for devlopers", true, "Functions", "fullTime", "industries", "junior");
+            return new Job("Test job", "Job for devlopers", true, "Functions", "fullTime", "industries", "junior","senior","project mnager","good salry");
         }
 
         private IEnumerable<Requirment> GetRequirments()

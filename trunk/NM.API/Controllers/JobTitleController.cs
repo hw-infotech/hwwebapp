@@ -31,8 +31,8 @@ namespace NM.API.Controllers
             var resultVM = new ResultVM<List<JobTitleVM>>();
             try
             {
-                var result = jobTitleBusiness.GetAll();
-                resultVM.Data = mapper.Map<List<JobTitleVM>>(result.Data);
+                var result = jobTitleBusiness.GetAll(); 
+                mapper.Map(result, resultVM);
                 return resultVM;
             }
             catch (Exception ex)

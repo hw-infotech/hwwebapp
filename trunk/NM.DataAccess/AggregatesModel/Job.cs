@@ -13,12 +13,11 @@ namespace NM.DataAccess.AggregatesModel
         public string JobType { get; private set; }
         public string Industries { get; private set; }
         public string Level { get; private set; }
+        public string JobRequirments { get; private set; }
+        public string JobResponsibilityTypes { get; private set; }
+        public string JobBenefits { get; private set; }
 
-        //Relational Table 
-        public ICollection<JobRequirments> JobRequirments { get; set; }
-        public ICollection<JobResponsibilityTypes> JobResponsibilityTypes { get; set; }
-        public ICollection<JobBenefits> JobBenefits { get; set; }
-        public Job(string title, string description, bool status, string functions, string jobType, string industries, string level)
+        public Job(string title, string description, bool status, string functions, string jobType, string industries, string level, string jobRequirments, string jobResponsibilityTypes, string jobBenefits)
         {
             Title = title;
             Description = description;
@@ -27,9 +26,12 @@ namespace NM.DataAccess.AggregatesModel
             JobType = jobType;
             Industries = industries;
             Level = level;
+            JobRequirments = jobRequirments;
+            JobResponsibilityTypes = jobResponsibilityTypes;
+            JobBenefits = jobBenefits;
         }
 
-        public Job GetUpdatedJob(Job job, string title, string description, bool status, string functions, string jobType, string industries, string level)
+        public Job GetUpdatedJob(Job job, string title, string description, bool status, string functions, string jobType, string industries, string level, string jobRequirments, string jobResponsibilityTypes, string jobBenefits)
         {
             job.Title = title;
             job.Description = description;
@@ -38,6 +40,9 @@ namespace NM.DataAccess.AggregatesModel
             job.JobType = jobType;
             job.Industries = industries;
             job.Level = level;
+            job.JobRequirments = jobRequirments;
+            job.JobResponsibilityTypes = jobResponsibilityTypes;
+            job.JobBenefits = jobBenefits;
             return job;
         }
 

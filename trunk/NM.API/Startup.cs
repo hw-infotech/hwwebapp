@@ -59,6 +59,8 @@ namespace NM.API
             services.AddTransient<IJobTitleBusiness, JobTitleBusiness>();
             services.AddTransient<IResponsibilityTypeBusiness, ResponsibilityTypeBusiness>();
             services.AddTransient<IBenefitTypeBusiness, BenefitTypeBusiness>();
+            services.AddTransient<IAppUserBusiness, AppUserBusiness>();
+            services.AddTransient<IJobSubscriptionBusiness, JobSubscriptionBusiness>();
 
 
             //add changes

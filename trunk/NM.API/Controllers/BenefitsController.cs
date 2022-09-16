@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using NM.API.Application.Models;
 using NM.API.Model;
 using NM.Business.Interfaces;
+using NM.Domain.Models;
 using NM.Utility;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace NM.API.Controllers
             try
             {
                 var result = benefitTypeBusiness.GetAllBenefitType();
-                resultVM.Data = mapper.Map<List<BenefitsTypesVM>>(result.Data);
+                mapper.Map(result, resultVM);
                 return resultVM;
             }
             catch (Exception ex)
@@ -48,5 +49,63 @@ namespace NM.API.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("create")]
+        public ActionResult<ResultVM<BenefitsTypesVM>> CreateBenefitsTypes(BenefitsTypesVM benefitsTypesVM)
+        {
+            var resultVM = new ResultVM<BenefitsTypesVM>();
+
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    resultVM.Message = ModelState.Values.SelectMany(s => s.Errors).FirstOrDefault().ErrorMessage;
+                    resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                    return resultVM;
+                }
+                var benefitsTypesModel = mapper.Map<BenefitTypeModel>(benefitsTypesVM);
+                var result = benefitTypeBusiness.CreateBenefitsType(benefitsTypesModel);
+                mapper.Map(result, resultVM);
+                return resultVM;
+            }
+            catch (Exception ex)
+            {
+                resultVM.Message = ex.Message;
+                resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                return StatusCode(StatusCodes.Status400BadRequest, new
+                {
+                    Result = resultVM
+                });
+            }
+        }
+
+        [HttpPost]
+        [Route("createBenefitsTypesList")]
+        public ActionResult<ResultVM<List<BenefitsTypesVM>>> CreateBenefitsTypesList(List<BenefitsTypesVM> benefitsTypesVM)
+        {
+            var resultVM = new ResultVM<List<BenefitsTypesVM>>();
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    resultVM.Message = ModelState.Values.SelectMany(s => s.Errors).FirstOrDefault().ErrorMessage;
+                    resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                    return resultVM;
+                }
+                var benefitsTypesModel = mapper.Map<List<BenefitTypeModel>>(benefitsTypesVM);
+                var result = benefitTypeBusiness.CreateBenefitsTypeList(benefitsTypesModel);
+                mapper.Map(result, resultVM);
+                return resultVM;
+            }
+            catch (Exception ex)
+            {
+                resultVM.Message = ex.Message;
+                resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                return StatusCode(StatusCodes.Status400BadRequest, new
+                {
+                    Result = resultVM
+                });
+            }
+        }
     }
 }

@@ -7,17 +7,17 @@ using System.Text;
 
 namespace NM.DataAccess.EntityConfiguration
 {
-    public class JobTitleConfiguration : IEntityTypeConfiguration<JobTitle>
+    public class JobSubscriptionConfiguration : IEntityTypeConfiguration<JobSubscription>
     {
-        public void Configure(EntityTypeBuilder<JobTitle> tableConfiguration)
+        public void Configure(EntityTypeBuilder<JobSubscription> tableConfiguration)
         {
-
-            tableConfiguration.ToTable("JobTitles");
+            tableConfiguration.ToTable("JobSubscription");
             tableConfiguration.HasKey(c => c.Id);
             tableConfiguration.Property(c => c.Id).ValueGeneratedOnAdd();
             // Other columns: -----------------------------------------------------
 
-            tableConfiguration.Property(c => c.Title).HasMaxLength(150);
+            tableConfiguration.Property(c => c.EmailId).HasMaxLength(150);
+            tableConfiguration.Property(c => c.JobBsonId).HasMaxLength(150);
         }
     }
 }

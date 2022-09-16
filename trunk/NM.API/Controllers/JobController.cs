@@ -37,7 +37,7 @@ namespace NM.API.Controllers
             try
             {
                 var result = jobBusiness.GetAll();
-                resultVM.Data = mapper.Map<List<JobVM>>(result.Data);
+                mapper.Map(result, resultVM);
                 return resultVM;
             }
             catch (Exception ex)

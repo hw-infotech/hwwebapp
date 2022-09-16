@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NM.API.Application.Model;
 using NM.API.Application.Models;
 using NM.API.Model;
 using NM.Business.Interfaces;
@@ -15,48 +16,41 @@ namespace NM.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RequirmentController : ControllerBase
+    public class AppUserController : ControllerBase
     {
-
         private readonly IMapper mapper;
-        private readonly IRequirmentBusiness requirmentBusiness;
-        public RequirmentController(IMapper _mapper, IRequirmentBusiness _requirmentBusiness)
+        private readonly IAppUserBusiness appUserBusiness;
+        public AppUserController(IMapper _mapper, IAppUserBusiness _appUserBusiness)
         {
+            appUserBusiness = _appUserBusiness;
             mapper = _mapper;
-            requirmentBusiness = _requirmentBusiness;
         }
+
         [HttpGet]
-        [Route("getAll")]
-        public ActionResult<ResultVM<List<RequirmentVM>>> GetAll()
+        [Route("get")]
+        public ActionResult<ResultVM<AppUserVM>> Get(string bsonId)
         {
-            var resultVM = new ResultVM<List<RequirmentVM>>();
+            var resultVM = new ResultVM<AppUserVM>();
             try
             {
-                var result = requirmentBusiness.GetAll();
+                var result = appUserBusiness.GetAppUser(bsonId);
                 mapper.Map(result, resultVM);
-                return resultVM;
             }
             catch (Exception ex)
             {
                 resultVM.Success = false;
-                resultVM.Data = new List<RequirmentVM>();
+                resultVM.Data = new AppUserVM();
                 resultVM.Message = ex.Message;
                 resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.ServerError);
-                return StatusCode(StatusCodes.Status500InternalServerError, new
-                {
-                    Result = resultVM
-                });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Result = resultVM });
             }
+            return resultVM;
         }
         [HttpPost]
-        [Route("create")]
-        public ActionResult<ResultVM<bool>> Create(RequirmentVM requirmentVM)
+        [Route("update")]
+        public ActionResult<ResultVM<bool>> Update(AppUserVM appUserVM)
         {
-            var resultVM = new ResultVM<bool>()
-            {
-                Data = false,
-                Success = false
-            };
+            ResultVM<bool> resultVM = new ResultVM<bool>();
             try
             {
                 if (!ModelState.IsValid)
@@ -65,20 +59,18 @@ namespace NM.API.Controllers
                     resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
                     return resultVM;
                 }
-                var jobModel = mapper.Map<RequirmentModel>(requirmentVM);
-                var result = requirmentBusiness.Create(jobModel);
+                var appUserModel = mapper.Map<AppUserModel>(appUserVM);
+                var result = appUserBusiness.UpdateAppUser(appUserModel);
                 mapper.Map(result, resultVM);
-                return resultVM;
             }
             catch (Exception ex)
             {
+                Common.LogMessage(ex.Message);
                 resultVM.Message = ex.Message;
                 resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
-                return StatusCode(StatusCodes.Status400BadRequest, new
-                {
-                    Result = resultVM
-                });
+                return StatusCode(StatusCodes.Status400BadRequest, new { Result = resultVM, Codes = new string[] { "ServerError" } });
             }
+            return resultVM;
         }
     }
 }
