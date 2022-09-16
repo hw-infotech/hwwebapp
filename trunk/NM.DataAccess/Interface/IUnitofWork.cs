@@ -31,6 +31,7 @@ namespace NM.DataAccess.Interface
         IRepository<ResponsibilityType> ResponsibilityTypeRepository { get; }
         IRepository<BenefitTypes> BenefitTypesRepository { get; }
         IRepository<JobTitle> JobTitleRepository { get; }
+        IRepository<JobSubscription> JobSubscriptionRepository { get; }
 
         void Save();
         void Dispose();

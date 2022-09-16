@@ -118,5 +118,45 @@ namespace NM.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { Result = resultVM, Codes = new string[] { "ServerError" } });
             }
         }
+        [HttpGet]
+        [Route("getAllSubscribers")]
+        public ActionResult<ResultVM<List<NewsLetterVM>>> GetAllSubscribers()
+        {
+            ResultVM<List<NewsLetterVM>> resultVM = new ResultVM<List<NewsLetterVM>>();
+            try
+            {
+                var result = newsLetterBusiness.GetAllSubscribers();
+                mapper.Map(result, resultVM);
+                return resultVM;
+            }
+            catch (Exception ex)
+            {
+                Common.LogMessage(ex.Message);
+                resultVM.Message = ex.Message;
+                resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                return StatusCode(StatusCodes.Status400BadRequest, new { Result = resultVM, Codes = new string[] { "ServerError" } });
+            }
+
+        }
+        [HttpGet]
+        [Route("getAllUnSubscribers")]
+        public ActionResult<ResultVM<List<NewsLetterVM>>> GetAllUnSubscribers()
+        {
+            ResultVM<List<NewsLetterVM>> resultVM = new ResultVM<List<NewsLetterVM>>();
+            try
+            {
+                var result = newsLetterBusiness.GetAllUnSubscribers();
+                mapper.Map(result, resultVM);
+                return resultVM;
+            }
+            catch (Exception ex)
+            {
+                Common.LogMessage(ex.Message);
+                resultVM.Message = ex.Message;
+                resultVM.StatusCode = Convert.ToInt32(Enums.StatusCode.BadRequest);
+                return StatusCode(StatusCodes.Status400BadRequest, new { Result = resultVM, Codes = new string[] { "ServerError" } });
+            }
+
+        }
     }
 }

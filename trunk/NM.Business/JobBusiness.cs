@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.Extensions.Hosting;
 
 namespace NM.Business
 {
@@ -19,12 +19,14 @@ namespace NM.Business
         private readonly IMapper mapper;
         private readonly IUnitOfWork unitOfWork;
         private readonly INewsLetterBusiness newsLetterBusiness;
+        private readonly IHostEnvironment hostEnvironment = null;
 
-        public JobBusiness(IMapper _mapper, IUnitOfWork _unitOfWork, INewsLetterBusiness _newsLetterBusiness)
+        public JobBusiness(IMapper _mapper, IUnitOfWork _unitOfWork, INewsLetterBusiness _newsLetterBusiness, IHostEnvironment _hostEnvironment)
         {
             newsLetterBusiness = _newsLetterBusiness;
             mapper = _mapper;
             unitOfWork = _unitOfWork;
+            hostEnvironment = _hostEnvironment;
         }
         public ResultModel<bool> CreateJob(JobModel jobModel, int curentUserId = 0)
         {
@@ -34,7 +36,7 @@ namespace NM.Business
                 Success = false
             };
             jobModel.BsonId = string.Empty;
-            
+
             Job job = new Job(jobModel.Title, jobModel.Description, jobModel.Status, jobModel.Functions, jobModel.JobType, jobModel.Industries, jobModel.Level, jobModel.JobRequirments, jobModel.JobResponsibilityTypes, jobModel.JobBenefits);
             job.CreatedBy = curentUserId;
             unitOfWork.JobRepository.Insert(job);
@@ -53,9 +55,9 @@ namespace NM.Business
             var jobs = unitOfWork.JobRepository.GetAll(x => !x.IsDeleted).ToList();
             if (jobs != null)
             {
-               var jobModels= mapper.Map<List<JobModel>>(jobs);
-               
-               
+                var jobModels = mapper.Map<List<JobModel>>(jobs);
+
+
                 result.Data = jobModels;
                 result.TotalRecords = jobs.Count();
                 result.Success = true;
@@ -92,8 +94,11 @@ namespace NM.Business
             var JobEntity = unitOfWork.JobRepository.Get(x => !x.IsDeleted && x.BsonId == jobModel.BsonId).FirstOrDefault();
             if (JobEntity != null)
             {
-                mapper.Map(jobModel, JobEntity);
+                JobEntity = JobEntity.GetUpdatedJob(JobEntity, jobModel.Title, jobModel.Description, jobModel.Status, jobModel.Functions, jobModel.JobType, jobModel.Industries, jobModel.Level, jobModel.JobRequirments, jobModel.JobResponsibilityTypes, jobModel.JobBenefits);
+
                 unitOfWork.JobRepository.Update(JobEntity);
+
+                SendJobUpdateEmail(jobModel);
                 result.Data = true;
                 result.Success = true;
                 result.StatusCode = (int)Enums.StatusCode.OK;
@@ -117,6 +122,25 @@ namespace NM.Business
                 resultModel.StatusCode = (int)Enums.StatusCode.OK;
             }
             return resultModel;
+        }
+
+        private void SendJobUpdateEmail(JobModel jobModel)
+        {
+            var newsLetterEmails = unitOfWork.NewsLetterRepository.GetAll(x => !x.IsDeleted && x.IsSubscribe).Select(y => y.Email).ToList();
+            if (newsLetterEmails != null && newsLetterEmails.Count > 0)
+            {
+               var emails = unitOfWork.JobSubscriptionRepository.GetAllAsQueryable(x => !x.IsDeleted && !string.IsNullOrWhiteSpace(x.EmailId) && x.JobBsonId == jobModel.BsonId && newsLetterEmails.FindIndex(y => y == x.EmailId) != -1).Select(x => x.EmailId).AsEnumerable();
+
+                if (emails != null)
+                {
+                    var body = EmailHelper.GetNewsLetterEmailBody(jobModel.Title, jobModel.Description, hostEnvironment.ContentRootPath);
+                    bool isSent = new Mailer()
+                         .Subject("Job Updated")
+                         .Body(body)
+                         .To(String.Join(",", emails))
+                         .Send();
+                }
+            }
         }
     }
 }

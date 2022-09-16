@@ -92,7 +92,7 @@ namespace NM.DataAccess.Repositories
         {
             get { return new BaseRepository<Job>(GetContext()); }
         }
-       
+
         public IRepository<Requirment> RequirmentRepository
         {
             get { return new BaseRepository<Requirment>(GetContext()); }
@@ -111,6 +111,13 @@ namespace NM.DataAccess.Repositories
             get
             {
                 return new BaseRepository<JobTitle>(GetContext());
+            }
+        }
+        public IRepository<JobSubscription> JobSubscriptionRepository
+        {
+            get
+            {
+                return new BaseRepository<JobSubscription>(GetContext());
             }
         }
     }

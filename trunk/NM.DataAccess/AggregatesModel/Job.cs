@@ -31,7 +31,7 @@ namespace NM.DataAccess.AggregatesModel
             JobBenefits = jobBenefits;
         }
 
-        public Job GetUpdatedJob(Job job, string title, string description, bool status, string functions, string jobType, string industries, string level)
+        public Job GetUpdatedJob(Job job, string title, string description, bool status, string functions, string jobType, string industries, string level, string jobRequirments, string jobResponsibilityTypes, string jobBenefits)
         {
             job.Title = title;
             job.Description = description;
@@ -40,6 +40,9 @@ namespace NM.DataAccess.AggregatesModel
             job.JobType = jobType;
             job.Industries = industries;
             job.Level = level;
+            job.JobRequirments = jobRequirments;
+            job.JobResponsibilityTypes = jobResponsibilityTypes;
+            job.JobBenefits = jobBenefits;
             return job;
         }
 

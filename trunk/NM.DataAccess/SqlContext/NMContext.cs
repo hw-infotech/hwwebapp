@@ -55,6 +55,7 @@ namespace NM.DataAccess.SqlContext
             builder.ApplyConfiguration(new UserEnquiryTypeConfiguration(builder));// I passed here builder for manage relation between tables: Aman 09/08/2022
             builder.ApplyConfiguration(new JobConfiguration());
             builder.ApplyConfiguration(new RequirmentConfiguration());
+            builder.ApplyConfiguration(new JobSubscriptionConfiguration());
 
         }
         private IDbContextTransaction _currentTransaction;

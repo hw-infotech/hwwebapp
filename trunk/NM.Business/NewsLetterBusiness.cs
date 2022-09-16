@@ -108,5 +108,35 @@ namespace NM.Business
             return result;
 
         }
+
+        public ResultModel<List<NewsLetterModel>> GetAllSubscribers()
+        {
+            ResultModel<List<NewsLetterModel>> result = new ResultModel<List<NewsLetterModel>>();
+            var NewsLetters = unitOfWork.NewsLetterRepository.GetAllAsQueryable(x => !x.IsDeleted && x.IsSubscribe).ToList();
+            if (NewsLetters != null)
+            {
+                result.Data = new List<NewsLetterModel>();
+                mapper.Map(NewsLetters, result.Data);
+                result.Success = true;
+                result.TotalRecords = NewsLetters.Count();
+                result.StatusCode = (int)Enums.StatusCode.OK;
+            }
+            return result;
+        }
+
+        public ResultModel<List<NewsLetterModel>> GetAllUnSubscribers()
+        {
+            ResultModel<List<NewsLetterModel>> result = new ResultModel<List<NewsLetterModel>>();
+            var NewsLetters = unitOfWork.NewsLetterRepository.GetAllAsQueryable(x => !x.IsDeleted && !x.IsSubscribe).ToList();
+            if (NewsLetters != null)
+            {
+                result.Data = new List<NewsLetterModel>();
+                mapper.Map(NewsLetters, result.Data);
+                result.Success = true;
+                result.TotalRecords = NewsLetters.Count();
+                result.StatusCode = (int)Enums.StatusCode.OK;
+            }
+            return result;
+        }
     }
 }

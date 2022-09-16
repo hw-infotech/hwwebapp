@@ -4,7 +4,6 @@ import Success_Stories from "../../pages/crausel/success_Stories";
 import SubScriber from "../../pages/newsletter/subscriber";
 import All_Enquiry from "../../pages/enquiry/All_Enquiry";
 import Admin_Login from "../../pages/authnication/admin_login";
-import Applied_Job from "../../pages/postJobs/applied_Jobs";
 import Job_Subscriber from "../../pages/postJobs/job_subscriber";
 import Add_Gallery_Event from "../../pages/crausel/add_gallery_event";
 import Change_Gallery_Events from "../../pages/crausel/change_gallery_events";
@@ -31,7 +30,6 @@ const route = [
   routes("/profile", Profile),
   routes("/all-enquiry", All_Enquiry),
   routes("/edit-job", Update_Job),
-  routes("/appliedjobs", Applied_Job),
   routes("/job-subscribe-unsubscribe", Job_Subscriber),
   routes("/addgalleryevent", Add_Gallery_Event),
   routes("/changegalleryevent", Change_Gallery_Events),
