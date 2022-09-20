@@ -34,13 +34,13 @@ const Step2 = ({
     req: [],
   });
   useEffect(() => {
-    // dispatch(Benefits_Getall());
+    dispatch(Benefits_Getall());
     // dispatch(Requirement_Getall());
     // dispatch(Responsibility_Getall());
     document.title = "Add Job";
   }, []);
   useEffect(() => {
-    // setbenefits(selector?.benefits.data);
+    setbenefits(selector?.benefits.data);
     // setresponsibility(selector?.responsibility.data);
     // setRequirment(selector?.requirment.data);
   }, [selector]);
@@ -48,7 +48,7 @@ const Step2 = ({
   // let mDate = new Date("09-01-2022 13:25:00");
   // const SecondsDif = Math.abs((new Date().getTime() - mDate.getTime()) / 1000);
   // const result = new Date(SecondsDif * 1000).toISOString().slice(11, 19);
-  //console.log(result); // 👉️ "00:10:00" (hh:mm:ss)
+  // console.log(result); // 👉️ "00:10:00" (hh:mm:ss)
   const f_context = useFormikContext();
   //Formik.setTouched({ responsibility: true });
   const requirmentt = [
@@ -90,10 +90,6 @@ const Step2 = ({
               onChange={handleChange}
               placeholder="Type and press tab/enter button"
               formState={state}
-              // options={responsibility?.map((data, index) => ({
-              //   value: data?.id,
-              //   label: data?.responsibility,
-              // }))}
               setTouched={true}
               id={"res"}
               setFormState={setState}
@@ -108,10 +104,10 @@ const Step2 = ({
                 name="JobBenefits"
                 placeholder="Type and press tab/enter button"
                 formState={state}
-                // options={benefits?.map((data, index) => ({
-                //   id: data?.id,
-                //   label: data?.benefitType,
-                // }))}
+                options={benefits?.map((data, index) => ({
+                  id: data?.id,
+                  label: data?.benefitType,
+                }))}
                 id={"benefit"}
                 onChange={handleChange}
                 setTouched={true}

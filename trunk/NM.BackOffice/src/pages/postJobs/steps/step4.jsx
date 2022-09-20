@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import Job_Preview from "../job_preview";
 import { BiEdit } from "react-icons/bi";
 import {
+  Get_jobList,
   Requirement_Create,
   Responsibility_Create,
   Send_data,
@@ -46,6 +47,7 @@ const Step4 = ({ setGoSteps, state, setState, handleChange, values }) => {
           type="submit"
           className="btn-sm"
           onClick={() => {
+            dispatch(Get_jobList());
             //dispatch(Send_job(values));
             
           }}

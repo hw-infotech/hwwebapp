@@ -19,6 +19,7 @@ import {
   NewsLetter_Unsubscriber,
   News_letter_Subscribe,
   News_letter_Subscribe_Unsubscribe,
+  Send_Newsletter,
 } from "../../Services/redux/action/action";
 import { Formik } from "formik";
 import { Input } from "../../components/commoninputfield";
@@ -62,6 +63,7 @@ const route = [
   { name: "Subscribe-Unsubscribe", route: "" },
 ];
 const SubScriber = () => {
+  const [values, setValues] = useState();
   const [show, setShow] = useState(false);
   const [firstpage, setFirstPage] = useState();
   const [data, setData] = useState();
@@ -102,7 +104,7 @@ const SubScriber = () => {
 
   const initialValues = {
     title: "",
-    content_story: "",
+    description: "",
   };
   const validationschemeaa = yup.object({
     title: yup.string().label("Title").required(),
@@ -321,33 +323,34 @@ const SubScriber = () => {
         <Modal.Header className=" text-white">
           <Modal.Title className="modal-titlee">Send Newsletter</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationschemeaa}
-            onSubmit={(values, actions) => {
-              actions.resetForm({
-                values: {
-                  title: "",
-                  content: "",
-                },
-              });
-            }}
-          >
-            {({
-              values,
-              handleSubmit,
-              handleChange,
-              setFieldValue,
-              errors,
-              touched,
-            }) => (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  handleSubmit();
-                }}
-              >
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationschemeaa}
+          onSubmit={(values, actions) => {
+            actions.resetForm({
+              values: {
+                title: "",
+                content: "",
+              },
+            });
+          }}
+        >
+          {({
+            values,
+            handleSubmit,
+            handleChange,
+            setFieldValue,
+            errors,
+            touched,
+          }) => (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                console.log(values, "this is the values");
+                dispatch(Send_Newsletter(values));
+              }}
+            >
+              <Modal.Body>
                 <Input
                   type="text"
                   label="Title"
@@ -368,12 +371,12 @@ const SubScriber = () => {
                   as={"textarea"}
                   className="form-control label-size"
                   id={
-                    touched.content_story && errors.content_story
+                    touched.description && errors.description
                       ? "invalid"
                       : ""
                   }
                   placeholder={"Description"}
-                  name="content_story"
+                  name="description"
                   onChange={handleChange}
                   rows={3}
                   label={"Descirption"}
@@ -385,31 +388,34 @@ const SubScriber = () => {
                 ) : (
                   ""
                 )*/}
-              </form>
-            )}
-          </Formik>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="secondary"
-            className=" btn-sm fs_13"
-            onClick={handleClose}
-          >
-            Cancel
-          </Button>
-          <Button type="submit" className="btn-sm fs_13">
-            Send
-          </Button>
-        </Modal.Footer>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  variant="secondary"
+                  className=" btn-sm fs_13"
+                  onClick={handleClose}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  type="submit"
+                  className="btn-sm fs_13"
+                  onClick={() => {}}
+                >
+                  Send
+                </Button>
+              </Modal.Footer>
+            </form>
+          )}
+        </Formik>
       </Modal>
-      {
-        <CustomPagination
-          start={pagination1}
-          setStart={setpagination}
-          total={subscribers?.length}
-          firstpage={10}
-        />
-      }
+
+      <CustomPagination
+        start={pagination1}
+        setStart={setpagination}
+        total={subscribers?.length}
+        firstpage={10}
+      />
     </div>
   );
 };

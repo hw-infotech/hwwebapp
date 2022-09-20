@@ -4,11 +4,13 @@ import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
 const Job_Preview = (values, state) => {
+  const [state1, setState] = useState();
   useEffect(() => {
     document.title = "Preview";
   }, []);
   let tiitle = localStorage?.getItem("key");
-  console.log("this is the values of preview",values);
+  console.log("this is the values of preview", values);
+
   return (
     <div className="preview-content">
       <div className="main-pannle">
@@ -38,26 +40,38 @@ const Job_Preview = (values, state) => {
               <span className="">Job Responsibility</span>
             </div>
             <ul className="job__list">
-              {/*values?.values?.responsibility?.map((data, index) => (
-                <li> {data?.value}</li>
-              ))*/}
+              {values?.values?.JobResponsibilityTypes
+                ? JSON.parse(values?.values?.JobResponsibilityTypes)?.map(
+                    (data, index) => {
+                      return <li key={index}>{data.value}</li>;
+                    }
+                  )
+                : []}
             </ul>
             <div className="job_heading">
               <span>Requirement</span>
             </div>
             <ul className="job__list">
-              {/*values.values?.requirment?.map((data, index) => (
-                <li> {data?.value}</li>
-              ))*/}
+              {values?.values?.JobRequirments
+                ? JSON.parse(values?.values?.JobRequirments)?.map(
+                    (data, index) => {
+                      return <li key={index}>{data.value}</li>;
+                    }
+                  )
+                : []}
             </ul>
 
             <div className="job_heading">
               <span>Nestormind Full Time Employee Benefits</span>
             </div>
             <ul className="job__list">
-              {/*values.values?.benefit?.map((data, index) => (
-                <li key={index}>{data?.value}</li>
-              ))*/}
+              {values?.values?.JobBenefits
+                ? JSON.parse(values?.values?.JobBenefits)?.map(
+                    (data, index) => {
+                      return <li key={index}>{data.value}</li>;
+                    }
+                  )
+                : []}
             </ul>
 
             <div className="main_information_list">
@@ -68,7 +82,7 @@ const Job_Preview = (values, state) => {
                 </li>
                 <li className="jobes_inner_li">
                   <h6 className="job_description_level">Employment type</h6>
-                  <span className="">{values.values?.type}</span>
+                  <span className="">{values.values?.jobType}</span>
                 </li>
                 <li className="jobes_inner_li">
                   <h6 className="job_description_level">Job function</h6>

@@ -1,12 +1,7 @@
 import React from "react";
 import {
-  ADD_GALLERY_EVENT,
-  ADD_NEW_BLOG,
-  ADD_SUCCESS_STORIES,
-  CONDITIONS,
   EDIT_DATA,
   EDIT_ENQUIRY,
-  GET_ALL_BlOG,
   GET_ALL_ENQUIRY,
   GET_ENQUIRY,
   GET_NEWSLEETER_SUBSCRIBER,
@@ -31,6 +26,8 @@ import {
   RESPONSIBILITY_CREATE,
   REQUIRMENT_CREATE,
   BENEFITS_CREATE,
+  SEND_NEWSLETTER,
+  EDIT_PROFILE_DATA,
 } from "../../redux/store/type";
 import apidata from "../../redux/store/api";
 import { ToastContainer, toast } from "react-toastify";
@@ -52,6 +49,22 @@ export const News_letter_Subscribe_Unsubscribe = () => (dispatch) => {
     .catch((err) => {
       dispatch({
         type: GET_NEWSLEETER_SUBSCRIBER,
+        payload: { data: false, err },
+      });
+    });
+};
+export const Send_Newsletter = (data) => (dispatch) => {
+  apidata
+    .post(`NewsLetter/SendNewsLetter`, data)
+    .then((res) => {
+      dispatch({
+        type: SEND_NEWSLETTER,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      dispatch({
+        type: SEND_NEWSLETTER,
         payload: { data: false, err },
       });
     });
@@ -338,31 +351,54 @@ export const Delete_job = (data) => (dispatch) => {
  * @param {*} data data of profile that we want to update
  * @returns
  */
-export const Update_Profile_Data = (data) => (dispath) => {
-  dispath({
-    type: UPDATE_PROFILE,
-    payload: data,
-  });
+export const Update_Profile_Data = (data) => (dispatch) => {
+  apidata
+    .post(`AppUser/update`, data)
+    .then((res) => {
+      dispatch({ type: UPDATE_PROFILE, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: UPDATE_PROFILE,
+        payload: { data: false, err },
+      });
+    });
 };
 /**
  * @method Updata_Profile_Data
  * @description this function for get the profile data
  * @returns
  */
-export const GET_profile_data = () => (dispatch) => {
-  dispatch({
-    type: GET_PROFILE_DATA,
-  });
+export const GET_profile_data = (data) => (dispatch) => {
+  apidata
+    .get(`AppUser/get?bsonId=${data}`)
+    .then((res) => {
+      dispatch({ type: GET_PROFILE_DATA, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: GET_PROFILE_DATA,
+        payload: { data: false, err },
+      });
+    });
 };
 /**
  * @method GET_profile_data
  *  @description this function for edit the profile data
  * @returns
  */
-export const Edit_profile_data = () => (dispatch) => {
-  dispatch({
-    type: GET_PROFILE_DATA,
-  });
+export const Edit_profile_data = (data) => (dispatch) => {
+  apidata
+    .get(`Job/get?bsonId=${data}`)
+    .then((res) => {
+      dispatch({ type: EDIT_PROFILE_DATA, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({
+        type: EDIT_PROFILE_DATA,
+        payload: { data: false, err },
+      });
+    });
 };
 /**
  * @method GET_profile_password

@@ -30,11 +30,20 @@ const Update_Job = ({ stat }) => {
     description: "",
   });
   const selector = useSelector((state) => state);
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
     setState((old) => {
       const newState = {
         ...selector.data?.apidata?.edit_data?.data,
+        jobResponsibilityTypes: selector.data?.apidata?.edit_data?.data
+          ?.jobResponsibilityTypes
+          ? JSON.parse(
+              selector.data?.apidata?.edit_data?.data?.jobResponsibilityTypes
+            )
+          : [],
+        jobBenefits: selector.data?.apidata?.edit_data?.data?.jobBenefits
+          ? JSON.parse(selector.data?.apidata?.edit_data?.data?.jobRequirments)
+          : [],
         jobRequirments: selector.data?.apidata?.edit_data?.data?.jobRequirments
           ? JSON.parse(selector.data?.apidata?.edit_data?.data?.jobRequirments)
           : [],
@@ -89,7 +98,6 @@ const Update_Job = ({ stat }) => {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
-            dispatch(Update_Data(state));
           }}
         >
           {goSteps === 0 && (

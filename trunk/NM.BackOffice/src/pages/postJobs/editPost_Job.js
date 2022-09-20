@@ -33,6 +33,9 @@ import { BsFilter } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import TooltipComp from "../../shared/Tooltipomp";
 import withHeader from "../../HOC/withHeader";
+import { useCallback } from "react";
+import { useMemo } from "react";
+import jwt_decode from "jwt-decode";
 const route = [
   { name: "Dashboard", route: "/" },
   { name: "Job Management", route: "" },
@@ -46,7 +49,8 @@ const options = [
 const Edit_postJob = (value1) => {
   const dispatch = useDispatch();
   const selector = useSelector((state) => state);
-  //console.log(selector)
+  const [requir, setRequirment] = useState();
+  console.log(selector, "selector");
   const [openmodal, setmodal] = useState(false);
   const [title, setTitle] = useState(false);
   const [indexx, setIndex] = useState();
@@ -68,9 +72,10 @@ const Edit_postJob = (value1) => {
     dispatch(Get_jobList());
   }, []);
 
+  console.log(selector.data.apidata?.job_list?.data, "requri");
   useEffect(() => {
     setTableData(selector.data.apidata?.job_list?.data);
-  }, [selector]);
+  }, [selector, tableData]);
   /**
    * @method sortt
    * @description this sortt function for sorting the data in table in ascending order
@@ -85,6 +90,27 @@ const Edit_postJob = (value1) => {
     );
     setTableData([...response]);
   }
+  // useEffect(() => {
+  //   setTableData((old) => {
+  //     const newState = {
+  //       ...selector.data.apidata?.job_list?.data,
+  //       jobResponsibilityTypes: selector.data.apidata?.job_list?.data
+  //         ?.jobResponsibilityTypes
+  //         ? JSON.parse(
+  //             selector.selector.data.apidata?.job_list?.data
+  //               ?.jobResponsibilityTypes
+  //           )
+  //         : [],
+  //       jobBenefits: selector.data.apidata?.job_list?.data?.jobBenefits
+  //         ? JSON.parse(selector.data.apidata?.job_list?.data?.jobRequirments)
+  //         : [],
+  //       jobRequirments: selector.data.apidata?.job_list?.data?.jobRequirments
+  //         ? JSON.parse(selector.data.apidata?.job_list?.data?.jobRequirments)
+  //         : [],
+  //     };
+  //     return newState;
+  //   });
+  // }, []);
   /**
    * @method sortt1
    * @description this sortt1 function for sorting the data in descending order
@@ -140,6 +166,10 @@ const Edit_postJob = (value1) => {
       setTableData([...filterData]);
     }
   };
+  var token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIxIiwiZXhwIjoxNjYzNTg2MDE2LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMzNi8iLCJhdWQiOiIqIn0.8tUR-8WWx3HEqls8rWzmGGG-GUYjU0lQh3ciRVKUqQc";
+  var decoded = jwt_decode(token);
+  console.log(decoded, "ghf");
   return (
     <div className="joblist-main-box">
       {<BasicBreadcrumbs route={route} />}
@@ -239,8 +269,10 @@ const Edit_postJob = (value1) => {
             onClick={() => {
               dispatch(Delete_job(indexx));
               //tableData.splice(indexx, 1);
+
               //setTableData([...tableData]);
               setmodal(false);
+              dispatch(Get_jobList());
             }}
           >
             Yes
@@ -445,17 +477,16 @@ const Edit_postJob = (value1) => {
                       </td>
                       <td>
                         {
-                          //data?.requirment[0]?.value
+                          JSON.parse(data.jobResponsibilityTypes)?.[0].value
+                          //selector.data.apidata?.job_list?.data
+                          //           ?.jobResponsibilityTypes ? JSON.parse(data?.jobResponsibilityTypes):[]
+                          // data.jobResponsibilityTypes
                         }
                       </td>
+                      <td>{JSON.parse(data.jobBenefits)?.[0].value}</td>
                       <td>
                         {
-                          // data?.benefit[0]?.value &&
-                          //subString(data?.benefit[0]?.value, 10)
-                        }
-                      </td>
-                      <td>
-                        {
+                          JSON.parse(data.jobResponsibilityTypes)?.[0].value
                           //data?.responsibility[0]?.value &&
                           //subString(data?.responsibility[0]?.value, 10)
                         }

@@ -29,14 +29,15 @@ import {
   BENEFITS,
   REQUIRMENT,
   RESPONSIBILITY,
+  SEND_NEWSLETTER,
 } from "../store/type";
 
 const initialstate = {
   login: "",
-  benefits:"",
-  requirment:"",
-  responsibility:"",
-  addjobdata:"",
+  benefits: "",
+  requirment: "",
+  responsibility: "",
+  addjobdata: "",
   getenquiry: "",
   job_list: [],
   getnewsletter: "",
@@ -109,7 +110,11 @@ const Reducer_Function = (state = initialstate, action) => {
         addSuccessStories: payload,
       };
     }
-
+    case SEND_NEWSLETTER: {
+      return {
+        ...state,
+      };
+    }
     case GET_NEWSLEETER_SUBSCRIBER: {
       return {
         ...state,
@@ -153,7 +158,6 @@ const Reducer_Function = (state = initialstate, action) => {
       };
     }
     case POST_DATA: {
-      
       return {
         ...state,
         // job_list: state.job_list.push(payload),
@@ -166,7 +170,6 @@ const Reducer_Function = (state = initialstate, action) => {
       };
     }
     case UPDATE: {
-    
       return {
         ...state,
       };
@@ -180,7 +183,7 @@ const Reducer_Function = (state = initialstate, action) => {
     case GET_PROFILE_DATA: {
       return {
         ...state,
-        profile_data: state.profile_data,
+        profile_data: payload,
       };
     }
     case UPDATE_PROFILE_PASSWORD: {

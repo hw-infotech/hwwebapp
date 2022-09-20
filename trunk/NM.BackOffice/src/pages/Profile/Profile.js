@@ -35,11 +35,13 @@ const Profile = () => {
   const [show_password, setShowpassword] = useState(false);
   const [showpas, setShowpas] = useState("text");
   const [state, setState] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    location: "",
+    lastName: "",
+    phoneNumber: 0,
+    emailId: "",
+    address: "",
     image: "",
+    firstName: "",
+    profile_password: "",
   });
   const [state1, setState1] = useState({
     User: "",
@@ -51,31 +53,30 @@ const Profile = () => {
   const [data1, getdata] = useState("");
   const dispatch = useDispatch();
   const [editData, setEditData] = useState({
-    name: "",
-    phone: 0,
-    email: "",
+    lastName: "",
+    phoneNumber: 0,
+    emailId: "",
     location: "",
     image: "",
-    username: "",
+    firstName: "",
     profile_password: "",
   });
-
+  //47e4c63f-3661-4f79-b9e4-cfecfb4919ff
   useEffect(() => {
     document.title = "My Profile";
-    dispatch(GET_profile_data());
+    dispatch(GET_profile_data("47e4c63f-3661-4f79-b9e4-cfecfb4919ff"));
   }, []);
 
   const selector = useSelector((state) => state);
   useEffect(() => {
-    getdata(selector?.data?.apidata?.profile_data);
-    //console.log("this is the profile page", data1)
+    getdata(selector?.data?.apidata?.profile_data?.data);
   }, [selector]);
-
-  useEffect(() => {
-    setData(selector?.data?.apidata?.profile_data);
-    setState(selector?.data?.apidata?.profile_data);
-    //console.log("this is the profile page", selector?.data?.apidata?.profile_data)
-  }, [selector]);
+  console.log("this is the profile page", state);
+  // useEffect(() => {
+  //   setData(selector?.data?.apidata?.profile_data);
+  //   setState(selector?.data?.apidata?.profile_data);
+  //   //console.log("this is the profile page", selector?.data?.apidata?.profile_data)
+  // }, [selector]);
 
   const [key, setKey] = useState();
   const [visible, setVisible] = useState(true);
@@ -90,6 +91,10 @@ const Profile = () => {
    * @constant  validationsheme
    *  @description used the yup third party library for validation as well as formik
    */
+  const handlechange = (e) => {
+    const { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
   const validationSchema = yup.object({
     oldpassword: yup.string().required().max(64).label("Old Password"),
     profile_password: yup.string().required().max(64).label("New Password"),
@@ -134,7 +139,11 @@ const Profile = () => {
                            <img src="" className="profile-image11" />
                         </div>*/}
               <div className="buttonContainer">
-                <img src={data1.image} name="image" className="profile-image" />
+                <img
+                  src={data1?.image}
+                  name="image"
+                  className="profile-image"
+                />
                 <input
                   type="file"
                   className="uploadButton"
@@ -163,7 +172,10 @@ const Profile = () => {
               </div>
               <div className="card-heading4">
                 <h4>
-                  Welcome, <strong>{data1?.name}</strong>
+                  Welcome,{" "}
+                  <strong>
+                    {data1?.firstName} {data1?.lastName}
+                  </strong>
                 </h4>
                 <div className="inner_heading">
                   <div className="inner-heading-icon1">
@@ -175,11 +187,11 @@ const Profile = () => {
                   <div className="inner-location-email">
                     <div className="text-muted inner-heading-icon ">
                       <GrLocation size={12} />
-                      {data1?.location}
+                      {data1?.address}
                     </div>
                     <div className="text-muted  inner-heading-icon">
                       <FiMail size={12} />
-                      {data1?.email}
+                      {data1?.emailId}
                     </div>
                   </div>
                 </div>
@@ -210,7 +222,7 @@ const Profile = () => {
             <Row>
               <Col>
                 <Formik
-                  initialValues={selector?.data?.apidata?.profile_data}
+                  initialValues={state}
                   validationSchema={validationSchema1}
                   onSubmit={(values, { resetForm }) => {
                     dispatch(Update_Profile_Data(values));
@@ -220,7 +232,7 @@ const Profile = () => {
                   {({
                     values,
                     handleSubmit,
-                    handleChange,
+
                     errors,
                     touched,
                   }) => (
@@ -242,8 +254,8 @@ const Profile = () => {
                                   variant="primary"
                                   className="btn-sm"
                                   onClick={() => {
-                                    setEditData(values);
-                                    dispatch(Edit_profile_data());
+                                    //setEditData(values);
+                                    //dispatch(Edit_profile_data());
                                     setVisible(false);
                                     setEdit((p) => !p);
                                   }}
@@ -281,25 +293,26 @@ const Profile = () => {
                             <div className="formData">
                               <div className="innerform">Full Name</div>
                               <div className="innerform1">
-                                {values?.name || data1?.name}
+                                {data1?.firstName} {data1?.lastName}
                               </div>
                             </div>
                             <div className="formData">
                               <div className="innerform">Phone Number</div>
                               <div className="innerform1">
-                                {values?.phone || data1.phone}
+                                {data1?.phoneNumber}
                               </div>
                             </div>
                             <div className="formData">
                               <div className="innerform">Email</div>
-                              <div className="innerform1">
-                                {values?.email || data1?.email}
-                              </div>
+                              <div className="innerform1">{data1?.emailId}</div>
                             </div>
                             <div className="formData">
                               <div className="innerform">Address</div>
                               <div className="innerform1">
-                                {values?.location || data1?.location}
+                                {
+                                  //data1?.address
+                                  "Mohali"
+                                }
                               </div>
                             </div>
                             {console.log(values, "Values from !edit")}
@@ -312,15 +325,17 @@ const Profile = () => {
                                 <Form.Group controlId="formBasicEmail">
                                   <Form.Control
                                     className="fs_13"
-                                    name="name"
+                                    name="firstName"
                                     type="text"
-                                    onChange={handleChange}
-                                    value={values.name}
+                                    onChange={(e) => {
+                                      handlechange(e)
+                                    }}
+                                    value={state?.firstName}
                                   />
 
-                                  {errors.name ? (
+                                  {errors.firstName ? (
                                     <label className="text-danger">
-                                      {errors.name}
+                                      {errors.firstName}
                                     </label>
                                   ) : null}
                                 </Form.Group>
@@ -331,15 +346,17 @@ const Profile = () => {
                               <div className="innerform1">
                                 <Form.Group controlId="phone">
                                   <Form.Control
-                                    type="number"
-                                    name="phone"
+                                    type="text"
+                                    name="phoneNumber"
                                     className="fs_13"
-                                    onChange={handleChange}
-                                    value={values.phone}
+                                    onChange={(e) => {
+                                      handlechange(e);
+                                    }}
+                                    value={state?.phoneNumber}
                                   />
-                                  {errors.phone ? (
+                                  {errors.phoneNumber ? (
                                     <label className="text-danger">
-                                      {errors.phone}
+                                      {errors.phoneNumber}
                                     </label>
                                   ) : null}
                                 </Form.Group>
@@ -351,14 +368,16 @@ const Profile = () => {
                                 <Form.Group controlId="email">
                                   <Form.Control
                                     type="email"
-                                    name="email"
+                                    name="emailId"
                                     className="fs_13"
-                                    onChange={handleChange}
-                                    value={values.email}
+                                    onChange={(e) => {
+                                      handlechange(e);
+                                    }}
+                                    value={state?.emailId}
                                   />
-                                  {errors.email ? (
+                                  {errors.emailId ? (
                                     <label className="text-danger">
-                                      {errors.email}
+                                      {errors.emailId}
                                     </label>
                                   ) : null}
                                 </Form.Group>
@@ -370,14 +389,16 @@ const Profile = () => {
                                 <Form.Group controlId="location">
                                   <Form.Control
                                     type="text"
-                                    name="location"
+                                    name="address"
                                     className="fs_13"
-                                    onChange={handleChange}
-                                    value={values.location}
+                                    onChange={(e) => {
+                                      handlechange(e);
+                                    }}
+                                    value={state?.address}
                                   />
-                                  {errors.location ? (
+                                  {errors.address ? (
                                     <label className="text-danger">
-                                      {errors.location}
+                                      {errors.address}
                                     </label>
                                   ) : null}
                                 </Form.Group>
@@ -399,7 +420,7 @@ const Profile = () => {
                   initialValues={state1}
                   validationSchema={validationSchema}
                   onSubmit={(values, { resetForm }) => {
-                    console.log(values, "profile passowrd");
+                    
                     if (data1.profile_password === values.oldpassword) {
                       dispatch(
                         Update_Profile_Password(values.profile_password)
@@ -425,7 +446,7 @@ const Profile = () => {
                         handleSubmit();
                       }}
                     >
-                      {console.log(errors)}
+                      
                       <div className="main-Profile-card1">
                         <div className="prfile-card11">
                           <div className="inner-profile1">

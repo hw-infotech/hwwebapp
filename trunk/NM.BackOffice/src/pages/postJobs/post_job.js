@@ -41,7 +41,7 @@ const Post_Job = ({ stat }) => {
     JobRequirments: [],
     JobBenefits: [],
     industries: "",
-    Jobtype: "Full time",
+    jobType: "Full time",
     level: "Senior",
     description: "",
   });
@@ -53,7 +53,7 @@ const Post_Job = ({ stat }) => {
     JobBenefits: [],
     JobRequirments: [],
     industries: "",
-    Jobtype: "Full time",
+    jobType: "Full time",
     level: "Senior",
     description: "",
   });

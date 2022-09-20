@@ -3,10 +3,15 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { BiEdit } from "react-icons/bi";
 
+
 const Edit_Job_Preview = (values, state) => {
   const nevigate = useNavigate();
-  console.log(state);
+  console.log(values, "this is edit values");
   let tiitle = localStorage?.getItem("key");
+
+ 
+  // private encryptDecryptService: EncryptDecryptService
+  //  var result = this.encryptDecryptService.decryptData(value);
   return (
     <div className="edit-preview-box">
       <div className="view_main_box">
@@ -36,27 +41,31 @@ const Edit_Job_Preview = (values, state) => {
                 <span className="">Job Responsibility</span>
               </div>
               <ul className="job__list">
-                {values?.state?.responsibility?.map((data, index) => (
-                  <li className=""> {data?.value}</li>
-                ))}
+                {/*values?.state?.jobResponsibilityTypes?.map((data, index) => {
+                  return <li key={index}>{data.value}</li>;
+                })*/}
               </ul>
 
               <div className="job_heading">
                 <span className="">Requirement</span>
               </div>
               <ul className="job__list">
-                {values?.state?.requirment?.map((data, index) => (
-                  <li className=""> {data?.value}</li>
-                ))}
+                {/*values?.state?.jobRequirments?.map((data, index) => {
+                  return <li key={index}>{data.value}</li>;
+                })*/}
               </ul>
               <div className="job_heading">
                 <span className="">Nestormind Full Time Employee Benefits</span>
               </div>
               <div className="">
                 <ul className="job__list">
-                  {values.state?.benefits?.map((data, index) => (
-                    <li className=""> {data?.value}</li>
-                  ))}
+                  {/*values?.state?.jobBenefits
+                    ? JSON.parse(values?.state?.jobBenefits)?.map(
+                        (data, index) => {
+                          return <li key={index}>{data.value}</li>;
+                        }
+                      )
+                      : []*/}
                 </ul>
               </div>
               <div className="main_information_list">

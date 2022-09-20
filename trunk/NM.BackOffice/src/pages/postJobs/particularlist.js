@@ -59,6 +59,7 @@ const route = [
   { name: "View", route: "/particularjob" },
 ];
 const Particularjob = () => {
+  const [records1, setRecords] = useState();
   const [tr, settr] = useState(false);
   const [tableData, setTableData] = useState(records);
   const [title, setTitle] = useState(false);
@@ -120,10 +121,13 @@ const Particularjob = () => {
     });
     setTableData(filteredRows);
   };
-  var selector = useSelector((state) => state.data?.apidata?.edit_data?.data);
+  var selector = useSelector((state) => state?.data?.apidata);
   useEffect(() => {
+    setTableData(selector?.edit_data?.data);
+    setRecords(records);
     document.title = "View";
-  }, []);
+    console.log(tableData);
+  }, [selector]);
   return (
     <div className="box__content">
       <div className="topPadding-10 w-100">
@@ -207,7 +211,7 @@ const Particularjob = () => {
                           height={80}
                           width={80}
                         />
-                        {selector?.active == "deactive" ? (
+                        {tableData?.active == "deactive" ? (
                           <Button
                             variant="primary"
                             className="btn-sm edit_button "
@@ -222,9 +226,8 @@ const Particularjob = () => {
                           ""
                         )}
                       </div>
-
                       <div className="titlejob">
-                        <span>{selector?.title} - Mohali</span>
+                        <span>{tableData?.title} - Mohali</span>
                       </div>
                     </div>
                     <div className="job_location d-flex">
@@ -239,20 +242,28 @@ const Particularjob = () => {
                   <div className="job_heading">
                     <span className="">Job Description</span>
                   </div>
-                  <p className="job_description"> {selector?.description}</p>
+                  <p className="job_description"> {tableData?.description}</p>
                   <div className="job_heading">Job Responsibility</div>
                   <ul className="job__list">
-                    {/*selector?.responsibility?.map((data, index) => (
-                      <li>{data.value}</li>
-                    ))*/}
+                    {tableData?.jobResponsibilityTypes
+                      ? JSON.parse(tableData?.jobResponsibilityTypes)?.map(
+                          (data, index) => {
+                            return <li key={index}>{data?.value}</li>;
+                          }
+                        )
+                      : []}
                   </ul>
                   <div className="job_heading">
                     <span className="">Requirement</span>
                   </div>
                   <ul className="job__list">
-                    {/*selector?.requirment?.map((data, index) => (
-                      <li>{data.value}</li>
-                    ))*/}
+                    {tableData?.jobRequirments
+                      ? JSON.parse(tableData?.jobRequirments)?.map(
+                          (data, index) => {
+                            return <li key={index}>{data?.value}</li>;
+                          }
+                        )
+                      : []}
                   </ul>
                   <div className="job_heading">
                     <span className="">
@@ -261,9 +272,13 @@ const Particularjob = () => {
                   </div>
                   <div className="main-description-box">
                     <ul className="job__list">
-                      {/*selector?.benefits?.map((data, index) => (
-                        <li>{data.value}</li>
-                      ))*/}
+                      {tableData?.jobBenefits
+                        ? JSON.parse(tableData?.jobBenefits)?.map(
+                            (data, index) => {
+                              return <li key={index}>{data?.value}</li>;
+                            }
+                          )
+                        : []}
                     </ul>
                   </div>
                   <div className="main_information_list">
@@ -272,26 +287,28 @@ const Particularjob = () => {
                         <h3 className="job_description_level">
                           Seniority level
                         </h3>
-                        <span className="level_content">{selector?.level}</span>
+                        <span className="level_content">
+                          {tableData?.level}
+                        </span>
                       </li>
                       <li className="jobes_inner_li">
                         <h5 className="job_description_level">
                           Employment type
                         </h5>
                         <span className="level_content">
-                          {selector?.jobType}
+                          {tableData?.jobType}
                         </span>
                       </li>
                       <li className="jobes_inner_li">
                         <h5 className="job_description_level">Job function</h5>
                         <span className="level_content">
-                          {selector?.functions}
+                          {tableData?.functions}
                         </span>
                       </li>
                       <li className="jobes_inner_li">
                         <h5 className="job_description_level">Industries</h5>
                         <span className="level_content">
-                          {selector?.industries}
+                          {tableData?.industries}
                         </span>
                       </li>
                     </ul>
@@ -439,9 +456,9 @@ const Particularjob = () => {
                       <th>Phone Number</th>
                     </tr>
                   </thead>
-                  {tableData.length > 0 ? (
+                  {records1?.length > 0 ? (
                     <tbody>
-                      {tableData.map((data, index) => (
+                      {records1.map((data, index) => (
                         <tr>
                           <td className="action">
                             <div className="userDetail ">
@@ -561,15 +578,17 @@ const Particularjob = () => {
                 </Table>
               </div>
             </div>
-            {tableData.length > 0 ? (
+            {
+              //records1?.length > 0 ? (
               <CustomPagination
-                total={tableData.length}
+                total={records1?.length}
                 start={pagination1}
                 setStart={setpagination}
               />
-            ) : (
-              ""
-            )}
+              // ) : (
+
+              // )
+            }
           </Tab>
         </Tabs>
         <Modal show={show} onHide={handleClose} size="sm">
